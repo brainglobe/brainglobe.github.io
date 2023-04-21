@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'HowTo'
-copyright = '2022, Neuroinformatics Unit'
-author = 'Neuroinformatics Unit'
+project = 'BrainGlobe'
+copyright = '2023, BrainGlobe'
+author = 'BrainGlobe contributors'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
@@ -81,12 +81,12 @@ exclude_patterns = [
 # a list of builtin themes.
 #
 html_theme = 'pydata_sphinx_theme'
-html_title = 'HowTo'
+html_title = 'BrainGlobe'
 
 # Redirect the webpage to another URL
 # Sphinx will create the appropriate CNAME file in the build directory
 # https://www.sphinx-doc.org/en/master/usage/extensions/githubpages.html
-html_baseurl = 'https://howto.neuroinformatics.dev/'
+html_baseurl = 'https://brainglobe.info/'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -106,7 +106,7 @@ html_theme_options = {
             # Label for this link
             "name": "GitHub",
             # URL where the link will redirect
-            "url": "https://github.com/neuroinformatics-unit/HowTo",  # required
+            "url": "https://github.com/brainglobe",  # required
             # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
             "icon": "fa-brands fa-github",
             # The type of image to be used (see below for details)
@@ -114,7 +114,7 @@ html_theme_options = {
         }
    ],
    "logo": {
-        "text": "HowTo",
+        "text": "BrainGlobe",
         "image_light": "logo_light.png",
         "image_dark": "logo_dark.png",
     },

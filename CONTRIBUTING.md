@@ -3,15 +3,15 @@
 ## Website structure
 
 The website is structured in three high-level sections, represented by folders in the `docs/source` directory:
-- Data Analysis
-- Programming
-- Guides
+  - docs to repo 1
+  - docs to repo 2
+  - etc
 
 Each section is further divided into sub-sections, each corresponding to a different markdown file in `docs/source/{section}` directory. There are also `docs/source/{section}/index.md` files, which are used to create the tables of contents for each section.
 
 ## Adding new content
 
-To add a new sub-section, create a new markdown file in the appropriate section directory, and make sure to start it with a level-1 heading. Remember to also add the new file to the table of contents in the corresponding`docs/source/{section}/index.md` file.
+To add a new sub-section, create a new markdown file in the appropriate section directory, and make sure to start it with a level-1 heading. Remember to also add the new file to the table of contents in the corresponding `docs/source/{section}/index.md` file.
 
 To add entries to an existing sub-section, simply add new level-2/3 headings to the right markdown file, as appropriate.
   
