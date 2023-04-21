@@ -17,4 +17,7 @@ Build a community of neuroscientists and developers to share knowledge, build so
 about
 publications
 media
+Documentation <https://docs.brainglobe.info/>
+Help forum <https://forum.image.sc/tag/brainglobe>
+
 ```
