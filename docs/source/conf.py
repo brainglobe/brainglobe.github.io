@@ -94,7 +94,7 @@ html_baseurl = 'https://brainglobe.info/'
 html_static_path = ['_static']
 
 html_css_files = [
-    'css/custom.css',
+    ('css/custom.css', {"priority": 100}),
 ]
 
 html_favicon = "_static/logo_light.png"
@@ -120,9 +120,11 @@ html_theme_options = {
    ],
    "logo": {
         "text": "BrainGlobe",
-        "image_light": "logo_light.png",
-        "image_dark": "logo_dark.png",
+        "image_light": "brainglobe.png",
+        "image_dark": "brainglobe.png",
     },
     "footer_start": ["footer_start"],
     "footer_end": ["footer_end"],
 }
+
+html_show_sourcelink = False
