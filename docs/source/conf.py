@@ -111,7 +111,12 @@ html_theme_options = {
             "icon": "fa-brands fa-github",
             # The type of image to be used (see below for details)
             "type": "fontawesome",
-        }
+        },
+                {
+                    "name": "Twitter",
+                    "url": "https://twitter.com/brain_globe",
+                    "icon": "fa-brands fa-twitter",
+                },
    ],
    "logo": {
         "text": "BrainGlobe",
