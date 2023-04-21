@@ -6,5 +6,6 @@
 :hidden:
 
 about
+publications
 media
 ```
