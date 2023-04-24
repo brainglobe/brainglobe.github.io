@@ -9,6 +9,7 @@ Develop core tools to facilitate others to build interoperable tools in Python, 
 
 Build a community of neuroscientists and developers to share knowledge, build software and engage with the scientific, and open-source community (e.g. by organising hackathons).
 
+
 ```{toctree}
 :maxdepth: 2
 :caption: Index
@@ -21,5 +22,4 @@ contact
 documentation/index
 Old documentation <https://docs.brainglobe.info/>
 Help forum <https://forum.image.sc/tag/brainglobe>
-
 ```
