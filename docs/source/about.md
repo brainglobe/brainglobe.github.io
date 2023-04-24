@@ -31,6 +31,7 @@ develop frameworks to facilitate collaboration. Our key future aims are:
 :maxdepth: 1
 contact
 governance-model
+publications
 ```
 
 
