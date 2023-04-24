@@ -98,7 +98,7 @@ html_css_files = [
     ('css/custom.css', {"priority": 100}),
 ]
 
-html_favicon = "_static/logo_light.png"
+html_favicon = "_static/brainglobe.png"
 
 ## Cutomize the theme
 html_theme_options = {
