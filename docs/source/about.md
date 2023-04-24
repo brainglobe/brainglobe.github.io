@@ -24,3 +24,13 @@ develop frameworks to facilitate collaboration. Our key future aims are:
 * To reduce barriers of entry and make sure BGI tools are accessible to all
 * To ensure BGI tools and atlases can be incorporated into varied workflows to leverage the open-source
   image analysis community
+
+# More details
+
+```{toctree}
+:maxdepth: 1
+contact
+governance-model
+```
+
+
