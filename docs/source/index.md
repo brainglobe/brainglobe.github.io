@@ -43,11 +43,11 @@ Find out more about these tools.
 :caption: Index
 :hidden:
 about
-publications
-media
 contact
 documentation/index
-Old documentation <https://docs.brainglobe.info/>
+tutorials/index
 Help forum <https://forum.image.sc/tag/brainglobe>
-
+publications
+media
+Old documentation <https://docs.brainglobe.info/>
 ```
