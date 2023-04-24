@@ -37,6 +37,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.intersphinx',
     'sphinx.ext.napoleon',
+    'sphinx_design',
     'myst_parser',
     'numpydoc',
     'nbsphinx',
@@ -97,7 +98,7 @@ html_css_files = [
     ('css/custom.css', {"priority": 100}),
 ]
 
-html_favicon = "_static/logo_light.png"
+html_favicon = "_static/brainglobe.png"
 
 ## Cutomize the theme
 html_theme_options = {
@@ -111,7 +112,12 @@ html_theme_options = {
             "icon": "fa-brands fa-github",
             # The type of image to be used (see below for details)
             "type": "fontawesome",
-        }
+        },
+                {
+                    "name": "Twitter",
+                    "url": "https://twitter.com/brain_globe",
+                    "icon": "fa-brands fa-twitter",
+                },
    ],
    "logo": {
         "text": "BrainGlobe",
