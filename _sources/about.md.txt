@@ -44,7 +44,7 @@ Registering 3D image data to a reference atlas is a technically demanding task. 
 
 **cellfinder** is a **BrainGlobe** software which uses a deep learning algorithm to identify the location of 
 labelled cells (e.g. expressing a fluorescent protein) across an entire brain. It thus provides a fast, reliable 
-and reproducable approach to the quantification of data from tracing experiments.&#x20;
+and reproducible approach to the quantification of data from tracing experiments.&#x20;
 
 
 ## Visualizing data
