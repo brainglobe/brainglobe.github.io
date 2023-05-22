@@ -46,8 +46,6 @@ about
 contact
 documentation/index
 tutorials/index
-Help forum <https://forum.image.sc/tag/brainglobe>
 publications
 media
-Old documentation <https://docs.brainglobe.info/>
 ```

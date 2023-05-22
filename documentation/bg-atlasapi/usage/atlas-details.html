@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Downloading data &#8212; BrainGlobe</title>
+    <title>Atlas details &#8212; BrainGlobe</title>
   
   
   
@@ -45,14 +45,14 @@
     <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/morphapi/usage/downloading-data';</script>
-    <link rel="canonical" href="https://brainglobe.info/documentation/morphapi/usage/downloading-data.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/bg-atlasapi/usage/atlas-details';</script>
+    <link rel="canonical" href="https://brainglobe.info/documentation/bg-atlasapi/usage/atlas-details.html" />
     <link rel="shortcut icon" href="../../../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Rendering data" href="rendering-data.html" />
-    <link rel="prev" title="Morphapi" href="../index.html" />
+    <link rel="next" title="Python API" href="python-api.html" />
+    <link rel="prev" title="BG-AtlasAPI" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -444,18 +444,18 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../bg-atlasapi/index.html">BG-AtlasAPI</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../bg-atlasapi/usage/atlas-details.html">Atlas details</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../bg-atlasapi/usage/python-api.html">Python API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../bg-atlasapi/usage/command-line-interface.html">Command line interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../bg-atlasapi/usage/using-the-files-directly.html">Using the files directly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../bg-atlasapi/adding-a-new-atlas.html">Adding a new atlas</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">BG-AtlasAPI</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Atlas details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-api.html">Python API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command-line-interface.html">Command line interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-the-files-directly.html">Using the files directly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adding-a-new-atlas.html">Adding a new atlas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../bg-space/index.html">BG-Space</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Morphapi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Downloading data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rendering-data.html">Rendering data</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../morphapi/index.html">Morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../morphapi/usage/downloading-data.html">Downloading data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../morphapi/usage/rendering-data.html">Rendering data</a></li>
 </ul>
 </li>
 </ul>
@@ -499,9 +499,9 @@ document.write(`
     <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Documentation</a></li>
     
     
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Morphapi</a></li>
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">BG-AtlasAPI</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Downloading data</li>
+    <li class="breadcrumb-item active" aria-current="page">Atlas details</li>
   </ul>
 </nav>
 </div>
@@ -518,102 +518,110 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="downloading-data">
-<h1>Downloading data<a class="headerlink" href="#downloading-data" title="Permalink to this heading">#</a></h1>
-<section id="allen-morphology">
-<h2>Allen Morphology<a class="headerlink" href="#allen-morphology" title="Permalink to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">AllenMorphology</span></code> class is used to download data for this dataset. It can be used to specify neurons from a given species and brain regions, like in the example below:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">morphapi.api.allenmorphology</span> <span class="kn">import</span> <span class="n">AllenMorphology</span>
-
-
-<span class="n">am</span> <span class="o">=</span> <span class="n">AllenMorphology</span><span class="p">()</span>
-
-
-<span class="c1"># Select mouse neurons in the primary visual cortex</span>
-<span class="n">neurons</span> <span class="o">=</span> <span class="n">am</span><span class="o">.</span><span class="n">neurons</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
-    <span class="p">(</span><span class="n">am</span><span class="o">.</span><span class="n">neurons</span><span class="o">.</span><span class="n">species</span> <span class="o">==</span> <span class="s2">&quot;Mus musculus&quot;</span><span class="p">)</span>
-    <span class="o">&amp;</span> <span class="p">(</span><span class="n">am</span><span class="o">.</span><span class="n">neurons</span><span class="o">.</span><span class="n">structure_area_abbrev</span> <span class="o">==</span> <span class="s2">&quot;VISp&quot;</span><span class="p">)</span>
-<span class="p">]</span>
-
-<span class="c1"># Download some of these neurons</span>
-<span class="n">neurons</span> <span class="o">=</span> <span class="n">am</span><span class="o">.</span><span class="n">download_neurons</span><span class="p">(</span><span class="n">neurons</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-</pre></div>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="atlas-details">
+<h1>Atlas details<a class="headerlink" href="#atlas-details" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>The atlases are available in a standardised form, via the BrainGlobe Atlas API (or any software that uses it). However, each atlas varies slightly in the versions that are available (e.g. resolutions). </p>
+<p>To use the atlases with the API directly, the unique key (e.g. <code class="docutils literal notranslate"><span class="pre">example_mouse_100um</span></code> must be used).</p>
 </section>
-<section id="neuromorpho">
-<h2>Neuromorpho<a class="headerlink" href="#neuromorpho" title="Permalink to this heading">#</a></h2>
-<p><a class="reference external" href="http://Neuromorpho.org">Neuromorpho.org</a> is a vast online repository of morphological data. The <code class="docutils literal notranslate"><span class="pre">NeuroMorpOrgAPI</span></code> class can be used to download data from it. Note that given the size of this huge dataset, it is not possible to download all metadata matching specific criteria at once.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">morphapi.api.neuromorphorg</span> <span class="kn">import</span> <span class="n">NeuroMorpOrgAPI</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">NeuroMorpOrgAPI</span><span class="p">()</span>
-
-<span class="c1"># ---------------------------- Downloading metadata --------------------------- #</span>
-<span class="c1"># Get metadata for pyramidal neurons from the mouse cortex.</span>
-<span class="n">metadata</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_neurons_metadata</span><span class="p">(</span>
-    <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>  <span class="c1"># Can get the metadata for up to 500 neurons at the time</span>
-    <span class="n">species</span><span class="o">=</span><span class="s2">&quot;mouse&quot;</span><span class="p">,</span>
-    <span class="n">cell_type</span><span class="o">=</span><span class="s2">&quot;pyramidal&quot;</span><span class="p">,</span>
-    <span class="n">brain_region</span><span class="o">=</span><span class="s2">&quot;neocortex&quot;</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="c1"># To get a list of available query fields: print(api.fields)</span>
-<span class="c1"># To get a list of valid values for a field: print(api.get_fields_values(field))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Neurons metadata:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-
-<span class="c1"># ---------------------------- Download morphology --------------------------- #</span>
-<span class="n">neurons</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">download_neurons</span><span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
-
-</pre></div>
-</div>
+<section id="atlases">
+<h2>Atlases<a class="headerlink" href="#atlases" title="Permalink to this heading">#</a></h2>
+<section id="allen-mouse-brain-atlas-at-10-25-50-and-100-micron-resolutions">
+<h3><a class="reference external" href="https://www.brain-map.org">Allen Mouse Brain Atlas</a> at 10, 25, 50 and 100 micron resolutions<a class="headerlink" href="#allen-mouse-brain-atlas-at-10-25-50-and-100-micron-resolutions" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">allen_mouse_10um</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">allen_mouse_25um</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">allen_mouse_50um</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">allen_mouse_100um</span></code></p></li>
+</ul>
 </section>
-<section id="mouselight">
-<h2>MouseLight<a class="headerlink" href="#mouselight" title="Permalink to this heading">#</a></h2>
-<p>To download neurons morphologies from Janelia Campus’ MouseLight project, you can use the <code class="docutils literal notranslate"><span class="pre">MouseLightAPI</span></code> class.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">morphapi.api.mouselight</span> <span class="kn">import</span> <span class="n">MouseLightAPI</span>
-
-
-<span class="c1"># ---------------------------- Downloading neurons --------------------------- #</span>
-<span class="n">mlapi</span> <span class="o">=</span> <span class="n">MouseLightAPI</span><span class="p">()</span>
-
-<span class="c1"># Fetch metadata for neurons with soma in the secondary motor cortex</span>
-<span class="n">neurons_metadata</span> <span class="o">=</span> <span class="n">mlapi</span><span class="o">.</span><span class="n">fetch_neurons_metadata</span><span class="p">(</span>
-    <span class="n">filterby</span><span class="o">=</span><span class="s2">&quot;soma&quot;</span><span class="p">,</span> <span class="n">filter_regions</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;MOs&quot;</span><span class="p">]</span>
-<span class="p">)</span>
-
-<span class="c1"># Then we can download the files</span>
-<span class="n">neurons</span> <span class="o">=</span> <span class="n">mlapi</span><span class="o">.</span><span class="n">download_neurons</span><span class="p">(</span><span class="n">neurons_metadata</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-
-</pre></div>
-</div>
+<section id="allen-human-brain-atlas-at-100-micron-resolution">
+<h3><a class="reference external" href="https://www.brain-map.org">Allen Human Brain Atlas</a> at 100 micron resolution<a class="headerlink" href="#allen-human-brain-atlas-at-100-micron-resolution" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">allen_human_500um</span></code></p></li>
+</ul>
 </section>
-<section id="mpin-zebrafish">
-<h2>Mpin Zebrafish<a class="headerlink" href="#mpin-zebrafish" title="Permalink to this heading">#</a></h2>
-<p>To download neurons registered to a zebrafish atlas, you can use the <code class="docutils literal notranslate"><span class="pre">MpinMorphologyAPI</span></code> class.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">morphapi.api.mpin_celldb</span> <span class="kn">import</span> <span class="n">MpinMorphologyAPI</span>
-
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">MpinMorphologyAPI</span><span class="p">()</span>
-
-<span class="c1"># ----------------------------- Download dataset ----------------------------- #</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    If it&#39;s the first time using this API, you&#39;ll have to download the dataset</span>
-<span class="sd">    with all of the neurons&#39; data.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="n">api</span><span class="o">.</span><span class="n">download_dataset</span><span class="p">()</span>
-<span class="c1"># You can then inspect metadata about all neurons:</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">neurons_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-
-
-<span class="c1"># Get neurons for a given brain structure</span>
-<span class="n">neurons_ids</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_neurons_by_structure</span><span class="p">(</span><span class="mi">837</span><span class="p">)</span>
-
-
-<span class="c1"># and load the selected neurons</span>
-<span class="n">neurons</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">load_neurons</span><span class="p">(</span><span class="n">neurons_ids</span><span class="p">)</span>
-
-</pre></div>
-</div>
+<section id="max-planck-zebrafish-brain-atlas-at-1-micron-resolution">
+<h3><a class="reference external" href="http://fishatlas.neuro.mpg.de">Max Planck Zebrafish Brain Atlas</a> at 1 micron resolution<a class="headerlink" href="#max-planck-zebrafish-brain-atlas-at-1-micron-resolution" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mpin_zfish_1um</span></code></p></li>
+</ul>
+</section>
+<section id="enhanced-and-unified-mouse-brain-atlas-at-10-25-50-and-100-micron-resolutions">
+<h3><a class="reference external" href="https://kimlab.io/brain-map/atlas/">Enhanced and Unified Mouse Brain Atlas</a> at 10, 25, 50 and 100 micron resolutions<a class="headerlink" href="#enhanced-and-unified-mouse-brain-atlas-at-10-25-50-and-100-micron-resolutions" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_mouse_10um</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_mouse_25um</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_mouse_50um</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_mouse_100um</span></code></p></li>
+</ul>
+</section>
+<section id="smoothed-version-of-the-kim-et-al-mouse-reference-atlas-at-10-25-50-and-100-micron-resolutions">
+<h3><a class="reference external" href="https://doi.org/10.1016/j.celrep.2014.12.014">Smoothed version of the Kim et al. mouse reference atlas</a> at 10, 25, 50 and 100 micron resolutions<a class="headerlink" href="#smoothed-version-of-the-kim-et-al-mouse-reference-atlas-at-10-25-50-and-100-micron-resolutions" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">osten_mouse_10um</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">osten_mouse_25um</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">osten_mouse_50um</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">osten_mouse_100um</span></code></p></li>
+</ul>
+</section>
+<section id="gubras-lsfm-mouse-brain-atlas-at-20-micron-resolution">
+<h3><a class="reference external" href="https://doi.org/10.1007/s12021-020-09490-8">Gubra’s LSFM mouse brain atlas</a> at 20 micron resolution<a class="headerlink" href="#gubras-lsfm-mouse-brain-atlas-at-20-micron-resolution" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">perens_lsfm_mouse_20um</span></code></p></li>
+</ul>
+</section>
+<section id="d-version-of-the-allen-mouse-spinal-cord-atlas-at-20-x-10-x-10-micron-resolution">
+<h3><a class="reference external" href="https://doi.org/10.1101/2021.05.06.443008">3D version of the Allen mouse spinal cord atlas</a> at 20 x 10 x 10 micron resolution<a class="headerlink" href="#d-version-of-the-allen-mouse-spinal-cord-atlas-at-20-x-10-x-10-micron-resolution" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">allen_cord_20um</span></code></p></li>
+</ul>
+</section>
+<section id="azba-a-3d-adult-zebrafish-brain-atlas-at-4-micron-resolution">
+<h3><a class="reference external" href="https://doi.org/10.1101/2021.05.04.442625">AZBA: A 3D Adult Zebrafish Brain Atlas</a> at 4 micron resolution<a class="headerlink" href="#azba-a-3d-adult-zebrafish-brain-atlas-at-4-micron-resolution" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">azba_zfish_4um</span></code></p></li>
+</ul>
+</section>
+<section id="waxholm-space-atlas-of-the-sprague-dawley-rat-brain-at-39-micron-resolution">
+<h3>``<a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2014.04.001">Waxholm Space atlas of the Sprague Dawley rat brain</a> at 39 micron resolution<a class="headerlink" href="#waxholm-space-atlas-of-the-sprague-dawley-rat-brain-at-39-micron-resolution" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">whs_sd_rat_39um</span></code></p></li>
+</ul>
+</section>
+<section id="d-edge-aware-refined-atlases-derived-from-the-allen-developing-mouse-brain-atlases-e13-e15-e18-p4-p14-p28-p56">
+<h3><a class="reference external" href="https://doi.org/10.7554/eLife.61408">3D Edge-Aware Refined Atlases Derived from the Allen Developing Mouse Brain Atlases</a> (E13, E15, E18, P4, P14, P28 &amp; P56)<a class="headerlink" href="#d-edge-aware-refined-atlases-derived-from-the-allen-developing-mouse-brain-atlases-e13-e15-e18-p4-p14-p28-p56" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">admba_3d_e11_5_mouse_16um</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">admba_3d_e13_5_mouse_16um</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">admba_3d_e15_5_mouse_16um</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">admba_3d_e18_5_mouse_16um</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">admba_3d_p4_mouse_16.752um</span></code> </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">admba_3d_p14_mouse_16.752um</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">admba_3d_p28_mouse_16.752um</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">admba_3d_p56_mouse_25um</span></code></p></li>
+</ul>
+</section>
+<section id="princeton-mouse-brain-atlas-at-20-micron-resolution">
+<h3><a class="reference external" href="https://brainmaps.princeton.edu/2020/09/princeton-mouse-brain-atlas-links">Princeton Mouse Brain Atlas</a> at 20 micron resolution<a class="headerlink" href="#princeton-mouse-brain-atlas-at-20-micron-resolution" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">princeton_mouse_20um</span></code></p></li>
+</ul>
+</section>
+<section id="kim-lab-developmental-ccf-p56-at-10-micron-resolution-with-8-reference-images-stp-lsfm-idisco-and-mri-a0-adc-dwo-fa-mtr-t2">
+<h3><a class="reference external" href="https://data.mendeley.com/datasets/2svx788ddf/1">Kim Lab Developmental CCF (P56)</a> at 10 micron resolution with 8 reference images - STP, LSFM (iDISCO) and MRI (a0, adc, dwo, fa, MTR, T2)<a class="headerlink" href="#kim-lab-developmental-ccf-p56-at-10-micron-resolution-with-8-reference-images-stp-lsfm-idisco-and-mri-a0-adc-dwo-fa-mtr-t2" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_dev_mouse_stp_10um</span></code> - “normal” CCF serial 2p template</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_dev_mouse_idisco_10um</span></code> - iDISCO LSFM template</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_dev_mouse_mri_a0_10um</span></code> - MRI a0 template</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_dev_mouse_mri_adc_10um</span></code> - MRI ADC (apparent diffusion coefficient) template</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_dev_mouse_mri_dwi_10um</span></code> - MRI DWI (diffusion-weighted imaging)template</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_dev_mouse_mri_fa_10um</span></code> - MRI FA (fractional anisotropy) template</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_dev_mouse_mri_mtr_10um</span></code> - MRI MTR (magnetic transfer ratio) template</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_dev_mouse_mri_t2_10um</span></code> - MRI T2 template</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -634,15 +642,15 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Morphapi</p>
+        <p class="prev-next-title">BG-AtlasAPI</p>
       </div>
     </a>
     <a class="right-next"
-       href="rendering-data.html"
+       href="python-api.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Rendering data</p>
+        <p class="prev-next-title">Python API</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -664,10 +672,22 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#allen-morphology">Allen Morphology</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuromorpho">Neuromorpho</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mouselight">MouseLight</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mpin-zebrafish">Mpin Zebrafish</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atlases">Atlases</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#allen-mouse-brain-atlas-at-10-25-50-and-100-micron-resolutions">Allen Mouse Brain Atlas at 10, 25, 50 and 100 micron resolutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#allen-human-brain-atlas-at-100-micron-resolution">Allen Human Brain Atlas at 100 micron resolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max-planck-zebrafish-brain-atlas-at-1-micron-resolution">Max Planck Zebrafish Brain Atlas at 1 micron resolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enhanced-and-unified-mouse-brain-atlas-at-10-25-50-and-100-micron-resolutions">Enhanced and Unified Mouse Brain Atlas at 10, 25, 50 and 100 micron resolutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smoothed-version-of-the-kim-et-al-mouse-reference-atlas-at-10-25-50-and-100-micron-resolutions">Smoothed version of the Kim et al. mouse reference atlas at 10, 25, 50 and 100 micron resolutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gubras-lsfm-mouse-brain-atlas-at-20-micron-resolution">Gubra’s LSFM mouse brain atlas at 20 micron resolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-version-of-the-allen-mouse-spinal-cord-atlas-at-20-x-10-x-10-micron-resolution">3D version of the Allen mouse spinal cord atlas at 20 x 10 x 10 micron resolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#azba-a-3d-adult-zebrafish-brain-atlas-at-4-micron-resolution">AZBA: A 3D Adult Zebrafish Brain Atlas at 4 micron resolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waxholm-space-atlas-of-the-sprague-dawley-rat-brain-at-39-micron-resolution">``Waxholm Space atlas of the Sprague Dawley rat brain at 39 micron resolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-edge-aware-refined-atlases-derived-from-the-allen-developing-mouse-brain-atlases-e13-e15-e18-p4-p14-p28-p56">3D Edge-Aware Refined Atlases Derived from the Allen Developing Mouse Brain Atlases (E13, E15, E18, P4, P14, P28 &amp; P56)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#princeton-mouse-brain-atlas-at-20-micron-resolution">Princeton Mouse Brain Atlas at 20 micron resolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kim-lab-developmental-ccf-p56-at-10-micron-resolution-with-8-reference-images-stp-lsfm-idisco-and-mri-a0-adc-dwo-fa-mtr-t2">Kim Lab Developmental CCF (P56) at 10 micron resolution with 8 reference images - STP, LSFM (iDISCO) and MRI (a0, adc, dwo, fa, MTR, T2)</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

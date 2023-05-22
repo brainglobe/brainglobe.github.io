@@ -3,6 +3,7 @@
 
 ```{toctree}
 :maxdepth: 2
+bg-atlasapi/index
 bg-space/index
 morphapi/index
 ```
