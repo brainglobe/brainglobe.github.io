@@ -11,6 +11,13 @@
 
 Registering a whole-brain dataset to an atlas.
 :::
+
+:::{grid-item-card} {fas}`brain;sd-text-primary` Probe segmentation
+:img-bottom: ../_static/cells.png
+:link: silicon-probe-tracking
+:link-type: doc
+Analysis of silicon probe tracks (e.g. Neuropixels)
+
 :::
 
 
@@ -19,4 +26,5 @@ Registering a whole-brain dataset to an atlas.
 :caption: Index
 :hidden:
 brainreg
+silicon-probe-tracking
 ```
