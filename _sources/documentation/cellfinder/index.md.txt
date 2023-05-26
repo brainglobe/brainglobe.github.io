@@ -1,2 +1,10 @@
 # cellfinder
 
+
+## User guide
+```{toctree}
+:maxdepth: 1
+troubleshooting/index
+```
+
+

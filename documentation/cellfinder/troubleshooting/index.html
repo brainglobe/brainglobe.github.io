@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Visualising brainreg output &#8212; BrainGlobe</title>
+    <title>Troubleshooting &#8212; BrainGlobe</title>
   
   
   
@@ -51,14 +51,14 @@
     <script src="../../../_static/design-tabs.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/brainreg/user-guide/visualisation';</script>
-    <link rel="canonical" href="https://brainglobe.info/documentation/brainreg/user-guide/visualisation.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/cellfinder/troubleshooting/index';</script>
+    <link rel="canonical" href="https://brainglobe.info/documentation/cellfinder/troubleshooting/index.html" />
     <link rel="shortcut icon" href="../../../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="brainreg-segment" href="../../brainreg-segment/index.html" />
-    <link rel="prev" title="Output files" href="output-files.html" />
+    <link rel="next" title="Speeding up cellfinder" href="speed-up.html" />
+    <link rel="prev" title="cellfinder" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -465,15 +465,15 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../bg-space/index.html">bg-space</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">brainreg</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../installation.html">Requirements</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../brainreg/index.html">brainreg</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../brainreg/installation.html">Requirements</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="brainreg-napari.html">Napari plugin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="brainreg-cli.html">Command line tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="parameters.html">Registration parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="checking-orientation.html">Checking orientation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="output-files.html">Output files</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Visualising brainreg output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brainreg/user-guide/brainreg-napari.html">Napari plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brainreg/user-guide/brainreg-cli.html">Command line tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brainreg/user-guide/parameters.html">Registration parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brainreg/user-guide/checking-orientation.html">Checking orientation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brainreg/user-guide/output-files.html">Output files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brainreg/user-guide/visualisation.html">Visualising brainreg output</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../brainreg-segment/index.html">brainreg-segment</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -484,10 +484,10 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../brainrender/index.html">brainrender</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../cellfinder/index.html">cellfinder</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../cellfinder/troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/troubleshooting/error-messages.html">Debugging common error messages</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">cellfinder</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Troubleshooting</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="speed-up.html">Speeding up cellfinder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="error-messages.html">Debugging common error messages</a></li>
 </ul>
 </li>
 </ul>
@@ -538,9 +538,9 @@ document.write(`
     <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Documentation</a></li>
     
     
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">brainreg</a></li>
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">cellfinder</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Visualising brainreg output</li>
+    <li class="breadcrumb-item active" aria-current="page">Troubleshooting</li>
   </ul>
 </nav>
 </div>
@@ -557,40 +557,27 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="visualising-brainreg-output">
-<h1>Visualising brainreg output<a class="headerlink" href="#visualising-brainreg-output" title="Permalink to this heading">#</a></h1>
-<p>If you have used the brainreg command-line interface, or simply want to view results at a later time,
-brainreg comes with a plugin for napari to allow you to easily view registration results.</p>
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h2>
-<p>Typically, you would view the results in sample space, i.e. with registration results overlaid on your data.</p>
-<p>To begin, open napari and drag your brainreg output directory (the one with the log file) onto the napari window.</p>
-<p>Various images should then open, including:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Registered</span> <span class="pre">image</span></code> - the image used for registration, downsampled to atlas resolution</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">atlas_name</span></code> - e.g. <code class="docutils literal notranslate"><span class="pre">allen_mouse_25um</span></code> the atlas labels, warped to your sample brain</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Boundaries</span></code> - the boundaries of the atlas regions</p></li>
-</ul>
-<p>If you downsampled additional channels, these will also be loaded.</p>
-<p>Some of these images will not be visible by default. Click the little eye icon to toggle visibility.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>N.B. If you use a high-resolution atlas (such as <code class="docutils literal notranslate"><span class="pre">allen_mouse_10um</span></code>), then the files can take a little while to load.</p>
-</div>
-<p><img alt="Visualisation in sample space" src="https://raw.githubusercontent.com/brainglobe/napari-brainreg/master/resources/sample_space.gif" /></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="troubleshooting">
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>As cellfinder relies on a number of third party libraries (notably <a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a>,
+<a class="reference external" href="https://developer.nvidia.com/cuda-zone">CUDA</a> and <a class="reference external" href="https://developer.nvidia.com/cudnn">cuDNN</a>)
+there may be issues while running the software.</p>
 </section>
-<section id="atlas-space">
-<h2>Atlas space<a class="headerlink" href="#atlas-space" title="Permalink to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">napari-brainreg</span></code> also comes with an additional plugin, for visualising your data in atlas space,
-i.e., where your data is warped to the atlas coordinate space.</p>
-<p>This is typically only used in other software, but you can enable it yourself:</p>
-<ul class="simple">
-<li><p>Open napari</p></li>
-<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">Plugins</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Plugin</span> <span class="pre">Call</span> <span class="pre">Order</span></code></p></li>
-<li><p>In the <code class="docutils literal notranslate"><span class="pre">Plugin</span> <span class="pre">Sorter</span></code> window, select <code class="docutils literal notranslate"><span class="pre">napari_get_reader</span></code> from the <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">hook...</span></code> dropdown box</p></li>
-<li><p>Drag <code class="docutils literal notranslate"><span class="pre">brainreg_read_dir_standard_space</span></code> (the atlas space viewer plugin) above <code class="docutils literal notranslate"><span class="pre">brainreg_read_dir</span></code>
-(the normal plugin) to ensure that the atlas space plugin is used preferentially.</p></li>
+<section id="fixing-problems">
+<h2>Fixing problems<a class="headerlink" href="#fixing-problems" title="Permalink to this heading">#</a></h2>
+<p>If you are having any issues, please see the following sections:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="speed-up.html">Speeding up cellfinder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="error-messages.html">Debugging common error messages</a></li>
 </ul>
+</div>
+</section>
+<section id="anything-else">
+<h2>Anything else<a class="headerlink" href="#anything-else" title="Permalink to this heading">#</a></h2>
+<p>If you are still having trouble, please <a class="reference internal" href="../../../contact.html"><span class="doc std std-doc">get in touch</span></a>.</p>
 </section>
 </section>
 
@@ -606,20 +593,20 @@ i.e., where your data is warped to the atlas coordinate space.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="output-files.html"
+       href="../index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Output files</p>
+        <p class="prev-next-title">cellfinder</p>
       </div>
     </a>
     <a class="right-next"
-       href="../../brainreg-segment/index.html"
+       href="speed-up.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">brainreg-segment</p>
+        <p class="prev-next-title">Speeding up cellfinder</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -641,8 +628,9 @@ i.e., where your data is warped to the atlas coordinate space.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atlas-space">Atlas space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-problems">Fixing problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anything-else">Anything else</a></li>
 </ul>
   </nav></div>
 
