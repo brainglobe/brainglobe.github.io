@@ -1,4 +1,4 @@
-# bg-Space
+# bg-space
 
 ## Introduction
 Working with anatomical images, one often encounters the problem of matching the orientation of stacks with 
