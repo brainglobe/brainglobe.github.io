@@ -32,4 +32,5 @@ Whole brain cell detection and registration
 :hidden:
 brainreg
 silicon-probe-tracking
+cellfinder
 ```
