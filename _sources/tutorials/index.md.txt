@@ -8,7 +8,6 @@
 :img-bottom: ../_static/cells.png
 :link: brainreg
 :link-type: doc
-
 Registering a whole-brain dataset to an atlas.
 :::
 
@@ -17,7 +16,13 @@ Registering a whole-brain dataset to an atlas.
 :link: silicon-probe-tracking
 :link-type: doc
 Analysis of silicon probe tracks (e.g. Neuropixels)
+:::
 
+:::{grid-item-card} {fas}`brain;sd-text-primary` Cell detection
+:img-bottom: ../_static/cells.png
+:link: cellfinder
+:link-type: doc
+Whole brain cell detection and registration
 :::
 
 

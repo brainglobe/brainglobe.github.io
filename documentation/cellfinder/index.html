@@ -57,7 +57,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Troubleshooting" href="troubleshooting/index.html" />
+    <link rel="next" title="cellfinder parameters" href="user-guide/parameters.html" />
     <link rel="prev" title="brainrender" href="../brainrender/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -485,11 +485,13 @@ document.write(`
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../brainrender/index.html">brainrender</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">cellfinder</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/parameters.html">cellfinder parameters</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="troubleshooting/error-messages.html">Debugging common error messages</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/cellfinder.html">Whole brain cell detection and registration</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../morphapi/index.html">morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -556,13 +558,70 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="cellfinder">
 <h1>cellfinder<a class="headerlink" href="#cellfinder" title="Permalink to this heading">#</a></h1>
+<p>cellfinder is software for automated 3D cell detection in very large 3D images (e.g., serial two-photon or lightsheet
+volumes of whole mouse brains).</p>
+<p><img alt="Detected labelled cells, overlaid on a segmented coronal brain section" src="../../_images/cells.png" />
+<strong>Detected labelled cells, overlaid on a segmented coronal brain section</strong></p>
+<p>cellfinder exists as three separate software packages.</p>
+<section id="cellfinder-core">
+<h2>cellfinder-core<a class="headerlink" href="#cellfinder-core" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code> is a Python package implementing the core algorithm for efficient cell detection in large images.</p>
+<p>The package exists on its own to allow developers to implement the algorithm in their own software. For now, the only
+API documentation is in the <a class="reference external" href="https://github.com/brainglobe/cellfinder-core/blob/main/README.md">GitHub README</a>, please
+see the documentation <a class="reference internal" href="user-guide/parameters.html"><span class="doc std std-doc">here</span></a> for an explanation of the parameters. Alternatively, please
+<a class="reference internal" href="../../contact.html"><span class="doc std std-doc">get in touch</span></a>.</p>
+</section>
+<section id="cellfinder-napari-plugin">
+<h2>cellfinder napari plugin<a class="headerlink" href="#cellfinder-napari-plugin" title="Permalink to this heading">#</a></h2>
+<p>This is a thin wrapper around the <code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code> package and aims to:</p>
+<ul class="simple">
+<li><p>Provide the cell detection algorithm in a user-friendly form</p></li>
+<li><p>Allow the cell detection algorithm to be chained together with other tools in the Napari ecosystem</p></li>
+<li><p>Allow easier parameter optimisation for users of the other cellfinder tools.</p></li>
+</ul>
+<p><img alt="Visualising detected cells in the cellfinder napari plugin" src="../../_images/napari-cellfinder.gif" />
+<strong>Visualising detected cells in the cellfinder napari plugin</strong></p>
+</section>
+<section id="cellfinder-command-line-tool">
+<h2>cellfinder command-line tool<a class="headerlink" href="#cellfinder-command-line-tool" title="Permalink to this heading">#</a></h2>
+<p>A command-line tool (confusingly just called <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code>) exists to combine the <code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code> cell detection
+algorithm and <a class="reference internal" href="../brainreg/index.html"><span class="doc std std-doc">brainreg</span></a>. <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> can:</p>
+<ul class="simple">
+<li><p>Detect labelled cells in 3D in whole-brain images (many hundreds of GB)</p></li>
+<li><p>Register the image to an atlas (such as the <a class="reference external" href="https://atlas.brain-map.org/atlas?atlas=602630314">Allen Mouse Brain Atlas</a>)</p></li>
+<li><p>Segment the brain based on the reference atlas</p></li>
+<li><p>Calculate the volume of each brain area, and the number of labelled cells within it</p></li>
+<li><p>Transform everything into standard space for analysis and visualisation</p></li>
+</ul>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
+</section>
 <section id="user-guide">
 <h2>User guide<a class="headerlink" href="#user-guide" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/parameters.html">cellfinder parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting/index.html">Troubleshooting</a></li>
 </ul>
 </div>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/cellfinder.html">Whole brain cell detection and registration</a></li>
+</ul>
+</div>
+</section>
+<section id="citing-cellfinder">
+<h2>Citing cellfinder<a class="headerlink" href="#citing-cellfinder" title="Permalink to this heading">#</a></h2>
+<p>If you find cellfinder useful, and use it in your research, please cite the paper outlining the cell detection algorithm:</p>
+<blockquote>
+<div><p>Tyson, A. L., Rousseau, C. V., Niedworok, C. J., Keshavarzi, S., Tsitoura, C., Cossell, L., Strom, M. and Margrie, T. W. (2021) “A deep learning algorithm for 3D cell detection in whole mouse brain image datasets’ PLOS Computational Biology, 17(5), e1009074
+<a class="reference external" href="https://doi.org/10.1371/journal.pcbi.1009074">https://doi.org/10.1371/journal.pcbi.1009074</a></p>
+</div></blockquote>
+<p>If you use any of the image registration functions in cellfinder, please also cite <a class="reference internal" href="../brainreg/index.html"><span class="doc std std-doc">brainreg</span></a>.</p>
 </section>
 </section>
 
@@ -587,11 +646,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="troubleshooting/index.html"
+       href="user-guide/parameters.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Troubleshooting</p>
+        <p class="prev-next-title">cellfinder parameters</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -613,7 +672,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cellfinder-core">cellfinder-core</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cellfinder-napari-plugin">cellfinder napari plugin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cellfinder-command-line-tool">cellfinder command-line tool</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-guide">User guide</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorials">Tutorials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citing-cellfinder">Citing cellfinder</a></li>
 </ul>
   </nav></div>
 
