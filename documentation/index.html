@@ -31,6 +31,7 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -43,7 +44,12 @@
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/index';</script>
     <link rel="canonical" href="https://brainglobe.info/documentation/index.html" />
@@ -51,8 +57,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="BG-AtlasAPI" href="bg-atlasapi/index.html" />
-    <link rel="prev" title="Publications" href="../publications.html" />
+    <link rel="next" title="General BrainGlobe documentation" href="general/index.html" />
+    <link rel="prev" title="Registering a whole-brain dataset to the Allen Mouse Brain atlas with brainreg" href="../tutorials/brainreg.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -156,16 +162,16 @@
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
-                        Documentation
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tutorials/index.html">
+                        Tutorials
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../tutorials/index.html">
-                        Tutorials
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Documentation
                       </a>
                     </li>
                 
@@ -327,16 +333,16 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
-                        Documentation
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tutorials/index.html">
+                        Tutorials
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../tutorials/index.html">
-                        Tutorials
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Documentation
                       </a>
                     </li>
                 
@@ -440,7 +446,13 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="bg-atlasapi/index.html">BG-AtlasAPI</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="general/index.html">General BrainGlobe documentation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="general/conda.html">Using conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/gpu.html">Setting up your GPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/image-definition.html">Image definition</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="bg-atlasapi/index.html">bg-AtlasAPI</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="bg-atlasapi/usage/atlas-details.html">Atlas details</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bg-atlasapi/usage/python-api.html">Python API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bg-atlasapi/usage/command-line-interface.html">Command line interface</a></li>
@@ -448,8 +460,19 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="bg-atlasapi/adding-a-new-atlas.html">Adding a new atlas</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="bg-space/index.html">BG-Space</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="morphapi/index.html">Morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1"><a class="reference internal" href="bg-space/index.html">bg-Space</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="brainreg/index.html">brainreg</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="brainreg/installation.html">Requirements</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="brainreg/user-guide/brainreg-napari.html">Napari plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brainreg/user-guide/brainreg-cli.html">Command line tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brainreg/user-guide/parameters.html">Registration parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brainreg/user-guide/checking-orientation.html">Checking orientation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brainreg/user-guide/output-files.html">Output files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brainreg/user-guide/visualisation.html">Visualising brainreg output</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="morphapi/index.html">morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="morphapi/usage/downloading-data.html">Downloading data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="morphapi/usage/rendering-data.html">Rendering data</a></li>
 </ul>
@@ -512,25 +535,11 @@ document.write(`
 <h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="bg-atlasapi/index.html">BG-AtlasAPI</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="bg-atlasapi/index.html#atlases-available">Atlases available</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bg-atlasapi/index.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bg-atlasapi/index.html#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bg-atlasapi/index.html#more-details">More details</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="bg-space/index.html">BG-Space</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="bg-space/index.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bg-space/index.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bg-space/index.html#usage">Usage</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="morphapi/index.html">Morphapi</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="morphapi/index.html#currently-supported-datasets">Currently supported datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="morphapi/index.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="morphapi/index.html#usage">Usage</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="general/index.html">General BrainGlobe documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bg-atlasapi/index.html">bg-AtlasAPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bg-space/index.html">bg-Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainreg/index.html">brainreg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="morphapi/index.html">morphapi</a></li>
 </ul>
 </div>
 </section>
@@ -547,20 +556,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../publications.html"
+       href="../tutorials/brainreg.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Publications</p>
+        <p class="prev-next-title">Registering a whole-brain dataset to the Allen Mouse Brain atlas with brainreg</p>
       </div>
     </a>
     <a class="right-next"
-       href="bg-atlasapi/index.html"
+       href="general/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">BG-AtlasAPI</p>
+        <p class="prev-next-title">General BrainGlobe documentation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

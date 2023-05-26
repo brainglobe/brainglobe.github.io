@@ -2,8 +2,10 @@
 
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
+general/index
 bg-atlasapi/index
 bg-space/index
+brainreg/index
 morphapi/index
 ```

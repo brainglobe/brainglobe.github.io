@@ -2,7 +2,8 @@
 
 ## Allen Morphology
 
-The `AllenMorphology` class is used to download data for this dataset. It can be used to specify neurons from a given species and brain regions, like in the example below:
+The `AllenMorphology` class is used to download data for this dataset. It can be used to specify neurons from a 
+given species and brain regions, like in the example below:
 
 ```python
 from morphapi.api.allenmorphology import AllenMorphology
@@ -23,7 +24,9 @@ neurons = am.download_neurons(neurons[:5].id.values)
 
 ## Neuromorpho
 
-Neuromorpho.org is a vast online repository of morphological data. The `NeuroMorpOrgAPI` class can be used to download data from it. Note that given the size of this huge dataset, it is not possible to download all metadata matching specific criteria at once.
+Neuromorpho.org is a vast online repository of morphological data. The `NeuroMorpOrgAPI` class can be used to 
+download data from it. Note that given the size of this huge dataset, it is not possible to download all metadata 
+matching specific criteria at once.
 
 ```python
 from morphapi.api.neuromorphorg import NeuroMorpOrgAPI

@@ -9,11 +9,11 @@ The core goal of BrainGlobe is to develop a suite of Python-based software tools
 We developed several software packages to access, analyze and visualize anatomical data, by ensuring the 
 interoperability of all of BrainGlobe's software we aim to facilitate the development of analysis pipelines and 
 facilitate the process of going from raw data to publication-ready content. By producing a set of high-quality 
-open-source Python packages we aim to accelerate the development of sophisticated analysis tools in python.
+open-source Python packages, we aim to accelerate the development of sophisticated analysis tools in python.
 
 ## Accessing data
 
-Recent developments in high resolution 3D electronic atlases for many model species and of high-throughput experimental 
+Recent developments in high-resolution 3D electronic atlases for many model species and of high-throughput experimental 
 techniques enabled the production of a wealth of anatomical data and the creation of vast open datasets like those from 
 the Allen Institute. Accessing, downloading and using these data remains a challenging task which requires significant 
 programming skills.&#x20;
@@ -28,7 +28,7 @@ can easily be added to the API. This addresses one of the main obstacles when de
 few of the available atlases provide programmatic access to their data, and the APIs used to access the data vary 
 across atlases. This obstacle resulted in most of the available software being dedicated to individual atlases or 
 even datasets, requiring that additional and often duplicated effort be spent in adapting existing software to new 
-atlases. By providing a unified API the AtlasAPI aims to facilitate the development of software capable of working 
+atlases. By providing a unified API, the AtlasAPI aims to facilitate the development of software capable of working 
 across atlases. The AtlasAPI is used by BrainGlobe software tools like **cellfinder** and **brainrender** ensuring 
 that they can be effortlessly adapted to work across atlases.
 
@@ -39,8 +39,8 @@ data. Registering the data enables the comparison of data across individuals and
 the dissemination of anatomical data. It is also indispensable to easily compare user-generated data with data from 
 publicly available datasets.
 
-Registering 3D image data to a reference atlas is a technically demanding task. For this reason we developed 
-**brainreg**, a python-based software tool for the registration of anatomical data
+Registering 3D image data to a reference atlas is a technically demanding task. For this reason, we developed 
+**brainreg**, a Python-based software tool for the registration of anatomical data
 
 **cellfinder** is a **BrainGlobe** software which uses a deep learning algorithm to identify the location of 
 labelled cells (e.g. expressing a fluorescent protein) across an entire brain. It thus provides a fast, reliable 
@@ -62,9 +62,9 @@ to ensure that any scientist can create rich and beautiful renderings of their a
 # Future
 In addition to developing our own software, we are working to build a community of neuroscientists and
 developers to leverage the vast data analysis ecosystem in Python for the analysis of neuroanatomical data.
-To catalyse this we aim to “fill the gaps” where tools don’t exist, and
+To catalyse this, we aim to “fill the gaps” where tools do not exist, and
 develop frameworks to facilitate collaboration. Our key future aims are:
-* To enable use of BGI tools across neuroscience by supporting all available high-quality neuroanatomical
+* To enable the use of BGI tools across neuroscience by supporting all available high-quality neuroanatomical
   atlases
 * To reduce barriers of entry and make sure BGI tools are accessible to all
 * To ensure BGI tools and atlases can be incorporated into varied workflows to leverage the open-source

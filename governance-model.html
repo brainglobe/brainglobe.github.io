@@ -31,6 +31,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -43,7 +44,12 @@
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'governance-model';</script>
     <link rel="canonical" href="https://brainglobe.info/governance-model.html" />
@@ -157,15 +163,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="documentation/index.html">
-                        Documentation
+                      <a class="nav-link nav-internal" href="tutorials/index.html">
+                        Tutorials
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="tutorials/index.html">
-                        Tutorials
+                      <a class="nav-link nav-internal" href="documentation/index.html">
+                        Documentation
                       </a>
                     </li>
                 
@@ -332,15 +338,15 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="documentation/index.html">
-                        Documentation
+                      <a class="nav-link nav-internal" href="tutorials/index.html">
+                        Tutorials
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="tutorials/index.html">
-                        Tutorials
+                      <a class="nav-link nav-internal" href="documentation/index.html">
+                        Documentation
                       </a>
                     </li>
                 
@@ -508,15 +514,16 @@ document.write(`
 <h1>Governance model<a class="headerlink" href="#governance-model" title="Permalink to this heading">#</a></h1>
 <section id="aims">
 <h2>Aims<a class="headerlink" href="#aims" title="Permalink to this heading">#</a></h2>
-<p>The aim of this page is to outline how decisions are made within the BrainGlobe project. BrainGlobe is intended as a community project, and so <strong>anyone with an interest in these tools can contribute</strong>. </p>
-<p>The governance model exists to establish a streamlined and effective decision making process to guide future developments.</p>
+<p>The aim of this page is to outline how decisions are made within the BrainGlobe project. BrainGlobe is intended
+as a community project, and so <strong>anyone with an interest in these tools can contribute</strong>. </p>
+<p>The governance model exists to establish a streamlined and effective decision-making process to guide future developments.</p>
 </section>
 <section id="individual-roles-and-responsibilities">
 <h2>Individual roles and responsibilities<a class="headerlink" href="#individual-roles-and-responsibilities" title="Permalink to this heading">#</a></h2>
 <p>Interested users fall into (at least) one of three groups, with different levels of responsibility for the project:</p>
 <section id="users-and-contributors">
 <h3>Users and contributors<a class="headerlink" href="#users-and-contributors" title="Permalink to this heading">#</a></h3>
-<p>Anybody with an interest any part of the BrainGlobe project can contribute to the project in ways such as:</p>
+<p>Anybody with an interest in any part of the BrainGlobe project can contribute to the project in ways such as:</p>
 <ul class="simple">
 <li><p>Filing issues on the <a class="reference external" href="https://github.com/brainglobe">GitHub</a> page of the relevant repository</p></li>
 <li><p>Submitting a pull request on the <a class="reference external" href="https://github.com/brainglobe">GitHub</a> page of the relevant repository</p></li>
@@ -524,39 +531,58 @@ document.write(`
 <li><p>Reviewing pull requests</p></li>
 <li><p>Discussing the project in open issues, pull requests, or any other channel</p></li>
 </ul>
-<p><strong>These users may contribute in any way they see fit with no responsibilities other than to follow the code of conduct of the individual repository.</strong> </p>
+<p><strong>These users may contribute in any way they see fit with no responsibilities other than to follow the code of
+conduct of the individual repository.</strong> </p>
 </section>
 <section id="core-developers">
 <h3>Core developers<a class="headerlink" href="#core-developers" title="Permalink to this heading">#</a></h3>
-<p>Core developers are a group of users who take responsibility for the development and maintenance of the “core” BrainGlobe repositories. Core repositories refer to those that many other BrainGlobe tools rely upon (e.g. the <a class="reference external" href="https://github.com/brainglobe/bg-atlasapi">Atlas API</a>). These developers will have additional rights to the repository (e.g. merge pull requests) and will vote on any changes to the project. The list of core developers is currently as follows:</p>
+<p>Core developers are a group of users who take responsibility for the development and maintenance of the “core”
+BrainGlobe repositories. Core repositories refer to those that many other BrainGlobe tools rely upon (e.g. the
+<a class="reference external" href="https://github.com/brainglobe/bg-atlasapi">Atlas API</a>). These developers will have additional rights to the
+repository (e.g. merge pull requests) and will vote on any changes to the project. The list of core developers is
+currently as follows:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/vigji">Lugi Petrucco</a></p></li>
 <li><p><a class="reference external" href="https://github.com/FedeClaudi">Federico Claudi</a></p></li>
 <li><p><a class="reference external" href="https://github.com/adamltyson">Adam Tyson</a></p></li>
 </ul>
-<p>Any interested party can join the core developers, based on the informal criteria of “a substantial contribution to BrainGlobe core repositories”. Election will require a simple vote of existing core developers. </p>
-<p><strong>Core developers are expected to aim to contribute regularly to the code bases (e.g. comments, issues, pull requests), attend as many meetings as possible, and vote upon any major changes to the project.</strong> </p>
+<p>Any interested party can join the core developers, based on the informal criteria of “a substantial contribution to
+BrainGlobe core repositories”. Election will require a simple vote of existing core developers.</p>
+<p><strong>Core developers are expected to aim to contribute regularly to the code bases (e.g. comments, issues, pull requests),
+attend as many meetings as possible, and vote upon any major changes to the project.</strong> </p>
 </section>
 <section id="non-core-developers">
 <h3>Non-core developers<a class="headerlink" href="#non-core-developers" title="Permalink to this heading">#</a></h3>
-<p>The BrainGlobe GitHub organisation includes many so called “non-core” software packages. These packages (e.g. <a class="reference external" href="https://github.com/brainglobe/cellfinder">cellfinder</a> or <a class="reference external" href="https://github.com/brainglobe/brainrender">brainrender</a>) are in some way compatible with each other, and likely rely on some of the core BrainGlobe repositories. </p>
-<p>These repositories are collected together for discoverability, and to create an informal community of developers that work together to create interoperable tools. </p>
-<p><strong>If you would like your tool to become part of BrainGlobe, please start a new topic on the</strong> <a class="reference external" href="https://github.com/brainglobe/BrainGlobe/discussions"><strong>BrainGlobe admin GitHub Discussions page</strong></a><strong>.</strong></p>
-<p>Anyone can request that their tool becomes part of the BrainGlobe organisation, but the administration of these repositories will be the responsibility of the original developer(s), and not the BrainGlobe core developers. </p>
-<p><strong>The developers of non-core repositories have no formal responsibilities, but we would encourage communication with other BrainGlobe developers, and efforts to ensure compatibility and interoperability with other BrainGlobe tools as far as possible.</strong></p>
+<p>The BrainGlobe GitHub organisation includes many so-called “non-core” software packages. These packages (e.g.
+<a class="reference external" href="https://github.com/brainglobe/cellfinder">cellfinder</a> or <a class="reference external" href="https://github.com/brainglobe/brainrender">brainrender</a>)
+are in some way compatible with each other, and likely rely on some of the core BrainGlobe repositories.</p>
+<p>These repositories are collected together for discoverability, and to create an informal community of developers that
+work together to create interoperable tools.</p>
+<p>**If you would like your tool to become part of BrainGlobe, please start a new topic on the <a class="reference external" href="https://github.com/brainglobe/BrainGlobe/discussions"><strong>BrainGlobe admin
+GitHub Discussions page</strong></a>.</p>
+<p>Anyone can request that their tool becomes part of the BrainGlobe organisation, but the administration of these
+repositories will be the responsibility of the original developer(s), and not the BrainGlobe core developers.</p>
+<p><strong>The developers of non-core repositories have no formal responsibilities, but we would encourage communication
+with other BrainGlobe developers, and efforts to ensure compatibility and interoperability with other BrainGlobe tools
+as far as possible.</strong></p>
 </section>
 <section id="steering-committee">
 <h3>Steering committee<a class="headerlink" href="#steering-committee" title="Permalink to this heading">#</a></h3>
-<p>There exists a group of developers, separate to the core developers that exists for long-term decisions (e.g. funding acquisition) and if the core developers cannot reach a majority decision in any case. New members can be added based on a simple vote by the steering committee, based on the criteria of “substantial contributions to a number of BrainGlobe tools over a long period of time (e.g. &gt; 1yr)”. <strong>It is expected that the vast majority of decisions are made by the core developers, and not by the steering committee.</strong> The steering committee is currently as follows:</p>
+<p>There exists a group of developers, separate to the core developers that exists for long-term decisions (e.g. funding
+acquisition) and if the core developers cannot reach a majority decision in any case. New members can be added based
+on a simple vote by the steering committee, based on the criteria of “substantial contributions to a number of
+BrainGlobe tools over a long period of time (e.g. &gt; 1yr)”. <strong>It is expected that the vast majority of decisions are
+made by the core developers, and not by the steering committee.</strong> The steering committee is currently as follows:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/vigji">Lugi Petrucco</a></p></li>
 <li><p><a class="reference external" href="https://github.com/FedeClaudi">Federico Claudi</a></p></li>
-<li><p><a class="reference external" href="https://github.com/adamltyson">Adam Tyson</a> </p></li>
+<li><p><a class="reference external" href="https://github.com/adamltyson">Adam Tyson</a></p></li>
 <li><p>Troy Margrie</p></li>
 <li><p>Tiago Branco</p></li>
 <li><p>Ruben Portugues</p></li>
 </ul>
-<p><strong>The steering committee are usually expected to be core developers, and additionally discuss and vote upon the long-term direction of the project.</strong></p>
+<p><strong>The steering committee members are usually expected to be core developers, and additionally discuss and vote upon the
+long-term direction of the project.</strong></p>
 <hr class="docutils" />
 <p>N.B. This governance model takes inspiration from the <a class="reference external" href="https://napari.org/docs/0.3.8/developers/GOVERNANCE.html">Napari model.</a></p>
 </section>

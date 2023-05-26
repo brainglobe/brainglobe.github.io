@@ -31,6 +31,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -43,7 +44,12 @@
     <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/sphinx_highlight.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/morphapi/usage/rendering-data';</script>
     <link rel="canonical" href="https://brainglobe.info/documentation/morphapi/usage/rendering-data.html" />
@@ -51,7 +57,7 @@
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Tutorials" href="../../../tutorials/index.html" />
+    <link rel="next" title="Media" href="../../../media.html" />
     <link rel="prev" title="Downloading data" href="downloading-data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -156,16 +162,16 @@
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="../../index.html">
-                        Documentation
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../tutorials/index.html">
+                        Tutorials
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../tutorials/index.html">
-                        Tutorials
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../index.html">
+                        Documentation
                       </a>
                     </li>
                 
@@ -327,16 +333,16 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="../../index.html">
-                        Documentation
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../tutorials/index.html">
+                        Tutorials
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../tutorials/index.html">
-                        Tutorials
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../index.html">
+                        Documentation
                       </a>
                     </li>
                 
@@ -440,7 +446,13 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../bg-atlasapi/index.html">BG-AtlasAPI</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../general/index.html">General BrainGlobe documentation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../general/conda.html">Using conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../general/gpu.html">Setting up your GPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../general/image-definition.html">Image definition</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../bg-atlasapi/index.html">bg-AtlasAPI</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../bg-atlasapi/usage/atlas-details.html">Atlas details</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../bg-atlasapi/usage/python-api.html">Python API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../bg-atlasapi/usage/command-line-interface.html">Command line interface</a></li>
@@ -448,8 +460,19 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../../bg-atlasapi/adding-a-new-atlas.html">Adding a new atlas</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../bg-space/index.html">BG-Space</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Morphapi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../bg-space/index.html">bg-Space</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../brainreg/index.html">brainreg</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../brainreg/installation.html">Requirements</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../brainreg/user-guide/brainreg-napari.html">Napari plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brainreg/user-guide/brainreg-cli.html">Command line tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brainreg/user-guide/parameters.html">Registration parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brainreg/user-guide/checking-orientation.html">Checking orientation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brainreg/user-guide/output-files.html">Output files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brainreg/user-guide/visualisation.html">Visualising brainreg output</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">morphapi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="downloading-data.html">Downloading data</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Rendering data</a></li>
 </ul>
@@ -495,7 +518,7 @@ document.write(`
     <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Documentation</a></li>
     
     
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Morphapi</a></li>
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">morphapi</a></li>
     
     <li class="breadcrumb-item active" aria-current="page">Rendering data</li>
   </ul>
@@ -516,17 +539,22 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="rendering-data">
 <h1>Rendering data<a class="headerlink" href="#rendering-data" title="Permalink to this heading">#</a></h1>
-<p>Once you’ve <a class="reference internal" href="downloading-data.html"><span class="std std-doc">downloaded</span></a> some neuronal morphological reconstructions from your dataset of choice, you can use <code class="docutils literal notranslate"><span class="pre">morphapi</span></code> to create 3d meshes which you can use to visualize your data (e.g. in <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>).</p>
-<p>The functions to load neurons from the various APIs return instances of <code class="docutils literal notranslate"><span class="pre">morphapi</span></code>’s <code class="docutils literal notranslate"><span class="pre">Neuron</span></code> class which can be used to create meshes for your neurons morphologies:</p>
+<p>Once you’ve <a class="reference internal" href="downloading-data.html"><span class="std std-doc">downloaded</span></a> some neuronal morphological reconstructions from your dataset of choice,
+you can use <code class="docutils literal notranslate"><span class="pre">morphapi</span></code> to create 3d meshes which you can use to visualize your data (e.g. in <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>).</p>
+<p>The functions to load neurons from the various APIs return instances of <code class="docutils literal notranslate"><span class="pre">morphapi</span></code>’s <code class="docutils literal notranslate"><span class="pre">Neuron</span></code> class which can be used
+to create meshes for your neurons morphologies:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">neuron</span><span class="o">.</span><span class="n">create_mesh</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>This will return two items:</p>
 <ul class="simple">
 <li><p>A <code class="docutils literal notranslate"><span class="pre">vedo</span></code> actor with the entire neuron’s morphology</p></li>
-<li><p>A <code class="docutils literal notranslate"><span class="pre">dict</span></code> of <code class="docutils literal notranslate"><span class="pre">vedo</span></code> actors. One for <code class="docutils literal notranslate"><span class="pre">soma</span></code>, one for the <code class="docutils literal notranslate"><span class="pre">axons</span></code> and one for the <code class="docutils literal notranslate"><span class="pre">dendrites</span></code>. This can be useful when these different parts are to be colored differently or if not the entire neuron is to be visualized.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">dict</span></code> of <code class="docutils literal notranslate"><span class="pre">vedo</span></code> actors. One for <code class="docutils literal notranslate"><span class="pre">soma</span></code>, one for the <code class="docutils literal notranslate"><span class="pre">axons</span></code> and one for the <code class="docutils literal notranslate"><span class="pre">dendrites</span></code>. This can be useful when
+these different parts are to be colored differently or if not, the entire neuron is to be visualized.</p></li>
 </ul>
-<p>By default <code class="docutils literal notranslate"><span class="pre">Neuron</span></code> caches the results of <code class="docutils literal notranslate"><span class="pre">create_mesh</span></code> to speed up subsequent visualizations of the same neuron. You can override this behaviour in with <code class="docutils literal notranslate"><span class="pre">create_mesh(use_cache=False)</span></code> but keep in mind that this is done automatically when rendering parameters are changed (e.g. if <code class="docutils literal notranslate"><span class="pre">soma_radius</span></code> is changed).</p>
+<p>By default <code class="docutils literal notranslate"><span class="pre">Neuron</span></code> caches the results of <code class="docutils literal notranslate"><span class="pre">create_mesh</span></code> to speed up subsequent visualizations of the same neuron.
+You can override this behaviour in with <code class="docutils literal notranslate"><span class="pre">create_mesh(use_cache=False)</span></code> but keep in mind that this is done automatically
+when rendering parameters are changed (e.g. if <code class="docutils literal notranslate"><span class="pre">soma_radius</span></code> is changed).</p>
 </section>
 
 
@@ -550,11 +578,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../../../tutorials/index.html"
+       href="../../../media.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tutorials</p>
+        <p class="prev-next-title">Media</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

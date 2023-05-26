@@ -31,6 +31,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -43,7 +44,12 @@
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'about';</script>
     <link rel="canonical" href="https://brainglobe.info/about.html" />
@@ -157,15 +163,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="documentation/index.html">
-                        Documentation
+                      <a class="nav-link nav-internal" href="tutorials/index.html">
+                        Tutorials
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="tutorials/index.html">
-                        Tutorials
+                      <a class="nav-link nav-internal" href="documentation/index.html">
+                        Documentation
                       </a>
                     </li>
                 
@@ -332,15 +338,15 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="documentation/index.html">
-                        Documentation
+                      <a class="nav-link nav-internal" href="tutorials/index.html">
+                        Tutorials
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="tutorials/index.html">
-                        Tutorials
+                      <a class="nav-link nav-internal" href="documentation/index.html">
+                        Documentation
                       </a>
                     </li>
                 
@@ -512,11 +518,11 @@ Technical University of Munich</a>.</p>
 We developed several software packages to access, analyze and visualize anatomical data, by ensuring the
 interoperability of all of BrainGlobe’s software we aim to facilitate the development of analysis pipelines and
 facilitate the process of going from raw data to publication-ready content. By producing a set of high-quality
-open-source Python packages we aim to accelerate the development of sophisticated analysis tools in python.</p>
+open-source Python packages, we aim to accelerate the development of sophisticated analysis tools in python.</p>
 </section>
 <section id="accessing-data">
 <h2>Accessing data<a class="headerlink" href="#accessing-data" title="Permalink to this heading">#</a></h2>
-<p>Recent developments in high resolution 3D electronic atlases for many model species and of high-throughput experimental
+<p>Recent developments in high-resolution 3D electronic atlases for many model species and of high-throughput experimental
 techniques enabled the production of a wealth of anatomical data and the creation of vast open datasets like those from
 the Allen Institute. Accessing, downloading and using these data remains a challenging task which requires significant
 programming skills. </p>
@@ -529,7 +535,7 @@ can easily be added to the API. This addresses one of the main obstacles when de
 few of the available atlases provide programmatic access to their data, and the APIs used to access the data vary
 across atlases. This obstacle resulted in most of the available software being dedicated to individual atlases or
 even datasets, requiring that additional and often duplicated effort be spent in adapting existing software to new
-atlases. By providing a unified API the AtlasAPI aims to facilitate the development of software capable of working
+atlases. By providing a unified API, the AtlasAPI aims to facilitate the development of software capable of working
 across atlases. The AtlasAPI is used by BrainGlobe software tools like <strong>cellfinder</strong> and <strong>brainrender</strong> ensuring
 that they can be effortlessly adapted to work across atlases.</p>
 </section>
@@ -539,8 +545,8 @@ that they can be effortlessly adapted to work across atlases.</p>
 data. Registering the data enables the comparison of data across individuals and experimental modalities and facilitates
 the dissemination of anatomical data. It is also indispensable to easily compare user-generated data with data from
 publicly available datasets.</p>
-<p>Registering 3D image data to a reference atlas is a technically demanding task. For this reason we developed
-<strong>brainreg</strong>, a python-based software tool for the registration of anatomical data</p>
+<p>Registering 3D image data to a reference atlas is a technically demanding task. For this reason, we developed
+<strong>brainreg</strong>, a Python-based software tool for the registration of anatomical data</p>
 <p><strong>cellfinder</strong> is a <strong>BrainGlobe</strong> software which uses a deep learning algorithm to identify the location of
 labelled cells (e.g. expressing a fluorescent protein) across an entire brain. It thus provides a fast, reliable
 and reproducible approach to the quantification of data from tracing experiments. </p>
@@ -561,10 +567,10 @@ to ensure that any scientist can create rich and beautiful renderings of their a
 <h1>Future<a class="headerlink" href="#future" title="Permalink to this heading">#</a></h1>
 <p>In addition to developing our own software, we are working to build a community of neuroscientists and
 developers to leverage the vast data analysis ecosystem in Python for the analysis of neuroanatomical data.
-To catalyse this we aim to “fill the gaps” where tools don’t exist, and
+To catalyse this, we aim to “fill the gaps” where tools do not exist, and
 develop frameworks to facilitate collaboration. Our key future aims are:</p>
 <ul class="simple">
-<li><p>To enable use of BGI tools across neuroscience by supporting all available high-quality neuroanatomical
+<li><p>To enable the use of BGI tools across neuroscience by supporting all available high-quality neuroanatomical
 atlases</p></li>
 <li><p>To reduce barriers of entry and make sure BGI tools are accessible to all</p></li>
 <li><p>To ensure BGI tools and atlases can be incorporated into varied workflows to leverage the open-source

@@ -1,2 +1,22 @@
 # Tutorials
 
+
+::::{grid} 1 2 2 3
+:gutter: 3
+
+:::{grid-item-card} {fas}`brain;sd-text-primary` 3D registration
+:img-bottom: ../_static/cells.png
+:link: brainreg
+:link-type: doc
+
+Registering a whole-brain dataset to an atlas.
+:::
+:::
+
+
+```{toctree}
+:maxdepth: 2
+:caption: Index
+:hidden:
+brainreg
+```

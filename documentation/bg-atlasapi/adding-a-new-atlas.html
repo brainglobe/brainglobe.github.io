@@ -31,6 +31,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -43,7 +44,12 @@
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx_highlight.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/bg-atlasapi/adding-a-new-atlas';</script>
     <link rel="canonical" href="https://brainglobe.info/documentation/bg-atlasapi/adding-a-new-atlas.html" />
@@ -51,7 +57,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="BG-Space" href="../bg-space/index.html" />
+    <link rel="next" title="bg-Space" href="../bg-space/index.html" />
     <link rel="prev" title="Using the files directly" href="usage/using-the-files-directly.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -156,16 +162,16 @@
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="../index.html">
-                        Documentation
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../tutorials/index.html">
+                        Tutorials
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../tutorials/index.html">
-                        Tutorials
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Documentation
                       </a>
                     </li>
                 
@@ -331,16 +337,16 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="../index.html">
-                        Documentation
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../tutorials/index.html">
+                        Tutorials
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../tutorials/index.html">
-                        Tutorials
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Documentation
                       </a>
                     </li>
                 
@@ -444,7 +450,13 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">BG-AtlasAPI</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../general/index.html">General BrainGlobe documentation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../general/conda.html">Using conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/gpu.html">Setting up your GPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/image-definition.html">Image definition</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">bg-AtlasAPI</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="usage/atlas-details.html">Atlas details</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usage/python-api.html">Python API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usage/command-line-interface.html">Command line interface</a></li>
@@ -452,8 +464,19 @@ document.write(`
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Adding a new atlas</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../bg-space/index.html">BG-Space</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../morphapi/index.html">Morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1"><a class="reference internal" href="../bg-space/index.html">bg-Space</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../brainreg/index.html">brainreg</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../brainreg/installation.html">Requirements</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../brainreg/user-guide/brainreg-napari.html">Napari plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brainreg/user-guide/brainreg-cli.html">Command line tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brainreg/user-guide/parameters.html">Registration parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brainreg/user-guide/checking-orientation.html">Checking orientation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brainreg/user-guide/output-files.html">Output files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brainreg/user-guide/visualisation.html">Visualising brainreg output</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../morphapi/index.html">morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../morphapi/usage/downloading-data.html">Downloading data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../morphapi/usage/rendering-data.html">Rendering data</a></li>
 </ul>
@@ -499,7 +522,7 @@ document.write(`
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Documentation</a></li>
     
     
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">BG-AtlasAPI</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">bg-AtlasAPI</a></li>
     
     <li class="breadcrumb-item active" aria-current="page">Adding a new atlas</li>
   </ul>
@@ -521,25 +544,49 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="adding-a-new-atlas">
 <h1>Adding a new atlas<a class="headerlink" href="#adding-a-new-atlas" title="Permalink to this heading">#</a></h1>
 <section id="how-are-brainglobe-atlases-distributed">
-<h2>How are brainglobe atlases distributed? <a href="#docs-internal-guid-6a859225-7fff-39e3-fdc1-818afb11ab6b" id="docs-internal-guid-6a859225-7fff-39e3-fdc1-818afb11ab6b"></a><a class="headerlink" href="#how-are-brainglobe-atlases-distributed" title="Permalink to this heading">#</a></h2>
-<p>Brainglobe atlases are downloaded locally to the user’s machine whenever they try to use an atlas that has not yet been downloaded. By default they will end up in the <code class="docutils literal notranslate"><span class="pre">.../username/.brainglobe</span></code> folder, unless differently specified in the <code class="docutils literal notranslate"><span class="pre">bg-atlasapi</span></code> configuration.</p>
-<p>The BrainGlobeAtlas class fetches those atlases from a dedicated GIN repository (<a class="reference external" href="https://gin.g-node.org/brainglobe/atlases">https://gin.g-node.org/brainglobe/atlases</a>). GIN repos are very similar to GitHub repos, but support storage of large datasets, using git-annex. Only members of the BrainGlobe initiative can upload new atlases to the GIN repo, and this is essential to ensure the interoperability of all atlases that are part of the BrainGlobe suite. Still we want to keep the process open to external contribution, and we tried to streamline the process for people who want to expand the list of BrainGlobe supported atlases. Here’s some information on how the process works, and how you can contribute a new atlas to the initiative:</p>
-<p>The repository of atlases is automatically updated by scripts that reformat atlas data, create a bundled atlas archive and upload them. This process will be run every time a new atlas is added or an old atlas is updated. Each atlas is generated in a separate script, so, if you want to contribute with a new atlas:</p>
+<h2>How are BrainGlobe atlases distributed?<a class="headerlink" href="#how-are-brainglobe-atlases-distributed" title="Permalink to this heading">#</a></h2>
+<p>BrainGlobe atlases are downloaded locally to the user’s machine whenever they try to use an atlas that has not yet been
+downloaded.
+By default, they will end up in the <code class="docutils literal notranslate"><span class="pre">.../username/.brainglobe</span></code> folder,
+unless differently specified in the <code class="docutils literal notranslate"><span class="pre">bg-atlasapi</span></code> configuration.</p>
+<p>The BrainGlobeAtlas class fetches those atlases from a dedicated GIN repository
+(<a class="reference external" href="https://gin.g-node.org/brainglobe/atlases">https://gin.g-node.org/brainglobe/atlases</a>). GIN repos are very similar
+to GitHub repos, but support storage of large datasets, using git-annex.
+Only members of the BrainGlobe initiative can upload new atlases to the GIN repo,
+and this is essential to ensure the interoperability of all atlases that are part of the BrainGlobe suite.
+Still, we want to keep the process open to external contribution,
+and we tried to streamline the process for people who want to expand the list of BrainGlobe supported atlases.
+Here’s some information on how the process works, and how you can contribute a new atlas to the initiative:</p>
+<p>The repository of atlases is automatically updated by scripts that reformat atlas data, create a bundled atlas archive
+and upload them. This process will be run every time a new atlas is added or an old atlas is updated. Each atlas is
+generated in a separate script, so if you want to contribute with a new atlas:</p>
 <ul class="simple">
 <li><p>Fork <a class="reference external" href="https://github.com/brainglobe/bg-atlasgen">github.com/brainglobe/bg-atlasgen</a></p></li>
 <li><p>Create an atlas generation script in the <code class="docutils literal notranslate"><span class="pre">atlas_scripts</span></code> directory (see below)</p></li>
 <li><p>Submit a pull request back to the original repository.</p></li>
 </ul>
-<p>If you are new to GitHub, or you have any questions about writing your script, feel free to reach out via a<a class="reference external" href="https://github.com/brainglobe/bg-atlasgen/issues"> GitHub issue</a> or by starting a discussion using the <a class="reference external" href="https://forum.image.sc/tag/brainglobe">BrainGlobe tag over at the image.sc forum</a> and we’ll be very happy to provide you with all the assistance you need to contribute to the project!</p>
+<p>If you are new to GitHub, or you have any questions about writing your script, feel free to reach out via a
+<a class="reference external" href="https://github.com/brainglobe/bg-atlasgen/issues">GitHub issue</a> or by starting a discussion using the
+<a class="reference external" href="https://forum.image.sc/tag/brainglobe">BrainGlobe tag over at the image.sc forum</a> and we’ll be very happy to provide
+you with all the assistance you need to contribute to the project!</p>
 </section>
 <section id="what-data-do-you-need-to-contribute-an-atlas-to-the-brainglobe-initiative">
-<h2>What data do you need to contribute an atlas to the brainglobe initiative?<a class="headerlink" href="#what-data-do-you-need-to-contribute-an-atlas-to-the-brainglobe-initiative" title="Permalink to this heading">#</a></h2>
-<p>To contribute your favourite atlas in a BrainGlobe-compatible format, these are the fundamental ingredients you’ll need to have before starting:</p>
+<h2>What data do you need to contribute an atlas to the BrainGlobe Initiative?<a class="headerlink" href="#what-data-do-you-need-to-contribute-an-atlas-to-the-brainglobe-initiative" title="Permalink to this heading">#</a></h2>
+<p>To contribute your favourite atlas in a BrainGlobe-compatible format, these are the fundamental ingredients you’ll
+need to have before starting:</p>
 <ul class="simple">
 <li><p>Information to credit the atlas: a publication, if available, and a website of the atlas, if available.</p></li>
-<li><p>A reference 3D stack in your favorite format, as long as you can load it to a numpy array. This will be the reference stack, used to represent the anatomy of the brain. If you have more than one reference brain (eg, multiple transgenic lines that people can use for registrations), don’t worry: just choose the most important one, and the others can be distributed via brainglobe as well.</p></li>
-<li><p>An annotation 3D stack, that contains 0s in all non-annotated voxels, and integer numbers that correspond to the ids of all the different regions. IDs should refer to the finest level of your region hierarchy. For example, in a brain where the telecephalon has ID 1, the cortex ID 2, and the visual cortex ID 3, a voxel in the visual cortex should just have 3. The BrainGlobe Atlas API will know how to take care of pooling all voxels that belong to the cortex using the annotation and the region hierarchy information (more on that later).</p></li>
-<li><p>A description of all the structures of the brain, and their hierarchy. This represented in BrainGlobe with a list of dictionaries where each dictionary describes a region with the following keys:</p></li>
+<li><p>A reference 3D stack in your favorite format, as long as you can load it to a numpy array. This will be the reference
+stack, used to represent the anatomy of the brain. If you have more than one reference brain (e.g., multiple transgenic
+lines that people can use for registrations), don’t worry: just choose the most important one, and the others can be
+distributed via BrainGlobe as well.</p></li>
+<li><p>An annotation 3D stack that contains 0s in all non-annotated voxels, and integer numbers that correspond to the ids
+of all the different regions. IDs should refer to the finest level of your region hierarchy. For example, in a brain
+where the telecephalon has ID 1, the cortex ID 2, and the visual cortex ID 3, a voxel in the visual cortex should just
+have 3. The BrainGlobe Atlas API will know how to take care of pooling all voxels that belong to the cortex using the
+annotation and the region hierarchy information (more on that later).</p></li>
+<li><p>A description of all the structures of the brain and their hierarchy. This represented in BrainGlobe with a list of
+dictionaries where each dictionary describes a region with the following keys:</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">STRUCTURE_TEMPLATE</span> <span class="o">=</span> <span class="p">{</span>
    <span class="s2">&quot;acronym&quot;</span><span class="p">:</span> <span class="s2">&quot;VIS&quot;</span><span class="p">,</span>  <span class="c1"># shortened name of the region</span>
@@ -550,7 +597,13 @@ document.write(`
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">structure_id_path</span></code> is the fundamental key argument for bg-atlasapi to understand the hierarchy of your regions. Going back to our example above, if telencephalon is 1, cortex 2, and visual cortex 3, <code class="docutils literal notranslate"><span class="pre">structure_id_path</span></code> for the cortex region will be [1, 2], and for the visual cortex region will be [1, 2, 3]. you don’t necessarily need a fixed number of levels in your hierarchy. You should just make sure that there is one and only one root region (ie, a region with <code class="docutils literal notranslate"><span class="pre">structure_id_path</span></code> of length 1). If your atlas does not have a multilevel hierarchy, just create a root region that all other regions are children of. How to generate the region hierarchy is up to you; just make sure you have a way of generating this list of dictionaries in python when you’ll start creating the atlas. </p>
+<p>The <code class="docutils literal notranslate"><span class="pre">structure_id_path</span></code> is the fundamental key argument for bg-atlasapi to understand the hierarchy of your regions.
+Going back to our example above, if telencephalon is 1, cortex 2, and visual cortex 3, <code class="docutils literal notranslate"><span class="pre">structure_id_path</span></code> for the
+cortex region will be [1, 2], and for the visual cortex region will be [1, 2, 3]. you don’t necessarily need a fixed
+number of levels in your hierarchy. You should just make sure that there is one and only one root region (i.e., a region
+with <code class="docutils literal notranslate"><span class="pre">structure_id_path</span></code> of length 1). If your atlas does not have a multilevel hierarchy, just create a root region
+that all other regions are children of. How to generate the region hierarchy is up to you; just make sure you have a
+way of generating this list of dictionaries in python when you’ll start creating the atlas.</p>
 <p>{% hint style=“danger” %}
 Do not use 0 (zero) as the id of a structure, because the annotation stack will contain zeros where no structure is defined!
 {% endhint %}</p>
@@ -560,14 +613,17 @@ Do not use 0 (zero) as the id of a structure, because the annotation stack will 
 <p><strong>Atlas generation takes place in two steps:</strong></p>
 <ol class="arabic simple">
 <li><p>Generate an “Atlas script” written in python</p></li>
-<li><p>Use the atlas generation code<a class="reference external" href="https://github.com/brainglobe/bg-atlasgen/tree/master/bg_atlasgen"> available from BrainGlobe</a> to generate the atlas from the atlas script.</p></li>
+<li><p>Use the atlas generation code <a class="reference external" href="https://github.com/brainglobe/bg-atlasgen/tree/master/bg_atlasgen">available from BrainGlobe</a></p></li>
+<li><p>to generate the atlas from the atlas script.</p></li>
 </ol>
 <section id="atlas-scripts">
 <h3>Atlas scripts<a class="headerlink" href="#atlas-scripts" title="Permalink to this heading">#</a></h3>
 <p><strong>Each atlas to be generated has a dedicated atlas script. This has two main functions:</strong> </p>
-<p>1. To set important atlas metadata (e.g., name, resolution…) and </p>
-<p>2. To load the atlas data (e.g. reference image).</p>
-<p><strong>The metadata that need to be specified in the atlas script are:</strong></p>
+<ol class="arabic simple">
+<li><p>To set important atlas metadata (e.g., name, resolution…) and </p></li>
+<li><p>To load the atlas data (e.g. reference image).</p></li>
+</ol>
+<p><strong>The metadata that needs to be specified in the atlas script is:</strong></p>
 <ul class="simple">
 <li><p>RES_UM: resolution of the atlas in micrometers (voxel spacing)</p></li>
 <li><p>ATLAS_NAME: the name</p></li>
@@ -576,40 +632,71 @@ Do not use 0 (zero) as the id of a structure, because the annotation stack will 
 <li><p>CITATION: the details of a published paper/preprint in which the atlas was first described</p></li>
 <li><p>ATLAS_PACKAGER: contact (name / email) of the person who packaged the atlas in BrainGlobe</p></li>
 <li><p>ORIENTATION: a string specifying the orientation in bg-space format</p></li>
-<li><p>__version__: the version number of the atlas:  when atlases get updated/modified new versions are released.</p></li>
+<li><p>__version__: the version number of the atlas: when atlases get updated/modified new versions are released.</p></li>
 <li><p>root structure id: ID of the root (base) brain region in the hierarchy of brain regions.</p></li>
 </ul>
-<p>These metadata are used to provide information about the atlas (e.g. which species is it about), to give credit to the original creators of the atlas data and to provide data used by other brainglobe tools (e.g. the atlas orientation).</p>
-<p><strong>In addition to laying out the metadata, atlas scripts are be used to load (or download) the actual atlas data:</strong></p>
+<p>This metadata is used to provide information about the atlas (e.g., which species is it about), to give credit to the
+original creators of the atlas data and to provide data used by other BrainGlobe tools (e.g., the atlas orientation).</p>
+<p><strong>In addition to laying out the metadata, atlas scripts are being used to load (or download) the actual atlas data:</strong></p>
 <ul class="simple">
 <li><p>Template image volume: a 3D image with the atlas’ template</p></li>
-<li><p>Annotated image volume: a 3D image where each voxel is annotated with the ID of a the atlas brain region at that point</p></li>
+<li><p>Annotated image volume: a 3D image where each voxel is annotated with the ID of the atlas brain region at that point</p></li>
 <li><p>hemispheres stack (optional): a 3D image where each voxel is annotated with the ID of the hemisphere it belongs to</p></li>
 <li><p>Structures list: a list of brain regions (structures) names</p></li>
-<li><p>Meshes dict: a dictionary with entries of the type structure-&gt;file path specifying the path to the .obj mesh file of each brain region</p></li>
+<li><p>Meshes dict: a dictionary with entries of the type structure-&gt;file path specifying the path to the .obj mesh file
+of each brain region</p></li>
 </ul>
 </section>
 <section id="atlas-generation">
-<h3> Atlas generation<a class="headerlink" href="#atlas-generation" title="Permalink to this heading">#</a></h3>
-<p>Once an atlas script has been written which sets out all the necessary metadata and loads all the files required, code provided by BrainGlobe’s atlas generation repository can be used to format the data as needed by the BrainGlobe AtlasAPI. Atlasgen provides one convenient function <code class="docutils literal notranslate"><span class="pre">wrapup_atlas_from_data</span></code>  which takes all the metadata and data from above and creates the data structures required. These data structures include .tiff files with the various images, csv files with the structures metadata information, a README file laying out the atlas content etc. The same function creates a compressed folder which can be loaded to GIN for distribution (see above).</p>
+<h3>Atlas generation<a class="headerlink" href="#atlas-generation" title="Permalink to this heading">#</a></h3>
+<p>Once an atlas script has been written which sets out all the necessary metadata and loads all the files required,
+code provided by BrainGlobe’s atlas generation repository can be used to format the data as needed by the BrainGlobe
+AtlasAPI. Atlasgen provides one convenient function <code class="docutils literal notranslate"><span class="pre">wrapup_atlas_from_data</span></code>  which takes all the metadata and data
+from above and creates the data structures required. These data structures include .tiff files with the various images,
+csv files with the structures metadata information, a README file laying out the atlas content, etc. The same function
+creates a compressed folder which can be loaded to GIN for distribution (see above).</p>
 </section>
 <section id="extracting-meshes">
 <h3>Extracting meshes<a class="headerlink" href="#extracting-meshes" title="Permalink to this heading">#</a></h3>
-<p>While most atlases will have a set of 3D images that can be used as annotated and template stacks, not all atlases will have mesh (.obj) files for each brain region in the atlas. However regions’ meshes are used frequently by BrainGlobe tools, especially in <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> for visualizing anatomical data in 3D. For this reason, the atlas generation code from BrainGlobe provides functionality that can be used to generate such mesh files. <a class="reference external" href="https://github.com/brainglobe/bg-atlasgen/blob/86caab99317359e5f791c991febb12589c5ced8a/bg_atlasgen/mesh_utils.py#L125">This code</a> can be used to generate a region’s mesh starting from the annotated image. A mask image is created which only contains the annotation for the brain region of interest, and a marching cubes algorithm is used to identify the surface of the region; finally a mesh is created from the output of the marching cubes algorithm and the results are saved to a .obj file. Repeating the process for each region in the atlas, it’s possible to easily create all the necessary meshes.</p>
+<p>While most atlases will have a set of 3D images that can be used as annotated and template stacks,
+not all atlases will have mesh (.obj) files for each brain region in the atlas.
+However, regions’ meshes are used frequently by BrainGlobe tools,
+especially in <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> for visualizing anatomical data in 3D.
+For this reason,
+the atlas generation code from BrainGlobe provides functionality that can be used to generate such mesh files.
+This code (<a class="github reference external" href="https://github.com/brainglobe/bg-atlasgen/blob/86caab99317359e5f791c991febb12589c5ced8a/bg_atlasgen/mesh_utils.py#L125">brainglobe/bg-atlasgen</a>)
+can be used to generate a region’s mesh starting from the annotated image.
+A mask image is created which only contains the annotation for the brain region of interest,
+and a marching cubes algorithm is used to identify the surface of the region;
+finally, a mesh is created from the output of the marching cubes algorithm, and the results are saved to a .obj file.
+Repeating the process for each region in the atlas, it is possible to easily create all the necessary meshes.</p>
 </section>
 <section id="how-can-i-be-sure-i-get-credited-for-the-atlas-i-contributed">
 <h3>How can I be sure I get credited for the atlas I contributed?<a class="headerlink" href="#how-can-i-be-sure-i-get-credited-for-the-atlas-i-contributed" title="Permalink to this heading">#</a></h3>
-<p>Included with the atlas metadata, which are specified during atlas creation (see above) is a link to any online resource describing the atlas and to an publication associated with the atlas.</p>
-<p>This ensures that information about the original creators of the atlas data accompanies the atlas data at all time, so that credit can easily be given to the atlas creators.</p>
-<p>Sometimes, the atlas creator and the person contributing the atlas to brainglobe (i.e. going through the atlas generation process laid out here) may not be the same. The ATLAS_PACKAGER argument in the metadata allow to specify the name and contact of the person who curated the BrainGlobe atlas creation.</p>
+<p>Included with the atlas metadata, which is specified during atlas creation (see above), is a link to any online
+resource describing the atlas and to a publication associated with the atlas.</p>
+<p>This ensures that information about the original creators of the atlas data accompanies the atlas data at all time,
+so that credit can easily be given to the atlas creators.</p>
+<p>Sometimes, the atlas creator and the person contributing the atlas to BrainGlobe (i.e., going through the atlas
+generation process laid out here) may not be the same. The <code class="docutils literal notranslate"><span class="pre">ATLAS_PACKAGER</span></code> argument in the metadata allow
+specifying the name and contact of the person who curated the BrainGlobe atlas creation.</p>
 </section>
 <section id="inspecting-results">
 <h3>Inspecting results<a class="headerlink" href="#inspecting-results" title="Permalink to this heading">#</a></h3>
-<p>To check if everything went smoothly, you can just go to the folder with the atlas content (named <code class="docutils literal notranslate"><span class="pre">atlasname_resolutionum</span></code> in the directory you were generating the atlas in) and check out its content. </p>
-<p>For the metadata, you can just open the json file, and inspect it.</p>
-<p>To inspect the reference.tiff file and the annotation.tiff file, you can just drag and drop them in napari (to install napari, check out <a class="reference external" href="https://napari.org/tutorials/fundamentals/installation">https://napari.org/tutorials/fundamentals/installation</a>), and they will open as an image layer, and a label layer, respectively. You know the orientation is correct if you are looking at upright (dorsal top, ventral bottom) frontal sections, and when you scroll the slider to inspect sections with a higher index, you are moving from anterior to posterior.</p>
-<p>To inspect the meshes, BrainGlobe provides <a class="reference external" href="https://github.com/brainglobe/bg-atlasgen/blob/86caab99317359e5f791c991febb12589c5ced8a/bg_atlasgen/mesh_utils.py#L227">code</a> to load and visualize a set of .obj files for quick inspection. Once an atlas is created with BrainGlobe’s atlas generation tools, it can be used with most software from the BrainGlobe software suite, including <a class="reference external" href="https://github.com/brainglobe/brainrender">Brainrender</a> which provides a convenient GUI for visually inspecting the generated atlas meshes.</p>
-<p>\</p>
+<p>To check if everything went smoothly,
+you can just go to the folder with the atlas content
+(named <code class="docutils literal notranslate"><span class="pre">atlasname_resolutionum</span></code> in the directory you were generating the atlas in) and check out its content. </p>
+<p>For the metadata, you can just open the json file and inspect it.</p>
+<p>To inspect the reference.tiff file and the annotation.tiff file, you can just drag and drop them in napari
+(to install napari, check out <a class="reference external" href="https://napari.org/tutorials/fundamentals/installation">https://napari.org/tutorials/fundamentals/installation</a>),
+and they will open as an image layer, and a label layer, respectively. You know the orientation is correct if you are
+looking at upright (dorsal top, ventral bottom) frontal sections, and when you scroll the slider to inspect sections
+with a higher index, you are moving from anterior to posterior.</p>
+<p>To inspect the meshes, BrainGlobe provides
+<a class="reference external" href="https://github.com/brainglobe/bg-atlasgen/blob/86caab99317359e5f791c991febb12589c5ced8a/bg_atlasgen/mesh_utils.py#L227">code</a> to
+load and visualize a set of .obj files for quick inspection. Once an atlas is created with BrainGlobe’s atlas generation tools,
+it can be used with most software from the BrainGlobe software suite, including <a class="reference external" href="https://github.com/brainglobe/brainrender">brainrender</a>
+which provides a convenient GUI for visually inspecting the generated atlas meshes.</p>
 </section>
 </section>
 </section>
@@ -639,7 +726,7 @@ Do not use 0 (zero) as the id of a structure, because the annotation stack will 
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">BG-Space</p>
+        <p class="prev-next-title">bg-Space</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -661,11 +748,11 @@ Do not use 0 (zero) as the id of a structure, because the annotation stack will 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-are-brainglobe-atlases-distributed">How are brainglobe atlases distributed? <a href="#docs-internal-guid-6a859225-7fff-39e3-fdc1-818afb11ab6b" id="docs-internal-guid-6a859225-7fff-39e3-fdc1-818afb11ab6b"></a></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-data-do-you-need-to-contribute-an-atlas-to-the-brainglobe-initiative">What data do you need to contribute an atlas to the brainglobe initiative?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-are-brainglobe-atlases-distributed">How are BrainGlobe atlases distributed?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-data-do-you-need-to-contribute-an-atlas-to-the-brainglobe-initiative">What data do you need to contribute an atlas to the BrainGlobe Initiative?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-generate-an-atlas-programmatically">How to generate an atlas programmatically?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atlas-scripts">Atlas scripts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atlas-generation"> Atlas generation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atlas-generation">Atlas generation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-meshes">Extracting meshes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-be-sure-i-get-credited-for-the-atlas-i-contributed">How can I be sure I get credited for the atlas I contributed?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-results">Inspecting results</a></li>

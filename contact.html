@@ -31,6 +31,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -43,7 +44,12 @@
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'contact';</script>
     <link rel="canonical" href="https://brainglobe.info/contact.html" />
@@ -157,15 +163,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="documentation/index.html">
-                        Documentation
+                      <a class="nav-link nav-internal" href="tutorials/index.html">
+                        Tutorials
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="tutorials/index.html">
-                        Tutorials
+                      <a class="nav-link nav-internal" href="documentation/index.html">
+                        Documentation
                       </a>
                     </li>
                 
@@ -332,15 +338,15 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="documentation/index.html">
-                        Documentation
+                      <a class="nav-link nav-internal" href="tutorials/index.html">
+                        Tutorials
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="tutorials/index.html">
-                        Tutorials
+                      <a class="nav-link nav-internal" href="documentation/index.html">
+                        Documentation
                       </a>
                     </li>
                 
@@ -504,14 +510,14 @@ contribute to the discussion.</p>
 <section id="bugs">
 <h2>Bugs<a class="headerlink" href="#bugs" title="Permalink to this heading">#</a></h2>
 <p>If you think you have found a bug, please open an issue at the relevant repository on
-<a class="reference external" href="https://github.com/brainglobe">GitHub</a>. If you’re not sure how do this, feel free to report the issue on the forum, and
+<a class="reference external" href="https://github.com/brainglobe">GitHub</a>. If you’re not sure how to do this, feel free to report the issue on the forum, and
 we will raise an issue. If you don’t know what the correct repository is, please open it on the repository of the
 tool you’re using, and we can transfer it if necessary.</p>
 </section>
 <section id="feature-requests">
 <h2>Feature requests<a class="headerlink" href="#feature-requests" title="Permalink to this heading">#</a></h2>
 <p>If you have a feature request, please open an issue at the relevant repository. If you have a more general request
-(e.g. for a tool that doesn’t yet exist), please ask on the forum (it may be that another tool does what you need).</p>
+(e.g., for a tool that doesn’t yet exist), please ask on the forum (it may be that another tool does what you need).</p>
 </section>
 <section id="contributing">
 <h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading">#</a></h2>
@@ -523,7 +529,7 @@ but please take a quick look at the
 <section id="other-ways-to-get-in-touch">
 <h2>Other ways to get in touch<a class="headerlink" href="#other-ways-to-get-in-touch" title="Permalink to this heading">#</a></h2>
 <p>While we prefer that all discussions about the project are carried out in public, there may be situations in which this
-is not possible. In these situations please <a class="reference external" href="mailto:code&#37;&#52;&#48;adamltyson&#46;com?subject=brainglobe-contribution">email Adam Tyson</a>,
+is not possible. In these situations, please <a class="reference external" href="mailto:code&#37;&#52;&#48;adamltyson&#46;com?subject=brainglobe-contribution">email Adam Tyson</a>,
 one of the core developers.</p>
 </section>
 </section>

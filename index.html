@@ -31,6 +31,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -43,7 +44,12 @@
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <link rel="canonical" href="https://brainglobe.info/index.html" />
@@ -156,15 +162,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="documentation/index.html">
-                        Documentation
+                      <a class="nav-link nav-internal" href="tutorials/index.html">
+                        Tutorials
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="tutorials/index.html">
-                        Tutorials
+                      <a class="nav-link nav-internal" href="documentation/index.html">
+                        Documentation
                       </a>
                     </li>
                 
@@ -327,15 +333,15 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="documentation/index.html">
-                        Documentation
+                      <a class="nav-link nav-internal" href="tutorials/index.html">
+                        Tutorials
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="tutorials/index.html">
-                        Tutorials
+                      <a class="nav-link nav-internal" href="documentation/index.html">
+                        Documentation
                       </a>
                     </li>
                 
@@ -463,8 +469,9 @@ document.write(`
 <p>We have three aims:</p>
 <ul class="simple">
 <li><p>Develop specialist software for specific analysis and visualisation needs, such as cellfinder and brainrender.</p></li>
-<li><p>Develop core tools to facilitate others to build interoperable tools in Python, e.g. the BrainGlobe Atlas API.</p></li>
-<li><p>Build a community of neuroscientists and developers to share knowledge, build software and engage with the scientific, and open-source community (e.g. by organising hackathons).</p></li>
+<li><p>Develop core tools to facilitate others to build interoperable tools in Python, e.g., the BrainGlobe Atlas API.</p></li>
+<li><p>Build a community of neuroscientists and developers to share knowledge, build software and engage with the</p></li>
+<li><p>scientific, and open-source community (e.g. by organising hackathons).</p></li>
 </ul>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-3 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
