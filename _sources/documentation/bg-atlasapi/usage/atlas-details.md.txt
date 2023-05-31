@@ -49,7 +49,7 @@ To use the atlases with the API directly, the unique key (e.g. `example_mouse_10
 
 * `azba_zfish_4um`
 
-### ``[Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1016/j.neuroimage.2014.04.001) at 39 micron resolution
+### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1016/j.neuroimage.2014.04.001) at 39 micron resolution
 
 * `whs_sd_rat_39um`
 
