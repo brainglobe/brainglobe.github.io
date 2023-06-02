@@ -6,9 +6,15 @@ volumes of whole mouse brains).
 ![Detected labelled cells, overlaid on a segmented coronal brain section](images/cells.png)
 **Detected labelled cells, overlaid on a segmented coronal brain section**
 
-cellfinder exists as three separate software packages.
+## Ways to use cellfinder
+cellfinder exists as three separate software packages with different user interfaces and different aims.
 
-## cellfinder-core
+:::{hint}
+If you don't know how to start, we recommend the cellfinder napari plugin. 
+:::
+
+
+### cellfinder-core
 `cellfinder-core` is a Python package implementing the core algorithm for efficient cell detection in large images.
 
 The package exists on its own to allow developers to implement the algorithm in their own software. For now, the only 
@@ -16,7 +22,7 @@ API documentation is in the [GitHub README](https://github.com/brainglobe/cellfi
 see the documentation [here](user-guide/parameters) for an explanation of the parameters. Alternatively, please 
 [get in touch](/contact).
 
-## cellfinder napari plugin
+### cellfinder napari plugin
 
 This is a thin wrapper around the `cellfinder-core` package and aims to:
 
@@ -28,19 +34,22 @@ This is a thin wrapper around the `cellfinder-core` package and aims to:
 ![Visualising detected cells in the cellfinder napari plugin](images/napari-cellfinder.gif)
 **Visualising detected cells in the cellfinder napari plugin**
 
-## cellfinder command-line tool
+### cellfinder command-line tool
 A command-line tool (confusingly just called `cellfinder`) exists to combine the `cellfinder-core` cell detection 
 algorithm and [brainreg](/documentation/brainreg/index). `cellfinder` can:
 
 * Detect labelled cells in 3D in whole-brain images (many hundreds of GB)
-* Register the image to an atlas (such as the [Allen Mouse Brain Atlas](https://atlas.brain-map.org/atlas?atlas=602630314)\)
+* Register the image to an atlas (such as the [Allen Mouse Brain Atlas](https://atlas.brain-map.org/atlas?atlas=602630314))
 * Segment the brain based on the reference atlas
 * Calculate the volume of each brain area, and the number of labelled cells within it
 * Transform everything into standard space for analysis and visualisation
 
 
 ## Installation
-
+```{toctree}
+:maxdepth: 1
+installation
+```
 
 ## User guide
 ```{toctree}

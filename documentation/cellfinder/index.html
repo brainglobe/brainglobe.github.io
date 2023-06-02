@@ -57,7 +57,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="cellfinder parameters" href="user-guide/parameters.html" />
+    <link rel="next" title="Requirements" href="installation.html" />
     <link rel="prev" title="brainrender" href="../brainrender/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -485,6 +485,8 @@ document.write(`
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../brainrender/index.html">brainrender</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">cellfinder</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">Requirements</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="user-guide/parameters.html">cellfinder parameters</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
@@ -562,9 +564,15 @@ document.write(`
 volumes of whole mouse brains).</p>
 <p><img alt="Detected labelled cells, overlaid on a segmented coronal brain section" src="../../_images/cells.png" />
 <strong>Detected labelled cells, overlaid on a segmented coronal brain section</strong></p>
-<p>cellfinder exists as three separate software packages.</p>
+<section id="ways-to-use-cellfinder">
+<h2>Ways to use cellfinder<a class="headerlink" href="#ways-to-use-cellfinder" title="Permalink to this heading">#</a></h2>
+<p>cellfinder exists as three separate software packages with different user interfaces and different aims.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If you don’t know how to start, we recommend the cellfinder napari plugin.</p>
+</div>
 <section id="cellfinder-core">
-<h2>cellfinder-core<a class="headerlink" href="#cellfinder-core" title="Permalink to this heading">#</a></h2>
+<h3>cellfinder-core<a class="headerlink" href="#cellfinder-core" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code> is a Python package implementing the core algorithm for efficient cell detection in large images.</p>
 <p>The package exists on its own to allow developers to implement the algorithm in their own software. For now, the only
 API documentation is in the <a class="reference external" href="https://github.com/brainglobe/cellfinder-core/blob/main/README.md">GitHub README</a>, please
@@ -572,7 +580,7 @@ see the documentation <a class="reference internal" href="user-guide/parameters.
 <a class="reference internal" href="../../contact.html"><span class="doc std std-doc">get in touch</span></a>.</p>
 </section>
 <section id="cellfinder-napari-plugin">
-<h2>cellfinder napari plugin<a class="headerlink" href="#cellfinder-napari-plugin" title="Permalink to this heading">#</a></h2>
+<h3>cellfinder napari plugin<a class="headerlink" href="#cellfinder-napari-plugin" title="Permalink to this heading">#</a></h3>
 <p>This is a thin wrapper around the <code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code> package and aims to:</p>
 <ul class="simple">
 <li><p>Provide the cell detection algorithm in a user-friendly form</p></li>
@@ -583,7 +591,7 @@ see the documentation <a class="reference internal" href="user-guide/parameters.
 <strong>Visualising detected cells in the cellfinder napari plugin</strong></p>
 </section>
 <section id="cellfinder-command-line-tool">
-<h2>cellfinder command-line tool<a class="headerlink" href="#cellfinder-command-line-tool" title="Permalink to this heading">#</a></h2>
+<h3>cellfinder command-line tool<a class="headerlink" href="#cellfinder-command-line-tool" title="Permalink to this heading">#</a></h3>
 <p>A command-line tool (confusingly just called <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code>) exists to combine the <code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code> cell detection
 algorithm and <a class="reference internal" href="../brainreg/index.html"><span class="doc std std-doc">brainreg</span></a>. <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> can:</p>
 <ul class="simple">
@@ -594,8 +602,15 @@ algorithm and <a class="reference internal" href="../brainreg/index.html"><span 
 <li><p>Transform everything into standard space for analysis and visualisation</p></li>
 </ul>
 </section>
+</section>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html#installation">Installation</a></li>
+</ul>
+</div>
 </section>
 <section id="user-guide">
 <h2>User guide<a class="headerlink" href="#user-guide" title="Permalink to this heading">#</a></h2>
@@ -646,11 +661,11 @@ algorithm and <a class="reference internal" href="../brainreg/index.html"><span 
       </div>
     </a>
     <a class="right-next"
-       href="user-guide/parameters.html"
+       href="installation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">cellfinder parameters</p>
+        <p class="prev-next-title">Requirements</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -672,9 +687,12 @@ algorithm and <a class="reference internal" href="../brainreg/index.html"><span 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cellfinder-core">cellfinder-core</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cellfinder-napari-plugin">cellfinder napari plugin</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cellfinder-command-line-tool">cellfinder command-line tool</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ways-to-use-cellfinder">Ways to use cellfinder</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cellfinder-core">cellfinder-core</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cellfinder-napari-plugin">cellfinder napari plugin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cellfinder-command-line-tool">cellfinder command-line tool</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-guide">User guide</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorials">Tutorials</a></li>
