@@ -19,6 +19,24 @@ Most machines (including laptops) will be able to use most of the atlases, but s
 * (`Plugins` -> `Install/Uninstall Package(s)`, choosing `cellfinder-napari`).)
 :::
 
+:::{admonition} Installing the cellfinder-core Python package
+:class: dropdown
+
+
+## Installing Python
+Your machine may already have Python
+installed, but we recommend installing miniconda. See [Using conda](/documentation/general/conda) for details.
+
+## Installing cellfinder
+```{hint}
+Remember to activate your conda environment before doing anything
+```
+
+```bash
+pip install cellfinder-core
+```
+:::
+
 :::{admonition} Installing the command line tool
 :class: dropdown
 
@@ -26,12 +44,11 @@ Most machines (including laptops) will be able to use most of the atlases, but s
 If you know what you're doing (and [your GPU is set up](/documentation/general/gpu)), just run `pip install cellfinder`
 ```
 
+
 ## Installing Python
 
 cellfinder is written in Python, and so needs a functional Python installation. Your machine may already have Python
-installed, but **we recommend installing miniconda**.
-
-**See** [**Using conda**](/documentation/general/conda) **for details.**
+installed, but we recommend installing miniconda. See [Using conda](/documentation/general/conda) for details.
 
 ```{caution}
 cellfinder should run on any type of Python installation, but if you don't use conda, 
@@ -56,15 +73,11 @@ pip install cellfinder
 ```
 :::
 
-## Download atlas and trained classification models (optional)
+:::{admonition} Installing the command line tool using docker
+:class: dropdown
 
-When cellfinder runs, the appropriate machine learning models and reference atlas will be downloaded (if not previously
-done so). If you would like to download the trained models in advance to save time (or if you will not have an internet
-connection) you can run the following in your terminal:
-
-```bash
-cellfinder_download
-```
+Please see the [guide to using cellfinder with docker](docker)
+:::
 
 To install download BrainGlobe atlases in advance, please see the guide to
 [the BrainGlobe Atlas API command-line interface](/documentation/bg-atlasapi/usage/command-line-interface) for details.

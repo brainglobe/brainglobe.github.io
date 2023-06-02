@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Requirements &#8212; BrainGlobe</title>
+    <title>Installation with docker &#8212; BrainGlobe</title>
   
   
   
@@ -51,14 +51,12 @@
     <script src="../../_static/design-tabs.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/cellfinder/installation';</script>
-    <link rel="canonical" href="https://brainglobe.info/documentation/cellfinder/installation.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/cellfinder/docker';</script>
+    <link rel="canonical" href="https://brainglobe.info/documentation/cellfinder/docker.html" />
     <link rel="shortcut icon" href="../../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="cellfinder parameters" href="user-guide/parameters.html" />
-    <link rel="prev" title="cellfinder" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,7 +167,7 @@
                     </li>
                 
 
-                    <li class="nav-item current active">
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../index.html">
                         Documentation
                       </a>
@@ -305,7 +303,7 @@ document.write(`
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
 
   
@@ -344,7 +342,7 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item current active">
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../index.html">
                         Documentation
                       </a>
@@ -445,67 +443,6 @@ document.write(`
     
   </div>
   
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
-     aria-label="Section Navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../general/index.html">General BrainGlobe documentation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../general/conda.html">Using conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/gpu.html">Setting up your GPU</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/image-definition.html">Image definition</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../bg-atlasapi/index.html">bg-atlasapi</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../bg-atlasapi/usage/atlas-details.html">Atlas details</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bg-atlasapi/usage/python-api.html">Python API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bg-atlasapi/usage/command-line-interface.html">Command line interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bg-atlasapi/usage/using-the-files-directly.html">Using the files directly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bg-atlasapi/adding-a-new-atlas.html">Adding a new atlas</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../bg-space/index.html">bg-space</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../brainreg/index.html">brainreg</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../brainreg/installation.html">Requirements</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../brainreg/user-guide/brainreg-napari.html">Napari plugin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../brainreg/user-guide/brainreg-cli.html">Command line tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../brainreg/user-guide/parameters.html">Registration parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../brainreg/user-guide/checking-orientation.html">Checking orientation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../brainreg/user-guide/output-files.html">Output files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../brainreg/user-guide/visualisation.html">Visualising brainreg output</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../brainreg-segment/index.html">brainreg-segment</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../brainreg-segment/user-guide/index.html">Prerequisites</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../brainreg-segment/user-guide/segmenting-1d-tracks.html">Segmenting 1D tracks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../brainreg-segment/user-guide/segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../brainrender/index.html">brainrender</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">cellfinder</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Requirements</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="user-guide/parameters.html">cellfinder parameters</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="troubleshooting/error-messages.html">Debugging common error messages</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../tutorials/cellfinder.html">Whole brain cell detection and registration</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../morphapi/index.html">morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../morphapi/usage/downloading-data.html">Downloading data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../morphapi/usage/rendering-data.html">Rendering data</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</nav></div>
-    </div>
-  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
@@ -538,13 +475,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Documentation</a></li>
-    
-    
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">cellfinder</a></li>
-    
-    <li class="breadcrumb-item active" aria-current="page">Requirements</li>
+    <li class="breadcrumb-item active" aria-current="page">Installation with docker</li>
   </ul>
 </nav>
 </div>
@@ -561,75 +492,50 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="requirements">
-<h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading">#</a></h1>
-<p>cellfinder should run on most machines, but for routine use on large datasets, you will need a fairly high-powered
-computer (see the guide to <a class="reference internal" href="troubleshooting/speed-up.html"><span class="doc std std-doc">Speeding up cellfinder</span></a> for details).</p>
-<p>Using an NVIDIA GPU will speed up cell classification considerably. See <a class="reference internal" href="../general/gpu.html"><span class="doc std std-doc">setting up your GPU</span></a>
-for details.</p>
-<p>cellfinder uses brainreg for atlas registration, and the hardware requirements for brainreg depend on the atlas
-(and in particular, the resolution) you want to use.
-Most machines (including laptops) will be able to use most of the atlases, but some atlases
-(such as the 10μm mouse atlases) may need up to 50GB of RAM.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h1>
-<div class="dropdown admonition">
-<p class="admonition-title">Installing the napari plugin</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="installation-with-docker">
+<h1>Installation with docker<a class="headerlink" href="#installation-with-docker" title="Permalink to this heading">#</a></h1>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://napari.org/stable/tutorials/fundamentals/installation.html">Make sure you have napari installed</a></p></li>
-<li><p>Install the cellfinder-napari plugin from within napari</p></li>
-<li><p>(<code class="docutils literal notranslate"><span class="pre">Plugins</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Install/Uninstall</span> <span class="pre">Package(s)</span></code>, choosing <code class="docutils literal notranslate"><span class="pre">cellfinder-napari</span></code>).)</p></li>
+<li><p>Linux machine (<a class="reference external" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#linux-distributions">most common distributions are supported</a>)</p></li>
+<li><p>Recent NVIDIA GPU (<a class="reference external" href="https://en.wikipedia.org/wiki/CUDA">compute capability</a> &gt;=3)</p></li>
+<li><p><a class="reference external" href="https://www.nvidia.co.uk/Download/index.aspx?lang=en-uk">NVIDIA driver</a> &gt;= 418.81.07</p></li>
+<li><p><a class="reference external" href="https://docs.docker.com/engine/install/">Docker version</a> &gt;= 19.03</p></li>
 </ul>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Installing the cellfinder-core Python package</p>
-<h2 class="rubric" id="installing-python">Installing Python</h2>
-<p>Your machine may already have Python
-installed, but we recommend installing miniconda. See <a class="reference internal" href="../general/conda.html"><span class="doc std std-doc">Using conda</span></a> for details.</p>
-<h2 class="rubric" id="installing-cellfinder">Installing cellfinder</h2>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Remember to activate your conda environment before doing anything</p>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>cellfinder-core
+</section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
+<p><strong>Install NVIDIA Container Toolkit</strong></p>
+<p>Full instructions are <a class="reference external" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#setting-up-nvidia-container-toolkit">here</a>, but e.g. for Ubuntu:</p>
+<p><strong>Setup repository and GPG key:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">distribution</span><span class="o">=</span><span class="k">$(</span>.<span class="w"> </span>/etc/os-release<span class="p">;</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$ID$VERSION_ID</span><span class="k">)</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>curl<span class="w"> </span>-s<span class="w"> </span>-L<span class="w"> </span>https://nvidia.github.io/nvidia-docker/gpgkey<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>apt-key<span class="w"> </span>add<span class="w"> </span>-<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>curl<span class="w"> </span>-s<span class="w"> </span>-L<span class="w"> </span>https://nvidia.github.io/nvidia-docker/<span class="nv">$distribution</span>/nvidia-docker.list<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/nvidia-docker.list
 </pre></div>
 </div>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Installing the command line tool</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>If you know what you’re doing (and <a class="reference internal" href="../general/gpu.html"><span class="doc std std-doc">your GPU is set up</span></a>), just run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">cellfinder</span></code></p>
-</div>
-<h2 class="rubric" id="id1">Installing Python</h2>
-<p>cellfinder is written in Python, and so needs a functional Python installation. Your machine may already have Python
-installed, but we recommend installing miniconda. See <a class="reference internal" href="../general/conda.html"><span class="doc std std-doc">Using conda</span></a> for details.</p>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>cellfinder should run on any type of Python installation, but if you don’t use conda,
-we may be limited in the support we can offer.</p>
-</div>
-<h2 class="rubric" id="id2">Installing cellfinder</h2>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Remember to activate your conda environment before doing anything</p>
-</div>
-<h3 class="rubric" id="using-pip">Using pip</h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>cellfinder<span class="o">[</span>napari<span class="o">]</span>
+<p><strong>Install NVIDIA docker package:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>nvidia-docker2
 </pre></div>
 </div>
-<p>To only install the command line tool with no GUI (e.g., to run cellfinder on an HPC cluster), just run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">cellfinder</span>
+<p><strong>Restart docker daemon:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>docker
 </pre></div>
 </div>
+</section>
+<section id="running-cellfinder">
+<h2>Running cellfinder<a class="headerlink" href="#running-cellfinder" title="Permalink to this heading">#</a></h2>
+<p>To run with GPU support, and mount the current working directory at <code class="docutils literal notranslate"><span class="pre">/data</span></code><strong>:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>container<span class="w"> </span>run<span class="w"> </span>--mount<span class="w"> </span><span class="nv">type</span><span class="o">=</span>bind,source<span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>,target<span class="o">=</span>/data<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-it<span class="w"> </span>ghcr.io/brainglobe/cellfinder
+</pre></div>
 </div>
-<div class="dropdown admonition">
-<p class="admonition-title">Installing the command line tool using docker</p>
-<p>Please see the <a class="reference internal" href="docker.html"><span class="doc std std-doc">guide to using cellfinder with docker</span></a></p>
+<p>This will open up a bash prompt, and you can use cellfinder (or brainreg etc.) to analyse your data (mounted at <code class="docutils literal notranslate"><span class="pre">/data</span></code>) as normal, e.g.:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cellfinder<span class="w"> </span>-s<span class="w"> </span>/data/brain1/channel0<span class="w"> </span>-b<span class="w"> </span>/data/brain1/channel1<span class="w"> </span>-v<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>--orientation<span class="w"> </span>psl<span class="w"> </span>-o<span class="w"> </span>/data/analysis/brain1<span class="w"> </span>--trained-model<span class="w"> </span>/data/models/retrained.h5
+</pre></div>
 </div>
-<p>To install download BrainGlobe atlases in advance, please see the guide to
-<a class="reference internal" href="../bg-atlasapi/usage/command-line-interface.html"><span class="doc std std-doc">the BrainGlobe Atlas API command-line interface</span></a> for details.</p>
+<p>To leave the docker container when done, just <code class="docutils literal notranslate"><span class="pre">exit</span></code>.The data will be saved onto the host system, at your current working directory (you can mount different directories, or multiple directories, see the <a class="reference external" href="https://docs.docker.com/storage/bind-mounts/">docker documentation</a>).</p>
+</section>
 </section>
 
 
@@ -643,24 +549,6 @@ we may be limited in the support we can offer.</p>
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="index.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">cellfinder</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="user-guide/parameters.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">cellfinder parameters</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -679,10 +567,10 @@ we may be limited in the support we can offer.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Requirements</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-cellfinder">Running cellfinder</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
