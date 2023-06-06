@@ -20,7 +20,7 @@ Analysis of silicon probe tracks (e.g. Neuropixels)
 
 :::{grid-item-card} {fas}`brain;sd-text-primary` Cell detection
 :img-bottom: ../_static/cells.png
-:link: cellfinder
+:link: cellfinder-cli/index
 :link-type: doc
 Whole brain cell detection and registration
 :::
@@ -32,5 +32,5 @@ Whole brain cell detection and registration
 :hidden:
 brainreg
 silicon-probe-tracking
-cellfinder
+cellfinder-cli/index
 ```

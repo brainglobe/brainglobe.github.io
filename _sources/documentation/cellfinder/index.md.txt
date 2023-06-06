@@ -60,7 +60,7 @@ user-guide/index
 ## Tutorials
 ```{toctree}
 :maxdepth: 1
-/tutorials/cellfinder
+/tutorials/cellfinder-cli/index
 ```
 
 
