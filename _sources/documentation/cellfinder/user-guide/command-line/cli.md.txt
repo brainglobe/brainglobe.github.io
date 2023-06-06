@@ -70,3 +70,14 @@ candidate-detection
 classification
 /documentation/brainreg/user-guide/parameters
 ```
+
+:::{hint}
+If you're using cellfinder at the [Sainsbury Wellcome Centre](https://www.sainsburywellcome.org/web/),
+you may wish to see the [instructions for using cellfinder on the SWC HPC system](using-cellfinder-at-the-swc).
+:::
+
+```{toctree}
+:maxdepth: 1
+:hidden:
+using-cellfinder-at-the-swc
+```
