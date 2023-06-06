@@ -19,8 +19,8 @@ If you don't know how to start, we recommend the cellfinder napari plugin.
 
 The package exists on its own to allow developers to implement the algorithm in their own software. For now, the only 
 API documentation is in the [GitHub README](https://github.com/brainglobe/cellfinder-core/blob/main/README.md), please 
-see the documentation [here](user-guide/parameters) for an explanation of the parameters. Alternatively, please 
-[get in touch](/contact).
+see the documentation for the napari plugin [here](user-guide/napari-plugin/index) for an explanation of the parameters. 
+Alternatively, please [get in touch](/contact).
 
 ### cellfinder napari plugin
 

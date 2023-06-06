@@ -1,8 +1,7 @@
-# Usage
 ```{toctree}
 :maxdepth: 1
 command-line/index
-parameters
+napari-plugin/index
 ../troubleshooting/index
 ```
 

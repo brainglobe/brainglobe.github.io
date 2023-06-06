@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>cellfinder command line tool &#8212; BrainGlobe</title>
+    <title>Retraining the network for new data &#8212; BrainGlobe</title>
   
   
   
@@ -51,14 +51,14 @@
     <script src="../../../../_static/design-tabs.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/cellfinder/user-guide/command-line/index';</script>
-    <link rel="canonical" href="https://brainglobe.info/documentation/cellfinder/user-guide/command-line/index.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/cellfinder/user-guide/napari-plugin/training-the-network';</script>
+    <link rel="canonical" href="https://brainglobe.info/documentation/cellfinder/user-guide/napari-plugin/training-the-network.html" />
     <link rel="shortcut icon" href="../../../../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../../../../about.html" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Command line interface" href="cli.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="../index.html" />
+    <link rel="next" title="All cell detection parameters" href="all-cell-detection-parameters.html" />
+    <link rel="prev" title="Generating data to retrain the cellfinder classification network" href="training-data-generation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -294,6 +294,10 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
     </nav>
@@ -483,23 +487,23 @@ document.write(`
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html">cellfinder</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html">Requirements</a></li>
 
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">cellfinder command line tool</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="cli.html">Command line interface</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="candidate-detection.html">Cell candidate detection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="classification.html">Cell candidate classification</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../command-line/index.html">cellfinder command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../command-line/cli.html">Command line interface</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../command-line/candidate-detection.html">Cell candidate detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../command-line/classification.html">Cell candidate classification</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../brainreg/user-guide/parameters.html">Registration parameters</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="visualisation.html">Visualisation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="output-files.html">Output files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docker.html">Installation with docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../command-line/visualisation.html">Visualisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../command-line/output-files.html">Output files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../command-line/docker.html">Installation with docker</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../napari-plugin/index.html">cellfinder napari plugin</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../napari-plugin/cell-detection.html">Cell detection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../napari-plugin/training-data-generation.html">Generating data to retrain the cellfinder classification network</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../napari-plugin/training-the-network.html">Retraining the network for new data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../napari-plugin/all-cell-detection-parameters.html">All cell detection parameters</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">cellfinder napari plugin</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="cell-detection.html">Cell detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="training-data-generation.html">Generating data to retrain the cellfinder classification network</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Retraining the network for new data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-cell-detection-parameters.html">All cell detection parameters</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -561,9 +565,9 @@ document.write(`
     <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
     
     
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">&lt;no title&gt;</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">cellfinder napari plugin</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">cellfinder command line tool</li>
+    <li class="breadcrumb-item active" aria-current="page">Retraining the network for new data</li>
   </ul>
 </nav>
 </div>
@@ -580,16 +584,81 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="cellfinder-command-line-tool">
-<h1>cellfinder command line tool<a class="headerlink" href="#cellfinder-command-line-tool" title="Permalink to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="cli.html">Command line interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualisation.html">Visualisation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="output-files.html">Output files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docker.html">Installation with docker</a></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="retraining-the-network-for-new-data">
+<h1>Retraining the network for new data<a class="headerlink" href="#retraining-the-network-for-new-data" title="Permalink to this heading">#</a></h1>
+<p>Once napari, and the cellfinder plugin is installed, open napari, and load the plugin
+(<code class="docutils literal notranslate"><span class="pre">Plugins</span></code> -&gt; Train network).</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Make sure your GPU is set up to speed up the training. See
+<a class="reference internal" href="../../../general/gpu.html"><span class="doc std std-doc">Setting up your GPU</span></a>.</p>
 </div>
+<section id="set-parameters">
+<h2>Set parameters<a class="headerlink" href="#set-parameters" title="Permalink to this heading">#</a></h2>
+<section id="mandatory">
+<h3><strong>Mandatory</strong><a class="headerlink" href="#mandatory" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>YAML files</strong> - choose at least one YAML file containing paths to training data</p></li>
+<li><p><strong>Output directory</strong> - Choose (or create new) directory to save the trained models to</p></li>
+</ul>
+</section>
+<section id="optional">
+<h3><strong>Optional</strong><a class="headerlink" href="#optional" title="Permalink to this heading">#</a></h3>
+<p><strong>Network</strong> </p>
+<ul class="simple">
+<li><p><strong>Trained model</strong> - Path to a trained model to continue training from</p></li>
+<li><p><strong>Model weights</strong> - Path to existing model weights to continue training</p></li>
+<li><p><strong>Model depth</strong> - Resnet depth (based on <a class="reference external" href="https://arxiv.org/abs/1512.03385">He et al. (2015)</a>).
+Choose from 18, 34, 50, 101 or 152. In theory, a deeper network should classify better, at the expense
+of a larger model, and longer training time. <strong>Default: 50</strong></p></li>
+<li><p><strong>Pretrained model</strong> - Choose an existing model supplied with the software to continue training from.</p></li>
+</ul>
+<p>When training your network, you can either train the network from scratch (not recommended), or
+select the <strong>Continue training</strong> box to retrain an existing network. Depending on how you want to
+train your network, different data or options must be supplied:</p>
+<ul class="simple">
+<li><p>If you are training a new network from scratch (i.e. <strong>Continue training</strong> is not selected),
+then you only need to select a <strong>Model depth</strong>.</p></li>
+<li><p>If you are continuing training from a default, pretrained model, only <strong>Pretrained model</strong> needs to be chosen.</p></li>
+<li><p>If you are continuing training from your own model, then only <strong>Trained model</strong> needs to be set.</p></li>
+<li><p>If you are continuing training from your own model weights (i.e. not the full model,
+saved when <strong>Save weights</strong> is checked).</p></li>
+</ul>
+<p><strong>Training</strong></p>
+<ul class="simple">
+<li><p><strong>Continue Training</strong> - Continue training from an existing trained model. If no model or
+model weights are specified, this will continue from the included model.</p></li>
+<li><p><strong>Augment</strong> - Use data augmentation to synthetically increase the amount of training data</p></li>
+<li><p><strong>Tensorboard</strong> - Log to <code class="docutils literal notranslate"><span class="pre">output_directory/tensorboard</span></code>. Use
+<code class="docutils literal notranslate"><span class="pre">tensorboard</span> <span class="pre">--logdir</span> <span class="pre">outputdirectory/tensorboard</span></code> to view.</p></li>
+<li><p><strong>Save weights</strong> - Only store the model weights, and not the full model. Useful to save storage space.</p></li>
+<li><p><strong>Save checkpoints</strong> - Save the model after each training epoch. Each model file can be large, and if you don’t
+have much training data, they can be generated quickly. Deselect if you are training for many epochs, and you are
+happy to wait for the chosen number of epochs to complete.</p></li>
+<li><p><strong>Save progress</strong> - Save training progress to a .csv file (<code class="docutils literal notranslate"><span class="pre">output_directory/training.csv</span></code></p></li>
+<li><p><strong>Epochs</strong> - How many times to use each sample for training. <strong>Default: 100</strong></p></li>
+<li><p><strong>Learning rate</strong> - Learning rate for training the model</p></li>
+<li><p><strong>Batch size</strong> - Batch size for training (how many cell candidates to process at once). <strong>Default: 16</strong></p></li>
+<li><p><strong>Test fraction</strong> - What fraction of data to keep for validation. <strong>Default: 0.1</strong></p></li>
+</ul>
+<p><strong>Misc options</strong></p>
+<ul class="simple">
+<li><p>To ensure that cellfinder doesn’t use all the CPU cores on a machine, the
+<strong>Number of free cpus</strong> can be set. <strong>Default: 2</strong></p></li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Parameter values will be saved between sessions. The values can be reset by clicking the <strong>Reset defaults</strong> button.</p>
+</div>
+</section>
+</section>
+<section id="run-training">
+<h2>Run training<a class="headerlink" href="#run-training" title="Permalink to this heading">#</a></h2>
+<p>Click the <strong>Run</strong> button. </p>
+<p>The plugin will then run (this may take a while if you have lots of training data,
+or you have set many epochs). Trained models (<code class="docutils literal notranslate"><span class="pre">.h5</span></code> files) will be saved into your
+output directory, to be used for cell detection.</p>
+</section>
 </section>
 
 
@@ -604,20 +673,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../index.html"
+       href="training-data-generation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Generating data to retrain the cellfinder classification network</p>
       </div>
     </a>
     <a class="right-next"
-       href="cli.html"
+       href="all-cell-detection-parameters.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Command line interface</p>
+        <p class="prev-next-title">All cell detection parameters</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -630,6 +699,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-parameters">Set parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mandatory"><strong>Mandatory</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional"><strong>Optional</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-training">Run training</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
