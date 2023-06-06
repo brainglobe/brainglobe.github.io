@@ -1,4 +1,4 @@
-# Installation with docker
+# Use with docker
 
 ## Prerequisites
 

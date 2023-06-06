@@ -32,7 +32,8 @@ If the first plane of this image was the top of the brain it would be `sal`/`sar
 
 ## Voxel sizes
 
-You may also need to specify the size of your voxels. These voxel sizes are in microns, and come in the same order as your orientation definition.
+You may also need to specify the size of your voxels. These voxel sizes are in microns, and come in the same order 
+as your orientation definition.
 
 As an example, we will assume, as above, the origin of your data (first, top left voxel) is the most anterior, superior, 
 left part of the brain. If your plane spacing (i.e., the z-depth is 5 microns), and your in-plane resolution is 2x2 

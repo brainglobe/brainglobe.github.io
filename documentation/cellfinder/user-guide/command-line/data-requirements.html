@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Use with docker &#8212; BrainGlobe</title>
+    <title>Data requirements &#8212; BrainGlobe</title>
   
   
   
@@ -51,14 +51,14 @@
     <script src="../../../../_static/design-tabs.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/cellfinder/user-guide/command-line/docker';</script>
-    <link rel="canonical" href="https://brainglobe.info/documentation/cellfinder/user-guide/command-line/docker.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/cellfinder/user-guide/command-line/data-requirements';</script>
+    <link rel="canonical" href="https://brainglobe.info/documentation/cellfinder/user-guide/command-line/data-requirements.html" />
     <link rel="shortcut icon" href="../../../../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../../../../about.html" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="cellfinder napari plugin" href="../napari-plugin/index.html" />
-    <link rel="prev" title="Using supplied training data" href="training/using-supplied-data.html" />
+    <link rel="next" title="Command line interface" href="cli.html" />
+    <link rel="prev" title="cellfinder command line tool" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -488,7 +488,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html">Requirements</a></li>
 
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">cellfinder command line tool</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="data-requirements.html">Data requirements</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Data requirements</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="cli.html">Command line interface</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="candidate-detection.html">Cell candidate detection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classification.html">Cell candidate classification</a></li>
@@ -501,7 +501,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="training/using-supplied-data.html">Using supplied training data</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">Use with docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docker.html">Use with docker</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../napari-plugin/index.html">cellfinder napari plugin</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -572,7 +572,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">cellfinder command line tool</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Use with docker</li>
+    <li class="breadcrumb-item active" aria-current="page">Data requirements</li>
   </ul>
 </nav>
 </div>
@@ -589,49 +589,46 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="use-with-docker">
-<h1>Use with docker<a class="headerlink" href="#use-with-docker" title="Permalink to this heading">#</a></h1>
-<section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-requirements">
+<h1>Data requirements<a class="headerlink" href="#data-requirements" title="Permalink to this heading">#</a></h1>
+<p>What kind of data does cellfinder support?</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>cellfinder was written to analyse certain kinds of whole brain microscopy datasets (e.g. serial two-photon or
+lightsheet in cleared tissue). Although we are working on supporting different kinds of data, currently,
+the data must fit these criteria:</p>
+<section id="image-channels">
+<h3>Image channels<a class="headerlink" href="#image-channels" title="Permalink to this heading">#</a></h3>
+<p>For registration, you only need a single channel, but this is ideally a “background” channel, i.e., one with only
+autofluorescence, and no other strong signal. Typically, we acquire the “signal” channels with red or green
+filters, and then the “background” channel with blue filters.</p>
+<p>For cell detection, you will need two channels, the “signal” channel, and the “background” channel.
+The signal channel should contain brightly labelled cells (e.g. from staining or viral injections). The models
+supplied with cellfinder were trained on whole-cell labels, so if you have e.g. a nuclear marker, they will need to
+be retrained (see <a class="reference internal" href="training/index.html"><span class="doc std std-doc">Training the network</span></a>. However, realistically, the network will need to be
+retrained for every new application</p>
+</section>
+<section id="image-structure">
+<h3>Image structure<a class="headerlink" href="#image-structure" title="Permalink to this heading">#</a></h3>
+<p>Although we hope to support more varied types of data soon, your images must currently:</p>
 <ul class="simple">
-<li><p>Linux machine (<a class="reference external" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#linux-distributions">most common distributions are supported</a>)</p></li>
-<li><p>Recent NVIDIA GPU (<a class="reference external" href="https://en.wikipedia.org/wiki/CUDA">compute capability</a> &gt;=3)</p></li>
-<li><p><a class="reference external" href="https://www.nvidia.co.uk/Download/index.aspx?lang=en-uk">NVIDIA driver</a> &gt;= 418.81.07</p></li>
-<li><p><a class="reference external" href="https://docs.docker.com/engine/install/">Docker version</a> &gt;= 19.03</p></li>
+<li><p>Cover the entire brain</p></li>
+<li><p>Be of sufficiently high resolution that cells appear in multiple planes (i.e. 10μm axial spacing)</p></li>
+<li><p>Contain planes that are registered to each other (i.e., this is often not the case with slide</p></li>
+<li><p>scanners or manual acquisition)</p></li>
 </ul>
 </section>
-<section id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
-<p><strong>Install NVIDIA Container Toolkit</strong></p>
-<p>Full instructions are <a class="reference external" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#setting-up-nvidia-container-toolkit">here</a>, but e.g. for Ubuntu:</p>
-<p><strong>Setup repository and GPG key:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">distribution</span><span class="o">=</span><span class="k">$(</span>.<span class="w"> </span>/etc/os-release<span class="p">;</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$ID$VERSION_ID</span><span class="k">)</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>curl<span class="w"> </span>-s<span class="w"> </span>-L<span class="w"> </span>https://nvidia.github.io/nvidia-docker/gpgkey<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>apt-key<span class="w"> </span>add<span class="w"> </span>-<span class="w"> </span><span class="se">\</span>
-<span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>curl<span class="w"> </span>-s<span class="w"> </span>-L<span class="w"> </span>https://nvidia.github.io/nvidia-docker/<span class="nv">$distribution</span>/nvidia-docker.list<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/nvidia-docker.list
-</pre></div>
-</div>
-<p><strong>Install NVIDIA docker package:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>nvidia-docker2
-</pre></div>
-</div>
-<p><strong>Restart docker daemon:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>docker
-</pre></div>
+<section id="organisation">
+<h3>Organisation<a class="headerlink" href="#organisation" title="Permalink to this heading">#</a></h3>
+<p>cellfinder expects that your data will be stored as a series of 2D tiff files. These can be in a single directory,
+or you can generate a text file that points to them. Different channels in your dataset must be in different
+directories or text files.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Please ensure that none of the files or folders that you pass to cellfinder have a space in them.
+This should be fixed in the future, but for now, please use <code class="docutils literal notranslate"><span class="pre">/the_path/to/my_data</span></code> rather than <code class="docutils literal notranslate"><span class="pre">/the</span> <span class="pre">path/to/my</span> <span class="pre">data</span></code></p>
 </div>
 </section>
-<section id="running-cellfinder">
-<h2>Running cellfinder<a class="headerlink" href="#running-cellfinder" title="Permalink to this heading">#</a></h2>
-<p>To run with GPU support, and mount the current working directory at <code class="docutils literal notranslate"><span class="pre">/data</span></code><strong>:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>container<span class="w"> </span>run<span class="w"> </span>--mount<span class="w"> </span><span class="nv">type</span><span class="o">=</span>bind,source<span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>,target<span class="o">=</span>/data<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-it<span class="w"> </span>ghcr.io/brainglobe/cellfinder
-</pre></div>
-</div>
-<p>This will open up a bash prompt, and you can use cellfinder (or brainreg etc.) to analyse your data (mounted at <code class="docutils literal notranslate"><span class="pre">/data</span></code>) as normal, e.g.:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cellfinder<span class="w"> </span>-s<span class="w"> </span>/data/brain1/channel0<span class="w"> </span>-b<span class="w"> </span>/data/brain1/channel1<span class="w"> </span>-v<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>--orientation<span class="w"> </span>psl<span class="w"> </span>-o<span class="w"> </span>/data/analysis/brain1<span class="w"> </span>--trained-model<span class="w"> </span>/data/models/retrained.h5
-</pre></div>
-</div>
-<p>To leave the docker container when done, just <code class="docutils literal notranslate"><span class="pre">exit</span></code>.The data will be saved onto the host system, at your current working directory (you can mount different directories, or multiple directories, see the <a class="reference external" href="https://docs.docker.com/storage/bind-mounts/">docker documentation</a>).</p>
 </section>
 </section>
 
@@ -647,20 +644,20 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="training/using-supplied-data.html"
+       href="index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Using supplied training data</p>
+        <p class="prev-next-title">cellfinder command line tool</p>
       </div>
     </a>
     <a class="right-next"
-       href="../napari-plugin/index.html"
+       href="cli.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">cellfinder napari plugin</p>
+        <p class="prev-next-title">Command line interface</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -682,9 +679,12 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-cellfinder">Running cellfinder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-channels">Image channels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-structure">Image structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organisation">Organisation</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
