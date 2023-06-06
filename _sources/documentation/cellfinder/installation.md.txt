@@ -76,7 +76,7 @@ pip install cellfinder
 :::{admonition} Installing the command line tool using docker
 :class: dropdown
 
-Please see the [guide to using cellfinder with docker](docker)
+Please see the [guide to using cellfinder with docker](user-guide/command-line/docker.md)
 :::
 
 To install download BrainGlobe atlases in advance, please see the guide to

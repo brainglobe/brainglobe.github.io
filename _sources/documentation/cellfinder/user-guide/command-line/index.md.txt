@@ -1,0 +1,10 @@
+# cellfinder command line tool
+
+```{toctree}
+:maxdepth: 1
+cli
+visualisation
+output-files
+docker
+```
+

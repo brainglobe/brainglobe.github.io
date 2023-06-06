@@ -54,8 +54,7 @@ installation
 ## User guide
 ```{toctree}
 :maxdepth: 1
-user-guide/parameters
-troubleshooting/index
+user-guide/index
 ```
 
 ## Tutorials

@@ -21,7 +21,7 @@ Some of these images will not be visible by default. Click the little eye icon t
 N.B. If you use a high-resolution atlas (such as `allen_mouse_10um`), then the files can take a little while to load.
 :::
 
-![Visualisation in sample space](https://raw.githubusercontent.com/brainglobe/napari-brainreg/master/resources/sample_space.gif)
+![Visualisation in sample space](/documentation/brainreg/images/sample_space.gif)
 
 ## Atlas space
 
