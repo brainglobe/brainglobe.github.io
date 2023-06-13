@@ -57,7 +57,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="cellfinder" href="../cellfinder/index.html" />
+    <link rel="next" title="Usage" href="usage/index.html" />
     <link rel="prev" title="brainrender" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -294,6 +294,10 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
     </nav>
@@ -481,14 +485,25 @@ document.write(`
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">brainrender</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Installing brainrender</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="usage/index.html">Usage</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="usage/scene.html">Scene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage/actors.html">Actors</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="usage/using-your-data/index.html">Using your own data in brainrender</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="usage/using-your-data/registering-data.html">Registering data</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cellfinder/index.html">cellfinder</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="usage/using-notebooks.html">Using Notebooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage/videos-animations-and-exporting-to-html.html">Videos, animations and exporting to html</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cellfinder/index.html">cellfinder</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cellfinder/installation.html">Requirements</a></li>
 
-<li class="toctree-l2 has-children"><a class="reference internal" href="../cellfinder/user-guide/command-line/index.html">cellfinder command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cellfinder/user-guide/command-line/index.html">cellfinder command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../cellfinder/user-guide/command-line/data-requirements.html">Data requirements</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../cellfinder/user-guide/command-line/cli.html">Command line interface</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../cellfinder/user-guide/command-line/cli.html">Command line interface</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../cellfinder/user-guide/command-line/candidate-detection.html">Cell candidate detection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cellfinder/user-guide/command-line/classification.html">Cell candidate classification</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../brainreg/user-guide/parameters.html">Registration parameters</a></li>
@@ -497,26 +512,26 @@ document.write(`
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../cellfinder/user-guide/command-line/visualisation.html">Visualisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cellfinder/user-guide/command-line/output-files.html">Output files</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../cellfinder/user-guide/command-line/training/index.html">Training the network</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../cellfinder/user-guide/command-line/training/index.html">Training the network</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../cellfinder/user-guide/command-line/training/using-supplied-data.html">Using supplied training data</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../cellfinder/user-guide/command-line/docker.html">Use with docker</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../cellfinder/user-guide/napari-plugin/index.html">cellfinder napari plugin</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cellfinder/user-guide/napari-plugin/index.html">cellfinder napari plugin</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../cellfinder/user-guide/napari-plugin/cell-detection.html">Cell detection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cellfinder/user-guide/napari-plugin/training-data-generation.html">Generating data to retrain the cellfinder classification network</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cellfinder/user-guide/napari-plugin/training-the-network.html">Retraining the network for new data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cellfinder/user-guide/napari-plugin/all-cell-detection-parameters.html">All cell detection parameters</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../cellfinder/troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cellfinder/troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../cellfinder/troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cellfinder/troubleshooting/error-messages.html">Debugging common error messages</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorials/cellfinder-cli/index.html">Whole brain cell detection and registration with the cellfinder command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorials/cellfinder-cli/index.html">Whole brain cell detection and registration with the cellfinder command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/cellfinder-cli/setting-up.html">Setting up</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/cellfinder-cli/running-cellfinder.html">Running cellfinder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/cellfinder-cli/visualising-the-results.html">Visualising the results</a></li>
@@ -526,7 +541,7 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../morphapi/index.html">morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../morphapi/index.html">morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../morphapi/usage/downloading-data.html">Downloading data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../morphapi/usage/rendering-data.html">Rendering data</a></li>
 </ul>
@@ -593,6 +608,42 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="installing-brainrender">
 <h1>Installing brainrender<a class="headerlink" href="#installing-brainrender" title="Permalink to this heading">#</a></h1>
+<section id="environment">
+<h2>Environment<a class="headerlink" href="#environment" title="Permalink to this heading">#</a></h2>
+<p>To install <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>, you need a python environment with a Python 3.8. This may be a different version than you are
+using for other software. Using <a class="reference internal" href="../general/conda.html"><span class="doc std std-doc">conda</span></a> this can be created with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>brainrender<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8<span class="w"> </span>-y
+</pre></div>
+</div>
+</section>
+<section id="basic-installation">
+<h2>Basic installation<a class="headerlink" href="#basic-installation" title="Permalink to this heading">#</a></h2>
+<p>Installing <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> is as simple as:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>brainrender
+</pre></div>
+</div>
+<div class="attention docutils">
+<p>Make sure to have your conda environment active when running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code></p>
+</div>
+<div class="caution docutils">
+<p>You might get some error messages reporting conflicting version requirements for the <code class="docutils literal notranslate"><span class="pre">allensdk</span></code> package and a couple of
+others. You can safely ignore these.</p>
+</div>
+<div class="info docutils">
+<p>Note that some of <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>’s more rarely used features may require the installation of additional packages.</p>
+</div>
+<p>Once you have installed brainrender, dive right in with this
+<a class="reference external" href="https://github.com/brainglobe/brainrender/blob/master/getting_started.ipynb">getting started example notebook!</a></p>
+</section>
+<section id="advanced-installation">
+<h2>Advanced installation<a class="headerlink" href="#advanced-installation" title="Permalink to this heading">#</a></h2>
+<p>If you want the most recent version of <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>’s code, perhaps to help developing it, you can either
+clone the <a class="reference external" href="https://github.com/brainglobe/brainrender">GitHub repository</a> or you can get install it directly from
+GitHub with:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pip install -U git+https://github.com/brainglobe/brainrender.git
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -616,11 +667,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../cellfinder/index.html"
+       href="usage/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">cellfinder</p>
+        <p class="prev-next-title">Usage</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -633,6 +684,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment">Environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-installation">Basic installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-installation">Advanced installation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
