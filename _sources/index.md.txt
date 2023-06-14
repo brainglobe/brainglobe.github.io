@@ -14,7 +14,7 @@ scientific, and open-source community (e.g. by organising hackathons).
 :gutter: 3
 
 :::{grid-item-card} {fas}`question;sd-text-primary` About
-:img-bottom: _static/raw.png
+:img-bottom: _static/bg_logo_wide.png
 :link: about
 :link-type: doc
 
@@ -22,7 +22,7 @@ What is the BrainGlobe Initiative?
 :::
 
 :::{grid-item-card} {fas}`chalkboard-user;sd-text-primary` Tutorials
-:img-bottom: _static/overlay.png
+:img-bottom: _static/cellfinder_brainrender.png
 :link: tutorials/index
 :link-type: doc
 
@@ -30,7 +30,7 @@ How do I get started with these tools?
 :::
 
 :::{grid-item-card} {fas}`book;sd-text-primary` Documentation
-:img-bottom: _static/cells.png
+:img-bottom: _static/atlases.png
 :link: documentation/index
 :link-type: doc
 
