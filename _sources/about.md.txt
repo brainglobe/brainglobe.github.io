@@ -78,6 +78,7 @@ contact
 publications
 media
 governance-model
+funders
 ```
 
 
