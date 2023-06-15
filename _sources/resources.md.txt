@@ -5,6 +5,5 @@
 publications
 developers/index
 Sample datasets <https://gin.g-node.org/BrainGlobe>
-Contributing guide <https://github.com/brainglobe/.github/blob/main/CONTRIBUTING.md>
 Old documentation <https://docs.brainglobe.info>
 :::

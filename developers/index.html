@@ -57,7 +57,7 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="cellfinder-core" href="repositories/cellfinder-core/index.html" />
+    <link rel="next" title="Tooling" href="tooling.html" />
     <link rel="prev" title="Image definition" href="../documentation/general/image-definition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -366,14 +366,18 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Developers guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tooling.html">Tooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="repositories/cellfinder-core/index.html">cellfinder-core</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="repositories/cellfinder-core/cell-detection.html">Cell detection</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="repositories/cellfinder/index.html">cellfinder</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference external" href="https://gin.g-node.org/BrainGlobe">Sample datasets</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/brainglobe/.github/blob/main/CONTRIBUTING.md">Contributing guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://docs.brainglobe.info">Old documentation</a></li>
 </ul>
 </div>
@@ -434,15 +438,99 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="developers-guide">
 <h1>Developers guide<a class="headerlink" href="#developers-guide" title="Permalink to this heading">#</a></h1>
-<p>How to contribute to BrainGlobe.</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p><strong>Contributors to BrainGlobe are absolutely encouraged</strong>, whether to fix a bug, develop a new feature, or add a new atlas.</p>
+<p>There are many BrainGlobe repositories, so it may not be obvious where a new contribution should go.
+If you’re unsure about any part of the contributing process, please get in touch. The best place is to start a new discussion on
+the <a class="reference external" href="https://forum.image.sc/tag/brainglobe">image.sc forum</a>. If you tag your post with <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> (and optionally a
+specific tool, e.g. <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code>) we will see your question and respond as soon as we can.</p>
+<p>If you have a query about contributing to a specific tool, please do raise an issue on the relevant GitHub page.
+If it’s not the correct repository (e.g. <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> vs <code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code>), don’t worry, we can move it to the
+relevant repository later. If for any reason, you’d rather not reach out in public, feel free to
+<a class="reference external" href="mailto:code&#37;&#52;&#48;adamltyson&#46;com?subject=brainglobe-contribution">email</a> <a class="reference external" href="https://github.com/adamltyson">Adam Tyson</a>, one
+of the core developers.</p>
+</section>
+<section id="to-contribute-a-new-atlas">
+<h2>To contribute a new atlas<a class="headerlink" href="#to-contribute-a-new-atlas" title="Permalink to this heading">#</a></h2>
+<p>To add a new BrainGlobe atlas, please see the guide <a class="reference internal" href="../documentation/bg-atlasapi/adding-a-new-atlas.html"><span class="doc std std-doc">here</span></a></p>
+</section>
+<section id="to-improve-the-documentation">
+<h2>To improve the documentation<a class="headerlink" href="#to-improve-the-documentation" title="Permalink to this heading">#</a></h2>
+<p>Documentation for BrainGlobe is <strong>very important</strong> because it is aimed at researchers who may not have much
+computational experience. In particular:</p>
+<ul class="simple">
+<li><p>Installation, although simple via PyPI, assumes a lot (functional Python installation, CUDA installation etc.).</p></li>
+<li><p>Although most software can be run through a single command, there are a lot of steps, and so a lot to understand.</p></li>
+<li><p>There are a lot of parameters that can be changed, and their impact on the final results is not always obvious.</p></li>
+<li><p>It is not immediately obvious how to use the results of the pipeline to answer the particular biological question.</p></li>
+</ul>
+<p>For these reasons (and others) every part of all software must be documented as well as possible,
+and all new features must be fully documented.</p>
+<section id="editing-the-documentation">
+<h3>Editing the documentation<a class="headerlink" href="#editing-the-documentation" title="Permalink to this heading">#</a></h3>
+<p>TBC</p>
+</section>
+</section>
+<section id="to-contribute-code">
+<h2>To contribute code<a class="headerlink" href="#to-contribute-code" title="Permalink to this heading">#</a></h2>
+<section id="creating-a-development-environment">
+<h3>Creating a development environment<a class="headerlink" href="#creating-a-development-environment" title="Permalink to this heading">#</a></h3>
+<p>It is recommended to use <code class="docutils literal notranslate"><span class="pre">conda</span></code> to install a development environment for
+BrainGlobe projects. Once you have <code class="docutils literal notranslate"><span class="pre">conda</span></code> installed, the following commands
+will create and activate a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment with the requirements needed
+for a development environment:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>brainglobe-dev<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10<span class="w"> </span>napari
+conda<span class="w"> </span>activate<span class="w"> </span>brainglobe-dev
+</pre></div>
+</div>
+<p>This installs packages that often can’t be installed via <code class="docutils literal notranslate"><span class="pre">pip</span></code>, including
+<code class="docutils literal notranslate"><span class="pre">pyqt</span></code>. The specific version of <code class="docutils literal notranslate"><span class="pre">Python</span></code> is chosen to allow <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code> to be
+installed on macOS arm64 machines.</p>
+<p>To install a specific BrainGlobe project for development, clone the
+GitHub repository, and then run</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="o">[</span>dev<span class="o">]</span>
+</pre></div>
+</div>
+<p>Or if using <code class="docutils literal notranslate"><span class="pre">zsh</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;.[dev]&#39;</span>
+</pre></div>
+</div>
+<p>from inside the repository. This will install the package, its dependencies,
+and its development dependencies.</p>
+</section>
+</section>
+<section id="pull-requests">
+<h2>Pull requests<a class="headerlink" href="#pull-requests" title="Permalink to this heading">#</a></h2>
+<p>In all cases, please submit code to the main repository via a pull request. The developers recommend, and adhere,
+to the following conventions:</p>
+<ul class="simple">
+<li><p>Please submit <em>draft</em> pull requests as early as possible (you can still push to the branch once submitted) to
+allow for discussion.</p></li>
+<li><p>One approval of a PR (by a repo owner) is enough for it to be merged.</p></li>
+<li><p>Unless someone approves the PR with optional comments, the PR is immediately merged by the approving reviewer.</p></li>
+<li><p>Please merge via “Squash and Merge” on GitHub to maintain a clean commit history.</p></li>
+<li><p>Ask for a review from someone specific if you think they would be a particularly suited reviewer (possibly noting
+why they are suited on the PR description)</p></li>
+</ul>
+</section>
+<section id="further-information">
+<h2>Further information<a class="headerlink" href="#further-information" title="Permalink to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tooling.html">Tooling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a></li>
+</ul>
+</div>
+</section>
 <section id="specific-repository-information">
 <h2>Specific repository information<a class="headerlink" href="#specific-repository-information" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="repositories/cellfinder-core/index.html">cellfinder-core</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="repositories/cellfinder-core/cell-detection.html">Cell detection</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="repositories/cellfinder-core/index.html">cellfinder-core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repositories/cellfinder/index.html">cellfinder</a></li>
 </ul>
 </div>
 </section>
@@ -469,11 +557,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="repositories/cellfinder-core/index.html"
+       href="tooling.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">cellfinder-core</p>
+        <p class="prev-next-title">Tooling</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -495,6 +583,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-contribute-a-new-atlas">To contribute a new atlas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-improve-the-documentation">To improve the documentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#editing-the-documentation">Editing the documentation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-contribute-code">To contribute code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-development-environment">Creating a development environment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-requests">Pull requests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-information">Further information</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-repository-information">Specific repository information</a></li>
 </ul>
   </nav></div>
