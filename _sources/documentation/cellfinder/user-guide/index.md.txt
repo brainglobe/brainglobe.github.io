@@ -2,6 +2,7 @@
 :maxdepth: 1
 command-line/index
 napari-plugin/index
+cellfinder-core
 ../troubleshooting/index
 ```
 
