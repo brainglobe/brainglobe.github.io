@@ -33,3 +33,9 @@ body .bd-article-container {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.editthispage {
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
