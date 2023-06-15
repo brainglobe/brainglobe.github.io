@@ -1,2 +1,8 @@
 # Developers guide
 How to contribute to BrainGlobe.
+
+## Specific repository information
+:::{toctree}
+:maxdepth: 2
+repositories/cellfinder-core/index
+:::

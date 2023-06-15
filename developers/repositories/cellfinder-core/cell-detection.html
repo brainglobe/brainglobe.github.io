@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>&lt;no title&gt; &#8212; BrainGlobe</title>
+    <title>Cell detection &#8212; BrainGlobe</title>
   
   
   
@@ -51,14 +51,14 @@
     <script src="../../../_static/design-tabs.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/cellfinder/user-guide/index';</script>
-    <link rel="canonical" href="https://brainglobe.info/documentation/cellfinder/user-guide/index.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'developers/repositories/cellfinder-core/cell-detection';</script>
+    <link rel="canonical" href="https://brainglobe.info/developers/repositories/cellfinder-core/cell-detection.html" />
     <link rel="shortcut icon" href="../../../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="cellfinder command line tool" href="command-line/index.html" />
-    <link rel="prev" title="Requirements" href="../installation.html" />
+    <link rel="next" title="bg-atlasapi" href="../../../documentation/bg-atlasapi/index.html" />
+    <link rel="prev" title="cellfinder-core" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -162,14 +162,14 @@
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="../../index.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../documentation/index.html">
                         Documentation
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
+                    <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../../../resources.html">
                         Resources
                       </a>
@@ -251,6 +251,10 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
     </nav>
@@ -290,14 +294,14 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="../../index.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../documentation/index.html">
                         Documentation
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
+                    <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../../../resources.html">
                         Resources
                       </a>
@@ -359,112 +363,18 @@ document.write(`
         <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../general/index.html">General BrainGlobe documentation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../general/conda.html">Using conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../general/gpu.html">Setting up your GPU</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../general/image-definition.html">Image definition</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../developers/index.html">Developers guide</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../developers/repositories/cellfinder-core/index.html">cellfinder-core</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../developers/repositories/cellfinder-core/cell-detection.html">Cell detection</a></li>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../publications.html">Publications</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html">Developers guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">cellfinder-core</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Cell detection</a></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../bg-atlasapi/index.html">bg-atlasapi</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../bg-atlasapi/usage/atlas-details.html">Atlas details</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../bg-atlasapi/usage/python-api.html">Python API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../bg-atlasapi/usage/command-line-interface.html">Command line interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../bg-atlasapi/usage/using-the-files-directly.html">Using the files directly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../bg-atlasapi/adding-a-new-atlas.html">Adding a new atlas</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../bg-space/index.html">bg-space</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../brainreg/index.html">brainreg</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../brainreg/installation.html">Requirements</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../../brainreg/user-guide/brainreg-napari.html">Napari plugin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../brainreg/user-guide/brainreg-cli.html">Command line tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../brainreg/user-guide/parameters.html">Registration parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../brainreg/user-guide/checking-orientation.html">Checking orientation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../brainreg/user-guide/output-files.html">Output files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../brainreg/user-guide/visualisation.html">Visualising brainreg output</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../brainreg-segment/index.html">brainreg-segment</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../brainreg-segment/user-guide/index.html">Prerequisites</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../../brainreg-segment/user-guide/segmenting-1d-tracks.html">Segmenting 1D tracks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../brainreg-segment/user-guide/segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../brainrender/index.html">brainrender</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../brainrender/installation.html">Installing brainrender</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../brainrender/usage/index.html">Usage</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../brainrender/usage/scene.html">Scene</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../brainrender/usage/actors.html">Actors</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../brainrender/usage/using-your-data/index.html">Using your own data in brainrender</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../brainrender/usage/using-your-data/registering-data.html">Registering data</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../brainrender/usage/using-notebooks.html">Using Notebooks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../brainrender/usage/videos-animations-and-exporting-to-html.html">Videos, animations and exporting to html</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../index.html">cellfinder</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../installation.html">Requirements</a></li>
-
-<li class="toctree-l2 has-children"><a class="reference internal" href="command-line/index.html">cellfinder command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="command-line/data-requirements.html">Data requirements</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="command-line/cli.html">Command line interface</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="command-line/candidate-detection.html">Cell candidate detection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="command-line/classification.html">Cell candidate classification</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../brainreg/user-guide/parameters.html">Registration parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="command-line/using-cellfinder-at-the-swc.html">Using cellfinder at the SWC</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="command-line/visualisation.html">Visualisation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="command-line/output-files.html">Output files</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="command-line/training/index.html">Training the network</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="command-line/training/using-supplied-data.html">Using supplied training data</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="command-line/docker.html">Use with docker</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="napari-plugin/index.html">cellfinder napari plugin</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="napari-plugin/cell-detection.html">Cell detection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="napari-plugin/training-data-generation.html">Generating data to retrain the cellfinder classification network</a></li>
-<li class="toctree-l3"><a class="reference internal" href="napari-plugin/training-the-network.html">Retraining the network for new data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="napari-plugin/all-cell-detection-parameters.html">All cell detection parameters</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../troubleshooting/error-messages.html">Debugging common error messages</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/cellfinder-cli/index.html">Whole brain cell detection and registration with the cellfinder command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/cellfinder-cli/setting-up.html">Setting up</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/cellfinder-cli/running-cellfinder.html">Running cellfinder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/cellfinder-cli/visualising-the-results.html">Visualising the results</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/cellfinder-cli/exploring-the-numerical-results.html">Exploring the numerical results</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/cellfinder-cli/visualising-your-data-in-brainrender.html">Visualising your data in brainrender</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../morphapi/index.html">morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../morphapi/usage/downloading-data.html">Downloading data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../morphapi/usage/rendering-data.html">Rendering data</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference external" href="https://gin.g-node.org/BrainGlobe">Sample datasets</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/brainglobe/.github/blob/main/CONTRIBUTING.md">Contributing guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.brainglobe.info">Old documentation</a></li>
 </ul>
 </div>
 </nav></div>
@@ -494,6 +404,8 @@ document.write(`
 
 
 
+
+
 <nav aria-label="Breadcrumbs">
   <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
     
@@ -503,12 +415,15 @@ document.write(`
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Documentation</a></li>
+    <li class="breadcrumb-item"><a href="../../../documentation/index.html" class="nav-link">Documentation</a></li>
     
     
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">cellfinder</a></li>
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
     
-    <li class="breadcrumb-item active" aria-current="page">&lt;no title&gt;</li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">cellfinder-core</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Cell detection</li>
   </ul>
 </nav>
 </div>
@@ -525,13 +440,75 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="command-line/index.html">cellfinder command line tool</a></li>
-<li class="toctree-l1"><a class="reference internal" href="napari-plugin/index.html">cellfinder napari plugin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/index.html">Troubleshooting</a></li>
+  <section class="tex2jax_ignore mathjax_ignore" id="cell-detection">
+<h1>Cell detection<a class="headerlink" href="#cell-detection" title="Permalink to this heading">#</a></h1>
+<section id="methodology">
+<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this heading">#</a></h2>
+<p>Cell detection in cellfinder has three stages:</p>
+<ol class="arabic simple">
+<li><p>2D filter each image plane independently.</p></li>
+<li><p>3D filter small batches of planes.</p></li>
+<li><p>Merge detected cell candidate voxels into into structures.</p></li>
+</ol>
+<section id="d-filtering">
+<h3>2D filtering<a class="headerlink" href="#d-filtering" title="Permalink to this heading">#</a></h3>
+<p>Code can be found in <code class="docutils literal notranslate"><span class="pre">cellfinder_core/detect/filters/plane</span></code>.
+Each plane of data is filtered independently, and in parallel across a number of processes.</p>
+<p>This part of processing performs two tasks:</p>
+<ol class="arabic">
+<li><p>Applys a filter to enhance peaks in the data (<code class="docutils literal notranslate"><span class="pre">cellfinder_core/detect/filters/plane/classical_filter.py</span></code>).
+This consists of (in order)</p>
+<ol class="arabic simple">
+<li><p>a median filter (<code class="docutils literal notranslate"><span class="pre">scipy.signal.medfilt2d</span></code>)</p></li>
+<li><p>a gaussian filter (<code class="docutils literal notranslate"><span class="pre">scipy.ndimage.gaussian_filter</span></code>)</p></li>
+<li><p>a laplacian filter (<code class="docutils literal notranslate"><span class="pre">scipy.signal.laplace</span></code>),</p></li>
+<li><p>inverting the data</p></li>
+<li><p>normalising to [0, 1]</p></li>
+<li><p>scaling to <em>clipping_value</em>.</p></li>
+</ol>
+<p>Because applying several of the filters is more time efficient when done on floating point data types, each plane is cast to <code class="docutils literal notranslate"><span class="pre">float64</span></code> in this step.</p>
+</li>
+<li><p>Works out which areas of the plane are inside or outside of the brain. To do this the plane is divided into square tiles that have edge length <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">soma_diameter</span></code>. The lower corner tile is assumed to be outside the brain, and any tiles that have a mean intensity less than <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">mean</span> <span class="pre">+</span> <span class="pre">(2</span> <span class="pre">*</span> <span class="pre">stddev)</span></code> of the corner tile are marked as being outside the brain. This speeds up processing in later steps by automatically skipping over tiles marked as outside the brain in this step.</p></li>
+</ol>
+</section>
+<section id="id1">
+<h3>3D filtering<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>Code can be found in <code class="docutils literal notranslate"><span class="pre">cellfinder_core/detect/filters/volume/ball_filter.py</span></code>.
+Both this step and the structure detection step take place in the main <code class="docutils literal notranslate"><span class="pre">Python</span></code> process, with no parallelism. As the planes are processed in the 2D filtering step, they are passed to this step. When <code class="docutils literal notranslate"><span class="pre">ball_z_size</span></code> planes have been handed over, 3D filtering begins.</p>
+<p>The 3D filter stores a 3D array that has depth <code class="docutils literal notranslate"><span class="pre">ball_z_size</span></code>, and contains <code class="docutils literal notranslate"><span class="pre">ball_z_size</span></code> number of planes. This is a small 3D slice of the original data. A spherical kernel runs across the x, y dimensions, and where enough intensity overlaps with the spherical kernel the voxel at the centre of the kernel is marked as being part of a cell. The output of this step is the central plane of the array, with marked cells.</p>
+</section>
+<section id="structure-detection">
+<h3>Structure detection<a class="headerlink" href="#structure-detection" title="Permalink to this heading">#</a></h3>
+<p>Code can be found in <code class="docutils literal notranslate"><span class="pre">cellfinder_core/detect/filters/volume/structure_detection.py</span></code>.
+This step takes the planes output from 3D filtering with marked cell voxels, and detects collections of voxels that are adjacent.</p>
+</section>
+</section>
+<section id="memory-usage">
+<h2>Memory usage<a class="headerlink" href="#memory-usage" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h3>2D filtering<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>For each plane, the following memory is used:</p>
+<ul class="simple">
+<li><p>The plane itself is read into memory</p></li>
+<li><p>During filtering, a copy of the plane is made and cast to <code class="docutils literal notranslate"><span class="pre">float64</span></code></p></li>
+<li><p>A small <code class="docutils literal notranslate"><span class="pre">uint8</span></code> mask is created to mark areas of the plane that are inside/outside of the brain</p></li>
 </ul>
-</div>
+</section>
+<section id="id3">
+<h3>3D filtering<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ball_z_size</span></code> planes at a time are stored.</p></li>
+<li><p>Twice this amount of memory is required to roll the array each time a new array is fed to the 3D filter stage.</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>Structure detection<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Two planes are cast to <code class="docutils literal notranslate"><span class="pre">uint64</span></code> and are stored at the same time</p></li>
+</ul>
+</section>
+</section>
+</section>
 
 
                 </article>
@@ -545,20 +522,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../installation.html"
+       href="index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Requirements</p>
+        <p class="prev-next-title">cellfinder-core</p>
       </div>
     </a>
     <a class="right-next"
-       href="command-line/index.html"
+       href="../../../documentation/bg-atlasapi/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">cellfinder command line tool</p>
+        <p class="prev-next-title">bg-atlasapi</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -571,6 +548,31 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology">Methodology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-filtering">2D filtering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3D filtering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-detection">Structure detection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-usage">Memory usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2D filtering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3D filtering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Structure detection</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
