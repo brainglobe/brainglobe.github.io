@@ -1,5 +1,5 @@
 # Media
-## BrainGlobe reported in press/online
+BrainGlobe reported in press/online
 ## [BrainGlobe; An Open-Source Platform for Neuroscientists](https://www.news-medical.net/news/20211215/BrainGlobe3b-An-Open-Source-Platform-for-Neuroscientists.aspx)
 
 _News-Medical, December 2021_

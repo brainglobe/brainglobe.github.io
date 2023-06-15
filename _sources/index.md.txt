@@ -44,9 +44,7 @@ Find out more about these tools.
 :caption: Index
 :hidden:
 about
-contact
 tutorials/index
 documentation/index
-publications
-media
+resources
 ```
