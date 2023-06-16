@@ -152,7 +152,7 @@ you can just go to the folder with the atlas content
 For the metadata, you can just open the json file and inspect it.
 
 To inspect the reference.tiff file and the annotation.tiff file, you can just drag and drop them in napari 
-(to install napari, check out [https://napari.org/tutorials/fundamentals/installation](https://napari.org/tutorials/fundamentals/installation)), 
+(to install napari, see [here](https://napari.org/stable/tutorials/fundamentals/installation)), 
 and they will open as an image layer, and a label layer, respectively. You know the orientation is correct if you are 
 looking at upright (dorsal top, ventral bottom) frontal sections, and when you scroll the slider to inspect sections 
 with a higher index, you are moving from anterior to posterior.
@@ -160,6 +160,18 @@ with a higher index, you are moving from anterior to posterior.
 To inspect the meshes, BrainGlobe provides 
 [code](https://github.com/brainglobe/bg-atlasgen/blob/86caab99317359e5f791c991febb12589c5ced8a/bg\_atlasgen/mesh\_utils.py#L227) to 
 load and visualize a set of .obj files for quick inspection. Once an atlas is created with BrainGlobe’s atlas generation tools, 
-it can be used with most software from the BrainGlobe software suite, including [brainrender](https://github.com/brainglobe/brainrender) 
+it can be used with most software from the BrainGlobe software suite, including [brainrender](/documentation/brainrender/index) 
 which provides a convenient GUI for visually inspecting the generated atlas meshes.
 
+## Uploading the atlas
+
+After the pull request is merged, one of the BrainGlobe core developers will run the script and upload the packaged 
+atlas (`.tar.gz` archive) to [the GIN repository](https://gin.g-node.org/BrainGlobe/atlases). The 
+[`latest_versions.conf`](https://gin.g-node.org/BrainGlobe/atlases/src/master/last_versions.conf) file will also be 
+updated to include the new atlas. At this point, the atlas will be available for use in the API.
+
+## Updating an existing atlas
+To update an existing atlas, a pull request must be raised to change the existing script. Once this pull request is 
+merged, the new atlas will be generated and uploaded to the GIN repository as normal. The 
+[`latest_versions.conf`](https://gin.g-node.org/BrainGlobe/atlases/src/master/last_versions.conf) can then be updated 
+to reflect the latest version. 

@@ -683,16 +683,30 @@ you can just go to the folder with the atlas content
 (named <code class="docutils literal notranslate"><span class="pre">atlasname_resolutionum</span></code> in the directory you were generating the atlas in) and check out its content. </p>
 <p>For the metadata, you can just open the json file and inspect it.</p>
 <p>To inspect the reference.tiff file and the annotation.tiff file, you can just drag and drop them in napari
-(to install napari, check out <a class="reference external" href="https://napari.org/tutorials/fundamentals/installation">https://napari.org/tutorials/fundamentals/installation</a>),
+(to install napari, see <a class="reference external" href="https://napari.org/stable/tutorials/fundamentals/installation">here</a>),
 and they will open as an image layer, and a label layer, respectively. You know the orientation is correct if you are
 looking at upright (dorsal top, ventral bottom) frontal sections, and when you scroll the slider to inspect sections
 with a higher index, you are moving from anterior to posterior.</p>
 <p>To inspect the meshes, BrainGlobe provides
 <a class="reference external" href="https://github.com/brainglobe/bg-atlasgen/blob/86caab99317359e5f791c991febb12589c5ced8a/bg_atlasgen/mesh_utils.py#L227">code</a> to
 load and visualize a set of .obj files for quick inspection. Once an atlas is created with BrainGlobe’s atlas generation tools,
-it can be used with most software from the BrainGlobe software suite, including <a class="reference external" href="https://github.com/brainglobe/brainrender">brainrender</a>
+it can be used with most software from the BrainGlobe software suite, including <a class="reference internal" href="../brainrender/index.html"><span class="doc std std-doc">brainrender</span></a>
 which provides a convenient GUI for visually inspecting the generated atlas meshes.</p>
 </section>
+</section>
+<section id="uploading-the-atlas">
+<h2>Uploading the atlas<a class="headerlink" href="#uploading-the-atlas" title="Permalink to this heading">#</a></h2>
+<p>After the pull request is merged, one of the BrainGlobe core developers will run the script and upload the packaged
+atlas (<code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code> archive) to <a class="reference external" href="https://gin.g-node.org/BrainGlobe/atlases">the GIN repository</a>. The
+<a class="reference external" href="https://gin.g-node.org/BrainGlobe/atlases/src/master/last_versions.conf"><code class="docutils literal notranslate"><span class="pre">latest_versions.conf</span></code></a> file will also be
+updated to include the new atlas. At this point, the atlas will be available for use in the API.</p>
+</section>
+<section id="updating-an-existing-atlas">
+<h2>Updating an existing atlas<a class="headerlink" href="#updating-an-existing-atlas" title="Permalink to this heading">#</a></h2>
+<p>To update an existing atlas, a pull request must be raised to change the existing script. Once this pull request is
+merged, the new atlas will be generated and uploaded to the GIN repository as normal. The
+<a class="reference external" href="https://gin.g-node.org/BrainGlobe/atlases/src/master/last_versions.conf"><code class="docutils literal notranslate"><span class="pre">latest_versions.conf</span></code></a> can then be updated
+to reflect the latest version.</p>
 </section>
 </section>
 
@@ -753,6 +767,8 @@ which provides a convenient GUI for visually inspecting the generated atlas mesh
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-results">Inspecting results</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-the-atlas">Uploading the atlas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-an-existing-atlas">Updating an existing atlas</a></li>
 </ul>
   </nav></div>
 
