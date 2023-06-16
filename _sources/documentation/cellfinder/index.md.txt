@@ -54,7 +54,10 @@ installation
 ## User guide
 ```{toctree}
 :maxdepth: 1
-user-guide/index
+user-guide/command-line/index
+user-guide/napari-plugin/index
+user-guide/cellfinder-core
+troubleshooting/index
 ```
 
 ## Tutorials

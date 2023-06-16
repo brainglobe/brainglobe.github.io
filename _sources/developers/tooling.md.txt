@@ -21,7 +21,7 @@ your changes, but before you commit them.
 
 In the case you see `mypy` failing with an error like `Library stubs not installed for this-package`, you have 
 to edit the `.pre-commit-config.yaml` file by adding the additional dependency to `mypy`:
-```yml
+```yaml
 - id: mypy
 	additional_dependencies:
 		- types-setuptools
