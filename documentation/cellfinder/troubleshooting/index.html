@@ -58,7 +58,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Speeding up cellfinder" href="speed-up.html" />
-    <link rel="prev" title="cellfinder-core API" href="../user-guide/cellfinder-core.html" />
+    <link rel="prev" title="Retraining the pre-trained network" href="../user-guide/training-strategy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -456,6 +456,7 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../user-guide/cellfinder-core.html">cellfinder-core API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide/training-strategy.html">Retraining the pre-trained network</a></li>
 <li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Troubleshooting</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="speed-up.html">Speeding up cellfinder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="error-messages.html">Debugging common error messages</a></li>
@@ -538,14 +539,36 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="troubleshooting">
 <h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">#</a></h1>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<section id="improving-algorithm-performance">
+<h2>Improving algorithm performance<a class="headerlink" href="#improving-algorithm-performance" title="Permalink to this heading">#</a></h2>
+<p>cellfinder detects cells in a two-stage process, firstly cell candidates are detected. These are cell-like
+objects of approximately the correct intensity and size. These cell candidates are then classified into
+cells and artefacts by a deep learning step.</p>
+<section id="cell-candidate-detection">
+<h3>Cell candidate detection<a class="headerlink" href="#cell-candidate-detection" title="Permalink to this heading">#</a></h3>
+<p>If the initial cell candidate detection is not performing well,
+then we suggest adjusting the
+<a class="reference internal" href="../user-guide/napari-plugin/all-cell-detection-parameters.html"><span class="doc std std-doc">cell detection parameters</span></a>. For a
+better understanding of what these parameters do, it may be useful to consult the
+<a class="reference external" href="https://doi.org/10.1371/journal.pcbi.1009074">original PLOS Computational Biology paper</a>.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>In general, false positives (non-cells being detected) is generally ok, as these will be refined in the
+classification step.</p>
+</div>
+</section>
+<section id="cell-candidate-classification">
+<h3>Cell candidate classification<a class="headerlink" href="#cell-candidate-classification" title="Permalink to this heading">#</a></h3>
+<p>The classification will use a pre-trained network by default that is included with the software. This network will
+usually need to be retrained. For more details, please see the guide to
+<a class="reference internal" href="../user-guide/training-strategy.html"><span class="doc std std-doc">retraining the pre-trained network</span></a>.</p>
+</section>
+</section>
+<section id="fixing-technical-problems">
+<h2>Fixing technical problems<a class="headerlink" href="#fixing-technical-problems" title="Permalink to this heading">#</a></h2>
 <p>As cellfinder relies on a number of third party libraries (notably <a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a>,
 <a class="reference external" href="https://developer.nvidia.com/cuda-zone">CUDA</a> and <a class="reference external" href="https://developer.nvidia.com/cudnn">cuDNN</a>)
 there may be issues while running the software.</p>
-</section>
-<section id="fixing-problems">
-<h2>Fixing problems<a class="headerlink" href="#fixing-problems" title="Permalink to this heading">#</a></h2>
 <p>If you are having any issues, please see the following sections:</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -572,12 +595,12 @@ there may be issues while running the software.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../user-guide/cellfinder-core.html"
+       href="../user-guide/training-strategy.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">cellfinder-core API</p>
+        <p class="prev-next-title">Retraining the pre-trained network</p>
       </div>
     </a>
     <a class="right-next"
@@ -607,8 +630,12 @@ there may be issues while running the software.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-problems">Fixing problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-algorithm-performance">Improving algorithm performance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-candidate-detection">Cell candidate detection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-candidate-classification">Cell candidate classification</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-technical-problems">Fixing technical problems</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anything-else">Anything else</a></li>
 </ul>
   </nav></div>

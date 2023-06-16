@@ -461,10 +461,10 @@ mypy<span class="w"> </span>-p<span class="w"> </span>name_of_package
 your changes, but before you commit them.</p>
 <p>In the case you see <code class="docutils literal notranslate"><span class="pre">mypy</span></code> failing with an error like <code class="docutils literal notranslate"><span class="pre">Library</span> <span class="pre">stubs</span> <span class="pre">not</span> <span class="pre">installed</span> <span class="pre">for</span> <span class="pre">this-package</span></code>, you have
 to edit the <code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code> file by adding the additional dependency to <code class="docutils literal notranslate"><span class="pre">mypy</span></code>:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>- id: mypy
-	additional_dependencies:
-		- types-setuptools
-		- types-this-package
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="nb">id</span><span class="p">:</span> <span class="n">mypy</span>
+	<span class="n">additional_dependencies</span><span class="p">:</span>
+		<span class="o">-</span> <span class="n">types</span><span class="o">-</span><span class="n">setuptools</span>
+		<span class="o">-</span> <span class="n">types</span><span class="o">-</span><span class="n">this</span><span class="o">-</span><span class="n">package</span>
 </pre></div>
 </div>
 </section>

@@ -26,7 +26,7 @@ import brainrender
 brainrender.SCREENSHOT_TRANSPARENT_BACKGROUND = False
 ```
 
-:::hint
+:::{hint}
 You can also quickly take a screenshot by pressing the "s" key on your keyboard while interacting with the scene!
 :::
 
@@ -62,7 +62,7 @@ zooming etc., the same way you do when you create your renderings. Well, **fear 
 export your scene to an `.html` file which you can send to your colleagues (so that they can open it in their web 
 browser) or embed in a website.
 
-:::caution
+:::{caution}
 Warning: for large and complex scenes the resulting html file might be fairly large (>100MB) and loading the 
 interactive scene in your web browser might take a few minutes.
 :::
@@ -70,7 +70,7 @@ interactive scene in your web browser might take a few minutes.
 Exporting to `html` is very easy, all you need to do is create a `Scene`, add elements to it and once you're happy 
 with it use the `export_for_web` method of `Scene` to create the `.html`.
 
-:::hint
+:::{hint}
 The web export functionality requires `k3d==2.7.4` and won't work with other versions of this package
 :::
 

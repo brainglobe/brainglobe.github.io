@@ -456,6 +456,7 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../cellfinder/user-guide/cellfinder-core.html">cellfinder-core API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cellfinder/user-guide/training-strategy.html">Retraining the pre-trained network</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../cellfinder/troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../cellfinder/troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cellfinder/troubleshooting/error-messages.html">Debugging common error messages</a></li>
@@ -552,14 +553,17 @@ using for other software. Using <a class="reference internal" href="../general/c
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>brainrender
 </pre></div>
 </div>
-<div class="attention docutils">
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
 <p>Make sure to have your conda environment active when running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code></p>
 </div>
-<div class="caution docutils">
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
 <p>You might get some error messages reporting conflicting version requirements for the <code class="docutils literal notranslate"><span class="pre">allensdk</span></code> package and a couple of
 others. You can safely ignore these.</p>
 </div>
-<div class="info docutils">
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
 <p>Note that some of <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>’s more rarely used features may require the installation of additional packages.</p>
 </div>
 <p>Once you have installed brainrender, dive right in with this

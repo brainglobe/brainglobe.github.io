@@ -456,6 +456,7 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../cellfinder/user-guide/cellfinder-core.html">cellfinder-core API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cellfinder/user-guide/training-strategy.html">Retraining the pre-trained network</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../cellfinder/troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../cellfinder/troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../cellfinder/troubleshooting/error-messages.html">Debugging common error messages</a></li>
@@ -546,7 +547,8 @@ document.write(`
 <p>brainrender provides the <a class="reference internal" href="../actors.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">Actor</span></code></span></a> class for many commonly-used data types. However, before you can use
 brainrender to visualize your data, you’ll have to load and process them to put them into a format that
 brainrender accepts. These are the main steps you’ll have to undertake to visualize your data.</p>
-<div class="hint docutils">
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
 <p>If your data is saved as mesh data in a .obj, you don’t need to do anything  (provided your data are registered to
 the atlases)! <code class="docutils literal notranslate"><span class="pre">Scene.add()</span></code> accepts paths to files and takes care of loading/rendering them.</p>
 </div>
@@ -611,7 +613,8 @@ If that’s the case, <code class="docutils literal notranslate"><span class="pr
 </div>
 <p>Vedo provides many more methods to go from volume to mesh and vice versa: check
 <a class="reference external" href="https://vedo.embl.es">its awesome documentation </a> for more details.</p>
-<div class="hint docutils">
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
 <p>Brainrender’s Volume actor class has access to all methods of Vedo’s Volume class, so this would work too:</p>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brainrender.actors</span> <span class="kn">import</span> <span class="n">Volume</span>

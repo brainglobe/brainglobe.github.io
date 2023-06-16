@@ -1,7 +1,7 @@
 # Generating data to retrain the cellfinder classification network
+Before generating training data, please see the guide to
+[retraining the pre-trained network](/documentation/cellfinder/user-guide/training-strategy).
 
-Retraining the classification network is often the key step to ensure high-performance of cellfinder. 
-We recommend that the 
 ## Loading data
 
 If you've just run the cell detection step, proceed to **Annotating data.**

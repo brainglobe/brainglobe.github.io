@@ -456,6 +456,7 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../cellfinder/user-guide/cellfinder-core.html">cellfinder-core API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cellfinder/user-guide/training-strategy.html">Retraining the pre-trained network</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../cellfinder/troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../cellfinder/troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../cellfinder/troubleshooting/error-messages.html">Debugging common error messages</a></li>
@@ -563,7 +564,8 @@ background in your image, include these two lines before creating the screenshot
 <span class="n">brainrender</span><span class="o">.</span><span class="n">SCREENSHOT_TRANSPARENT_BACKGROUND</span> <span class="o">=</span> <span class="kc">False</span>
 </pre></div>
 </div>
-<div class="hint docutils">
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
 <p>You can also quickly take a screenshot by pressing the “s” key on your keyboard while interacting with the scene!</p>
 </div>
 </section>
@@ -591,13 +593,15 @@ Ideally though you would need a way to let the viewer explore the scene at their
 zooming etc., the same way you do when you create your renderings. Well, <strong>fear not!</strong> <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> now lets you
 export your scene to an <code class="docutils literal notranslate"><span class="pre">.html</span></code> file which you can send to your colleagues (so that they can open it in their web
 browser) or embed in a website.</p>
-<div class="caution docutils">
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
 <p>Warning: for large and complex scenes the resulting html file might be fairly large (&gt;100MB) and loading the
 interactive scene in your web browser might take a few minutes.</p>
 </div>
 <p>Exporting to <code class="docutils literal notranslate"><span class="pre">html</span></code> is very easy, all you need to do is create a <code class="docutils literal notranslate"><span class="pre">Scene</span></code>, add elements to it and once you’re happy
 with it use the <code class="docutils literal notranslate"><span class="pre">export_for_web</span></code> method of <code class="docutils literal notranslate"><span class="pre">Scene</span></code> to create the <code class="docutils literal notranslate"><span class="pre">.html</span></code>.</p>
-<div class="hint docutils">
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
 <p>The web export functionality requires <code class="docutils literal notranslate"><span class="pre">k3d==2.7.4</span></code> and won’t work with other versions of this package</p>
 </div>
 <div class="danger docutils">

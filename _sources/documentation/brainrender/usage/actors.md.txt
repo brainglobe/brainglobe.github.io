@@ -4,7 +4,7 @@ Everything rendered in `brainrender` is first used to create an instance of `bra
 class handles the 3D mesh data for the object to be rendered and provides a few useful methods for the 
 behind-the-scenes work necessary to render your data.
 
-:::caution
+:::{caution}
 Before rendering data in brainrender you should ensure that they are registered to  a reference atlas. Check 
 how [to use your data in brainrender.](using-your-data/index)
 :::
@@ -29,7 +29,7 @@ For instance, to render the position of labelled cells, a Nx3 numpy array with t
 to the `Points` class to create an actor representing the cells' locations. Some actors can also load data directly 
 from file.
 
-:::hint
+:::{hint}
 Some types of actors (e.g. `Streamlines` and `Neuron)` are generally used to visualize several instances of the 
 same neuron at once. For these actors we also provide helper functions that facilitate the generation of multiple 
 instances of the same actor class. 

@@ -21,7 +21,7 @@ After this everything will work exactly the same as usual, and you will have acc
 
 ## Embedding renderings in Jupyter notebooks
 
-:::hint
+:::{hint}
 When embedding renderings in Jupyter Notebook not all of `brainrender`'s functionality will work! 
 If you want to support all of `brainrender`'s features you should **not embed** renderings in the notebooks.
 

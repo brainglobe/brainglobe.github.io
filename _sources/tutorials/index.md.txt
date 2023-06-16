@@ -24,7 +24,7 @@ Analysis of silicon probe tracks (e.g. Neuropixels)
 :link-type: doc
 Whole brain cell detection and registration
 :::
-
+::::
 
 ```{toctree}
 :maxdepth: 2

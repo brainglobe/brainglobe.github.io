@@ -17,16 +17,16 @@ Installing `brainrender` is as simple as:
 pip install brainrender
 ```
 
-:::attention
+:::{attention}
 Make sure to have your conda environment active when running `pip install`
 :::
 
-:::caution
+:::{caution}
 You might get some error messages reporting conflicting version requirements for the `allensdk` package and a couple of 
 others. You can safely ignore these.
 :::
 
-:::info
+:::{hint}
 Note that some of `brainrender`'s more rarely used features may require the installation of additional packages.
 :::
 

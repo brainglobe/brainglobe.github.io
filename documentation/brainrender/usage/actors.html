@@ -456,6 +456,7 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../cellfinder/user-guide/cellfinder-core.html">cellfinder-core API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cellfinder/user-guide/training-strategy.html">Retraining the pre-trained network</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../cellfinder/troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../cellfinder/troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../cellfinder/troubleshooting/error-messages.html">Debugging common error messages</a></li>
@@ -546,7 +547,8 @@ document.write(`
 <p>Everything rendered in <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> is first used to create an instance of <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>’s <code class="docutils literal notranslate"><span class="pre">Actor</span></code> class. This
 class handles the 3D mesh data for the object to be rendered and provides a few useful methods for the
 behind-the-scenes work necessary to render your data.</p>
-<div class="caution docutils">
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
 <p>Before rendering data in brainrender you should ensure that they are registered to  a reference atlas. Check
 how <a class="reference internal" href="using-your-data/index.html"><span class="doc std std-doc">to use your data in brainrender.</span></a></p>
 </div>
@@ -570,7 +572,8 @@ coordinates can be passed to it.</p></li>
 For instance, to render the position of labelled cells, a Nx3 numpy array with the cells coordinates has to be passed
 to the <code class="docutils literal notranslate"><span class="pre">Points</span></code> class to create an actor representing the cells’ locations. Some actors can also load data directly
 from file.</p>
-<div class="hint docutils">
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
 <p>Some types of actors (e.g. <code class="docutils literal notranslate"><span class="pre">Streamlines</span></code> and <code class="docutils literal notranslate"><span class="pre">Neuron)</span></code> are generally used to visualize several instances of the
 same neuron at once. For these actors we also provide helper functions that facilitate the generation of multiple
 instances of the same actor class.</p>

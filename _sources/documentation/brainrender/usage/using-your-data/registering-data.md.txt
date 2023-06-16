@@ -5,7 +5,7 @@ the [BrainGlobe Atlas API](/documentation/bg-atlasapi/index). If you've used Bra
 raw data (e.g. [brainreg](/documentation/brainreg/index)) your data will already be registered, and you need not 
 worry about any of this. If not, then some steps are necessary for registering your data. 
 
-:::hint
+:::{hint}
 This section assumes that your data were registered to an atlas already, but they are currently in a different 
 orientation or resolution to the atlas you are intending to use. If that is not the case, you register your data 
 first (e.g. with [brainreg](/documentation/brainreg/index)). 

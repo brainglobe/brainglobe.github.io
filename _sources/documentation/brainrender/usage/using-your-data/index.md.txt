@@ -4,7 +4,7 @@ brainrender provides the [`Actor`](../actors) class for many commonly-used data 
 brainrender to visualize your data, you'll have to load and process them to put them into a format that 
 brainrender accepts. These are the main steps you'll have to undertake to visualize your data.
 
-:::hint
+:::{hint}
 If your data is saved as mesh data in a .obj, you don't need to do anything  (provided your data are registered to 
 the atlases)! `Scene.add()` accepts paths to files and takes care of loading/rendering them.
 :::
@@ -78,7 +78,7 @@ scene.add(mesh)
 Vedo provides many more methods to go from volume to mesh and vice versa: check 
 [its awesome documentation ](https://vedo.embl.es) for more details.
 
-:::hint
+:::{hint}
 Brainrender's Volume actor class has access to all methods of Vedo's Volume class, so this would work too:
 :::
 

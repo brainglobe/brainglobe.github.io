@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Segmenting 1D tracks &#8212; BrainGlobe</title>
+    <title>Retraining the pre-trained network &#8212; BrainGlobe</title>
   
   
   
@@ -51,14 +51,14 @@
     <script src="../../../_static/design-tabs.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/brainreg-segment/user-guide/segmenting-1d-tracks';</script>
-    <link rel="canonical" href="https://brainglobe.info/documentation/brainreg-segment/user-guide/segmenting-1d-tracks.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/cellfinder/user-guide/training-strategy';</script>
+    <link rel="canonical" href="https://brainglobe.info/documentation/cellfinder/user-guide/training-strategy.html" />
     <link rel="shortcut icon" href="../../../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Segmenting 2/3D structures" href="segmenting-3d-structures.html" />
-    <link rel="prev" title="Prerequisites" href="index.html" />
+    <link rel="next" title="Troubleshooting" href="../troubleshooting/index.html" />
+    <link rel="prev" title="cellfinder-core API" href="cellfinder-core.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -251,6 +251,10 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
     </nav>
@@ -401,11 +405,11 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../../brainreg/user-guide/visualisation.html">Visualising brainreg output</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">brainreg-segment</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="index.html">Prerequisites</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../brainreg-segment/index.html">brainreg-segment</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../brainreg-segment/user-guide/index.html">Prerequisites</a></li>
 
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Segmenting 1D tracks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brainreg-segment/user-guide/segmenting-1d-tracks.html">Segmenting 1D tracks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brainreg-segment/user-guide/segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../brainrender/index.html">brainrender</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -423,39 +427,39 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../cellfinder/index.html">cellfinder</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../cellfinder/installation.html">Requirements</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">cellfinder</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../installation.html">Requirements</a></li>
 
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../cellfinder/user-guide/command-line/index.html">cellfinder command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/command-line/data-requirements.html">Data requirements</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../cellfinder/user-guide/command-line/cli.html">Command line interface</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../cellfinder/user-guide/command-line/candidate-detection.html">Cell candidate detection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../cellfinder/user-guide/command-line/classification.html">Cell candidate classification</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="command-line/index.html">cellfinder command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="command-line/data-requirements.html">Data requirements</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="command-line/cli.html">Command line interface</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="command-line/candidate-detection.html">Cell candidate detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="command-line/classification.html">Cell candidate classification</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../brainreg/user-guide/parameters.html">Registration parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../cellfinder/user-guide/command-line/using-cellfinder-at-the-swc.html">Using cellfinder at the SWC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="command-line/using-cellfinder-at-the-swc.html">Using cellfinder at the SWC</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/command-line/visualisation.html">Visualisation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/command-line/output-files.html">Output files</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../cellfinder/user-guide/command-line/training/index.html">Training the network</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../cellfinder/user-guide/command-line/training/using-supplied-data.html">Using supplied training data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="command-line/visualisation.html">Visualisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="command-line/output-files.html">Output files</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="command-line/training/index.html">Training the network</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="command-line/training/using-supplied-data.html">Using supplied training data</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/command-line/docker.html">Use with docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="command-line/docker.html">Use with docker</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../cellfinder/user-guide/napari-plugin/index.html">cellfinder napari plugin</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/napari-plugin/cell-detection.html">Cell detection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/napari-plugin/training-data-generation.html">Generating data to retrain the cellfinder classification network</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/napari-plugin/training-the-network.html">Retraining the network for new data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/napari-plugin/all-cell-detection-parameters.html">All cell detection parameters</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="napari-plugin/index.html">cellfinder napari plugin</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="napari-plugin/cell-detection.html">Cell detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="napari-plugin/training-data-generation.html">Generating data to retrain the cellfinder classification network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="napari-plugin/training-the-network.html">Retraining the network for new data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="napari-plugin/all-cell-detection-parameters.html">All cell detection parameters</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../cellfinder/user-guide/cellfinder-core.html">cellfinder-core API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cellfinder/user-guide/training-strategy.html">Retraining the pre-trained network</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../cellfinder/troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/troubleshooting/error-messages.html">Debugging common error messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cellfinder-core.html">cellfinder-core API</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Retraining the pre-trained network</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../troubleshooting/error-messages.html">Debugging common error messages</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/cellfinder-cli/index.html">Whole brain cell detection and registration with the cellfinder command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -514,9 +518,9 @@ document.write(`
     <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Documentation</a></li>
     
     
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">brainreg-segment</a></li>
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">cellfinder</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Segmenting 1D tracks</li>
+    <li class="breadcrumb-item active" aria-current="page">Retraining the pre-trained network</li>
   </ul>
 </nav>
 </div>
@@ -533,62 +537,62 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="segmenting-1d-tracks">
-<h1>Segmenting 1D tracks<a class="headerlink" href="#segmenting-1d-tracks" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="retraining-the-pre-trained-network">
+<h1>Retraining the pre-trained network<a class="headerlink" href="#retraining-the-pre-trained-network" title="Permalink to this heading">#</a></h1>
+<p>Retraining the classification network is often the key step to ensure high-performance of cellfinder.
+We recommend that the presupplied network is retrained for each new application
+(e.g. microscope, labelling strategy etc.). The design of the cellfinder software means that this is
+different, but often simpler than other deep-learning-based analysis tools you may have used.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>For more information about how to process silicon probe tracks, please see <a class="reference internal" href="../../../tutorials/silicon-probe-tracking.html"><span class="doc std std-doc">Silicon probe tracking</span></a>.</p>
+<p>It may be useful to consult the <a class="reference external" href="https://doi.org/10.1371/journal.pcbi.1009074">original PLOS Computational Biology paper</a>
+to get a better idea of the ideas behind the software.</p>
 </div>
-<p>To segment a 1D track, such as a fibre track, or a silicone probe track, select the <code class="docutils literal notranslate"><span class="pre">Track</span> <span class="pre">tracing</span></code> button in the <code class="docutils literal notranslate"><span class="pre">Segmentation</span> <span class="pre">panel</span></code>.</p>
-<p><img alt="Segmenting a 1D track" src="../../../_images/segment_1d.webp" /></p>
-<p>Then:</p>
+<section id="pre-trained-network">
+<h2>Pre-trained network<a class="headerlink" href="#pre-trained-network" title="Permalink to this heading">#</a></h2>
+<p>cellfinder is supplied with a network that was trained on approximately 100,000 manually annotated cell candidates
+(with a roughly 50/50 split between cells and non-cells). These came from serial-section two-photon data with
+whole-cell labelling. This is likely to be different from your data in some ways, e.g.:</p>
 <ul class="simple">
-<li><p>Click the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">track</span></code> button</p></li>
-<li><p>If required, rename the track (by selecting the <code class="docutils literal notranslate"><span class="pre">track_0</span></code> text)</p></li>
-<li><p>Navigate to where you want to draw your region of interest.</p></li>
-<li><p>Make sure the add points mode is activated (by selecting the <code class="docutils literal notranslate"><span class="pre">+</span></code> symbol)</p></li>
-<li><p>Trace your track by adding points along it. You can add as many, or as few as you like, and this can be done in 3D by changing the viewer plane as you go along.</p></li>
+<li><p>Microscopy technique</p></li>
+<li><p>Fluorescent label</p></li>
+<li><p>Labelled brain regions</p></li>
+<li><p>Labelled cell types</p></li>
 </ul>
+<p>However, we usually find that this network is a good starting point in a new analysis.</p>
+</section>
+<section id="workflow">
+<h2>Workflow<a class="headerlink" href="#workflow" title="Permalink to this heading">#</a></h2>
+<p>The typical workflow for using cellfinder on new data is:</p>
+<ol class="arabic simple">
+<li><p>Run cellfinder using the pre-trained network (or a network you or a collaborator has already trained)</p></li>
+<li><p>Assess the performance of the network</p></li>
+<li><p>Generate training data to “correct” the network in areas it has performed poorly</p></li>
+<li><p>Retrain the network</p></li>
+<li><p>Run cellfinder with the new network</p></li>
+<li><p>Repeat steps 2 to 5</p></li>
+</ol>
+<p>Considering generating training data requires the input of a skilled human, but the other steps can be run automatically,
+we suggest that only small amounts of training data are generated at a time. Training data can be pooled from separate<br />
+batches of annotations, so the network can be iteratively improved step by step.</p>
+</section>
+<section id="training-data-generation-strategy">
+<h2>Training data generation strategy<a class="headerlink" href="#training-data-generation-strategy" title="Permalink to this heading">#</a></h2>
+<p>There is no “correct” way to create training data, but it is usually best to target the areas in which the current
+network performs worse. Typically, we recommend generating 1000-5000 cell candidates with a roughly even split between</p>
+<ul class="simple">
+<li><p>Correctly classified cells</p></li>
+<li><p>Correctly classified artefacts</p></li>
+<li><p>Incorrectly classified cells</p></li>
+<li><p>Incorrectly classified artefacts</p></li>
+</ul>
+<p>This process would usually take 2-4 hours (with practice it usually becomes much quicker!).</p>
+<p>Once the network is retrained, the process can be repeated until performance is satisfactory for the application.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>Make sure you select the points in the order you wish them to be joined</p>
+<p>Make sure you save all your training data, you can re-use it later (or share it with others).</p>
 </div>
-<ul class="simple">
-<li><p>Repeat the above for each track you wish to trace</p></li>
-<li><p>If the brain surface is damaged, you may not be able to trace perfectly from the surface. If you want to add an
-additional first point at the surface of the brain, click <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">surface</span> <span class="pre">points</span></code>. Selecting this option will add an
-additional point at the closest part of the brain surface to the first point, so that the track starts there.  </p></li>
-<li><p>The points can then be joined using spline interpolation by clicking <code class="docutils literal notranslate"><span class="pre">Trace</span> <span class="pre">tracks</span></code>. You can change:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">degree</span></code>- what order spline fit to use (the default is 3, cubic)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Spline</span> <span class="pre">smoothing</span></code> - how closely or not to fit the points (lower numbers fit more closely, for a less smooth interpolation)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Spline</span> <span class="pre">points</span></code> - this doesn’t affect the interpolation, but determines how many points are sampled from the interpolation (used for the summary)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Summarise</span></code>- defaults to on, this will save a csv file, showing the brain area for each part of the interpolated track (determined by <code class="docutils literal notranslate"><span class="pre">Spline</span> <span class="pre">points</span></code> )</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">surface</span> <span class="pre">point</span></code> If the brain surface is damaged, you may not be able to trace perfectly from the surface.
-Selecting this option will add an additional point at the closest part of the brain surface to the first point, so that the track starts there.</p></li>
-</ul>
-</li>
-</ul>
-<p>You will then see the track fit appear in the napari window, and a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file will be saved, showing the brain region
-for every spline point along the track.</p>
-<p>You can also use <code class="docutils literal notranslate"><span class="pre">Save</span></code> to save your points to be reloaded at a later date, and if you loaded your data in atlas space,
-you can also export the track to <a class="reference internal" href="../../brainrender/index.html"><span class="doc std std-doc">brainrender</span></a>. The file will be
-saved as e.g. <code class="docutils literal notranslate"><span class="pre">track_0.npy</span></code>. Using the Python API, you can visualise the track as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brainrender</span> <span class="kn">import</span> <span class="n">Scene</span>
-<span class="kn">from</span> <span class="nn">brainrender.actors</span> <span class="kn">import</span> <span class="n">Points</span>
-<span class="kn">from</span> <span class="nn">myterial</span> <span class="kn">import</span> <span class="n">blue</span>
-
-<span class="n">file</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;/path/to/track_0.npy&quot;</span><span class="p">)</span>
-
-<span class="n">scene</span> <span class="o">=</span> <span class="n">Scene</span><span class="p">()</span>
-<span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Points</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">blue</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">))</span>
-<span class="n">scene</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All data will be saved into your brainreg output directory</p>
-</div>
+</section>
 </section>
 
 
@@ -603,20 +607,20 @@ saved as e.g. <code class="docutils literal notranslate"><span class="pre">track
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="cellfinder-core.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Prerequisites</p>
+        <p class="prev-next-title">cellfinder-core API</p>
       </div>
     </a>
     <a class="right-next"
-       href="segmenting-3d-structures.html"
+       href="../troubleshooting/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Segmenting 2/3D structures</p>
+        <p class="prev-next-title">Troubleshooting</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -629,6 +633,22 @@ saved as e.g. <code class="docutils literal notranslate"><span class="pre">track
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-trained-network">Pre-trained network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-data-generation-strategy">Training data generation strategy</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
