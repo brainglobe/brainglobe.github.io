@@ -84,7 +84,7 @@ If you see something like this:
 2020-05-11 12:02:11.949823: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
 2020-05-11 12:02:11.954796: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
 2020-05-11 12:02:11.954847: E tensorflow/stream_executor/cuda/cuda_driver.cc:351] failed call to cuInit: UNKNOWN ERROR (303)
-2020-05-11 12:02:11.954894: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (tigger): /proc/driver/nvidia/version does not exist
+2020-05-11 12:02:11.954894: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (hostname): /proc/driver/nvidia/version does not exist
 False
 ```
 

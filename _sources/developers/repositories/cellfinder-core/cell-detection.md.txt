@@ -12,7 +12,7 @@ Code can be found in `cellfinder_core/detect/filters/plane`.
 Each plane of data is filtered independently, and in parallel across a number of processes.
 
 This part of processing performs two tasks:
-1. Applys a filter to enhance peaks in the data (``cellfinder_core/detect/filters/plane/classical_filter.py``).
+1. Applies a filter to enhance peaks in the data (``cellfinder_core/detect/filters/plane/classical_filter.py``).
    This consists of (in order)
     1. a median filter (`scipy.signal.medfilt2d`)
     2. a gaussian filter (`scipy.ndimage.gaussian_filter`)

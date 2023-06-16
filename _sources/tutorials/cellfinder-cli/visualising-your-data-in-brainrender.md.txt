@@ -14,7 +14,7 @@ from brainrender.actors import Points
 
 cells_path = "test_brain/output/points/points.npy"
 
-# intialise brainrender scene
+# initialise brainrender scene
 scene = Scene()
 
 # create points actor

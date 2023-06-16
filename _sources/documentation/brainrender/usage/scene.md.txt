@@ -52,7 +52,7 @@ The creation of an interactive rendering, or a video, involves the specification
 
 `Brainrender` provides a number of pre-defined cameras that can be used (e.g. `sagittal` or `frontal`). If you wish 
 to use any of these cameras just pass the corresponding name to `Scene.render` (e.g. `scene.render(camera='frontal')`). 
-`render` also takes a `zoom` parameter which specifies the camera's zoon.
+`render` also takes a `zoom` parameter which specifies the camera's zoom.
 
 You can, however, create a **custom** camera for your needs by specifying a set of **camera parameters** and pass that 
 (as a dictionary) to `scene.render`. To get the parameters you need, the simplest thing is to render your scene with 
