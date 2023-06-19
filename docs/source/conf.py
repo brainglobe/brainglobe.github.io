@@ -151,3 +151,6 @@ notfound_context = {
 
 """
 }
+
+# needed for GH pages (vs readthedocs)
+notfound_urls_prefix = None
