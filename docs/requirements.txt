@@ -6,3 +6,4 @@ nbsphinx
 linkify-it-py
 sphinx-design
 sphinx-togglebutton
+sphinx-notfound-page
