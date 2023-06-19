@@ -25,6 +25,5 @@ but please take a quick look at the
 
 ## Other ways to get in touch
 While we prefer that all discussions about the project are carried out in public, there may be situations in which this 
-is not possible. In these situations, please [email Adam Tyson](mailto:code@adamltyson.com?subject=brainglobe-contribution), 
-one of the core developers.
+is not possible. In these situations, please [email](mailto:code@hello@brainglobe.info?subject=brainglobe), the core developers.
 
