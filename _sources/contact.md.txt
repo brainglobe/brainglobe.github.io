@@ -20,8 +20,7 @@ If you have a feature request, please open an issue at the relevant repository. 
 ## Contributing
 If you would like to contribute to the BrainGlobe Initiative, please get in touch with us using the [BrainGlobe developer
 discussion page](https://github.com/brainglobe/BrainGlobe/discussions). We always welcome new Pull Requests,
-but please take a quick look at the 
-[contributing guidelines](https://github.com/brainglobe/.github/blob/main/CONTRIBUTING.md) first.**
+but please take a quick look at the [developer guide](developers/index) first.
 
 ## Other ways to get in touch
 While we prefer that all discussions about the project are carried out in public, there may be situations in which this 
