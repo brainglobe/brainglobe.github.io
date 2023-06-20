@@ -1,11 +1,13 @@
 html[data-theme=dark] {
-  --pst-color-primary: #36454F;
-  --pst-color-link: var(--pst-color-primary);
+  --pst-color-primary: #ee9040;
+  --plt-color-secondary: #459db9;
+  --pst-color-link: #459db9;
 }
 
 html[data-theme=light] {
-  --pst-color-primary: #36454F;
-  --pst-color-link: var(--pst-color-primary);
+  --pst-color-primary: #ee9040;
+  --plt-color-secondary: #459db9;
+  --pst-color-link: #459db9;
 }
 
 body .bd-article-container {
