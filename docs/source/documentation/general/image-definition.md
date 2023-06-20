@@ -1,4 +1,4 @@
-# Image definition
+# Image space definition
 
 In some BrainGlobe tools, you need to specify the orientation and resolution of the data.
 
@@ -7,7 +7,7 @@ When you need to specify the orientation of your data, you will usually need to 
 [bg-space](https://github.com/brainglobe/bg-space) "initials" form, to describe the origin voxel.
 
 When you work with a stack, the origin is the upper left corner when you show the first element `stack[0, :, :]` with 
-matplotlib or when you open the stack with ImageJ. The First dimension is the one that you are slicing, the second is 
+matplotlib or when you open the stack with ImageJ. The first dimension is the one that you are slicing, the second is 
 the height of the image, and the third is the width of the image.
 
 If the origin of your data (first, top left voxel) is the most anterior, superior, left part of the brain, then the 
