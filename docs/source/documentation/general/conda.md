@@ -19,7 +19,7 @@ some new features of the latest release for another.
 
 :::{hint}
 If you know what you're doing with virtual environments, feel free to ignore this, but conda does make 
-[CUDA and cuDNN installation easier](gpu)).
+[CUDA and cuDNN installation easier](gpu).
 :::
 
 ## Installation
