@@ -40,7 +40,7 @@ Any interested party can join the core developers, based on the informal criteri
 BrainGlobe core repositories". Election will require a simple vote of existing core developers.
 
 **Core developers are expected to aim to contribute regularly to the code bases (e.g. comments, issues, pull requests), 
-attend as many meetings as possible, and vote upon any major changes to the project.**&#x20;
+attend as many meetings as possible, and vote upon any major changes to the project.**
 
 ### Non-core developers
 
@@ -52,7 +52,7 @@ These repositories are collected together for discoverability, and to create an 
 work together to create interoperable tools.
 
 **If you would like your tool to become part of BrainGlobe, please start a new topic on the [**BrainGlobe admin 
-GitHub Discussions page**](https://github.com/brainglobe/BrainGlobe/discussions).
+GitHub Discussions page**](https://github.com/brainglobe/BrainGlobe/discussions).**
 
 Anyone can request that their tool becomes part of the BrainGlobe organisation, but the administration of these 
 repositories will be the responsibility of the original developer(s), and not the BrainGlobe core developers.
