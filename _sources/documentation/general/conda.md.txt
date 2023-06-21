@@ -19,7 +19,7 @@ some new features of the latest release for another.
 
 :::{hint}
 If you know what you're doing with virtual environments, feel free to ignore this, but conda does make 
-[CUDA and cuDNN installation easier](gpu)).
+[CUDA and cuDNN installation easier](gpu).
 :::
 
 ## Installation
@@ -102,4 +102,4 @@ The reason why we use conda environments (other methods other than conda are ava
 installations. This way, anything we do in the environment shouldn't affect any of the other environments.
 
 If anything goes wrong, and your software stops working (and can't be fixed), you can simply make a new environment, 
-and start again. If you have any troubles though, please get in touch.
+and start again. If you have any troubles though, please [get in touch](../../contact.md).

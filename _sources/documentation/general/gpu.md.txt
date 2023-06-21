@@ -41,6 +41,6 @@ conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0
 
 This method is easier and also doesn't require any admin rights (useful on a cluster or shared machine).
 
-if this does not work for any reason, or you wish to have a system-wide installation of CUDA and cuDNN, then CUDA can 
+If this does not work for any reason, or you wish to have a system-wide installation of CUDA and cuDNN, then CUDA can 
 be downloaded [here](https://developer.nvidia.com/cuda-toolkit-archive) and cuDNN from 
 [here](https://developer.nvidia.com/cudnn). N.B. you will need to sign up for a (free) account to download cuDNN.
