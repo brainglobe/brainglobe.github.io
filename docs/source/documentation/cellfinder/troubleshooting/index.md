@@ -22,6 +22,8 @@ The classification will use a pre-trained network by default that is included wi
 usually need to be retrained. For more details, please see the guide to 
 [retraining the pre-trained network](/documentation/cellfinder/user-guide/training-strategy).
 
+## Registration 
+Please see the [brainreg troubleshooting guide](/documentation/brainreg/troubleshooting).
 ## Fixing technical problems
 As cellfinder relies on a number of third party libraries (notably [TensorFlow](https://www.tensorflow.org/),
 [CUDA](https://developer.nvidia.com/cuda-zone) and [cuDNN](https://developer.nvidia.com/cudnn))

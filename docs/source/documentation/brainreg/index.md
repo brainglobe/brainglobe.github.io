@@ -36,6 +36,7 @@ user-guide/parameters
 user-guide/checking-orientation
 user-guide/output-files
 user-guide/visualisation
+troubleshooting
 ```
 
 
