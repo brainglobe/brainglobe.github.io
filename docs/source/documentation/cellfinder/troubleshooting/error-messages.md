@@ -102,7 +102,7 @@ SyntaxError: invalid syntax
 ### Can't find /usr/local/opt/libpng/lib/libpng16.16.dylib
 
 ```bash
-Cant find /usr/local/opt/libpng/lib/libpng16.16.dylib
+Can't find /usr/local/opt/libpng/lib/libpng16.16.dylib
 ```
 
 This sometimes happens when running registration on macOS. You may need to install `libpng`. The first thing to 
