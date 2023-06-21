@@ -1,4 +1,4 @@
-# Developers guide
+# Developer's guide
 
 ## Introduction
 
