@@ -24,5 +24,5 @@ but please take a quick look at the [developer guide](developers/index) first.
 
 ## Other ways to get in touch
 While we prefer that all discussions about the project are carried out in public, there may be situations in which this 
-is not possible. In these situations, please [email](mailto:code@hello@brainglobe.info?subject=brainglobe), the core developers.
+is not possible. In these situations, please [email](mailto:hello@brainglobe.info?subject=brainglobe) the core developers.
 
