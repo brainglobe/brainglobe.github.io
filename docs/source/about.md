@@ -6,7 +6,7 @@ The BrainGlobe Initiative (BGI) was established by researchers at the
 Technical University of Munich](https://www.tum.de/en/). 
 
 The core goal of BrainGlobe is to develop a suite of Python-based software tools for computational neuroanatomy. 
-We have already developed several software packages to access, analyze and visualize anatomical data. By ensuring the 
+We have developed several software packages to access, analyze and visualize anatomical data. By ensuring the 
 interoperability of all of BrainGlobe's software, we aim to streamline the development of analysis pipelines and facilitate the process of going from raw data to publication-ready content. By producing a set of high-quality 
 open-source Python packages, we aim to accelerate the development of sophisticated analysis tools in python.
 
