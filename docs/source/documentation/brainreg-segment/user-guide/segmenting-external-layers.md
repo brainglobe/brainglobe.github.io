@@ -1,6 +1,12 @@
 # Registration of segmentation of external layers
-Checking if this changes appear
-To segment a 3D \(or 2D\) structure, such as an injection site, select the `Region Segmentation` button in the `Segmentation panel`.
+
+
+To analyze the results from segmentation layers of your images within the context of the atlas-aligned image, allow you to import external layers that will be analyzed by brainreg-segment.
+
+This layer will be then segmented as a 3D \(or 2D\) structure, such as area covering all your bulk axonal projections of interes analyzed by a binary mask.  
+
+
+Select the `Region Segmentation` button in the `Segmentation panel`.
 
 ![Segmenting a 2/3D structure](../../.gitbook/assets/region_seg%20%281%29.png)
 
@@ -30,6 +36,25 @@ You can have an overview of some examples here
 *Use https://github.com/clEsperanto/napari_pyclesperanto_assistant
 *Use https://github.com/haesleinhuepf/napari-skimage-regionprops
 
+
+
+
+ in napari viewer or externally if prefered add the layer that contains the mask image that is going to be used for segmentation
+	tools --> segmentation binary -->threshold otsu
+	number of thresholds -7 number of histogram bins -256 
+	details for parameter selection can be found in https://scikit-image.org/docs/stable/auto_examples/segmentation/plot_multiotsu.html
+
+
+
+Otsu_thresch_splitLayers.ipynb
+
+- open the generated layers in a napari window in which the brainreg-segment pluggin is open 
+	- over the generated images run in pluggings the otsu thrshold over each of the layer
+-Click the botton add layer from select and proceed to get the data
+- Click analyse regions, wait in the terminal window until Finish line is shown
+-- now run in matlab the classification - located in /mnt/smederos/Sofware/Code2022/Anatomy/processBrainRegMSeg.m
+
+
 Then:
 * Open the brainreg-segment plugin
 * Open the region segmentation panel
@@ -43,6 +68,12 @@ Then:
 * Click `Analyse regions` to analyse the spatial distribution of the regions you have drawn (as done for the 3D structures segmentation).
   * If `Calculate volumes` is selected, the volume of each brain area included in the segmented region will be calculated and saved.
   * If `Summarise volumes` is selected, then each region will be summarised \(centers, volumes etc\)
+
+
+
+
+
+
 
 {% hint style="info" %}
 All data will be saved into your brainreg output directory
