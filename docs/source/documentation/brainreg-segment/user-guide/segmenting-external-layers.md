@@ -25,6 +25,7 @@ Ensure that the external layer you wish to include for analysis is generated in 
 :::{note}
 Additional installations to your enviroment are needed
 :::
+
 Requirements:
 * You can utilize other segmentation plugins to generate an external layer according to your convenience. These plugins enable you to generate threshold or binary files in your desired image. For example, you can use the plugin available at https://github.com/haesleinhuepf/napari-simpleitk-image-processing.git. To install this plugin, you have two options: either install it within the Conda environment or use the plugin install window in napari.
 * To enhance your functionality, you may consider installing additional plugins for napari. These plugins can be found at napari-simpleitk-image-processing. Alternatively, you can use the napari assistant, which provides a graphical user interface for plugin installation. You can access different segmentation options by navigating to the Plugins or Tools menu. For more information on segmentation options developed in napari specifically for fluorescence microscopy, you can refer to https://github.com/haesleinhuepf/napari-segment-blobs-and-things-with-membranes
@@ -48,7 +49,7 @@ Once the thresholded image is generated, you can save it by going to the File me
 You can have an overview of some examples here 
 * Use https://github.com/clEsperanto/napari_pyclesperanto_assistant
 * Use https://github.com/haesleinhuepf/napari-skimage-regionprops
-:::{note}
+:::
 
 Then:
 * Open the brainreg-segment plugin
