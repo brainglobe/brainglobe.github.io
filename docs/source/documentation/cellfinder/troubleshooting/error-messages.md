@@ -101,14 +101,14 @@ SyntaxError: invalid syntax
 
 ### Can't find /usr/local/opt/libpng/lib/libpng16.16.dylib
 
-```bash
+```
 Can't find /usr/local/opt/libpng/lib/libpng16.16.dylib
 ```
 
 This sometimes happens when running registration on macOS. You may need to install `libpng`. The first thing to 
 do is to [install homebrew](https://brew.sh/) and then run:
 
-```bash
+```
 brew install libpng
 ```
 
@@ -122,7 +122,7 @@ usually be safely ignored.
 
 ### Can't find openCV
 
-```bash
+```
 CRITICAL:tensorflow:Optional Python module cv2 not found, please install cv2 and retry if the application fails.
 ```
 
@@ -130,7 +130,7 @@ Tensorflow thinks this is critical, it's not.
 
 ### CPU instruction sets
 
-```bash
+```
 tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary 
 was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
 ```
