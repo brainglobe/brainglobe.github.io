@@ -19,6 +19,17 @@
         "infra",
         "tutorial"
       ]
+    },
+    {
+      "login": "niksirbi",
+      "name": "Niko Sirmpilatze",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20923448?v=4",
+      "profile": "http://nikosirmpilatze.com",
+      "contributions": [
+        "code",
+        "design",
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
