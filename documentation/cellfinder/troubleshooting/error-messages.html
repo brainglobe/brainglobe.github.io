@@ -167,8 +167,8 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../resources.html">
-                        Resources
+                      <a class="nav-link nav-internal" href="../../../more.html">
+                        More
                       </a>
                     </li>
                 
@@ -299,8 +299,8 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../resources.html">
-                        Resources
+                      <a class="nav-link nav-internal" href="../../../more.html">
+                        More
                       </a>
                     </li>
                 
@@ -634,12 +634,12 @@ SyntaxError:<span class="w"> </span>invalid<span class="w"> </span>syntax
 </section>
 <section id="cant-find-usr-local-opt-libpng-lib-libpng16-16-dylib">
 <h3>Can’t find /usr/local/opt/libpng/lib/libpng16.16.dylib<a class="headerlink" href="#cant-find-usr-local-opt-libpng-lib-libpng16-16-dylib" title="Permalink to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Can&#39;t find /usr/local/opt/libpng/lib/libpng16.16.dylib
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Can</span><span class="s1">&#39;t find /usr/local/opt/libpng/lib/libpng16.16.dylib</span>
 </pre></div>
 </div>
 <p>This sometimes happens when running registration on macOS. You may need to install <code class="docutils literal notranslate"><span class="pre">libpng</span></code>. The first thing to
 do is to <a class="reference external" href="https://brew.sh/">install homebrew</a> and then run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>libpng
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">libpng</span>
 </pre></div>
 </div>
 </section>
@@ -652,15 +652,15 @@ logged with an <code class="docutils literal notranslate"><span class="pre">ERRO
 usually be safely ignored.</p>
 <section id="cant-find-opencv">
 <h3>Can’t find openCV<a class="headerlink" href="#cant-find-opencv" title="Permalink to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>CRITICAL:tensorflow:Optional<span class="w"> </span>Python<span class="w"> </span>module<span class="w"> </span>cv2<span class="w"> </span>not<span class="w"> </span>found,<span class="w"> </span>please<span class="w"> </span>install<span class="w"> </span>cv2<span class="w"> </span>and<span class="w"> </span>retry<span class="w"> </span><span class="k">if</span><span class="w"> </span>the<span class="w"> </span>application<span class="w"> </span>fails.
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CRITICAL</span><span class="p">:</span><span class="n">tensorflow</span><span class="p">:</span><span class="n">Optional</span> <span class="n">Python</span> <span class="n">module</span> <span class="n">cv2</span> <span class="ow">not</span> <span class="n">found</span><span class="p">,</span> <span class="n">please</span> <span class="n">install</span> <span class="n">cv2</span> <span class="ow">and</span> <span class="n">retry</span> <span class="k">if</span> <span class="n">the</span> <span class="n">application</span> <span class="n">fails</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>Tensorflow thinks this is critical, it’s not.</p>
 </section>
 <section id="cpu-instruction-sets">
 <h3>CPU instruction sets<a class="headerlink" href="#cpu-instruction-sets" title="Permalink to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tensorflow/core/platform/cpu_feature_guard.cc:141<span class="o">]</span><span class="w"> </span>Your<span class="w"> </span>CPU<span class="w"> </span>supports<span class="w"> </span>instructions<span class="w"> </span>that<span class="w"> </span>this<span class="w"> </span>TensorFlow<span class="w"> </span>binary<span class="w"> </span>
-was<span class="w"> </span>not<span class="w"> </span>compiled<span class="w"> </span>to<span class="w"> </span>use:<span class="w"> </span>SSE4.1<span class="w"> </span>SSE4.2<span class="w"> </span>AVX<span class="w"> </span>AVX2<span class="w"> </span>FMA
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tensorflow</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">platform</span><span class="o">/</span><span class="n">cpu_feature_guard</span><span class="o">.</span><span class="n">cc</span><span class="p">:</span><span class="mi">141</span><span class="p">]</span> <span class="n">Your</span> <span class="n">CPU</span> <span class="n">supports</span> <span class="n">instructions</span> <span class="n">that</span> <span class="n">this</span> <span class="n">TensorFlow</span> <span class="n">binary</span> 
+<span class="n">was</span> <span class="ow">not</span> <span class="n">compiled</span> <span class="n">to</span> <span class="n">use</span><span class="p">:</span> <span class="n">SSE4</span><span class="mf">.1</span> <span class="n">SSE4</span><span class="mf">.2</span> <span class="n">AVX</span> <span class="n">AVX2</span> <span class="n">FMA</span>
 </pre></div>
 </div>
 <p>Unless you built tensorflow from source, something like this will come up. It’ll still work fine</p>
