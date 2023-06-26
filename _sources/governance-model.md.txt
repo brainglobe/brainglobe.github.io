@@ -35,6 +35,7 @@ currently as follows:
 * [Lugi Petrucco](https://github.com/vigji)
 * [Federico Claudi](https://github.com/FedeClaudi)
 * [Adam Tyson](https://github.com/adamltyson)
+* [Alessandro Felder](https://github.com/alessandrofelder)
 
 Any interested party can join the core developers, based on the informal criteria of "a substantial contribution to 
 BrainGlobe core repositories". Election will require a simple vote of existing core developers.
