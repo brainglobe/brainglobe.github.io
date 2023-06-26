@@ -46,7 +46,7 @@ attend as many meetings as possible, and vote upon any major changes to the proj
 ### Non-core developers
 
 The BrainGlobe GitHub organisation includes many so-called "non-core" software packages. These packages (e.g. 
-[cellfinder](https://github.com/brainglobe/cellfinder) or [brainrender](https://github.com/brainglobe/brainrender)) 
+[cellfinder](/documentation/cellfinder/index) or [brainrender](/documentation/brainrender/index)) 
 are in some way compatible with each other, and likely rely on some of the core BrainGlobe repositories.
 
 These repositories are collected together for discoverability, and to create an informal community of developers that 
