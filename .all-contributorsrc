@@ -19,6 +19,16 @@
         "infra",
         "tutorial"
       ]
+    },
+    {
+      "login": "lauraporta",
+      "name": "Laura Porta",
+      "avatar_url": "https://avatars.githubusercontent.com/u/29216006?v=4",
+      "profile": "https://github.com/lauraporta",
+      "contributions": [
+        "code",
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
