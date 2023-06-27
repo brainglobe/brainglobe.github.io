@@ -1,4 +1,4 @@
-# Software developed by others within the BrainGlobe ecosystem.
+# Software built by others
 
 Tools like the [BrainGlobe Atlas API](/documentation/bg-atlasapi/index) were developed to help establish a community of 
 developers creating interoperable tools. The BrainGlobe core developers have created a number of such tools
