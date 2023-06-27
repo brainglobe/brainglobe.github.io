@@ -20,6 +20,18 @@ Brainways is a user-friendly tool for mapping single sections to an atlas using 
 - [GitHub repository](https://github.com/bkntr/brainways)
 - [Napari plugin](https://github.com/bkntr/napari-brainways)
 
+## MagellanMapper
+MagellanMapper is a graphical tool for 3D reconstruction and automated analysis of whole specimens using BrainGlobe 
+atlases for registration. 
+- [GitHub repository](https://github.com/sanderslab/magellanmapper)
+- [Documentation](https://magellanmapper.readthedocs.io/en/latest/)
+
+
+## Braintracer
+Braintracer is an extension of BrainGlobe providing further analysis tools that build upon brainreg and cellfinder.
+- [GitHub repository](https://github.com/samclothier/braintracer)
+
+
 :::{hint}
 if you have developed any software using BrainGlobe tools, please [let us know](contact) and we can advertise it here. 
 :::
