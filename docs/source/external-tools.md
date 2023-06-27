@@ -31,6 +31,12 @@ atlases for registration.
 Braintracer is an extension of BrainGlobe providing further analysis tools that build upon brainreg and cellfinder.
 - [GitHub repository](https://github.com/samclothier/braintracer)
 
+## pAPRica
+pAPRica is a package for analysis of large microscopy datasets that incorporates registration using brainreg.
+- [Preprint](https://www.biorxiv.org/content/10.1101/2023.01.27.525687v1)
+- [GitHub repository](https://github.com/WyssCenter/pAPRica)
+- [Documentation](https://wysscenter.github.io/pAPRica/index.html)
+
 
 :::{hint}
 if you have developed any software using BrainGlobe tools, please [let us know](contact) and we can advertise it here. 
