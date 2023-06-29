@@ -78,6 +78,7 @@ develop frameworks to facilitate collaboration. Our key future aims are:
 contact
 publications
 media
+contributors
 governance-model
 funders
 ```
