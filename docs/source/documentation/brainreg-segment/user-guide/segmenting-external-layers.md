@@ -1,6 +1,8 @@
 # Registration of segmentation of external layers
 
-To analyze the results from segmentation layers of your images within the context of the atlas-aligned image, allow you to import external layers that will be analyzed by brainreg-segment.
+While manual analysis of regions can be effective for various applications, there are instances where automated methods are necessary. In such cases, Napari, an advanced image visualization and analysis tool, offers valuable plugins for segmenting nuclei, cells or fluorescence tracks in fluorescent microscopy images. These plugins can be use in combination with the output of brain registrations to leverage the distinct levels of intensity exhibited by nuclei and/or structures to accurately delineate and isolate them.
+
+This tool in brainreg allows to analyze the results from segmentation layers of your images with this pluggins within the context of the atlas-aligned image, allow you to import external layers that will be analyzed by brainreg-segment.
 
 This layer will be then segmented as a 3D \(or 2D\) structure, such as area covering all your bulk axonal projections of interes analyzed by a binary mask.  
 
@@ -10,9 +12,7 @@ You can record the coordinates of segmentations performed with other napari plug
 
 Select the `Region Segmentation` button in the `Segmentation panel`.
 
-{% hint style="info" %}
 ![Segmenting a 2/3D structure](../../.gitbook/assets/region_seg%20%281%29.png)
-{% endhint %}
 
 To load your data
 
@@ -23,27 +23,37 @@ Ensure that the external layer you wish to include for analysis is generated in 
 :::
 
 :::{note}
-Additional installations to your enviroment are needed
+Additional installations to your enviroment are needed - see below for options from the Napari hub in order to segment your data as most convinient.
 :::
 
 Requirements:
-* You can utilize other segmentation plugins to generate an external layer according to your convenience. These plugins enable you to generate threshold or binary files in your desired image. For example, you can use the plugin available at https://github.com/haesleinhuepf/napari-simpleitk-image-processing.git. To install this plugin, you have two options: either install it within the Conda environment or use the plugin install window in napari.
+* You can utilize other segmentation plugins to generate an external layer according to your convenience. These plugins enable you to generate threshold or binary files in your desired image. For example, you can use the plugin available at https://github.com/haesleinhuepf/napari-simpleitk-image-processing.git. To install this plugin, follow instructions [here](https://www.napari-hub.org/plugins/napari-simpleitk-image-processing).
 * To enhance your functionality, you may consider installing additional plugins for napari. These plugins can be found at napari-simpleitk-image-processing. Alternatively, you can use the napari assistant, which provides a graphical user interface for plugin installation. You can access different segmentation options by navigating to the Plugins or Tools menu. For more information on segmentation options developed in napari specifically for fluorescence microscopy, you can refer to https://github.com/haesleinhuepf/napari-segment-blobs-and-things-with-membranes
 
-Then: 
-* To open a .tiff file in Napari for thresholding or masking purposes, follow these steps:
-Launch Napari.
-Go to the "File" menu and select "Open".
-Navigate to the location of the .tiff file you want to work with.
-Select the file and click "Open".
-The .tiff file will now be opened as a layer in Napari, ready for thresholding or masking operations.
-* To perform segmentation, you have the option of using the simpleitk plugin or other napari plugins that utilize deep learning-based segmentation algorithms. Here's how you can use the napari-simpleitk-image-processing plugin to apply a threshold, such as Otsu's threshold, to the opened TIFF image and save the result:
+
+Then:
+* Open the brainreg-segment plugin
+* Open the region segmentation panel
+* Load registration results
+ Open the registration folder output from brainreg in either the sample or atlas space. Ensure that you use the same space that was used for generating the external thresholded image.
+* Use external plugin to segment over your selected .tiff (e.g.Downsample) 
+* Click the `Add region from existing layer` button while you maintain your cursor on the new layer
+* If required, rename this region 
+
+* Add a new region if required 
+* Repeat above for each region you wish to segment.
+* Now follow steps in please follow the instructions 
+[here](/documentation/brainreg-segment/user-guide/segmenting-3d-structures.md) for different analyses required.
+
+::{hint}
+Perform segmentation,  you can use any of the many plugins offered in the Napari hub, for example with simpleitk plugin or other napari plugins that utilize deep learning-based segmentation algorithms. Here's how you can use the napari-simpleitk-image-processing plugin to apply a threshold, such as Otsu's threshold, to the opened TIFF image and save the result:
 Access the plugins in Napari.
 Look for the napari-simpleitk-image-processing plugin and select it.
 Within the plugin, choose the desired thresholding method, such as Otsu's threshold.
 Select the opened TIFF image as the input for the plugin.
 Run the plugin to generate the thresholded image.
 Once the thresholded image is generated, you can save it by going to the File menu in Napari and selecting "Save As" or by using the appropriate saving option provided by the plugin.        
+:::
 
 :::{note}
 You can have an overview of some examples here 
@@ -51,23 +61,4 @@ You can have an overview of some examples here
 * Use https://github.com/haesleinhuepf/napari-skimage-regionprops
 :::
 
-Then:
-* Open the brainreg-segment plugin
-* Open the region segmentation panel
-* Open the registration folder output from brainreg in either the sample or atlas space. Ensure that you use the same space that was used for generating the external thresholded image.
-* Open the thresholded image and maintain your cursor on that layer.
-* Click the `Add region from existing layer` button
-* If required, rename this region 
-
-
-* Add a new region if required 
-* Repeat above for each region you wish to segment.
-* Click `Analyse regions` to analyse the spatial distribution of the regions you have drawn (as done for the 3D structures segmentation).
-  * If `Calculate volumes` is selected, the volume of each brain area included in the segmented region will be calculated and saved.
-  * If `Summarise volumes` is selected, then each region will be summarised \(centers, volumes etc\)
-
-  * If `to brainrender` is selected, then each region will generate the obj file that you can use later for rendering. See [Analyze and visualize tracing experiments](/tutorials/tracing-tracking) for more details on the rendering options.
-
-{% hint style="info" %}
 All data will be saved into your brainreg output directory
-{% endhint %}
