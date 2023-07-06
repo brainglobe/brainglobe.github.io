@@ -1,37 +1,24 @@
 # Analyze and visualize tracing experiments
-Analysis and visualiztion of tracing data (e.g., Anterograde or retrograde) in brains imaged post-hoc
-in a standard coordinate space
+Analysis and visualiztion of tracing data (e.g., Anterograde or retrograde) in brains imaged post-hoc in a standard coordinate space
 
 ## Introduction
 
-The aim of tracing experiments in neuroscience XXXanimals. It is therefore fundamental to record precisely the localisation of the probe (or multiple probes) in 
-each brain and be able to compare probes across animals.
+The primary objective of tracing experiments in neuroscience is to elucidate the pathway specificity and establish connection relationships between neurons and various brain areas. By comprehending these intricate connections, we can gain a deeper understanding of how the brain generates behavior. Therefore, it becomes imperative to quantify the bulk-labeled axonal projections in images, as this process serves as a fundamental step in unraveling the intricate web of neuronal connectivity and its corresponding functionality.
 
-There's now a good number of segmentation plugins in napari. Following a conversation with @SaraMederos, it seems like a good idea to be able to "import" these results into brainreg-segment so that they can be analysed in the context of the atlas.
+Here we present a tool for the analysis of tracing axonal projections in post-hoc brain imaging data, all conveniently located within a standard coordinate space. This tool is seamlessly integrated into brainreg, within the suite of computational neuroanatomy tools known as BrainGlobe. Leveraging the segmentation plugins available in napari, our tool effortlessly imports and integrates these segmentation results into brainreg-segment, allowing for comprehensive analysis of bulk axonal projections within the context of the atlas.
 
-Here we describe a tool for the analysis of tracing axonal projections 
-in brains imaged post-hoc in a standard coordinate space. This tool is packaged with brainreg, as part of the 
-BrainGlobe suite of computational neuroanatomy tools.
+## **Before tracing bulk axonal tracks**
 
-## **Before tracing probe tracks**
+Tracing Compound Selection: Choose an appropriate tracing compound (or multiple ones if you plan to use different color) based on the specific requirements of your experiment. 
 
-In order to label the probe penetration track in the brain, the probe is delicately coated with DiI 
-(Molecular Probes, Cat# V22885) using a pipette tip (**Fig. 1**, left). The probe is then attached to a 
-micromanipulator, and the probe tip lowered to touch the surface of the brain (e.g. in head-fixed mice). 
-This position is recorded as position “zero”. The probe is then introduced in the brain at a speed of \~10μm 
-per second to the desired penetration depth (in our case 1750μm; **Fig. 1**, centre).
+Injection: Carefully inject the tracing compound into the target region of the brain. The compound should be injected in a controlled manner to ensure accurate delivery and minimize damage to surrounding tissue.
+
+Incubation: Allow sufficient time for the tracing compound to be taken up by neurons and transported along the axonal projections. The duration of the incubation period can vary depending on the specific compound and experimental requirements.
+
+Tissue Processing: Sacrifice the animal and extract the brain for further processing. The animal is anaesthetised and perfused with PFA 4% following standard perfusion protocols. The brain is carefully extracted and left in PFA 4% overnight.
 
 ![Figure 1.](./images/brainreg-segment-fig1.webp)
 **Figure 1.**
-
-:::{note}
-The final penetration depth has to be recorded precisely (e.g., with the micromanipulator readout) in order to know 
-how much of the probe shank was used to record neuronal activity. This will allow comparing traced probe tracks and 
-electrophysiological data.
-:::
-
-When the experiment is done and the probe is retracted, the animal is anaesthetised and perfused with PFA 4% following 
-standard perfusion protocols. The brain is carefully extracted and left in PFA 4% overnight.
 
 :::{note}
 To ensure high quality image registration, it is essential that the brain is properly perfused in order to decrease 
@@ -41,18 +28,12 @@ order to avoid tissue damage.
 
 The brain is then thoroughly washed with 100mM PBS and imaged (e.g. by 
 [Serial 2-Photon Tomography](https://sainsburywellcomecentre.github.io/OpenSerialSection/acquisition/); **Fig. 1**, 
-right). We imaged 2 channels (one where DiI signal is detected and one with background fluorescence only) at a 
-resolution of x = 5μm, y = 5μm, z = 20μm.
+right). Image channels as needed according to number of tracing compounds (and extra channel is acquired as the background fluorescence only).
 
-:::{note}
-It is important to image both the DiI probe signal and the brain’s background fluorescence in two independent channels. 
-The background signal will be used to register the brain into standard space (since the probe signal might interfere 
-with the quality of registration).
-:::
 
 ## **Brain registration to an atlas**
 
-To track the probe in standard space, the brain must first be registered to an atlas using brainreg.
+To track the bulk axonal projections into the standard space, the brain must first be registered to an atlas using brainreg.
 
 Before registration, brainreg needs to be installed, please follow the instructions 
 [here](/documentation/brainreg/installation). Once installed, we can proceed to register the imaged brain.
@@ -75,7 +56,16 @@ You will need:
 A new output directory has been created, which contains the registered brain. We are now ready to manually 
 trace the probe track.
 
+we can proceed to register the imaged brain.
 ## **Probe track tracing**
+
+:::{caution}
+Installation of external pluggins from the Napari hub are required.
+* Make sure your conda environment is still activated!
+:::
+
+Before registration, brainreg needs to be installed, please follow the instructions 
+[here](/documentation/brainreg/installation). Once installed, 
 
 :::{caution}
 Make sure your conda environment is still activated!
