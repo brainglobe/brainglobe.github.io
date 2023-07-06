@@ -64,9 +64,30 @@ Before we can proceed to register the axonal tracks in the imaged brain we need 
 Installation of external pluggins from the Napari hub are required.
 * Make sure your conda environment is still activated!
 * please follow the instructions for installing the  
-[here](/documentation/brainreg/user-guide/brainreg-napari)**.
+[here](https://github.com/haesleinhuepf/napari-simpleitk-image-processing)**.
 * Once installed we proceed to generate the layers that will contain our regions of interest
 :::
+
+:::{note}
+Alternative plugins can be used to generate the segmentation mask for the area of interest. In this case, we will use the Threshold-Otsu method as an example.
+:::
+
+To run the Threshold-Otsu method from the napari-simpleitk-image-processing (n-SimpleITK) plugin, you can follow these steps:
+
+
+Open the image: Launch Napari and open the image you want to analyze. The image should be loaded and visible within the Napari interface.
+
+Access the n-SimpleITK plugin: Locate and select the n-SimpleITK plugin within Napari. It should be available in the plugin menu. Activate or open the plugin to access its functionalities.
+
+Apply the Threshold-Otsu method: This method automatically calculates an optimal threshold value based on the Otsu algorithm.
+
+Adjust the threshold (if necessary): Optionally, you may have the flexibility to adjust the threshold value obtained from the Otsu algorithm. This step allows you to fine-tune the threshold to best suit your image and analysis requirements.
+
+Generate the segmentation mask: Once you have set the threshold value, apply the Threshold-Otsu method to the image. The plugin will process the image using the specified threshold and generate a segmentation mask based on the Otsu algorithm.
+
+Save the generated mask
+
+
 
 ## **Bulk axonal track tracing**
 
@@ -74,8 +95,6 @@ To open the graphical user interface, open napari and then load the `brainreg-se
 [User guide](/documentation/brainreg-segment/user-guide/index)).
 
 The `brainreg-segment`graphical user interface opens and shows a set of tools.You can then load your brainreg output 
-directory, and follow the main brainreg-segment instructions [here](/documentation/brainreg-segment/user-guide/segmenting-1d-tracks) for 
-segmenting external layers. Setting `Spline points` will determine how many times along the length of the track that 
-the brain region is sampled at. This can be used to determine the brain region for each recording site on your probe.
+directory, and follow the main brainreg-segment instructions [here](/documentation/brainreg-segment/user-guide/segmenting-external-layers) for segmenting external layers. 
 
 **Instructions by** [**Sara Mederos**]
