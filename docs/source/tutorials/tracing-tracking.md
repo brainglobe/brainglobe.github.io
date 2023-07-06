@@ -44,39 +44,38 @@ Make sure you activate your conda environment before starting
 
 You will need:
 
-1. The path where the brain image stack (DiI signal channel) is located
+1. The path where the brain image stack (signal channels) is/are located
 2. The path where the brain stack (background fluorescence channel) is located.&#x20;
 3. The path where you want the registration result to be saved
-4. The resolution at which the brain was imaged
+4. The resolution at which the brain was imaged 
 
 **To register your brain to an atlas, please follow the instructions for brainreg 
 [here](/documentation/brainreg/user-guide/brainreg-napari)**.
 
 
-A new output directory has been created, which contains the registered brain. We are now ready to manually 
-trace the probe track.
+A new output directory has been created, which contains the registered brain. We are now ready to use external pluggins to find a mask that covers the axonal projections.
 
-we can proceed to register the imaged brain.
-## **Probe track tracing**
+
+## **Bulk axonal track detection**
+
+Before we can proceed to register the axonal tracks in the imaged brain we need to install aditional Napari pluggins.
 
 :::{caution}
 Installation of external pluggins from the Napari hub are required.
 * Make sure your conda environment is still activated!
+* please follow the instructions for installing the  
+[here](/documentation/brainreg/user-guide/brainreg-napari)**.
+* Once installed we proceed to generate the layers that will contain our regions of interest
 :::
 
-Before registration, brainreg needs to be installed, please follow the instructions 
-[here](/documentation/brainreg/installation). Once installed, 
-
-:::{caution}
-Make sure your conda environment is still activated!
-:::
+## **Bulk axonal track tracing**
 
 To open the graphical user interface, open napari and then load the `brainreg-segment` plugin (see 
 [User guide](/documentation/brainreg-segment/user-guide/index)).
 
 The `brainreg-segment`graphical user interface opens and shows a set of tools.You can then load your brainreg output 
 directory, and follow the main brainreg-segment instructions [here](/documentation/brainreg-segment/user-guide/segmenting-1d-tracks) for 
-segmenting a 1D track. Setting `Spline points` will determine how many times along the length of the track that 
+segmenting external layers. Setting `Spline points` will determine how many times along the length of the track that 
 the brain region is sampled at. This can be used to determine the brain region for each recording site on your probe.
 
-**Adapted from instructions by** [**Mateo Vélez-Fort**](https://www.sainsburywellcome.org/web/people/mateo-velez-fort)
+**Instructions by** [**Sara Mederos**]
