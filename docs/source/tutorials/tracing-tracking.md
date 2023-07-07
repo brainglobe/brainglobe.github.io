@@ -13,7 +13,7 @@ web of neuronal connectivity and its corresponding functionality.
 Here we present a tool for the analysis of tracing axonal projections in post-hoc brain imaging data within a 
 common coordinate space. This tool is integrated into brainreg, within the Brainglobe suite of 
 computational neuroanatomy tools. Leveraging existing segmentation plugins available in napari, our 
-tool imports and integrates these segmentation results into BrainGlobe, allowing for comprehensive 
+tool imports and integrates these segmentation results into BrainGlobe, allowing for 
 analysis of bulk axonal projections within the context of an anatomical atlas.
 
 ## Before tracing bulk axonal tracks
@@ -37,7 +37,7 @@ order to avoid tissue damage.
 :::
 
 The brain is then thoroughly washed with 100mM PBS and imaged (e.g. by 
-[Serial 2-Photon Tomography](https://sainsburywellcomecentre.github.io/OpenSerialSection/acquisition/)). Image channels 
+[Serial Section 2-Photon Tomography](https://sainsburywellcomecentre.github.io/OpenSerialSection/acquisition/)). Image channels 
 as needed according to number of tracing compounds (and extra channel is acquired as the background fluorescence only).
 
 
@@ -91,28 +91,11 @@ To use Otsu's method from the `napari-simpleitk-image-processing` plugin, follow
 - [Load your data using the `brainreg-segment` plugin](/documentation/brainreg-segment/user-guide/index)
 - Choose the Otsu thresholding option from the plugin menu:
 
-![Choosing the otsu plugin](./images/choose-otsu.png)
+<img src="./images/choose-otsu.png"  width="450">
 
-
-- Apply the Threshold-Otsu method: This method automatically calculates an optimal threshold value based on the Otsu 
-algorithm.
-- Adjust the threshold (if necessary): Optionally, you may have the flexibility to adjust the threshold value obtained 
-from the Otsu algorithm. This step allows you to fine-tune the threshold to best suit your image and analysis requirements.
-- Generate the segmentation mask: Once you have set the threshold value, apply the Threshold-Otsu method to the image. 
-The plugin will process the image using the specified threshold and generate a segmentation mask based on the Otsu 
-algorithm.
-- Save the generated mask
-
-
-
-## Bulk axonal track tracing
-
-To open the graphical user interface, open napari and then load the `brainreg-segment` plugin (see 
-[User guide](/documentation/brainreg-segment/user-guide/index)).
-
-The `brainreg-segment`graphical user interface opens and shows a set of tools.You can then load your brainreg output 
-directory, and follow the main `brainreg-segment` documentation 
-[here](/documentation/brainreg-segment/user-guide/analysing-external-segmentation) for anaysing layers segmented by 
-other napari plugins. 
+- Select the image layer to be thresholded and click `run`. This will automatically segment your image using Otsu's
+algorithm. This will create a new labels layer. 
+- Follow the instructions for [2/3D region analysis](segmenting-3d-structures) to analyse the distribution of the 
+- thresholded voxels.
 
 **Instructions by** [**Sara Mederos**](https://www.sainsburywellcome.org/web/people/sara-mederos).
