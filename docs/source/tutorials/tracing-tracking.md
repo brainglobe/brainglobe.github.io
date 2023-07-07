@@ -37,8 +37,8 @@ order to avoid tissue damage.
 :::
 
 The brain is then thoroughly washed with 100mM PBS and imaged (e.g. by 
-[Serial 2-Photon Tomography](https://sainsburywellcomecentre.github.io/OpenSerialSection/acquisition/); **Fig. 1**, 
-right). Image channels as needed according to number of tracing compounds (and extra channel is acquired as the background fluorescence only).
+[Serial 2-Photon Tomography](https://sainsburywellcomecentre.github.io/OpenSerialSection/acquisition/)). Image channels 
+as needed according to number of tracing compounds (and extra channel is acquired as the background fluorescence only).
 
 
 ## Brain registration to an atlas
@@ -54,12 +54,12 @@ Make sure you activate your conda environment before starting
 
 You will need:
 
-1. The path where the brain image stack (signal channels) is/are located
-2. The path where the brain stack (background fluorescence channel) is located.&#x20;
+1. The path where the brain image stack (signal channels) is located
+2. The path where the brain stack (background fluorescence channel) is located
 3. The path where you want the registration result to be saved
 4. The resolution at which the brain was imaged 
 
-**To register your brain to an atlas, please follow the instructions for brainreg 
+**To register your brain to an atlas, please follow the instructions for brainreg (using the napari plugin)
 [here](/documentation/brainreg/user-guide/brainreg-napari)**.
 
 
@@ -69,28 +69,28 @@ to find a mask that covers the axonal projections.
 
 ## Bulk axonal track detection
 
-Before we can proceed to register the axonal tracks in the imaged brain we need to install additional Napari pluggins.
-
-:::{caution}
-Installation of external pluggins from the Napari hub are required.
-* Make sure your conda environment is still activated!
-* please follow the instructions for installing the 
-[here](https://github.com/haesleinhuepf/napari-simpleitk-image-processing)**.
-* Once installed, we proceed to generate the layers that will contain our regions of interest
-:::
+Before we can proceed to register the axonal tracks in the imaged brain we need to install additional Napari plugins. 
+In this tutorial we will use the 
+[`napari-simpleitk-image-processing`](https://www.napari-hub.org/plugins/napari-simpleitk-image-processing) plugin. This 
+plugin can either be installed via the [napari plugin menu](https://napari.org/stable/plugins/find_and_install_plugin.html) 
+or directly from PyPI on the command-line:
+```
+pip install napari-simpleitk-image-processing
+```
 
 :::{note}
 Alternative plugins can be used to generate the segmentation mask for the area of interest. In this case, we will use 
-the Threshold-Otsu method as an example.
+the Otsu thresholding method from `napari-simpleitk-image-processing` an example.
 :::
 
-To run the Threshold-Otsu method from the napari-simpleitk-image-processing (n-SimpleITK) plugin, you can follow 
+To run the Threshold-Otsu[^1] method from the napari-simpleitk-image-processing (n-SimpleITK) plugin, you can follow 
 these steps:
+[^1]: Otsu (1979) IEEE Transactions on Systems, Man and Cybernetics. Vol SMC-9, No 1, p62
 
 
-- Open the image: Launch Napari and open the image you want to analyze. The image should be loaded and visible within 
-the Napari interface.
-- Access the n-SimpleITK plugin: Locate and select the n-SimpleITK plugin within Napari. It should be available in the 
+- Open the image: Launch napari and open the image you want to analyze. The image should be loaded and visible within 
+the napari interface.
+- Access the n-SimpleITK plugin: Locate and select the n-SimpleITK plugin within napari. It should be available in the 
 plugin menu. Activate or open the plugin to access its functionalities.
 - Apply the Threshold-Otsu method: This method automatically calculates an optimal threshold value based on the Otsu 
 algorithm.
