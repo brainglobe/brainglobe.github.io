@@ -94,4 +94,4 @@ To open the graphical user interface, open napari and then load the `brainreg-se
 The `brainreg-segment`graphical user interface opens and shows a set of tools.You can then load your brainreg output 
 directory, and follow the main brainreg-segment instructions [here](/documentation/brainreg-segment/user-guide/segmenting-external-layers) for segmenting external layers. 
 
-**Instructions by** [**Sara Mederos**]
+**Instructions by** [**Sara Mederos**](https://www.sainsburywellcome.org/web/people/sara-mederos).
