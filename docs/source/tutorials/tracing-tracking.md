@@ -1,5 +1,5 @@
-# Analyze and visualize tracing experiments
-Analysis and visualiztion of tracing data (e.g., Anterograde or retrograde) in brains imaged post-hoc in a standard coordinate space
+# Analyze and visualize bulk fluorescence tracing data
+Analysis and visualiztion of tracing data (e.g., anterograde or retrograde) in brains imaged post-hoc in a standard coordinate space
 
 ## Introduction
 

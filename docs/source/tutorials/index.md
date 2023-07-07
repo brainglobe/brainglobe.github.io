@@ -25,11 +25,11 @@ Analysis of silicon probe tracks (e.g. Neuropixels)
 Whole brain cell detection and registration
 :::
 
-:::{grid-item-card} {fas}`brain;sd-text-primary` Tracing analysis and visualization
+:::{grid-item-card} {fas}`brain;sd-text-primary` Bulk tracing analysis
 :img-bottom: images/bulkaxons.png
 :link: tracing-tracking
 :link-type: doc
-Analyze and visualize tracing experiments
+Analyze and visualize bulk fluorescence tracing data
 :::
 ::::
 
