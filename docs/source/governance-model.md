@@ -35,6 +35,7 @@ currently as follows:
 * [Lugi Petrucco](https://github.com/vigji)
 * [Federico Claudi](https://github.com/FedeClaudi)
 * [Adam Tyson](https://github.com/adamltyson)
+* [Alessandro Felder](https://github.com/alessandrofelder)
 
 Any interested party can join the core developers, based on the informal criteria of "a substantial contribution to 
 BrainGlobe core repositories". Election will require a simple vote of existing core developers.
@@ -45,7 +46,7 @@ attend as many meetings as possible, and vote upon any major changes to the proj
 ### Non-core developers
 
 The BrainGlobe GitHub organisation includes many so-called "non-core" software packages. These packages (e.g. 
-[cellfinder](https://github.com/brainglobe/cellfinder) or [brainrender](https://github.com/brainglobe/brainrender)) 
+[cellfinder](/documentation/cellfinder/index) or [brainrender](/documentation/brainrender/index)) 
 are in some way compatible with each other, and likely rely on some of the core BrainGlobe repositories.
 
 These repositories are collected together for discoverability, and to create an informal community of developers that 
