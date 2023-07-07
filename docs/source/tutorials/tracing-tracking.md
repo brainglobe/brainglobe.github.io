@@ -95,7 +95,7 @@ To use Otsu's method from the `napari-simpleitk-image-processing` plugin, follow
 
 - Select the image layer to be thresholded and click `run`. This will automatically segment your image using Otsu's
 algorithm. This will create a new labels layer. 
-- Follow the instructions for [2/3D region analysis](segmenting-3d-structures) to analyse the distribution of the 
-- thresholded voxels.
+- Follow the instructions for [2/3D region analysis](/documentation/brainreg-segment/user-guide/segmenting-3d-structures) 
+to analyse the distribution of the thresholded voxels.
 
 **Instructions by** [**Sara Mederos**](https://www.sainsburywellcome.org/web/people/sara-mederos).
