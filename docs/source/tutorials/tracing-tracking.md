@@ -17,9 +17,6 @@ Incubation: Allow sufficient time for the tracing compound to be taken up by neu
 
 Tissue Processing: Sacrifice the animal and extract the brain for further processing. The animal is anaesthetised and perfused with PFA 4% following standard perfusion protocols. The brain is carefully extracted and left in PFA 4% overnight.
 
-![Figure 1.](./images/brainreg-segment-fig1.webp)
-**Figure 1.**
-
 :::{note}
 To ensure high quality image registration, it is essential that the brain is properly perfused in order to decrease 
 the autofluorescence of blood vessels. It is also important that the brain is extracted from the skull carefully in 
