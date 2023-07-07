@@ -22,7 +22,7 @@ There are three options for loading your data \(in the `Load data` section of th
 * `Load project (sample space)` - This is for loading a brainreg project in the coordinate space of your raw data 
 (i.e., not warped to the atlas space\). N.B. the data will have been reoriented to the orientation of your chosen 
 atlas, but it can be reoriented using the napari button in the bottom left (a cube with an arrow above it). 
-**Click this button, then choose your brainreg \(or cellfinder registration\) output directory.**
+**Click this button, then choose your brainreg (or cellfinder registration) output directory.**
 * `Load project (atlas space)` - As above, but the data loaded will have been warped into the atlas space. 
 This is most useful when you want to visualise your segmented structures in [brainrender](../../brainrender/index), 
 as they must be in atlas space to do so. **Click this button, then choose your brainreg (or cellfinder registration)
@@ -34,7 +34,7 @@ Useful for making visualisations etc. **Click this drop-down menu, then pick an 
 
 Your data will then appear as a napari "Layer" on the right-hand side, and will include your sample data 
 (including any additionally downsampled channels), and the atlas. If you select the atlas layer and make it visible 
-(by toggling the eye icon), hovering over a brain region will show the region in the bottom left corner**.**
+(by toggling the eye icon), hovering over a brain region will show the region in the bottom left corner.
 
 You can navigate around the volume:
 
@@ -47,7 +47,8 @@ enhancement, contrast limits (right-click for finer control) and the colormap us
 
 The buttons directly below the layers can be used to rotate the data, reset the view and view in 3D.
 
-For information on how to segment specific types of structure, see [Segmenting 1D tracks](./segmenting-1d-tracks) 
-, [Segmenting 2/3D structures](segmenting-3d-structures) and [Segmenting external layers](segmenting-external-layers).
-
+For information on how to segment specific types of structure, see:
+- [Segmenting 1D tracks](./segmenting-1d-tracks)
+- [Segmenting 2/3D structures](segmenting-3d-structures)
+- [Analysing segmentation from other napari plugins](analysing-external-segmentation)
 

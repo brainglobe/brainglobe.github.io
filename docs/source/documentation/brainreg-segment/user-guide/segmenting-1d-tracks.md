@@ -55,3 +55,8 @@ scene.render()
 :::{note}
 All data will be saved into your brainreg output directory
 :::
+
+:::{hint}
+For more information about how to use automated methods to segment your feature of interest, please see
+[Analysing segmentation from other napari plugins](./analysing-external-segmentation).
+:::

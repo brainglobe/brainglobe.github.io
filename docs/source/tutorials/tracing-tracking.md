@@ -1,6 +1,6 @@
 # Analyze and visualize bulk fluorescence tracing data
 Analysis and visualization of tracing data (e.g., anterograde or retrograde) in brains imaged post-hoc in a standard 
-coordinate space
+coordinate space.
 
 ## Introduction
 
@@ -80,18 +80,20 @@ pip install napari-simpleitk-image-processing
 
 :::{note}
 Alternative plugins can be used to generate the segmentation mask for the area of interest. In this case, we will use 
-the Otsu thresholding method from `napari-simpleitk-image-processing` an example.
+the Otsu[^1] thresholding method from `napari-simpleitk-image-processing` an example.
 :::
 
-To run the Threshold-Otsu[^1] method from the napari-simpleitk-image-processing (n-SimpleITK) plugin, you can follow 
-these steps:
 [^1]: Otsu (1979) IEEE Transactions on Systems, Man and Cybernetics. Vol SMC-9, No 1, p62
 
+To use Otsu's method from the `napari-simpleitk-image-processing` plugin, follow these steps:
 
-- Open the image: Launch napari and open the image you want to analyze. The image should be loaded and visible within 
-the napari interface.
-- Access the n-SimpleITK plugin: Locate and select the n-SimpleITK plugin within napari. It should be available in the 
-plugin menu. Activate or open the plugin to access its functionalities.
+- Open napari
+- [Load your data using the `brainreg-segment` plugin](/documentation/brainreg-segment/user-guide/index)
+- Choose the Otsu thresholding option from the plugin menu:
+
+![Choosing the otsu plugin](./images/choose-otsu.png)
+
+
 - Apply the Threshold-Otsu method: This method automatically calculates an optimal threshold value based on the Otsu 
 algorithm.
 - Adjust the threshold (if necessary): Optionally, you may have the flexibility to adjust the threshold value obtained 
@@ -109,6 +111,8 @@ To open the graphical user interface, open napari and then load the `brainreg-se
 [User guide](/documentation/brainreg-segment/user-guide/index)).
 
 The `brainreg-segment`graphical user interface opens and shows a set of tools.You can then load your brainreg output 
-directory, and follow the main brainreg-segment instructions [here](/documentation/brainreg-segment/user-guide/segmenting-external-layers) for segmenting external layers. 
+directory, and follow the main `brainreg-segment` documentation 
+[here](/documentation/brainreg-segment/user-guide/analysing-external-segmentation) for anaysing layers segmented by 
+other napari plugins. 
 
 **Instructions by** [**Sara Mederos**](https://www.sainsburywellcome.org/web/people/sara-mederos).
