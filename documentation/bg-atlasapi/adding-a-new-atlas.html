@@ -408,6 +408,7 @@ document.write(`
 
 <li class="toctree-l2"><a class="reference internal" href="../brainreg-segment/user-guide/segmenting-1d-tracks.html">Segmenting 1D tracks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../brainreg-segment/user-guide/segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brainreg-segment/user-guide/analysing-external-segmentation.html">Analysing segmentation from other napari plugins</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../brainrender/index.html">brainrender</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -598,9 +599,10 @@ number of levels in your hierarchy. You should just make sure that there is one 
 with <code class="docutils literal notranslate"><span class="pre">structure_id_path</span></code> of length 1). If your atlas does not have a multilevel hierarchy, just create a root region
 that all other regions are children of. How to generate the region hierarchy is up to you; just make sure you have a
 way of generating this list of dictionaries in python when you’ll start creating the atlas.</p>
-<p>{% hint style=“danger” %}
-Do not use 0 (zero) as the id of a structure, because the annotation stack will contain zeros where no structure is defined!
-{% endhint %}</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Do not use 0 (zero) as the id of a structure, because the annotation stack will contain zeros where no structure is defined!</p>
+</div>
 </section>
 <section id="how-to-generate-an-atlas-programmatically">
 <h2>How to generate an atlas programmatically?<a class="headerlink" href="#how-to-generate-an-atlas-programmatically" title="Permalink to this heading">#</a></h2>

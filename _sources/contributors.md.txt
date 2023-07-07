@@ -384,6 +384,11 @@ The BrainGlobe Initiative is only possible due to the hard work of many, many pe
 :link: https://github.com/estellenassar
 :::
 
+:::{grid-item-card}   Sara Mederos
+:img-bottom: https://avatars.githubusercontent.com/u/74489401?v=4?
+:link: https://github.com/SaraMederos
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 

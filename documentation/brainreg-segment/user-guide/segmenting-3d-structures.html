@@ -54,7 +54,7 @@
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="brainrender" href="../../brainrender/index.html" />
+    <link rel="next" title="Analysing segmentation from other napari plugins" href="analysing-external-segmentation.html" />
     <link rel="prev" title="Segmenting 1D tracks" href="segmenting-1d-tracks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -404,6 +404,7 @@ document.write(`
 
 <li class="toctree-l2"><a class="reference internal" href="segmenting-1d-tracks.html">Segmenting 1D tracks</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Segmenting 2/3D structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysing-external-segmentation.html">Analysing segmentation from other napari plugins</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../brainrender/index.html">brainrender</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -533,7 +534,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="segmenting-2-3d-structures">
 <h1>Segmenting 2/3D structures<a class="headerlink" href="#segmenting-2-3d-structures" title="Permalink to this heading">#</a></h1>
-<p>To segment a 3D (or 2D) structure, such as an injection site, select the <code class="docutils literal notranslate"><span class="pre">Region</span> <span class="pre">Segmentation</span></code> button in the <code class="docutils literal notranslate"><span class="pre">Segmentation</span> <span class="pre">panel</span></code>.</p>
+<p>To segment a 3D (or 2D) structure, such as an injection site, select the <code class="docutils literal notranslate"><span class="pre">Region</span> <span class="pre">Segmentation</span></code> button in the
+<code class="docutils literal notranslate"><span class="pre">Segmentation</span> <span class="pre">panel</span></code>.</p>
 <p><img alt="Segmenting a 2/3D structure" src="../../../_images/segment_3d.webp" /></p>
 <p>Then:</p>
 <ul>
@@ -557,6 +559,15 @@ document.write(`
 </ul>
 <p>You can also use <code class="docutils literal notranslate"><span class="pre">Save</span></code> to save your regions to be reloaded at a later date, and if you loaded your data in atlas
 space, you can also export the regions to <a class="reference internal" href="../../brainrender/index.html"><span class="doc std std-doc">brainrender</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All data will be saved into your brainreg output directory</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>For more information about how to use automated methods to segment your feature of interest, please see
+<a class="reference internal" href="analysing-external-segmentation.html"><span class="doc std std-doc">Analysing segmentation from other napari plugins</span></a>.</p>
+</div>
 </section>
 
 
@@ -580,11 +591,11 @@ space, you can also export the regions to <a class="reference internal" href="..
       </div>
     </a>
     <a class="right-next"
-       href="../../brainrender/index.html"
+       href="analysing-external-segmentation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">brainrender</p>
+        <p class="prev-next-title">Analysing segmentation from other napari plugins</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

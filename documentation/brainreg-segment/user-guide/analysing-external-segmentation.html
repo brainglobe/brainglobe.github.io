@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Speeding up cellfinder &#8212; BrainGlobe</title>
+    <title>Analysing segmentation from other napari plugins &#8212; BrainGlobe</title>
   
   
   
@@ -48,14 +48,14 @@
     <script src="../../../_static/design-tabs.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/cellfinder/troubleshooting/speed-up';</script>
-    <link rel="canonical" href="https://brainglobe.info/documentation/cellfinder/troubleshooting/speed-up.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/brainreg-segment/user-guide/analysing-external-segmentation';</script>
+    <link rel="canonical" href="https://brainglobe.info/documentation/brainreg-segment/user-guide/analysing-external-segmentation.html" />
     <link rel="icon" href="../../../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Debugging common error messages" href="error-messages.html" />
-    <link rel="prev" title="Troubleshooting" href="index.html" />
+    <link rel="next" title="brainrender" href="../../brainrender/index.html" />
+    <link rel="prev" title="Segmenting 2/3D structures" href="segmenting-3d-structures.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -403,12 +403,12 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../../brainreg/troubleshooting.html">Troubleshooting</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../brainreg-segment/index.html">brainreg-segment</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../brainreg-segment/user-guide/index.html">Prerequisites</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">brainreg-segment</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html">Prerequisites</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../../brainreg-segment/user-guide/segmenting-1d-tracks.html">Segmenting 1D tracks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../brainreg-segment/user-guide/segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../brainreg-segment/user-guide/analysing-external-segmentation.html">Analysing segmentation from other napari plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="segmenting-1d-tracks.html">Segmenting 1D tracks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Analysing segmentation from other napari plugins</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../brainrender/index.html">brainrender</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -426,39 +426,39 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">cellfinder</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../installation.html">Requirements</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cellfinder/index.html">cellfinder</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cellfinder/installation.html">Requirements</a></li>
 
-<li class="toctree-l2 has-children"><a class="reference internal" href="../user-guide/command-line/index.html">cellfinder command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../user-guide/command-line/data-requirements.html">Data requirements</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../user-guide/command-line/cli.html">Command line interface</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../user-guide/command-line/candidate-detection.html">Cell candidate detection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../user-guide/command-line/classification.html">Cell candidate classification</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cellfinder/user-guide/command-line/index.html">cellfinder command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/command-line/data-requirements.html">Data requirements</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../cellfinder/user-guide/command-line/cli.html">Command line interface</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../cellfinder/user-guide/command-line/candidate-detection.html">Cell candidate detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../cellfinder/user-guide/command-line/classification.html">Cell candidate classification</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../brainreg/user-guide/parameters.html">Registration parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../user-guide/command-line/using-cellfinder-at-the-swc.html">Using cellfinder at the SWC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../cellfinder/user-guide/command-line/using-cellfinder-at-the-swc.html">Using cellfinder at the SWC</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../user-guide/command-line/visualisation.html">Visualisation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../user-guide/command-line/output-files.html">Output files</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../user-guide/command-line/training/index.html">Training the network</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../user-guide/command-line/training/using-supplied-data.html">Using supplied training data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/command-line/visualisation.html">Visualisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/command-line/output-files.html">Output files</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../cellfinder/user-guide/command-line/training/index.html">Training the network</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../cellfinder/user-guide/command-line/training/using-supplied-data.html">Using supplied training data</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../user-guide/command-line/docker.html">Use with docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/command-line/docker.html">Use with docker</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../user-guide/napari-plugin/index.html">cellfinder napari plugin</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../user-guide/napari-plugin/cell-detection.html">Cell detection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../user-guide/napari-plugin/training-data-generation.html">Generating data to retrain the cellfinder classification network</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../user-guide/napari-plugin/training-the-network.html">Retraining the network for new data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../user-guide/napari-plugin/all-cell-detection-parameters.html">All cell detection parameters</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cellfinder/user-guide/napari-plugin/index.html">cellfinder napari plugin</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/napari-plugin/cell-detection.html">Cell detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/napari-plugin/training-data-generation.html">Generating data to retrain the cellfinder classification network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/napari-plugin/training-the-network.html">Retraining the network for new data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/napari-plugin/all-cell-detection-parameters.html">All cell detection parameters</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../user-guide/cellfinder-core.html">cellfinder-core API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user-guide/training-strategy.html">Retraining the pre-trained network</a></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Troubleshooting</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">Speeding up cellfinder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="error-messages.html">Debugging common error messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cellfinder/user-guide/cellfinder-core.html">cellfinder-core API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cellfinder/user-guide/training-strategy.html">Retraining the pre-trained network</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cellfinder/troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/troubleshooting/error-messages.html">Debugging common error messages</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/cellfinder-cli/index.html">Whole brain cell detection and registration with the cellfinder command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -505,8 +505,6 @@ document.write(`
 
 
 
-
-
 <nav aria-label="Breadcrumbs">
   <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
     
@@ -519,12 +517,9 @@ document.write(`
     <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Documentation</a></li>
     
     
-    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">brainreg-segment</a></li>
     
-    
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Troubleshooting</a></li>
-    
-    <li class="breadcrumb-item active" aria-current="page">Speeding up cellfinder</li>
+    <li class="breadcrumb-item active" aria-current="page">Analysing segmentation from other napari plugins</li>
   </ul>
 </nav>
 </div>
@@ -541,89 +536,75 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="speeding-up-cellfinder">
-<h1>Speeding up cellfinder<a class="headerlink" href="#speeding-up-cellfinder" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="analysing-segmentation-from-other-napari-plugins">
+<h1>Analysing segmentation from other napari plugins<a class="headerlink" href="#analysing-segmentation-from-other-napari-plugins" title="Permalink to this heading">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
-<p>Before trying to troubleshoot, <strong>cellfinder can be slow</strong>. Even on a very good desktop computer, a full analysis of a
-labelled mouse brain with many thousands of cells can take between 4-12 hours.</p>
-</section>
-<section id="things-to-try">
-<h2>Things to Try<a class="headerlink" href="#things-to-try" title="Permalink to this heading">#</a></h2>
-<section id="use-a-better-computer">
-<h3>Use a better computer<a class="headerlink" href="#use-a-better-computer" title="Permalink to this heading">#</a></h3>
-<p>Annoying advice, but a bigger, better computer will likely speed up cellfinder. In particular, we recommend:</p>
+<p>While manual analysis of regions can be effective for various applications, there are instances where automated methods
+are necessary. In such cases, <a class="reference external" href="https://www.napari-hub.org/">other napari plugins</a> can be used.</p>
+<p>Plugins exist to segment
+many features common to biomedical images, and their results can be incorporated with BrainGlobe to analyse
+the distribution of features of interest within the context of an anatomical atlas.</p>
+<p>To be compatible with <code class="docutils literal notranslate"><span class="pre">brainreg-segment</span></code>, the third-party napari plugin must be able to take a 3D image layer as
+input and return one of:</p>
 <ul class="simple">
-<li><p>Multicore CPU (the more cores and the faster the better)</p></li>
-<li><p>A recent NVIDIA GPU (the more VRAM and CUDA cores the better).</p></li>
-<li><p>Plenty of RAM. If you want to register your images to an atlas, this can use up to 50GB of RAM (depending on the atlas)</p></li>
-<li><p>Fast local storage for your data (ideally SSD)</p></li>
+<li><p>A 3D labels layer with either a 2 or 3D region labeled (e.g., segmenting bulk axonal projections)</p></li>
+<li><p>A 3D points layer with a series of points corresponding to a trajectory through 3D space</p></li>
 </ul>
-</section>
-<section id="put-your-data-on-a-fast-hard-drive">
-<h3>Put your data on a fast hard drive<a class="headerlink" href="#put-your-data-on-a-fast-hard-drive" title="Permalink to this heading">#</a></h3>
-<p>If your data is on a “normal” spinning hard drive, and you have a solid-state drive (SSD) available, putting
-your data on there will likely speed things up.</p>
-<p>If your data is on a network drive (microscopy facility server, institutional file storage, etc.),
-consider moving it to your local machine first.</p>
-<p>If you’re using a compute cluster, there is likely to be a specific fast data storage area for this,
-maybe called <code class="docutils literal notranslate"><span class="pre">scratch</span></code>. Ask your sysadmins for help</p>
-</section>
-</section>
-<section id="specific-issues">
-<h2>Specific Issues<a class="headerlink" href="#specific-issues" title="Permalink to this heading">#</a></h2>
-<section id="cell-classification-or-training-the-network-is-slow">
-<h3>Cell classification or training the network is slow<a class="headerlink" href="#cell-classification-or-training-the-network-is-slow" title="Permalink to this heading">#</a></h3>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>If you think that cellfinder is using the GPU properly, you can often increase the batch size used for training or
-inference. This will depend on your specific GPU, but for inference, batch sizes of up to 128
-often work well on modern GPUs with &gt;8GB memory.</p>
+<p>It is possible to segment structures outside the <code class="docutils literal notranslate"><span class="pre">brainreg-segment</span></code> plugin and import them in later (e.g., by
+saving to a <code class="docutils literal notranslate"><span class="pre">.tiff</span></code> and reloading). However, it is simpler to load the data using <code class="docutils literal notranslate"><span class="pre">brainreg-segment</span></code> and then segment
+it using a third-party plugin. This ensures that the coordinate spaces you are using are consistent.</p>
 </div>
-<p>These steps may be slow if cellfinder is not properly using the GPU. If you have followed the instructions in
-<a class="reference internal" href="../../general/gpu.html"><span class="doc std std-doc">setting up your GPU</span></a>, you may need to check that everything is configured properly:</p>
-<p>Open a terminal (or Anaconda Prompt):</p>
+</section>
+<section id="instructions">
+<h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this heading">#</a></h2>
+<section id="segmenting-your-feature-of-interest">
+<h3>Segmenting your feature of interest<a class="headerlink" href="#segmenting-your-feature-of-interest" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Open napari</p></li>
+<li><p>Install the napari plugin you require to segment your data. To find out which plugins are available, see the
+<a class="reference external" href="https://www.napari-hub.org/">napari hub</a>.</p></li>
+<li><p><a class="reference internal" href="index.html"><span class="doc std std-doc">Load your data using the <code class="docutils literal notranslate"><span class="pre">brainreg-segment</span></code> plugin</span></a></p></li>
+<li><p>Use the plugin to segment your feature of interest. Ensure it returns a 3D labels or points layer.</p></li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>There are many plugins available, and we can’t recommend a single tool for all data. For simple segmentation of 3D
+structures we often use
+<a class="reference external" href="https://www.napari-hub.org/plugins/napari-simpleitk-image-processing"><code class="docutils literal notranslate"><span class="pre">napari-simpleitk-image-processing</span></code></a>. Another
+useful tool (also by <a class="reference external" href="https://github.com/haesleinhuepf">Robert Haase</a>) is
+<a class="reference external" href="https://www.napari-hub.org/plugins/napari-segment-blobs-and-things-with-membranes"><code class="docutils literal notranslate"><span class="pre">napari-segment-blobs-and-things-with-membranes</span></code></a>.</p>
+</div>
+</section>
+<section id="analyse-the-segmented-layer">
+<h3>Analyse the segmented layer<a class="headerlink" href="#analyse-the-segmented-layer" title="Permalink to this heading">#</a></h3>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>At this point you could load a layer segmented previously and saved to disk</p>
+</div>
+<ul class="simple">
+<li><p>If required, rename the layer to be analysed</p></li>
+<li><p>Click either the <code class="docutils literal notranslate"><span class="pre">Track</span> <span class="pre">tracing</span></code> or <code class="docutils literal notranslate"><span class="pre">Region</span> <span class="pre">segmentation</span></code> buttons to load the respective panels.</p></li>
+<li><p>Highlight the layer to be analysed in the napari layers list:</p></li>
+</ul>
+<p><img alt="Highlighting a specific layer" src="../../../_images/layerlist.png" /></p>
+<ul class="simple">
+<li><p>Click either the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">track</span> <span class="pre">from</span> <span class="pre">selected</span> <span class="pre">layer</span></code> or <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">region</span> <span class="pre">from</span> <span class="pre">selected</span> <span class="pre">layer</span></code> button as applicable. This will
+add the region/points from the layer to the <code class="docutils literal notranslate"><span class="pre">brainreg-segment</span></code> analysis list (in the same way as if it had been
+analysed manually within <code class="docutils literal notranslate"><span class="pre">brainreg-segment</span></code>).</p></li>
+<li><p>Follow the instructions for either:</p>
+<ul>
+<li><p><a class="reference internal" href="segmenting-1d-tracks.html"><span class="doc std std-doc">1D track analysis</span></a></p></li>
+<li><p><a class="reference internal" href="segmenting-3d-structures.html"><span class="doc std std-doc">2/3D region analysis</span></a></p></li>
+</ul>
+</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>As always, make sure your conda environment is activated</p>
+<p>All data will be saved into your brainreg output directory</p>
 </div>
-<p>Start Python</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>python
-</pre></div>
-</div>
-<p>Check that tensorflow can use the GPU</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
-<span class="n">tf</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">is_gpu_available</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>If you see something like this, then all is well.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">2019</span>-06-26<span class="w"> </span><span class="m">10</span>:51:34.697900:<span class="w"> </span>I<span class="w"> </span>tensorflow/core/platform/cpu_feature_guard.cc:141<span class="o">]</span><span class="w"> </span>Your<span class="w"> </span>CPU<span class="w"> </span>supports<span class="w"> </span>instructions<span class="w"> </span>that<span class="w"> </span>this<span class="w"> </span>TensorFlow<span class="w"> </span>binary<span class="w"> </span>was<span class="w"> </span>not<span class="w"> </span>compiled<span class="w"> </span>to<span class="w"> </span>use:<span class="w"> </span>AVX512F
-<span class="m">2019</span>-06-26<span class="w"> </span><span class="m">10</span>:51:34.881183:<span class="w"> </span>I<span class="w"> </span>tensorflow/core/common_runtime/gpu/gpu_device.cc:1432<span class="o">]</span><span class="w"> </span>Found<span class="w"> </span>device<span class="w"> </span><span class="m">0</span><span class="w"> </span>with<span class="w"> </span>properties:<span class="w"> </span>
-name:<span class="w"> </span>TITAN<span class="w"> </span>RTX<span class="w"> </span>major:<span class="w"> </span><span class="m">7</span><span class="w"> </span>minor:<span class="w"> </span><span class="m">5</span><span class="w"> </span>memoryClockRate<span class="o">(</span>GHz<span class="o">)</span>:<span class="w"> </span><span class="m">1</span>.77
-pciBusID:<span class="w"> </span><span class="m">0000</span>:2d:00.0
-totalMemory:<span class="w"> </span><span class="m">23</span>.62GiB<span class="w"> </span>freeMemory:<span class="w"> </span><span class="m">504</span>.25MiB
-<span class="m">2019</span>-06-26<span class="w"> </span><span class="m">10</span>:51:34.881217:<span class="w"> </span>I<span class="w"> </span>tensorflow/core/common_runtime/gpu/gpu_device.cc:1511<span class="o">]</span><span class="w"> </span>Adding<span class="w"> </span>visible<span class="w"> </span>gpu<span class="w"> </span>devices:<span class="w"> </span><span class="m">0</span>
-<span class="m">2019</span>-06-26<span class="w"> </span><span class="m">10</span>:51:35.251465:<span class="w"> </span>I<span class="w"> </span>tensorflow/core/common_runtime/gpu/gpu_device.cc:982<span class="o">]</span><span class="w"> </span>Device<span class="w"> </span>interconnect<span class="w"> </span>StreamExecutor<span class="w"> </span>with<span class="w"> </span>strength<span class="w"> </span><span class="m">1</span><span class="w"> </span>edge<span class="w"> </span>matrix:
-<span class="m">2019</span>-06-26<span class="w"> </span><span class="m">10</span>:51:35.251505:<span class="w"> </span>I<span class="w"> </span>tensorflow/core/common_runtime/gpu/gpu_device.cc:988<span class="o">]</span><span class="w">      </span><span class="m">0</span><span class="w"> </span>
-<span class="m">2019</span>-06-26<span class="w"> </span><span class="m">10</span>:51:35.251511:<span class="w"> </span>I<span class="w"> </span>tensorflow/core/common_runtime/gpu/gpu_device.cc:1001<span class="o">]</span><span class="w"> </span><span class="m">0</span>:<span class="w">   </span>N<span class="w"> </span>
-<span class="m">2019</span>-06-26<span class="w"> </span><span class="m">10</span>:51:35.251729:<span class="w"> </span>I<span class="w"> </span>tensorflow/core/common_runtime/gpu/gpu_device.cc:1115<span class="o">]</span><span class="w"> </span>Created<span class="w"> </span>TensorFlow<span class="w"> </span>device<span class="w"> </span><span class="o">(</span>/device:GPU:0<span class="w"> </span>with<span class="w"> </span><span class="m">195</span><span class="w"> </span>MB<span class="w"> </span>memory<span class="o">)</span><span class="w"> </span>-&gt;<span class="w"> </span>physical<span class="w"> </span>GPU<span class="w"> </span><span class="o">(</span>device:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>name:<span class="w"> </span>TITAN<span class="w"> </span>RTX,<span class="w"> </span>pci<span class="w"> </span>bus<span class="w"> </span>id:<span class="w"> </span><span class="m">0000</span>:2d:00.0,<span class="w"> </span>compute<span class="w"> </span>capability:<span class="w"> </span><span class="m">7</span>.5<span class="o">)</span>
-True
-</pre></div>
-</div>
-<p>If you see something like this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">2020</span>-05-11<span class="w"> </span><span class="m">12</span>:02:11.891275:<span class="w"> </span>I<span class="w"> </span>tensorflow/core/platform/cpu_feature_guard.cc:142<span class="o">]</span><span class="w"> </span>Your<span class="w"> </span>CPU<span class="w"> </span>supports<span class="w"> </span>instructions<span class="w"> </span>that<span class="w"> </span>this<span class="w"> </span>TensorFlow<span class="w"> </span>binary<span class="w"> </span>was<span class="w"> </span>not<span class="w"> </span>compiled<span class="w"> </span>to<span class="w"> </span>use:<span class="w"> </span>AVX2<span class="w"> </span>FMA
-<span class="m">2020</span>-05-11<span class="w"> </span><span class="m">12</span>:02:11.948022:<span class="w"> </span>I<span class="w"> </span>tensorflow/core/platform/profile_utils/cpu_utils.cc:94<span class="o">]</span><span class="w"> </span>CPU<span class="w"> </span>Frequency:<span class="w"> </span><span class="m">1992000000</span><span class="w"> </span>Hz
-<span class="m">2020</span>-05-11<span class="w"> </span><span class="m">12</span>:02:11.949756:<span class="w"> </span>I<span class="w"> </span>tensorflow/compiler/xla/service/service.cc:168<span class="o">]</span><span class="w"> </span>XLA<span class="w"> </span>service<span class="w"> </span>0x55ae9ffc5860<span class="w"> </span>initialized<span class="w"> </span><span class="k">for</span><span class="w"> </span>platform<span class="w"> </span>Host<span class="w"> </span><span class="o">(</span>this<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>guarantee<span class="w"> </span>that<span class="w"> </span>XLA<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>used<span class="o">)</span>.<span class="w"> </span>Devices:
-<span class="m">2020</span>-05-11<span class="w"> </span><span class="m">12</span>:02:11.949823:<span class="w"> </span>I<span class="w"> </span>tensorflow/compiler/xla/service/service.cc:176<span class="o">]</span><span class="w">   </span>StreamExecutor<span class="w"> </span>device<span class="w"> </span><span class="o">(</span><span class="m">0</span><span class="o">)</span>:<span class="w"> </span>Host,<span class="w"> </span>Default<span class="w"> </span>Version
-<span class="m">2020</span>-05-11<span class="w"> </span><span class="m">12</span>:02:11.954796:<span class="w"> </span>W<span class="w"> </span>tensorflow/stream_executor/platform/default/dso_loader.cc:55<span class="o">]</span><span class="w"> </span>Could<span class="w"> </span>not<span class="w"> </span>load<span class="w"> </span>dynamic<span class="w"> </span>library<span class="w"> </span><span class="s1">&#39;libcuda.so.1&#39;</span><span class="p">;</span><span class="w"> </span>dlerror:<span class="w"> </span>libcuda.so.1:<span class="w"> </span>cannot<span class="w"> </span>open<span class="w"> </span>shared<span class="w"> </span>object<span class="w"> </span>file:<span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory
-<span class="m">2020</span>-05-11<span class="w"> </span><span class="m">12</span>:02:11.954847:<span class="w"> </span>E<span class="w"> </span>tensorflow/stream_executor/cuda/cuda_driver.cc:351<span class="o">]</span><span class="w"> </span>failed<span class="w"> </span>call<span class="w"> </span>to<span class="w"> </span>cuInit:<span class="w"> </span>UNKNOWN<span class="w"> </span>ERROR<span class="w"> </span><span class="o">(</span><span class="m">303</span><span class="o">)</span>
-<span class="m">2020</span>-05-11<span class="w"> </span><span class="m">12</span>:02:11.954894:<span class="w"> </span>I<span class="w"> </span>tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156<span class="o">]</span><span class="w"> </span>kernel<span class="w"> </span>driver<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>appear<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>running<span class="w"> </span>on<span class="w"> </span>this<span class="w"> </span>host<span class="w"> </span><span class="o">(</span>hostname<span class="o">)</span>:<span class="w"> </span>/proc/driver/nvidia/version<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>exist
-False
-</pre></div>
-</div>
-<p>Then your GPU is not properly configured. If you have followed everything in
-<a class="reference internal" href="../../general/gpu.html"><span class="doc std std-doc">setting up your GPU</span></a>, please go speak to whoever administers your machine. If you’re
-still stuck <a class="reference internal" href="../../../contact.html"><span class="doc std std-doc">get in touch</span></a>, but there is a limited amount we can do to help configure your system.</p>
 </section>
 </section>
 </section>
@@ -640,20 +621,20 @@ still stuck <a class="reference internal" href="../../../contact.html"><span cla
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="segmenting-3d-structures.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Troubleshooting</p>
+        <p class="prev-next-title">Segmenting 2/3D structures</p>
       </div>
     </a>
     <a class="right-next"
-       href="error-messages.html"
+       href="../../brainrender/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Debugging common error messages</p>
+        <p class="prev-next-title">brainrender</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -676,13 +657,9 @@ still stuck <a class="reference internal" href="../../../contact.html"><span cla
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#things-to-try">Things to Try</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-better-computer">Use a better computer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#put-your-data-on-a-fast-hard-drive">Put your data on a fast hard drive</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-issues">Specific Issues</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-classification-or-training-the-network-is-slow">Cell classification or training the network is slow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions">Instructions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmenting-your-feature-of-interest">Segmenting your feature of interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse-the-segmented-layer">Analyse the segmented layer</a></li>
 </ul>
 </li>
 </ul>
