@@ -65,9 +65,9 @@ with `structure_id_path` of length 1). If your atlas does not have a multilevel 
 that all other regions are children of. How to generate the region hierarchy is up to you; just make sure you have a 
 way of generating this list of dictionaries in python when you’ll start creating the atlas.
 
-{% hint style="danger" %}
+:::{caution}
 Do not use 0 (zero) as the id of a structure, because the annotation stack will contain zeros where no structure is defined!
-{% endhint %}
+:::
 
 ## How to generate an atlas programmatically?
 

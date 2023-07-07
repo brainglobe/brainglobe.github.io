@@ -1,6 +1,7 @@
 # Segmenting 2/3D structures
 
-To segment a 3D \(or 2D\) structure, such as an injection site, select the `Region Segmentation` button in the `Segmentation panel`.
+To segment a 3D (or 2D) structure, such as an injection site, select the `Region Segmentation` button in the 
+`Segmentation panel`.
 
 ![Segmenting a 2/3D structure](../images/segment_3d.webp)
 
@@ -24,3 +25,12 @@ Then:
 
 You can also use `Save` to save your regions to be reloaded at a later date, and if you loaded your data in atlas 
 space, you can also export the regions to [brainrender](/documentation/brainrender/index).
+
+:::{note}
+All data will be saved into your brainreg output directory
+:::
+
+:::{hint}
+For more information about how to use automated methods to segment your feature of interest, please see
+[Analysing segmentation from other napari plugins](./analysing-external-segmentation).
+:::

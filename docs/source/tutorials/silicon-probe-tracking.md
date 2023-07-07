@@ -12,7 +12,7 @@ Here we describe a tool for the analysis of silicon probe tracks (e.g. [Neuropix
 in brains imaged post-hoc in a standard coordinate space. This tool is packaged with brainreg, as part of the 
 BrainGlobe suite of computational neuroanatomy tools.
 
-## **Before tracing probe tracks**
+## Before tracing probe tracks
 
 In order to label the probe penetration track in the brain, the probe is delicately coated with DiI 
 (Molecular Probes, Cat# V22885) using a pipette tip (**Fig. 1**, left). The probe is then attached to a 
@@ -49,7 +49,7 @@ The background signal will be used to register the brain into standard space (si
 with the quality of registration).
 :::
 
-## **Brain registration to an atlas**
+## Brain registration to an atlas
 
 To track the probe in standard space, the brain must first be registered to an atlas using brainreg.
 
@@ -74,7 +74,7 @@ You will need:
 A new output directory has been created, which contains the registered brain. We are now ready to manually 
 trace the probe track.
 
-## **Probe track tracing**
+## Probe track tracing
 
 :::{caution}
 Make sure your conda environment is still activated!
