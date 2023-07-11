@@ -22,7 +22,8 @@ Then:
 * Click `Analyse regions` to analyse the spatial distribution of the regions you have drawn.
   * If `Calculate volumes` is selected, the volume of each brain area included in the segmented region will be calculated and saved.
   * If `Summarise volumes` is selected, then each region will be summarised (centers, volumes etc)
-  * If `Save segmentation` is selected, then the segmented layer will be saved at the same time as the analysis is run
+  * If `Save segmentation` is selected, then the segmented layer will be saved at the same time as the analysis is run 
+(this may make your analysis take longer)
 
 You can also use `Save` independently of the analysis to save your regions to be reloaded at a later date, and if you 
 loaded your data in atlas 

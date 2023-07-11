@@ -28,6 +28,7 @@ additional point at the closest part of the brain surface to the first point, so
 * `Summarise` - Defaults to on, this will save a csv file, showing the brain area for each part of the interpolated 
 track (determined by `Spline points` )
 * `Save tracing` - Defaults to off. This will save your segmentation layer at the same time as running the analysis
+  (this may make your analysis take longer)
 * `Fit degree` - What order spline fit to use (the default is 3, cubic)
 * `Spline smoothing` - How closely or not to fit the points (lower numbers fit more closely, for a less smooth interpolation)
 * `Spline points` - This doesn't affect the interpolation, but determines how many points are sampled from the interpolation (used for the summary)
