@@ -557,20 +557,21 @@ document.write(`
 <li><p>If the brain surface is damaged, you may not be able to trace perfectly from the surface. If you want to add an
 additional first point at the surface of the brain, click <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">surface</span> <span class="pre">points</span></code>. Selecting this option will add an
 additional point at the closest part of the brain surface to the first point, so that the track starts there.  </p></li>
-<li><p>The points can then be joined using spline interpolation by clicking <code class="docutils literal notranslate"><span class="pre">Trace</span> <span class="pre">tracks</span></code>. You can change:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">degree</span></code>- what order spline fit to use (the default is 3, cubic)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Spline</span> <span class="pre">smoothing</span></code> - how closely or not to fit the points (lower numbers fit more closely, for a less smooth interpolation)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Spline</span> <span class="pre">points</span></code> - this doesn’t affect the interpolation, but determines how many points are sampled from the interpolation (used for the summary)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Summarise</span></code>- defaults to on, this will save a csv file, showing the brain area for each part of the interpolated track (determined by <code class="docutils literal notranslate"><span class="pre">Spline</span> <span class="pre">points</span></code> )</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">surface</span> <span class="pre">point</span></code> If the brain surface is damaged, you may not be able to trace perfectly from the surface.
-Selecting this option will add an additional point at the closest part of the brain surface to the first point, so that the track starts there.</p></li>
-</ul>
-</li>
+<li><p>The points can then be joined using spline interpolation by clicking <code class="docutils literal notranslate"><span class="pre">Trace</span> <span class="pre">tracks</span></code>. You can change:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Summarise</span></code> - Defaults to on, this will save a csv file, showing the brain area for each part of the interpolated
+track (determined by <code class="docutils literal notranslate"><span class="pre">Spline</span> <span class="pre">points</span></code> )</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">tracing</span></code> - Defaults to off. This will save your segmentation layer at the same time as running the analysis
+(this may make your analysis take longer)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">degree</span></code> - What order spline fit to use (the default is 3, cubic)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Spline</span> <span class="pre">smoothing</span></code> - How closely or not to fit the points (lower numbers fit more closely, for a less smooth interpolation)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Spline</span> <span class="pre">points</span></code> - This doesn’t affect the interpolation, but determines how many points are sampled from the interpolation (used for the summary)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">surface</span> <span class="pre">points</span></code> - If the brain surface is damaged, you may not be able to trace perfectly from the surface.
+Selecting this option will add an additional point at the closest part of the brain surface to the first point, so that the track starts there</p></li>
 </ul>
 <p>You will then see the track fit appear in the napari window, and a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file will be saved, showing the brain region
 for every spline point along the track.</p>
-<p>You can also use <code class="docutils literal notranslate"><span class="pre">Save</span></code> to save your points to be reloaded at a later date, and if you loaded your data in atlas space,
+<p>You can also use <code class="docutils literal notranslate"><span class="pre">Save</span></code> independently of the analysis to save your points to be reloaded at a later date, and if you
+loaded your data in atlas space,
 you can also export the track to <a class="reference internal" href="../../brainrender/index.html"><span class="doc std std-doc">brainrender</span></a>. The file will be
 saved as e.g. <code class="docutils literal notranslate"><span class="pre">track_0.npy</span></code>. Using the Python API, you can visualise the track as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brainrender</span> <span class="kn">import</span> <span class="n">Scene</span>
