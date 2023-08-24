@@ -31,6 +31,14 @@ Whole brain cell detection and registration
 :link-type: doc
 Analyze and visualize bulk fluorescence tracing data
 :::
+
+:::{grid-item-card} {fas}`brain;sd-text-primary` Atlas visualisation
+:img-bottom: images/visualise-atlas-napari.png
+:link: visualise-atlas-napari
+:link-type: doc
+Visualise atlas data in napari
+:::
+
 ::::
 
 ```{toctree}
