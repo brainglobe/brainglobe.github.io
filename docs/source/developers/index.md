@@ -17,7 +17,7 @@ of the core developers.
 
 ## To contribute a new atlas
 
-To add a new BrainGlobe atlas, please see the guide [here](/documentation/bg-atlasapi/adding-a-new-atlas)
+To add a new BrainGlobe atlas, please see the guide [here](/documentation/bg-atlasapi/adding-a-new-atlas).
 
 ## To improve the documentation
 
@@ -82,6 +82,10 @@ to the following conventions:
 - Please merge via "Squash and Merge" on GitHub to maintain a clean commit history.
 - Ask for a review from someone specific if you think they would be a particularly suited reviewer (possibly noting
   why they are suited on the PR description)
+
+## [Publishing new releases](new_releases)
+
+Maintainers can publish new versions and releases by [following the instructions on the new releases page](new_releases).
 
 ## Further information
 :::{toctree}
