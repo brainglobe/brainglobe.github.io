@@ -83,9 +83,6 @@ to the following conventions:
 - Ask for a review from someone specific if you think they would be a particularly suited reviewer (possibly noting
   why they are suited on the PR description)
 
-## [Publishing new releases](new_releases)
-
-Maintainers can publish new versions and releases by [following the instructions on the new releases page](new_releases).
 
 ## Further information
 :::{toctree}
@@ -93,6 +90,7 @@ Maintainers can publish new versions and releases by [following the instructions
 tooling
 conventions
 testing
+new_releases
 Code of conduct <https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT.md>
 :::
 

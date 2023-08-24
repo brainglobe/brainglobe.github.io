@@ -13,7 +13,7 @@ The steps for triggering a new release are:
 
 1. Head to the "releases" UI on GitHub for the package you want to release a new version for, and select "draft a new release".
 2. In the "choose a tag" box, opt to create a new tag in the format described above. Ensure that the target is `main` (or the desired commit on `main` if the current `HEAD` is not the desired release state).
-3. Choose the release title. Typically this is the same as the tag that will be created.
+3. Choose the release title. Typically, this is the same as the tag that will be created.
 4. In the "write" box, you should have the option to select the "previous tag". Choose the tag of the previous release, then select "generate release notes".
 5. Check the "set as latest release" box.
 6. Then hit "publish release".
@@ -55,13 +55,12 @@ In the event that the release workflows fails after publishing a release, you wi
 ### `conda-forge` feedstocks
 
 A number of BrainGlobe packages are also available through `conda-forge`, providing an alternative installation method to `pip`.
-Each package available in this way has a feedstock repository, usually under the name
+Each package available in this way has a feedstock repository, usually at the GitHub repository:
 
 ```
 conda-forge/<package-name>-feedstock
 ```
 
-on GitHub.
 
 These feedstocks are linked to their `PyPI` counterparts - when a new version comes available on `PyPI`, the `conda-forge` admin bot should open a PR in the feedstock repository which will update the version of the package available through `conda`.
 These PRs must be approved by one of the feedstock maintainers before they are merged in.
@@ -76,7 +75,7 @@ You will need to use the `conda-forge` CI to debug the builds when manually upda
 ## Workflow for publishing new releases
 
 BrainGlobe repositories hosted on GitHub each possess a `test_and_deploy.yaml` workflow.
-The basic functionality of these workflows use the [neuroinformatics-unit](https://github.com/neuroinformatics-unit/actions) actions to;
+The basic functionality of these workflows use the [neuroinformatics-unit](https://github.com/neuroinformatics-unit/actions) actions to:
 
 1. Lint the source code
 1. Check the package manifest
