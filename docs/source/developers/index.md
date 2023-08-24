@@ -17,7 +17,7 @@ of the core developers.
 
 ## To contribute a new atlas
 
-To add a new BrainGlobe atlas, please see the guide [here](/documentation/bg-atlasapi/adding-a-new-atlas)
+To add a new BrainGlobe atlas, please see the guide [here](/documentation/bg-atlasapi/adding-a-new-atlas).
 
 ## To improve the documentation
 
@@ -83,12 +83,14 @@ to the following conventions:
 - Ask for a review from someone specific if you think they would be a particularly suited reviewer (possibly noting
   why they are suited on the PR description)
 
+
 ## Further information
 :::{toctree}
 :maxdepth: 1
 tooling
 conventions
 testing
+new_releases
 Code of conduct <https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT.md>
 :::
 
