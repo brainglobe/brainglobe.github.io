@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Testing &#8212; BrainGlobe</title>
+    <title>Publishing new releases &#8212; BrainGlobe</title>
   
   
   
@@ -47,14 +47,14 @@
     <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'developers/testing';</script>
-    <link rel="canonical" href="https://brainglobe.info/developers/testing.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'developers/new_releases';</script>
+    <link rel="canonical" href="https://brainglobe.info/developers/new_releases.html" />
     <link rel="icon" href="../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Publishing new releases" href="new_releases.html" />
-    <link rel="prev" title="Conventions" href="conventions.html" />
+    <link rel="next" title="cellfinder-core" href="repositories/cellfinder-core/index.html" />
+    <link rel="prev" title="Testing" href="testing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -369,8 +369,8 @@ document.write(`
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Developer’s guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="tooling.html">Tooling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conventions.html">Conventions</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="new_releases.html">Publishing new releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Publishing new releases</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="repositories/cellfinder-core/index.html">cellfinder-core</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="repositories/cellfinder-core/cell-detection.html">Cell detection</a></li>
@@ -519,7 +519,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Developer’s guide</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Testing</li>
+    <li class="breadcrumb-item active" aria-current="page">Publishing new releases</li>
   </ul>
 </nav>
 </div>
@@ -536,35 +536,82 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="testing">
-<h1>Testing<a class="headerlink" href="#testing" title="Permalink to this heading">#</a></h1>
-<p>We use <a class="reference external" href="https://docs.pytest.org/en/latest/">pytest</a> for testing. Please try to ensure that all functions
-are tested, including both unit and integration tests.</p>
-<section id="long-running-tests">
-<h2>Long running tests<a class="headerlink" href="#long-running-tests" title="Permalink to this heading">#</a></h2>
-<p>Some tests may take a long time, e.g. those requiring <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code> if you don’t have a GPU. These tests should be
-marked with <code class="docutils literal notranslate"><span class="pre">&#64;pytest.mark.slow</span></code>, e.g.:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
-<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">slow</span>
-<span class="k">def</span> <span class="nf">test_something_slow</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">slow_result</span> <span class="o">=</span> <span class="n">run_slow_processes</span><span class="p">()</span>
-    <span class="k">assert</span> <span class="n">slow_result</span> <span class="o">==</span> <span class="n">expected_slow_thing</span><span class="p">,</span> <span class="s2">&quot;some useful error message&quot;</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="publishing-new-releases">
+<h1>Publishing new releases<a class="headerlink" href="#publishing-new-releases" title="Permalink to this heading">#</a></h1>
+<p>BrianGlobe packages hosted on GitHub have CI workflows setup that are used to automatically upload and publish new version releases when they are made available.
+This is the preferred method for publishing new versions to <code class="docutils literal notranslate"><span class="pre">PyPI</span></code> (and where appropriate, the linked <code class="docutils literal notranslate"><span class="pre">conda</span></code> feedstocks) - avoid manual uploads where possible.</p>
+<p>Maintainers can trigger a new release by pushing a new tag, in the format <code class="docutils literal notranslate"><span class="pre">vX.Y.Z</span></code>, to the main branch of a package repository.
+The <code class="docutils literal notranslate"><span class="pre">v</span></code> prefix <strong>is necessary</strong> as the workflow will only attempt to upload to <code class="docutils literal notranslate"><span class="pre">PyPI</span></code> if the tag matches the format previously provided.
+The <code class="docutils literal notranslate"><span class="pre">X</span></code>, <code class="docutils literal notranslate"><span class="pre">Y</span></code>, and <code class="docutils literal notranslate"><span class="pre">Z</span></code> values should be integers corresponding to the new version number.</p>
+<section id="triggering-a-new-release">
+<h2>Triggering a new release<a class="headerlink" href="#triggering-a-new-release" title="Permalink to this heading">#</a></h2>
+<p>The steps for triggering a new release are:</p>
+<ol class="arabic simple">
+<li><p>Head to the “releases” UI on GitHub for the package you want to release a new version for, and select “draft a new release”.</p></li>
+<li><p>In the “choose a tag” box, opt to create a new tag in the format described above. Ensure that the target is <code class="docutils literal notranslate"><span class="pre">main</span></code> (or the desired commit on <code class="docutils literal notranslate"><span class="pre">main</span></code> if the current <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> is not the desired release state).</p></li>
+<li><p>Choose the release title. Typically, this is the same as the tag that will be created.</p></li>
+<li><p>In the “write” box, you should have the option to select the “previous tag”. Choose the tag of the previous release, then select “generate release notes”.</p></li>
+<li><p>Check the “set as latest release” box.</p></li>
+<li><p>Then hit “publish release”.</p></li>
+</ol>
+<p>This will trigger a tag-push event to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, which will set the <a class="reference internal" href="#workflow-for-publishing-new-releases"><span class="std std-ref">deployment workflow</span></a> in motion.
+You can now relax whilst the workflow uploads the new package version to <code class="docutils literal notranslate"><span class="pre">PyPI</span></code>; however you will need to look out for <a class="reference internal" href="#conda-forge-feedstocks"><span class="std std-ref">conda-forge feedstock updates</span></a> in the next couple of days, or pre-empt this by making your own.
+See the section on feedstocks for more information.</p>
+<section id="on-the-command-line">
+<h3>On the command line<a class="headerlink" href="#on-the-command-line" title="Permalink to this heading">#</a></h3>
+<p>If you have an up-to-date clone of the package repository, you can create a release tag on the command line with</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>tag<span class="w"> </span>vX.Y.Z<span class="w"> </span>
 </pre></div>
 </div>
-<p>During development, these “slow” tests can be skipped by running <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">-m</span> <span class="pre">&quot;not</span> <span class="pre">slow&quot;</span></code>.</p>
+<p>or one of</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>vX.Y.Z
+git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>vX.Y.Z<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Tag annotation message&quot;</span>
+</pre></div>
+</div>
+<p>if you want to annotate the tag; which is useful for tagging single-commit hotfixes or patches that might come after a release.</p>
+<p>Once you have created the tag, you can <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--tags</span></code> back to the main repository to trigger the release workflow.
+<strong>However</strong> you still need to create release notes using the GitHub UI as described in <a class="reference internal" href="#triggering-a-new-release"><span class="std std-ref">the section above</span></a>.
+You will need to select the tag you just pushed, rather than creating a new tag, when you start drafting the release notes.</p>
 </section>
-<section id="continuous-integration">
-<h2>Continuous integration<a class="headerlink" href="#continuous-integration" title="Permalink to this heading">#</a></h2>
-<p>A GitHub actions workflow (<code class="docutils literal notranslate"><span class="pre">.github/workflows/test_and_deploy.yml</span></code>) has been set up to run (on each commit/PR):</p>
+<section id="failed-workflows">
+<h3>Failed workflows<a class="headerlink" href="#failed-workflows" title="Permalink to this heading">#</a></h3>
+<p>In the event that the release workflows fails after publishing a release, you will need to:</p>
 <ul class="simple">
-<li><p>Linting checks (pre-commit).</p></li>
-<li><p>Testing (only if linting checks pass)</p></li>
-<li><p>Release to PyPI (only if a git tag is present and if tests pass). Requires <code class="docutils literal notranslate"><span class="pre">TWINE_API_KEY</span></code>
-from PyPI to be set in repository secrets.</p></li>
+<li><p>Delete the tag from the repository from the GitHub tags UI</p></li>
+<li><p>Delete the release notes and release from the GitHub releases UI</p></li>
+<li><p>Debug the build failure and the commits with the fix are merged into <code class="docutils literal notranslate"><span class="pre">main</span></code></p></li>
+<li><p>Begin the process over again.</p></li>
 </ul>
-<p>Many of these workflows use actions from
-<a class="reference external" href="https://github.com/neuroinformatics-unit/actions">neuroinformatics-unit/actions</a>. Feel free to raise a PR to that
-repository!</p>
+</section>
+<section id="conda-forge-feedstocks">
+<h3><code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> feedstocks<a class="headerlink" href="#conda-forge-feedstocks" title="Permalink to this heading">#</a></h3>
+<p>A number of BrainGlobe packages are also available through <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>, providing an alternative installation method to <code class="docutils literal notranslate"><span class="pre">pip</span></code>.
+Each package available in this way has a feedstock repository, usually at the GitHub repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span><span class="o">-</span><span class="n">forge</span><span class="o">/&lt;</span><span class="n">package</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;-</span><span class="n">feedstock</span>
+</pre></div>
+</div>
+<p>These feedstocks are linked to their <code class="docutils literal notranslate"><span class="pre">PyPI</span></code> counterparts - when a new version comes available on <code class="docutils literal notranslate"><span class="pre">PyPI</span></code>, the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> admin bot should open a PR in the feedstock repository which will update the version of the package available through <code class="docutils literal notranslate"><span class="pre">conda</span></code>.
+These PRs must be approved by one of the feedstock maintainers before they are merged in.</p>
+<ul class="simple">
+<li><p>Feedstock maintainers and package maintainers may be different</p></li>
+<li><p>New versions of packages will <strong>NOT</strong> be available through <code class="docutils literal notranslate"><span class="pre">conda</span></code> until these PRs are merged in.</p></li>
+</ul>
+<p>If the new version changes are extensive or non-trivial; a manual update to the <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> “recipe” file might be needed, as the admin bot is unable to resolve complex edits.
+Examples of such changes are; changing package dependencies, introducing new submodules, and/or editing command-line entry-points.
+You will need to use the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> CI to debug the builds when manually updating in this way.</p>
+</section>
+</section>
+<section id="workflow-for-publishing-new-releases">
+<h2>Workflow for publishing new releases<a class="headerlink" href="#workflow-for-publishing-new-releases" title="Permalink to this heading">#</a></h2>
+<p>BrainGlobe repositories hosted on GitHub each possess a <code class="docutils literal notranslate"><span class="pre">test_and_deploy.yaml</span></code> workflow.
+The basic functionality of these workflows use the <a class="reference external" href="https://github.com/neuroinformatics-unit/actions">neuroinformatics-unit</a> actions to:</p>
+<ol class="arabic simple">
+<li><p>Lint the source code</p></li>
+<li><p>Check the package manifest</p></li>
+<li><p>Run the package tests</p></li>
+</ol>
+<p>These checks are run against <em>all</em> PRs opened against the repository, and on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch when they are merged in.
+When a tag in the <code class="docutils literal notranslate"><span class="pre">vX.Y.Z</span></code> format is pushed to <code class="docutils literal notranslate"><span class="pre">main</span></code>, these checks are run again and <em>if they are successful</em> the workflow will build the source distribution and upload this to <code class="docutils literal notranslate"><span class="pre">PyPI</span></code>.</p>
 </section>
 </section>
 
@@ -580,20 +627,20 @@ repository!</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="conventions.html"
+       href="testing.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Conventions</p>
+        <p class="prev-next-title">Testing</p>
       </div>
     </a>
     <a class="right-next"
-       href="new_releases.html"
+       href="repositories/cellfinder-core/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Publishing new releases</p>
+        <p class="prev-next-title">cellfinder-core</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -615,8 +662,13 @@ repository!</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#long-running-tests">Long running tests</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration">Continuous integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#triggering-a-new-release">Triggering a new release</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-the-command-line">On the command line</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#failed-workflows">Failed workflows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-forge-feedstocks"><code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> feedstocks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-for-publishing-new-releases">Workflow for publishing new releases</a></li>
 </ul>
   </nav></div>
 
