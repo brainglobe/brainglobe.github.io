@@ -13,7 +13,7 @@ You will need `napari` installed on your computer - please follow [`napari`'s in
 
 **The brainrender widget appears on the right hand side of the window.**
 
-4. In the `brainrender` widget's `Atlas table view` section, double-click the row which contains the `mpin_zfish_1um` atlas.
+4. In the `brainrender` widget's `Atlas table view` section, double-click the row which contains the `mpin_zfish_1um` atlas (you may have to scroll down slightly).
 ![brainrender widget with added annotations](./images/brainrender-napari/added-brainrender-napari.png)
 
 **You have now added the annotations image and the default reference image to napari: They appear as layers in the napari layers list on the lower left of the window. A `3D Atlas region meshes` section appears below the `Atlas table view` section.**
