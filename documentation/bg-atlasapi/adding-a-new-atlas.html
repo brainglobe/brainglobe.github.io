@@ -18,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -34,12 +34,13 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=8df938ec"></script>
+    <script src="../../_static/documentation_options.js?v=f539c95a"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -47,6 +48,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/bg-atlasapi/adding-a-new-atlas';</script>
     <link rel="canonical" href="https://brainglobe.info/documentation/bg-atlasapi/adding-a-new-atlas.html" />
     <link rel="icon" href="../../_static/brainglobe.png"/>
@@ -65,6 +67,15 @@
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -105,7 +116,8 @@
     <span class="fa-solid fa-bars"></span>
   </label>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
   
@@ -129,7 +141,6 @@
 </a></div>
     
   </div>
-  
   
   <div class="col-lg-9 navbar-header-items">
     
@@ -181,23 +192,25 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
         <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -213,8 +226,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -225,8 +238,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
 </ul></div>
       
@@ -236,18 +249,20 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
     </label>
   
@@ -315,10 +330,10 @@ document.write(`
           <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -334,8 +349,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -346,8 +361,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
 </ul></div>
         
@@ -505,8 +520,8 @@ document.write(`
 
 
 
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
       <a href="../../index.html" class="nav-link" aria-label="Home">
@@ -537,9 +552,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="adding-a-new-atlas">
-<h1>Adding a new atlas<a class="headerlink" href="#adding-a-new-atlas" title="Permalink to this heading">#</a></h1>
+<h1>Adding a new atlas<a class="headerlink" href="#adding-a-new-atlas" title="Link to this heading">#</a></h1>
 <section id="how-are-brainglobe-atlases-distributed">
-<h2>How are BrainGlobe atlases distributed?<a class="headerlink" href="#how-are-brainglobe-atlases-distributed" title="Permalink to this heading">#</a></h2>
+<h2>How are BrainGlobe atlases distributed?<a class="headerlink" href="#how-are-brainglobe-atlases-distributed" title="Link to this heading">#</a></h2>
 <p>BrainGlobe atlases are downloaded locally to the user’s machine whenever they try to use an atlas that has not yet been
 downloaded.
 By default, they will end up in the <code class="docutils literal notranslate"><span class="pre">.../username/.brainglobe</span></code> folder,
@@ -566,7 +581,7 @@ generated in a separate script, so if you want to contribute with a new atlas:</
 you with all the assistance you need to contribute to the project!</p>
 </section>
 <section id="what-data-do-you-need-to-contribute-an-atlas-to-the-brainglobe-initiative">
-<h2>What data do you need to contribute an atlas to the BrainGlobe Initiative?<a class="headerlink" href="#what-data-do-you-need-to-contribute-an-atlas-to-the-brainglobe-initiative" title="Permalink to this heading">#</a></h2>
+<h2>What data do you need to contribute an atlas to the BrainGlobe Initiative?<a class="headerlink" href="#what-data-do-you-need-to-contribute-an-atlas-to-the-brainglobe-initiative" title="Link to this heading">#</a></h2>
 <p>To contribute your favourite atlas in a BrainGlobe-compatible format, these are the fundamental ingredients you’ll
 need to have before starting:</p>
 <ul class="simple">
@@ -605,7 +620,7 @@ way of generating this list of dictionaries in python when you’ll start creati
 </div>
 </section>
 <section id="how-to-generate-an-atlas-programmatically">
-<h2>How to generate an atlas programmatically?<a class="headerlink" href="#how-to-generate-an-atlas-programmatically" title="Permalink to this heading">#</a></h2>
+<h2>How to generate an atlas programmatically?<a class="headerlink" href="#how-to-generate-an-atlas-programmatically" title="Link to this heading">#</a></h2>
 <p><strong>Atlas generation takes place in two steps:</strong></p>
 <ol class="arabic simple">
 <li><p>Generate an “Atlas script” written in python</p></li>
@@ -613,7 +628,7 @@ way of generating this list of dictionaries in python when you’ll start creati
 <li><p>to generate the atlas from the atlas script.</p></li>
 </ol>
 <section id="atlas-scripts">
-<h3>Atlas scripts<a class="headerlink" href="#atlas-scripts" title="Permalink to this heading">#</a></h3>
+<h3>Atlas scripts<a class="headerlink" href="#atlas-scripts" title="Link to this heading">#</a></h3>
 <p><strong>Each atlas to be generated has a dedicated atlas script. This has two main functions:</strong> </p>
 <ol class="arabic simple">
 <li><p>To set important atlas metadata (e.g., name, resolution…) and </p></li>
@@ -644,7 +659,7 @@ of each brain region</p></li>
 </ul>
 </section>
 <section id="atlas-generation">
-<h3>Atlas generation<a class="headerlink" href="#atlas-generation" title="Permalink to this heading">#</a></h3>
+<h3>Atlas generation<a class="headerlink" href="#atlas-generation" title="Link to this heading">#</a></h3>
 <p>Once an atlas script has been written which sets out all the necessary metadata and loads all the files required,
 code provided by BrainGlobe’s atlas generation repository can be used to format the data as needed by the BrainGlobe
 AtlasAPI. Atlasgen provides one convenient function <code class="docutils literal notranslate"><span class="pre">wrapup_atlas_from_data</span></code>  which takes all the metadata and data
@@ -653,7 +668,7 @@ csv files with the structures metadata information, a README file laying out the
 creates a compressed folder which can be loaded to GIN for distribution (see above).</p>
 </section>
 <section id="extracting-meshes">
-<h3>Extracting meshes<a class="headerlink" href="#extracting-meshes" title="Permalink to this heading">#</a></h3>
+<h3>Extracting meshes<a class="headerlink" href="#extracting-meshes" title="Link to this heading">#</a></h3>
 <p>While most atlases will have a set of 3D images that can be used as annotated and template stacks,
 not all atlases will have mesh (.obj) files for each brain region in the atlas.
 However, regions’ meshes are used frequently by BrainGlobe tools,
@@ -668,7 +683,7 @@ finally, a mesh is created from the output of the marching cubes algorithm, and 
 Repeating the process for each region in the atlas, it is possible to easily create all the necessary meshes.</p>
 </section>
 <section id="how-can-i-be-sure-i-get-credited-for-the-atlas-i-contributed">
-<h3>How can I be sure I get credited for the atlas I contributed?<a class="headerlink" href="#how-can-i-be-sure-i-get-credited-for-the-atlas-i-contributed" title="Permalink to this heading">#</a></h3>
+<h3>How can I be sure I get credited for the atlas I contributed?<a class="headerlink" href="#how-can-i-be-sure-i-get-credited-for-the-atlas-i-contributed" title="Link to this heading">#</a></h3>
 <p>Included with the atlas metadata, which is specified during atlas creation (see above), is a link to any online
 resource describing the atlas and to a publication associated with the atlas.</p>
 <p>This ensures that information about the original creators of the atlas data accompanies the atlas data at all time,
@@ -678,7 +693,7 @@ generation process laid out here) may not be the same. The <code class="docutils
 specifying the name and contact of the person who curated the BrainGlobe atlas creation.</p>
 </section>
 <section id="inspecting-results">
-<h3>Inspecting results<a class="headerlink" href="#inspecting-results" title="Permalink to this heading">#</a></h3>
+<h3>Inspecting results<a class="headerlink" href="#inspecting-results" title="Link to this heading">#</a></h3>
 <p>To check if everything went smoothly,
 you can just go to the folder with the atlas content
 (named <code class="docutils literal notranslate"><span class="pre">atlasname_resolutionum</span></code> in the directory you were generating the atlas in) and check out its content. </p>
@@ -696,14 +711,14 @@ which provides a convenient GUI for visually inspecting the generated atlas mesh
 </section>
 </section>
 <section id="uploading-the-atlas">
-<h2>Uploading the atlas<a class="headerlink" href="#uploading-the-atlas" title="Permalink to this heading">#</a></h2>
+<h2>Uploading the atlas<a class="headerlink" href="#uploading-the-atlas" title="Link to this heading">#</a></h2>
 <p>After the pull request is merged, one of the BrainGlobe core developers will run the script and upload the packaged
 atlas (<code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code> archive) to <a class="reference external" href="https://gin.g-node.org/BrainGlobe/atlases">the GIN repository</a>. The
 <a class="reference external" href="https://gin.g-node.org/BrainGlobe/atlases/src/master/last_versions.conf"><code class="docutils literal notranslate"><span class="pre">latest_versions.conf</span></code></a> file will also be
 updated to include the new atlas. At this point, the atlas will be available for use in the API.</p>
 </section>
 <section id="updating-an-existing-atlas">
-<h2>Updating an existing atlas<a class="headerlink" href="#updating-an-existing-atlas" title="Permalink to this heading">#</a></h2>
+<h2>Updating an existing atlas<a class="headerlink" href="#updating-an-existing-atlas" title="Link to this heading">#</a></h2>
 <p>To update an existing atlas, a pull request must be raised to change the existing script. Once this pull request is
 merged, the new atlas will be generated and uploaded to the GIN repository as normal. The
 <a class="reference external" href="https://gin.g-node.org/BrainGlobe/atlases/src/master/last_versions.conf"><code class="docutils literal notranslate"><span class="pre">latest_versions.conf</span></code></a> can then be updated
@@ -716,11 +731,10 @@ to reflect the latest version.</p>
               
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="usage/using-the-files-directly.html"
@@ -740,10 +754,7 @@ to reflect the latest version.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -786,8 +797,8 @@ to reflect the latest version.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -795,16 +806,17 @@ to reflect the latest version.</p>
     <div class="footer-items__start">
       
         <div class="footer-item"><p class="sphinx-version">
-Created using <a href="https://sphinx-doc.org/">Sphinx</a> 7.1.0.
+Created using <a href="https://sphinx-doc.org/">Sphinx</a> 7.2.6.
 <br/>
 </p>
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.13.3.
+0.14.1.
 </p></div>
       
     </div>
+  
   
   
     <div class="footer-items__end">

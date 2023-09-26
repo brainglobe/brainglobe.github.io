@@ -18,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -34,12 +34,13 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=8df938ec"></script>
+    <script src="../../../_static/documentation_options.js?v=f539c95a"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -47,6 +48,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/bg-atlasapi/usage/python-api';</script>
     <link rel="canonical" href="https://brainglobe.info/documentation/bg-atlasapi/usage/python-api.html" />
     <link rel="icon" href="../../../_static/brainglobe.png"/>
@@ -65,6 +67,15 @@
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -105,7 +116,8 @@
     <span class="fa-solid fa-bars"></span>
   </label>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
   
@@ -129,7 +141,6 @@
 </a></div>
     
   </div>
-  
   
   <div class="col-lg-9 navbar-header-items">
     
@@ -181,23 +192,25 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
         <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -213,8 +226,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -225,8 +238,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
 </ul></div>
       
@@ -236,18 +249,20 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
     </label>
   
@@ -315,10 +330,10 @@ document.write(`
           <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -334,8 +349,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -346,8 +361,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
 </ul></div>
         
@@ -505,8 +520,8 @@ document.write(`
 
 
 
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
       <a href="../../../index.html" class="nav-link" aria-label="Home">
@@ -537,9 +552,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python-api">
-<h1>Python API<a class="headerlink" href="#python-api" title="Permalink to this heading">#</a></h1>
+<h1>Python API<a class="headerlink" href="#python-api" title="Link to this heading">#</a></h1>
 <section id="creating-a-brainglobeatlas-object">
-<h2>Creating a <code class="docutils literal notranslate"><span class="pre">BrainGlobeAtlas</span></code> object<a class="headerlink" href="#creating-a-brainglobeatlas-object" title="Permalink to this heading">#</a></h2>
+<h2>Creating a <code class="docutils literal notranslate"><span class="pre">BrainGlobeAtlas</span></code> object<a class="headerlink" href="#creating-a-brainglobeatlas-object" title="Link to this heading">#</a></h2>
 <p>To instantiate a <code class="docutils literal notranslate"><span class="pre">BrainGlobeAtlas</span></code> object, we need to instantiate it with the atlas name. The first time we use it, a
 version of this atlas files will be downloaded from the <a class="reference external" href="http://gin.g-node.org/brainglobe/atlases">remote GIN repository</a>
 and stored on your local machine (by default, in <code class="docutils literal notranslate"><span class="pre">~..brainglobe</span></code>):</p>
@@ -557,7 +572,7 @@ and stored on your local machine (by default, in <code class="docutils literal n
 </div>
 </section>
 <section id="using-the-atlas">
-<h2>Using the atlas<a class="headerlink" href="#using-the-atlas" title="Permalink to this heading">#</a></h2>
+<h2>Using the atlas<a class="headerlink" href="#using-the-atlas" title="Link to this heading">#</a></h2>
 <p>A BrainGlobe atlas is a convenient API for interacting with an anatomical atlas. BrainGlobe atlases contain:</p>
 <ul class="simple">
 <li><p>Metadata</p></li>
@@ -568,14 +583,14 @@ and stored on your local machine (by default, in <code class="docutils literal n
 <li><p>Meshes for the regions</p></li>
 </ul>
 <section id="metadata">
-<h3>Metadata<a class="headerlink" href="#metadata" title="Permalink to this heading">#</a></h3>
+<h3>Metadata<a class="headerlink" href="#metadata" title="Link to this heading">#</a></h3>
 <p>All atlases have a standard set of metatata describing their source, species, resolution, etc:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bg_atlas</span><span class="o">.</span><span class="n">metadata</span>
 </pre></div>
 </div>
 </section>
 <section id="anatomical-annotation-and-hemispheres-stack">
-<h3>Anatomical, annotation and hemispheres stack<a class="headerlink" href="#anatomical-annotation-and-hemispheres-stack" title="Permalink to this heading">#</a></h3>
+<h3>Anatomical, annotation and hemispheres stack<a class="headerlink" href="#anatomical-annotation-and-hemispheres-stack" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 </pre></div>
 </div>
@@ -593,7 +608,7 @@ and stored on your local machine (by default, in <code class="docutils literal n
 </div>
 </section>
 <section id="regions-hierarchy">
-<h3>Regions hierarchy<a class="headerlink" href="#regions-hierarchy" title="Permalink to this heading">#</a></h3>
+<h3>Regions hierarchy<a class="headerlink" href="#regions-hierarchy" title="Link to this heading">#</a></h3>
 <p>The atlas comes with the description of a hierarchy of brain structures. To have an overview:</p>
 <p>bg_atlas.structures</p>
 <p>The structures attribute is a custom dictionary that can be queried by region number or acronym, and contains all the information for a given structure:</p>
@@ -621,7 +636,7 @@ and stored on your local machine (by default, in <code class="docutils literal n
 the hierarchy without additional layers of complication.</p>
 </section>
 <section id="region-masks">
-<h3>Region masks<a class="headerlink" href="#region-masks" title="Permalink to this heading">#</a></h3>
+<h3>Region masks<a class="headerlink" href="#region-masks" title="Link to this heading">#</a></h3>
 <p>Sometimes, we might want to have the mask for a region that is not labelled in the annotation stack as all its voxels
 have the number of some lower level parcellation in the hierarchy (concretely, if the brain is divided in hindbrain,
 midbrain, and forebrain, <code class="docutils literal notranslate"><span class="pre">annotation</span> <span class="pre">==</span> <span class="pre">root_id</span></code> will be all False).</p>
@@ -631,7 +646,7 @@ midbrain, and forebrain, <code class="docutils literal notranslate"><span class=
 </div>
 </section>
 <section id="regions-meshes">
-<h3>Regions meshes<a class="headerlink" href="#regions-meshes" title="Permalink to this heading">#</a></h3>
+<h3>Regions meshes<a class="headerlink" href="#regions-meshes" title="Link to this heading">#</a></h3>
 <p>If we need to access the structure meshes, we can either query for the file (e.g., if we need to load the file
 through some library like <code class="docutils literal notranslate"><span class="pre">vedo</span></code>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bg_atlas</span><span class="o">.</span><span class="n">meshfile_from_structure</span><span class="p">(</span><span class="s2">&quot;CH&quot;</span><span class="p">)</span>
@@ -644,9 +659,9 @@ through some library like <code class="docutils literal notranslate"><span class
 </section>
 </section>
 <section id="query-the-atlas">
-<h2>Query the atlas<a class="headerlink" href="#query-the-atlas" title="Permalink to this heading">#</a></h2>
+<h2>Query the atlas<a class="headerlink" href="#query-the-atlas" title="Link to this heading">#</a></h2>
 <section id="query-for-structures">
-<h3>Query for structures<a class="headerlink" href="#query-for-structures" title="Permalink to this heading">#</a></h3>
+<h3>Query for structures<a class="headerlink" href="#query-for-structures" title="Link to this heading">#</a></h3>
 <p>A very convenient feature of the <code class="docutils literal notranslate"><span class="pre">BrainGlobeAtlas</span></code> API is the simplicity of querying for the identity of the
 structure or the hemisphere at a given location, either from stack indexes or space coordinates, and even cutting
 the hierarchy at some higher level:</p>
@@ -664,7 +679,7 @@ the hierarchy at some higher level:</p>
 </div>
 </section>
 <section id="query-for-hemispheres">
-<h3>Query for hemispheres<a class="headerlink" href="#query-for-hemispheres" title="Permalink to this heading">#</a></h3>
+<h3>Query for hemispheres<a class="headerlink" href="#query-for-hemispheres" title="Link to this heading">#</a></h3>
 <p>A very similar method can be used for hemispheres. 0 correspond to outside the brain, and 1 and 2 to left and right
 hemispheres, but we can just ask for the side name instead of the number:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ask for identity of some indexes in the stack:</span>
@@ -686,11 +701,10 @@ hemispheres, but we can just ask for the side name instead of the number:</p>
               
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="atlas-details.html"
@@ -710,10 +724,7 @@ hemispheres, but we can just ask for the side name instead of the number:</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -758,8 +769,8 @@ hemispheres, but we can just ask for the side name instead of the number:</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -767,16 +778,17 @@ hemispheres, but we can just ask for the side name instead of the number:</p>
     <div class="footer-items__start">
       
         <div class="footer-item"><p class="sphinx-version">
-Created using <a href="https://sphinx-doc.org/">Sphinx</a> 7.1.0.
+Created using <a href="https://sphinx-doc.org/">Sphinx</a> 7.2.6.
 <br/>
 </p>
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.13.3.
+0.14.1.
 </p></div>
       
     </div>
+  
   
   
     <div class="footer-items__end">

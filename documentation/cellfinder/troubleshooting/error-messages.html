@@ -18,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -34,12 +34,13 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=8df938ec"></script>
+    <script src="../../../_static/documentation_options.js?v=f539c95a"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -47,6 +48,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/cellfinder/troubleshooting/error-messages';</script>
     <link rel="canonical" href="https://brainglobe.info/documentation/cellfinder/troubleshooting/error-messages.html" />
     <link rel="icon" href="../../../_static/brainglobe.png"/>
@@ -65,6 +67,15 @@
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -105,7 +116,8 @@
     <span class="fa-solid fa-bars"></span>
   </label>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
   
@@ -129,7 +141,6 @@
 </a></div>
     
   </div>
-  
   
   <div class="col-lg-9 navbar-header-items">
     
@@ -181,23 +192,25 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
         <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -213,8 +226,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -225,8 +238,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
 </ul></div>
       
@@ -236,18 +249,20 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
     </label>
   
@@ -315,10 +330,10 @@ document.write(`
           <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -334,8 +349,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -346,8 +361,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
 </ul></div>
         
@@ -507,8 +522,8 @@ document.write(`
 
 
 
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
       <a href="../../../index.html" class="nav-link" aria-label="Home">
@@ -524,7 +539,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Troubleshooting</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Debugging common error messages</li>
+    <li class="breadcrumb-item active" aria-current="page">Debugging...</li>
   </ul>
 </nav>
 </div>
@@ -542,11 +557,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="debugging-common-error-messages">
-<h1>Debugging common error messages<a class="headerlink" href="#debugging-common-error-messages" title="Permalink to this heading">#</a></h1>
+<h1>Debugging common error messages<a class="headerlink" href="#debugging-common-error-messages" title="Link to this heading">#</a></h1>
 <section id="error-messages">
-<h2>Error messages<a class="headerlink" href="#error-messages" title="Permalink to this heading">#</a></h2>
+<h2>Error messages<a class="headerlink" href="#error-messages" title="Link to this heading">#</a></h2>
 <section id="oserror-errno-24-too-many-open-files">
-<h3>OSError: [Errno 24] Too many open files<a class="headerlink" href="#oserror-errno-24-too-many-open-files" title="Permalink to this heading">#</a></h3>
+<h3>OSError: [Errno 24] Too many open files<a class="headerlink" href="#oserror-errno-24-too-many-open-files" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>OSError:<span class="w"> </span><span class="o">[</span>Errno<span class="w"> </span><span class="m">24</span><span class="o">]</span><span class="w"> </span>Too<span class="w"> </span>many<span class="w"> </span>open<span class="w"> </span>files
 </pre></div>
 </div>
@@ -556,7 +571,7 @@ can’t change the system-wide limits, running <code class="docutils literal not
 will persist for the present shell session, but will have to be repeated if you open a new terminal.</p>
 </section>
 <section id="error-unrecognized-arguments">
-<h3>error: unrecognized arguments:<a class="headerlink" href="#error-unrecognized-arguments" title="Permalink to this heading">#</a></h3>
+<h3>error: unrecognized arguments:<a class="headerlink" href="#error-unrecognized-arguments" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>main.py:<span class="w"> </span>error:<span class="w"> </span>unrecognized<span class="w"> </span>arguments:<span class="w"> </span>data/dataset1
 </pre></div>
 </div>
@@ -565,7 +580,7 @@ then you should enclose the full path in quotation marks. (<strong>i.e. <code cl
 Otherwise cellfinder will interpret the path as two inputs, separated by a space.)</p>
 </section>
 <section id="commandlineinputerror-file-path-cannot-be-found">
-<h3>CommandLineInputError: File path: cannot be found.<a class="headerlink" href="#commandlineinputerror-file-path-cannot-be-found" title="Permalink to this heading">#</a></h3>
+<h3>CommandLineInputError: File path: cannot be found.<a class="headerlink" href="#commandlineinputerror-file-path-cannot-be-found" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>imlib.general.exceptions.CommandLineInputError:<span class="w"> </span>File<span class="w"> </span>path:<span class="w"> </span><span class="s1">&#39;/media/adam/Storage/cellfinder.md/data/dataset1&#39;</span><span class="w"> </span>cannot<span class="w"> </span>be<span class="w"> </span>found.
 </pre></div>
 </div>
@@ -578,7 +593,7 @@ cellfinder will interpret the path as two inputs, separated by a space.)</p></li
 </ul>
 </section>
 <section id="info-tensorflow-error-reported-to-coordinator-failed-to-get-convolution-algorithm">
-<h3>INFO:tensorflow:Error reported to Coordinator: Failed to get convolution algorithm<a class="headerlink" href="#info-tensorflow-error-reported-to-coordinator-failed-to-get-convolution-algorithm" title="Permalink to this heading">#</a></h3>
+<h3>INFO:tensorflow:Error reported to Coordinator: Failed to get convolution algorithm<a class="headerlink" href="#info-tensorflow-error-reported-to-coordinator-failed-to-get-convolution-algorithm" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:global_step/sec:<span class="w"> </span><span class="m">0</span>
 <span class="m">2019</span>-05-17<span class="w"> </span><span class="m">13</span>:04:53.550306:<span class="w"> </span>E<span class="w"> </span>tensorflow/stream_executor/cuda/cuda_dnn.cc:334<span class="o">]</span><span class="w"> </span>Could<span class="w"> </span>not<span class="w"> </span>create<span class="w"> </span>cudnn<span class="w"> </span>handle:<span class="w"> </span>CUDNN_STATUS_INTERNAL_ERROR
 <span class="m">2019</span>-05-17<span class="w"> </span><span class="m">13</span>:04:53.565467:<span class="w"> </span>E<span class="w"> </span>tensorflow/stream_executor/cuda/cuda_dnn.cc:334<span class="o">]</span><span class="w"> </span>Could<span class="w"> </span>not<span class="w"> </span>create<span class="w"> </span>cudnn<span class="w"> </span>handle:<span class="w"> </span>CUDNN_STATUS_INTERNAL_ERROR
@@ -616,7 +631,7 @@ find the culprit:</p>
 following the instructions <a class="reference internal" href="../../general/gpu.html"><span class="doc std std-doc">here</span></a>.</p>
 </section>
 <section id="importerror-dll-load-failed-the-specified-module-could-not-be-found">
-<h3>ImportError: DLL load failed: The specified module could not be found.<a class="headerlink" href="#importerror-dll-load-failed-the-specified-module-could-not-be-found" title="Permalink to this heading">#</a></h3>
+<h3>ImportError: DLL load failed: The specified module could not be found.<a class="headerlink" href="#importerror-dll-load-failed-the-specified-module-could-not-be-found" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ImportError:<span class="w"> </span>DLL<span class="w"> </span>load<span class="w"> </span>failed:<span class="w"> </span>The<span class="w"> </span>specified<span class="w"> </span>module<span class="w"> </span>could<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>found.
 </pre></div>
 </div>
@@ -625,7 +640,7 @@ Studio 2015, 2017 and 2019”, available from Microsoft’s website
 <a class="reference external" href="https://support.microsoft.com/en-gb/help/2977003/the-latest-supported-visual-c-downloads">here</a>.</p>
 </section>
 <section id="syntaxerror-invalid-syntax-logging">
-<h3>SyntaxError: invalid syntax (logging)<a class="headerlink" href="#syntaxerror-invalid-syntax-logging" title="Permalink to this heading">#</a></h3>
+<h3>SyntaxError: invalid syntax (logging)<a class="headerlink" href="#syntaxerror-invalid-syntax-logging" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/home/adam/projects/cellfinder/cellfinder/tools/tools.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">444</span>
 <span class="w">    </span>logging.debug<span class="o">(</span>f<span class="s2">&quot;Free memory is: {free_mem} bytes.&quot;</span><span class="o">)</span>
 <span class="w">                                                     </span>^
@@ -634,7 +649,7 @@ SyntaxError:<span class="w"> </span>invalid<span class="w"> </span>syntax
 </div>
 </section>
 <section id="cant-find-usr-local-opt-libpng-lib-libpng16-16-dylib">
-<h3>Can’t find /usr/local/opt/libpng/lib/libpng16.16.dylib<a class="headerlink" href="#cant-find-usr-local-opt-libpng-lib-libpng16-16-dylib" title="Permalink to this heading">#</a></h3>
+<h3>Can’t find /usr/local/opt/libpng/lib/libpng16.16.dylib<a class="headerlink" href="#cant-find-usr-local-opt-libpng-lib-libpng16-16-dylib" title="Link to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Can</span><span class="s1">&#39;t find /usr/local/opt/libpng/lib/libpng16.16.dylib</span>
 </pre></div>
 </div>
@@ -646,20 +661,20 @@ do is to <a class="reference external" href="https://brew.sh/">install homebrew<
 </section>
 </section>
 <section id="things-that-look-like-errors-but-arent">
-<h2>Things that look like errors, but aren’t:<a class="headerlink" href="#things-that-look-like-errors-but-arent" title="Permalink to this heading">#</a></h2>
+<h2>Things that look like errors, but aren’t:<a class="headerlink" href="#things-that-look-like-errors-but-arent" title="Link to this heading">#</a></h2>
 <p>Most things that are actually errors will interrupt cellfinder, and the program won’t run. Other things will get
 logged with an <code class="docutils literal notranslate"><span class="pre">ERROR</span></code> or a <code class="docutils literal notranslate"><span class="pre">WARNING</span></code> flag and will get printed to the console in addition to the log file.</p>
 <p>A number of third party modules may raise their own errors. As long as you understand what they mean, they can
 usually be safely ignored.</p>
 <section id="cant-find-opencv">
-<h3>Can’t find openCV<a class="headerlink" href="#cant-find-opencv" title="Permalink to this heading">#</a></h3>
+<h3>Can’t find openCV<a class="headerlink" href="#cant-find-opencv" title="Link to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CRITICAL</span><span class="p">:</span><span class="n">tensorflow</span><span class="p">:</span><span class="n">Optional</span> <span class="n">Python</span> <span class="n">module</span> <span class="n">cv2</span> <span class="ow">not</span> <span class="n">found</span><span class="p">,</span> <span class="n">please</span> <span class="n">install</span> <span class="n">cv2</span> <span class="ow">and</span> <span class="n">retry</span> <span class="k">if</span> <span class="n">the</span> <span class="n">application</span> <span class="n">fails</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>Tensorflow thinks this is critical, it’s not.</p>
 </section>
 <section id="cpu-instruction-sets">
-<h3>CPU instruction sets<a class="headerlink" href="#cpu-instruction-sets" title="Permalink to this heading">#</a></h3>
+<h3>CPU instruction sets<a class="headerlink" href="#cpu-instruction-sets" title="Link to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tensorflow</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">platform</span><span class="o">/</span><span class="n">cpu_feature_guard</span><span class="o">.</span><span class="n">cc</span><span class="p">:</span><span class="mi">141</span><span class="p">]</span> <span class="n">Your</span> <span class="n">CPU</span> <span class="n">supports</span> <span class="n">instructions</span> <span class="n">that</span> <span class="n">this</span> <span class="n">TensorFlow</span> <span class="n">binary</span> 
 <span class="n">was</span> <span class="ow">not</span> <span class="n">compiled</span> <span class="n">to</span> <span class="n">use</span><span class="p">:</span> <span class="n">SSE4</span><span class="mf">.1</span> <span class="n">SSE4</span><span class="mf">.2</span> <span class="n">AVX</span> <span class="n">AVX2</span> <span class="n">FMA</span>
 </pre></div>
@@ -674,11 +689,10 @@ usually be safely ignored.</p>
               
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="speed-up.html"
@@ -698,10 +712,7 @@ usually be safely ignored.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -747,8 +758,8 @@ usually be safely ignored.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -756,16 +767,17 @@ usually be safely ignored.</p>
     <div class="footer-items__start">
       
         <div class="footer-item"><p class="sphinx-version">
-Created using <a href="https://sphinx-doc.org/">Sphinx</a> 7.1.0.
+Created using <a href="https://sphinx-doc.org/">Sphinx</a> 7.2.6.
 <br/>
 </p>
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.13.3.
+0.14.1.
 </p></div>
       
     </div>
+  
   
   
     <div class="footer-items__end">
