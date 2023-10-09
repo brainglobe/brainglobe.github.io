@@ -1,4 +1,4 @@
-## Visualise an atlas in napari
+# Visualise an atlas in napari
 
 BrainGlobe atlases are made of different components. These include the annotations image, the (default) reference image, 3D atlas region meshes and, optionally, additional reference images. In this tutorial, you will use `brainrender-napari` to visualise each of these components in the 3D viewer napari through a series of simple clicks. The [`mpin_zfish_1um` zebrafish brain atlas](https://doi.org/10.1016/j.neuron.2019.04.034) will serve as an example. 
 

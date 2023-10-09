@@ -49,4 +49,5 @@ brainreg
 silicon-probe-tracking
 cellfinder-cli/index
 tracing-tracking
+visualise-atlas-napari
 ```
