@@ -37,6 +37,11 @@ pAPRica is a package for analysis of large microscopy datasets that incorporates
 - [GitHub repository](https://github.com/WyssCenter/pAPRica)
 - [Documentation](https://wysscenter.github.io/pAPRica/index.html)
 
+## BrainAtlas
+BrainAtlas wraps the BrainGlobe Atlas API into a package for easy use with the Unity video game engine.
+- [GitHub repository](https://github.com/VirtualBrainLab/BrainAtlas/)
+- [Documentation](https://virtualbrainlab.org/misc/brain_atlas.html)
+
 
 :::{hint}
 if you have developed any software using BrainGlobe tools, please [let us know](contact) and we can advertise it here. 
