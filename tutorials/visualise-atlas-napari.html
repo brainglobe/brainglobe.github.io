@@ -55,6 +55,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Documentation" href="../documentation/index.html" />
+    <link rel="prev" title="Analyze and visualize bulk fluorescence tracing data" href="tracing-tracking.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -160,7 +162,7 @@
                     </li>
                 
 
-                    <li class="nav-item">
+                    <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
                         Tutorials
                       </a>
@@ -267,7 +269,7 @@ document.write(`
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -292,7 +294,7 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item">
+                    <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
                         Tutorials
                       </a>
@@ -364,6 +366,29 @@ document.write(`
     
   </div>
   
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Index</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainreg.html">Registering a whole-brain dataset to the Allen Mouse Brain atlas with brainreg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="silicon-probe-tracking.html">Silicon probe tracking</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="cellfinder-cli/index.html">Whole brain cell detection and registration with the cellfinder command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="cellfinder-cli/setting-up.html">Setting up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cellfinder-cli/running-cellfinder.html">Running cellfinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cellfinder-cli/visualising-the-results.html">Visualising the results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cellfinder-cli/exploring-the-numerical-results.html">Exploring the numerical results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cellfinder-cli/visualising-your-data-in-brainrender.html">Visualising your data in brainrender</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tracing-tracking.html">Analyze and visualize bulk fluorescence tracing data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Visualise an atlas in napari</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
@@ -396,6 +421,9 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
+    
     <li class="breadcrumb-item active" aria-current="page">Visualise...</li>
   </ul>
 </nav>
@@ -413,7 +441,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="visualise-an-atlas-in-napari">
+  <section class="tex2jax_ignore mathjax_ignore" id="visualise-an-atlas-in-napari">
 <h1>Visualise an atlas in napari<a class="headerlink" href="#visualise-an-atlas-in-napari" title="Link to this heading">#</a></h1>
 <p>BrainGlobe atlases are made of different components. These include the annotations image, the (default) reference image, 3D atlas region meshes and, optionally, additional reference images. In this tutorial, you will use <code class="docutils literal notranslate"><span class="pre">brainrender-napari</span></code> to visualise each of these components in the 3D viewer napari through a series of simple clicks. The <a class="reference external" href="https://doi.org/10.1016/j.neuron.2019.04.034"><code class="docutils literal notranslate"><span class="pre">mpin_zfish_1um</span></code> zebrafish brain atlas</a> will serve as an example.</p>
 <div class="admonition note">
@@ -465,6 +493,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="tracing-tracking.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Analyze and visualize bulk fluorescence tracing data</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../documentation/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Documentation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
