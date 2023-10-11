@@ -5,15 +5,12 @@
 **Contributors to BrainGlobe are absolutely encouraged**, whether to fix a bug, develop a new feature, or add a new atlas.
 
 There are many BrainGlobe repositories, so it may not be obvious where a new contribution should go.
-If you're unsure about any part of the contributing process, please [get in touch](../contact.md). The best place is to start a new discussion on
-the [image.sc forum](https://forum.image.sc/tag/brainglobe). If you tag your post with `brainglobe` (and optionally a
-specific tool, e.g. `cellfinder`) we will see your question and respond as soon as we can.
+If you're unsure about any part of the contributing process, please [get in touch](../contact.md). 
+The best place for questions about contributing is probably
+the [BrainGlobe Zulip chat](https://brainglobe.zulipchat.com/).
 
-If you have a query about contributing to a specific tool, please do raise an issue on the relevant GitHub page.
-If it's not the correct repository (e.g. `cellfinder` vs `cellfinder-core`), don't worry, we can move it to the 
-relevant repository later. If for any reason, you'd rather not reach out in public, feel free to
-[email](mailto:code@adamltyson.com?subject=brainglobe-contribution) [Adam Tyson](https://github.com/adamltyson), one
-of the core developers.
+If for any reason, you'd rather not reach out in public, feel free to send a direct message on Zulip 
+to [Adam Tyson](https://github.com/adamltyson), one of the core developers.
 
 ## To contribute a new atlas
 
