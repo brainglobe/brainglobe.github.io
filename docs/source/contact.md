@@ -7,6 +7,9 @@ Please ask any questions you may have on here, and we will do our best to answer
 others to benefit from the answers, and also allows users and developers of other, related, tools to 
 contribute to the discussion.
 
+If you just want to get in touch and ask us a question, please use the
+[BrainGlobe Zulip chat](https://brainglobe.zulipchat.com/).
+
 ## Bugs
 If you think you have found a bug, please open an issue at the relevant repository on 
 [GitHub](https://github.com/brainglobe). If you're not sure how to do this, feel free to report the issue on the forum, and 
@@ -18,8 +21,8 @@ If you have a feature request, please open an issue at the relevant repository. 
 (e.g., for a tool that doesn't yet exist), please ask on the forum (it may be that another tool does what you need).
 
 ## Contributing
-If you would like to contribute to the BrainGlobe Initiative, please get in touch with us using the [BrainGlobe developer
-discussion page](https://github.com/brainglobe/BrainGlobe/discussions). We always welcome new Pull Requests,
+If you would like to contribute to the BrainGlobe Initiative, please get in touch with us using the 
+[BrainGlobe Zulip chat](https://brainglobe.zulipchat.com/). We always welcome new Pull Requests,
 but please take a quick look at the [developer guide](developers/index) first.
 
 ## Other ways to get in touch
