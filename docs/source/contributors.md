@@ -389,6 +389,21 @@ The BrainGlobe Initiative is only possible due to the hard work of many, many pe
 :link: https://github.com/SaraMederos
 :::
 
+:::{grid-item-card}   Igor Tatarnikov
+:img-bottom: https://avatars.githubusercontent.com/u/61896994?v=4?
+:link: https://github.com/IgorTatarnikov
+:::
+
+:::{grid-item-card}   Viktor Plattner
+:img-bottom: https://avatars.githubusercontent.com/u/50667179?v=4?
+:link: https://github.com/viktorpm
+:::
+
+:::{grid-item-card}   Carlo Castoldi
+:img-bottom: https://avatars.githubusercontent.com/u/34198340?v=4
+:link: https://github.com/carlocastoldi
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
