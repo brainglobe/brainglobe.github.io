@@ -121,6 +121,26 @@ html_theme_options = {
             "url": "https://twitter.com/brain_globe",
             "icon": "fa-brands fa-twitter",
         },
+        {
+            # Label for this link
+            "name": "Zulip (Developer chat)",
+            # URL where the link will redirect
+            "url": "https://brainglobe.zulipchat.com",  # required
+            # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
+            "icon": "fa-solid fa-comments",
+            # The type of image to be used (see below for details)
+            "type": "fontawesome",
+        },
+        {
+            # Label for this link
+            "name": "image.sc (Help forum)",
+            # URL where the link will redirect
+            "url": "https://forum.image.sc/tag/brainglobe",  # required
+            # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
+            "icon": "fa-solid fa-question",
+            # The type of image to be used (see below for details)
+            "type": "fontawesome",
+        }
     ],
     "logo": {
         "text": "BrainGlobe",
