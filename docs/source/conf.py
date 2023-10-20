@@ -39,6 +39,7 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx_design",
     "sphinx_togglebutton",
+    "sphinx_sitemap",
     "myst_parser",
     "numpydoc",
     "nbsphinx",
