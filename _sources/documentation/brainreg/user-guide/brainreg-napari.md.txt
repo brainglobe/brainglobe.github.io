@@ -31,9 +31,18 @@ e.g. `psl`. For more details on this, see the outline
 [here](https://docs.brainglobe.info/cellfinder/image-orientation#orientation). Lastly, set an `Output directory` 
 (where you want to save the data).
 
+### Registering additional channels
+`brainreg` will use a single channel for registration. This is typically an image without much signal, 
+such as an image of only autofluroescence. Images of brain-wide stains such as DAPI can also work well.
+
+To register any additional channels, make sure these are selected in the list of layers on the left-hand side of the 
+napari window. The registration will be performed on the image chosen as `Image layer`, but the transformations will be 
+applied to these other channels. This is useful if you want to later analyse multiple channels, or if the channel of interest 
+registers poorly due to high signal levels from staining etc. 
+
 :::{caution}
 Make sure that the image layer you are registering is not selected in the list of napari image layers on the left-hand 
-side. Any images that are selected will also be registered along with the image layer chosen in `Image layer`.
+side, otherwise it will be registered twice!
 :::
 
 ## Setting additional parameters

@@ -631,11 +631,20 @@ orientation. The orientation is defined by three letters, based on <a class="ref
 e.g. <code class="docutils literal notranslate"><span class="pre">psl</span></code>. For more details on this, see the outline
 <a class="reference external" href="https://docs.brainglobe.info/cellfinder/image-orientation#orientation">here</a>. Lastly, set an <code class="docutils literal notranslate"><span class="pre">Output</span> <span class="pre">directory</span></code>
 (where you want to save the data).</p>
+<section id="registering-additional-channels">
+<h3>Registering additional channels<a class="headerlink" href="#registering-additional-channels" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">brainreg</span></code> will use a single channel for registration. This is typically an image without much signal,
+such as an image of only autofluroescence. Images of brain-wide stains such as DAPI can also work well.</p>
+<p>To register any additional channels, make sure these are selected in the list of layers on the left-hand side of the
+napari window. The registration will be performed on the image chosen as <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">layer</span></code>, but the transformations will be
+applied to these other channels. This is useful if you want to later analyse multiple channels, or if the channel of interest
+registers poorly due to high signal levels from staining etc.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Make sure that the image layer you are registering is not selected in the list of napari image layers on the left-hand
-side. Any images that are selected will also be registered along with the image layer chosen in <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">layer</span></code>.</p>
+side, otherwise it will be registered twice!</p>
 </div>
+</section>
 </section>
 <section id="setting-additional-parameters">
 <h2>Setting additional parameters<a class="headerlink" href="#setting-additional-parameters" title="Link to this heading">#</a></h2>
@@ -707,7 +716,10 @@ For more details of the output files created, please see <a class="reference int
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data">Loading data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-plugin">Starting the plugin</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-registration">Setting up registration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-registration">Setting up registration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#registering-additional-channels">Registering additional channels</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-additional-parameters">Setting additional parameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-brainreg">Running brainreg</a></li>
 </ul>
