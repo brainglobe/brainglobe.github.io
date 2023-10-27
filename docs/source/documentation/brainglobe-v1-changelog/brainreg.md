@@ -27,8 +27,18 @@ Otherwise, to install the `napari` plugin, you will need to install `brainreg` w
 python -m pip install brainreg[napari]
 ```
 
+## Command-line executable
+
+The command-line executable has retained the name `brainreg` and has undergone no usability changes.
+
+## `napari` plugin
+
+When loading the plugin in `napari`, you will now find it listed under the plugins menu as "`Atlas Registration (brainreg)`" rather than "`Atlas Registration (brainreg-napari)`".
+If you have external scripts that reply on the internal name of the plugin, you will need to update these to `brainreg` (from`brainreg-napari`) accordingly.
+
 ## `brainreg-segment`
 
 This package has been renamed `brainglobe-segmentation`.
+
 Beyond this renaming, there have been no internal changes to the package, so you may continue to use it as previously.
 However, you will need to switch all occurrences of `brainglobe_segment` to `brainglobe_segmentation` in your Python scripts.
