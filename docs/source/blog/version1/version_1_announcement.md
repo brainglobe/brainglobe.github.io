@@ -52,8 +52,8 @@ You can also [join us on Zulip](https://brainglobe.zulipchat.com/) and head over
 
 ## Appendix: a note on `cellfinder`
 
-The tool currently known as `cellfinder`; which provides a workflow (available on the command line or through a graphical interface) for performing whole-brain cell detection, registration, and analysis, will be undergoing a slightly more significant restructuring than the other tools.
-The functionality (and workflow) that this tool provides will be preserved, however will no longer carry the name `cellfinder`.
+The tool currently known as `cellfinder`; which provides a command line workflow for performing whole-brain cell detection, registration, and analysis, will be undergoing a slightly more significant restructuring than the other tools.
+The functionality (and workflow) that this tool provides will be preserved and moved to another package.
 This change makes the tool to be more descriptive of *what the user will want the workflow to do*, rather than being a reference to what the underlying Python package contains code for, which is the current status.
 Making this change also allows the the packages `cellfinder-core` and `cellfinder-napari` (which contain the aforementioned Python code that `cellfinder` depended on and takes its name from) to take up the name `cellfinder`, which is helpful organisationally for us as developers.
 Beyond the change in name, users will not have to worry about the internal changes that are occurring to the `cellfinder` package, as one of the features of "BrainGlobe version 1" will be to provide a one-line install that takes care of this for them.
