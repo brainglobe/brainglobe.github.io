@@ -9,7 +9,7 @@ Check here for changelogs and package updates as they are released.
 :list-style: circle
 :category: BrainGlobe-v1
 :date: "%Y-%m-%d"
-:format: "{date} - {title}"
+:format: "({date}) {title}, by {author}"
 :excerpts:
 :sort:
 ```
