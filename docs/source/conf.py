@@ -107,7 +107,7 @@ html_favicon = "_static/brainglobe.png"
 
 ## Cutomize the theme
 html_theme_options = {
-    "announcement": "BrainGlobe version 1 is under development! Keep track of the latest developments on <a href='blog/index.html'>the blog page</a>",
+    "announcement": "BrainGlobe is undergoing restructuring. Keep track of the latest developments on <a href='blog/index.html'>the blog</a>",
     "icon_links": [
         {
             # Label for this link

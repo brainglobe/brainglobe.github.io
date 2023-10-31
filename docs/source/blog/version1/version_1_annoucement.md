@@ -7,10 +7,10 @@ category: BrainGlobe-v1
 language: English
 ---
 
-# BrainGlobe version 1 is coming
+# BrainGlobe is being restructured, version 1 is on it's way!
 
 BrainGlobe provides and maintains a number of open-source tools, each of which are provided as Python-based software packages.
-A number of these tools also come with a user-interface provided by a [napari plugin](https://napari.org/) that can be installed on top of the basic tool package.
+A number of these tools also come with a graphical user-interface provided by a [napari plugin](https://napari.org/) that can be installed on top of the Python package.
 Whilst there is an advantage to the modularity provided by maintaining separate tools, the same modularity can present challenges and unnecessary difficulties when running an analysis that relies on multiple BrainGlobe tools.
 Particular pinch points include:
 
@@ -35,7 +35,7 @@ However we will be releasing changelogs for the individual tools as they are upd
 
 Changes will be happening in a modular fashion, before the all-in-one `brainglobe` package is then released at the end.
 This means that tools like `brainreg`, then `cellfinder`, etc will receive separate version updates as they are ready.
-There should be no ill affects from updating the tools as they are released, however once the all-in-ine `brainglobe` package is ready we recommend you make a clean install anyway, just so that there's no funny business.
+There should be no ill affects from updating the tools as they are released, however once the all-in-one `brainglobe` package is ready we recommend you make a clean install anyway, just so that there's no funny business.
 
 ## Under the hood?
 
