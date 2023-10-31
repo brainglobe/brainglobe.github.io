@@ -13,7 +13,7 @@ Visualise atlas data in napari
 
 :::{grid-item-card} {fas}`brain;sd-text-primary` 3D registration
 :img-bottom: images/brainreg.png
-:link: brainreg
+:link: tutorial-whole-brain-registration
 :link-type: doc
 Registering a whole-brain dataset to an atlas.
 :::
@@ -54,7 +54,7 @@ Whole brain cell detection and registration
 :caption: Index
 :hidden:
 visualise-atlas-napari
-brainreg
+tutorial-whole-brain-registration
 silicon-probe-tracking
 tracing-tracking
 cellfinder-cli/index
