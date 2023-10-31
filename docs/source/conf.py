@@ -126,6 +126,16 @@ html_theme_options = {
             "icon": "fa-brands fa-twitter",
         },
         {
+            "name": "Mastodon",
+            "url": "https://mastodon.online/@brainglobe",
+            "icon": "fa-brands fa-mastodon",
+        },
+        {
+            "name": "Bluesky",
+            "url": "https://bsky.app/profile/brainglobe.bsky.social",
+            "icon": "fa-solid fa-square",
+        },
+        {
             # Label for this link
             "name": "Zulip (Developer chat)",
             # URL where the link will redirect
