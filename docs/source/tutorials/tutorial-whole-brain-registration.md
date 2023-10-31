@@ -1,124 +1,52 @@
-# Registering a whole-brain dataset to the Allen Mouse Brain atlas with brainreg
+# Registering a whole-brain image to an atlas
 
+In this tutorial, you will use the [brainreg](/documentation/brainreg) plugin for [napari](https://napari.org) to 
+register (align) a whole-mouse brain image to a reference atlas.
 
-```{hint}
-For full information on how to use brainreg, please see the [brainreg page](/documentation/brainreg/index)
-```
+The focus of this tutorial is simply to successfully register a single image.
+Optimising brainreg for specific applications will be covered separately. 
 
-## Setting up
-To test out brainreg, we supply a small mouse brain dataset to get you started. To begin:
-* Download the data from [here](https://gin.g-node.org/cellfinder/data/raw/master/brainreg/test\_brain.zip) (the dataset is \~10MB, so it should download quickly).
-* Unzip the data to a directory of your choice (doesn't matter where). You should end up with a directory called `test_brain` with 270 `.tif` images
-
-To run brainreg, you need to know:
-* Where your data is (in this case, it's the path to the `test_brain` directory)
-* Where you want to save the output data (we'll just save it into a directory called `brainreg_output`in the same directory as the `test_brain`)
-* The pixel sizes of your data in microns (see [Image definition](/documentation/general/image-definition) for details). 
-In this case, our data is 40&mu;m per pixel in the coronal plane, and the spacing of the planes is 50&mu;m.
-* The orientation of your data. The software needs to know how you acquired your data (coronal, sagittal etc.). For this 
-BrainGlobe uses [bg-space](/documentation/bg-space/index). For this tutorial, the orientation is `psl`, which means 
-that the data origin is the most **p**osterior, **s**uperior, **l**eft voxel. For more details see 
-[Image definition](/documentation/general/image-definition)
-* Which atlas you want to use (the list of available atlases is available [here](/documentation/bg-atlasapi/usage/atlas-details)). 
-In this case, we want to use a mouse atlas (as that's what our data is), and we'll use the 50&mu;m version of the [Allen Mouse Brain Atlas](https://mouse.brain-map.org/static/atlas)
-
-:::{hint}
-In this tutorial we will use the 50&mu;m version of the [Allen Mouse Brain Atlas](https://mouse.brain-map.org/static/atlas). 
-Low-resolution atlases like this are usually only used for testing (the registration will work much quicker at lower resolution).
- In this case, the test input data is very low resolution, so using a higher resolution atlas doesn't make much sense.
-
-When using your own data, you'll probably find that higher resolution atlases provide better results. 
-Make sure to test out the different resolutions to see what works best.
+:::{note}
+You will need `napari` installed on your computer - please follow [`napari`'s installation instructions to do so](https://napari.org/stable/tutorials/fundamentals/installation.html).
 :::
 
-## Running the registration
-There are two ways to run the registration using brainreg. 
-If you're just getting started, we recommend the [napari](https://napari.org/stable) plugin. 
-This provides a graphical user interface, and makes it easier to tweak parameters.
+1. Open `napari`.
+2. Install `brainreg-napari` by selecting `Plugins > Install/Uninstall plugins` and searching for `brainreg-napari` in the searchbox. Then click on the `Install` button.
+3. Open the `brainreg` widget by selecting `Plugins > Atlas registration (brainreg-napari)` in the napari menu bar near the top left of the window.
+![brainreg widget](./images/brainreg-napari/plugin-menu-brainreg-napari.png)
 
-If you need to run brainreg on many samples, or on a remote machine 
-(e.g., using an institutional high-performance computing system), there is a command-line interface. 
+**The brainreg widget appears on the right-hand side of the window.**
 
-Whichever interface you use, the results will be identical.
+4. Open the sample image by selecting `File > Open Sample > Low resolution brain (brainreg-napari)`. 
+5. Make the image easier to see by adjusting the `contrast limits` in the top left section of the napari window. Moving
+the right-hand slider to the left will make the image appear brighter. 
+![loaded image](./images/brainreg-napari/image-loaded-brainreg-napari.png)
 
-:::{admonition} Registration using the napari plugin
-:class: dropdown
-## Before you start
-* [Make sure you have napari installed](https://napari.org/stable/tutorials/fundamentals/installation.html)
-* Install the brainreg-napari plugin from within napari (`Plugins` -> `Install/Uninstall Package(s)`, choosing `brainreg-napari`).)
-* Open napari
+**A whole mouse brain image loaded into napari.**
 
-## Run brainreg
-To run brainreg, we firstly need to load the data, by dragging and dropping the `test_brain` directory into the main 
-napari window. Then load the plugin by selecting `brainreg-register: Atlas registration` from the napari `Plugins` menu.
 
-In the plugin, set all the necessary parameters:
+6. In the plugin widget, set all the necessary parameters:
 
-* `Image layer` - Set this to the `test_brain` image layer
+* `Image layer` - Set this to the `Sample brain` image layer
 * `Atlas` - Set this to `allen_mouse_50um`
 * `Data orientation` - Set this to `psl`
 * `Voxel size (z)` - Set to 50
 * `Voxel size (x)` - Set to 40
 * `Voxel size (y)` - Set to 40
-* `Output directory` - Click `Choose directory`, and create a new directory in the same directory as 
-* `test_brain` called `brainreg_output`
+* `Output directory` - Click `Choose directory`, and create a new directory on your machine
 
-Make sure the image layer is deselected on the left-hand side, and then you should see something like this 
-(N.B. the visualised plane and the contrast of the brain has been adjusted):
+7. Click `Run`. After 30-60 seconds, two new napari layers will be loaded, `Boundaries` and `allen_mouse_50um`.
+8. Toggle the visibility of these two layers (using the eye icon on the left of the layer name) to overlay the 
+registration results. These can be explored by zooming in/out, scrolling through the 3D data and adjusting the 
+visibility and contrast of the loaded data. 
 
-![brainreg-napari](images/brainreg-napari.webp)
+![loaded image](./images/brainreg-napari/results-brainreg-napari.png)
 
-You can then click `Run`, and the registration will start. Lots of stuff will get printed to the 
-console as brainreg runs, and when it's done (it should only take a minute or so), you will see something like:
+**Registration results overlaid onto raw data.**
 
-```
-INFO - MainProcess cli.py:230 - Finished. Total time taken: 0:00:29.15
-```
-
-This means that the registration is complete, but the results will appear in the napari window. 
-Toggling the visibility of the `Boundaries` layer (click the eye icon) is the easiest way to assess registration accuracy.
-:::
-
-:::{admonition} Registration using the command line tool
-:class: dropdown
-## Instructions:
-
-### Setting up
-
-* Open a terminal (Linux/macOS) or your command prompt (Windows)
-* Activate your [conda environment](/documentation/general/conda)
-
-### Run brainreg
-To run brainreg, you need to pass:
-* The path to the sample data
-* The path to the directory to save the results
-* The voxel sizes
-* The orientation
-* The atlas to use
-
-We put this all together in a single command:
-
-```
-brainreg test_brain brainreg_output -v 50 40 40  --orientation psl --atlas allen_mouse_50um
-```
-
-Lots of output will get printed to the console as brainreg runs, and when it's done (it should only take a minute or 
-so), you will see something like:
-
-```
-INFO - MainProcess cli.py:230 - Finished. Total time taken: 0:00:29.15
-```
-
-This means that the registration is complete.
-
-### Visualising the results
-
-brainreg comes with a plugin for [napari](https://napari.org/) (see 
-[Visualisation](/documentation/brainreg/user-guide/visualisation.md)) for easy visualisation of the results.
-
-To view your data, run `napari` from the same terminal/command as you ran brainreg (or open a new one and activate 
-your conda environment). You can then drag and drop the `brainreg_output` directory into napari, and see the results.
-:::
+9. At this point, registration is complete. A number of 
+[files are created in the output directory](documentation/brainreg/user-guide/output-files) that can be used for 
+downstream analysis.
 
 :::{note}
 The results are likely not perfect because (for speed and simplicity) we:
@@ -127,3 +55,8 @@ The results are likely not perfect because (for speed and simplicity) we:
 * Use a low-resolution atlas
 * Left all the parameters as default (which were optimised for higher resolution atlases)
 :::
+
+
+```{hint}
+For full information on how to use brainreg, please see the [brainreg page](/documentation/brainreg/index)
+```
