@@ -1,6 +1,6 @@
 # Tutorials
 
-## Introductory tutorials
+## Getting started
 ::::{grid} 1 2 2 3
 :gutter: 3
 
@@ -19,10 +19,9 @@ Registering a whole-brain dataset to an atlas.
 :::
 ::::
 
-## Application tutorials
+## Specific applications
 ::::{grid} 1 2 2 3
 :gutter: 3
-
 
 
 :::{grid-item-card} {fas}`brain;sd-text-primary` Probe segmentation
