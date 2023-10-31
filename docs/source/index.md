@@ -48,5 +48,6 @@ Find out more about these tools.
 about
 tutorials/index
 documentation/index
+blog/index
 more
 ```

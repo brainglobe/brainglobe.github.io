@@ -8,3 +8,4 @@ sphinx-design
 sphinx-togglebutton
 sphinx-notfound-page
 sphinx-sitemap
+ablog>=0.11.0rc2

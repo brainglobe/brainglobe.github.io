@@ -31,6 +31,7 @@ release = "0.0.1"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "ablog",
     "sphinx.ext.githubpages",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
@@ -43,7 +44,7 @@ extensions = [
     "myst_parser",
     "numpydoc",
     "nbsphinx",
-    "notfound.extension"
+    "notfound.extension",
 ]
 
 # Configure the myst parser to enable cool markdown features
@@ -106,6 +107,7 @@ html_favicon = "_static/brainglobe.png"
 
 ## Cutomize the theme
 html_theme_options = {
+    "announcement": "BrainGlobe is undergoing restructuring. Keep track of the latest developments on <a href='blog/index.html'>the blog</a>",
     "icon_links": [
         {
             # Label for this link
@@ -142,7 +144,7 @@ html_theme_options = {
             "icon": "fa-solid fa-question",
             # The type of image to be used (see below for details)
             "type": "fontawesome",
-        }
+        },
     ],
     "logo": {
         "text": "BrainGlobe",
@@ -158,7 +160,7 @@ html_theme_options = {
 html_show_sourcelink = False
 
 notfound_context = {
-        'body': "<h1>This page has likely moved.</h1> <p>We have recently restructured the BrainGlobe website, and some links have broken. Try using the search box or go to the homepage. If you can'</p>",
+    "body": "<h1>This page has likely moved.</h1> <p>We have recently restructured the BrainGlobe website, and some links have broken. Try using the search box or go to the homepage. If you can'</p>",
 }
 
 notfound_context = {
@@ -171,7 +173,7 @@ notfound_context = {
     <p>We have recently restructured the BrainGlobe website, and some links have broken. Try using the search box or go to the homepage.</p>
     <p>If you can't find the information you need. Please <a href="https://brainglobe.info/contact.html">get in touch</a>.</p>
 
-"""
+""",
 }
 
 # needed for GH pages (vs readthedocs)
