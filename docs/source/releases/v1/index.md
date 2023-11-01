@@ -1,4 +1,4 @@
-# Brainglobe v1 overview
+# BrainGlobe version 1 overview
 
 ## Changes at-a-glance
 
