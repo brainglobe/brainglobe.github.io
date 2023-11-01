@@ -16,23 +16,6 @@ to [Adam Tyson](https://github.com/adamltyson), one of the core developers.
 
 To add a new BrainGlobe atlas, please see the guide [here](/documentation/bg-atlasapi/adding-a-new-atlas).
 
-## To improve the documentation
-
-Documentation for BrainGlobe is **very important** because it is aimed at researchers who may not have much
-computational experience. In particular:
-
-- Installation, although simple via PyPI, assumes a lot (functional Python installation, CUDA installation etc.).
-- Although most software can be run through a single command, there are a lot of steps, and so a lot to understand.
-- There are a lot of parameters that can be changed, and their impact on the final results is not always obvious.
-- It is not immediately obvious how to use the results of the pipeline to answer the particular biological question.
-
-For these reasons (and others) every part of all software must be documented as well as possible,
-and all new features must be fully documented.
-
-### Editing the documentation
-
-TBC
-
 ## To contribute code
 
 ### Creating a development environment
@@ -43,7 +26,7 @@ will create and activate a `conda` environment with the requirements needed
 for a development environment:
 
 ```sh
-conda create -n brainglobe-dev -c conda-forge python=3.10 napari
+conda create -n brainglobe-dev -c conda-forge python=3.11 napari
 conda activate brainglobe-dev
 ```
 
@@ -80,6 +63,28 @@ to the following conventions:
 - Ask for a review from someone specific if you think they would be a particularly suited reviewer (possibly noting
   why they are suited on the PR description)
 
+## To improve the documentation
+
+Documentation for BrainGlobe is **very important** because it is aimed at researchers who may not have much
+computational experience. In particular:
+
+- Installation, although simple via PyPI, assumes a lot (e.g. functional Python installation, CUDA installation etc.).
+- There are a lot of parameters that can be changed, and their impact on the final results is not always obvious.
+- It is not immediately obvious how to use the results of the pipeline to answer the particular biological question.
+
+For these reasons (and others) every part of all software must be documented as well as possible,
+and all new features must be fully documented.
+
+### Editing the documentation
+The documentation is hosted using [GitHub Pages](https://pages.github.com/), and the source can be found at
+[GitHub](https://github.com/brainglobe/brainglobe.github.io). Most content is found under `docs/source`, where the
+structure mostly mirrors the rendered website. To edit a page, please:
+* Fork the repository
+* Make edits to the relevant pages
+* Create a pull request outlining the changes made
+
+If you aren't sure where the changes should be made, please
+[get in touch](https://brainglobe.info/contact.html#contributing).
 
 ## Further information
 :::{toctree}
