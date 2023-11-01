@@ -9,7 +9,7 @@
 `test_brain` with two directories, each containing 2800 images
 * Open a terminal (Linux) or your command prompt (Windows)
 * Navigate to the directory containing the `test_brain` directory (e.g. using `cd`)
-* Activate your [conda environment ](/documentation/general/conda)
+* Activate your [conda environment ](/documentation/setting-up/conda)
 
 :::{hint}
 The test data supplied is purposefully not the "best". It has a low SNR, and some artefacts such as fluorescent 
@@ -33,12 +33,12 @@ autofluorescence channel. In this case, `test_brain/ch00` is the signal channel 
 autofluroescence channel
 * Where you want to save the output data (we'll just save it into a directory called `cellfinder_output`in the 
 same directory as the `test_brain`)
-* The pixel sizes of your data in microns (see [Image definition](/documentation/general/image-definition) for details). 
+* The pixel sizes of your data in microns (see [Image definition](/documentation/setting-up/image-definition) for details). 
 In this case, our data is 2&#956;m per pixel in the coronal plane and the spacing of each plane is 5&#956;m
 * The orientation of your data. For atlas registration (using [brainreg](/documentation/brainreg/index)) the 
 software needs to know how you acquired your data (coronal, sagittal etc.). For this cellfinder uses 
 [bg-space](/documentation/bg-space/index). Full details on how to enter your data orientation can also be 
-found in the [Image definition](/documentation/general/image-definition) section. For this tutorial, the orientation 
+found in the [Image definition](/documentation/setting-up/image-definition) section. For this tutorial, the orientation 
 is `psl`, which means that the data origin is the most **p**osterior, **s**uperior, **l**eft voxel.
 * Which atlas you want to use (you can see which are available by running `brainglobe list`. In this 
 case, we want to use a mouse atlas (as that's what our data is), and we'll use the 10&#956;m version of the 

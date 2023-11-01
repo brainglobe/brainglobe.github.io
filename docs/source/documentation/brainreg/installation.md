@@ -35,7 +35,7 @@ If you know what you're doing just run `conda install -c conda-forge brainreg`
 brainreg is written in Python, and so needs a functional Python installation. Your machine may already have Python 
 installed, but **we recommend installing miniconda**.
 
-**See** [**Using conda**](/documentation/general/conda) **for details.**
+**See** [**Using conda**](/documentation/setting-up/conda) **for details.**
 
 ```{caution}
 brainreg should run on any type of Python installation, but if you don't use conda, 

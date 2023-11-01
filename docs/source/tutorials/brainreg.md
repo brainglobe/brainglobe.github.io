@@ -13,12 +13,12 @@ To test out brainreg, we supply a small mouse brain dataset to get you started. 
 To run brainreg, you need to know:
 * Where your data is (in this case, it's the path to the `test_brain` directory)
 * Where you want to save the output data (we'll just save it into a directory called `brainreg_output`in the same directory as the `test_brain`)
-* The pixel sizes of your data in microns (see [Image definition](/documentation/general/image-definition) for details). 
+* The pixel sizes of your data in microns (see [Image definition](/documentation/setting-up/image-definition) for details). 
 In this case, our data is 40&mu;m per pixel in the coronal plane, and the spacing of the planes is 50&mu;m.
 * The orientation of your data. The software needs to know how you acquired your data (coronal, sagittal etc.). For this 
 BrainGlobe uses [bg-space](/documentation/bg-space/index). For this tutorial, the orientation is `psl`, which means 
 that the data origin is the most **p**osterior, **s**uperior, **l**eft voxel. For more details see 
-[Image definition](/documentation/general/image-definition)
+[Image definition](/documentation/setting-up/image-definition)
 * Which atlas you want to use (the list of available atlases is available [here](/documentation/bg-atlasapi/usage/atlas-details)). 
 In this case, we want to use a mouse atlas (as that's what our data is), and we'll use the 50&mu;m version of the [Allen Mouse Brain Atlas](https://mouse.brain-map.org/static/atlas)
 
@@ -86,7 +86,7 @@ Toggling the visibility of the `Boundaries` layer (click the eye icon) is the ea
 ### Setting up
 
 * Open a terminal (Linux/macOS) or your command prompt (Windows)
-* Activate your [conda environment](/documentation/general/conda)
+* Activate your [conda environment](/documentation/setting-up/conda)
 
 ### Run brainreg
 To run brainreg, you need to pass:

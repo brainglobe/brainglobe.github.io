@@ -25,7 +25,7 @@ Otherwise cellfinder will interpret the path as two inputs, separated by a space
 ### CommandLineInputError: File path: cannot be found.
 
 ```bash
-imlib.general.exceptions.CommandLineInputError: File path: '/media/adam/Storage/cellfinder.md/data/dataset1' cannot be found.
+imlib.setting-up.exceptions.CommandLineInputError: File path: '/media/adam/Storage/cellfinder.md/data/dataset1' cannot be found.
 ```
 
 If you see an error like this, there could be a few possible reasons, e.g.:
@@ -78,7 +78,7 @@ In this case, a previous run of cellfinder hasn't completed. Either wait for it 
 (in the terminal).
 
 Alternatively, your version of CUDA and cuDNN may be not compatible with TensorFlow. You can update them by 
-following the instructions [here](/documentation/general/gpu).
+following the instructions [here](/documentation/setting-up/gpu).
 
 ### ImportError: DLL load failed: The specified module could not be found.
 

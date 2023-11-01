@@ -7,8 +7,8 @@ You can follow the links provided for more information; including a listing of r
 
 | Change |   |
 |--------|:-:|
-brainreg and brainreg-napari have been merged into a single package | [Further info](./brainreg.md#brainreg-and-brainreg-napari) |
-brainreg-segment has been renamed to brainglobe-segmentation | [Further info](./brainreg.md#brainreg-segment) |
+brainreg and brainreg-napari have been merged into a single package | [Further info](brainreg.md#brainreg-and-brainreg-napari) |
+brainreg-segment has been renamed to brainglobe-segmentation | [Further info](brainreg.md#brainreg-segment) |
 
 ## Complete index
 

@@ -57,4 +57,4 @@ If you have `brainreg-segment` in your environment, you may wish to remove it as
 pip uninstall brainreg-segment
 ```
 
-however, `brainreg-segment` is still required by [`cellfinder`](../../documentation/cellfinder/index.md) versions `<=v1.0.0`.
+however, `brainreg-segment` is still required by [`cellfinder`](../../../documentation/cellfinder/index.md) versions `<=v1.0.0`.

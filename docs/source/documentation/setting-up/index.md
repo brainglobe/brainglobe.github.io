@@ -1,4 +1,4 @@
-# General BrainGlobe documentation
+# Setting up
 
 
 ```{toctree}
