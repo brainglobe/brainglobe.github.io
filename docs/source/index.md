@@ -39,14 +39,6 @@ How do I get started with these tools?
 Find out more about these tools.
 :::
 
-:::{grid-item-card} {fas}`tags;sd-text-primary` Releases
-:img-bottom: _static/atlases.png
-:link: releases/index
-:link-type: doc
-
-Release notes and changelogs.
-:::
-
 ::::
 
 ```{toctree}
