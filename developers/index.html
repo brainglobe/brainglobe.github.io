@@ -685,23 +685,6 @@ to <a class="reference external" href="https://github.com/adamltyson">Adam Tyson
 <h2>To contribute a new atlas<a class="headerlink" href="#to-contribute-a-new-atlas" title="Link to this heading">#</a></h2>
 <p>To add a new BrainGlobe atlas, please see the guide <a class="reference internal" href="../documentation/bg-atlasapi/adding-a-new-atlas.html"><span class="doc std std-doc">here</span></a>.</p>
 </section>
-<section id="to-improve-the-documentation">
-<h2>To improve the documentation<a class="headerlink" href="#to-improve-the-documentation" title="Link to this heading">#</a></h2>
-<p>Documentation for BrainGlobe is <strong>very important</strong> because it is aimed at researchers who may not have much
-computational experience. In particular:</p>
-<ul class="simple">
-<li><p>Installation, although simple via PyPI, assumes a lot (functional Python installation, CUDA installation etc.).</p></li>
-<li><p>Although most software can be run through a single command, there are a lot of steps, and so a lot to understand.</p></li>
-<li><p>There are a lot of parameters that can be changed, and their impact on the final results is not always obvious.</p></li>
-<li><p>It is not immediately obvious how to use the results of the pipeline to answer the particular biological question.</p></li>
-</ul>
-<p>For these reasons (and others) every part of all software must be documented as well as possible,
-and all new features must be fully documented.</p>
-<section id="editing-the-documentation">
-<h3>Editing the documentation<a class="headerlink" href="#editing-the-documentation" title="Link to this heading">#</a></h3>
-<p>TBC</p>
-</section>
-</section>
 <section id="to-contribute-code">
 <h2>To contribute code<a class="headerlink" href="#to-contribute-code" title="Link to this heading">#</a></h2>
 <section id="creating-a-development-environment">
@@ -710,7 +693,7 @@ and all new features must be fully documented.</p>
 BrainGlobe projects. Once you have <code class="docutils literal notranslate"><span class="pre">conda</span></code> installed, the following commands
 will create and activate a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment with the requirements needed
 for a development environment:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>brainglobe-dev<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10<span class="w"> </span>napari
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>brainglobe-dev<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11<span class="w"> </span>napari
 conda<span class="w"> </span>activate<span class="w"> </span>brainglobe-dev
 </pre></div>
 </div>
@@ -743,6 +726,31 @@ allow for discussion.</p></li>
 <li><p>Ask for a review from someone specific if you think they would be a particularly suited reviewer (possibly noting
 why they are suited on the PR description)</p></li>
 </ul>
+</section>
+<section id="to-improve-the-documentation">
+<h2>To improve the documentation<a class="headerlink" href="#to-improve-the-documentation" title="Link to this heading">#</a></h2>
+<p>Documentation for BrainGlobe is <strong>very important</strong> because it is aimed at researchers who may not have much
+computational experience. In particular:</p>
+<ul class="simple">
+<li><p>Installation, although simple via PyPI, assumes a lot (e.g. functional Python installation, CUDA installation etc.).</p></li>
+<li><p>There are a lot of parameters that can be changed, and their impact on the final results is not always obvious.</p></li>
+<li><p>It is not immediately obvious how to use the results of the pipeline to answer the particular biological question.</p></li>
+</ul>
+<p>For these reasons (and others) every part of all software must be documented as well as possible,
+and all new features must be fully documented.</p>
+<section id="editing-the-documentation">
+<h3>Editing the documentation<a class="headerlink" href="#editing-the-documentation" title="Link to this heading">#</a></h3>
+<p>The documentation is hosted using <a class="reference external" href="https://pages.github.com/">GitHub Pages</a>, and the source can be found at
+<a class="reference external" href="https://github.com/brainglobe/brainglobe.github.io">GitHub</a>. Most content is found under <code class="docutils literal notranslate"><span class="pre">docs/source</span></code>, where the
+structure mostly mirrors the rendered website. To edit a page, please:</p>
+<ul class="simple">
+<li><p>Fork the repository</p></li>
+<li><p>Make edits to the relevant pages</p></li>
+<li><p>Create a pull request outlining the changes made</p></li>
+</ul>
+<p>If you aren’t sure where the changes should be made, please
+<a class="reference external" href="https://brainglobe.info/contact.html#contributing">get in touch</a>.</p>
+</section>
 </section>
 <section id="further-information">
 <h2>Further information<a class="headerlink" href="#further-information" title="Link to this heading">#</a></h2>
@@ -816,15 +824,15 @@ why they are suited on the PR description)</p></li>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-contribute-a-new-atlas">To contribute a new atlas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-improve-the-documentation">To improve the documentation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#editing-the-documentation">Editing the documentation</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-contribute-code">To contribute code</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-development-environment">Creating a development environment</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-requests">Pull requests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-improve-the-documentation">To improve the documentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#editing-the-documentation">Editing the documentation</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-information">Further information</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-repository-information">Specific repository information</a></li>
 </ul>
