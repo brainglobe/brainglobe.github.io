@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Registering a whole-brain dataset to the Allen Mouse Brain atlas with brainreg &#8212; BrainGlobe</title>
+    <title>Registering a whole-brain image to an atlas &#8212; BrainGlobe</title>
   
   
   
@@ -49,14 +49,14 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/brainreg';</script>
-    <link rel="canonical" href="https://brainglobe.info/tutorials/brainreg.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/tutorial-whole-brain-registration';</script>
+    <link rel="canonical" href="https://brainglobe.info/tutorials/tutorial-whole-brain-registration.html" />
     <link rel="icon" href="../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Silicon probe tracking" href="silicon-probe-tracking.html" />
-    <link rel="prev" title="Tutorials" href="index.html" />
+    <link rel="prev" title="Visualise an atlas in napari" href="visualise-atlas-napari.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -328,10 +328,6 @@ document.write(`
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
-      <span class="fa-solid fa-outdent"></span>
-    </label>
-  
 </div>
 
     </nav>
@@ -497,8 +493,10 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Index</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Registering a whole-brain dataset to the Allen Mouse Brain atlas with brainreg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualise-atlas-napari.html">Visualise an atlas in napari</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Registering a whole-brain image to an atlas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="silicon-probe-tracking.html">Silicon probe tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracing-tracking.html">Analyze and visualize bulk fluorescence tracing data</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="cellfinder-cli/index.html">Whole brain cell detection and registration with the cellfinder command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="cellfinder-cli/setting-up.html">Setting up</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cellfinder-cli/running-cellfinder.html">Running cellfinder</a></li>
@@ -507,8 +505,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="cellfinder-cli/visualising-your-data-in-brainrender.html">Visualising your data in brainrender</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tracing-tracking.html">Analyze and visualize bulk fluorescence tracing data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualise-atlas-napari.html">Visualise an atlas in napari</a></li>
 </ul>
 </div>
 </nav></div>
@@ -566,115 +562,55 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-<section class="tex2jax_ignore mathjax_ignore" id="registering-a-whole-brain-dataset-to-the-allen-mouse-brain-atlas-with-brainreg">
-<h1>Registering a whole-brain dataset to the Allen Mouse Brain atlas with brainreg<a class="headerlink" href="#registering-a-whole-brain-dataset-to-the-allen-mouse-brain-atlas-with-brainreg" title="Link to this heading">#</a></h1>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>For full information on how to use brainreg, please see the <a class="reference internal" href="../documentation/brainreg/index.html"><span class="doc std std-doc">brainreg page</span></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="registering-a-whole-brain-image-to-an-atlas">
+<h1>Registering a whole-brain image to an atlas<a class="headerlink" href="#registering-a-whole-brain-image-to-an-atlas" title="Link to this heading">#</a></h1>
+<p>In this tutorial, you will use the <a class="reference internal" href="#/documentation/brainreg"><span class="xref myst">brainreg</span></a> plugin for <a class="reference external" href="https://napari.org">napari</a> to
+register (align) a whole-mouse brain image to a reference atlas.</p>
+<p>The focus of this tutorial is simply to successfully register a single image.
+Optimising brainreg for specific applications will be covered separately.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You will need <code class="docutils literal notranslate"><span class="pre">napari</span></code> installed on your computer - please follow <a class="reference external" href="https://napari.org/stable/tutorials/fundamentals/installation.html"><code class="docutils literal notranslate"><span class="pre">napari</span></code>’s installation instructions to do so</a>.</p>
 </div>
-<section id="setting-up">
-<h2>Setting up<a class="headerlink" href="#setting-up" title="Link to this heading">#</a></h2>
-<p>To test out brainreg, we supply a small mouse brain dataset to get you started. To begin:</p>
+<ol class="arabic simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">napari</span></code>.</p></li>
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">brainreg-napari</span></code> by selecting <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">Install/Uninstall</span> <span class="pre">plugins</span></code> and searching for <code class="docutils literal notranslate"><span class="pre">brainreg-napari</span></code> in the searchbox. Then click on the <code class="docutils literal notranslate"><span class="pre">Install</span></code> button.</p></li>
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">brainreg</span></code> widget by selecting <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">Atlas</span> <span class="pre">registration</span> <span class="pre">(brainreg-napari)</span></code> in the napari menu bar near the top left of the window.
+<img alt="brainreg widget" src="../_images/plugin-menu-brainreg-napari.png" /></p></li>
+</ol>
+<p><strong>The brainreg widget appears on the right-hand side of the window.</strong></p>
+<ol class="arabic simple" start="4">
+<li><p>Open the sample image by selecting <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open</span> <span class="pre">Sample</span> <span class="pre">&gt;</span> <span class="pre">Low</span> <span class="pre">resolution</span> <span class="pre">brain</span> <span class="pre">(brainreg-napari)</span></code>.</p></li>
+<li><p>Make the image easier to see by adjusting the <code class="docutils literal notranslate"><span class="pre">contrast</span> <span class="pre">limits</span></code> in the top left section of the napari window. Moving
+the right-hand slider to the left will make the image appear brighter.
+<img alt="loaded image" src="../_images/image-loaded-brainreg-napari.png" /></p></li>
+</ol>
+<p><strong>A whole mouse brain image loaded into napari.</strong></p>
+<ol class="arabic simple" start="6">
+<li><p>In the plugin widget, set all the necessary parameters:</p></li>
+</ol>
 <ul class="simple">
-<li><p>Download the data from <a class="reference external" href="https://gin.g-node.org/cellfinder/data/raw/master/brainreg/test_brain.zip">here</a> (the dataset is ~10MB, so it should download quickly).</p></li>
-<li><p>Unzip the data to a directory of your choice (doesn’t matter where). You should end up with a directory called <code class="docutils literal notranslate"><span class="pre">test_brain</span></code> with 270 <code class="docutils literal notranslate"><span class="pre">.tif</span></code> images</p></li>
-</ul>
-<p>To run brainreg, you need to know:</p>
-<ul class="simple">
-<li><p>Where your data is (in this case, it’s the path to the <code class="docutils literal notranslate"><span class="pre">test_brain</span></code> directory)</p></li>
-<li><p>Where you want to save the output data (we’ll just save it into a directory called <code class="docutils literal notranslate"><span class="pre">brainreg_output</span></code>in the same directory as the <code class="docutils literal notranslate"><span class="pre">test_brain</span></code>)</p></li>
-<li><p>The pixel sizes of your data in microns (see <a class="reference internal" href="../documentation/general/image-definition.html"><span class="doc std std-doc">Image definition</span></a> for details).
-In this case, our data is 40μm per pixel in the coronal plane, and the spacing of the planes is 50μm.</p></li>
-<li><p>The orientation of your data. The software needs to know how you acquired your data (coronal, sagittal etc.). For this
-BrainGlobe uses <a class="reference internal" href="../documentation/bg-space/index.html"><span class="doc std std-doc">bg-space</span></a>. For this tutorial, the orientation is <code class="docutils literal notranslate"><span class="pre">psl</span></code>, which means
-that the data origin is the most <strong>p</strong>osterior, <strong>s</strong>uperior, <strong>l</strong>eft voxel. For more details see
-<a class="reference internal" href="../documentation/general/image-definition.html"><span class="doc std std-doc">Image definition</span></a></p></li>
-<li><p>Which atlas you want to use (the list of available atlases is available <a class="reference internal" href="../documentation/bg-atlasapi/usage/atlas-details.html"><span class="doc std std-doc">here</span></a>).
-In this case, we want to use a mouse atlas (as that’s what our data is), and we’ll use the 50μm version of the <a class="reference external" href="https://mouse.brain-map.org/static/atlas">Allen Mouse Brain Atlas</a></p></li>
-</ul>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>In this tutorial we will use the 50μm version of the <a class="reference external" href="https://mouse.brain-map.org/static/atlas">Allen Mouse Brain Atlas</a>.
-Low-resolution atlases like this are usually only used for testing (the registration will work much quicker at lower resolution).
-In this case, the test input data is very low resolution, so using a higher resolution atlas doesn’t make much sense.</p>
-<p>When using your own data, you’ll probably find that higher resolution atlases provide better results.
-Make sure to test out the different resolutions to see what works best.</p>
-</div>
-</section>
-<section id="running-the-registration">
-<h2>Running the registration<a class="headerlink" href="#running-the-registration" title="Link to this heading">#</a></h2>
-<p>There are two ways to run the registration using brainreg.
-If you’re just getting started, we recommend the <a class="reference external" href="https://napari.org/stable">napari</a> plugin.
-This provides a graphical user interface, and makes it easier to tweak parameters.</p>
-<p>If you need to run brainreg on many samples, or on a remote machine
-(e.g., using an institutional high-performance computing system), there is a command-line interface.</p>
-<p>Whichever interface you use, the results will be identical.</p>
-<div class="dropdown admonition">
-<p class="admonition-title">Registration using the napari plugin</p>
-<h2 class="rubric" id="before-you-start">Before you start</h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://napari.org/stable/tutorials/fundamentals/installation.html">Make sure you have napari installed</a></p></li>
-<li><p>Install the brainreg-napari plugin from within napari (<code class="docutils literal notranslate"><span class="pre">Plugins</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Install/Uninstall</span> <span class="pre">Package(s)</span></code>, choosing <code class="docutils literal notranslate"><span class="pre">brainreg-napari</span></code>).)</p></li>
-<li><p>Open napari</p></li>
-</ul>
-<h2 class="rubric" id="run-brainreg">Run brainreg</h2>
-<p>To run brainreg, we firstly need to load the data, by dragging and dropping the <code class="docutils literal notranslate"><span class="pre">test_brain</span></code> directory into the main
-napari window. Then load the plugin by selecting <code class="docutils literal notranslate"><span class="pre">brainreg-register:</span> <span class="pre">Atlas</span> <span class="pre">registration</span></code> from the napari <code class="docutils literal notranslate"><span class="pre">Plugins</span></code> menu.</p>
-<p>In the plugin, set all the necessary parameters:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">layer</span></code> - Set this to the <code class="docutils literal notranslate"><span class="pre">test_brain</span></code> image layer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">layer</span></code> - Set this to the <code class="docutils literal notranslate"><span class="pre">Sample</span> <span class="pre">brain</span></code> image layer</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Atlas</span></code> - Set this to <code class="docutils literal notranslate"><span class="pre">allen_mouse_50um</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">orientation</span></code> - Set this to <code class="docutils literal notranslate"><span class="pre">psl</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Voxel</span> <span class="pre">size</span> <span class="pre">(z)</span></code> - Set to 50</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Voxel</span> <span class="pre">size</span> <span class="pre">(x)</span></code> - Set to 40</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Voxel</span> <span class="pre">size</span> <span class="pre">(y)</span></code> - Set to 40</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Output</span> <span class="pre">directory</span></code> - Click <code class="docutils literal notranslate"><span class="pre">Choose</span> <span class="pre">directory</span></code>, and create a new directory in the same directory as</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">test_brain</span></code> called <code class="docutils literal notranslate"><span class="pre">brainreg_output</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Output</span> <span class="pre">directory</span></code> - Click <code class="docutils literal notranslate"><span class="pre">Choose</span> <span class="pre">directory</span></code>, and create a new directory on your machine</p></li>
 </ul>
-<p>Make sure the image layer is deselected on the left-hand side, and then you should see something like this
-(N.B. the visualised plane and the contrast of the brain has been adjusted):</p>
-<p><img alt="brainreg-napari" src="../_images/brainreg-napari.webp" /></p>
-<p>You can then click <code class="docutils literal notranslate"><span class="pre">Run</span></code>, and the registration will start. Lots of stuff will get printed to the
-console as brainreg runs, and when it’s done (it should only take a minute or so), you will see something like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INFO</span> <span class="o">-</span> <span class="n">MainProcess</span> <span class="n">cli</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">230</span> <span class="o">-</span> <span class="n">Finished</span><span class="o">.</span> <span class="n">Total</span> <span class="n">time</span> <span class="n">taken</span><span class="p">:</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">29.15</span>
-</pre></div>
-</div>
-<p>This means that the registration is complete, but the results will appear in the napari window.
-Toggling the visibility of the <code class="docutils literal notranslate"><span class="pre">Boundaries</span></code> layer (click the eye icon) is the easiest way to assess registration accuracy.</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Registration using the command line tool</p>
-<h2 class="rubric" id="instructions">Instructions:</h2>
-<h3 class="rubric" id="id1">Setting up</h3>
-<ul class="simple">
-<li><p>Open a terminal (Linux/macOS) or your command prompt (Windows)</p></li>
-<li><p>Activate your <a class="reference internal" href="../documentation/general/conda.html"><span class="doc std std-doc">conda environment</span></a></p></li>
-</ul>
-<h3 class="rubric" id="id2">Run brainreg</h3>
-<p>To run brainreg, you need to pass:</p>
-<ul class="simple">
-<li><p>The path to the sample data</p></li>
-<li><p>The path to the directory to save the results</p></li>
-<li><p>The voxel sizes</p></li>
-<li><p>The orientation</p></li>
-<li><p>The atlas to use</p></li>
-</ul>
-<p>We put this all together in a single command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brainreg</span> <span class="n">test_brain</span> <span class="n">brainreg_output</span> <span class="o">-</span><span class="n">v</span> <span class="mi">50</span> <span class="mi">40</span> <span class="mi">40</span>  <span class="o">--</span><span class="n">orientation</span> <span class="n">psl</span> <span class="o">--</span><span class="n">atlas</span> <span class="n">allen_mouse_50um</span>
-</pre></div>
-</div>
-<p>Lots of output will get printed to the console as brainreg runs, and when it’s done (it should only take a minute or
-so), you will see something like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INFO</span> <span class="o">-</span> <span class="n">MainProcess</span> <span class="n">cli</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">230</span> <span class="o">-</span> <span class="n">Finished</span><span class="o">.</span> <span class="n">Total</span> <span class="n">time</span> <span class="n">taken</span><span class="p">:</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">29.15</span>
-</pre></div>
-</div>
-<p>This means that the registration is complete.</p>
-<h3 class="rubric" id="visualising-the-results">Visualising the results</h3>
-<p>brainreg comes with a plugin for <a class="reference external" href="https://napari.org/">napari</a> (see
-<a class="reference internal" href="../documentation/brainreg/user-guide/visualisation.html"><span class="std std-doc">Visualisation</span></a>) for easy visualisation of the results.</p>
-<p>To view your data, run <code class="docutils literal notranslate"><span class="pre">napari</span></code> from the same terminal/command as you ran brainreg (or open a new one and activate
-your conda environment). You can then drag and drop the <code class="docutils literal notranslate"><span class="pre">brainreg_output</span></code> directory into napari, and see the results.</p>
-</div>
+<ol class="arabic simple" start="7">
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Run</span></code>. After 30-60 seconds, two new napari layers will be loaded, <code class="docutils literal notranslate"><span class="pre">Boundaries</span></code> and <code class="docutils literal notranslate"><span class="pre">allen_mouse_50um</span></code>.</p></li>
+<li><p>Toggle the visibility of these two layers (using the eye icon on the left of the layer name) to overlay the
+registration results. These can be explored by zooming in/out, scrolling through the 3D data and adjusting the
+visibility and contrast of the loaded data.</p></li>
+</ol>
+<p><img alt="loaded image" src="../_images/results-brainreg-napari.png" /></p>
+<p><strong>Registration results overlaid onto raw data.</strong></p>
+<ol class="arabic simple" start="9">
+<li><p>At this point, registration is complete. A number of
+<a class="reference internal" href="#documentation/brainreg/user-guide/output-files"><span class="xref myst">files are created in the output directory</span></a> that can be used for
+downstream analysis.</p></li>
+</ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The results are likely not perfect because (for speed and simplicity) we:</p>
@@ -684,7 +620,10 @@ your conda environment). You can then drag and drop the <code class="docutils li
 <li><p>Left all the parameters as default (which were optimised for higher resolution atlases)</p></li>
 </ul>
 </div>
-</section>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>For full information on how to use brainreg, please see the <a class="reference internal" href="../documentation/brainreg/index.html"><span class="doc std std-doc">brainreg page</span></a></p>
+</div>
 </section>
 
 <div class="section ablog__blog_comments">
@@ -702,12 +641,12 @@ your conda environment). You can then drag and drop the <code class="docutils li
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="visualise-atlas-napari.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tutorials</p>
+        <p class="prev-next-title">Visualise an atlas in napari</p>
       </div>
     </a>
     <a class="right-next"
@@ -725,21 +664,6 @@ your conda environment). You can then drag and drop the <code class="docutils li
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up">Setting up</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-registration">Running the registration</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
