@@ -45,6 +45,19 @@ If you have external scripts that reply on the internal name of the plugin, you 
 ## brainreg-segment
 
 This package has been renamed brainglobe-segmentation.
-
 Beyond this renaming, there have been no internal changes to the package, so you may continue to use it as previously.
 However, you will need to switch all occurrences of `brainglobe_segment` to `brainglobe_segmentation` in your Python scripts.
+
+If you want to install the package standalone (without using BrainGlobe version 1 or through installing `brainreg`) then we recommend you `pip install` the package into your envrionment:
+
+```bash
+pip install brainglobe-segmentation
+```
+
+If you have `brainreg-segment` in your environment, you may wish to remove it as it will no longer be needed by `brainreg`:
+
+```bash
+pip uninstall brainreg-segment
+```
+
+however, `brainreg-segment` is still required by [`cellfinder`](../../documentation/cellfinder/index.md) versions `<=v1.0.0`.
