@@ -1,9 +1,7 @@
 # November 2023
 
-This roadmap reflects our current priorities which are to refactor and organise the BrainGlobe codebase to make it 
-easier to maintain and further develop in the long-term. Many of these changes won't add any new features, or make 
-the existing tools easier to use. However, we hope this will ensure that BrainGlobe is around for years to come, and 
-that we have a solid platform to develop new tools in the future.
+This roadmap reflects our current priorities which are to refactor and organise the BrainGlobe codebase. Many of these changes won't add any new features - they are largely aimed at making existing features more accessible (e.g. through a graphical user interface), ensure all tools are easier-to-install and at making BrainGlobe 
+easier to maintain and further develop in the long-term.  We hope this will ensure that BrainGlobe is around for years to come, and that we have a solid platform to develop new tools and support a growing community in the future.
 
 ## Current status
 * BrainGlobe Atlas API provides a consistent interface to multiple anatomical atlases
