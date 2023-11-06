@@ -44,5 +44,5 @@ BrainAtlas wraps the BrainGlobe Atlas API into a package for easy use with the U
 
 
 :::{hint}
-if you have developed any software using BrainGlobe tools, please [let us know](contact) and we can advertise it here. 
+if you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. 
 :::

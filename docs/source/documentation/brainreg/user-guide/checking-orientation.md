@@ -4,7 +4,7 @@ To ensure that the orientation is set correctly, `napari-brainreg` comes with a 
 orientation (thanks to [Jules Scholler](https://github.com/JulesScholler)!).
 
 Once you've loaded your data, fill in the input orientation in the GUI based on the 
-[bg-space definition](/documentation/general/image-definition) and click `Check orientation`. 
+[bg-space definition](/documentation/setting-up/image-definition) and click `Check orientation`. 
 This will generate a number of new images that are displayed to the user. The top row of displayed images are the 
 projections of the reference atlas. The bottom row are the projections of the aligned input data. If the two rows are 
 similarly oriented, the orientation is correct. If not, change the orientation and try again.

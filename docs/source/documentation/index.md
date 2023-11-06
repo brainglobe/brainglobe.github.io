@@ -1,15 +1,8 @@
 # Documentation
 
-## General
 ```{toctree}
 :maxdepth: 1
-general/index
-../developers/index
-```
-
-## Individual tools
-```{toctree}
-:maxdepth: 1
+setting-up/index
 bg-atlasapi/index
 bg-space/index
 brainreg/index

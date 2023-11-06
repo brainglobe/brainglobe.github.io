@@ -6,7 +6,7 @@ Once napari, and the cellfinder plugin is installed, open napari, and load the p
 
 :::{hint}
 Make sure your GPU is set up to speed up the training. See 
-[Setting up your GPU](/documentation/general/gpu).
+[Setting up your GPU](/documentation/setting-up/gpu).
 :::
 
 ## Set parameters

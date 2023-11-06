@@ -78,7 +78,7 @@ In this case, a previous run of cellfinder hasn't completed. Either wait for it 
 (in the terminal).
 
 Alternatively, your version of CUDA and cuDNN may be not compatible with TensorFlow. You can update them by 
-following the instructions [here](/documentation/general/gpu).
+following the instructions [here](/documentation/setting-up/gpu).
 
 ### ImportError: DLL load failed: The specified module could not be found.
 

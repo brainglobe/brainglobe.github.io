@@ -3,7 +3,7 @@
 cellfinder should run on most machines, but for routine use on large datasets, you will need a fairly high-powered
 computer (see the guide to [Speeding up cellfinder](/documentation/cellfinder/troubleshooting/speed-up) for details).
 
-Using an NVIDIA GPU will speed up cell classification considerably. See [setting up your GPU](/documentation/general/gpu) 
+Using an NVIDIA GPU will speed up cell classification considerably. See [setting up your GPU](/documentation/setting-up/gpu) 
 for details.
 
 cellfinder uses brainreg for atlas registration, and the hardware requirements for brainreg depend on the atlas 
@@ -25,7 +25,7 @@ Most machines (including laptops) will be able to use most of the atlases, but s
 
 ## Installing Python
 Your machine may already have Python
-installed, but we recommend installing miniconda. See [Using conda](/documentation/general/conda) for details.
+installed, but we recommend installing miniconda. See [Using conda](/documentation/setting-up/conda) for details.
 
 ## Installing cellfinder
 ```{hint}
@@ -41,14 +41,14 @@ pip install cellfinder-core
 :class: dropdown
 
 ```{hint}
-If you know what you're doing (and [your GPU is set up](/documentation/general/gpu)), just run `pip install cellfinder`
+If you know what you're doing (and [your GPU is set up](/documentation/setting-up/gpu)), just run `pip install cellfinder`
 ```
 
 
 ## Installing Python
 
 cellfinder is written in Python, and so needs a functional Python installation. Your machine may already have Python
-installed, but we recommend installing miniconda. See [Using conda](/documentation/general/conda) for details.
+installed, but we recommend installing miniconda. See [Using conda](/documentation/setting-up/conda) for details.
 
 ```{caution}
 cellfinder should run on any type of Python installation, but if you don't use conda, 

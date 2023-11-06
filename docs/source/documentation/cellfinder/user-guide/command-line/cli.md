@@ -23,7 +23,7 @@ the files.  **This background channel will be used for all signal channels**
 
 :::{caution}
 You must also specify the orientation and voxel size of your data, see 
-[Image definition](/documentation/general/image-definition).
+[Image definition](/documentation/setting-up/image-definition).
 :::
 
 ### The following options can also be used:
