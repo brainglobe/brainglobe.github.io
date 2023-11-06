@@ -520,12 +520,12 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../brainreg-segment/index.html">brainreg-segment</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../brainreg-segment/user-guide/index.html">Prerequisites</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../brainglobe-segmentation/index.html">brainglobe-segmentation</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../brainglobe-segmentation/user-guide/index.html">Prerequisites</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../../brainreg-segment/user-guide/segmenting-1d-tracks.html">Segmenting 1D tracks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../brainreg-segment/user-guide/segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../brainreg-segment/user-guide/analysing-external-segmentation.html">Analysing segmentation from other napari plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brainglobe-segmentation/user-guide/segmenting-1d-tracks.html">Segmenting 1D tracks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brainglobe-segmentation/user-guide/segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brainglobe-segmentation/user-guide/analysing-external-segmentation.html">Analysing segmentation from other napari plugins</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../brainrender/index.html">brainrender</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -655,7 +655,7 @@ document.write(`
                   
 <section class="tex2jax_ignore mathjax_ignore" id="output-files">
 <h1>Output files<a class="headerlink" href="#output-files" title="Link to this heading">#</a></h1>
-<p>brainreg will create a number of output files. Many of these are for use with other software (e.g., brainreg-segment
+<p>brainreg will create a number of output files. Many of these are for use with other software (e.g., brainglobe-segmentation
 and cellfinder), but they may be useful for your own software.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -664,7 +664,7 @@ and cellfinder), but they may be useful for your own software.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">boundaries.tiff</span></code> - A 3D tiff image of the atlas boundaries, transformed to the space of the raw data.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">brainreg_DATE_TIME.log</span></code> - A log file detailing the registration process. Useful for debugging and raising issues.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">brainreg.json</span></code> - A record of all the input parameters, used by other software, e.g. brainreg-segment.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brainreg.json</span></code> - A record of all the input parameters, used by other software, e.g. brainglobe-segmentation.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">deformation_field_0.tiff</span></code> - A 3D tiff describing the deformation from raw data space to atlas space, in the first
 dimension (based on the supplied orientation and voxel sizes).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">deformation_field_1.tiff</span></code> - Deformation in the second dimension.</p></li>

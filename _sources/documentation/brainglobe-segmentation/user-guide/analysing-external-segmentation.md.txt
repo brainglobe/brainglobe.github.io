@@ -8,14 +8,14 @@ Plugins exist to segment
  many features common to biomedical images, and their results can be incorporated with BrainGlobe to analyse 
 the distribution of features of interest within the context of an anatomical atlas. 
 
-To be compatible with `brainreg-segment`, the third-party napari plugin must be able to take a 3D image layer as 
+To be compatible with `brainglobe-segmentation`, the third-party napari plugin must be able to take a 3D image layer as 
 input and return one of:
 - A 3D labels layer with either a 2 or 3D region labeled (e.g., segmenting bulk axonal projections)
 - A 3D points layer with a series of points corresponding to a trajectory through 3D space
 
 :::{hint}
-It is possible to segment structures outside the `brainreg-segment` plugin and import them in later (e.g., by 
-saving to a `.tiff` and reloading). However, it is simpler to load the data using `brainreg-segment` and then segment 
+It is possible to segment structures outside the `brainglobe-segmentation` plugin and import them in later (e.g., by 
+saving to a `.tiff` and reloading). However, it is simpler to load the data using `brainglobe-segmentation` and then segment 
 it using a third-party plugin. This ensures that the coordinate spaces you are using are consistent. 
 :::
 
@@ -25,7 +25,7 @@ it using a third-party plugin. This ensures that the coordinate spaces you are u
 - Open napari
 - Install the napari plugin you require to segment your data. To find out which plugins are available, see the 
 [napari hub](https://www.napari-hub.org/).
-- [Load your data using the `brainreg-segment` plugin](/documentation/brainreg-segment/user-guide/index)
+- [Load your data using the `brainglobe-segmentation` plugin](/documentation/brainglobe-segmentation/user-guide/index)
 - Use the plugin to segment your feature of interest. Ensure it returns a 3D labels or points layer.
 
 :::{hint}
@@ -48,8 +48,8 @@ At this point you could load a layer segmented previously and saved to disk
 ![Highlighting a specific layer](../images/layerlist.png)
 
 - Click either the `Add track from selected layer` or `Add region from selected layer` button as applicable. This will
-add the region/points from the layer to the `brainreg-segment` analysis list (in the same way as if it had been 
-analysed manually within `brainreg-segment`).
+add the region/points from the layer to the `brainglobe-segmentation` analysis list (in the same way as if it had been 
+analysed manually within `brainglobe-segmentation`).
 - Follow the instructions for either:
   - [1D track analysis](segmenting-1d-tracks)
   - [2/3D region analysis](segmenting-3d-structures)

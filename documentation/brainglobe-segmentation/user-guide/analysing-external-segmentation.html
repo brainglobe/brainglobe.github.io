@@ -49,8 +49,8 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/brainreg-segment/user-guide/analysing-external-segmentation';</script>
-    <link rel="canonical" href="https://brainglobe.info/documentation/brainreg-segment/user-guide/analysing-external-segmentation.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/brainglobe-segmentation/user-guide/analysing-external-segmentation';</script>
+    <link rel="canonical" href="https://brainglobe.info/documentation/brainglobe-segmentation/user-guide/analysing-external-segmentation.html" />
     <link rel="icon" href="../../../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -524,7 +524,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../../brainreg/troubleshooting.html">Troubleshooting</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">brainreg-segment</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">brainglobe-segmentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="index.html">Prerequisites</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="segmenting-1d-tracks.html">Segmenting 1D tracks</a></li>
@@ -638,7 +638,7 @@ document.write(`
     <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Documentation</a></li>
     
     
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">brainreg-segment</a></li>
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">brainglobe-segmentation</a></li>
     
     <li class="breadcrumb-item active" aria-current="page">Analysing...</li>
   </ul>
@@ -666,7 +666,7 @@ are necessary. In such cases, <a class="reference external" href="https://www.na
 <p>Plugins exist to segment
 many features common to biomedical images, and their results can be incorporated with BrainGlobe to analyse
 the distribution of features of interest within the context of an anatomical atlas.</p>
-<p>To be compatible with <code class="docutils literal notranslate"><span class="pre">brainreg-segment</span></code>, the third-party napari plugin must be able to take a 3D image layer as
+<p>To be compatible with <code class="docutils literal notranslate"><span class="pre">brainglobe-segmentation</span></code>, the third-party napari plugin must be able to take a 3D image layer as
 input and return one of:</p>
 <ul class="simple">
 <li><p>A 3D labels layer with either a 2 or 3D region labeled (e.g., segmenting bulk axonal projections)</p></li>
@@ -674,8 +674,8 @@ input and return one of:</p>
 </ul>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>It is possible to segment structures outside the <code class="docutils literal notranslate"><span class="pre">brainreg-segment</span></code> plugin and import them in later (e.g., by
-saving to a <code class="docutils literal notranslate"><span class="pre">.tiff</span></code> and reloading). However, it is simpler to load the data using <code class="docutils literal notranslate"><span class="pre">brainreg-segment</span></code> and then segment
+<p>It is possible to segment structures outside the <code class="docutils literal notranslate"><span class="pre">brainglobe-segmentation</span></code> plugin and import them in later (e.g., by
+saving to a <code class="docutils literal notranslate"><span class="pre">.tiff</span></code> and reloading). However, it is simpler to load the data using <code class="docutils literal notranslate"><span class="pre">brainglobe-segmentation</span></code> and then segment
 it using a third-party plugin. This ensures that the coordinate spaces you are using are consistent.</p>
 </div>
 </section>
@@ -687,7 +687,7 @@ it using a third-party plugin. This ensures that the coordinate spaces you are u
 <li><p>Open napari</p></li>
 <li><p>Install the napari plugin you require to segment your data. To find out which plugins are available, see the
 <a class="reference external" href="https://www.napari-hub.org/">napari hub</a>.</p></li>
-<li><p><a class="reference internal" href="index.html"><span class="doc std std-doc">Load your data using the <code class="docutils literal notranslate"><span class="pre">brainreg-segment</span></code> plugin</span></a></p></li>
+<li><p><a class="reference internal" href="index.html"><span class="doc std std-doc">Load your data using the <code class="docutils literal notranslate"><span class="pre">brainglobe-segmentation</span></code> plugin</span></a></p></li>
 <li><p>Use the plugin to segment your feature of interest. Ensure it returns a 3D labels or points layer.</p></li>
 </ul>
 <div class="admonition hint">
@@ -713,8 +713,8 @@ useful tool (also by <a class="reference external" href="https://github.com/haes
 <p><img alt="Highlighting a specific layer" src="../../../_images/layerlist.png" /></p>
 <ul class="simple">
 <li><p>Click either the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">track</span> <span class="pre">from</span> <span class="pre">selected</span> <span class="pre">layer</span></code> or <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">region</span> <span class="pre">from</span> <span class="pre">selected</span> <span class="pre">layer</span></code> button as applicable. This will
-add the region/points from the layer to the <code class="docutils literal notranslate"><span class="pre">brainreg-segment</span></code> analysis list (in the same way as if it had been
-analysed manually within <code class="docutils literal notranslate"><span class="pre">brainreg-segment</span></code>).</p></li>
+add the region/points from the layer to the <code class="docutils literal notranslate"><span class="pre">brainglobe-segmentation</span></code> analysis list (in the same way as if it had been
+analysed manually within <code class="docutils literal notranslate"><span class="pre">brainglobe-segmentation</span></code>).</p></li>
 <li><p>Follow the instructions for either:</p>
 <ul>
 <li><p><a class="reference internal" href="segmenting-1d-tracks.html"><span class="doc std std-doc">1D track analysis</span></a></p></li>

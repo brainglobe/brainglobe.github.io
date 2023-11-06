@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Prerequisites &#8212; BrainGlobe</title>
+    <title>Segmenting 1D tracks &#8212; BrainGlobe</title>
   
   
   
@@ -49,14 +49,14 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/brainreg-segment/user-guide/index';</script>
-    <link rel="canonical" href="https://brainglobe.info/documentation/brainreg-segment/user-guide/index.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/brainglobe-segmentation/user-guide/segmenting-1d-tracks';</script>
+    <link rel="canonical" href="https://brainglobe.info/documentation/brainglobe-segmentation/user-guide/segmenting-1d-tracks.html" />
     <link rel="icon" href="../../../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Segmenting 1D tracks" href="segmenting-1d-tracks.html" />
-    <link rel="prev" title="brainreg-segment" href="../index.html" />
+    <link rel="next" title="Segmenting 2/3D structures" href="segmenting-3d-structures.html" />
+    <link rel="prev" title="Prerequisites" href="index.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -328,10 +328,6 @@ document.write(`
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
-      <span class="fa-solid fa-outdent"></span>
-    </label>
-  
 </div>
 
     </nav>
@@ -524,10 +520,10 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../../brainreg/troubleshooting.html">Troubleshooting</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">brainreg-segment</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Prerequisites</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">brainglobe-segmentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html">Prerequisites</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="segmenting-1d-tracks.html">Segmenting 1D tracks</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Segmenting 1D tracks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
 <li class="toctree-l2"><a class="reference internal" href="analysing-external-segmentation.html">Analysing segmentation from other napari plugins</a></li>
 </ul>
@@ -638,9 +634,9 @@ document.write(`
     <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Documentation</a></li>
     
     
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">brainreg-segment</a></li>
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">brainglobe-segmentation</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Prerequisites</li>
+    <li class="breadcrumb-item active" aria-current="page">Segmenting 1D tracks</li>
   </ul>
 </nav>
 </div>
@@ -657,56 +653,68 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-<section class="tex2jax_ignore mathjax_ignore" id="prerequisites">
-<h1>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h1>
-<p>Your data must have been registered to an atlas using <a class="reference internal" href="../../brainreg/index.html"><span class="doc std std-doc">brainreg</span></a> (or the brainreg-based
-registration within <a class="reference internal" href="../../cellfinder/index.html"><span class="doc std std-doc">cellfinder</span></a>).</p>
-<p>Please follow the instructions for these packages, and ensure that the channel that you want to segment is
-downsampled (e.g., using the <code class="docutils literal notranslate"><span class="pre">--downsample</span></code> flag in brainreg).</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="usage">
-<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h1>
-<p>To load the software, firstly open napari (typically by typing <code class="docutils literal notranslate"><span class="pre">napari</span></code> into your command window). You can then
-load <code class="docutils literal notranslate"><span class="pre">brainreg-segment</span></code> by navigating to <code class="docutils literal notranslate"><span class="pre">Plugins</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Dock</span> <span class="pre">Widget</span></code> and selecting <code class="docutils literal notranslate"><span class="pre">brainreg-segment</span></code>.</p>
-<p>The plugin will then open, with some options for loading data:</p>
-<p><img alt="brainreg interface" src="../../../_images/brainreg-segment.webp" /></p>
-<section id="to-load-your-data">
-<h2><strong>To load your data</strong><a class="headerlink" href="#to-load-your-data" title="Link to this heading">#</a></h2>
-<p>There are three options for loading your data (in the <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">data</span></code> section of the GUI):</p>
+<section class="tex2jax_ignore mathjax_ignore" id="segmenting-1d-tracks">
+<h1>Segmenting 1D tracks<a class="headerlink" href="#segmenting-1d-tracks" title="Link to this heading">#</a></h1>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>For more information about how to process silicon probe tracks, please see <a class="reference internal" href="../../../tutorials/silicon-probe-tracking.html"><span class="doc std std-doc">Silicon probe tracking</span></a>.</p>
+</div>
+<p>To segment a 1D track, such as a fibre track, or a silicone probe track, select the <code class="docutils literal notranslate"><span class="pre">Track</span> <span class="pre">tracing</span></code> button in the <code class="docutils literal notranslate"><span class="pre">Segmentation</span> <span class="pre">panel</span></code>.</p>
+<p><img alt="Segmenting a 1D track" src="../../../_images/segment_1d.webp" /></p>
+<p>Then:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">project</span> <span class="pre">(sample</span> <span class="pre">space)</span></code> - This is for loading a brainreg project in the coordinate space of your raw data
-(i.e., not warped to the atlas space). N.B. the data will have been reoriented to the orientation of your chosen
-atlas, but it can be reoriented using the napari button in the bottom left (a cube with an arrow above it).
-<strong>Click this button, then choose your brainreg (or cellfinder registration) output directory.</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">project</span> <span class="pre">(atlas</span> <span class="pre">space)</span></code> - As above, but the data loaded will have been warped into the atlas space.
-This is most useful when you want to visualise your segmented structures in <a class="reference internal" href="../../brainrender/index.html"><span class="doc std std-doc">brainrender</span></a>,
-as they must be in atlas space to do so. <strong>Click this button, then choose your brainreg (or cellfinder registration)
-output directory.</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">atlas</span></code> If you don’t have your own data registered to the atlas, then you can just load the atlas.
-Useful for making visualisations etc. <strong>Click this drop-down menu, then pick an atlas.</strong></p></li>
+<li><p>Click the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">track</span></code> button</p></li>
+<li><p>If required, rename the track (by selecting the <code class="docutils literal notranslate"><span class="pre">track_0</span></code> text)</p></li>
+<li><p>Navigate to where you want to draw your region of interest.</p></li>
+<li><p>Make sure the add points mode is activated (by selecting the <code class="docutils literal notranslate"><span class="pre">+</span></code> symbol)</p></li>
+<li><p>Trace your track by adding points along it. You can add as many, or as few as you like, and this can be done in 3D by changing the viewer plane as you go along.</p></li>
 </ul>
-</section>
-<section id="navigating">
-<h2><strong>Navigating</strong><a class="headerlink" href="#navigating" title="Link to this heading">#</a></h2>
-<p>Your data will then appear as a napari “Layer” on the right-hand side, and will include your sample data
-(including any additionally downsampled channels), and the atlas. If you select the atlas layer and make it visible
-(by toggling the eye icon), hovering over a brain region will show the region in the bottom left corner.</p>
-<p>You can navigate around the volume:</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Make sure you select the points in the order you wish them to be joined</p>
+</div>
 <ul class="simple">
-<li><p>Use the scroll bar at the bottom (or left/right keys) to navigate through the image stack</p></li>
-<li><p>Use the mouse scrollwheel to zoom in or out</p></li>
-<li><p>Drag with the mouse the pan the view</p></li>
+<li><p>Repeat the above for each track you wish to trace</p></li>
+<li><p>If the brain surface is damaged, you may not be able to trace perfectly from the surface. If you want to add an
+additional first point at the surface of the brain, click <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">surface</span> <span class="pre">points</span></code>. Selecting this option will add an
+additional point at the closest part of the brain surface to the first point, so that the track starts there.  </p></li>
+<li><p>The points can then be joined using spline interpolation by clicking <code class="docutils literal notranslate"><span class="pre">Trace</span> <span class="pre">tracks</span></code>. You can change:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Summarise</span></code> - Defaults to on, this will save a csv file, showing the brain area for each part of the interpolated
+track (determined by <code class="docutils literal notranslate"><span class="pre">Spline</span> <span class="pre">points</span></code> )</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">tracing</span></code> - Defaults to off. This will save your segmentation layer at the same time as running the analysis
+(this may make your analysis take longer)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">degree</span></code> - What order spline fit to use (the default is 3, cubic)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Spline</span> <span class="pre">smoothing</span></code> - How closely or not to fit the points (lower numbers fit more closely, for a less smooth interpolation)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Spline</span> <span class="pre">points</span></code> - This doesn’t affect the interpolation, but determines how many points are sampled from the interpolation (used for the summary)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">surface</span> <span class="pre">points</span></code> - If the brain surface is damaged, you may not be able to trace perfectly from the surface.
+Selecting this option will add an additional point at the closest part of the brain surface to the first point, so that the track starts there</p></li>
 </ul>
-<p>You can adjust the view of your image, by selecting its “layer” in the sidebar, there you can change the gamma
-enhancement, contrast limits (right-click for finer control) and the colormap used.</p>
-<p>The buttons directly below the layers can be used to rotate the data, reset the view and view in 3D.</p>
-<p>For information on how to segment specific types of structure, see:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="segmenting-1d-tracks.html"><span class="doc std std-doc">Segmenting 1D tracks</span></a></p></li>
-<li><p><a class="reference internal" href="segmenting-3d-structures.html"><span class="doc std std-doc">Segmenting 2/3D structures</span></a></p></li>
-<li><p><a class="reference internal" href="analysing-external-segmentation.html"><span class="doc std std-doc">Analysing segmentation from other napari plugins</span></a></p></li>
-</ul>
-</section>
+<p>You will then see the track fit appear in the napari window, and a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file will be saved, showing the brain region
+for every spline point along the track.</p>
+<p>You can also use <code class="docutils literal notranslate"><span class="pre">Save</span></code> independently of the analysis to save your points to be reloaded at a later date, and if you
+loaded your data in atlas space,
+you can also export the track to <a class="reference internal" href="../../brainrender/index.html"><span class="doc std std-doc">brainrender</span></a>. The file will be
+saved as e.g. <code class="docutils literal notranslate"><span class="pre">track_0.npy</span></code>. Using the Python API, you can visualise the track as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brainrender</span> <span class="kn">import</span> <span class="n">Scene</span>
+<span class="kn">from</span> <span class="nn">brainrender.actors</span> <span class="kn">import</span> <span class="n">Points</span>
+<span class="kn">from</span> <span class="nn">myterial</span> <span class="kn">import</span> <span class="n">blue</span>
+
+<span class="n">file</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;/path/to/track_0.npy&quot;</span><span class="p">)</span>
+
+<span class="n">scene</span> <span class="o">=</span> <span class="n">Scene</span><span class="p">()</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Points</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">blue</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">))</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All data will be saved into your brainreg output directory</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>For more information about how to use automated methods to segment your feature of interest, please see
+<a class="reference internal" href="analysing-external-segmentation.html"><span class="doc std std-doc">Analysing segmentation from other napari plugins</span></a>.</p>
+</div>
 </section>
 
 <div class="section ablog__blog_comments">
@@ -724,20 +732,20 @@ enhancement, contrast limits (right-click for finer control) and the colormap us
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../index.html"
+       href="index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">brainreg-segment</p>
+        <p class="prev-next-title">Prerequisites</p>
       </div>
     </a>
     <a class="right-next"
-       href="segmenting-1d-tracks.html"
+       href="segmenting-3d-structures.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Segmenting 1D tracks</p>
+        <p class="prev-next-title">Segmenting 2/3D structures</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -747,26 +755,6 @@ enhancement, contrast limits (right-click for finer control) and the colormap us
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Prerequisites</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-load-your-data"><strong>To load your data</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating"><strong>Navigating</strong></a></li>
-</ul>
-</li>
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>

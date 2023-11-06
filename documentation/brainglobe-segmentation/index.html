@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>brainreg-segment &#8212; BrainGlobe</title>
+    <title>brainglobe-segmentation &#8212; BrainGlobe</title>
   
   
   
@@ -49,8 +49,8 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/brainreg-segment/index';</script>
-    <link rel="canonical" href="https://brainglobe.info/documentation/brainreg-segment/index.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/brainglobe-segmentation/index';</script>
+    <link rel="canonical" href="https://brainglobe.info/documentation/brainglobe-segmentation/index.html" />
     <link rel="icon" href="../../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -524,7 +524,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../brainreg/troubleshooting.html">Troubleshooting</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">brainreg-segment</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">brainglobe-segmentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="user-guide/index.html">Prerequisites</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="user-guide/segmenting-1d-tracks.html">Segmenting 1D tracks</a></li>
@@ -637,7 +637,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Documentation</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">brainreg-segment</li>
+    <li class="breadcrumb-item active" aria-current="page">brainglobe-s...</li>
   </ul>
 </nav>
 </div>
@@ -654,23 +654,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-<section class="tex2jax_ignore mathjax_ignore" id="brainreg-segment">
-<h1>brainreg-segment<a class="headerlink" href="#brainreg-segment" title="Link to this heading">#</a></h1>
-<p>brainreg-segment is a companion to <a class="reference internal" href="../brainreg/index.html"><span class="doc std std-doc">brainreg</span></a> allowing manual segmentation of regions/objects
+<section class="tex2jax_ignore mathjax_ignore" id="brainglobe-segmentation">
+<h1>brainglobe-segmentation<a class="headerlink" href="#brainglobe-segmentation" title="Link to this heading">#</a></h1>
+<p>brainglobe-segmentation is a companion to <a class="reference internal" href="../brainreg/index.html"><span class="doc std std-doc">brainreg</span></a> allowing manual segmentation of regions/objects
 within the brain (e.g. injection sites, probes etc.) allowing for automated analysis of brain region distribution,
 and visualisation (e.g. in <a class="reference internal" href="../brainrender/index.html"><span class="doc std std-doc">brainrender</span></a>).</p>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
-<p>brainreg-segment comes bundled with brainreg, so see the <a class="reference internal" href="../brainreg/installation.html"><span class="doc std std-doc">brainreg installation instructions</span></a>.
-brainreg-segment can be installed on its own (see below), but you will need to register your data with brainreg first.</p>
+<p>brainglobe-segmentation comes bundled with brainreg’s optional <code class="docutils literal notranslate"><span class="pre">napari</span></code> dependency, so see the <a class="reference internal" href="../brainreg/installation.html"><span class="doc std std-doc">brainreg installation instructions</span></a>.
+brainglobe-segmentation can be installed on its own (see below), but you will need to register your data with brainreg first.</p>
 <section id="standalone-installation">
 <h3>Standalone installation<a class="headerlink" href="#standalone-installation" title="Link to this heading">#</a></h3>
-<p>If you don’t want to install brainreg, brainreg-segment can be installed on its own. brainreg-segment is
+<p>If you don’t want to install brainreg, brainglobe-segmentation can be installed on its own. brainglobe-segmentation is
 distributed as a plugin for <a class="reference external" href="https://napari.org/">napari</a>, so first follow the
-<a class="reference external" href="https://napari.org/">napari installation instructions</a>. You can then install <code class="docutils literal notranslate"><span class="pre">brainreg-segment</span></code> from the
+<a class="reference external" href="https://napari.org/">napari installation instructions</a>. You can then install <code class="docutils literal notranslate"><span class="pre">brainglobe-segmentation</span></code> from the
 napari plugin menu.</p>
 <p><img alt="Installing from the napari plugin menu" src="../../_images/install_plugin.png" /></p>
-<p>Alternatively, the plugin can be installed into a Python environment with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">brainreg-segment</span></code>.</p>
+<p>Alternatively, the plugin can be installed into a Python environment with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">brainglobe-segmentation</span></code>.</p>
 </section>
 </section>
 <section id="user-guide">
@@ -687,7 +687,7 @@ napari plugin menu.</p>
 </section>
 <section id="citation">
 <h2>Citation<a class="headerlink" href="#citation" title="Link to this heading">#</a></h2>
-<p>If you find brainreg-segment useful and use it in your research, please let us know and also cite the paper:</p>
+<p>If you find brainglobe-segmentation (formerly brainreg-segment) useful and use it in your research, please let us know and also cite the paper:</p>
 <blockquote>
 <div><p>Tyson, A. L., Vélez-Fort, M.,  Rousseau, C. V., Cossell, L., Tsitoura, C., Lenzi, S. C., Obenhaus, H. A., Claudi, F., Branco, T.,  Margrie, T. W. (2022). Accurate determination of marker location within whole-brain microscopy images. Scientific Reports, 12, 867 <a class="reference external" href="https://doi.org/10.1038/s41598-021-04676-9">doi.org/10.1038/s41598-021-04676-9</a></p>
 </div></blockquote>

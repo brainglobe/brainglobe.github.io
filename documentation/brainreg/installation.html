@@ -524,12 +524,12 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../brainreg-segment/index.html">brainreg-segment</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../brainreg-segment/user-guide/index.html">Prerequisites</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../brainglobe-segmentation/index.html">brainglobe-segmentation</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../brainglobe-segmentation/user-guide/index.html">Prerequisites</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../brainreg-segment/user-guide/segmenting-1d-tracks.html">Segmenting 1D tracks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../brainreg-segment/user-guide/segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../brainreg-segment/user-guide/analysing-external-segmentation.html">Analysing segmentation from other napari plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brainglobe-segmentation/user-guide/segmenting-1d-tracks.html">Segmenting 1D tracks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brainglobe-segmentation/user-guide/segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brainglobe-segmentation/user-guide/analysing-external-segmentation.html">Analysing segmentation from other napari plugins</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../brainrender/index.html">brainrender</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -675,12 +675,12 @@ This provides a graphical user interface, and makes it easier to tweak parameter
 <p class="admonition-title">Installing the napari plugin</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://napari.org/stable/tutorials/fundamentals/installation.html">Make sure you have napari installed</a></p></li>
-<li><p>Install the brainreg-napari plugin from within napari (<code class="docutils literal notranslate"><span class="pre">Plugins</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Install/Uninstall</span> <span class="pre">Package(s)</span></code>, choosing <code class="docutils literal notranslate"><span class="pre">brainreg-napari</span></code>).)</p></li>
+<li><p>Install the brainreg napari plugin from within napari (<code class="docutils literal notranslate"><span class="pre">Plugins</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Install/Uninstall</span> <span class="pre">Package(s)</span></code>, choosing <code class="docutils literal notranslate"><span class="pre">brainreg</span></code>).)</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you are using macOS, you will need to install the plugin using the
-command line (<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">brainreg-napari</span></code>)</p>
+command line (<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">brainreg</span></code>)</p>
 </div>
 </div>
 <div class="dropdown admonition">
@@ -704,6 +704,7 @@ we may be limited in the support we can offer.</p>
 <p>Remember to activate your conda environment before doing anything</p>
 </div>
 <h3 class="rubric" id="using-conda-recommended">Using conda (recommended)</h3>
+<p>This includes the napari plugin.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>brainreg
 </pre></div>
 </div>

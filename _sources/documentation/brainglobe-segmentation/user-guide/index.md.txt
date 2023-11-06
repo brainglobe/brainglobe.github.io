@@ -9,11 +9,11 @@ downsampled (e.g., using the `--downsample` flag in brainreg).
 # Usage
 
 To load the software, firstly open napari (typically by typing `napari` into your command window). You can then 
-load `brainreg-segment` by navigating to `Plugins` -> `Add Dock Widget` and selecting `brainreg-segment`.
+load `brainglobe-segmentation` by navigating to `Plugins` -> `Add Dock Widget` and selecting `brainglobe-segmentation`.
 
 The plugin will then open, with some options for loading data:
 
-![brainreg interface](../images/brainreg-segment.webp)
+![brainreg interface](../images/brainglobe-segmentation.webp)
 
 ## **To load your data**
 
