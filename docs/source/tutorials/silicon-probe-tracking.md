@@ -20,7 +20,7 @@ micromanipulator, and the probe tip lowered to touch the surface of the brain (e
 This position is recorded as position “zero”. The probe is then introduced in the brain at a speed of \~10μm 
 per second to the desired penetration depth (in our case 1750μm; **Fig. 1**, centre).
 
-![Figure 1.](./images/brainreg-segment-fig1.webp)
+![Figure 1.](./images/brainglobe-segmentation-fig1.webp)
 **Figure 1.**
 
 :::{note}
@@ -80,11 +80,11 @@ trace the probe track.
 Make sure your conda environment is still activated!
 :::
 
-To open the graphical user interface, open napari and then load the `brainreg-segment` plugin (see 
-[User guide](/documentation/brainreg-segment/user-guide/index)).
+To open the graphical user interface, open napari and then load the `brainglobe-segmentation` plugin (see 
+[User guide](/documentation/brainglobe-segmentation/user-guide/index)).
 
-The `brainreg-segment`graphical user interface opens and shows a set of tools.You can then load your brainreg output 
-directory, and follow the main brainreg-segment instructions [here](/documentation/brainreg-segment/user-guide/segmenting-1d-tracks) for 
+The `brainglobe-segmentation`graphical user interface opens and shows a set of tools.You can then load your brainreg output 
+directory, and follow the main brainglobe-segmentation instructions [here](/documentation/brainglobe-segmentation/user-guide/segmenting-1d-tracks) for 
 segmenting a 1D track. Setting `Spline points` will determine how many times along the length of the track that 
 the brain region is sampled at. This can be used to determine the brain region for each recording site on your probe.
 

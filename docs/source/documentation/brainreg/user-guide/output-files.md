@@ -1,6 +1,6 @@
 # Output files
 
-brainreg will create a number of output files. Many of these are for use with other software (e.g., brainreg-segment 
+brainreg will create a number of output files. Many of these are for use with other software (e.g., brainglobe-segmentation 
 and cellfinder), but they may be useful for your own software.
 
 :::{note}
@@ -9,7 +9,7 @@ N.B. This is not an exhaustive list, as brainreg has many options which may crea
 
 * `boundaries.tiff` - A 3D tiff image of the atlas boundaries, transformed to the space of the raw data.
 * `brainreg_DATE_TIME.log` - A log file detailing the registration process. Useful for debugging and raising issues.
-* `brainreg.json` - A record of all the input parameters, used by other software, e.g. brainreg-segment.
+* `brainreg.json` - A record of all the input parameters, used by other software, e.g. brainglobe-segmentation.
 * `deformation_field_0.tiff` - A 3D tiff describing the deformation from raw data space to atlas space, in the first 
 dimension (based on the supplied orientation and voxel sizes).
 * `deformation_field_1.tiff` - Deformation in the second dimension.

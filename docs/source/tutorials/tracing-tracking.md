@@ -88,14 +88,14 @@ the Otsu[^1] thresholding method from `napari-simpleitk-image-processing` an exa
 To use Otsu's method from the `napari-simpleitk-image-processing` plugin, follow these steps:
 
 - Open napari
-- [Load your data using the `brainreg-segment` plugin](/documentation/brainreg-segment/user-guide/index)
+- [Load your data using the `brainglobe-segmentation` plugin](/documentation/brainglobe-segmentation/user-guide/index)
 - Choose the Otsu thresholding option from the plugin menu:
 
 <img src="./images/choose-otsu.png"  width="450">
 
 - Select the image layer to be thresholded and click `run`. This will automatically segment your image using Otsu's
 algorithm. This will create a new labels layer. 
-- Follow the instructions for [2/3D region analysis](/documentation/brainreg-segment/user-guide/segmenting-3d-structures) 
+- Follow the instructions for [2/3D region analysis](/documentation/brainglobe-segmentation/user-guide/segmenting-3d-structures) 
 to analyse the distribution of the thresholded voxels.
 
 **Instructions by** [**Sara Mederos**](https://www.sainsburywellcome.org/web/people/sara-mederos).

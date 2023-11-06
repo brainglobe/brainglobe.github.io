@@ -16,11 +16,11 @@ Whichever interface you use, the results will be identical.
 :::{admonition} Installing the napari plugin
 :class: dropdown
 * [Make sure you have napari installed](https://napari.org/stable/tutorials/fundamentals/installation.html)
-* Install the brainreg-napari plugin from within napari (`Plugins` -> `Install/Uninstall Package(s)`, choosing `brainreg-napari`).)
+* Install the brainreg napari plugin from within napari (`Plugins` -> `Install/Uninstall Package(s)`, choosing `brainreg`).)
 
 :::{note}
 If you are using macOS, you will need to install the plugin using the
-command line (`conda install -c conda-forge brainreg-napari`)
+command line (`conda install -c conda-forge brainreg`)
 :::
 
 :::{admonition} Installing the command line tool
@@ -49,6 +49,7 @@ Remember to activate your conda environment before doing anything
 ```
 
 ### Using conda (recommended)
+This includes the napari plugin.
 
 ```bash
 conda install -c conda-forge brainreg
