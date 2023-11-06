@@ -3,7 +3,7 @@
 ## Environment
 
 To install `brainrender`, you need a python environment with a Python 3.8. This may be a different version than you are 
-using for other software. Using [conda](/documentation/general/conda) this can be created with:
+using for other software. Using [conda](/documentation/setting-up/conda) this can be created with:
 
 ```bash
 conda create --name brainrender python=3.8 -y

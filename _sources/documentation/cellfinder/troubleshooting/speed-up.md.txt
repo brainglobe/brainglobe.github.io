@@ -38,7 +38,7 @@ often work well on modern GPUs with >8GB memory.
 :::
 
 These steps may be slow if cellfinder is not properly using the GPU. If you have followed the instructions in 
-[setting up your GPU](/documentation/general/gpu), you may need to check that everything is configured properly:
+[setting up your GPU](/documentation/setting-up/gpu), you may need to check that everything is configured properly:
 
 Open a terminal (or Anaconda Prompt):
 
@@ -89,6 +89,6 @@ False
 ```
 
 Then your GPU is not properly configured. If you have followed everything in 
-[setting up your GPU](/documentation/general/gpu), please go speak to whoever administers your machine. If you're 
+[setting up your GPU](/documentation/setting-up/gpu), please go speak to whoever administers your machine. If you're 
 still stuck [get in touch](/contact), but there is a limited amount we can do to help configure your system.
 

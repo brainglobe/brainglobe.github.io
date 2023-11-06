@@ -6,7 +6,7 @@ We have three aims:
 
 * Develop specialist software for specific analysis and visualisation needs, such as 
 [cellfinder](/documentation/cellfinder/index) and [brainrender](/documentation/brainrender/index).
-* Develop core tools to facilitate [others to build interoperable tools in Python](external-tools), e.g., the 
+* Develop core tools to facilitate [others to build interoperable tools in Python](community/external-tools.md), e.g., the 
 [BrainGlobe Atlas API](/documentation/bg-atlasapi/index).
 * Build a community of neuroscientists and developers to share knowledge, build software and engage with the 
 scientific, and open-source community (e.g., by organising hackathons).
@@ -38,7 +38,6 @@ How do I get started with these tools?
 
 Find out more about these tools.
 :::
-
 ::::
 
 ```{toctree}
@@ -48,6 +47,6 @@ Find out more about these tools.
 about
 tutorials/index
 documentation/index
+community/index
 blog/index
-more
 ```

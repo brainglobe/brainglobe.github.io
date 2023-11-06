@@ -23,7 +23,7 @@ If you have a feature request, please open an issue at the relevant repository. 
 ## Contributing
 If you would like to contribute to the BrainGlobe Initiative, please get in touch with us using the 
 [BrainGlobe Zulip chat](https://brainglobe.zulipchat.com/). We always welcome new Pull Requests,
-but please take a quick look at the [developer guide](developers/index) first.
+but please take a quick look at the [developer guide](community/developers/index) first.
 
 ## Other ways to get in touch
 While we prefer that all discussions about the project are carried out in public, there may be situations in which this 

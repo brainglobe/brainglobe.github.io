@@ -6,5 +6,4 @@
 :date: "%Y-%m-%d"
 :format: "({date}) {title}, by {author}"
 :excerpts:
-:sort:
 ```

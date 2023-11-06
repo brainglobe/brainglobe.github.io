@@ -116,7 +116,7 @@
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">BrainGlobe is undergoing restructuring. Keep track of the latest developments on <a href='https://brainglobe.info/blog/index.html'>the blog</a></div>
+    <div class="bd-header-announcement__content">BrainGlobe is undergoing restructuring. Keep track of the latest developments on <a href='blog/version1/version_1_announcement.html'>the blog</a></div>
   </div>
 
   
@@ -188,15 +188,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../blog/index.html">
-                        Blog
+                      <a class="nav-link nav-internal" href="../../community/index.html">
+                        Community
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../more.html">
-                        More
+                      <a class="nav-link nav-internal" href="../../blog/index.html">
+                        Blog
                       </a>
                     </li>
                 
@@ -379,15 +379,15 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../blog/index.html">
-                        Blog
+                      <a class="nav-link nav-internal" href="../../community/index.html">
+                        Community
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../more.html">
-                        More
+                      <a class="nav-link nav-internal" href="../../blog/index.html">
+                        Blog
                       </a>
                     </li>
                 
@@ -582,7 +582,7 @@ document.write(`
 <code class="docutils literal notranslate"><span class="pre">test_brain</span></code> with two directories, each containing 2800 images</p></li>
 <li><p>Open a terminal (Linux) or your command prompt (Windows)</p></li>
 <li><p>Navigate to the directory containing the <code class="docutils literal notranslate"><span class="pre">test_brain</span></code> directory (e.g. using <code class="docutils literal notranslate"><span class="pre">cd</span></code>)</p></li>
-<li><p>Activate your <a class="reference internal" href="../../documentation/general/conda.html"><span class="doc std std-doc">conda environment </span></a></p></li>
+<li><p>Activate your <a class="reference internal" href="../../documentation/setting-up/conda.html"><span class="doc std std-doc">conda environment </span></a></p></li>
 </ul>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
@@ -605,12 +605,12 @@ autofluorescence channel. In this case, <code class="docutils literal notranslat
 autofluroescence channel</p></li>
 <li><p>Where you want to save the output data (we’ll just save it into a directory called <code class="docutils literal notranslate"><span class="pre">cellfinder_output</span></code>in the
 same directory as the <code class="docutils literal notranslate"><span class="pre">test_brain</span></code>)</p></li>
-<li><p>The pixel sizes of your data in microns (see <a class="reference internal" href="../../documentation/general/image-definition.html"><span class="doc std std-doc">Image definition</span></a> for details).
+<li><p>The pixel sizes of your data in microns (see <a class="reference internal" href="../../documentation/setting-up/image-definition.html"><span class="doc std std-doc">Image definition</span></a> for details).
 In this case, our data is 2μm per pixel in the coronal plane and the spacing of each plane is 5μm</p></li>
 <li><p>The orientation of your data. For atlas registration (using <a class="reference internal" href="../../documentation/brainreg/index.html"><span class="doc std std-doc">brainreg</span></a>) the
 software needs to know how you acquired your data (coronal, sagittal etc.). For this cellfinder uses
 <a class="reference internal" href="../../documentation/bg-space/index.html"><span class="doc std std-doc">bg-space</span></a>. Full details on how to enter your data orientation can also be
-found in the <a class="reference internal" href="../../documentation/general/image-definition.html"><span class="doc std std-doc">Image definition</span></a> section. For this tutorial, the orientation
+found in the <a class="reference internal" href="../../documentation/setting-up/image-definition.html"><span class="doc std std-doc">Image definition</span></a> section. For this tutorial, the orientation
 is <code class="docutils literal notranslate"><span class="pre">psl</span></code>, which means that the data origin is the most <strong>p</strong>osterior, <strong>s</strong>uperior, <strong>l</strong>eft voxel.</p></li>
 <li><p>Which atlas you want to use (you can see which are available by running <code class="docutils literal notranslate"><span class="pre">brainglobe</span> <span class="pre">list</span></code>. In this
 case, we want to use a mouse atlas (as that’s what our data is), and we’ll use the 10μm version of the
