@@ -1,6 +1,6 @@
 # Registering a whole-brain image to an atlas
 
-In this tutorial, you will use the [brainreg](/documentation/brainreg) plugin for [napari](https://napari.org) to 
+In this tutorial, you will use the [brainreg](../documentation/brainreg/index.md) plugin for [napari](https://napari.org) to 
 register (align) a whole-mouse brain image to a reference atlas.
 
 The focus of this tutorial is simply to successfully register a single image.
@@ -45,7 +45,7 @@ visibility and contrast of the loaded data.
 **Registration results overlaid onto raw data.**
 
 9. At this point, registration is complete. A number of 
-[files are created in the output directory](documentation/brainreg/user-guide/output-files) that can be used for 
+[files are created in the output directory](../documentation/brainreg/user-guide/output-files.md) that can be used for 
 downstream analysis.
 
 :::{note}

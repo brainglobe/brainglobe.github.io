@@ -32,4 +32,4 @@ If you would like to update your packages now, or would like to know how this wi
 
 ## Full changelog
 
-You can find the [full changelog on the releases page](../../releases/v1/brainreg.md).
+You can find the [full changelog on the releases page](../../community/releases/v1/brainreg.md).
