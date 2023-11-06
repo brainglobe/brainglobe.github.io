@@ -88,7 +88,7 @@ ImportError: DLL load failed: The specified module could not be found.
 
 If this occurs on Windows, it is likely that you need to install "Microsoft Visual C++ Redistributable for Visual 
 Studio 2015, 2017 and 2019", available from Microsoft's website 
-[here](https://support.microsoft.com/en-gb/help/2977003/the-latest-supported-visual-c-downloads).
+[here](https://learn.microsoft.com/en-GB/cpp/windows/latest-supported-vc-redist?view=msvc-170).
 
 ### SyntaxError: invalid syntax \(logging\)
 

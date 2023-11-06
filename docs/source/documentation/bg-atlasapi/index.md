@@ -15,14 +15,14 @@ Each atlas consists of data files in a common format:
 
 A number of atlases are in development, but those available currently are:
 
-* [Allen Mouse Brain Atlas](https://www.brain-map.org) at 10, 25, 50 and 100 micron resolutions
-* [Allen Human Brain Atlas](https://www.brain-map.org) at 100 micron resolution
+* [Allen Mouse Brain Atlas](https://portal.brain-map.org/) at 10, 25, 50 and 100 micron resolutions
+* [Allen Human Brain Atlas](https://portal.brain-map.org/) at 100 micron resolution
 * [Max Planck Zebrafish Brain Atlas](http://fishatlas.neuro.mpg.de) at 1 micron resolution
 * [Enhanced and Unified Mouse Brain Atlas](https://kimlab.io/brain-map/atlas/) at 10, 25, 50 and 100 micron resolutions
 * [Smoothed version of the Kim et al. mouse reference atlas](https://doi.org/10.1016/j.celrep.2014.12.014) at 10, 25, 50 and 100 micron resolutions
 * [Gubra's LSFM mouse brain atlas](https://doi.org/10.1007/s12021-020-09490-8) at 20 micron resolution
-* [3D version of the Allen mouse spinal cord atlas](https://doi.org/10.1101/2021.05.06.443008) at 20 x 10 x 10 micron resolution
-* [AZBA: A 3D Adult Zebrafish Brain Atlas](https://doi.org/10.1101/2021.05.04.442625) at 4 micron resolution
+* [3D version of the Allen mouse spinal cord atlas](https://doi.org/10.1016/j.crmeth.2021.100074) at 20 x 10 x 10 micron resolution
+* [AZBA: A 3D Adult Zebrafish Brain Atlas]( https://doi.org/10.7554/eLife.69988) at 4 micron resolution
 * [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1016/j.neuroimage.2014.04.001) at 39 micron resolution
 * [3D Edge-Aware Refined Atlases Derived from the Allen Developing Mouse Brain Atlases](https://doi.org/10.7554/eLife.61408) (E13, E15, E18, P4, P14, P28 & P56)
 * [Princeton Mouse Brain Atlas](https://brainmaps.princeton.edu/2020/09/princeton-mouse-brain-atlas-links) at 20 micron resolution

@@ -82,4 +82,4 @@ long-term direction of the project.**
 
 ****
 
-N.B. This governance model takes inspiration from the [Napari model.](https://napari.org/docs/0.3.8/developers/GOVERNANCE.html)
+N.B. This governance model takes inspiration from the [Napari model.](https://napari.org/dev/community/governance.html)

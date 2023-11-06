@@ -28,7 +28,7 @@ Choose the napari image layer you wish to be registered from `Image layer`, alon
 `Atlas`. You must also set the voxel sizes in the axial (z) and in-plane (x, y) dimensions, along with the data 
 orientation. The orientation is defined by three letters, based on [bg-space](https://github.com/brainglobe/bg-space), 
 e.g. `psl`. For more details on this, see the outline 
-[here](https://docs.brainglobe.info/cellfinder/image-orientation#orientation). Lastly, set an `Output directory` 
+[here](/documentation/setting-up/image-definition). Lastly, set an `Output directory` 
 (where you want to save the data).
 
 ### Registering additional channels

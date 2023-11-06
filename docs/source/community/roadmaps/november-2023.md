@@ -7,7 +7,7 @@ easier to maintain and further develop in the long-term.  We hope this will ensu
 * BrainGlobe Atlas API provides a consistent interface to multiple anatomical atlases
 * Separate tools for 3D cell detection ([`cellfinder-core`](https://github.com/brainglobe/cellfinder-core)), 
 3D atlas registration([`brainreg`](https://github.com/brainglobe/brainreg)), bulk segmentation 
-([`brainreg-segment`](https://github.com/brainglobe/brainreg-segment)) and 3D 
+([`brainreg-segment`](https://github.com/brainglobe/brainglobe-segmentation)) and 3D 
 visualisation ([`brainrender`](https://github.com/brainglobe/brainrender))
 * Plugins for 3D cell detection ([`cellfinder-napari`](https://github.com/brainglobe/cellfinder-napari)) and 
 registration ([`brainreg-napari`](https://github.com/brainglobe/brainreg-napari))

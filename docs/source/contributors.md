@@ -131,7 +131,7 @@ The BrainGlobe Initiative is only possible due to the hard work of many, many pe
 
 :::{grid-item-card}  Patrick Roddy
 :img-bottom: https://avatars.githubusercontent.com/u/15052188?v=4?
-:link: https://github.com/padddyroddy
+:link: https://github.com/paddyroddy
 :::
 
 :::{grid-item-card} Adrien Berchet
