@@ -24,7 +24,7 @@ neurons = am.download_neurons(neurons[:5].id.values)
 
 ## Neuromorpho
 
-Neuromorpho.org is a vast online repository of morphological data. The `NeuroMorpOrgAPI` class can be used to 
+Neuromorpho is a vast online repository of morphological data. The `NeuroMorpOrgAPI` class can be used to 
 download data from it. Note that given the size of this huge dataset, it is not possible to download all metadata 
 matching specific criteria at once.
 
