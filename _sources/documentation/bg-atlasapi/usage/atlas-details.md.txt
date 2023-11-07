@@ -21,7 +21,7 @@ unique key (e.g. `example_mouse_100um` must be used).
 # Available atlases
 
 ## Mouse
-### [Allen Adult Mouse Brain Atlas](https://www.brain-map.org)
+### [Allen Adult Mouse Brain Atlas](https://portal.brain-map.org)
 For many researchers working with mice, this is the "default" atlas for a variety of tasks. It is also the basis for 
 the most commonly used common coordinate space (CCFv3). It is usually the best mouse atlas to start with, but it has 
 some disadvantages. It has a reference image based on STP, which may not produce the best 

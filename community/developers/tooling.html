@@ -592,7 +592,7 @@ reason, we use <a class="reference external" href="https://pre-commit.com/">pre-
 <ul class="simple">
 <li><p><a class="reference external" href="https://black.readthedocs.io/en/stable/">black</a> for code structure formatting (maximum line length set to 79)</p></li>
 <li><p><a class="reference external" href="https://mypy.readthedocs.io/en/stable/index.html">mypy</a> a static type checker</p></li>
-<li><p><a class="reference external" href="https://github.com/charliermarsh/ruff">ruff</a> does a number of jobs, including enforcing PEP8 and sorting imports</p></li>
+<li><p><a class="reference external" href="https://github.com/astral-sh/ruff">ruff</a> does a number of jobs, including enforcing PEP8 and sorting imports</p></li>
 </ul>
 <p>These will prevent code from being committed if any of these hooks fail. To run them individually:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ruff<span class="w"> </span>.
@@ -623,7 +623,9 @@ to edit the <code class="docutils literal notranslate"><span class="pre">.pre-co
 <h3>Automated versioning<a class="headerlink" href="#automated-versioning" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://github.com/pypa/setuptools_scm"><code class="docutils literal notranslate"><span class="pre">setuptools_scm</span></code></a> can be used to automatically version each package. It has
 been pre-configured in the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file.
-<a class="reference external" href="https://github.com/pypa/setuptools_scm#default-versioning-scheme"><code class="docutils literal notranslate"><span class="pre">setuptools_scm</span></code> will automatically infer the version using git</a>. To manually set a new semantic version, create a tag and make sure the tag is pushed to GitHub. Make sure you commit any changes you wish to be included in this version. E.g. to bump the version to <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code>:</p>
+<code class="docutils literal notranslate"><span class="pre">setuptools_scm</span></code> will automatically infer the version using git. To manually set a new semantic version, create a tag
+and make sure the tag is pushed to GitHub. Make sure you commit any changes you wish to be included in this version.
+E.g., to bump the version to <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
 git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add new changes&quot;</span>
 git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>v1.0.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Bump to version 1.0.0&quot;</span>

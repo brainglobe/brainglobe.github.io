@@ -16,7 +16,7 @@ detected_cells = cellfinder_run(signal_array,background_array,voxel_sizes)
 ```
 
 The output is a list of
-[imlib Cell objects](https://github.com/adamltyson/imlib/blob/51ec5a8053e738776ceaa8d44e531b3c4b0e29d8/imlib/cells/cells.py#L15).
+[imlib Cell objects](https://github.com/brainglobe/brainglobe-utils/blob/main/brainglobe_utils/cells/cells.py).
 Each `Cell` has a centroid coordinate, and a type:
 
 ```python

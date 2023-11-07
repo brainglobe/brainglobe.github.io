@@ -730,7 +730,7 @@ way of generating this list of dictionaries in python when you’ll start creati
 <p><strong>Atlas generation takes place in two steps:</strong></p>
 <ol class="arabic simple">
 <li><p>Generate an “Atlas script” written in python</p></li>
-<li><p>Use the atlas generation code <a class="reference external" href="https://github.com/brainglobe/bg-atlasgen/tree/master/bg_atlasgen">available from BrainGlobe</a></p></li>
+<li><p>Use the atlas generation code <a class="reference external" href="https://github.com/brainglobe/bg-atlasgen/tree/main/bg_atlasgen">available from BrainGlobe</a></p></li>
 <li><p>to generate the atlas from the atlas script.</p></li>
 </ol>
 <section id="atlas-scripts">
@@ -781,8 +781,6 @@ However, regions’ meshes are used frequently by BrainGlobe tools,
 especially in <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> for visualizing anatomical data in 3D.
 For this reason,
 the atlas generation code from BrainGlobe provides functionality that can be used to generate such mesh files.
-This code (<a class="github reference external" href="https://github.com/brainglobe/bg-atlasgen/blob/86caab99317359e5f791c991febb12589c5ced8a/bg">brainglobe/bg-atlasgen</a>_atlasgen/mesh_utils.py#L125)
-can be used to generate a region’s mesh starting from the annotated image.
 A mask image is created which only contains the annotation for the brain region of interest,
 and a marching cubes algorithm is used to identify the surface of the region;
 finally, a mesh is created from the output of the marching cubes algorithm, and the results are saved to a .obj file.
@@ -809,9 +807,14 @@ you can just go to the folder with the atlas content
 and they will open as an image layer, and a label layer, respectively. You know the orientation is correct if you are
 looking at upright (dorsal top, ventral bottom) frontal sections, and when you scroll the slider to inspect sections
 with a higher index, you are moving from anterior to posterior.</p>
-<p>To inspect the meshes, BrainGlobe provides
-<a class="reference external" href="https://github.com/brainglobe/bg-atlasgen/blob/86caab99317359e5f791c991febb12589c5ced8a/bg_atlasgen/mesh_utils.py#L227">code</a> to
-load and visualize a set of .obj files for quick inspection. Once an atlas is created with BrainGlobe’s atlas generation tools,
+<p>To inspect the meshes, BrainGlobe provides a simple tool
+load and visualize a set of .obj files for quick inspection, e.g.:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bg_atlasgen.mesh_utils</span> <span class="kn">import</span> <span class="n">inspect_meshes_folder</span>
+
+<span class="n">inspect_meshes_folder</span><span class="p">(</span><span class="s2">&quot;/home/username/.brainglobe/temp/allen_mouse_10um_v1.0/meshes&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Once an atlas is created with BrainGlobe’s atlas generation tools,
 it can be used with most software from the BrainGlobe software suite, including <a class="reference internal" href="../brainrender/index.html"><span class="doc std std-doc">brainrender</span></a>
 which provides a convenient GUI for visually inspecting the generated atlas meshes.</p>
 </section>

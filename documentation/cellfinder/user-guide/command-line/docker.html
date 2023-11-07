@@ -667,7 +667,7 @@ document.write(`
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Linux machine (<a class="reference external" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#linux-distributions">most common distributions are supported</a>)</p></li>
+<li><p>Linux machine (<a class="reference external" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">most common distributions are supported</a>)</p></li>
 <li><p>Recent NVIDIA GPU (<a class="reference external" href="https://en.wikipedia.org/wiki/CUDA">compute capability</a> &gt;=3)</p></li>
 <li><p><a class="reference external" href="https://www.nvidia.co.uk/Download/index.aspx?lang=en-uk">NVIDIA driver</a> &gt;= 418.81.07</p></li>
 <li><p><a class="reference external" href="https://docs.docker.com/engine/install/">Docker version</a> &gt;= 19.03</p></li>
@@ -676,23 +676,7 @@ document.write(`
 <section id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
 <p><strong>Install NVIDIA Container Toolkit</strong></p>
-<p>Full instructions are <a class="reference external" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#setting-up-nvidia-container-toolkit">here</a>, but e.g. for Ubuntu:</p>
-<p><strong>Setup repository and GPG key:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">distribution</span><span class="o">=</span><span class="k">$(</span>.<span class="w"> </span>/etc/os-release<span class="p">;</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$ID$VERSION_ID</span><span class="k">)</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>curl<span class="w"> </span>-s<span class="w"> </span>-L<span class="w"> </span>https://nvidia.github.io/nvidia-docker/gpgkey<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>apt-key<span class="w"> </span>add<span class="w"> </span>-<span class="w"> </span><span class="se">\</span>
-<span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>curl<span class="w"> </span>-s<span class="w"> </span>-L<span class="w"> </span>https://nvidia.github.io/nvidia-docker/<span class="nv">$distribution</span>/nvidia-docker.list<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/nvidia-docker.list
-</pre></div>
-</div>
-<p><strong>Install NVIDIA docker package:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>nvidia-docker2
-</pre></div>
-</div>
-<p><strong>Restart docker daemon:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>docker
-</pre></div>
-</div>
+<p>Full instructions are <a class="reference external" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">here</a>.</p>
 </section>
 <section id="running-cellfinder">
 <h2>Running cellfinder<a class="headerlink" href="#running-cellfinder" title="Link to this heading">#</a></h2>

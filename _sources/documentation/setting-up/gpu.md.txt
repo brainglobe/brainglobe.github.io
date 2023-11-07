@@ -5,7 +5,8 @@ Some BrainGlobe software will run faster if you have an NVIDIA GPU, and the appr
 
 ### Requirements
 
-The requirements are the same as those for [tensorflow GPU support](https://www.tensorflow.org/install/gpu), but essentially you need:
+The requirements are the same as those for [tensorflow GPU support](https://www.tensorflow.org/install/pip), 
+but essentially you need:
 
 * A relatively modern **Windows or Linux based machine** (unfortunately, CUDA acceleration on macOS is not supported).
 * An **NVIDIA GPU** with CUDA Compute Capability of 3.5 or higher (see the list
