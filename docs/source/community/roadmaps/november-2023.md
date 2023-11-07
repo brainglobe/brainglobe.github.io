@@ -33,7 +33,7 @@ registration ([`brainreg-napari`](https://github.com/brainglobe/brainreg-napari)
     * Atlas registration ([`brainreg-napari`](https://github.com/brainglobe/brainreg-napari))
     * Cell detection ([`cellfinder-napari`](https://github.com/brainglobe/cellfinder-napari))
     * Assign cells to brain regions (TBC)
-    * Analyse arbitrary ROIs ([`brainreg-segment`](https://github.com/brainglobe/brainreg-segment))
+    * Analyse arbitrary ROIs ([`brainreg-segment`](https://github.com/brainglobe/brainglobe-segmentation))
     * Visualisation ([`brainrender-napari`](https://github.com/brainglobe/brainrender-napari))
 * Automated benchmarks for analysis tools (cell detection & 3D atlas registration) on "real" (full size) data
 * Combine napari plugins with backend to reduce number of repositories 

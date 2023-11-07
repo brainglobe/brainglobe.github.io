@@ -1,5 +1,8 @@
 # BrainGlobe Atlas API (bg-atlasapi)
-Many excellent brain atlases exist for different species. Some of them have an API (application programming interface) to allow users to interact with the data programmatically (e.g. the excellent [Allen Mouse Brain Atlas](https://www.brain-map.org)), but many do not, and there is no consistent way to process data from multiple sources.
+Many excellent brain atlases exist for different species. Some of them have an API (application programming interface) 
+to allow users to interact with the data programmatically (e.g. the excellent 
+[Allen Mouse Brain Atlas](https://portal.brain-map.org)), but many do not, and there is no consistent way to process 
+data from multiple sources.
 
 The brainglobe atlas API (BG-AtlasAPI) deals with this problem by providing a common interface for programmers to download and process data from multiple sources.
 

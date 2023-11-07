@@ -11,7 +11,7 @@ project \([github](https://github.com/BlueBrain/NeuroM)\) to reconstruct morphol
 ## Currently supported datasets
 
 * [Allen brain atlas - Cell Types](https://celltypes.brain-map.org/)
-* [neuromorpho.org](http://neuromorpho.org/)
+* [neuromorpho.org](https://neuromorpho.org/)
 * [Janelia Campus - Mouse Light project](https://www.janelia.org/project-team/mouselight)
 * [Kunst et al 2019 - Zebrafish neurons](https://mapzebrain.org)
 
