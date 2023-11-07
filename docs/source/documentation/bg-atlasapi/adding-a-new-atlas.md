@@ -155,9 +155,17 @@ and they will open as an image layer, and a label layer, respectively. You know 
 looking at upright (dorsal top, ventral bottom) frontal sections, and when you scroll the slider to inspect sections 
 with a higher index, you are moving from anterior to posterior.
 
-To inspect the meshes, BrainGlobe provides 
-[code](https://github.com/brainglobe/bg-atlasgen/blob/86caab99317359e5f791c991febb12589c5ced8a/bg_atlasgen/mesh_utils.py#L227) to 
-load and visualize a set of .obj files for quick inspection. Once an atlas is created with BrainGlobe’s atlas generation tools, 
+To inspect the meshes, BrainGlobe provides a simple tool
+load and visualize a set of .obj files for quick inspection, e.g.:
+
+```python
+from bg_atlasgen.mesh_utils import inspect_meshes_folder
+
+inspect_meshes_folder("/home/username/.brainglobe/temp/allen_mouse_10um_v1.0/meshes")
+```
+
+
+Once an atlas is created with BrainGlobe’s atlas generation tools, 
 it can be used with most software from the BrainGlobe software suite, including [brainrender](/documentation/brainrender/index) 
 which provides a convenient GUI for visually inspecting the generated atlas meshes.
 
