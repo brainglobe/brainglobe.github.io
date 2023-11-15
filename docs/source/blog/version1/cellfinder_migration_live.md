@@ -10,6 +10,8 @@ language: English
 # `cellfinder` has moved: version 1 of `brainglobe-workflows` released
 
 Continuing the [restructuring of BrainGlobe](./version_1_announcement.md), the `cellfinder` command-line tool has moved to a new home, `brainglobe-workflows`.
+Please note that we will no longer be providing Docker images for `cellfinder`'s command-line functionality either - with the one-command install that BrainGlobe version 1 will provide, there is no need for an image which handles this construction to be provided.
+If you were previously using the Docker image, please see the advice in the [full changelog](#full-changelog).
 
 Our vision for this new `brainglobe-workflows` package is to provide one package that bundles together several data-analysis pipelines that are run frequently in neuroscience.
 By providing a package which knits together the relevant BrainGlobe tools into a single command or Python function, we can reduce the amount of manual work that users have to do to setup and run their own analyses.
