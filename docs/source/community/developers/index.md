@@ -76,17 +76,20 @@ For these reasons (and others) every part of all software must be documented as 
 and all new features must be fully documented.
 
 ### Editing the documentation
+
 The documentation is hosted using [GitHub Pages](https://pages.github.com/), and the source can be found at
 [GitHub](https://github.com/brainglobe/brainglobe.github.io). Most content is found under `docs/source`, where the
 structure mostly mirrors the rendered website. To edit a page, please:
-* Fork the repository
-* Make edits to the relevant pages
-* Create a pull request outlining the changes made
+
+- Fork the repository
+- Make edits to the relevant pages
+- Create a pull request outlining the changes made
 
 If you aren't sure where the changes should be made, please
 [get in touch](https://brainglobe.info/contact.html#contributing).
 
 ## Further information
+
 :::{toctree}
 :maxdepth: 1
 tooling
@@ -97,8 +100,9 @@ Code of conduct <https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT
 :::
 
 ## Specific repository information
+
 :::{toctree}
 :maxdepth: 1
-repositories/cellfinder-core/index
+repositories/brainglobe-workflows/index
 repositories/cellfinder/index
 :::
