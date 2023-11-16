@@ -51,8 +51,8 @@ At this point you could load a layer segmented previously and saved to disk
 add the region/points from the layer to the `brainglobe-segmentation` analysis list (in the same way as if it had been 
 analysed manually within `brainglobe-segmentation`).
 - Follow the instructions for either:
-  - [1D track analysis](segmenting-1d-tracks)
-  - [2/3D region analysis](segmenting-3d-structures)
+  - [1D track analysis](../../../tutorials/segmenting-1d-tracks)
+  - [2/3D region analysis](../../../tutorials/segmenting-3d-structures)
 
 :::{note}
 All data will be saved into your brainreg output directory

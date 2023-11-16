@@ -48,7 +48,7 @@ enhancement, contrast limits (right-click for finer control) and the colormap us
 The buttons directly below the layers can be used to rotate the data, reset the view and view in 3D.
 
 For information on how to segment specific types of structure, see:
-- [Segmenting 1D tracks](./segmenting-1d-tracks)
-- [Segmenting 2/3D structures](segmenting-3d-structures)
+- [Segmenting 1D tracks](../../../tutorials/segmenting-1d-tracks)
+- [Segmenting 2/3D structures](../../../tutorials/segmenting-3d-structures)
 - [Analysing segmentation from other napari plugins](analysing-external-segmentation)
 

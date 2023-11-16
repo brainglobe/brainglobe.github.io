@@ -17,17 +17,15 @@ Visualise atlas data in napari
 :link-type: doc
 Registering a whole-brain dataset to an atlas.
 :::
-::::
 
-:::{grid-item-card} {fas}`brain;sd-text-primary` 3D registration
+:::{grid-item-card} {fas}`brain;sd-text-primary` Track segmentation
 :img-bottom: images/brainreg.png
 :link: segmenting-1d-tracks
 :link-type: doc
 Manually segmenting a 1d track.
 :::
-::::
 
-:::{grid-item-card} {fas}`brain;sd-text-primary` 3D registration
+:::{grid-item-card} {fas}`brain;sd-text-primary` Structure segmentation
 :img-bottom: images/brainreg.png
 :link: segmenting-3d-structures
 :link-type: doc
@@ -70,6 +68,8 @@ Whole brain cell detection and registration
 :hidden:
 visualise-atlas-napari
 tutorial-whole-brain-registration
+segmenting-1d-tracks
+segmenting-3d-structures
 silicon-probe-tracking
 tracing-tracking
 cellfinder-cli/index

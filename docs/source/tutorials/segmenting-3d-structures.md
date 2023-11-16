@@ -3,7 +3,7 @@
 To segment a 3D (or 2D) structure, such as an injection site, select the `Region Segmentation` button in the 
 `Segmentation panel`.
 
-![Segmenting a 2/3D structure](../images/segment_3d.webp)
+![Segmenting a 2/3D structure](./images/segment_3d.webp)
 
 Then:
 
@@ -35,5 +35,5 @@ All data will be saved into your brainreg output directory
 
 :::{hint}
 For more information about how to use automated methods to segment your feature of interest, please see
-[Analysing segmentation from other napari plugins](./analysing-external-segmentation).
+[Analysing segmentation from other napari plugins](../documentation/brainglobe-segmentation/user-guide/analysing-external-segmentation).
 :::

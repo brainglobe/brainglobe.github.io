@@ -6,7 +6,7 @@ For more information about how to process silicon probe tracks, please see [Sili
 
 To segment a 1D track, such as a fibre track, or a silicone probe track, select the `Track tracing` button in the `Segmentation panel`.
 
-![Segmenting a 1D track](../images/segment_1d.webp)
+![Segmenting a 1D track](./images/segment_1d.webp)
 
 Then:
 
@@ -62,5 +62,5 @@ All data will be saved into your brainreg output directory
 
 :::{hint}
 For more information about how to use automated methods to segment your feature of interest, please see
-[Analysing segmentation from other napari plugins](./analysing-external-segmentation).
+[Analysing segmentation from other napari plugins](../documentation/brainglobe-segmentation/user-guide/analysing-external-segmentation.
 :::
