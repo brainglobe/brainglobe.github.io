@@ -26,8 +26,6 @@ Alternatively, the plugin can be installed into a Python environment with `pip i
 ```{toctree}
 :maxdepth: 1
 user-guide/index
-user-guide/segmenting-1d-tracks
-user-guide/segmenting-3d-structures
 user-guide/analysing-external-segmentation
 ```
 

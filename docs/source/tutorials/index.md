@@ -19,6 +19,22 @@ Registering a whole-brain dataset to an atlas.
 :::
 ::::
 
+:::{grid-item-card} {fas}`brain;sd-text-primary` 3D registration
+:img-bottom: images/brainreg.png
+:link: segmenting-1d-tracks
+:link-type: doc
+Manually segmenting a 1d track.
+:::
+::::
+
+:::{grid-item-card} {fas}`brain;sd-text-primary` 3D registration
+:img-bottom: images/brainreg.png
+:link: segmenting-3d-structures
+:link-type: doc
+Manually segmenting a 3d structure
+:::
+::::
+
 ## Specific applications
 ::::{grid} 1 2 2 3
 :gutter: 3
