@@ -17,5 +17,5 @@ Doing so will make all of the command-line tools that `brainglobe-workflows` pro
 
 ## Old `cellfinder` installations
 
-If you have a version of the cellfinder package that is older than `v1.0.0`, we recommend that you uninstall your version of cellfinder and replace the command-line tool with the version provided by `brainglobe-workflows`.
+If you have a version of the `cellfinder` package that is older than `v1.0.0`, we recommend that you uninstall your version of `cellfinder` and replace the command-line tool with the version provided by `brainglobe-workflows`.
 See the [blog post](/blog/version1/cellfinder_migration_live.md) for more information.

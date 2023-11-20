@@ -104,5 +104,5 @@ Code of conduct <https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT
 :::{toctree}
 :maxdepth: 1
 repositories/brainglobe-workflows/index
-repositories/cellfinder/index
+repositories/cellfinder-core/index
 :::

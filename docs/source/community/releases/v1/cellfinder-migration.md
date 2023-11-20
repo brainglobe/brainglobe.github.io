@@ -50,8 +50,8 @@ This package will continue to grow to include additional analysis pipelines and 
 
 ## Updating to the new `cellfinder` (CLI) tool
 
-If you intend to wait until the release of BrainGlobe version 1, you will need to prevent further updates to cellfinder (package) until BrainGlobe version 1 is released.
-`cellfinder` (CLI) provided by cellfinder (package) will continue to work so long as you do not update, however you should consider the tool unmaintained.
+If you really want to keep using the old `cellfinder` (CLI) tool, you will need to prevent further updates to cellfinder (package).
+`cellfinder` (CLI) provided by cellfinder (package) will continue to work so long as you do not update, however you should consider the tool unmaintained, and you will eventually run into the [name conflicts](#cellfinder-repository) listed above.
 
 In order to update to the new `cellfinder` (CLI) tool provided by `brainglobe-workflows`, follow the steps below:
 
@@ -62,3 +62,6 @@ In order to update to the new `cellfinder` (CLI) tool provided by `brainglobe-wo
 
 If you are making a clean install into a fresh environment, there is no need to run the first two (uninstall) steps.
 Simply `pip install brainglobe-workflows` into your new environment.
+
+As mentioned in the main blog post, `cellfinder` (CLI) will also be getting a new name in the near future, as additional workflow tools are added.
+It's name isn't changing right now, but keep an eye on this space.
