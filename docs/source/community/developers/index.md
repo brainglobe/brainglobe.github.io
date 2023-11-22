@@ -98,11 +98,3 @@ testing
 new_releases
 Code of conduct <https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT.md>
 :::
-
-## Specific repository information
-
-:::{toctree}
-:maxdepth: 1
-repositories/brainglobe-workflows/index
-repositories/cellfinder-core/index
-:::

@@ -3,7 +3,7 @@
 brainglobe-workflows is a collection of common data analysis pipelines that utilise a combination of BrainGlobe tools.
 It currently provides:
 
-- `cellfinder`: Whole-brain cell detection and classification.
+- `cellfinder`: Whole-brain cell detection and classification. [Read more about the command line interface here](/documentation/cellfinder/user-guide/command-line/index.md).
 
 ## Installation
 

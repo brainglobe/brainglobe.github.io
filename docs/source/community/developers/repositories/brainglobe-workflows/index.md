@@ -1,4 +1,4 @@
-# `brainglobe-workflows`
+# brainglobe-workflows
 
 `brainglobe-workflows` is simultaneously a package containing data analysis pipelines that utilise BrainGlobe tools, as well as a benchmarking suite for those tools.
 
