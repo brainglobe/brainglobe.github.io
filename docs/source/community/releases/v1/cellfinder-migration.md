@@ -41,7 +41,7 @@ Similarly to `brainreg`, we will be combining the functionality of the backend c
 We will no longer be providing Docker images for `cellfinder` (CLI).
 We recommend that you install `brainglobe-workflows`, or BrainGlobe version 1 when it is release, into a clean virtual environment as an alternative.
 
-## `brainglobe-workflows`
+## brainglobe-workflows
 
 This package now provides the `cellfinder` (CLI) tool, and is the recommended way to run the analysis pipeline.
 It can be installed via pip - [see the instructions below](#updating-to-the-new-cellfinder-cli-tool).
@@ -63,7 +63,7 @@ Simply `pip install brainglobe-workflows` into your new environment.
 As mentioned in the main blog post, `cellfinder` (CLI) will also be getting a new name in the near future, as additional workflow tools are added.
 It's name isn't changing right now, but keep an eye on this space.
 
-### Delaying my Update
+### Delaying updating
 
 We **strongly recommend** you move to using `brainglobe-workflows` if you wish to continue using the `cellfinder` (CLI) tool.
 
