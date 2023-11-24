@@ -14,5 +14,3 @@ determine the **minimum** set of supported package versions:
 
 In addition to this, the last 24 months of other dependencies should also be
 supported.
-
-

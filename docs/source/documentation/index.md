@@ -7,6 +7,7 @@ bg-atlasapi/index
 bg-space/index
 brainreg/index
 brainglobe-segmentation/index
+brainglobe-workflows/index
 brainrender/index
 cellfinder/index
 morphapi/index
