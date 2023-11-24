@@ -12,13 +12,14 @@ the [BrainGlobe Zulip chat](https://brainglobe.zulipchat.com/).
 If for any reason, you'd rather not reach out in public, feel free to send a direct message on Zulip 
 to [Adam Tyson](https://github.com/adamltyson), one of the core developers.
 
+Some of our tools have additional information about how data files are organised, where user caches are placed, and similar.
+You can view these repositories and the relevant information by heading to the [specific repository developer docs page](./specific_repos.md).
+
 ## To contribute a new atlas
 
 To add a new BrainGlobe atlas, please see the guide [here](/documentation/bg-atlasapi/adding-a-new-atlas).
 
-## To contribute code
-
-### Creating a development environment
+## Creating a development environment
 
 It is recommended to use `conda` to install a development environment for
 BrainGlobe projects. Once you have `conda` installed, the following commands
@@ -96,5 +97,6 @@ tooling
 conventions
 testing
 new_releases
+specific_repos
 Code of conduct <https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT.md>
 :::
