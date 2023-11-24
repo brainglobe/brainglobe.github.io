@@ -55,8 +55,8 @@
     <link rel="author" title="About these documents" href="../../../../about.html" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Cell detection" href="cell-detection.html" />
-    <link rel="prev" title="Publishing new releases" href="../../new_releases.html" />
+    <link rel="next" title="Roadmaps" href="../../../roadmaps/index.html" />
+    <link rel="prev" title="brainglobe-workflows" href="../brainglobe-workflows/index.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -328,6 +328,10 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
     </nav>
@@ -497,12 +501,12 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../../conventions.html">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../testing.html">Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../new_releases.html">Publishing new releases</a></li>
-<li class="toctree-l2"><a class="reference external" href="https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a></li>
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">cellfinder-core</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="cell-detection.html">Cell detection</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../../specific_repos.html">Specific Repository Developer Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../brainglobe-workflows/index.html">brainglobe-workflows</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">cellfinder-core</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../cellfinder/index.html">cellfinder</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../roadmaps/index.html">Roadmaps</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -512,6 +516,7 @@ document.write(`
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../releases/index.html">Releases</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../releases/v1/index.html">BrainGlobe version 1 overview</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../releases/v1/brainreg.html">Version 1: changes to registration and segmentation tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../releases/v1/cellfinder-migration.html">Version 1: Cellfinder migration and <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -547,6 +552,8 @@ document.write(`
 
 
 
+
+
 <nav aria-label="Breadcrumb">
   <ul class="bd-breadcrumbs">
     
@@ -559,7 +566,10 @@ document.write(`
     <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Community</a></li>
     
     
-    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Developer’s guide</a></li>
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../specific_repos.html" class="nav-link">Specific Repository Developer Documentation</a></li>
     
     <li class="breadcrumb-item active" aria-current="page">cellfinder-core</li>
   </ul>
@@ -580,25 +590,65 @@ document.write(`
                   
 <section class="tex2jax_ignore mathjax_ignore" id="cellfinder-core">
 <h1>cellfinder-core<a class="headerlink" href="#cellfinder-core" title="Link to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="cell-detection.html">Cell detection</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cell-detection.html#methodology">Methodology</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="cell-detection.html#d-filtering">2D filtering</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cell-detection.html#id1">3D filtering</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cell-detection.html#structure-detection">Structure detection</a></li>
-</ul>
+<section id="cell-detection">
+<h2>Cell detection<a class="headerlink" href="#cell-detection" title="Link to this heading">#</a></h2>
+<section id="methodology">
+<h3>Methodology<a class="headerlink" href="#methodology" title="Link to this heading">#</a></h3>
+<p>Cell detection in cellfinder has three stages:</p>
+<ol class="arabic simple">
+<li><p>2D filter each image plane independently.</p></li>
+<li><p>3D filter small batches of planes.</p></li>
+<li><p>Merge detected cell candidate voxels into into structures.</p></li>
+</ol>
+<section id="d-filtering">
+<h4>2D filtering<a class="headerlink" href="#d-filtering" title="Link to this heading">#</a></h4>
+<p>Code can be found in <code class="docutils literal notranslate"><span class="pre">cellfinder_core/detect/filters/plane</span></code>.
+Each plane of data is filtered independently, and in parallel across a number of processes.</p>
+<p>This part of processing performs two tasks:</p>
+<ol class="arabic">
+<li><p>Applies a filter to enhance peaks in the data (<code class="docutils literal notranslate"><span class="pre">cellfinder_core/detect/filters/plane/classical_filter.py</span></code>).
+This consists of (in order)</p>
+<ol class="arabic simple">
+<li><p>a median filter (<code class="docutils literal notranslate"><span class="pre">scipy.signal.medfilt2d</span></code>)</p></li>
+<li><p>a gaussian filter (<code class="docutils literal notranslate"><span class="pre">scipy.ndimage.gaussian_filter</span></code>)</p></li>
+<li><p>a laplacian filter (<code class="docutils literal notranslate"><span class="pre">scipy.signal.laplace</span></code>),</p></li>
+<li><p>inverting the data</p></li>
+<li><p>normalising to [0, 1]</p></li>
+<li><p>scaling to <em>clipping_value</em>.</p></li>
+</ol>
+<p>Because applying several of the filters is more time efficient when done on floating point data types, each plane is cast to <code class="docutils literal notranslate"><span class="pre">float64</span></code> in this step.</p>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="cell-detection.html#memory-usage">Memory usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="cell-detection.html#id2">2D filtering</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cell-detection.html#id3">3D filtering</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cell-detection.html#id4">Structure detection</a></li>
+<li><p>Works out which areas of the plane are inside or outside of the brain. To do this the plane is divided into square tiles that have edge length <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">soma_diameter</span></code>. The lower corner tile is assumed to be outside the brain, and any tiles that have a mean intensity less than <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">mean</span> <span class="pre">+</span> <span class="pre">(2</span> <span class="pre">*</span> <span class="pre">stddev)</span></code> of the corner tile are marked as being outside the brain. This speeds up processing in later steps by automatically skipping over tiles marked as outside the brain in this step.</p></li>
+</ol>
+<p>Memory usage during 2D filtering, for each plane, is the following:</p>
+<ul class="simple">
+<li><p>The plane itself is read into memory.</p></li>
+<li><p>During filtering, a copy of the plane is made and cast to <code class="docutils literal notranslate"><span class="pre">float64</span></code>.</p></li>
+<li><p>A small <code class="docutils literal notranslate"><span class="pre">uint8</span></code> mask is created to mark areas of the plane that are inside/outside of the brain.</p></li>
 </ul>
-</li>
+</section>
+<section id="id1">
+<h4>3D filtering<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Code can be found in <code class="docutils literal notranslate"><span class="pre">cellfinder_core/detect/filters/volume/ball_filter.py</span></code>.
+Both this step and the structure detection step take place in the main <code class="docutils literal notranslate"><span class="pre">Python</span></code> process, with no parallelism. As the planes are processed in the 2D filtering step, they are passed to this step. When <code class="docutils literal notranslate"><span class="pre">ball_z_size</span></code> planes have been handed over, 3D filtering begins.</p>
+<p>The 3D filter stores a 3D array that has depth <code class="docutils literal notranslate"><span class="pre">ball_z_size</span></code>, and contains <code class="docutils literal notranslate"><span class="pre">ball_z_size</span></code> number of planes. This is a small 3D slice of the original data. A spherical kernel runs across the x, y dimensions, and where enough intensity overlaps with the spherical kernel the voxel at the centre of the kernel is marked as being part of a cell. The output of this step is the central plane of the array, with marked cells.</p>
+<p>Memory usage information during 3D filtering:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ball_z_size</span></code> planes at a time are stored.</p></li>
+<li><p>Twice this amount of memory is required to roll the array each time a new array is fed to the 3D filter stage.</p></li>
 </ul>
-</li>
+</section>
+<section id="structure-detection">
+<h4>Structure detection<a class="headerlink" href="#structure-detection" title="Link to this heading">#</a></h4>
+<p>Code can be found in <code class="docutils literal notranslate"><span class="pre">cellfinder_core/detect/filters/volume/structure_detection.py</span></code>.
+This step takes the planes output from 3D filtering with marked cell voxels, and detects collections of voxels that are adjacent.</p>
+<p>Memory usage information during structure detection:</p>
+<ul class="simple">
+<li><p>Two planes are cast to <code class="docutils literal notranslate"><span class="pre">uint64</span></code> and are stored at the same time.</p></li>
 </ul>
-</div>
+</section>
+</section>
+</section>
 </section>
 
 <div class="section ablog__blog_comments">
@@ -616,20 +666,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../new_releases.html"
+       href="../brainglobe-workflows/index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Publishing new releases</p>
+        <p class="prev-next-title">brainglobe-workflows</p>
       </div>
     </a>
     <a class="right-next"
-       href="cell-detection.html"
+       href="../../../roadmaps/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Cell detection</p>
+        <p class="prev-next-title">Roadmaps</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -639,6 +689,28 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-detection">Cell detection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology">Methodology</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#d-filtering">2D filtering</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3D filtering</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-detection">Structure detection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

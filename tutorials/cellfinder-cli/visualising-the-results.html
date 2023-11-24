@@ -497,7 +497,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../tutorial-whole-brain-registration.html">Registering a whole-brain image to an atlas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../silicon-probe-tracking.html">Silicon probe tracking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tracing-tracking.html">Analyze and visualize bulk fluorescence tracing data</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Whole brain cell detection and registration with the cellfinder command line tool</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> command line tool</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="setting-up.html">Setting up</a></li>
 <li class="toctree-l2"><a class="reference internal" href="running-cellfinder.html">Running cellfinder</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Visualising the results</a></li>
@@ -546,7 +546,7 @@ document.write(`
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Tutorials</a></li>
     
     
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Whole brain cell detection and registration with the cellfinder command line tool</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> command line tool</a></li>
     
     <li class="breadcrumb-item active" aria-current="page">Visualising...</li>
   </ul>
@@ -567,46 +567,39 @@ document.write(`
                   
 <section class="tex2jax_ignore mathjax_ignore" id="visualising-the-results">
 <h1>Visualising the results<a class="headerlink" href="#visualising-the-results" title="Link to this heading">#</a></h1>
-<p>cellfinder comes with a plugin for <a class="reference external" href="https://napari.org/">napari</a> for easily visualising the results.
+<p><code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> comes with a plugin for <a class="reference external" href="https://napari.org/">napari</a> for easily visualising the results.
 For more information, see <a class="reference internal" href="../../documentation/cellfinder/user-guide/command-line/visualisation.html"><span class="doc std std-doc">Visualisation</span></a>.
 To quickly view your data:</p>
 <ul class="simple">
-<li><p>Open napari (type <code class="docutils literal notranslate"><span class="pre">napari</span></code> into a command window)</p></li>
+<li><p>Open napari (type <code class="docutils literal notranslate"><span class="pre">napari</span></code> into a command window).</p></li>
 <li><p>Into the window then drag and drop:</p>
 <ul>
-<li><p>The signal channel directory (<code class="docutils literal notranslate"><span class="pre">test_brain/ch00</span></code>)</p></li>
-<li><p>The entire cellfinder output directory</p></li>
+<li><p>The signal channel directory (<code class="docutils literal notranslate"><span class="pre">test_brain/ch00</span></code>),</p></li>
+<li><p>The entire cellfinder output directory.</p></li>
 </ul>
 </li>
 </ul>
 <p><img alt="cellfinder results viewed in napari" src="../../_images/cellfinder_results.png" /></p>
 <p>The napari window then will then be populated with different layers (left-hand side) that can be toggled:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ch00</span></code> The raw image data</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allen_mouse_10um</span></code> The atlas annotations</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Boundaries</span></code> The boundaries of the segmented regions</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Non</span> <span class="pre">cells</span></code> The cell candidates classfied as artefacts (blue)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Cells</span></code> The cell candidates classified as cells (yellow)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch00</span></code> The raw image data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">allen_mouse_10um</span></code> The atlas annotations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Boundaries</span></code> The boundaries of the segmented regions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Non</span> <span class="pre">cells</span></code> The cell candidates classified as artefacts (blue).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Cells</span></code> The cell candidates classified as cells (yellow).</p></li>
 </ul>
-<p>If you click on the image above to enlarge, you should get a good idea of how cellfinder works:</p>
+<p>If you click on the image above to enlarge, you should get a good idea of how <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> works:</p>
 <ul class="simple">
 <li><p>The coloured regions and the outlines show the segmentation of the brain (following atlas registration).</p></li>
-<li><p>The yellow circles show the detected cells (mostly in retrosplenial cortex and thalamus). There are also a few
-false positives (such as three on the surface of the brain and one outside the brain). This shows that the cell
-classification network (trained on other brains) is not quite 100%, and should be retrained with the addition of some
-data from this brain.</p></li>
-<li><p>The blue circles show those cell candidates classed as artefacts by the cell classification network.
-The majority of these are outside the brain, on the brain surface, or are blood vessels. A small number are
-cells, again indicating that the classification network could be retrained.</p></li>
+<li><p>The yellow circles show the detected cells (mostly in retrosplenial cortex and thalamus). There are also a few false positives (such as three on the surface of the brain and one outside the brain). This shows that the cell classification network (trained on other brains) is not quite 100%, and should be retrained with the addition of some data from this brain.</p></li>
+<li><p>The blue circles show those cell candidates classed as artefacts by the cell classification network. The majority of these are outside the brain, on the brain surface, or are blood vessels. A small number are cells, again indicating that the classification network could be retrained.</p></li>
 </ul>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>To make the results a bit more obvious when zoomed out, the contrast of the raw data (<code class="docutils literal notranslate"><span class="pre">ch00</span></code>), has been adjusted
-along with changing the symbol for the cells to <code class="docutils literal notranslate"><span class="pre">disc</span></code> and increasing the size.
+<p>To make the results a bit more obvious when zoomed out, the contrast of the raw data (<code class="docutils literal notranslate"><span class="pre">ch00</span></code>) has been adjusted along with changing the symbol for the cells to <code class="docutils literal notranslate"><span class="pre">disc</span></code> and increasing the size.
 ::</p>
-<p>These images are useful to assess how well cellfinder performed, but not much use for any kind of numerical
-analysis. To see what data is exported from cellfinder, take a look at
-<a class="reference internal" href="exploring-the-numerical-results.html"><span class="doc std std-doc">Exploring the numerical results</span></a>.</p>
+<p>These images are useful to assess how well <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> performed, but not much use for any kind of numerical analysis.
+To see what data is exported from cellfinder, take a look at <a class="reference internal" href="exploring-the-numerical-results.html"><span class="doc std std-doc">Exploring the numerical results</span></a>.</p>
 </div>
 </section>
 

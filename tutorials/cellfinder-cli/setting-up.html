@@ -501,7 +501,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../tutorial-whole-brain-registration.html">Registering a whole-brain image to an atlas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../silicon-probe-tracking.html">Silicon probe tracking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tracing-tracking.html">Analyze and visualize bulk fluorescence tracing data</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Whole brain cell detection and registration with the cellfinder command line tool</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> command line tool</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Setting up</a></li>
 <li class="toctree-l2"><a class="reference internal" href="running-cellfinder.html">Running cellfinder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="visualising-the-results.html">Visualising the results</a></li>
@@ -550,7 +550,7 @@ document.write(`
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Tutorials</a></li>
     
     
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Whole brain cell detection and registration with the cellfinder command line tool</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> command line tool</a></li>
     
     <li class="breadcrumb-item active" aria-current="page">Setting up</li>
   </ul>
@@ -574,47 +574,33 @@ document.write(`
 <section id="installation-and-download">
 <h2>Installation and download<a class="headerlink" href="#installation-and-download" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>First install the cellfinder command line tool, following the
-<a class="reference internal" href="../../documentation/cellfinder/installation.html"><span class="doc std std-doc">Installation guide</span></a></p></li>
-<li><p>Download the data from <a class="reference external" href="https://gin.g-node.org/cellfinder/data/raw/master/test_brain_SK_AA_71_3.zip">here</a>
-(it will take a long time to download). Thanks to <a class="reference external" href="https://www.keshavarzilab.com/">Sepiedeh Keshavarzi</a> for sharing the data.</p></li>
-<li><p>Unzip the data to a directory of your choice (doesn’t matter where). You should end up with a directory called
-<code class="docutils literal notranslate"><span class="pre">test_brain</span></code> with two directories, each containing 2800 images</p></li>
-<li><p>Open a terminal (Linux) or your command prompt (Windows)</p></li>
-<li><p>Navigate to the directory containing the <code class="docutils literal notranslate"><span class="pre">test_brain</span></code> directory (e.g. using <code class="docutils literal notranslate"><span class="pre">cd</span></code>)</p></li>
-<li><p>Activate your <a class="reference internal" href="../../documentation/setting-up/conda.html"><span class="doc std std-doc">conda environment </span></a></p></li>
+<li><p>First install the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> command line tool, following the <a class="reference internal" href="../../documentation/cellfinder/installation.html"><span class="doc std std-doc">Installation guide</span></a>.</p></li>
+<li><p>Download the data from <a class="reference external" href="https://gin.g-node.org/cellfinder/data/raw/master/test_brain_SK_AA_71_3.zip">here</a> (it will take a long time to download). Thanks to <a class="reference external" href="https://www.keshavarzilab.com/">Sepiedeh Keshavarzi</a> for sharing the data.</p></li>
+<li><p>Unzip the data to a directory of your choice (doesn’t matter where). You should end up with a directory called <code class="docutils literal notranslate"><span class="pre">test_brain</span></code> with two directories, each containing 2800 images.</p></li>
+<li><p>Open a terminal (Linux) or your command prompt (Windows).</p></li>
+<li><p>Navigate to the directory containing the <code class="docutils literal notranslate"><span class="pre">test_brain</span></code> directory (e.g. using <code class="docutils literal notranslate"><span class="pre">cd</span></code>).</p></li>
+<li><p>Activate your <a class="reference internal" href="../../documentation/setting-up/conda.html"><span class="doc std std-doc">conda environment</span></a>.</p></li>
 </ul>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>The test data supplied is purposefully not the “best”. It has a low SNR, and some artefacts such as fluorescent
-vasculature, and bright spots on the surface of the brain. In addition, the cell classification network was
-trained on different data, to give you an idea of “real world” performance.</p>
-<p>The aim of this tutorial is not to show cellfinder performing perfectly, but to illustrate how it deals with
-less than perfect data, and how to improve the performance.</p>
-<p>With all analysis methods, please test it out on your data to see if it works for you, and feel free
-[get in touch]](/contact).</p>
+<p>The test data supplied is purposefully not the “best”.
+It has a low SNR, and some artefacts such as fluorescent vasculature, and bright spots on the surface of the brain.
+In addition, the cell classification network was trained on different data, to give you an idea of “real world” performance.</p>
+<p>The aim of this tutorial is not to show <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> performing perfectly.
+It is instead to illustrate how it deals with less than perfect data, and how to improve the performance.</p>
+<p>With all analysis methods, please test it out on your data to see if it works for you, and feel free <a class="reference internal" href="../../contact.html"><span class="doc std std-doc">to get in touch</span></a>.</p>
 </div>
 </section>
 <section id="before-you-start">
 <h2>Before you start<a class="headerlink" href="#before-you-start" title="Link to this heading">#</a></h2>
-<p>To run cellfinder, you need to know:</p>
+<p>To run <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code>, you need to know:</p>
 <ul class="simple">
-<li><p>Where your data is (in this case, it’s the path to the <code class="docutils literal notranslate"><span class="pre">test_brain</span></code> directory)</p></li>
-<li><p>Which image is the primary signal channel (the one with the labelled cells) and which is the secondary
-autofluorescence channel. In this case, <code class="docutils literal notranslate"><span class="pre">test_brain/ch00</span></code> is the signal channel and <code class="docutils literal notranslate"><span class="pre">test_brain/ch01</span></code> is the
-autofluroescence channel</p></li>
-<li><p>Where you want to save the output data (we’ll just save it into a directory called <code class="docutils literal notranslate"><span class="pre">cellfinder_output</span></code>in the
-same directory as the <code class="docutils literal notranslate"><span class="pre">test_brain</span></code>)</p></li>
-<li><p>The pixel sizes of your data in microns (see <a class="reference internal" href="../../documentation/setting-up/image-definition.html"><span class="doc std std-doc">Image definition</span></a> for details).
-In this case, our data is 2μm per pixel in the coronal plane and the spacing of each plane is 5μm</p></li>
-<li><p>The orientation of your data. For atlas registration (using <a class="reference internal" href="../../documentation/brainreg/index.html"><span class="doc std std-doc">brainreg</span></a>) the
-software needs to know how you acquired your data (coronal, sagittal etc.). For this cellfinder uses
-<a class="reference internal" href="../../documentation/bg-space/index.html"><span class="doc std std-doc">bg-space</span></a>. Full details on how to enter your data orientation can also be
-found in the <a class="reference internal" href="../../documentation/setting-up/image-definition.html"><span class="doc std std-doc">Image definition</span></a> section. For this tutorial, the orientation
-is <code class="docutils literal notranslate"><span class="pre">psl</span></code>, which means that the data origin is the most <strong>p</strong>osterior, <strong>s</strong>uperior, <strong>l</strong>eft voxel.</p></li>
-<li><p>Which atlas you want to use (you can see which are available by running <code class="docutils literal notranslate"><span class="pre">brainglobe</span> <span class="pre">list</span></code>. In this
-case, we want to use a mouse atlas (as that’s what our data is), and we’ll use the 10μm version of the
-<a class="reference external" href="https://mouse.brain-map.org/static/atlas">Allen Mouse Brain Atlas</a></p></li>
+<li><p>Where your data is (in this case, it’s the path to the <code class="docutils literal notranslate"><span class="pre">test_brain</span></code> directory).</p></li>
+<li><p>Which image is the primary signal channel (the one with the labelled cells) and which is the secondary autofluorescence channel. In this case, <code class="docutils literal notranslate"><span class="pre">test_brain/ch00</span></code> is the signal channel and <code class="docutils literal notranslate"><span class="pre">test_brain/ch01</span></code> is the autofluroescence channel.</p></li>
+<li><p>Where you want to save the output data (we’ll just save it into a directory called <code class="docutils literal notranslate"><span class="pre">cellfinder_output</span></code>in the same directory as the <code class="docutils literal notranslate"><span class="pre">test_brain</span></code>).</p></li>
+<li><p>The pixel sizes of your data in microns (see <a class="reference internal" href="../../documentation/setting-up/image-definition.html"><span class="doc std std-doc">Image definition</span></a> for details). In this case, our data is 2μm per pixel in the coronal plane and the spacing of each plane is 5μm.</p></li>
+<li><p>The orientation of your data. For atlas registration (using <a class="reference internal" href="../../documentation/brainreg/index.html"><span class="doc std std-doc">brainreg</span></a>) the software needs to know how you acquired your data (coronal, sagittal etc.). For this cellfinder uses <a class="reference internal" href="../../documentation/bg-space/index.html"><span class="doc std std-doc">bg-space</span></a>. Full details on how to enter your data orientation can also be found in the <a class="reference internal" href="../../documentation/setting-up/image-definition.html"><span class="doc std std-doc">Image definition</span></a> section. For this tutorial, the orientation is <code class="docutils literal notranslate"><span class="pre">psl</span></code>, which means that the data origin is the most <strong>p</strong>osterior, <strong>s</strong>uperior, <strong>l</strong>eft voxel.</p></li>
+<li><p>Which atlas you want to use (you can see which are available by running <code class="docutils literal notranslate"><span class="pre">brainglobe</span> <span class="pre">list</span></code>). In this case, we want to use a mouse atlas (as that’s what our data is), and we’ll use the 10μm version of the <a class="reference external" href="https://mouse.brain-map.org/static/atlas">Allen Mouse Brain Atlas</a>.</p></li>
 </ul>
 <p>Now you’re ready to start <a class="reference internal" href="running-cellfinder.html"><span class="doc std std-doc">Running cellfinder</span></a>.</p>
 </section>
@@ -640,7 +626,7 @@ case, we want to use a mouse atlas (as that’s what our data is), and we’ll u
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Whole brain cell detection and registration with the cellfinder command line tool</p>
+        <p class="prev-next-title">Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> command line tool</p>
       </div>
     </a>
     <a class="right-next"

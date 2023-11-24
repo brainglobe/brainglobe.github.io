@@ -9,4 +9,3 @@ output-files
 training/index
 docker
 ```
-

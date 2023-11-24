@@ -501,12 +501,12 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="conventions.html">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="new_releases.html">Publishing new releases</a></li>
-<li class="toctree-l2"><a class="reference external" href="https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="repositories/cellfinder-core/index.html">cellfinder-core</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="repositories/cellfinder-core/cell-detection.html">Cell detection</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="specific_repos.html">Specific Repository Developer Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="repositories/brainglobe-workflows/index.html">brainglobe-workflows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="repositories/cellfinder-core/index.html">cellfinder-core</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="repositories/cellfinder/index.html">cellfinder</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../roadmaps/index.html">Roadmaps</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -516,6 +516,7 @@ document.write(`
 <li class="toctree-l1 has-children"><a class="reference internal" href="../releases/index.html">Releases</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../releases/v1/index.html">BrainGlobe version 1 overview</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../releases/v1/brainreg.html">Version 1: changes to registration and segmentation tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../releases/v1/cellfinder-migration.html">Version 1: Cellfinder migration and <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -590,15 +591,15 @@ The best place for questions about contributing is probably
 the <a class="reference external" href="https://brainglobe.zulipchat.com/">BrainGlobe Zulip chat</a>.</p>
 <p>If for any reason, you’d rather not reach out in public, feel free to send a direct message on Zulip
 to <a class="reference external" href="https://github.com/adamltyson">Adam Tyson</a>, one of the core developers.</p>
+<p>Some of our tools have additional information about how data files are organised, where user caches are placed, and similar.
+You can view these repositories and the relevant information by heading to the <a class="reference internal" href="specific_repos.html"><span class="std std-doc">specific repository developer docs page</span></a>.</p>
 </section>
 <section id="to-contribute-a-new-atlas">
 <h2>To contribute a new atlas<a class="headerlink" href="#to-contribute-a-new-atlas" title="Link to this heading">#</a></h2>
 <p>To add a new BrainGlobe atlas, please see the guide <a class="reference internal" href="../../documentation/bg-atlasapi/adding-a-new-atlas.html"><span class="doc std std-doc">here</span></a>.</p>
 </section>
-<section id="to-contribute-code">
-<h2>To contribute code<a class="headerlink" href="#to-contribute-code" title="Link to this heading">#</a></h2>
 <section id="creating-a-development-environment">
-<h3>Creating a development environment<a class="headerlink" href="#creating-a-development-environment" title="Link to this heading">#</a></h3>
+<h2>Creating a development environment<a class="headerlink" href="#creating-a-development-environment" title="Link to this heading">#</a></h2>
 <p>It is recommended to use <code class="docutils literal notranslate"><span class="pre">conda</span></code> to install a development environment for
 BrainGlobe projects. Once you have <code class="docutils literal notranslate"><span class="pre">conda</span></code> installed, the following commands
 will create and activate a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment with the requirements needed
@@ -621,7 +622,6 @@ GitHub repository, and then run</p>
 </div>
 <p>from inside the repository. This will install the package, its dependencies,
 and its development dependencies.</p>
-</section>
 </section>
 <section id="pull-requests">
 <h2>Pull requests<a class="headerlink" href="#pull-requests" title="Link to this heading">#</a></h2>
@@ -670,16 +670,8 @@ structure mostly mirrors the rendered website. To edit a page, please:</p>
 <li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="new_releases.html">Publishing new releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="specific_repos.html">Specific Repository Developer Documentation</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a></li>
-</ul>
-</div>
-</section>
-<section id="specific-repository-information">
-<h2>Specific repository information<a class="headerlink" href="#specific-repository-information" title="Link to this heading">#</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="repositories/cellfinder-core/index.html">cellfinder-core</a></li>
-<li class="toctree-l1"><a class="reference internal" href="repositories/cellfinder/index.html">cellfinder</a></li>
 </ul>
 </div>
 </section>
@@ -734,17 +726,13 @@ structure mostly mirrors the rendered website. To edit a page, please:</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-contribute-a-new-atlas">To contribute a new atlas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-contribute-code">To contribute code</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-development-environment">Creating a development environment</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-development-environment">Creating a development environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-requests">Pull requests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-improve-the-documentation">To improve the documentation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#editing-the-documentation">Editing the documentation</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-information">Further information</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-repository-information">Specific repository information</a></li>
 </ul>
   </nav></div>
 
