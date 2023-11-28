@@ -32,7 +32,7 @@ On Silicon Macs you may have to `conda install hdf5` first for the installation 
 9. Navigate to where you want to draw your region of interest.
 10. Choose a brush size (top left box).
 11. Make sure painting mode is activated (by selecting the paintbrush icon, top left). You can go back to the navigation mode by selecting the magnifying glass.
-12. Colour in your region that you want to segment by holding down the left mouse button, ensuring that you make a solid object. For 3D structures, paint across several slices. You can change slice using the slider at the bottom of the screen.
+12. Colour in your region that you want to segment by holding down the left mouse button, ensuring that you make a solid object. For 3D structures, set `n edit dim` to `3` to paint a sphere instead of a circle, or paint circles across several slices. You can change slice using the slider at the bottom of the screen.
 
 ![A brain region is coloured in](./images/brainglobe-segmentation/brainglobe-segmentation-painted-new-region.png)
 
