@@ -12,72 +12,32 @@ Most machines (including laptops) will be able to use most of the atlases, but s
 (such as the 10&mu;m mouse atlases) may need up to 50GB of RAM.
 
 # Installation
-:::{admonition} Installing the napari plugin
-:class: dropdown
-* [Make sure you have napari installed](https://napari.org/stable/tutorials/fundamentals/installation.html)
-* Install the cellfinder-napari plugin from within napari 
-* (`Plugins` -> `Install/Uninstall Package(s)`, choosing `cellfinder-napari`).)
-:::
 
-:::{admonition} Installing the cellfinder-core Python package
-:class: dropdown
+To use cellfinder, you will need to have Python on your machine.
+Your machine may already have Python installed, but we recommend installing miniconda.
+See [Using conda](/documentation/setting-up/conda) for details.
 
+## One-step installation
 
-## Installing Python
-Your machine may already have Python
-installed, but we recommend installing miniconda. See [Using conda](/documentation/setting-up/conda) for details.
-
-## Installing cellfinder
-```{hint}
-Remember to activate your conda environment before doing anything
-```
+The easiest way to install cellfinder is to install it via `brainglobe-workflows`.
+Once you have Python setup (and are working inside your virtual environment), you can use `pip` to install cellfinder:
 
 ```bash
-pip install cellfinder-core
-```
-:::
-
-:::{admonition} Installing the command line tool
-:class: dropdown
-
-```{hint}
-If you know what you're doing (and [your GPU is set up](/documentation/setting-up/gpu)), just run `pip install cellfinder`
+pip install brainglobe-workflows
 ```
 
+This will install the cellfinder command-line interface, as well as the `cellfinder` backend package that contains the napari plugin for visualisation, and the Python API.
 
-## Installing Python
+## Installing without the command-line-interface
 
-cellfinder is written in Python, and so needs a functional Python installation. Your machine may already have Python
-installed, but we recommend installing miniconda. See [Using conda](/documentation/setting-up/conda) for details.
+If you'd prefer not to install the command-line interface, you can instead install the `cellfinder` package directly.
+Make sure to install version `1.0.0` or later!
 
-```{caution}
-cellfinder should run on any type of Python installation, but if you don't use conda, 
-we may be limited in the support we can offer.
-```
-
-
-## Installing cellfinder
-```{hint}
-Remember to activate your conda environment before doing anything
-```
-
-###  Using pip
 ```bash
-pip install cellfinder[napari]
+pip install cellfinder[napari]>=1.0.0 # Run this if you want to install cellfinder and it's napari plugin
+pip install cellfinder>=1.0.0 # Run this if you only want the Python API
 ```
 
-To only install the command line tool with no GUI (e.g., to run cellfinder on an HPC cluster), just run:
+## Installing BrainGlobe Atlases
 
-```
-pip install cellfinder
-```
-:::
-
-:::{admonition} Installing the command line tool using docker
-:class: dropdown
-
-Please see the [guide to using cellfinder with docker](user-guide/command-line/docker.md)
-:::
-
-To install download BrainGlobe atlases in advance, please see the guide to
-[the BrainGlobe Atlas API command-line interface](/documentation/bg-atlasapi/usage/command-line-interface) for details.
+To install download BrainGlobe atlases in advance, please see the guide to [the BrainGlobe Atlas API command-line interface](/documentation/bg-atlasapi/usage/command-line-interface).
