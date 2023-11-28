@@ -1,6 +1,6 @@
 # Segmenting a 1D track
 
-In this tutorial, you will use the [brainglobe-segmentation](../documentation/brainglobe-segmentation/index.md) plugin for [napari](https://napari.org) to segment a 1D track, such as a fibre track, or a silicone probe track. As a prerequisite, you will need to have registered your data to an atlas [using `brainreg`](../documentation/brainreg/index.md) and know what folder you saved this in (your "`brainreg` output directory"). If you don't have this, please follow [our registration tutorial](./tutorial-whole-brain-registration.md) first.
+In this tutorial, you will use the [brainglobe-segmentation](../documentation/brainglobe-segmentation/index.md) plugin for [napari](https://napari.org) to segment a 1D track, such as a fibre track, or a silicon probe track. As a prerequisite, you will need to have registered your data to an atlas [using `brainreg`](../documentation/brainreg/index.md) and know what folder you saved this in (your "`brainreg` output directory"). If you don't have this, please follow [our registration tutorial](./tutorial-whole-brain-registration.md) first.
 
 The focus of this tutorial is simply to successfully register a single, straight 1D track. For more information about how to process silicon probe tracks, please see [Silicon probe tracking](/tutorials/silicon-probe-tracking). 
 
@@ -12,7 +12,7 @@ You will need `napari` installed on your computer - please follow [`napari`'s in
 2. Install `brainglobe-segmentation` by selecting `Plugins > Install/Uninstall plugins` and searching for `brainglobe-segmentation` in the searchbox. If it is not installed yet, click on the `Install` button.
 
 :::{caution}
-On Silicon Macs you may have to `conda install hdf5` first for the installation to be successful.
+On Silicon Macs you may have to run `conda install hdf5` on the command line (in your conda environment) first for the installation to be successful.
 :::
 
 3. Open the `brainglobe-segmentation` widget by selecting `Plugins > Region/track segmentation (brainglobe-segmentation)` in the napari menu bar near the top left of the window.
@@ -41,7 +41,7 @@ On Silicon Macs you may have to `conda install hdf5` first for the installation 
 Make sure you select the points in the order you wish them to be joined.
 :::
 
-12. (Optional) If the brain surface is damaged, you may not be able to trace perfectly from the surface. If you want to add an additional first point at the surface of the brain, click `Add surface points`. Selecting this option will add an additional point at the closest part of the brain surface to the first point, so that the track starts there.
+12. (Optional) If you want to add an additional first point exactly at the surface of the brain, click `Add surface points`. Selecting this option will add an additional point at the closest part of the brain surface (based on the registration) to the first point, so that the track starts there.
 13. Join the points using spline interpolation by clicking `Trace tracks`. You can change:
   * `Summarise` - Defaults to on, this will save a csv file, showing the brain area for each part of the interpolated track (determined by `Spline points` )
   * `Save tracing` - Defaults to off. This will save your segmentation layer at the same time as running the analysis
@@ -49,7 +49,7 @@ Make sure you select the points in the order you wish them to be joined.
   * `Fit degree` - What order spline fit to use (the default is 3, cubic)
   * `Spline smoothing` - How closely or not to fit the points (lower numbers fit more closely, for a less smooth interpolation)
   * `Spline points` - This doesn't affect the interpolation, but determines how many points are sampled from the interpolation (used for the summary)
-  * `Add surface points` - If the brain surface is damaged, you may not be able to trace perfectly from the surface. Selecting this option will add an additional point at the closest part of the brain surface to the first point, so that the track starts there.
+  * `Add surface points` - Selecting this option will add an additional point at the closest part of the brain surface to the first point, so that the track starts there.
 
 
 ![Segmenting a 1D track](./images/brainglobe-segmentation/brainglobe-segmentation-fitted-points.png)
