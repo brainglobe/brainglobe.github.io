@@ -84,7 +84,7 @@ To open the graphical user interface, open napari and then load the `brainglobe-
 [User guide](/documentation/brainglobe-segmentation/user-guide/index)).
 
 The `brainglobe-segmentation`graphical user interface opens and shows a set of tools.You can then load your brainreg output 
-directory, and follow the main brainglobe-segmentation instructions [here](/documentation/brainglobe-segmentation/user-guide/segmenting-1d-tracks) for 
+directory, and follow the main brainglobe-segmentation instructions [here](./segmenting-1d-tracks) for 
 segmenting a 1D track. Setting `Spline points` will determine how many times along the length of the track that 
 the brain region is sampled at. This can be used to determine the brain region for each recording site on your probe.
 
