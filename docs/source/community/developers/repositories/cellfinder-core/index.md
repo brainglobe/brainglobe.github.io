@@ -1,4 +1,4 @@
-# cellfinder-core
+# cellfinder.core
 
 ## Cell detection
 
@@ -12,12 +12,12 @@ Cell detection in cellfinder has three stages:
 
 #### 2D filtering
 
-Code can be found in `cellfinder_core/detect/filters/plane`.
+Code can be found in `cellfinder/core/detect/filters/plane`.
 Each plane of data is filtered independently, and in parallel across a number of processes.
 
 This part of processing performs two tasks:
 
-1. Applies a filter to enhance peaks in the data (``cellfinder_core/detect/filters/plane/classical_filter.py``).
+1. Applies a filter to enhance peaks in the data (``cellfinder/core/detect/filters/plane/classical_filter.py``).
    This consists of (in order)
     1. a median filter (`scipy.signal.medfilt2d`)
     2. a gaussian filter (`scipy.ndimage.gaussian_filter`)
@@ -38,7 +38,7 @@ Memory usage during 2D filtering, for each plane, is the following:
 
 #### 3D filtering
 
-Code can be found in `cellfinder_core/detect/filters/volume/ball_filter.py`.
+Code can be found in `cellfinder/core/detect/filters/volume/ball_filter.py`.
 Both this step and the structure detection step take place in the main `Python` process, with no parallelism. As the planes are processed in the 2D filtering step, they are passed to this step. When `ball_z_size` planes have been handed over, 3D filtering begins.
 
 The 3D filter stores a 3D array that has depth `ball_z_size`, and contains `ball_z_size` number of planes. This is a small 3D slice of the original data. A spherical kernel runs across the x, y dimensions, and where enough intensity overlaps with the spherical kernel the voxel at the centre of the kernel is marked as being part of a cell. The output of this step is the central plane of the array, with marked cells.
@@ -50,7 +50,7 @@ Memory usage information during 3D filtering:
 
 #### Structure detection
 
-Code can be found in `cellfinder_core/detect/filters/volume/structure_detection.py`.
+Code can be found in `cellfinder/core/detect/filters/volume/structure_detection.py`.
 This step takes the planes output from 3D filtering with marked cell voxels, and detects collections of voxels that are adjacent.
 
 Memory usage information during structure detection:
