@@ -1,16 +1,9 @@
 # Installing brainrender
 
-## `conda` Environment
-
-To install `brainrender`, we strongly recommend creating a `conda` environment and a [supported version of Python](/community/developers/conventions). Using [conda](/documentation/setting-up/conda) this can be created with:
-
-```bash
-conda create --name brainrender -y
-```
-
 ## Basic installation
 
-Installing `brainrender` is as simple as:
+To install `brainrender`, we strongly recommend [creating a `conda` environment](/documentation/setting-up/conda) and a [supported version of Python](/community/developers/conventions).
+Then, installing `brainrender` is as simple as:
 
 ```bash
 pip install brainrender
