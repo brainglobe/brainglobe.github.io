@@ -14,6 +14,10 @@ With newer versions of Python on Windows, you may need to run `conda install pys
 :::
 
 :::{caution}
+On Silicon Macs, you may need to run `conda install hdf5` before running `pip install`.
+:::
+
+:::{caution}
 You might get some error messages reporting conflicting version requirements for the `allensdk` package and a couple of 
 others. You can safely ignore these.
 :::
