@@ -1,24 +1,20 @@
 # Installing brainrender
 
-## Environment
-
-To install `brainrender`, you need a python environment with a Python 3.8. This may be a different version than you are 
-using for other software. Using [conda](/documentation/setting-up/conda) this can be created with:
-
-```bash
-conda create --name brainrender python=3.8 -y
-```
-
 ## Basic installation
 
-Installing `brainrender` is as simple as:
+To install `brainrender`, we strongly recommend [creating a `conda` environment](/documentation/setting-up/conda) and a [supported version of Python](/community/developers/conventions).
+Then, installing `brainrender` is as simple as:
 
 ```bash
 pip install brainrender
 ```
 
-:::{attention}
-Make sure to have your conda environment active when running `pip install`
+:::{caution}
+With newer versions of Python on Windows, you may need to run `conda install pyside2` before running `pip install`.
+:::
+
+:::{caution}
+On Silicon Macs, you may need to run `conda install hdf5` before running `pip install`.
 :::
 
 :::{caution}
@@ -27,7 +23,7 @@ others. You can safely ignore these.
 :::
 
 :::{hint}
-Note that some of `brainrender`'s more rarely used features may require the installation of additional packages.
+Note that some of `brainrender`'s more rarely used features may require the installation of additional packages. In particular, for exporting videos you will need to install [`ffmpeg`](https://ffmpeg.org/download.html).
 :::
 
 Once you have installed brainrender, dive right in with this 
