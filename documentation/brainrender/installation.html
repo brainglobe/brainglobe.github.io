@@ -666,23 +666,20 @@ document.write(`
                   
 <section class="tex2jax_ignore mathjax_ignore" id="installing-brainrender">
 <h1>Installing brainrender<a class="headerlink" href="#installing-brainrender" title="Link to this heading">#</a></h1>
-<section id="environment">
-<h2>Environment<a class="headerlink" href="#environment" title="Link to this heading">#</a></h2>
-<p>To install <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>, you need a python environment with a Python 3.8. This may be a different version than you are
-using for other software. Using <a class="reference internal" href="../setting-up/conda.html"><span class="doc std std-doc">conda</span></a> this can be created with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>brainrender<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8<span class="w"> </span>-y
-</pre></div>
-</div>
-</section>
 <section id="basic-installation">
 <h2>Basic installation<a class="headerlink" href="#basic-installation" title="Link to this heading">#</a></h2>
-<p>Installing <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> is as simple as:</p>
+<p>To install <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>, we strongly recommend <a class="reference internal" href="../setting-up/conda.html"><span class="doc std std-doc">creating a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment</span></a> and a <a class="reference internal" href="../../community/developers/conventions.html"><span class="doc std std-doc">supported version of Python</span></a>.
+Then, installing <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> is as simple as:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>brainrender
 </pre></div>
 </div>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>Make sure to have your conda environment active when running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code></p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>With newer versions of Python on Windows, you may need to run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">pyside2</span></code> before running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code>.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>On Silicon Macs, you may need to run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">hdf5</span></code> before running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code>.</p>
 </div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -691,7 +688,7 @@ others. You can safely ignore these.</p>
 </div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>Note that some of <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>’s more rarely used features may require the installation of additional packages.</p>
+<p>Note that some of <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>’s more rarely used features may require the installation of additional packages. In particular, for exporting videos you will need to install <a class="reference external" href="https://ffmpeg.org/download.html"><code class="docutils literal notranslate"><span class="pre">ffmpeg</span></code></a>.</p>
 </div>
 <p>Once you have installed brainrender, dive right in with this
 <a class="reference external" href="https://github.com/brainglobe/brainrender/blob/master/getting_started.ipynb">getting started example notebook!</a></p>
@@ -755,7 +752,6 @@ GitHub with:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment">Environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-installation">Basic installation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-installation">Advanced installation</a></li>
 </ul>
