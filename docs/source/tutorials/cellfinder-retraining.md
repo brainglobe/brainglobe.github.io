@@ -40,7 +40,7 @@ On Silicon Macs you may have to run `conda install hdf5` on the command line (in
 
 9. Ensure that the `Detected` layer is highlighted
 8. Save the detected cells by clicking `File > Save selected layer(s)`, choosing a directory and a filename ending 
-in `.xml` (e.g. `cells.xml`).
+in `.csv` (e.g. `cells.csv`).
 
 :::{hint}
 For more information about how to use the detection plugin to detect cells in your own data, please see 
