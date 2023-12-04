@@ -6,7 +6,7 @@ In this tutorial, you will use the [cellfinder](../documentation/cellfinder/inde
 The aim of this tutorial is to get cell detection up and running. The image we use here is very small and has some 
 artefacts. The results are not very good, but it should be enough to see the plugin working! When using cellfinder on 
 your own data, there are many parameters that can be 
-adjusted, and cellfinder will need to retrained for optimal performance. For more information, please see the full 
+adjusted, and cellfinder will need to be retrained for optimal performance. For more information, please see the full 
 [cellfinder documentation](../documentation/cellfinder/index).
 
 :::{note}
