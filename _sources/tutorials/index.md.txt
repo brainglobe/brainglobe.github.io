@@ -31,6 +31,20 @@ Manually segmenting a 1d track.
 :link-type: doc
 Manually segmenting a 3d structure
 :::
+
+:::{grid-item-card} {fas}`brain;sd-text-primary` 3D cell detection
+:img-bottom: images/cellfinder-detection-icon.png
+:link: cellfinder-detection
+:link-type: doc
+Detecting cells in 3D with cellfinder in napari
+:::
+
+:::{grid-item-card} {fas}`brain;sd-text-primary` Retraining cellfinder
+:img-bottom: images/cellfinder-retraining-icon.png
+:link: cellfinder-retraining
+:link-type: doc
+Retraining the cellfinder cell classification network in napari
+:::
 ::::
 
 ## Specific applications
@@ -70,6 +84,8 @@ visualise-atlas-napari
 tutorial-whole-brain-registration
 segmenting-1d-tracks
 segmenting-3d-structures
+cellfinder-detection
+cellfinder-retraining
 silicon-probe-tracking
 tracing-tracking
 cellfinder-cli/index

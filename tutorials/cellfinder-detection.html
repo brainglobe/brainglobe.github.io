@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Analyze and visualize bulk fluorescence tracing data &#8212; BrainGlobe</title>
+    <title>Detecting cells in 3D with cellfinder &#8212; BrainGlobe</title>
   
   
   
@@ -49,14 +49,14 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/tracing-tracking';</script>
-    <link rel="canonical" href="https://brainglobe.info/tutorials/tracing-tracking.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/cellfinder-detection';</script>
+    <link rel="canonical" href="https://brainglobe.info/tutorials/cellfinder-detection.html" />
     <link rel="icon" href="../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Whole brain cell detection and registration with the cellfinder command line tool" href="cellfinder-cli/index.html" />
-    <link rel="prev" title="Silicon probe tracking" href="silicon-probe-tracking.html" />
+    <link rel="next" title="Retraining the cellfinder classification network" href="cellfinder-retraining.html" />
+    <link rel="prev" title="Segmenting 2/3D structures" href="segmenting-3d-structures.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -333,10 +333,6 @@ document.write(`
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
-      <span class="fa-solid fa-outdent"></span>
-    </label>
-  
 </div>
 
     </nav>
@@ -509,10 +505,10 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="tutorial-whole-brain-registration.html">Registering a whole-brain image to an atlas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="segmenting-1d-tracks.html">Segmenting a 1D track</a></li>
 <li class="toctree-l1"><a class="reference internal" href="segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cellfinder-detection.html">Detecting cells in 3D with cellfinder</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Detecting cells in 3D with cellfinder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cellfinder-retraining.html">Retraining the cellfinder classification network</a></li>
 <li class="toctree-l1"><a class="reference internal" href="silicon-probe-tracking.html">Silicon probe tracking</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Analyze and visualize bulk fluorescence tracing data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracing-tracking.html">Analyze and visualize bulk fluorescence tracing data</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="cellfinder-cli/index.html">Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="cellfinder-cli/setting-up.html">Setting up</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cellfinder-cli/running-cellfinder.html">Running cellfinder</a></li>
@@ -561,7 +557,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Analyze and...</li>
+    <li class="breadcrumb-item active" aria-current="page">Detecting...</li>
   </ul>
 </nav>
 </div>
@@ -578,101 +574,53 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-<section class="tex2jax_ignore mathjax_ignore" id="analyze-and-visualize-bulk-fluorescence-tracing-data">
-<h1>Analyze and visualize bulk fluorescence tracing data<a class="headerlink" href="#analyze-and-visualize-bulk-fluorescence-tracing-data" title="Link to this heading">#</a></h1>
-<p>Analysis and visualization of tracing data (e.g., anterograde or retrograde) in brains imaged post-hoc in a standard
-coordinate space.</p>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>The primary objective of tracing experiments in neuroscience is to elucidate the pathway specificity and establish
-connection relationships between neurons and various brain areas. By understanding these intricate connections, we can
-gain a deeper understanding of how the brain generates behavior. Therefore, it becomes imperative to quantify
-bulk-labeled axonal projections in images, as this process serves as a fundamental step in unraveling the intricate
-web of neuronal connectivity and its corresponding functionality.</p>
-<p>Here we present a tool for the analysis of tracing axonal projections in post-hoc brain imaging data within a
-common coordinate space. This tool is integrated into brainreg, within the Brainglobe suite of
-computational neuroanatomy tools. Leveraging existing segmentation plugins available in napari, our
-tool imports and integrates these segmentation results into BrainGlobe, allowing for
-analysis of bulk axonal projections within the context of an anatomical atlas.</p>
-</section>
-<section id="before-tracing-bulk-axonal-tracks">
-<h2>Before tracing bulk axonal tracks<a class="headerlink" href="#before-tracing-bulk-axonal-tracks" title="Link to this heading">#</a></h2>
-<p><strong>Tracing Compound Selection:</strong> Choose an appropriate tracing compound (or multiple ones if you plan to use different
-colors) based on the specific requirements of your experiment.</p>
-<p><strong>Injection:</strong> Carefully inject the tracing compound into the target region of the brain. The compound should be injected
-in a controlled manner to ensure accurate delivery and minimize damage to surrounding tissue.</p>
-<p><strong>Incubation:</strong> Allow sufficient time for the tracing compound to be taken up by neurons and transported along the axonal
-projections. The duration of the incubation period can vary depending on the specific compound and experimental requirements.</p>
-<p><strong>Tissue Processing:</strong> Sacrifice the animal and extract the brain for further processing. The animal is anaesthetised and
-perfused with 4% PFA following standard perfusion protocols. The brain is carefully extracted and left in 4% PFA overnight.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="detecting-cells-in-3d-with-cellfinder">
+<h1>Detecting cells in 3D with cellfinder<a class="headerlink" href="#detecting-cells-in-3d-with-cellfinder" title="Link to this heading">#</a></h1>
+<p>In this tutorial, you will use the <a class="reference internal" href="../documentation/cellfinder/index.html"><span class="doc std std-doc">cellfinder</span></a> plugin for <a class="reference external" href="https://napari.org">napari</a> to detect cells in a 3D image.</p>
+<p>The aim of this tutorial is to get cell detection up and running. The image we use here is very small and has some
+artefacts. The results are not very good, but it should be enough to see the plugin working! When using cellfinder on
+your own data, there are many parameters that can be
+adjusted, and cellfinder will need to be retrained for optimal performance. For more information, please see the full
+<a class="reference internal" href="../documentation/cellfinder/index.html"><span class="doc std std-doc">cellfinder documentation</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To ensure high quality image registration, it is essential that the brain is properly perfused in order to decrease
-the autofluorescence of blood vessels. It is also important that the brain is extracted from the skull carefully in
-order to avoid tissue damage.</p>
+<p>You will need <code class="docutils literal notranslate"><span class="pre">napari</span></code> installed on your computer - please follow
+<a class="reference external" href="https://napari.org/stable/tutorials/fundamentals/installation.html"><code class="docutils literal notranslate"><span class="pre">napari</span></code>’s installation instructions</a> to do so
+(including their recommendation to use a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment).</p>
 </div>
-<p>The brain is then thoroughly washed with 100mM PBS and imaged (e.g. by
-<a class="reference external" href="https://sainsburywellcomecentre.github.io/OpenSerialSection/acquisition/">Serial Section 2-Photon Tomography</a>). Image channels
-as needed according to number of tracing compounds (and extra channel is acquired as the background fluorescence only).</p>
-</section>
-<section id="brain-registration-to-an-atlas">
-<h2>Brain registration to an atlas<a class="headerlink" href="#brain-registration-to-an-atlas" title="Link to this heading">#</a></h2>
-<p>To track the bulk axonal projections into the standard space, the brain must first be registered to an atlas using brainreg.</p>
-<p>Before registration, brainreg needs to be installed, please follow the instructions
-<a class="reference internal" href="../documentation/brainreg/installation.html"><span class="doc std std-doc">here</span></a>. Once installed, we can proceed to register the imaged brain.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Make sure you activate your conda environment before starting</p>
-</div>
-<p>You will need:</p>
 <ol class="arabic simple">
-<li><p>The path where the brain image stack (signal channels) is located</p></li>
-<li><p>The path where the brain stack (background fluorescence channel) is located</p></li>
-<li><p>The path where you want the registration result to be saved</p></li>
-<li><p>The resolution at which the brain was imaged</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">napari</span></code>.</p></li>
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> by selecting <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">Install/Uninstall</span> <span class="pre">plugins</span></code> and searching for <code class="docutils literal notranslate"><span class="pre">cellfinder-napari</span></code> in the searchbox. If it is not installed yet, click on the <code class="docutils literal notranslate"><span class="pre">Install</span></code> button.</p></li>
 </ol>
-<p><strong>To register your brain to an atlas, please follow the instructions for brainreg (using the napari plugin)
-<a class="reference internal" href="../documentation/brainreg/user-guide/brainreg-napari.html"><span class="doc std std-doc">here</span></a></strong>.</p>
-<p>A new output directory has been created, which contains the registered brain. We are now ready to use external plugins
-to find a mask that covers the axonal projections.</p>
-</section>
-<section id="bulk-axonal-track-detection">
-<h2>Bulk axonal track detection<a class="headerlink" href="#bulk-axonal-track-detection" title="Link to this heading">#</a></h2>
-<p>Before we can proceed to register the axonal tracks in the imaged brain we need to install additional Napari plugins.
-In this tutorial we will use the
-<a class="reference external" href="https://www.napari-hub.org/plugins/napari-simpleitk-image-processing"><code class="docutils literal notranslate"><span class="pre">napari-simpleitk-image-processing</span></code></a> plugin. This
-plugin can either be installed via the <a class="reference external" href="https://napari.org/stable/plugins/find_and_install_plugin.html">napari plugin menu</a>
-or directly from PyPI on the command-line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">napari</span><span class="o">-</span><span class="n">simpleitk</span><span class="o">-</span><span class="n">image</span><span class="o">-</span><span class="n">processing</span>
-</pre></div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This may take a while due to the various dependencies being installed.</p>
+<p>On Silicon Macs you may have to run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">hdf5</span></code> on the command line (in your conda environment) first for the installation to be successful.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Alternative plugins can be used to generate the segmentation mask for the area of interest. In this case, we will use
-the Otsu<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> thresholding method from <code class="docutils literal notranslate"><span class="pre">napari-simpleitk-image-processing</span></code> an example.</p>
+<ol class="arabic simple" start="3">
+<li><p>Open the cell detection widget by selecting <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">cellfinder-napari</span> <span class="pre">&gt;</span> <span class="pre">Cell</span> <span class="pre">detection</span></code> in the napari menu bar near the top left of the window.
+<img alt="cellfinder detection widget" src="../_images/cellfinder-napari-detection.png" /></p></li>
+</ol>
+<p><strong>The cell detection widget appears on the right-hand side of the window.</strong></p>
+<ol class="arabic simple" start="4">
+<li><p>Load some sample data <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open</span> <span class="pre">sample</span> <span class="pre">&gt;</span> <span class="pre">Sample</span> <span class="pre">data</span> <span class="pre">(cellfinder-napari)</span></code>. This will open a small two-channel 3D image.</p></li>
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">signal</span> <span class="pre">image</span></code> to <code class="docutils literal notranslate"><span class="pre">Signal</span></code></p></li>
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">background</span> <span class="pre">image</span></code> to <code class="docutils literal notranslate"><span class="pre">Background</span></code></p></li>
+<li><p>Ensure that <code class="docutils literal notranslate"><span class="pre">Voxel</span> <span class="pre">size</span> <span class="pre">(z)</span></code> is set to <code class="docutils literal notranslate"><span class="pre">5.00</span></code>, <code class="docutils literal notranslate"><span class="pre">Voxel</span> <span class="pre">size</span> <span class="pre">(y)</span></code> is set to <code class="docutils literal notranslate"><span class="pre">2.00</span></code>, and <code class="docutils literal notranslate"><span class="pre">Voxel</span> <span class="pre">size</span> <span class="pre">(x)</span></code> is set to <code class="docutils literal notranslate"><span class="pre">2.00</span></code>.</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Run</span></code> (you may need to scroll down)</p></li>
+</ol>
+<p><img alt="Detected cells" src="../_images/cellfinder-napari-detected-cells.png" />
+<strong>Detected cells are highlighted by yellow circles.</strong></p>
+<ol class="arabic simple" start="9">
+<li><p>Ensure that the <code class="docutils literal notranslate"><span class="pre">Detected</span></code> layer is highlighted</p></li>
+<li><p>Save the detected cells by clicking <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">selected</span> <span class="pre">layer(s)</span></code>, choosing a directory and a filename ending
+in <code class="docutils literal notranslate"><span class="pre">.xml</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">cells.xml</span></code>).</p></li>
+</ol>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>For more information about how to use the detection plugin to detect cells in your own data, please see
+<a class="reference internal" href="../documentation/cellfinder/user-guide/napari-plugin/cell-detection.html"><span class="doc std std-doc">the full cell detection guide</span></a>.</p>
 </div>
-<p>To use Otsu’s method from the <code class="docutils literal notranslate"><span class="pre">napari-simpleitk-image-processing</span></code> plugin, follow these steps:</p>
-<ul class="simple">
-<li><p>Open napari</p></li>
-<li><p><a class="reference internal" href="../documentation/brainglobe-segmentation/user-guide/index.html"><span class="doc std std-doc">Load your data using the <code class="docutils literal notranslate"><span class="pre">brainglobe-segmentation</span></code> plugin</span></a></p></li>
-<li><p>Choose the Otsu thresholding option from the plugin menu:</p></li>
-</ul>
-<a class="reference internal image-reference" href="../_images/choose-otsu.png"><img alt="../_images/choose-otsu.png" src="../_images/choose-otsu.png" style="width: 450px;" /></a>
-<ul class="simple">
-<li><p>Select the image layer to be thresholded and click <code class="docutils literal notranslate"><span class="pre">run</span></code>. This will automatically segment your image using Otsu’s
-algorithm. This will create a new labels layer.</p></li>
-<li><p>Follow the instructions for <a class="reference internal" href="segmenting-3d-structures.html"><span class="doc std std-doc">2/3D region analysis</span></a>
-to analyse the distribution of the thresholded voxels.</p></li>
-</ul>
-<p><strong>Instructions by</strong> <a class="reference external" href="https://www.sainsburywellcome.org/web/people/sara-mederos"><strong>Sara Mederos</strong></a>.</p>
-<hr class="footnotes docutils" />
-<aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id2" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>Otsu (1979) IEEE Transactions on Systems, Man and Cybernetics. Vol SMC-9, No 1, p62</p>
-</aside>
-</aside>
-</section>
 </section>
 
 <div class="section ablog__blog_comments">
@@ -690,20 +638,20 @@ to analyse the distribution of the thresholded voxels.</p></li>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="silicon-probe-tracking.html"
+       href="segmenting-3d-structures.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Silicon probe tracking</p>
+        <p class="prev-next-title">Segmenting 2/3D structures</p>
       </div>
     </a>
     <a class="right-next"
-       href="cellfinder-cli/index.html"
+       href="cellfinder-retraining.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> command line tool</p>
+        <p class="prev-next-title">Retraining the cellfinder classification network</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -713,24 +661,6 @@ to analyse the distribution of the thresholded voxels.</p></li>
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-tracing-bulk-axonal-tracks">Before tracing bulk axonal tracks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-registration-to-an-atlas">Brain registration to an atlas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bulk-axonal-track-detection">Bulk axonal track detection</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
