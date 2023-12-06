@@ -20,7 +20,7 @@ You will need `napari` installed on your computer - please follow
 1. Open `napari`.
 2. Open the curation widget by selecting `Plugins > cellfinder-napari > Curation` in the napari menu bar near the top left of the window.
 3. Load some sample data `File > Open sample > Sample data (cellfinder-napari)`. This will open the same small two-channel 3D image from the detection tutorial.
-4. Click `Files > Open File(s)` and select the `cells.xml` from the curation tutorial. If napari prompts you to choose a plugin, choose `brainglobe-napari-io`.
+4. Click `Files > Open File(s)` and select the `cells.xml` from the detection tutorial. If napari prompts you to choose a plugin, choose `brainglobe-napari-io`.
 5. Set the `signal image` to `Signal`
 6. Set the `background image` to `Background`
 7. Click `Add training data layers`
