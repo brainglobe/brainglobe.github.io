@@ -69,7 +69,7 @@ This atlas is only available at 20μm resolution:
 ### [3D Edge-Aware Refined Atlases Derived from the Allen Developing Mouse Brain Atlases](https://doi.org/10.7554/eLife.61408)
 These atlases from [Young et al. (2021)](https://doi.org/10.7554/eLife.61408) are 3D reconstructions of the eight 
 developmental stages from the 
-[Allen Developing Mouse Brain Atlas](https://help.brain-map.org/display/atlasviewer/Allen+Developing+Mouse+Brain+Atlas). 
+[Allen Developing Mouse Brain Atlas](https://developingmouse.brain-map.org/). 
 This allows them to be used in automated 3D registration pipelines. 
 
 These atlases vary slightly, as the E11.5, E13.5 and E15.5 atlases contain the complete embryo. The other atlases
@@ -103,7 +103,7 @@ Available versions:
 
 ### [3D version of the Allen mouse spinal cord atlas](https://doi.org/10.1101/2021.05.06.443008)
 This atlas from [Fiederling et al. (2021)](https://doi.org/10.1101/2021.05.06.443008) is a 3D reconstruction of the 
-[Allen Spinal Cord Atlas](https://help.brain-map.org/display/atlasviewer/Mouse+Spinal+Cord+Reference+Atlases).
+[Allen Spinal Cord Atlas](https://mousespinal.brain-map.org/).
 
 This atlas is only available at a single (20 x 10 x 10μm resolution):
 * `allen_cord_20um`
