@@ -14,7 +14,7 @@ Previously, there were three tools with the prefix `brainreg` ("brain registrati
 
 - `brainreg` was the core Python package that contained the functional code for performing registration of an atlas to a sample image (sequence).
 - `brainreg-napari` provided a plugin to perform the registration steps interactively through napari. It depended on `brainreg` for the core functionality.
-- `brainreg-segment` was a companion to `brainreg` that allowed for manual segmentation of regions/objects within the brain. However it was not necessarily involved with the registration process itself.
+- `brainreg-segment` was a companion to `brainreg` that allowed for segmentation of regions/objects within the brain. However it was not necessarily involved with the registration process itself.
 
 This release sees `brainreg` come bundled with its napari plugin as an optional package extra, rather than requiring users to install the two packages separately.
 Consequentially, `brainreg-napari` has been retired; we recommend you uninstall this package from your environments when you update.

@@ -53,8 +53,8 @@ def clean_configure_segmentation_widget(tmp_path, standard_size_viewer, take_vie
 
         tmp_input_dir = tmp_path / "brainreg_output"
         shutil.copytree(brainreg_dir, tmp_input_dir)
-        shutil.rmtree(brainreg_dir/"manual_segmentation"/"atlas_space", ignore_errors=True)
-        shutil.rmtree(brainreg_dir/"manual_segmentation"/"sample_space", ignore_errors=True)
+        shutil.rmtree(brainreg_dir/"segmentation"/"atlas_space", ignore_errors=True)
+        shutil.rmtree(brainreg_dir/"segmentation"/"sample_space", ignore_errors=True)
 
         segmentation_widget.atlas_space = True
         segmentation_widget.plugin = (
@@ -62,7 +62,7 @@ def clean_configure_segmentation_widget(tmp_path, standard_size_viewer, take_vie
         )
         segmentation_widget.directory = Path(tmp_input_dir)
         segmentation_widget.load_brainreg_directory()
-        # delete manual segmentation data to ensure it's saved correctly in tests
+        # delete segmentation data to ensure it's saved correctly in tests
         shutil.rmtree(segmentation_widget.paths.main_directory)
         viewer.layers['Registered image'].contrast_limits=(0, 600)
         
