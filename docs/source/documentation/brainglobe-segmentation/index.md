@@ -1,7 +1,7 @@
 # brainglobe-segmentation
 
 
-brainglobe-segmentation is a companion to [brainreg](../brainreg/index) allowing manual segmentation of regions/objects 
+brainglobe-segmentation is a companion to [brainreg](../brainreg/index) allowing segmentation of regions/objects 
 within the brain (e.g. injection sites, probes etc.) allowing for automated analysis of brain region distribution, 
 and visualisation (e.g. in [brainrender](../brainrender/index)).
 
