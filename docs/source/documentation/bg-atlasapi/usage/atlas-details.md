@@ -105,7 +105,7 @@ Available versions:
 This atlas from [Fiederling et al. (2021)](https://doi.org/10.1101/2021.05.06.443008) is a 3D reconstruction of the 
 [Allen Spinal Cord Atlas](https://mousespinal.brain-map.org/).
 
-This atlas is only available at a single (20 x 10 x 10μm resolution):
+This atlas is only available at a single (20 x 10 x 10μm) resolution:
 * `allen_cord_20um`
 
 ### [Smoothed version of the Kim et al. mouse reference atlas](https://doi.org/10.1016/j.celrep.2014.12.014)
