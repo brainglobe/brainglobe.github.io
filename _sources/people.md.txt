@@ -1,23 +1,22 @@
-# Contributors
-The BrainGlobe Initiative is only possible due to the hard work of many, many people. In no particular order:
+# People
+## Leadership
+The BrainGlobe Initative was originally established in the labs of 
+[Troy Margrie](https://www.sainsburywellcome.org/web/groups/margrie-lab),
+[Tiago Branco](https://www.sainsburywellcome.org/web/groups/branco-lab) and [Ruben Portugues](https://portugueslab.com/) 
+by [Adam Tyson](https://github.com/adamltyson), [Federico Claudi](https://github.com/FedeClaudi) and 
+[Luigi Petrucco](https://github.com/vigji). 
 
-::::{grid} 2 4 5 7
+Development is now led by the [Neuroinformatics Unit](https://neuroinformatics.dev/) at the 
+[Sainsbury Wellcome Centre](https://www.sainsburywellcome.org/web/) by [Adam Tyson](https://github.com/adamltyson) and 
+[Alessandro Felder](https://github.com/alessandrofelder). The current active core development team can be 
+found [here](https://github.com/orgs/brainglobe/teams/active-devs).
+
+## Contributors
+The BrainGlobe Initative is a community effort and is only possible due to the hard work of many, many people. 
+In no particular order:
+
+::::{grid} 2 4 5 5
 :gutter: 1
-
-:::{grid-item-card} Federico Claudi
-:img-bottom: https://avatars.githubusercontent.com/u/17436313?v=4?s=10
-:link: https://github.com/FedeClaudi
-:::
-
-:::{grid-item-card} Luigi Petrucco
-:img-bottom: https://avatars.githubusercontent.com/u/10400212?v=4?s=10
-:link: https://github.com/vigji
-:::
-
-:::{grid-item-card} Adam Tyson
-:img-bottom: https://avatars.githubusercontent.com/u/13147259?v=4?s=10
-:link: https://github.com/adamltyson
-:::
 
 :::{grid-item-card} Christian Niedworok
 :img-bottom: https://avatars.githubusercontent.com/u/7861911?v=4?s=10
@@ -27,21 +26,6 @@ The BrainGlobe Initiative is only possible due to the hard work of many, many pe
 :::{grid-item-card} Charly Rousseau
 :img-bottom: https://avatars.githubusercontent.com/u/13150960?v=4?
 :link: https://github.com/crousseau
-:::
-
-:::{grid-item-card} Troy Margrie
-:img-bottom: https://avatars.githubusercontent.com/u/90783682?v=4?
-:link: https://github.com/troymargrie
-:::
-
-:::{grid-item-card} Tiago Branco
-:img-bottom: https://avatars.githubusercontent.com/u/4710396?v=4?
-:link: https://github.com/ineuron
-:::
-
-:::{grid-item-card} Ruben Portugues
-:img-bottom: https://avatars.githubusercontent.com/u/25010485?v=4?
-:link: https://github.com/portugueslab
 :::
 
 :::{grid-item-card} Horst Obenhaus
@@ -77,6 +61,36 @@ The BrainGlobe Initiative is only possible due to the hard work of many, many pe
 :::{grid-item-card} Alessandro Felder
 :img-bottom: https://avatars.githubusercontent.com/u/10500965?v=4?
 :link: https://github.com/alessandrofelder
+:::
+
+:::{grid-item-card} Federico Claudi
+:img-bottom: https://avatars.githubusercontent.com/u/17436313?v=4?s=10
+:link: https://github.com/FedeClaudi
+:::
+
+:::{grid-item-card} Luigi Petrucco
+:img-bottom: https://avatars.githubusercontent.com/u/10400212?v=4?s=10
+:link: https://github.com/vigji
+:::
+
+:::{grid-item-card} Adam Tyson
+:img-bottom: https://avatars.githubusercontent.com/u/13147259?v=4?s=10
+:link: https://github.com/adamltyson
+:::
+
+:::{grid-item-card} Troy Margrie
+:img-bottom: https://avatars.githubusercontent.com/u/90783682?v=4?
+:link: https://github.com/troymargrie
+:::
+
+:::{grid-item-card} Tiago Branco
+:img-bottom: https://avatars.githubusercontent.com/u/4710396?v=4?
+:link: https://github.com/ineuron
+:::
+
+:::{grid-item-card} Ruben Portugues
+:img-bottom: https://avatars.githubusercontent.com/u/25010485?v=4?
+:link: https://github.com/portugueslab
 :::
 
 :::{grid-item-card} Joe Ziminski

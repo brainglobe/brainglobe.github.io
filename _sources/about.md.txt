@@ -75,11 +75,10 @@ develop frameworks to facilitate collaboration. Our key future aims are:
 
 ```{toctree}
 :maxdepth: 1
+people
 contact
 publications
 media
-contributors
-governance-model
 funders
 ```
 
