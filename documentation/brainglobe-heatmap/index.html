@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>BrainGlobe Atlas API (bg-atlasapi) &#8212; BrainGlobe</title>
+    <title>brainglobe-heatmap &#8212; BrainGlobe</title>
   
   
   
@@ -49,14 +49,14 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/bg-atlasapi/index';</script>
-    <link rel="canonical" href="https://brainglobe.info/documentation/bg-atlasapi/index.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/brainglobe-heatmap/index';</script>
+    <link rel="canonical" href="https://brainglobe.info/documentation/brainglobe-heatmap/index.html" />
     <link rel="icon" href="../../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Atlas details" href="usage/atlas-details.html" />
-    <link rel="prev" title="Image space definition" href="../setting-up/image-definition.html" />
+    <link rel="next" title="cellfinder" href="../cellfinder/index.html" />
+    <link rel="prev" title="Videos, animations and exporting to html" href="../brainrender/usage/videos-animations-and-exporting-to-html.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -510,13 +510,13 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../setting-up/image-definition.html">Image space definition</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">BrainGlobe Atlas API (bg-atlasapi)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="usage/atlas-details.html">Atlas details</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../bg-atlasapi/index.html">BrainGlobe Atlas API (bg-atlasapi)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../bg-atlasapi/usage/atlas-details.html">Atlas details</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="usage/python-api.html">Python API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage/command-line-interface.html">Command line interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage/using-the-files-directly.html">Using the files directly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adding-a-new-atlas.html">Adding a new atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bg-atlasapi/usage/python-api.html">Python API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bg-atlasapi/usage/command-line-interface.html">Command line interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bg-atlasapi/usage/using-the-files-directly.html">Using the files directly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bg-atlasapi/adding-a-new-atlas.html">Adding a new atlas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../bg-space/index.html">bg-space</a></li>
@@ -554,7 +554,7 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../brainglobe-heatmap/index.html">brainglobe-heatmap</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">brainglobe-heatmap</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cellfinder/index.html">cellfinder</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cellfinder/installation.html">Requirements</a></li>
 
@@ -645,7 +645,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Documentation</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">BrainGlobe...</li>
+    <li class="breadcrumb-item active" aria-current="page">brainglobe-heatmap</li>
   </ul>
 </nav>
 </div>
@@ -662,76 +662,145 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-<section class="tex2jax_ignore mathjax_ignore" id="brainglobe-atlas-api-bg-atlasapi">
-<h1>BrainGlobe Atlas API (bg-atlasapi)<a class="headerlink" href="#brainglobe-atlas-api-bg-atlasapi" title="Link to this heading">#</a></h1>
-<p>Many excellent brain atlases exist for different species. Some of them have an API (application programming interface)
-to allow users to interact with the data programmatically (e.g. the excellent
-<a class="reference external" href="https://portal.brain-map.org">Allen Mouse Brain Atlas</a>), but many do not, and there is no consistent way to process
-data from multiple sources.</p>
-<p>The brainglobe atlas API (BG-AtlasAPI) deals with this problem by providing a common interface for programmers to download and process data from multiple sources.</p>
-<p>Each atlas consists of data files in a common format:</p>
-<ul class="simple">
-<li><p>A “reference” image of a brain (<code class="docutils literal notranslate"><span class="pre">.tiff</span></code>)</p></li>
-<li><p>An “annotation” image, with each brain region defined by a unique pixel value (<code class="docutils literal notranslate"><span class="pre">.tiff</span></code>)</p></li>
-<li><p>Meshes defining the surface of each brain region (<code class="docutils literal notranslate"><span class="pre">.obj</span></code>)</p></li>
-<li><p>A mapping of brain region pixel value to region name, and structure hierarchy (<code class="docutils literal notranslate"><span class="pre">.json</span></code>)</p></li>
-<li><p>Metadata defining the shape, orientation etc. of the data, and other info such as animal species and authors (<code class="docutils literal notranslate"><span class="pre">.json</span></code>)</p></li>
-</ul>
-<section id="atlases-available">
-<h2>Atlases available<a class="headerlink" href="#atlases-available" title="Link to this heading">#</a></h2>
-<p>A number of atlases are in development, but those available currently are:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://portal.brain-map.org/">Allen Mouse Brain Atlas</a> at 10, 25, 50 and 100 micron resolutions</p></li>
-<li><p><a class="reference external" href="https://portal.brain-map.org/">Allen Human Brain Atlas</a> at 100 micron resolution</p></li>
-<li><p><a class="reference external" href="http://fishatlas.neuro.mpg.de">Max Planck Zebrafish Brain Atlas</a> at 1 micron resolution</p></li>
-<li><p><a class="reference external" href="https://kimlab.io/brain-map/atlas/">Enhanced and Unified Mouse Brain Atlas</a> at 10, 25, 50 and 100 micron resolutions</p></li>
-<li><p><a class="reference external" href="https://doi.org/10.1016/j.celrep.2014.12.014">Smoothed version of the Kim et al. mouse reference atlas</a> at 10, 25, 50 and 100 micron resolutions</p></li>
-<li><p><a class="reference external" href="https://doi.org/10.1007/s12021-020-09490-8">Gubra’s LSFM mouse brain atlas</a> at 20 micron resolution</p></li>
-<li><p><a class="reference external" href="https://doi.org/10.1016/j.crmeth.2021.100074">3D version of the Allen mouse spinal cord atlas</a> at 20 x 10 x 10 micron resolution</p></li>
-<li><p><a class="reference external" href="https://doi.org/10.7554/eLife.69988">AZBA: A 3D Adult Zebrafish Brain Atlas</a> at 4 micron resolution</p></li>
-<li><p><a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2014.04.001">Waxholm Space atlas of the Sprague Dawley rat brain</a> at 39 micron resolution</p></li>
-<li><p><a class="reference external" href="https://doi.org/10.7554/eLife.61408">3D Edge-Aware Refined Atlases Derived from the Allen Developing Mouse Brain Atlases</a> (E13, E15, E18, P4, P14, P28 &amp; P56)</p></li>
-<li><p><a class="reference external" href="https://brainmaps.princeton.edu/2020/09/princeton-mouse-brain-atlas-links">Princeton Mouse Brain Atlas</a> at 20 micron resolution</p></li>
-<li><p><a class="reference external" href="https://data.mendeley.com/datasets/2svx788ddf/1">Kim Lab Developmental CCF (P56)</a> at 10 micron resolution with 8 reference images - STP, LSFM (iDISCO) and MRI (a0, adc, dwo, fa, MTR, T2)</p></li>
-</ul>
-</section>
+<section class="tex2jax_ignore mathjax_ignore" id="brainglobe-heatmap">
+<h1>brainglobe-heatmap<a class="headerlink" href="#brainglobe-heatmap" title="Link to this heading">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> allows you to create heatmaps, mapping scalar values for each brain region (e.g., number of labelled cells in each region) to a color and creating beautiful visualizations in 2D (using <a class="reference external" href="https://matplotlib.org/">matplotlib</a> or 3D (using <a class="reference external" href="https://brainglobe.info/documentation/brainrender/index.html">brainrender</a>).</p>
+<p><img alt="2D heatmap generated using matplotlib" src="https://raw.githubusercontent.com/brainglobe/brainglobe-heatmap/main/images/hm_2d.png" /></p>
+<p><strong>2D heatmap generated using matplotlib</strong></p>
+<p><img alt="3D heatmap generated using brainrender" src="https://raw.githubusercontent.com/brainglobe/brainglobe-heatmap/main/images/hm_3d.png" /></p>
+<p><strong>3D heatmap generated using brainrender</strong></p>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
-<p>BG-AtlasAPI works with Python &gt;3.6, and can be installed from PyPI with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>bg-atlasapi
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">brainglobe-heatmap</span></code></p>
+</section>
+<section id="user-guide">
+<h2>User guide<a class="headerlink" href="#user-guide" title="Link to this heading">#</a></h2>
+<p>The starting point for a heatmap visualization is a <code class="docutils literal notranslate"><span class="pre">dict</span></code> assigning scalar values to a set of brain regions (identified by their acronym).
+For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">regions</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>  <span class="c1"># scalar values for each region</span>
+        <span class="n">TH</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">RSP</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+        <span class="n">AI</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
+        <span class="n">SS</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">MO</span><span class="o">=</span><span class="mf">2.6</span><span class="p">,</span>
+        <span class="o">...</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> creates a brainrender 3D <code class="docutils literal notranslate"><span class="pre">Scene</span></code> with the given regions colored according the values in the dictionary.
+Next, to create visualizations like the ones shown above, the three dimensional scene needs to be <strong>sliced</strong> to expose
+the relevant parts.
+This is done by specifying the position and orientation of a <code class="docutils literal notranslate"><span class="pre">Plane</span></code> which cuts through the scene.</p>
+<p><img alt="" src="https://raw.githubusercontent.com/brainglobe/brainglobe-heatmap/main/images/planning_1.png" /></p>
+<p>The orientation is set by the direction of a <em>normal vector</em> specified by the user.</p>
+<p><img alt="" src="https://raw.githubusercontent.com/brainglobe/brainglobe-heatmap/main/images/planning_2.png" /></p>
+<p>Everything that is on the side opposite where the normal vector will be cut and discarded.
+To keep a section of the 3D brain, two planes with normal vectors facing in opposite directions are used:</p>
+<p><img alt="" src="https://raw.githubusercontent.com/brainglobe/brainglobe-heatmap/main/images/planning_3.png" /></p>
+<p>and everything in-between the two planes is kept as a slice.</p>
+<section id="slicing-plane-position">
+<h3>Slicing plane position<a class="headerlink" href="#slicing-plane-position" title="Link to this heading">#</a></h3>
+<p>Finding the right position and orientation to the plane can take some tweaking. <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> provides a <code class="docutils literal notranslate"><span class="pre">planner</span></code> class that makes the process easier by showing the position of the planes and how they intersect with the user provided regions (see image above).
+In <code class="docutils literal notranslate"><span class="pre">examples/plan.py</span></code> there’s an example showing how to use the <code class="docutils literal notranslate"><span class="pre">planner</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">brainglobe_heatmap</span> <span class="k">as</span> <span class="nn">bgh</span>
+
+
+<span class="n">planner</span> <span class="o">=</span> <span class="n">bgh</span><span class="o">.</span><span class="n">plan</span><span class="p">(</span>
+    <span class="n">regions</span><span class="p">,</span>
+    <span class="n">position</span><span class="o">=</span><span class="p">(</span>
+        <span class="mi">8000</span><span class="p">,</span>
+        <span class="mi">5000</span><span class="p">,</span>
+        <span class="mi">5000</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;frontal&quot;</span><span class="p">,</span>  <span class="c1"># orientation, or &#39;sagittal&#39;, or &#39;horizontal&#39; or a tuple (x,y,z)</span>
+    <span class="n">thickness</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span>  <span class="c1"># thickness of the slices used for rendering (in microns)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>The position of the center of the plane is given by a set of <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code> coordinates. The orientation can be specified by a string (<code class="docutils literal notranslate"><span class="pre">frontal</span></code>, <code class="docutils literal notranslate"><span class="pre">sagittal</span></code>, <code class="docutils literal notranslate"><span class="pre">horizontal</span></code>) which will result in a standard orthogonal slice, or by a vector <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code> with the orientation along the 3 axes.</p>
+<p>Whe using one of the named orientation, you don’t need to pass a whole set of <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code> coordinates for the plane center. A single value is sufficient as the other two won’t affect the plane position:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">bgh</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+    <span class="n">values</span><span class="p">,</span>
+    <span class="n">position</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;sagittal&quot;</span><span class="p">,</span>  <span class="c1"># &#39;frontal&#39; or &#39;sagittal&#39;, or &#39;horizontal&#39; or a tuple (x,y,z)</span>
+    <span class="n">thickness</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+    <span class="n">atlas_name</span><span class="o">=</span><span class="s2">&quot;allen_cord_20um&quot;</span><span class="p">,</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;2D&#39;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+</pre></div>
+</div>
+<p>Also, you can create a slice with a plane centered in the brain by passing <code class="docutils literal notranslate"><span class="pre">position=None</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">bgh</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+    <span class="n">values</span><span class="p">,</span>
+    <span class="n">position</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;sagittal&quot;</span><span class="p">,</span>  <span class="c1"># &#39;frontal&#39; or &#39;sagittal&#39;, or &#39;horizontal&#39; or a tuple (x,y,z)</span>
+    <span class="n">thickness</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+    <span class="n">atlas_name</span><span class="o">=</span><span class="s2">&quot;mpin_zfish_1um&quot;</span><span class="p">,</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;2D&#39;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;zebra fish heatmap&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;AP (μm)&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;DV (μm)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="usage/atlas-details.html">Atlas details</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage/atlas-details.html#available-atlases">Available atlases</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="usage/atlas-details.html#mouse">Mouse</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage/atlas-details.html#rat">Rat</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage/atlas-details.html#zebrafish">Zebrafish</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage/atlas-details.html#human">Human</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="usage/python-api.html">Python API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="usage/python-api.html#creating-a-brainglobeatlas-object">Creating a <code class="docutils literal notranslate"><span class="pre">BrainGlobeAtlas</span></code> object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage/python-api.html#using-the-atlas">Using the atlas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage/python-api.html#query-the-atlas">Query the atlas</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="usage/command-line-interface.html">Command line interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage/using-the-files-directly.html">Using the files directly</a></li>
-</ul>
+<section id="visualization">
+<h3>Visualization<a class="headerlink" href="#visualization" title="Link to this heading">#</a></h3>
+<p>Once happy with the position of the slicing planes, creating a visualization is as simple as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">bgh</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+    <span class="n">values</span><span class="p">,</span>
+    <span class="n">position</span><span class="o">=</span><span class="p">(</span>
+        <span class="mi">8000</span><span class="p">,</span>
+        <span class="mi">5000</span><span class="p">,</span>
+        <span class="mi">5000</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">,</span>  <span class="c1"># &#39;frontal&#39; or &#39;sagittal&#39;, or &#39;horizontal&#39; or a tuple (x,y,z)</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;horizontal view&quot;</span><span class="p">,</span>
+    <span class="n">vmin</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Red&#39;</span><span class="p">,</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;2D&quot;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">format</span></code> specifies if a 2D plot should be made (using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>) or a 3D rendering instead (using <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>). The <code class="docutils literal notranslate"><span class="pre">cmap</span></code> parameter specifies the colormap used and <code class="docutils literal notranslate"><span class="pre">vmin,</span> <span class="pre">vmax</span></code> the color range.</p>
+</section>
+<section id="regions-coordinates">
+<h3>Regions coordinates<a class="headerlink" href="#regions-coordinates" title="Link to this heading">#</a></h3>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> to get the coordinates of the 2D ‘slices’ (in the 2D plane’s coordinates system):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">regions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;TH&#39;</span><span class="p">,</span> <span class="s1">&#39;RSP&#39;</span><span class="p">,</span> <span class="s1">&#39;AI&#39;</span><span class="p">,</span> <span class="s1">&#39;SS&#39;</span><span class="p">,</span> <span class="s1">&#39;MO&#39;</span><span class="p">,</span> <span class="s1">&#39;PVZ&#39;</span><span class="p">,</span> <span class="s1">&#39;LZ&#39;</span><span class="p">,</span> <span class="s1">&#39;VIS&#39;</span><span class="p">,</span> <span class="s1">&#39;AUD&#39;</span><span class="p">,</span> <span class="s1">&#39;RHP&#39;</span><span class="p">,</span> <span class="s1">&#39;STR&#39;</span><span class="p">,</span> <span class="s1">&#39;CB&#39;</span><span class="p">,</span> <span class="s1">&#39;FRP&#39;</span><span class="p">,</span> <span class="s1">&#39;HIP&#39;</span><span class="p">,</span> <span class="s1">&#39;PA&#39;</span><span class="p">]</span>
+
+
+<span class="n">coordinates</span> <span class="o">=</span> <span class="n">bgh</span><span class="o">.</span><span class="n">get_plane_coordinates</span><span class="p">(</span>
+    <span class="n">regions</span><span class="p">,</span>
+    <span class="n">position</span><span class="o">=</span><span class="p">(</span>
+        <span class="mi">8000</span><span class="p">,</span>
+        <span class="mi">5000</span><span class="p">,</span>
+        <span class="mi">5000</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;frontal&quot;</span><span class="p">,</span>  <span class="c1"># &#39;frontal&#39; or &#39;sagittal&#39;, or &#39;horizontal&#39; or a tuple (x,y,z)</span>
+<span class="p">)</span>
+</pre></div>
 </div>
 </section>
-<section id="more-details">
-<h2>More details<a class="headerlink" href="#more-details" title="Link to this heading">#</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="adding-a-new-atlas.html">Adding a new atlas</a></li>
-</ul>
+</section>
+<section id="using-brainglobe-heatmap-with-other-atlases">
+<h2>Using <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> with other atlases.<a class="headerlink" href="#using-brainglobe-heatmap-with-other-atlases" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> uses <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> which, in turn, uses brainglobe’s <code class="docutils literal notranslate"><span class="pre">Atlas</span> <span class="pre">API</span></code> under the hood. That means that all of <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code>’s functionality is compatible with any of the atlases supported by the atlas API. <code class="docutils literal notranslate"><span class="pre">bgh.heatmap</span></code>, <code class="docutils literal notranslate"><span class="pre">bgh.planner</span></code> and <code class="docutils literal notranslate"><span class="pre">bgh.get_plane_coordinates</span></code> all accept a <code class="docutils literal notranslate"><span class="pre">atlas_name</span></code> argument, pass the name of the atlas name you’d like to use!
+For more information see the API’s <a class="reference external" href="https://brainglobe.info/documentation/bg-atlasapi/index.html">documentation</a>.</p>
+</section>
+<section id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Link to this heading">#</a></h2>
+<p>Contributions to <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> are more than welcome. Please see the <a class="reference external" href="https://github.com/brainglobe/.github/blob/main/CONTRIBUTING.md">Developer’s guide</a>.</p>
+</section>
+<section id="citing-brainglobe-heatmap">
+<h2>Citing <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code><a class="headerlink" href="#citing-brainglobe-heatmap" title="Link to this heading">#</a></h2>
+<p>If you use <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> in your work, please cite it as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Federico</span> <span class="n">Claudi</span><span class="p">,</span> <span class="o">&amp;</span> <span class="n">Luigi</span> <span class="n">Petrucco</span><span class="o">.</span> <span class="p">(</span><span class="mi">2022</span><span class="p">)</span><span class="o">.</span> <span class="n">brainglobe</span><span class="o">/</span><span class="n">bg</span><span class="o">-</span><span class="n">heatmaps</span><span class="p">:</span> <span class="p">(</span><span class="n">V0</span><span class="mf">.2</span><span class="p">)</span><span class="o">.</span> <span class="n">Zenodo</span><span class="o">.</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.5891814</span>
+</pre></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> was originally developed by Federico Claudi and Luigi Petrucco, with the help of Marco Musy (the developer of <a class="reference external" href="https://github.com/marcomusy/vedo"><code class="docutils literal notranslate"><span class="pre">vedo</span></code></a>)</p>
 </section>
 </section>
 
@@ -750,20 +819,20 @@ data from multiple sources.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../setting-up/image-definition.html"
+       href="../brainrender/usage/videos-animations-and-exporting-to-html.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Image space definition</p>
+        <p class="prev-next-title">Videos, animations and exporting to html</p>
       </div>
     </a>
     <a class="right-next"
-       href="usage/atlas-details.html"
+       href="../cellfinder/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Atlas details</p>
+        <p class="prev-next-title">cellfinder</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -783,10 +852,16 @@ data from multiple sources.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atlases-available">Atlases available</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-details">More details</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-guide">User guide</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-plane-position">Slicing plane position</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regions-coordinates">Regions coordinates</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-brainglobe-heatmap-with-other-atlases">Using <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> with other atlases.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing">Contributing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citing-brainglobe-heatmap">Citing <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code></a></li>
 </ul>
   </nav></div>
 
