@@ -195,7 +195,7 @@ In no particular order:
 
 :::{grid-item-card} Samuel Diebolt
 :img-bottom: https://avatars.githubusercontent.com/u/3774850?v=4?
-:link: https://github.com/sdiebolt
+:link: https://github.com/biblot
 :::
 
 :::{grid-item-card} Chris Roat
