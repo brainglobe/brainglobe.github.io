@@ -53,7 +53,7 @@ Make sure you select the points in the order you wish them to be joined.
 
 
 ![Segmenting a 1D track](./images/brainglobe-segmentation/brainglobe-segmentation-fitted-points.png)
-**A new Points layer containing the fitted points named `track_0_fit` appears on the left hand side and in the napari window, and a `.csv` file will be saved, showing the brain region for every spline point along the track.**
+**A new Points layer containing the fitted points named `track_0_fit` appears on the left hand side and in the napari window, and a `.csv` file will be saved, showing the brain region for every spline point along the track along with the distance from the start of the track.**
 
 :::{note}
 All data will be saved into your brainreg output directory
