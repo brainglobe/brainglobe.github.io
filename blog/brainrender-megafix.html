@@ -6,8 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Languages &#8212; BrainGlobe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Plans for brainrender &#8212; BrainGlobe</title>
   
   
   
@@ -48,8 +49,8 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/language';</script>
-    <link rel="canonical" href="https://brainglobe.info/blog/language.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/brainrender-megafix';</script>
+    <link rel="canonical" href="https://brainglobe.info/blog/brainrender-megafix.html" />
     <link rel="icon" href="../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -330,6 +331,10 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
     </nav>
@@ -523,7 +528,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Languages</li>
+    <li class="breadcrumb-item active" aria-current="page">Plans for...</li>
   </ul>
 </nav>
 </div>
@@ -540,65 +545,43 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
+<section class="tex2jax_ignore mathjax_ignore" id="plans-for-brainrender">
+<h1>Plans for <code class="docutils literal notranslate"><span class="pre">brainrender</span></code><a class="headerlink" href="#plans-for-brainrender" title="Link to this heading">#</a></h1>
+<p>Recent maintenance work means <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> now works with <a class="reference internal" href="../community/developers/conventions.html#dependency-support"><span class="std std-ref">more recent versions of Python</span></a> and more recent versions of key dependencies (such as <a class="reference external" href="https://vedo.embl.es/">vedo</a>). It should also be straightforward to <a class="reference internal" href="../documentation/brainrender/installation.html"><span class="std std-doc">install on all operating systems</span></a>. We take this opportunity to set out the next steps for this tool.</p>
+<p>In line <a class="reference internal" href="../community/roadmaps/november-2023.html#v2-q2-2024"><span class="std std-ref">with our roadmap</span></a>, we plan to deprecate brainrender’s graphical user interface (GUI) in the next few months, in favour of <a class="reference internal" href="../tutorials/visualise-atlas-napari.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">brainrender-napari</span></code></span></a>. This new tool will mean that users can visualise neuroanatomical data registered to a BrainGlobe atlas through the same GUI framework - <a class="reference external" href="https://napari.org/stable/"><code class="docutils literal notranslate"><span class="pre">napari</span></code></a> - as other BrainGlobe tools. This will allow you to perform the BrainGlobe analysis pipeline flexibly in the same application, without resorting to the command line.</p>
+<p>We also plan to continue to support the <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> Python interface. Note that <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> and <code class="docutils literal notranslate"><span class="pre">brainrender-napari</span></code> will be two equivalent, but independent ways to visualise neuroanatomical data in a common coordinate space (the former through <code class="docutils literal notranslate"><span class="pre">vedo</span></code>, the latter through the <code class="docutils literal notranslate"><span class="pre">napari</span></code> canvas) rather than co-existing in a frontend-backend relationship like other brainglobe tools (e.g. <code class="docutils literal notranslate"><span class="pre">cellfinder.napari</span></code> and <code class="docutils literal notranslate"><span class="pre">cellfinder.core</span></code>). Under the hood, we might move some functionality around so that it can be used both from <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> and <code class="docutils literal notranslate"><span class="pre">brainrender-napari</span></code>.</p>
+<section id="what-do-i-need-to-do">
+<h2>What do I need to do?<a class="headerlink" href="#what-do-i-need-to-do" title="Link to this heading">#</a></h2>
+<p>You may want to <a class="reference internal" href="../documentation/brainrender/installation.html"><span class="std std-doc">install the updated <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> into a fresh <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment</span></a>, especially if you were experiencing issues with <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>. If you use <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> through its GUI, you may want to start experimenting <a class="reference internal" href="../tutorials/visualise-atlas-napari.html"><span class="std std-doc">with <code class="docutils literal notranslate"><span class="pre">brainrender-napari</span></code></span></a> and <a class="reference internal" href="../contact.html"><span class="std std-doc">let us know</span></a> how it works for you - we always welcome your feedback.</p>
+</section>
+</section>
+
+<div class="section ablog__blog_comments">
+  
+  
 
 
-<div class="section ablog__catalog_header">
-  <h2>
-    Posts in
-    <a href="language/english.html">English</a>
-  </h2>
-  
-  <div class="section ablog__catalog_post">
-    <p>
+<div class="section ablog__prev-next">
+  <span class="ablog__prev">
+    
+    
+    <a href="version1/cellfinder_migration_live.html">
       
-      18 December 2023
+      <i class="fa fa-arrow-circle-left"></i>
       
-      -
-      <a href="brainrender-megafix.html"
-        >Plans for brainrender</a
-      >
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      01 November 2023
-      
-      -
-      <a href="version1/cellfinder_migration_live.html"
-        >cellfinder has moved: version 1 of brainglobe-workflows released</a
-      >
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      01 November 2023
-      
-      -
-      <a href="version1/brainreg_update_live.html"
-        >Version 1 of brainreg and brainglobe-segmentation released</a
-      >
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      30 October 2023
-      
-      -
-      <a href="version1/version_1_announcement.html"
-        >BrainGlobe is being restructured, version 1 is on it’s way!</a
-      >
-    </p>
-  </div>
-  
+      <span>cellfinder has moved: version 1 of brainglobe-workflows released</span>
+    </a>
+    
+  </span>
+  <span class="ablog__spacer">&nbsp;</span>
+  <span class="ablog__next">
+    
+  </span>
 </div>
 
-
+  
+  
+</div>
 
                 </article>
               
@@ -615,6 +598,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-i-need-to-do">What do I need to do?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
