@@ -17,7 +17,7 @@ The plugin will then open, with some options for loading data:
 
 ## **To load your data**
 
-There are three options for loading your data \(in the `Load data` section of the GUI\):
+There are two options for loading your data \(in the `Load data` section of the GUI\):
 
 * `Load project (sample space)` - This is for loading a brainreg project in the coordinate space of your raw data 
 (i.e., not warped to the atlas space\). N.B. the data will have been reoriented to the orientation of your chosen 
@@ -27,8 +27,6 @@ atlas, but it can be reoriented using the napari button in the bottom left (a cu
 This is most useful when you want to visualise your segmented structures in [brainrender](../../brainrender/index), 
 as they must be in atlas space to do so. **Click this button, then choose your brainreg (or cellfinder registration)
 output directory.**
-* `Load atlas` If you don't have your own data registered to the atlas, then you can just load the atlas. 
-Useful for making visualisations etc. **Click this drop-down menu, then pick an atlas.**
 
 ## **Navigating**
 
