@@ -13,7 +13,7 @@ load `brainglobe-segmentation` by navigating to `Plugins` -> `Add Dock Widget` a
 
 The plugin will then open, with some options for loading data:
 
-![brainreg interface](../images/brainglobe-segmentation.webp)
+![brainreg interface](../images/brainglobe-segmentation.png)
 
 ## **To load your data**
 
