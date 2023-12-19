@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: TODO, 2023
+date: Jan 2, 2024
 author: Will Graham
 location: London, England
 category: BrainGlobe-v1
