@@ -35,7 +35,7 @@ This is a thin wrapper around the `cellfinder.core` submodule and aims to:
 
 ### cellfinder command-line tool
 
-A command-line tool (also called `cellfinder`) exists to combine the `cellfinder.core` cell detection algorithm and [brainreg](/documentation/brainreg/index). `cellfinder` can:
+A command-line tool (currently also called `cellfinder`) exists to combine the `cellfinder.core` cell detection algorithm and [brainreg](/documentation/brainreg/index). `cellfinder` can:
 
 * Detect labelled cells in 3D in whole-brain images (many hundreds of GB),
 * Register the image to an atlas (such as the [Allen Mouse Brain Atlas](https://atlas.brain-map.org/atlas?atlas=602630314)),
