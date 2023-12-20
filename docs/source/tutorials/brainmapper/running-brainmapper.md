@@ -1,6 +1,7 @@
-# Running cellfinder
+# Running `brainmapper`
 
-`cellfinder` runs with a single command, with various arguments that are detailed in [Command line options](/documentation/cellfinder/user-guide/command-line/cli). To analyse the example data, the flags we need are:
+`brainmapper` runs with a single command, with various arguments that are detailed in [Command line options](/documentation/brainglobe-workflows/brainmapper/user-guide/command-line/cli).
+To analyse the example data, the flags we need are:
 
 - `-s` The primary **s**ignal channel: `test_brain/ch00`.
 - `-b` The secondary autofluorescence channel (or **b**ackground): `test_brain/ch01`.
@@ -16,7 +17,7 @@ If your machine has less than 32GB of RAM, you should use the `allen_mouse_25um`
 Putting this all together into a single command gives:
 
 ```bash
-cellfinder -s test_brain/ch00 -b test_brain/ch01 -o test_brain/output -v 5 2 2 --orientation psl --atlas allen_mouse_10um
+brainmapper -s test_brain/ch00 -b test_brain/ch01 -o test_brain/output -v 5 2 2 --orientation psl --atlas allen_mouse_10um
 ```
 
 This command will take quite a long time (anywhere from 2-10 hours) to run, depending on:
@@ -26,7 +27,7 @@ This command will take quite a long time (anywhere from 2-10 hours) to run, depe
 - The GPU you have
 
 :::{hint}
-You'll know `cellfinder` has finished when you see something like this:  
+You'll know `brainmapper` has finished when you see something like this:  
 `2020-10-14 00:07:20 AM - INFO - MainProcess main.py:86 - Finished. Total time taken: 3:22:42`
 :::
 
@@ -36,12 +37,12 @@ If you just want to check that everything is working, we can speed everything up
 - Using a lower-resolution atlas, using the flag: `--atlas allen_mouse_25um`
 
 ```bash
-cellfinder -s test_brain/ch00 -b test_brain/ch01 -o test_brain/output -v 5 2 2 --orientation psl --atlas allen_mouse_25um --start-plane 1500 --end-plane 1550
+brainmapper -s test_brain/ch00 -b test_brain/ch01 -o test_brain/output -v 5 2 2 --orientation psl --atlas allen_mouse_25um --start-plane 1500 --end-plane 1550
 ```
 
 :::{hint}
 If the cell classification step takes a (very) long time, it may not be using the GPU.
-If you have an NVIDIA GPU, see [Speeding up cellfinder](/documentation/cellfinder/troubleshooting/speed-up) to make sure that your GPU is set up properly.
+If you have an NVIDIA GPU, see [Speeding up brainmapper](/documentation/brainglobe-workflows/brainmapper/troubleshooting/speed-up) to make sure that your GPU is set up properly.
 :::
 
-Once cellfinder has run, you can go onto [Visualising the results](visualising-the-results).
+Once `brainmapper` has run, you can go onto [Visualising the results](visualising-the-results).

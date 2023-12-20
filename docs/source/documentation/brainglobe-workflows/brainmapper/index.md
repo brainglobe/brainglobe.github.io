@@ -23,7 +23,7 @@ training/index
 
 ```{toctree}
 :maxdepth: 1
-/tutorials/cellfinder-cli/index
+/tutorials/brainmapper/index
 ```
 
 ## Troubleshooting
