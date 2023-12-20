@@ -2,7 +2,7 @@
 
 ## Loading data
 
-Once napari, and the cellfinder plugin is installed, open napari, and load the plugin (`Plugins` -> `cellfinder` -> `Cell detection`).
+Once napari, and the `cellfinder` plugin is installed, open napari, and load the plugin (`Plugins` -> `cellfinder` -> `Cell detection`).
 
 :::{hint}
 A widget should then be docked into the side of your napari window.
@@ -14,7 +14,8 @@ Then load your data (e.g. using the `File`-> menu, or by dragging and dropping d
 There must be two registered channels; a signal channel (containing fluorescently labelled cells), and a background channel (containing only autofluorescence).
 
 :::{hint}
-There are many napari plugins for loading data. By default, single 3D tiffs, and directories of tiffs can be loaded.
+There are many napari plugins for loading data.
+By default, single 3D tiffs, and directories of tiffs can be loaded.
 :::
 
 ## Setting parameters
@@ -29,10 +30,9 @@ There are many parameters that can be set (see [All cell detection parameters](a
 * **Voxel size (y)** - in microns, the voxel size in the vertical (top to bottom) dimension
 * **Voxel size (x)** - in microns, the voxel size in the horizontal (left to right) dimension
 
-## Running cellfinder
+## Running `cellfinder`
 
-Click the **Run** button.&#x20;
-
+Click the **Run** button.
 The plugin will then run (this may take a while if you're analysing a large dataset), and will produce two additional image layers:
 
 * **Detected** - these are the cell candidates classified as cells

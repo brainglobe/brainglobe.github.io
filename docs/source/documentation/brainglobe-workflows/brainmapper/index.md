@@ -1,0 +1,41 @@
+# `brainmapper` command line tool
+
+`brainmapper` can:
+
+- Detect labelled cells in 3D in whole-brain images (many hundreds of GB),
+- Register the image to an atlas (such as the [Allen Mouse Brain Atlas](https://atlas.brain-map.org/atlas?atlas=602630314)),
+- Segment the brain based on the reference atlas,
+- Calculate the volume of each brain area, and the number of labelled cells within it,
+- Transform everything into standard space for analysis and visualisation.
+
+## User Guide
+
+```{toctree}
+:maxdepth: 1
+data-requirements
+cli
+visualisation
+output-files
+training/index
+```
+
+## Tutorials
+
+```{toctree}
+:maxdepth: 1
+/tutorials/cellfinder-cli/index
+```
+
+## Troubleshooting
+
+```{toctree}
+:maxdepth: 1
+troubleshooting/index
+troubleshooting/error-messages
+troubleshooting/speed-up
+```
+
+## Notes
+
+- As of version `1.0.0` of `brainglobe-workflows`, the Docker image for `brainmapper` has been discontinued.
+- Prior to the release of `cellfinder` `v1.0.0`, this workflow and command-line tool was called "cellfinder".

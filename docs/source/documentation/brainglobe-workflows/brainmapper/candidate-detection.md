@@ -15,4 +15,3 @@ considered a nucleus pixel. **Default: 0.6**
 Given as a fraction of the soma-diameter. **Default: 0.2**
 * `--threshold` The cell threshold, in multiples of the standard deviation above the mean. **Default: 10**
 * `--soma-spread-factor` Soma size spread factor \(for splitting up cell clusters\). **Default: 1.4**
-
