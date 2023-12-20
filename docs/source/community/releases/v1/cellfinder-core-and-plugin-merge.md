@@ -70,7 +70,7 @@ Once you have cleaned your environment, you will need to install the latest vers
 pip install brainglobe-workflows
 ```
 
-You will now have access to the cellfinder CLI from within your environment, as you did previously - but now it is [supplied by the `brainglobe-workflows` package](blog/version1/cellfinder_migration_live.md).
+You will now have access to the cellfinder CLI from within your environment, as you did previously - but now it is [supplied by the `brainglobe-workflows` package](./cellfinder_migration_live.md).
 You will also have the latest version of the cellfinder package (`1.0.0` or later) installed;
 
 - `cellfinder-core` is included as a submodule, `cellfinder.core`.
