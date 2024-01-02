@@ -67,9 +67,9 @@ Analysis of silicon probe tracks (e.g. Neuropixels)
 Analyze and visualize bulk fluorescence tracing data
 :::
 
-:::{grid-item-card} {fas}`brain;sd-text-primary` Cell detection
+:::{grid-item-card} {fas}`brain;sd-text-primary` Cell detection via brainmapper
 :img-bottom: images/cellfinder.png
-:link: cellfinder-cli/index
+:link: brainmapper/index.md
 :link-type: doc
 Whole brain cell detection and registration
 :::
