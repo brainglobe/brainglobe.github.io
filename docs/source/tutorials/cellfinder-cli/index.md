@@ -1,7 +1,7 @@
 # `cellfinder` CLI has moved to `brainmapper`
 
 The `cellfinder` command-line tool was renamed with the release of `cellfinder` version `1.0.0`.
-You can read about these changes [on our blog](/blog/version1/cellfinder_migration_live).
+You can read about these changes [on our blog](/blog/version1/core_and_napari_merge).
 What you'll most likely want to do is follow the links in the blog post to:
 
 - Upgrade your version of the `cellfinder` package,

@@ -4,7 +4,7 @@ description: How to inspect the results in napari
 
 # Visualising the results
 
-`brainmapper` comes with the `cellfinder` package, which includes a plugin for [napari](https://napari.org/) for easily visualising the results.
+`brainmapper` comes with a plugin for [napari](https://napari.org/) for easily visualising the results.
 For more information, see [Visualisation](/documentation/brainglobe-workflows/brainmapper/user-guide/command-line/visualisation).
 To quickly view your data:
 
