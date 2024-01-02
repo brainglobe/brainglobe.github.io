@@ -49,8 +49,14 @@ user-guide/cellfinder-core
 user-guide/training-strategy
 ```
 
-If you are experiencing issues with `cellfinder`'s speed or configuration, you may want to take a look at the [troubleshooting guide for `brainmapper`](../brainglobe-workflows/brainmapper/troubleshooting/index.md).
-`brainmapper` uses your `cellfinder` installation when it runs, and many of the problems you encounter with `cellfinder` will be solved in the same way as those for `brainmapper`.
+## Troubleshooting
+
+```{toctree}
+:maxdepth: 1
+troubleshooting/index
+troubleshooting/error-messages
+troubleshooting/speed-up
+```
 
 ## Citing cellfinder
 

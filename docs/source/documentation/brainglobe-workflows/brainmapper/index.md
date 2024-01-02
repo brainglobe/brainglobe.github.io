@@ -28,12 +28,8 @@ training/index
 
 ## Troubleshooting
 
-```{toctree}
-:maxdepth: 1
-troubleshooting/index
-troubleshooting/error-messages
-troubleshooting/speed-up
-```
+Since `brainmapper` uses `cellfinder`, you may encounter issues when using the command-line tool that are [documented on the `cellfinder` page](../cellfinder/troubleshooting/index.md).
+[Head there](../cellfinder/troubleshooting/index.md) for more information on some common issues and debugging tips.
 
 ## Notes
 
