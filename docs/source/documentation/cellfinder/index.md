@@ -9,11 +9,6 @@ cellfinder is software for automated 3D cell detection in very large 3D images (
 
 cellfinder can be used in three ways, each with different user interfaces and different aims.
 
-:::{hint}
-If you don't know how to start, we recommend the cellfinder napari plugin.
-We also recommend you install cellfinder by installing `brainglobe-workflows` - see the [installation instructions](./installation#one-step-installation) for details.
-:::
-
 ### cellfinder.core
 
 `cellfinder.core` is a Python submodule implementing the core algorithm for efficient cell detection in large images.
