@@ -1,6 +1,7 @@
 # Tutorials
 
 ## Getting started
+
 ::::{grid} 1 2 2 3
 :gutter: 3
 
@@ -48,9 +49,9 @@ Retraining the cellfinder cell classification network in napari
 ::::
 
 ## Specific applications
+
 ::::{grid} 1 2 2 3
 :gutter: 3
-
 
 :::{grid-item-card} {fas}`brain;sd-text-primary` Probe segmentation
 :img-bottom: images/probes.png
@@ -58,7 +59,6 @@ Retraining the cellfinder cell classification network in napari
 :link-type: doc
 Analysis of silicon probe tracks (e.g. Neuropixels)
 :::
-
 
 :::{grid-item-card} {fas}`brain;sd-text-primary` Bulk tracing analysis
 :img-bottom: images/bulkaxons.png
@@ -69,7 +69,7 @@ Analyze and visualize bulk fluorescence tracing data
 
 :::{grid-item-card} {fas}`brain;sd-text-primary` Cell detection via brainmapper
 :img-bottom: images/cellfinder.png
-:link: brainmapper/index.md
+:link: brainmapper/index
 :link-type: doc
 Whole brain cell detection and registration
 :::
@@ -88,6 +88,5 @@ cellfinder-detection
 cellfinder-retraining
 silicon-probe-tracking
 tracing-tracking
-cellfinder-cli/index
-
+brainmapper/index
 ```

@@ -13,7 +13,7 @@ Assuming that your raw data is stored as `.tiff` files, drag these into napari (
 This should be whatever you passed to `brainmapper` originally, i.e., a single multipage tiff, or a directory of 2D tiffs.
 You can load as many channels as you like (e.g., the signal and the background channel).
 
-![Loading raw data into napari](/documentation/brainmapper/images/load_data.gif)
+![Loading raw data into napari](/documentation/brainglobe-workflows/brainmapper/images/load_data.gif)
 
 ## Visualising your results
 
@@ -21,4 +21,4 @@ You can then drag and drop the `brainmapper` output directory (the one you speci
 The plugin will then load your detected cells (in yellow) and the rejected cell candidates (in blue).
 If you carried out registration, then these results will be overlaid (similarly to the [brainreg plugin](/documentation/brainreg/user-guide/visualisation), but transformed to the coordinate space of your raw data).
 
-![Visualising `brainmapper` results. ](/documentation/`brainmapper`/images/load_results.gif)
+![Visualising `brainmapper` results](/documentation/brainglobe-workflows/brainmapper/images/load_results.gif)

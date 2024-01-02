@@ -17,7 +17,7 @@ As such;
 - [`cellfinder-core`](https://github.com/brainglobe/cellfinder-core) and [`cellfinder-napari`](https://github.com/brainglobe/cellfinder-napari) will be deprecated.
 - [A _package_ called `cellfinder`](https://github.com/brainglobe/cellfinder) will become available as a replacement for this functionality. Note that this will re-use the old "cellfinder" name that the command-line-interface had, [prior to its migration](./cellfinder_migration_live.md).
 - The `cellfinder-napari` plugin is now simply called "cellfinder" internally, and when loaded up in napari.
-- The "cellfinder" name for the whole-brain registration and analysis workflow provided by [`brainglobe-workflows`](documentation/brainglobe-workflows/index) will be deprecated to avoid confusion. This workflow will now be available as "`brainmapper`".
+- The "cellfinder" name for the whole-brain registration and analysis workflow provided by [`brainglobe-workflows`](/documentation/brainglobe-workflows/index.md) will be deprecated to avoid confusion. This workflow will now be available as "`brainmapper`".
 
 From a user perspective, this is just a restructuring and reorganisation of existing functionality, and the renaming of the cellfinder command-line tool to `brainmapper`.
 If you were using the `cellfinder-core` backend, or the `cellfinder-napari` plugins, you'll need to uninstall those packages and install version `1.0.0` (or later) of the [`cellfinder` _package_](https://pypi.org/project/cellfinder/).

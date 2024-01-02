@@ -5,7 +5,7 @@ description: How to inspect the results in napari
 # Visualising the results
 
 `brainmapper` comes with a plugin for [napari](https://napari.org/) for easily visualising the results.
-For more information, see [Visualisation](/documentation/brainglobe-workflows/brainmapper/user-guide/command-line/visualisation).
+For more information, see the [visualisation](/documentation/brainglobe-workflows/brainmapper/visualisation.md) section.
 To quickly view your data:
 
 - Open napari (type `napari` into a command window).

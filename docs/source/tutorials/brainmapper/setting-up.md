@@ -2,7 +2,7 @@
 
 ## Installation and download
 
-- First install the `brainmapper` command line tool, following the [Installation guide](/documentation/brainglobe-workflows/installation).
+- First install the `brainmapper` command line tool by installing the `brainglobe-workflows` package, following the [installation guide](/documentation/brainglobe-workflows/index.md#installation).
 - Download the data from [here](https://gin.g-node.org/cellfinder/data/raw/master/test\_brain\_SK\_AA\_71\_3.zip) (it will take a long time to download). Thanks to [Sepiedeh Keshavarzi](https://www.keshavarzilab.com/) for sharing the data.
 - Unzip the data to a directory of your choice (doesn't matter where). You should end up with a directory called `test_brain` with two directories, each containing 2800 images.
 - Open a terminal (Linux) or your command prompt (Windows).

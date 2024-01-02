@@ -74,7 +74,7 @@ pip install brainglobe-workflows
 ```
 
 You will now have access to the `brainmapper` workflow from within your environment.
-This is the same as the old "cellfinder" workflow that you were using previously - but now it is [supplied by the `brainglobe-workflows` package](blog/version1/cellfinder_migration_live).
+This is the same as the old "cellfinder" workflow that you were using previously - but now it is [supplied by the `brainglobe-workflows` package](/blog/version1/cellfinder_migration_live.md).
 You will also have the latest version of the `cellfinder` package (`1.0.0` or later) installed;
 
 - `cellfinder-core` is included as a submodule, `cellfinder.core`.

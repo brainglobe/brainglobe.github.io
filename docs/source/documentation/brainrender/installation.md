@@ -26,9 +26,6 @@ others. You can safely ignore these.
 Note that some of `brainrender`'s more rarely used features may require the installation of additional packages. In particular, for exporting videos you will need to install [`ffmpeg`](https://ffmpeg.org/download.html).
 :::
 
-Once you have installed brainrender, dive right in with this 
-[getting started example notebook!](https://github.com/brainglobe/brainrender/blob/master/getting_started.ipynb)
-
 ## Advanced installation
 
 If you want the most recent version of `brainrender`'s code, perhaps to help developing it, you can either 

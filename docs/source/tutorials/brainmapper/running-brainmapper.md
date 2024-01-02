@@ -1,6 +1,6 @@
 # Running `brainmapper`
 
-`brainmapper` runs with a single command, with various arguments that are detailed in [Command line options](/documentation/brainglobe-workflows/brainmapper/user-guide/command-line/cli).
+`brainmapper` runs with a single command, with various arguments that are detailed in the [command line options](/documentation/brainglobe-workflows/brainmapper/cli).
 To analyse the example data, the flags we need are:
 
 - `-s` The primary **s**ignal channel: `test_brain/ch00`.
@@ -42,7 +42,7 @@ brainmapper -s test_brain/ch00 -b test_brain/ch01 -o test_brain/output -v 5 2 2 
 
 :::{hint}
 If the cell classification step takes a (very) long time, it may not be using the GPU.
-If you have an NVIDIA GPU, see [Speeding up brainmapper](/documentation/brainglobe-workflows/brainmapper/troubleshooting/speed-up) to make sure that your GPU is set up properly.
+If you have an NVIDIA GPU, see [Speeding up brainmapper](/documentation/cellfinder/troubleshooting/speed-up) to make sure that your GPU is set up properly.
 :::
 
 Once `brainmapper` has run, you can go onto [Visualising the results](visualising-the-results).

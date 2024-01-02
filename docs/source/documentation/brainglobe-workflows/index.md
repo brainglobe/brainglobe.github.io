@@ -3,7 +3,7 @@
 brainglobe-workflows is a collection of common data analysis pipelines that utilise a combination of BrainGlobe tools.
 It currently provides:
 
-- `brainmapper`: Whole-brain cell detection and classification. [Read more about the command line interface here](/documentation/cellfinder/user-guide/command-line/index.md). This workflow was [previously called `cellfinder`](/blog/version1/core_and_napari_merge.md).
+- `brainmapper`: Whole-brain cell detection and classification. [Read more about the command line interface here](brainmapper/index.md). This workflow was [previously called `cellfinder`](/blog/version1/core_and_napari_merge.md).
 
 You can find more information on each of these tools by visiting the links below:
 
