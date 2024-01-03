@@ -21,4 +21,3 @@ trained on.  Set this to adjust the pixel sizes of the extracted cubes. **Defaul
 * `--cube-depth` The depth \(z\)\) of the cubes to extract in pixels\(must be even\). **Default 20**
 * `--save-empty-cubes` If a cube cannot be extracted \(e.g. to close to the edge of the image\), save an empty cube 
 instead. Useful to keep track of all cell candidates.
-

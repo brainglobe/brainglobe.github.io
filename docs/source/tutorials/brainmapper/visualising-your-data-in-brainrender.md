@@ -1,9 +1,9 @@
 # Visualising your data in brainrender
 
-<img src="../images/cellfinder_brainrender.webp" alt="3D brainrender visualisation of cellfinder results" width="500" />
+<img src="../images/cellfinder_brainrender.webp" alt="3D brainrender visualisation of brainmapper results" width="500" />
 
 To generate 3D figures of your data in atlas space, you can use [brainrender](/documentation/brainrender/index). 
-cellfinder automatically exports a file in a brainrender compatible format, which can be found at 
+brainmapper automatically exports a file in a brainrender compatible format, which can be found at 
 `test_brain/output/points/points.npy`.
 
 Once you've [installed brainrender](/documentation/brainrender/installation), you can try something like this:

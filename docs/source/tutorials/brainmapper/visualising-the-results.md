@@ -4,16 +4,16 @@ description: How to inspect the results in napari
 
 # Visualising the results
 
-`cellfinder` comes with a plugin for [napari](https://napari.org/) for easily visualising the results.
-For more information, see [Visualisation](/documentation/cellfinder/user-guide/command-line/visualisation).
+`brainmapper` comes with a plugin for [napari](https://napari.org/) for easily visualising the results.
+For more information, see the [visualisation](/documentation/brainglobe-workflows/brainmapper/visualisation.md) section.
 To quickly view your data:
 
 - Open napari (type `napari` into a command window).
 - Into the window then drag and drop:
   - The signal channel directory (`test_brain/ch00`),
-  - The entire cellfinder output directory.
+  - The entire brainmapper output directory.
 
-![cellfinder results viewed in napari](../images/cellfinder_results.png)
+![brainmapper results viewed in napari](../images/brainmapper_results.png)
 
 The napari window then will then be populated with different layers (left-hand side) that can be toggled:
 
@@ -23,7 +23,7 @@ The napari window then will then be populated with different layers (left-hand s
 - `Non cells` The cell candidates classified as artefacts (blue).
 - `Cells` The cell candidates classified as cells (yellow).
 
-If you click on the image above to enlarge, you should get a good idea of how `cellfinder` works:
+If you click on the image above to enlarge, you should get a good idea of how `brainmapper` works:
 
 - The coloured regions and the outlines show the segmentation of the brain (following atlas registration).
 - The yellow circles show the detected cells (mostly in retrosplenial cortex and thalamus). There are also a few false positives (such as three on the surface of the brain and one outside the brain). This shows that the cell classification network (trained on other brains) is not quite 100%, and should be retrained with the addition of some data from this brain.
@@ -33,5 +33,5 @@ If you click on the image above to enlarge, you should get a good idea of how `c
 To make the results a bit more obvious when zoomed out, the contrast of the raw data (`ch00`) has been adjusted along with changing the symbol for the cells to `disc` and increasing the size.
 ::
 
-These images are useful to assess how well `cellfinder` performed, but not much use for any kind of numerical analysis.
-To see what data is exported from cellfinder, take a look at [Exploring the numerical results](exploring-the-numerical-results).
+These images are useful to assess how well `brainmapper` performed, but not much use for any kind of numerical analysis.
+To see what data is exported from `brainmapper`, take a look at [Exploring the numerical results](exploring-the-numerical-results).
