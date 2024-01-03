@@ -55,7 +55,7 @@
     <link rel="author" title="About these documents" href="../../../../about.html" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Generating data to retrain the cellfinder classification network" href="training-data-generation.html" />
+    <link rel="next" title="Retraining the network for new data" href="training-the-network.html" />
     <link rel="prev" title="cellfinder napari plugin" href="index.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -538,13 +538,40 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../../../brainglobe-segmentation/user-guide/analysing-external-segmentation.html">Analysing segmentation from other napari plugins</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../brainglobe-workflows/index.html">brainglobe-workflows</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../brainrender/index.html">brainrender</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../brainglobe-workflows/index.html">brainglobe-workflows</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../brainglobe-workflows/brainmapper/index.html"><code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../brainglobe-workflows/brainmapper/data-requirements.html">Data requirements</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../brainglobe-workflows/brainmapper/cli.html">Command line interface</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../brainglobe-workflows/brainmapper/candidate-detection.html">Cell candidate detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../brainglobe-workflows/brainmapper/classification.html">Cell candidate classification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../brainreg/user-guide/parameters.html">Registration parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../brainglobe-workflows/brainmapper/using-brainmapper-at-the-swc.html">Using <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> at the SWC</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../brainglobe-workflows/brainmapper/visualisation.html">Visualisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../brainglobe-workflows/brainmapper/output-files.html">Output files</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../brainglobe-workflows/brainmapper/training/index.html">Training the network</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../brainglobe-workflows/brainmapper/training/using-supplied-data.html">Using supplied training data</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../../tutorials/brainmapper/index.html">Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../tutorials/brainmapper/setting-up.html">Setting up</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../tutorials/brainmapper/running-brainmapper.html">Running <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../tutorials/brainmapper/visualising-the-results.html">Visualising the results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../tutorials/brainmapper/exploring-the-numerical-results.html">Exploring the numerical results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../tutorials/brainmapper/visualising-your-data-in-brainrender.html">Visualising your data in brainrender</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../brainrender/index.html">brainrender</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../brainrender/installation.html">Installing brainrender</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../brainrender/usage/index.html">Usage</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../brainrender/usage/index.html">Usage</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../brainrender/usage/scene.html">Scene</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../brainrender/usage/actors.html">Actors</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../brainrender/usage/using-your-data/index.html">Using your own data in brainrender</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../brainrender/usage/using-your-data/index.html">Using your own data in brainrender</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../brainrender/usage/using-your-data/registering-data.html">Registering data</a></li>
 </ul>
 </li>
@@ -555,52 +582,27 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../brainglobe-heatmap/index.html">brainglobe-heatmap</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html">cellfinder</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html">cellfinder</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html">Requirements</a></li>
-
-<li class="toctree-l2 has-children"><a class="reference internal" href="../command-line/index.html">cellfinder command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../command-line/data-requirements.html">Data requirements</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../command-line/cli.html">Command line interface</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../command-line/candidate-detection.html">Cell candidate detection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../command-line/classification.html">Cell candidate classification</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../brainreg/user-guide/parameters.html">Registration parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../command-line/using-cellfinder-at-the-swc.html">Using cellfinder at the SWC</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../command-line/visualisation.html">Visualisation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../command-line/output-files.html">Output files</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../command-line/training/index.html">Training the network</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../command-line/training/using-supplied-data.html">Using supplied training data</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../command-line/docker.html">Use with docker</a></li>
-</ul>
-</li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">cellfinder napari plugin</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">cellfinder napari plugin</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Cell detection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="training-data-generation.html">Generating data to retrain the cellfinder classification network</a></li>
 <li class="toctree-l3"><a class="reference internal" href="training-the-network.html">Retraining the network for new data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="training-data-generation.html">Generating data to retrain the cellfinder classification network</a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-cell-detection-parameters.html">All cell detection parameters</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../cellfinder-core.html">cellfinder-core API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cellfinder-core.html">cellfinder.core API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../training-strategy.html">Retraining the pre-trained network</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../troubleshooting/error-messages.html">Debugging common error messages</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../tutorials/cellfinder-cli/index.html">Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../tutorials/cellfinder-cli/setting-up.html">Setting up</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../tutorials/cellfinder-cli/running-cellfinder.html">Running cellfinder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../tutorials/cellfinder-cli/visualising-the-results.html">Visualising the results</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../tutorials/cellfinder-cli/exploring-the-numerical-results.html">Exploring the numerical results</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../tutorials/cellfinder-cli/visualising-your-data-in-brainrender.html">Visualising your data in brainrender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/error-messages.html">Debugging common error messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../morphapi/index.html">morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../morphapi/index.html">morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../morphapi/usage/downloading-data.html">Downloading data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../morphapi/usage/rendering-data.html">Rendering data</a></li>
 </ul>
@@ -674,54 +676,52 @@ document.write(`
 <h1>Cell detection<a class="headerlink" href="#cell-detection" title="Link to this heading">#</a></h1>
 <section id="loading-data">
 <h2>Loading data<a class="headerlink" href="#loading-data" title="Link to this heading">#</a></h2>
-<p>Once napari, and the cellfinder plugin is installed, open napari, and load the plugin
-(<code class="docutils literal notranslate"><span class="pre">Plugins</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">cellfinder-napari</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Cell</span> <span class="pre">detection</span></code>).</p>
+<p>Once napari, and the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> plugin is installed, open napari, and load the plugin (<code class="docutils literal notranslate"><span class="pre">Plugins</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Cell</span> <span class="pre">detection</span></code>).</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>A widget should then be docked into the side of your napari window. If this doesn’t happen,
-check for any errors (<code class="docutils literal notranslate"><span class="pre">Plugins</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Plugin</span> <span class="pre">Errors</span></code>, then select the cellfinder plugin from the drop-down menu).
+<p>A widget should then be docked into the side of your napari window.
+If this doesn’t happen, check for any errors (<code class="docutils literal notranslate"><span class="pre">Plugins</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Plugin</span> <span class="pre">Errors</span></code>, then select the cellfinder plugin from the drop-down menu).
 This error can be used to report problems on the GitHub page, or the help forum, see sidebar for links.</p>
 </div>
-<p>Then load your data (e.g. using the <code class="docutils literal notranslate"><span class="pre">File</span></code>-&gt; menu, or by dragging and dropping data). There must be two
-registered channels, a signal channel (containing fluorescently labelled cells), and a background channel
-(containing only autofluorescence).</p>
+<p>Then load your data (e.g. using the <code class="docutils literal notranslate"><span class="pre">File</span></code>-&gt; menu, or by dragging and dropping data).
+There must be two registered channels; a signal channel (containing fluorescently labelled cells), and a background channel (containing only autofluorescence).</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>There are many napari plugins for loading data. By default, single 3D tiffs, and directories of tiffs can be loaded.</p>
+<p>There are many napari plugins for loading data.
+By default, single 3D tiffs, and directories of tiffs can be loaded.</p>
 </div>
 </section>
 <section id="setting-parameters">
 <h2>Setting parameters<a class="headerlink" href="#setting-parameters" title="Link to this heading">#</a></h2>
-<p>There are many parameters that can be set (see <a class="reference internal" href="all-cell-detection-parameters.html"><span class="doc std std-doc">All cell detection parameters</span></a>), but the following options
-must be set before running the plugin</p>
-<p><strong>Mandatory</strong></p>
+<p>There are many parameters that can be set (see <a class="reference internal" href="all-cell-detection-parameters.html"><span class="doc std std-doc">All cell detection parameters</span></a>), but the following options must be set before running the plugin.</p>
+<section id="mandatory-parameters">
+<h3>Mandatory parameters<a class="headerlink" href="#mandatory-parameters" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Signal image</strong> - set this to the image layer containing the labelled cells</p></li>
 <li><p><strong>Background image</strong> - set this to the image layer without cells</p></li>
 <li><p><strong>Voxel size (z)</strong> - in microns, the plane-spacing (from one 2D section to the next)</p></li>
-<li><p>**Voxel size (y) **- in microns, the voxel size in the vertical (top to bottom) dimension</p></li>
+<li><p><strong>Voxel size (y)</strong> - in microns, the voxel size in the vertical (top to bottom) dimension</p></li>
 <li><p><strong>Voxel size (x)</strong> - in microns, the voxel size in the horizontal (left to right) dimension</p></li>
 </ul>
 </section>
+</section>
 <section id="running-cellfinder">
-<h2>Running cellfinder<a class="headerlink" href="#running-cellfinder" title="Link to this heading">#</a></h2>
-<p>Click the <strong>Run</strong> button. </p>
-<p>The plugin will then run (this may take a while if you’re analysing a large dataset), and will produce two
-additional image layers:</p>
+<h2>Running <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code><a class="headerlink" href="#running-cellfinder" title="Link to this heading">#</a></h2>
+<p>Click the <strong>Run</strong> button.
+The plugin will then run (this may take a while if you’re analysing a large dataset), and will produce two additional image layers:</p>
 <ul class="simple">
 <li><p><strong>Detected</strong> - these are the cell candidates classified as cells</p></li>
 <li><p><strong>Rejected</strong> (hidden by default) - these are the cell candidates classified as artefacts.</p></li>
 </ul>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>It is likely that the classification will not perform well on new data, to improve this, see
-<a class="reference internal" href="training-data-generation.html"><span class="doc std std-doc">Training data generation</span></a>.</p>
+<p>It is likely that the classification will not perform well on new data, to improve this, see <a class="reference internal" href="training-data-generation.html"><span class="doc std std-doc">Training data generation</span></a>.</p>
 </div>
 </section>
 <section id="saving-data">
 <h2>Saving data<a class="headerlink" href="#saving-data" title="Link to this heading">#</a></h2>
-<p>The cell coordinates can be saved using any napari plugin (e.g., to csv). To save the cell coordinates in the
-cellfinder XML format:</p>
+<p>The cell coordinates can be saved using any napari plugin (e.g., to csv).
+To save the cell coordinates in the cellfinder XML format:</p>
 <ul class="simple">
 <li><p>Select the Points layers (e.g. <strong>Detected</strong> and <strong>Rejected</strong>)</p></li>
 <li><p>Click <code class="docutils literal notranslate"><span class="pre">File</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">Selected</span> <span class="pre">Layer(s)</span></code></p></li>
@@ -754,11 +754,11 @@ cellfinder XML format:</p>
       </div>
     </a>
     <a class="right-next"
-       href="training-data-generation.html"
+       href="training-the-network.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Generating data to retrain the cellfinder classification network</p>
+        <p class="prev-next-title">Retraining the network for new data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -779,8 +779,11 @@ cellfinder XML format:</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data">Loading data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-parameters">Setting parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-cellfinder">Running cellfinder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-parameters">Setting parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mandatory-parameters">Mandatory parameters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-cellfinder">Running <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-data">Saving data</a></li>
 </ul>
   </nav></div>

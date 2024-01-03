@@ -1,0 +1,782 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Version 1: changes to the cellfinder backend and plugin &#8212; BrainGlobe</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=1227d6e8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'community/releases/v1/cellfinder-core-and-plugin-merge';</script>
+    <link rel="canonical" href="https://brainglobe.info/community/releases/v1/cellfinder-core-and-plugin-merge.html" />
+    <link rel="icon" href="../../../_static/brainglobe.png"/>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Courses" href="../../courses/index.html" />
+    <link rel="prev" title="Version 1: Cellfinder migration and brainglobe-workflows" href="cellfinder-migration.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+
+
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">BrainGlobe is undergoing restructuring. Keep track of the latest developments on <a href='https://brainglobe.info/blog/version1/version_1_announcement.html'>the blog</a></div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/brainglobe.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../../_static/brainglobe.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">BrainGlobe</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../about.html">
+                        About
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../tutorials/index.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../index.html">
+                        Community
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../blog/index.html">
+                        Blog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://mastodon.online/@brainglobe" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/brainglobe.bsky.social" title="Bluesky" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://brainglobe.zulipchat.com" title="Zulip (Developer chat)" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Zulip (Developer chat)</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://forum.image.sc/tag/brainglobe" title="image.sc (Help forum)" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-question fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">image.sc (Help forum)</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../about.html">
+                        About
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../tutorials/index.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../index.html">
+                        Community
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../blog/index.html">
+                        Blog
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://mastodon.online/@brainglobe" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/brainglobe.bsky.social" title="Bluesky" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://brainglobe.zulipchat.com" title="Zulip (Developer chat)" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Zulip (Developer chat)</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://forum.image.sc/tag/brainglobe" title="image.sc (Help forum)" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-question fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">image.sc (Help forum)</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../developers/index.html">Developer’s guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../developers/tooling.html">Tooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../developers/conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../developers/testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../developers/new_releases.html">Publishing new releases</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../developers/specific_repos.html">Specific Repository Developer Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/repositories/brainglobe-workflows/index.html">brainglobe-workflows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/repositories/cellfinder-core/index.html">cellfinder.core</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../roadmaps/index.html">Roadmaps</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../roadmaps/november-2023.html">November 2023</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Releases</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">BrainGlobe version 1 overview</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="brainreg.html">Version 1: changes to registration and segmentation tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cellfinder-migration.html">Version 1: Cellfinder migration and <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code></a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Version 1: changes to the cellfinder backend and plugin</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../courses/index.html">Courses</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../courses/dec-2023/index.html">December 6th 2023</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../external-tools.html">Software built by the community</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://gin.g-node.org/BrainGlobe">Sample datasets</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Community</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">BrainGlobe version 1 overview</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Version 1:...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+<section class="tex2jax_ignore mathjax_ignore" id="version-1-changes-to-the-cellfinder-backend-and-plugin">
+<h1>Version 1: changes to the cellfinder backend and plugin<a class="headerlink" href="#version-1-changes-to-the-cellfinder-backend-and-plugin" title="Link to this heading">#</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code> package and <code class="docutils literal notranslate"><span class="pre">cellfinder-napari</span></code> plugin have now been migrated to a <a class="reference external" href="https://github.com/brainglobe/cellfinder">package called cellfinder</a>.
+Please note that this is enacting the <a class="reference internal" href="cellfinder-migration.html#future-warning"><span class="std std-ref">future warning from the earlier <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> (CLI) migration</span></a>.
+If you wish to continue using both the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> command-line interface <em>and</em> the backend Python API, you will need to install the latest version of <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code>, which will automatically fetch the new version of the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> package.
+See the <a class="reference internal" href="#updating"><span class="std std-ref">updating section</span></a> for more details.</p>
+<section id="cellfinder-core">
+<h2><code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code><a class="headerlink" href="#cellfinder-core" title="Link to this heading">#</a></h2>
+<p>If you were previously using the Python API to <code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code>, you will need to uninstall <code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code> from your environment and install <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> version <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code> or later.</p>
+<p>The internal package structure has not changed in this move, but it is now a submodule of the new <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> package.
+So if you were using the Python API in your scripts, you will need to change any <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">cellfinder_core</span> <span class="pre">import</span> <span class="pre">X</span></code> statements to <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">cellfinder.core</span> <span class="pre">import</span> <span class="pre">X</span></code>.
+Once you make this change, everything should work as it was before.</p>
+</section>
+<section id="cellfinder-napari">
+<h2><code class="docutils literal notranslate"><span class="pre">cellfinder-napari</span></code><a class="headerlink" href="#cellfinder-napari" title="Link to this heading">#</a></h2>
+<p>If you were previously using the napari plugin for visualising output data, you will need to uninstall <code class="docutils literal notranslate"><span class="pre">cellfinder-napari</span></code> and install <code class="docutils literal notranslate"><span class="pre">cellfinder[napari]</span></code>, making sure to fetch the optional napari dependency.</p>
+<p>The plugin itself has not undergone any interface changes, but is now just called “cellfinder” rather than “cellfinder-napari” when viewed from the napari widget panel.</p>
+</section>
+<section id="brainglobe-workflows">
+<h2><code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code><a class="headerlink" href="#brainglobe-workflows" title="Link to this heading">#</a></h2>
+<p>Now ships with the new version of <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code>, containing <code class="docutils literal notranslate"><span class="pre">cellfinder.core</span></code> and <code class="docutils literal notranslate"><span class="pre">cellfinder.napari</span></code> submodules.
+<code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code> is now the <em>only</em> package that provides the old “cellfinder” command-line interface, or workflow.
+This workflow is now <em>only</em> available under the name <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> - the name <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> is reserved for the backend package that contains the merged <code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code> and <code class="docutils literal notranslate"><span class="pre">cellfinder-napari</span></code> packages mentioned above.</p>
+</section>
+<section id="updating">
+<h2>Updating<a class="headerlink" href="#updating" title="Link to this heading">#</a></h2>
+<p>The update steps that you will need to perform vary depending on how you currently use cellfinder (CLI) and whether you upgraded to <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code> previously.
+Regardless, before you begin the process of updating we recommend you uninstall <code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code> and <code class="docutils literal notranslate"><span class="pre">cellfinder-napari</span></code> from your environment</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>uninstall<span class="w"> </span>cellfinder-core<span class="w"> </span>cellfinder-napari
+</pre></div>
+</div>
+<p>Alternatively; you can create a new, clean environment to install into.</p>
+<section id="i-previously-updated-to-brainglobe-workflows">
+<h3>I previously updated to <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code><a class="headerlink" href="#i-previously-updated-to-brainglobe-workflows" title="Link to this heading">#</a></h3>
+<p>If you previously updated from the old cellfinder package to <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code>, then you should be able to simply update to the latest version of <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code>, with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>brainglobe-workflows
+</pre></div>
+</div>
+<p>This will fetch the new <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> package containing the <code class="docutils literal notranslate"><span class="pre">cellfinder.core</span></code> and <code class="docutils literal notranslate"><span class="pre">cellfinder.napari</span></code> submodules.
+You can then continue to use the CLI to run the workflow as you were doing before, however note that the workflow will now only be available as “<code class="docutils literal notranslate"><span class="pre">brainmapper</span></code>”.</p>
+</section>
+<section id="i-have-not-updated-to-brainglobe-workflows-but-i-dont-use-the-cellfinder-cli">
+<h3>I have not updated to <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code>, but I don’t use the cellfinder CLI<a class="headerlink" href="#i-have-not-updated-to-brainglobe-workflows-but-i-dont-use-the-cellfinder-cli" title="Link to this heading">#</a></h3>
+<p>If you don’t use the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> CLI, then you can just upgrade your version of the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> package to version <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code> or later:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>cellfinder
+</pre></div>
+</div>
+<p>If you do want to make use of the old “cellfinder” workflow, you will need to install <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code> and use it under its new name, <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code>.</p>
+</section>
+<section id="i-have-not-updated-to-brainglobe-workflows-and-i-use-the-cellfinder-cli">
+<h3>I have not updated to <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code>, and I use the cellfinder CLI<a class="headerlink" href="#i-have-not-updated-to-brainglobe-workflows-and-i-use-the-cellfinder-cli" title="Link to this heading">#</a></h3>
+<p>In this case, we strongly recommend you either create a new Python environment to install into (and delete your old one), or remove <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code>, <code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code>, and <code class="docutils literal notranslate"><span class="pre">cellfinder-napari</span></code> from your current environment with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>uninstall<span class="w"> </span>cellfinder<span class="w"> </span>cellfinder-core<span class="w"> </span>cellfinder-napari
+</pre></div>
+</div>
+<p>You may also wish to use <code class="docutils literal notranslate"><span class="pre">pip</span></code> to uninstall <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> to make sure that the new install does not encounter potential version conflicts.</p>
+<p>Once you have cleaned your environment, you will need to install the latest version of <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>brainglobe-workflows
+</pre></div>
+</div>
+<p>You will now have access to the <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> workflow from within your environment.
+This is the same as the old “cellfinder” workflow that you were using previously - but now it is <a class="reference internal" href="../../../blog/version1/cellfinder_migration_live.html"><span class="std std-doc">supplied by the <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code> package</span></a>.
+You will also have the latest version of the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> package (<code class="docutils literal notranslate"><span class="pre">1.0.0</span></code> or later) installed;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code> is included as a submodule, <code class="docutils literal notranslate"><span class="pre">cellfinder.core</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cellfinder-napari</span></code> is included as a submodule, and the plugin has been renamed to just “cellfinder” when viewed in napari.</p></li>
+<li><p>To access the old “cellfinder” command-line tool or workflow, you now need to call <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code>. The interface has not changed, just the name.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+<div class="section ablog__blog_comments">
+  
+  
+</div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="cellfinder-migration.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Version 1: Cellfinder migration and <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../courses/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Courses</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cellfinder-core"><code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cellfinder-napari"><code class="docutils literal notranslate"><span class="pre">cellfinder-napari</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe-workflows"><code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating">Updating</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-previously-updated-to-brainglobe-workflows">I previously updated to <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-have-not-updated-to-brainglobe-workflows-but-i-dont-use-the-cellfinder-cli">I have not updated to <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code>, but I don’t use the cellfinder CLI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-have-not-updated-to-brainglobe-workflows-and-i-use-the-cellfinder-cli">I have not updated to <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code>, and I use the cellfinder CLI</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p class="sphinx-version">
+Created using <a href="https://sphinx-doc.org/">Sphinx</a> 7.2.6.
+<br/>
+</p>
+<p class="theme-version">
+Built with the
+<a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
+0.14.4.
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><div class="things-in-a-row">
+</div></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>cellfinder-core &#8212; BrainGlobe</title>
+    <title>cellfinder.core &#8212; BrainGlobe</title>
   
   
   
@@ -511,7 +511,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../../new_releases.html">Publishing new releases</a></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../../specific_repos.html">Specific Repository Developer Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../brainglobe-workflows/index.html">brainglobe-workflows</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">cellfinder-core</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">cellfinder.core</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference external" href="https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a></li>
@@ -525,6 +525,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../releases/v1/index.html">BrainGlobe version 1 overview</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../releases/v1/brainreg.html">Version 1: changes to registration and segmentation tools</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../releases/v1/cellfinder-migration.html">Version 1: Cellfinder migration and <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../releases/v1/cellfinder-core-and-plugin-merge.html">Version 1: changes to the cellfinder backend and plugin</a></li>
 </ul>
 </li>
 </ul>
@@ -583,7 +584,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../../specific_repos.html" class="nav-link">Specific Repository Developer Documentation</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">cellfinder-core</li>
+    <li class="breadcrumb-item active" aria-current="page">cellfinder.core</li>
   </ul>
 </nav>
 </div>
@@ -601,7 +602,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
 <section class="tex2jax_ignore mathjax_ignore" id="cellfinder-core">
-<h1>cellfinder-core<a class="headerlink" href="#cellfinder-core" title="Link to this heading">#</a></h1>
+<h1>cellfinder.core<a class="headerlink" href="#cellfinder-core" title="Link to this heading">#</a></h1>
 <section id="cell-detection">
 <h2>Cell detection<a class="headerlink" href="#cell-detection" title="Link to this heading">#</a></h2>
 <section id="methodology">
@@ -614,11 +615,11 @@ document.write(`
 </ol>
 <section id="d-filtering">
 <h4>2D filtering<a class="headerlink" href="#d-filtering" title="Link to this heading">#</a></h4>
-<p>Code can be found in <code class="docutils literal notranslate"><span class="pre">cellfinder_core/detect/filters/plane</span></code>.
+<p>Code can be found in <code class="docutils literal notranslate"><span class="pre">cellfinder/core/detect/filters/plane</span></code>.
 Each plane of data is filtered independently, and in parallel across a number of processes.</p>
 <p>This part of processing performs two tasks:</p>
 <ol class="arabic">
-<li><p>Applies a filter to enhance peaks in the data (<code class="docutils literal notranslate"><span class="pre">cellfinder_core/detect/filters/plane/classical_filter.py</span></code>).
+<li><p>Applies a filter to enhance peaks in the data (<code class="docutils literal notranslate"><span class="pre">cellfinder/core/detect/filters/plane/classical_filter.py</span></code>).
 This consists of (in order)</p>
 <ol class="arabic simple">
 <li><p>a median filter (<code class="docutils literal notranslate"><span class="pre">scipy.signal.medfilt2d</span></code>)</p></li>
@@ -641,7 +642,7 @@ This consists of (in order)</p>
 </section>
 <section id="id1">
 <h4>3D filtering<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
-<p>Code can be found in <code class="docutils literal notranslate"><span class="pre">cellfinder_core/detect/filters/volume/ball_filter.py</span></code>.
+<p>Code can be found in <code class="docutils literal notranslate"><span class="pre">cellfinder/core/detect/filters/volume/ball_filter.py</span></code>.
 Both this step and the structure detection step take place in the main <code class="docutils literal notranslate"><span class="pre">Python</span></code> process, with no parallelism. As the planes are processed in the 2D filtering step, they are passed to this step. When <code class="docutils literal notranslate"><span class="pre">ball_z_size</span></code> planes have been handed over, 3D filtering begins.</p>
 <p>The 3D filter stores a 3D array that has depth <code class="docutils literal notranslate"><span class="pre">ball_z_size</span></code>, and contains <code class="docutils literal notranslate"><span class="pre">ball_z_size</span></code> number of planes. This is a small 3D slice of the original data. A spherical kernel runs across the x, y dimensions, and where enough intensity overlaps with the spherical kernel the voxel at the centre of the kernel is marked as being part of a cell. The output of this step is the central plane of the array, with marked cells.</p>
 <p>Memory usage information during 3D filtering:</p>
@@ -652,7 +653,7 @@ Both this step and the structure detection step take place in the main <code cla
 </section>
 <section id="structure-detection">
 <h4>Structure detection<a class="headerlink" href="#structure-detection" title="Link to this heading">#</a></h4>
-<p>Code can be found in <code class="docutils literal notranslate"><span class="pre">cellfinder_core/detect/filters/volume/structure_detection.py</span></code>.
+<p>Code can be found in <code class="docutils literal notranslate"><span class="pre">cellfinder/core/detect/filters/volume/structure_detection.py</span></code>.
 This step takes the planes output from 3D filtering with marked cell voxels, and detects collections of voxels that are adjacent.</p>
 <p>Memory usage information during structure detection:</p>
 <ul class="simple">
