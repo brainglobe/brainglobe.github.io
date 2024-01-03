@@ -45,6 +45,7 @@ extensions = [
     "numpydoc",
     "nbsphinx",
     "notfound.extension",
+    "sphinx_copybutton"
 ]
 
 # Configure the myst parser to enable cool markdown features
