@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=1227d6e8" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -41,6 +42,8 @@
     <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -679,16 +682,27 @@ document.write(`
 <li><p>you can <strong>embed</strong> a window with your rendered scene</p></li>
 <li><p>you can have your scene be rendered in a <strong>pop-up</strong> window.</p></li>
 </ol>
-<p>For an example of how to use <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> with <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> have a look
-<a class="reference external" href="https://github.com/brainglobe/brainrender/blob/master/examples/notebook_workflow.ipynb">here</a>.</p>
 <section id="rendering-your-scene-in-a-separate-window">
 <h2>Rendering your scene in a separate window<a class="headerlink" href="#rendering-your-scene-in-a-separate-window" title="Link to this heading">#</a></h2>
-<p>If you want to have your scene be rendered in a new window, then you just need to set this option before your create your <code class="docutils literal notranslate"><span class="pre">scene</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">vedo</span> <span class="kn">import</span> <span class="n">embedWindow</span>
-<span class="n">embedWindow</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span> 
+<p>If you want your scene to be rendered in a new window, then set this option before you create
+your <code class="docutils literal notranslate"><span class="pre">Scene</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">vedo</span>
+<span class="n">vedo</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">default_backend</span><span class="o">=</span> <span class="s1">&#39;vtk&#39;</span>
 </pre></div>
 </div>
-<p>After this everything will work exactly the same as usual, and you will have access to all of <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>’s features!</p>
+<p>After this everything will work exactly the same as usual, and you will have access to all of <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>’s features.
+E.g. to visualise primary visual cortex in the Allen Adult Mouse Brain Atlas:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">vedo</span>
+<span class="n">vedo</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">default_backend</span><span class="o">=</span> <span class="s1">&#39;vtk&#39;</span>
+
+<span class="kn">from</span> <span class="nn">brainrender</span> <span class="kn">import</span> <span class="n">Scene</span>
+<span class="n">popup_scene</span> <span class="o">=</span> <span class="n">Scene</span><span class="p">(</span><span class="n">atlas_name</span><span class="o">=</span><span class="s1">&#39;allen_mouse_50um&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;popup&#39;</span><span class="p">)</span>
+
+<span class="n">popup_scene</span><span class="o">.</span><span class="n">add_brain_region</span><span class="p">(</span><span class="s1">&#39;VISp&#39;</span><span class="p">)</span>
+
+<span class="n">popup_scene</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>  <span class="c1"># press &#39;Esc&#39; to close</span>
+</pre></div>
+</div>
 </section>
 <section id="embedding-renderings-in-jupyter-notebooks">
 <h2>Embedding renderings in Jupyter notebooks<a class="headerlink" href="#embedding-renderings-in-jupyter-notebooks" title="Link to this heading">#</a></h2>
@@ -698,26 +712,33 @@ document.write(`
 If you want to support all of <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>’s features you should <strong>not embed</strong> renderings in the notebooks.</p>
 <p>Note that this is due to the backend (<code class="docutils literal notranslate"><span class="pre">k3d</span></code>) used to embed the renderings not because of <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>.</p>
 </div>
-<p>If you want to embed your scene anyway, you can do that as either a <code class="docutils literal notranslate"><span class="pre">k3d</span></code> panel or a with <code class="docutils literal notranslate"><span class="pre">itkwidgets</span></code> by setting:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">embedWindow</span><span class="p">(</span><span class="s1">&#39;k3d&#39;</span><span class="p">)</span> <span class="c1"># or &#39;itkwidgets&#39; </span>
-</pre></div>
-</div>
-<p>If you chose <code class="docutils literal notranslate"><span class="pre">k3d</span></code> then to rendered your scene:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">vedo</span> <span class="kn">import</span> <span class="n">show</span>
+<p>If you still need to embed your <code class="docutils literal notranslate"><span class="pre">Scene</span></code> then <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> works slightly differently. E.g. to visualise the
+tectum in the larval zebrafish atlas:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the backend</span>
+<span class="kn">import</span> <span class="nn">vedo</span>
+<span class="n">vedo</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">default_backend</span><span class="o">=</span> <span class="s1">&#39;k3d&#39;</span>
 
-<span class="c1"># scene.render now will prepare the scene for rendering, </span>
-<span class="c1"># but it won&#39;t render anything yet</span>
+<span class="c1"># Create a brainrender scene</span>
+<span class="kn">from</span> <span class="nn">brainrender</span> <span class="kn">import</span> <span class="n">Scene</span>
+<span class="n">scene</span> <span class="o">=</span> <span class="n">Scene</span><span class="p">(</span><span class="n">atlas_name</span><span class="o">=</span><span class="s1">&#39;mpin_zfish_1um&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Embedded&#39;</span><span class="p">)</span>  <span class="c1"># note the title will not actually display</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add_brain_region</span><span class="p">(</span><span class="s1">&#39;tectum&#39;</span><span class="p">)</span>
+
+<span class="c1"># Make sure it gets embedded in the window</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">jupyter</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># scene.render now will prepare the scene for rendering, but it won&#39;t render anything yet</span>
 <span class="n">scene</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
 
-<span class="c1"># to actually display the scene we use `vedo`&#39;s `show` </span>
-<span class="c1"># method to show the scene&#39;s actors</span>
-<span class="n">show</span><span class="p">(</span><span class="n">scene</span><span class="o">.</span><span class="n">actors</span><span class="p">)</span>
+<span class="c1"># To display the scene we use `vedo`&#39;s `show` method to show the scene&#39;s actors</span>
+<span class="kn">from</span> <span class="nn">vedo</span> <span class="kn">import</span> <span class="n">Plotter</span>  <span class="c1"># &lt;- this will be used to render an embedded scene </span>
+<span class="n">plt</span> <span class="o">=</span> <span class="n">Plotter</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="o">*</span><span class="n">scene</span><span class="o">.</span><span class="n">renderables</span><span class="p">)</span>  <span class="c1"># same as vedo.show(*scene.renderables)</span>
 </pre></div>
 </div>
-<p>and with <code class="docutils literal notranslate"><span class="pre">itkwidgets</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">Button</span>
-<span class="n">VBox</span><span class="p">([</span><span class="n">show</span><span class="p">(</span><span class="n">scene</span><span class="o">.</span><span class="n">actors</span><span class="p">)])</span>
-</pre></div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>As with all BrainGlobe tools, if you do not have these atlases locally, the first time you run the commands
+it may be slow as the data is downloaded.</p>
 </div>
 </section>
 </section>
