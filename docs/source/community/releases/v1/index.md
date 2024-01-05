@@ -10,14 +10,13 @@ This will ensure that when you install `brainglobe`, the tools are fetched in a 
 Likewise, it also avoids potential issues when tools have been installed from both `conda-forge` and `PyPI`.
 
 If you don't want to install the entire BrainGlobe suite and are happy to manage the tooling interdependencies yourself, you can still manually install the individual BrainGlobe tools that you wish to use.
-If you choose to do so; as a general rule of thumb you should not mix `conda-forge` and `PyPI` installs, and avoid installing BrainGlobe tools of versions less than 1 in the same environment as those with version greater than 1.
 
-### Previous installs with conda
+### Can I install from `conda-forge`?
 
-If you have previously installed any of our tools from conda, we strongly recommend that you create a new environment and follow the `pip` installation instructions provided on the [installation page](/documentation/index.md#installing-brainglobe).
-The new "version 1" of BrainGlobe provides a PyPI package that comes with the complete suite of tools, and ensures that these are all consistent with one another.
-These are fetched by `pip` and so may cause conflicts if they are already present in your environment, having been fetched from `conda-forge`.
-Mixing `conda-forge` installed packages with the `brainglobe` package from PyPI will likely throw versioning issues as we can't guarantee that `conda` will resolve the tool dependencies correctly.
+We are working on providing a `conda-forge` install for BrainGlobe version 1, as an alternative to the `pip install brainglobe` command that we currently recommend.
+However for the time being, there is no one-line installation possible using `conda`.
+
+There are no problems with `pip install brainglobe`-ing into a `conda` environment, we just need some time to setup all of the individual BrainGlobe tools on `conda-forge` before we can provide an all-in-one install through `conda`!
 
 ## Changes at-a-glance
 

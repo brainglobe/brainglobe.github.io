@@ -32,10 +32,11 @@ The `brainglobe` package, or "meta-package" as we like to refer to it, ensures t
 Key packages provided include:
 
 - `bg-atlasapi`
-- `brainreg`
-- `brainrender` and `brainrender-napari` (new with version 1)
+- `brainglobe-heatmap`
 - `brainglobe-napari-io`
 - `brainglobe-segmentation`
+- `brainreg`
+- `brainrender` and `brainrender-napari` (new with version 1)
 - `cellfinder`
 
 The individual tools that you have been using are still available, and are largely still using the same name (with the exception of the old `cellfinder` command-line-tool, see below).
@@ -45,7 +46,7 @@ For the most part, the effects of moving to version 1 should be limited to the c
 The previous blog posts in this series outline these changes:
 
 - [Blog post](./brainreg_update_live.md) | `brainreg`, `brainreg-napari` have been merged, whilst the somewhat unrelated `brainreg-segment` package has been renamed to distinguish it.
-- [Blog post](./cellfinder_migration_live.md) | The old command-line tool (which confusingly was called "cellfinder" despite being a combination of several BrainGlobe tools) has been moved to `brainmapper` in the `brainglobe-workflows` package.
+- Blog posts: [Initial move](./cellfinder_migration_live.md) and [renaming](./core_and_napari_merge.md) | The old command-line tool (which confusingly was called "cellfinder" despite being a combination of several BrainGlobe tools) has been moved to `brainmapper` in the `brainglobe-workflows` package.
 - [Blog post](./core_and_napari_merge.md) | `cellfinder-core` and `cellfinder-napari` have been merged into just `cellfinder`.
 
 Our vision for the new `brainglobe-workflows` package is to take this one step further and provide a selection of pre-written data analysis pipelines for neuroscientific data.
