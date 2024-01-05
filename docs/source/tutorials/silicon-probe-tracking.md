@@ -100,7 +100,7 @@ You may want to use different [color](https://matplotlib.org/stable/users/explai
 :::
 
 For example: (package importing and rendering code can refer to [this example](https://github.com/brainglobe/brainrender/blob/main/examples/add_cells.py))
-```
+```python
 # Highlight the recording target area
 mos = scene.add_brain_region("MOs", alpha=0.15)
 
@@ -108,4 +108,4 @@ mos = scene.add_brain_region("MOs", alpha=0.15)
 scene.add(Points(np.load(os.path.join(data_folder, 'probe_1_ALM.npy')), name="probe_1", colors="darkred",radius=50))
 ```
 
-**Adapted from instructions by** [**Mateo Vélez-Fort**](https://www.sainsburywellcome.org/web/people/mateo-velez-fort)
+**Adapted from instructions by** [**Mateo Vélez-Fort**](https://www.sainsburywellcome.org/web/people/mateo-velez-fort) and [**Jingjie Li**](https://www.sainsburywellcome.org/web/people/jingjie-li)
