@@ -28,6 +28,16 @@ You can also easily install the complete BrainGlobe suite of tools on a new mach
 pip install brainglobe>=1.0.0
 ```
 
+The `brainglobe` package, or "meta-package" as we like to refer to it, ensures that the BrainGlobe tools installed onto your machine are stable and consistent with each other.
+Key packages provided include:
+
+- `atlasapi`
+- `brainreg`
+- `brainrender` and `brainrender-napari` (new with version 1)
+- `brainglobe-napari-io`
+- `brainglobe-segmentation`
+- `cellfinder`
+
 The individual tools that you have been using are still available, and are largely still using the same name (with the exception of the old `cellfinder` command-line-tool, see below).
 Regardless of how many of our tools you use in your analysis, we recommend that you create a new environment and (re)install any BrainGlobe tools you have been using following the instructions on the installation page.
 
