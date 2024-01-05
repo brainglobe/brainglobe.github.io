@@ -96,7 +96,7 @@ After the segmentation process, click the `To brainrender` button in segmentatio
 with `brainrender`, you can load the `npy` file with the [scene class](/documentation/brainrender/usage/scene). 
 
 :::{note}
-You may want to use different [color](https://matplotlib.org/stable/users/explain/colors/colormaps.html) for each probe.
+You may want to use different [color](https://github.com/FedeClaudi/myterial) for each probe.
 :::
 
 For example: (package importing and rendering code can refer to [this example](https://github.com/brainglobe/brainrender/blob/main/examples/add_cells.py))
