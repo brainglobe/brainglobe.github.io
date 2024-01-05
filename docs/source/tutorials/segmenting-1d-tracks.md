@@ -56,10 +56,17 @@ Make sure you select the points in the order you wish them to be joined.
 **A new Points layer containing the fitted points named `track_0_fit` appears on the left hand side and in the napari window, and a `.csv` file will be saved, showing the brain region for every spline point along the track along with the distance from the start of the track.**
 
 :::{note}
-All data will be saved into your brainreg output directory
+All data will be saved into your brainreg output directory at `/segmentation/atlas_space/tracks` subfolder if you loaded the data from atlas space, otherwise, it will be in the `sample_space` subfolder.
 :::
 
-14. (Optional) Use the `Save` button to save your points to be reloaded at a later date.
+14. (Optional) Use the `Save` button to save your points as `.points` to be reloaded at a later date. Use the `To Brainrender` button to save the fitter spline as `.npy` for [brainrender](https://github.com/brainglobe/brainrender) visualisation.
+
+:::{note}
+Three files will be saved for each 1D track:
++ `TRACK_NAME.csv` a csv table that summrize the depth, brain area, brain region ID (based on allen atlas) for each point of the fitted spline. [example](https://github.com/brainglobe/brainglobe-segmentation/blob/main/tests/data/brainreg_output/segmentation/atlas_space/tracks/test_track.csv). 
++ `TRACK_NAME.npy` a n-rows numpy array that saved the coordination(as index in 3D volume space) for each point of the fitted spline. This array can be imported to [brainrender](https://github.com/brainglobe/brainrender) for visualization. [example](https://github.com/brainglobe/brainglobe-segmentation/blob/main/tests/data/brainreg_output/segmentation/atlas_space/tracks/test_track.npy).
++ `TRACK_NAME.points` - a [pandas HDF5 dataframe](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_hdf.html) containing the coordinates for each point used to create the track (e.g., from manual annotation).
+:::
 
 :::{hint}
 For more information about how to use automated methods to segment your feature of interest, please see [Analysing segmentation from other napari plugins](../documentation/brainglobe-segmentation/user-guide/analysing-external-segmentation).
