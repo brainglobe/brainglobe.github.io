@@ -20,6 +20,14 @@ BrainGlobe version 1 is hallmarked by the release of (version 1 of) the [`braing
 
 ## Users: what you need to know
 
+The version 1 release of `brainglobe` on PyPI will provide you with the entire BrainGlobe tool suite and ensure that the tools are consistent with one another.
+You will no longer need to worry about manually installing individual BrainGlobe tools and checking how they interface with other tools.
+You can also easily install the complete BrainGlobe suite of tools on a new machine or into a fresh environment in a single `pip` command:
+
+```bash
+pip install brainglobe>=1.0.0
+```
+
 The individual tools that you have been using are still available, and are largely still using the same name (with the exception of the old `cellfinder` command-line-tool, see below).
 Regardless of how many of our tools you use in your analysis, we recommend that you create a new environment and (re)install any BrainGlobe tools you have been using following the instructions on the installation page.
 
@@ -29,9 +37,6 @@ The previous blog posts in this series outline these changes:
 - [Blog post](./brainreg_update_live.md) | `brainreg`, `brainreg-napari` have been merged, whilst the somewhat unrelated `brainreg-segment` package has been renamed to distinguish it.
 - [Blog post](./cellfinder_migration_live.md) | The old command-line tool (which confusingly was called "cellfinder" despite being a combination of several BrainGlobe tools) has been moved to `brainmapper` in the `brainglobe-workflows` package.
 - [Blog post](./core_and_napari_merge.md) | `cellfinder-core` and `cellfinder-napari` have been merged into just "`cellfinder`".
-
-The version 1 release of `brainglobe` on PyPI will provide you with the entire BrainGlobe tool suite and ensure that the tools are consistent with one another.
-You will no longer need to worry about manually installing individual BrainGlobe tools and checking how they interface with other tools.
 
 Our vision for the new `brainglobe-workflows` package is to take this one step further and provide a selection of pre-written data analysis pipelines for neuroscientific data.
 Currently the `brainglobe-workflows` package contains the successor to the old cellfinder command-line tool, now called `brainmapper`, but additional workflows will be added in the future.
