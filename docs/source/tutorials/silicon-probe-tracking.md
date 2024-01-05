@@ -91,7 +91,7 @@ the brain region is sampled at. This can be used to determine the brain region f
 after the generation of spline, a [csv](/documentation/brainglobe-segmentation/output-files) file will be saved in `reg_result_path/segmentation/atlas_space/tracks` for each track. You can then get the presumed brain area for each recording channel by matching the `distance` in the csv file and the `depth` you have from the geomotery defination of you recording probe.
 
 ## Visualize the probe track with brainrender
-after the segmentation process, click `to brainrender` button in segmentation GUI. A [npy file](/documentation/brainglobe-segmentation/output-files) will be saved for each track. 
+After the segmentation process, click the `To brainrender` button in segmentation GUI. A [npy file](/documentation/brainglobe-segmentation/output-files) will be saved for each track. 
 
 with `brainrender`, you can load the `npy` file with the [scene class](/documentation/brainrender/usage/scene). 
 
