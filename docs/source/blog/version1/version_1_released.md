@@ -31,7 +31,7 @@ pip install brainglobe>=1.0.0
 The `brainglobe` package, or "meta-package" as we like to refer to it, ensures that the BrainGlobe tools installed onto your machine are stable and consistent with each other.
 Key packages provided include:
 
-- `atlasapi`
+- `bg-atlasapi`
 - `brainreg`
 - `brainrender` and `brainrender-napari` (new with version 1)
 - `brainglobe-napari-io`
