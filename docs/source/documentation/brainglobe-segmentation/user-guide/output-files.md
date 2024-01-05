@@ -1,29 +1,11 @@
 # Output files
 
-brainreg will create a number of output files. Many of these are for use with other software (e.g., brainglobe-segmentation 
-and cellfinder), but they may be useful for your own software.
+## 1D segmentation
+all files will be saved in `reg_result_path/segmentation/atlas_space/tracks` if you loaded the data from atlas space, otherwise, it will be in the folder of `sample_space`.
 
-:::{note}
-N.B. This is not an exhaustive list, as brainreg has many options which may create additional files.
-:::
+three files will be saved for each 1D tracks:
++ `xxx.csv` a csv table that summrize the depth, brain area, brain region ID (based on allen atlas) for each point of the fitted spline. [example](https://github.com/brainglobe/brainglobe-segmentation/blob/main/tests/data/brainreg_output/segmentation/atlas_space/tracks/test_track.csv)
++ `xxx.npy` a n-col numpy array that saved the coordination(as index in 3D volume space) for each point of the fitted spline. This array can be imported to [brainrender](https://github.com/brainglobe/brainrender) for visualization. [example](https://github.com/brainglobe/brainglobe-segmentation/blob/main/tests/data/brainreg_output/segmentation/atlas_space/tracks/test_track.npy)
++ `xxx.points` a n-col [panda HDF5 dataframe](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_hdf.html) that saved the coordination(as index in 3D volume space) for each point that user manually labled to create the track. [example](https://github.com/brainglobe/brainglobe-segmentation/blob/main/tests/data/brainreg_output/segmentation/atlas_space/tracks/test_track.points)
 
-* `boundaries.tiff` - A 3D tiff image of the atlas boundaries, transformed to the space of the raw data.
-* `brainreg_DATE_TIME.log` - A log file detailing the registration process. Useful for debugging and raising issues.
-* `brainreg.json` - A record of all the input parameters, used by other software, e.g. brainglobe-segmentation.
-* `deformation_field_0.tiff` - A 3D tiff describing the deformation from raw data space to atlas space, in the first 
-dimension (based on the supplied orientation and voxel sizes).
-* `deformation_field_1.tiff` - Deformation in the second dimension.
-* `deformation_field_2.tiff` - Deformation in the third dimension.
-* `downsampled.tiff` - The raw data, reoriented to the atlas orientation, and downsampled to the atlas resolution.
-* `downsampled_standard_IMAGE_NAME.tiff` - The raw data, transformed to the atlas (standard) space.
-* `registered_atlas.tiff` - The atlas annotations image, warped to the raw data space. N.B. This is the reoriented, 
-downsampled space of `downsampled.tiff.`
-* `registered_hemispheres.tiff` - Same as `downsampled_atlas.tiff` but for the image coding the hemispheres.
-* `volumes.csv` A CSV file outlining the volumes of each brain area, based on the atlas registration.
-
-Some other files may also be created:
-
-* `downsampled_IMAGE_NAME.tiff` - Similar to `downsampled.tiff` but additional image channels, processed when using the `-d` flag.
-* `niftyreg` This directory contains the intermediate files used by the niftyreg registration. Created when using the `--debug` flag.
-* `registered_atlas_original_orientation.tiff`Same as `registered_atlas.tiff`, but without the reorientation to the 
-atlas orientation. Created when using the `--save-original-orientation` flag.
+## 2D segmentation
