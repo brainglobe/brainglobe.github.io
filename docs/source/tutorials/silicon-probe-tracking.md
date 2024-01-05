@@ -88,4 +88,24 @@ directory, and follow the main brainglobe-segmentation instructions [here](./seg
 segmenting a 1D track. Setting `Spline points` will determine how many times along the length of the track that 
 the brain region is sampled at. This can be used to determine the brain region for each recording site on your probe.
 
+after the generation of spline, a [csv](/documentation/brainglobe-segmentation/output-files) file will be saved in `reg_result_path/segmentation/atlas_space/tracks` for each track. You can then get the presumed brain area for each recording channel by matching the `distance` in the csv file and the `depth` you have from the geomotery defination of you recording probe.
+
+## Visualize the probe track with brainrender
+after the segmentation process, click `to brainrender` button in segmentation GUI. A [npy file](/documentation/brainglobe-segmentation/output-files) will be saved for each track. 
+
+with `brainrender`, you can load the `npy` file with the [scene class](/documentation/brainrender/usage/scene). 
+
+:::{note}
+You may want to use different [color](https://matplotlib.org/stable/users/explain/colors/colormaps.html) for each probe.
+:::
+
+For example: (package importing and rendering code can refer to [this example](https://github.com/brainglobe/brainrender/blob/main/examples/add_cells.py))
+```
+# Highlight the recording target area
+mos = scene.add_brain_region("MOs", alpha=0.15)
+
+# Show the probe track by plotting each point of the fitter spline
+scene.add(Points(np.load(os.path.join(data_folder, 'probe_1_ALM.npy')), name="probe_1", colors="darkred",radius=50))
+```
+
 **Adapted from instructions by** [**Mateo Vélez-Fort**](https://www.sainsburywellcome.org/web/people/mateo-velez-fort)
