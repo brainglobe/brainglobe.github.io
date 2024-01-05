@@ -3,6 +3,8 @@
 BrainGlobe version 1 provides users with the `brainglobe` "meta"-package: a single package that will fetch all the tools in the BrainGlobe suite and install them onto your machine, ready for use.
 It also provides the `brainglobe-workflows` package, which builds on top of `brainglobe` and provides some common analysis pipelines to users, as well as a benchmarking suite for developers working on code performance improvements.
 
+If you want to know more about the under-the-hood workings of the `brainglobe` "meta"-package, you can head to the [developer documentation](/docs/source/community/developers/repositories/brainglobe-meta/index.md).
+
 ## Updating to version 1
 
 Our recommendation for updating to BrainGlobe version 1 is to follow the [installation instructions on the main documentation page](/documentation/index.md#installing-brainglobe) in a clean virtual environment, and delete or archive your old environment.
