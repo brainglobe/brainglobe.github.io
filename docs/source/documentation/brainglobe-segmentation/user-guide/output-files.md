@@ -1,7 +1,7 @@
 # Output files
 
 ## 1D segmentation
-all files will be saved in `reg_result_path/segmentation/atlas_space/tracks` if you loaded the data from atlas space, otherwise, it will be in the folder of `sample_space`.
+All files will be saved into your `brainreg` output directory (the one loaded by the plugin) at `/segmentation/atlas_space/tracks` if you loaded the data from atlas space, otherwise, it will be in the `sample_space folder.
 
 Three files will be saved for each 1D track:
 + `xxx.csv` a csv table that summrize the depth, brain area, brain region ID (based on allen atlas) for each point of the fitted spline. [example](https://github.com/brainglobe/brainglobe-segmentation/blob/main/tests/data/brainreg_output/segmentation/atlas_space/tracks/test_track.csv). 
