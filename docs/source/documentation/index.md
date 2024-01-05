@@ -47,6 +47,8 @@ If you're not confident in resolving these yourself, we recommend installing Bra
 
 ## Individual Tool Documentation
 
+Once you have installed `brainglobe`, or [installed an individual tool](#installing-individual-tools) if you choose to go that route, you can lookup how to use it by following the links below.
+
 ```{toctree}
 :maxdepth: 1
 setting-up/index
@@ -60,3 +62,5 @@ brainglobe-heatmap/index
 cellfinder/index
 morphapi/index
 ```
+
+Developers may also wish to review the documentation [for the `brainglobe` package](/docs/source/community/developers/repositories/brainglobe-meta/index.md) itself.
