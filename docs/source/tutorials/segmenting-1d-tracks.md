@@ -63,8 +63,8 @@ All data will be saved into your brainreg output directory at `/segmentation/atl
 
 :::{note}
 Three files will be saved for each 1D track:
-+ `TRACK_NAME.csv` a csv table that summrize the depth, brain area, brain region ID (based on allen atlas) for each point of the fitted spline. [example](https://github.com/brainglobe/brainglobe-segmentation/blob/main/tests/data/brainreg_output/segmentation/atlas_space/tracks/test_track.csv). 
-+ `TRACK_NAME.npy` a n-rows numpy array that saved the coordination(as index in 3D volume space) for each point of the fitted spline. This array can be imported to [brainrender](https://github.com/brainglobe/brainrender) for visualization. [example](https://github.com/brainglobe/brainglobe-segmentation/blob/main/tests/data/brainreg_output/segmentation/atlas_space/tracks/test_track.npy).
++ `TRACK_NAME.csv` - a csv file summarising the depth, atlas region name, and atlas region ID (based on your chosen atlas) for each point of the fitted spline.
++ `TRACK_NAME.npy` - a numpy array containing the coordinates for each point of the fitted spline. This array can be imported to [brainrender](/documentation/brainrender/index) for visualization.
 + `TRACK_NAME.points` - a [pandas HDF5 dataframe](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_hdf.html) containing the coordinates for each point used to create the track (e.g., from manual annotation).
 :::
 
