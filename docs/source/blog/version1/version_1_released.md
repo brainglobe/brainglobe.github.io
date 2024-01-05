@@ -7,7 +7,7 @@ category: BrainGlobe-v1
 language: English
 ---
 
-# BrainGlobe version 1 is here! :partying_face:
+# BrainGlobe version 1 is here!
 
 Following our series of incremental updates to a number of BrainGlobe tools, we are pleased to announce that BrainGlobe version 1 has been released today!
 Users can now enjoy:
@@ -46,7 +46,7 @@ The previous blog posts in this series outline these changes:
 
 - [Blog post](./brainreg_update_live.md) | `brainreg`, `brainreg-napari` have been merged, whilst the somewhat unrelated `brainreg-segment` package has been renamed to distinguish it.
 - [Blog post](./cellfinder_migration_live.md) | The old command-line tool (which confusingly was called "cellfinder" despite being a combination of several BrainGlobe tools) has been moved to `brainmapper` in the `brainglobe-workflows` package.
-- [Blog post](./core_and_napari_merge.md) | `cellfinder-core` and `cellfinder-napari` have been merged into just "`cellfinder`".
+- [Blog post](./core_and_napari_merge.md) | `cellfinder-core` and `cellfinder-napari` have been merged into just `cellfinder`.
 
 Our vision for the new `brainglobe-workflows` package is to take this one step further and provide a selection of pre-written data analysis pipelines for neuroscientific data.
 Currently the `brainglobe-workflows` package contains the successor to the old cellfinder command-line tool, now called `brainmapper`, but additional workflows will be added in the future.

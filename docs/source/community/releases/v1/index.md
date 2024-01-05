@@ -10,7 +10,7 @@ This will ensure that when you install `brainglobe`, the tools are fetched in a 
 Likewise, it also avoids potential issues when tools have been installed from both `conda-forge` and `PyPI`.
 
 If you don't want to install the entire BrainGlobe suite and are happy to manage the tooling interdependencies yourself, you can still manually install the individual BrainGlobe tools that you wish to use.
-If you choose to do so; as a general rule of thumb you should not mix `conda-forge` and `PyPI` installs, and avoid installing BrainGlobe tools of versions less than 1 in the same environment as those with version greater than 1 at all costs.
+If you choose to do so; as a general rule of thumb you should not mix `conda-forge` and `PyPI` installs, and avoid installing BrainGlobe tools of versions less than 1 in the same environment as those with version greater than 1.
 
 ### Previous installs with conda
 
@@ -60,7 +60,7 @@ cellfinder-core-and-plugin-merge
   - The command-line tool is now called `brainmapper`.
   - The name "cellfinder" is now reserved for the merged `cellfinder-core` and `cellfinder-napari` packages.
 - `cellfinder-core` and `cellfinder-napari` have been merged into a single package, called `cellfinder`.
-  - The `cellfinder` package should not be confused with the old cellfinder command-line tool, described above. Going forward, "cellfinder" will refer exclusively to this new, merged package created from `cellfinder-core` and `cellfinder-napari`. The command-line tool with use the name `brianmapper`.
+  - The `cellfinder` package should not be confused with the old cellfinder command-line tool, described above. Going forward, "cellfinder" will refer exclusively to this new, merged package created from `cellfinder-core` and `cellfinder-napari` which only performs cell detection. The command-line tool with use the name `brainmapper`.
   - The `core` and `napari` features are now available as submodules of the `cellfinder` package. If you previously used `from cellfinder_core import X`, you'll have to use `from cellfinder.core import X` instead.
   - Internal function names and locations have otherwise not changed, beyond their conversion into the `core` and `napari` submodules.
   - The napari plugin is now referred to as the `cellfinder` plugin, and shows up with the name `cellfinder` when viewed in napari (as opposed to the old `cellfinder-napari` name it used to have).
