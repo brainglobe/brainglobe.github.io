@@ -93,7 +93,7 @@ after the generation of spline, a [csv](/documentation/brainglobe-segmentation/o
 ## Visualize the probe track with brainrender
 After the segmentation process, click the `To brainrender` button in segmentation GUI. A [npy file](/documentation/brainglobe-segmentation/output-files) will be saved for each track. 
 
-with `brainrender`, you can load the `npy` file with the [scene class](/documentation/brainrender/usage/scene). 
+With `brainrender`, you can load the `npy` file with the [scene class](/documentation/brainrender/usage/scene). 
 
 :::{note}
 You may want to use different [color](https://github.com/FedeClaudi/myterial) for each probe.
