@@ -7,7 +7,7 @@ Your environment should run Python 3.9 or 3.10. To specify the Python version fo
 
 ```bash
 conda create -n brainglobe-env python=3.10
-
+```
 Once you have created and activated your desired environment, you can install all BrainGlobe tools using `pip`:
 
 ```bash
@@ -66,4 +66,4 @@ cellfinder/index
 morphapi/index
 ```
 
-Developers may also wish to review the documentation [for the `brainglobe` package](/docs/source/community/developers/repositories/brainglobe-meta/index.md) itself.
+Developers may also wish to review the documentation [for the `brainglobe` package](/community/developers/repositories/brainglobe-meta/index.md) itself.
