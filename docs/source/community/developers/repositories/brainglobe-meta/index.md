@@ -98,4 +98,4 @@ As a general rule of thumb when editing the dependency chart, packages/tools sho
 
 Packages on the top level depend on no other BrainGlobe tools.
 Packages on the level below depend on at least one package from the level above, and any number of packages from the level(s) further up than that.
-This illustrates both how BrainGlobe tools build on each other, as well as which tools can be considered ambivalent to new releases of others.
+This illustrates both how BrainGlobe tools build on each other, as well as which tools may be affected by new releases of others.

@@ -61,7 +61,7 @@ cellfinder-core-and-plugin-merge
   - The command-line tool is now called `brainmapper`.
   - The name "cellfinder" is now reserved for the merged `cellfinder-core` and `cellfinder-napari` packages.
 - `cellfinder-core` and `cellfinder-napari` have been merged into a single package, called `cellfinder`.
-  - The `cellfinder` package should not be confused with the old cellfinder command-line tool, described above. Going forward, "cellfinder" will refer exclusively to this new, merged package created from `cellfinder-core` and `cellfinder-napari` which only performs cell detection. The command-line tool with use the name `brainmapper`.
+  - The `cellfinder` package should not be confused with the old cellfinder command-line tool, described above. Going forward, "cellfinder" will refer exclusively to this new, merged package created from `cellfinder-core` and `cellfinder-napari` which only performs cell detection. The command-line tool will use the name `brainmapper`.
   - The `core` and `napari` features are now available as submodules of the `cellfinder` package. If you previously used `from cellfinder_core import X`, you'll have to use `from cellfinder.core import X` instead.
   - Internal function names and locations have otherwise not changed, beyond their conversion into the `core` and `napari` submodules.
   - The napari plugin is now referred to as the `cellfinder` plugin, and shows up with the name `cellfinder` when viewed in napari (as opposed to the old `cellfinder-napari` name it used to have).
