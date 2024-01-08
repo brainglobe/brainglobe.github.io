@@ -45,7 +45,7 @@ extensions = [
     "numpydoc",
     "nbsphinx",
     "notfound.extension",
-    "sphinx_copybutton"
+    "sphinx_copybutton",
 ]
 
 # Configure the myst parser to enable cool markdown features
@@ -108,7 +108,7 @@ html_favicon = "_static/brainglobe.png"
 
 ## Cutomize the theme
 html_theme_options = {
-    "announcement": "BrainGlobe is undergoing restructuring. Keep track of the latest developments on <a href='https://brainglobe.info/blog/version1/version_1_announcement.html'>the blog</a>",
+    "announcement": "BrainGlobe version 1 is here! Head over to  <a href='https://brainglobe.info/blog/version1/version_1_released.html'>the blog</a> to find out more",
     "icon_links": [
         {
             # Label for this link
