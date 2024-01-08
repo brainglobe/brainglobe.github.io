@@ -18,15 +18,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=1227d6e8" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
@@ -35,9 +35,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
 
     <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
@@ -73,7 +73,7 @@
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
 
@@ -117,13 +117,15 @@
 </form></div>
   </div>
 
+  <header>
+
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
     <div class="bd-header-announcement__content">BrainGlobe is undergoing restructuring. Keep track of the latest developments on <a href='https://brainglobe.info/blog/version1/version_1_announcement.html'>the blog</a></div>
   </div>
 
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
 <div class="bd-header__inner bd-page-width">
   <label class="sidebar-toggle primary-toggle" for="__primary">
     <span class="fa-solid fa-bars"></span>
@@ -163,12 +165,6 @@
       
         <div class="navbar-item">
 <nav class="navbar-nav">
-  <p class="sidebar-header-items__title"
-     role="heading"
-     aria-level="1"
-     aria-label="Site Navigation">
-    Site Navigation
-  </p>
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
@@ -342,10 +338,14 @@ document.write(`
   
 </div>
 
-    </nav>
+    </div>
   
+  </header>
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -358,12 +358,6 @@ document.write(`
         
           <div class="navbar-item">
 <nav class="navbar-nav">
-  <p class="sidebar-header-items__title"
-     role="heading"
-     aria-level="1"
-     aria-label="Site Navigation">
-    Site Navigation
-  </p>
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
@@ -513,6 +507,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../../developers/testing.html">Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../developers/new_releases.html">Publishing new releases</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../developers/specific_repos.html">Specific Repository Developer Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../developers/repositories/brainglobe-meta/index.html">brainglobe-meta</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../developers/repositories/brainglobe-workflows/index.html">brainglobe-workflows</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../developers/repositories/cellfinder-core/index.html">cellfinder.core</a></li>
 </ul>
@@ -597,10 +592,26 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
 <section class="tex2jax_ignore mathjax_ignore" id="brainglobe-version-1-overview">
 <h1>BrainGlobe version 1 overview<a class="headerlink" href="#brainglobe-version-1-overview" title="Link to this heading">#</a></h1>
+<p>BrainGlobe version 1 provides users with the <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> “meta”-package: a single package that will fetch all the tools in the BrainGlobe suite and install them onto your machine, ready for use.
+It also provides the <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code> package, which builds on top of <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> and provides some common analysis pipelines to users, as well as a benchmarking suite for developers working on code performance improvements.</p>
+<p>If you want to know more about the under-the-hood workings of the <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> “meta”-package, you can head to the <a class="reference internal" href="#/docs/source/community/developers/repositories/brainglobe-meta/index.md"><span class="xref myst">developer documentation</span></a>.</p>
+<section id="updating-to-version-1">
+<h2>Updating to version 1<a class="headerlink" href="#updating-to-version-1" title="Link to this heading">#</a></h2>
+<p>Our recommendation for updating to BrainGlobe version 1 is to follow the <a class="reference internal" href="../../../documentation/index.html#installing-brainglobe"><span class="std std-ref">installation instructions on the main documentation page</span></a> in a clean virtual environment, and delete or archive your old environment.
+This will ensure that when you install <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code>, the tools are fetched in a consistent manner and do not pick up any manually installed BrainGlobe tools that might be in your environment or python path.
+Likewise, it also avoids potential issues when tools have been installed from both <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> and <code class="docutils literal notranslate"><span class="pre">PyPI</span></code>.</p>
+<p>If you don’t want to install the entire BrainGlobe suite and are happy to manage the tooling interdependencies yourself, you can still manually install the individual BrainGlobe tools that you wish to use.</p>
+<section id="can-i-install-from-conda-forge">
+<h3>Can I install from <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>?<a class="headerlink" href="#can-i-install-from-conda-forge" title="Link to this heading">#</a></h3>
+<p>We are working on providing a <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> install for BrainGlobe version 1, as an alternative to the <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">brainglobe</span></code> command that we currently recommend.
+However for the time being, there is no one-line installation possible using <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>
+<p>There are no problems with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">brainglobe</span></code>-ing into a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment, we just need some time to setup all of the individual BrainGlobe tools on <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> before we can provide an all-in-one install through <code class="docutils literal notranslate"><span class="pre">conda</span></code>!</p>
+</section>
+</section>
 <section id="changes-at-a-glance">
 <h2>Changes at-a-glance<a class="headerlink" href="#changes-at-a-glance" title="Link to this heading">#</a></h2>
 <p>Below is a high-level overview of the changes to the brainglobe suite of tools that we offer.
@@ -630,11 +641,14 @@ You can follow the links provided for more information; including a listing of r
 <tr class="row-odd"><td><p>cellfinder-core and cellfinder-napari merged into “new cellfinder”</p></td>
 <td class="text-center"><p><a class="reference internal" href="cellfinder-core-and-plugin-merge.html"><span class="std std-doc">Further info</span></a></p></td>
 </tr>
+<tr class="row-even"><td><p>The cellfinder command-line tool has been replaced with <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code></p></td>
+<td class="text-center"><p><a class="reference internal" href="cellfinder-core-and-plugin-merge.html"><span class="std std-doc">Further info</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">brainrender</span></code> and <code class="docutils literal notranslate"><span class="pre">brainrender-napari</span></code> are now available through the <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> meta-package</p></td>
+<td class="text-center"><p><a class="reference internal" href="../../../blog/version1/version_1_released.html"><span class="std std-doc">Further info</span></a></p></td>
+</tr>
 </tbody>
 </table>
-</section>
-<section id="complete-index">
-<h2>Complete index<a class="headerlink" href="#complete-index" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="brainreg.html">Version 1: changes to registration and segmentation tools</a></li>
@@ -642,6 +656,58 @@ You can follow the links provided for more information; including a listing of r
 <li class="toctree-l1"><a class="reference internal" href="cellfinder-core-and-plugin-merge.html">Version 1: changes to the cellfinder backend and plugin</a></li>
 </ul>
 </div>
+</section>
+<section id="full-changelog">
+<h2>Full Changelog<a class="headerlink" href="#full-changelog" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Recommended BrainGlobe install is via pip, into a clean environment.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">brainglobe</span></code> to install BrainGlobe tools. Recommended even if you only want to use one or two tools.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">brainglobe-workflows</span></code> if you also want to use the example analysis workflows that we provide.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brainreg-napari</span></code> is now shipped with <code class="docutils literal notranslate"><span class="pre">brainreg</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">brainreg</span></code> functionality is now available in a submodule, <code class="docutils literal notranslate"><span class="pre">brainreg.core</span></code>. If you previously used the Python API provided in <code class="docutils literal notranslate"><span class="pre">brainreg</span></code>, you will need to change your <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">brainreg</span> <span class="pre">import</span> <span class="pre">X</span></code> statements to <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">brainreg.core</span> <span class="pre">import</span> <span class="pre">X</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">brainreg-napari</span></code> plugin is now just called <code class="docutils literal notranslate"><span class="pre">brainreg</span></code> when using <code class="docutils literal notranslate"><span class="pre">napari</span></code>. The plugin’s backend is in the submodule <code class="docutils literal notranslate"><span class="pre">brainreg.napari</span></code> rather than <code class="docutils literal notranslate"><span class="pre">brainreg-napari</span></code>.</p></li>
+<li><p>The new <code class="docutils literal notranslate"><span class="pre">brainreg.core</span></code> and <code class="docutils literal notranslate"><span class="pre">brainreg.napari</span></code> submodules retain the old internal structure of the respective deprecated packages.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brainreg-segment</span></code> has been renamed <code class="docutils literal notranslate"><span class="pre">brainglobe-segmentation</span></code>.</p>
+<ul>
+<li><p>Beyond the name change, package internals have not changed.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> command-line-interface (CLI) has been renamed and moved.</p>
+<ul>
+<li><p>The command-line interface is now provided by <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code>.</p></li>
+<li><p>The command-line tool is now called <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code>.</p></li>
+<li><p>The name “cellfinder” is now reserved for the merged <code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code> and <code class="docutils literal notranslate"><span class="pre">cellfinder-napari</span></code> packages.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code> and <code class="docutils literal notranslate"><span class="pre">cellfinder-napari</span></code> have been merged into a single package, called <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code>.</p>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> package should not be confused with the old cellfinder command-line tool, described above. Going forward, “cellfinder” will refer exclusively to this new, merged package created from <code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code> and <code class="docutils literal notranslate"><span class="pre">cellfinder-napari</span></code> which only performs cell detection. The command-line tool will use the name <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">core</span></code> and <code class="docutils literal notranslate"><span class="pre">napari</span></code> features are now available as submodules of the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> package. If you previously used <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">cellfinder_core</span> <span class="pre">import</span> <span class="pre">X</span></code>, you’ll have to use <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">cellfinder.core</span> <span class="pre">import</span> <span class="pre">X</span></code> instead.</p></li>
+<li><p>Internal function names and locations have otherwise not changed, beyond their conversion into the <code class="docutils literal notranslate"><span class="pre">core</span></code> and <code class="docutils literal notranslate"><span class="pre">napari</span></code> submodules.</p></li>
+<li><p>The napari plugin is now referred to as the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> plugin, and shows up with the name <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> when viewed in napari (as opposed to the old <code class="docutils literal notranslate"><span class="pre">cellfinder-napari</span></code> name it used to have).</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code> has been released.</p>
+<ul>
+<li><p>This package provides some exemplar data analysis workflows for users to modify or customise to suit their needs.</p></li>
+<li><p>It will also provide command-line interfaces for particularly common workflows. Currently it provides <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code>, the successor to the <em>old</em> cellfinder command-line tool.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">brainglobe</span></code> is now the recommended way to install all BrainGlobe tools.</p>
+<ul>
+<li><p>This will fetch the <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> meta-package, which includes the latest stable versions of all BrainGlobe tools and napari plugins.</p></li>
+<li><p>All tools will be accessible in the install environment as if they had been pip-installed directly.</p></li>
+<li><p>If you are updating to <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> version 1 having previously installed BrainGlobe tools individually, we <a class="reference internal" href="#updating-to-version-1"><span class="std std-ref">recommend you create</span></a> a clean Python environment and install <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> into this fresh environment to avoid potential package conflicts.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> package now ships the fixed <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>, as well as <code class="docutils literal notranslate"><span class="pre">brainrender-napari</span></code> which we plan to transition to in the future.</p></li>
+</ul>
+</li>
+</ul>
 </section>
 </section>
 
@@ -686,15 +752,21 @@ You can follow the links provided for more information; including a listing of r
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-  <div class="sidebar-secondary-item">
 
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> On this page
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-to-version-1">Updating to version 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-install-from-conda-forge">Can I install from <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>?</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changes-at-a-glance">Changes at-a-glance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-index">Complete index</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-changelog">Full Changelog</a></li>
 </ul>
   </nav></div>
 
@@ -711,8 +783,8 @@ You can follow the links provided for more information; including a listing of r
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -726,7 +798,7 @@ Created using <a href="https://sphinx-doc.org/">Sphinx</a> 7.2.6.
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.14.4.
+0.15.1.
 </p></div>
       
     </div>

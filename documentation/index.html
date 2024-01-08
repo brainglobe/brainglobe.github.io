@@ -18,15 +18,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=1227d6e8" />
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
@@ -35,9 +35,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
 
     <script src="../_static/documentation_options.js?v=d45e8c67"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
@@ -73,7 +73,7 @@
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
 
@@ -117,13 +117,15 @@
 </form></div>
   </div>
 
+  <header>
+
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
     <div class="bd-header-announcement__content">BrainGlobe is undergoing restructuring. Keep track of the latest developments on <a href='https://brainglobe.info/blog/version1/version_1_announcement.html'>the blog</a></div>
   </div>
 
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
 <div class="bd-header__inner bd-page-width">
   <label class="sidebar-toggle primary-toggle" for="__primary">
     <span class="fa-solid fa-bars"></span>
@@ -163,12 +165,6 @@
       
         <div class="navbar-item">
 <nav class="navbar-nav">
-  <p class="sidebar-header-items__title"
-     role="heading"
-     aria-level="1"
-     aria-label="Site Navigation">
-    Site Navigation
-  </p>
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
@@ -336,12 +332,20 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
-    </nav>
+    </div>
   
+  </header>
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -354,12 +358,6 @@ document.write(`
         
           <div class="navbar-item">
 <nav class="navbar-nav">
-  <p class="sidebar-header-items__title"
-     role="heading"
-     aria-level="1"
-     aria-label="Site Navigation">
-    Site Navigation
-  </p>
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
@@ -658,10 +656,53 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
 <section class="tex2jax_ignore mathjax_ignore" id="documentation">
 <h1>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h1>
+<section id="installing-brainglobe">
+<h2>Installing BrainGlobe<a class="headerlink" href="#installing-brainglobe" title="Link to this heading">#</a></h2>
+<p>We always recommend that you install BrainGlobe tools into a virtual environment (managed by software such as <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">venv</span></code>).
+Your environment should run Python 3.9 or 3.10. To specify the Python version for new conda environment, add it as a parameter on creation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>brainglobe-env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10
+
+Once<span class="w"> </span>you<span class="w"> </span>have<span class="w"> </span>created<span class="w"> </span>and<span class="w"> </span>activated<span class="w"> </span>your<span class="w"> </span>desired<span class="w"> </span>environment,<span class="w"> </span>you<span class="w"> </span>can<span class="w"> </span>install<span class="w"> </span>all<span class="w"> </span>BrainGlobe<span class="w"> </span>tools<span class="w"> </span>using<span class="w"> </span><span class="sb">`</span>pip<span class="sb">`</span>:
+
+<span class="sb">```</span>bash
+pip<span class="w"> </span>install<span class="w"> </span>brainglobe
+</pre></div>
+</div>
+<p>This will fetch all BrainGlobe tools, their Python APIs, and <a class="reference external" href="https://napari.org"><code class="docutils literal notranslate"><span class="pre">napari</span></code></a> plugins if they possess one.
+It will also install <code class="docutils literal notranslate"><span class="pre">napari</span></code> into your environment so that you can make use of the plugins.</p>
+<p>If you also want to install our analysis workflows (such as <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code>, previously the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> CLI), you will also need to install the <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code> package.
+This package builds on top of the <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> tools, and provides you with some commonly-used data analysis pipelines to save you from having to write your own scripts for standard workflows.
+You can read about the workflows that are provided <a class="reference internal" href="brainglobe-workflows/index.html"><span class="std std-doc">on the documentation page</span></a>.
+To install <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code>, run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>brainglobe-workflows&gt;<span class="o">=</span><span class="m">1</span>.0.0
+</pre></div>
+</div>
+<p>in your environment.
+If you didn’t previously install <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> into this environment, <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code> will do so when you run the command above.
+Otherwise, it will use the version of <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> that you already have installed.</p>
+<section id="updating">
+<h3>Updating<a class="headerlink" href="#updating" title="Link to this heading">#</a></h3>
+<p>You can update your BrainGlobe tools by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>brainglobe<span class="w"> </span>--update
+</pre></div>
+</div>
+<p>in your virtual environment.</p>
+</section>
+<section id="installing-individual-tools">
+<h3>Installing Individual Tools<a class="headerlink" href="#installing-individual-tools" title="Link to this heading">#</a></h3>
+<p>We recommend installing BrainGlobe in the manner detailed above, however each of the tools in the suite can be individually installed if you so wish.
+This can be done by following the install instructions for the particular tool in question.</p>
+<p>Please note that, if you choose to install the tools individually, we cannot guarantee that you will have a consistent and interoperable set of BrainGlobe tools - you may encounter version conflicts or dependency issues.
+If you’re not confident in resolving these yourself, we recommend installing BrainGlobe in the manner above, and updating your BrainGlobe tools by updating the overarching <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> package.</p>
+</section>
+</section>
+<section id="individual-tool-documentation">
+<h2>Individual Tool Documentation<a class="headerlink" href="#individual-tool-documentation" title="Link to this heading">#</a></h2>
+<p>Once you have installed <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code>, or <a class="reference internal" href="#installing-individual-tools"><span class="std std-ref">installed an individual tool</span></a> if you choose to go that route, you can lookup how to use it by following the links below.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="setting-up/index.html">Setting up</a></li>
@@ -676,6 +717,8 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="morphapi/index.html">morphapi</a></li>
 </ul>
 </div>
+<p>Developers may also wish to review the documentation <a class="reference internal" href="#/docs/source/community/developers/repositories/brainglobe-meta/index.md"><span class="xref myst">for the <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> package</span></a> itself.</p>
+</section>
 </section>
 
 <div class="section ablog__blog_comments">
@@ -717,6 +760,28 @@ document.write(`
             
             
               
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-brainglobe">Installing BrainGlobe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating">Updating</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-individual-tools">Installing Individual Tools</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#individual-tool-documentation">Individual Tool Documentation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
           <footer class="bd-footer-content">
@@ -728,8 +793,8 @@ document.write(`
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -743,7 +808,7 @@ Created using <a href="https://sphinx-doc.org/">Sphinx</a> 7.2.6.
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.14.4.
+0.15.1.
 </p></div>
       
     </div>
