@@ -66,4 +66,4 @@ cellfinder/index
 morphapi/index
 ```
 
-Developers may also wish to review the documentation [for the `brainglobe` package](/docs/source/community/developers/repositories/brainglobe-meta/index.md) itself.
+Developers may also wish to review the documentation [for the `brainglobe` package](/community/developers/repositories/brainglobe-meta/index.md) itself.
