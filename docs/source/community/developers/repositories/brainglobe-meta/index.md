@@ -85,3 +85,17 @@ The tree does not include non-BrainGlobe dependencies.
 Coloured arrows are only present to allow for line-tracing when arrows cross.
 
 ![Dependency tree for tools provided by the meta-package.](./brainglobe-dependencies.svg)
+
+### Regenerating the Dependency Tree
+
+The image file containing the dependency tree is saved under `<repo_root>/docs/source/community/developers/repositories/brainglobe-meta/brainglobe-dependencies.svg`.
+It can be edited with any software that can open and manipulate `.svg` files, however the recommended tool is [`drawio`](https://app.diagrams.net/) which provides a GUI for editing `.svg`s.
+Simply upload the current version of the file to the website, edit the flowchart as you see fit, then hit `File > Export As... > SVG`, which will open a further dialogue box with export options.
+In this box, be sure to select "`Text Settings: Convert Labels to SVG`" to ensure that the exported flowchart's text is encoded correctly.
+You can then export the file and save the new version to the repository.
+
+As a general rule of thumb when editing the dependency chart, packages/tools should be organised into levels from the top down, with arrows pointing _out of dependencies_ **into** _the dependent packages_.
+
+Packages on the top level depend on no other BrainGlobe tools.
+Packages on the level below depend on at least one package from the level above, and any number of packages from the level(s) further up than that.
+This illustrates both how BrainGlobe tools build on each other, as well as which tools can be considered ambivalent to new releases of others.
