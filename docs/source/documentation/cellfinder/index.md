@@ -52,8 +52,6 @@ user-guide/training-strategy
 ```{toctree}
 :maxdepth: 1
 troubleshooting/index
-troubleshooting/error-messages
-troubleshooting/speed-up
 ```
 
 ## Citing cellfinder

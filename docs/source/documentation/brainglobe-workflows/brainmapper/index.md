@@ -17,6 +17,7 @@ cli
 visualisation
 output-files
 training/index
+error-messages
 ```
 
 ## Tutorials
@@ -25,11 +26,6 @@ training/index
 :maxdepth: 1
 /tutorials/brainmapper/index
 ```
-
-## Troubleshooting
-
-Since `brainmapper` uses `cellfinder`, you may encounter issues when using the command-line tool that are [documented on the `cellfinder` page](../../cellfinder/troubleshooting/index.md).
-[Head there](../../cellfinder/troubleshooting/index.md) for more information on some common issues and debugging tips.
 
 ## Notes
 
