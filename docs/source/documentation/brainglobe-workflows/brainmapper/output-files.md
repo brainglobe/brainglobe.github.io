@@ -27,5 +27,5 @@ The registration directory is simply a `brainreg` output directory.
 To understand these files, please see the [brainreg output files](/documentation/brainreg/user-guide/output-files/) page.
 
 Two other files are also saved, `brainmapper.json` and `brainglobe_workflows_DATE_TIME.log`.
-These files contain information about how cellfinder was run, and are useful for troubleshooting and debugging.
+These files contain information about how brainmapper was run, and are useful for troubleshooting and debugging.
 If you ask for help (e.g. on the [image.sc. forum](https://forum.image.sc/tag/brainglobe)), we may ask you to send the log file.
