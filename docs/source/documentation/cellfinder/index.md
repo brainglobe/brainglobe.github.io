@@ -11,11 +11,9 @@ cellfinder can be used in three ways, each with different user interfaces and di
 
 ### cellfinder.core
 
-`cellfinder.core` is a Python submodule implementing the core algorithm for efficient cell detection in large images.
-
+`cellfinder.core` is a Python submodule implementing the core algorithm for efficient cell detection in large images. 
 The submodule exists to allow developers to implement the algorithm in their own software.
-For now, the only API documentation is in the [GitHub README](https://github.com/brainglobe/cellfinder/blob/main/README.md), please see the documentation for the napari plugin [here](user-guide/napari-plugin/index) for an explanation of the parameters.
-Alternatively, please [get in touch](/contact).
+
 
 ### cellfinder napari plugin
 
@@ -64,5 +62,3 @@ If you find `cellfinder` useful, and use it in your research, please cite the pa
 > Tyson, A. L., Rousseau, C. V., Niedworok, C. J., Keshavarzi, S., Tsitoura, C., Cossell, L., Strom, M. and Margrie, T. W. (2021) “A deep learning algorithm for 3D cell detection in whole mouse brain image datasets’ PLOS Computational Biology, 17(5), e1009074
 [https://doi.org/10.1371/journal.pcbi.1009074](https://doi.org/10.1371/journal.pcbi.1009074)
 >
-
-If you use any of the image registration functions in cellfinder, please also cite [brainreg](/documentation/brainreg/index).
