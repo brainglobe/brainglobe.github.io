@@ -13,7 +13,8 @@ For registration, you only need a single channel, but this is ideally a "backgro
 
 For cell detection, you will need two channels, the "signal" channel, and the "background" channel.
 The signal channel should contain brightly labelled cells (e.g. from staining or viral injections).
-The models supplied with `brainmapper` were trained on whole-cell labels, so if you have e.g. a nuclear marker, they will need to be retrained (see [Training the network](training/index).
+The models supplied with `brainmapper` were trained on whole-cell labels, so if you have e.g. a nuclear marker, 
+they will need to be retrained (see [Training the network](training/index)).
 However, realistically, the network will need to be retrained for every new application.
 
 ### Image structure
