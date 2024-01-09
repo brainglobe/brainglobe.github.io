@@ -26,7 +26,7 @@ Otherwise cellfinder will interpret the path as two inputs, separated by a space
 ### CommandLineInputError: File path: cannot be found.
 
 ```bash
-imlib.general.exceptions.CommandLineInputError: File path: '/media/adam/Storage/cellfinder/data/dataset1' cannot be found.
+brainglobe_utils.general.exceptions.CommandLineInputError: File path: '/media/adam/Storage/cellfinder/data/dataset1' cannot be found.
 ```
 
 If you see an error like this, there could be a few possible reasons, e.g.:
