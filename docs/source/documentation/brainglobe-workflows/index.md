@@ -34,3 +34,5 @@ pip install brainglobe-workflows
 ```
 This will fetch the latest version of `brainglobe-workflows`, providing you with the `brainmapper` command-line tool / workflow which is functionally equivalent to the old "cellfinder" command-line tool.
 It will also provide you with the updated `cellfinder` package (at least `v1.0.0`) whose API and package structure matches that described in the documentation.
+
+
