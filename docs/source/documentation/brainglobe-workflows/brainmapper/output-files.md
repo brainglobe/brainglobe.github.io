@@ -20,7 +20,6 @@ The file descriptions are ordered by the subdirectory that they are found in, wi
 - `downsampled.points` - Detected cell coordinates, in the coordinate space of the raw data, but downsampled and reoriented to match the atlas (but not yet warped to the atlas). This can be loaded with `pandas.read_hdf()`
 - `atlas.points` - As above, but warped to the atlas. This can be loaded with `pandas.read_hdf()`
 - `points.npy` - Cell coordinates, transformed into atlas space, for visualisation using [brainrender](https://github.com/brainglobe/brainrender)
-- `abc4d.npy` - Exported file for use with [abc4d](https://github.com/valeriabonapersona/abc4d)
 
 ## Registration
 
