@@ -100,19 +100,6 @@ Studio 2015, 2017 and 2019", available from Microsoft's website
 SyntaxError: invalid syntax
 ```
 
-### Can't find /usr/local/opt/libpng/lib/libpng16.16.dylib
-
-```
-Can't find /usr/local/opt/libpng/lib/libpng16.16.dylib
-```
-
-This sometimes happens when running registration on macOS. You may need to install `libpng`. The first thing to 
-do is to [install homebrew](https://brew.sh/) and then run:
-
-```
-brew install libpng
-```
-
 ## Things that look like errors, but aren't:
 
 Most things that are actually errors will interrupt cellfinder, and the program won't run. Other things will get 

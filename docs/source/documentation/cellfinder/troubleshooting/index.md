@@ -21,10 +21,6 @@ The classification will use a pre-trained network by default that is included wi
 This network will usually need to be retrained.
 For more details, please see the guide to [retraining the pre-trained network](/documentation/cellfinder/user-guide/training-strategy).
 
-## Registration
-
-Please see the [brainreg troubleshooting guide](/documentation/brainreg/troubleshooting).
-
 ## Fixing technical problems
 
 As `brainmapper` relies on a number of third party libraries, notably

@@ -5,9 +5,6 @@
 Using an NVIDIA GPU will speed up cell classification considerably.
 See [setting up your GPU](/documentation/setting-up/gpu) for details.
 
-`cellfinder` uses `brainreg` for atlas registration, and the hardware requirements for `brainreg` depend on the atlas (and in particular, the resolution) you want to use.
-Most machines (including laptops) will be able to use most of the atlases, but some atlases (such as the 10&mu;m mouse atlases) may need up to 50GB of RAM.
-
 ## Installation
 
 To use cellfinder, you will need to have Python on your machine.
