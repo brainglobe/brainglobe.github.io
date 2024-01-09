@@ -2,11 +2,11 @@
 
 `brainmapper` can:
 
-- Detect labelled cells in 3D in whole-brain images (many hundreds of GB),
-- Register the image to an atlas (such as the [Allen Mouse Brain Atlas](https://atlas.brain-map.org/atlas?atlas=602630314)),
-- Segment the brain based on the reference atlas,
-- Calculate the volume of each brain area, and the number of labelled cells within it,
-- Transform everything into standard space for analysis and visualisation.
+- Detect labelled cells in 3D in whole-brain images (many hundreds of GB)
+- Register the image to an atlas (such as the [Allen Mouse Brain Atlas](https://atlas.brain-map.org/atlas?atlas=602630314))
+- Segment the brain based on the reference atlas
+- Calculate the volume of each brain area, and the number of labelled cells within it
+- Transform everything into standard space for analysis and visualisation
 
 ## User Guide
 
