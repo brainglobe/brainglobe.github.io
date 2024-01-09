@@ -24,11 +24,6 @@ You can then use these yaml files for training, either using the
 [napari plugin](/documentation/cellfinder/user-guide/napari-plugin/training-the-network), or the following 
 command-line tool.
 
-:::{caution}
-If you have any yaml files from previous versions of cellfinder, they will continue to work, but are not documented 
-here. Just use them as you would the files from the napari plugin._&#x20;
-:::
-
 :::{hint}
 If you would like to use the data that was originally used to train the supplied network, 
 please see [Using supplied training data](using-supplied-data)
