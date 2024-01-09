@@ -16,8 +16,8 @@ data-requirements
 cli
 visualisation
 output-files
-training/index
 error-messages
+/documentation/cellfinder/user-guide/training/index
 ```
 
 ## Tutorials
@@ -26,6 +26,7 @@ error-messages
 :maxdepth: 1
 /tutorials/brainmapper/index
 ```
+
 
 ## Notes
 

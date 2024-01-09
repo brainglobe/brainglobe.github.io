@@ -7,7 +7,7 @@ In this tutorial, you will use the [cellfinder](../documentation/cellfinder/inde
 The aim of this tutorial is to get up and running retraining cellfinder using a very small training dataset. When it 
 comes to using cellfinder with your own data, it is very important to retrain the network properly. You also may want to
  use the command line tool instead of using napari. For more information, please see the full 
-[cellfinder re-training documentation](../documentation/cellfinder/user-guide/training-strategy).
+[cellfinder re-training documentation](/documentation/cellfinder/user-guide/training/index).
 
 Before running this tutorial, please run the [cell detection tutorial](./cellfinder-detection) first.
 

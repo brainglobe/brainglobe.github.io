@@ -1,6 +1,6 @@
 # Generating data to retrain the cellfinder classification network
 
-Before generating training data, please see the guide to [retraining the pre-trained network](/documentation/cellfinder/user-guide/training-strategy).
+Before generating training data, please see the guide to [retraining the pre-trained network](/documentation/cellfinder/user-guide/training/index).
 
 ## Loading data
 

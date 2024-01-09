@@ -19,7 +19,7 @@ In general, false positives (non-cells being detected) is generally ok, as these
 
 The classification will use a pre-trained network by default that is included with the software.
 This network will usually need to be retrained.
-For more details, please see the guide to [retraining the pre-trained network](/documentation/cellfinder/user-guide/training-strategy).
+For more details, please see the guide to [retraining the pre-trained network](/documentation/cellfinder/user-guide/training/index).
 
 ## Fixing technical problems
 

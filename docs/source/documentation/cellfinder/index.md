@@ -44,7 +44,7 @@ installation
 :maxdepth: 1
 user-guide/napari-plugin/index
 user-guide/cellfinder-core
-user-guide/training-strategy
+user-guide/training/index
 ```
 
 ## Troubleshooting
