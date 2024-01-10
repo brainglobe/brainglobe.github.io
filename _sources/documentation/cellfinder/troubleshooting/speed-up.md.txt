@@ -13,8 +13,8 @@ Annoying advice, but a bigger, better computer will likely speed up cellfinder.
 In particular, we recommend:
 
 * Multicore CPU (the more cores and the faster the better)
-* A recent NVIDIA GPU (the more VRAM and CUDA cores the better).
-* Plenty of RAM. If you want to register your images to an atlas, this can use up to 50GB of RAM (depending on the atlas)
+* A recent NVIDIA GPU (the more VRAM and CUDA cores the better)
+* Plenty of RAM (ideally >32GB)
 * Fast local storage for your data (ideally SSD)
 
 ### Put your data on a fast hard drive

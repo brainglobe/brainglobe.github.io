@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Retraining the pre-trained network &#8212; BrainGlobe</title>
+    <title>Debugging common error messages &#8212; BrainGlobe</title>
   
   
   
@@ -52,14 +52,14 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/cellfinder/user-guide/training-strategy';</script>
-    <link rel="canonical" href="https://brainglobe.info/documentation/cellfinder/user-guide/training-strategy.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/brainglobe-workflows/brainmapper/error-messages';</script>
+    <link rel="canonical" href="https://brainglobe.info/documentation/brainglobe-workflows/brainmapper/error-messages.html" />
     <link rel="icon" href="../../../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Troubleshooting" href="../troubleshooting/index.html" />
-    <link rel="prev" title="cellfinder.core API" href="cellfinder-core.html" />
+    <link rel="next" title="Retraining the pre-trained network" href="../../cellfinder/user-guide/training/index.html" />
+    <link rel="prev" title="Output files" href="output-files.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -535,20 +535,20 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../../brainglobe-segmentation/user-guide/analysing-external-segmentation.html">Analysing segmentation from other napari plugins</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../brainglobe-workflows/index.html">brainglobe-workflows</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../brainglobe-workflows/brainmapper/index.html"><code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../brainglobe-workflows/brainmapper/data-requirements.html">Data requirements</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../brainglobe-workflows/brainmapper/cli.html">Command line interface</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../brainglobe-workflows/brainmapper/candidate-detection.html">Cell candidate detection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../brainglobe-workflows/brainmapper/classification.html">Cell candidate classification</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">brainglobe-workflows</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html"><code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command line tool</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="data-requirements.html">Data requirements</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="cli.html">Command line interface</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="candidate-detection.html">Cell candidate detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classification.html">Cell candidate classification</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../brainreg/user-guide/parameters.html">Registration parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../brainglobe-workflows/brainmapper/using-brainmapper-at-the-swc.html">Using <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> at the SWC</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../brainglobe-workflows/brainmapper/visualisation.html">Visualisation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../brainglobe-workflows/brainmapper/output-files.html">Output files</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../brainglobe-workflows/brainmapper/training/index.html">Training the network</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../brainglobe-workflows/brainmapper/training/using-supplied-data.html">Using supplied training data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualisation.html">Visualisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="output-files.html">Output files</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Debugging common error messages</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../cellfinder/user-guide/training/index.html">Retraining the pre-trained network</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../cellfinder/user-guide/training/using-supplied-data.html">Using supplied training data</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../tutorials/brainmapper/index.html">Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -579,27 +579,28 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../brainglobe-heatmap/index.html">brainglobe-heatmap</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">cellfinder</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../installation.html">Requirements</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="napari-plugin/index.html">cellfinder napari plugin</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="napari-plugin/cell-detection.html">Cell detection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="napari-plugin/training-the-network.html">Retraining the network for new data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="napari-plugin/training-data-generation.html">Generating data to retrain the cellfinder classification network</a></li>
-<li class="toctree-l3"><a class="reference internal" href="napari-plugin/all-cell-detection-parameters.html">All cell detection parameters</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cellfinder/index.html">cellfinder</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cellfinder/installation.html">Requirements</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cellfinder/user-guide/napari-plugin/index.html">cellfinder napari plugin</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/napari-plugin/cell-detection.html">Cell detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/napari-plugin/training-the-network.html">Retraining the network for new data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/napari-plugin/training-data-generation.html">Generating data to retrain the cellfinder classification network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/napari-plugin/all-cell-detection-parameters.html">All cell detection parameters</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="cellfinder-core.html">cellfinder.core API</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Retraining the pre-trained network</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../troubleshooting/error-messages.html">Debugging common error messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cellfinder/user-guide/cellfinder-core.html">cellfinder.core API</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cellfinder/user-guide/training/index.html">Retraining the pre-trained network</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/training/using-supplied-data.html">Using supplied training data</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../troubleshooting/error-messages.html">Debugging common error messages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cellfinder/troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/troubleshooting/error-messages.html">Debugging common error messages</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../morphapi/index.html">morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../morphapi/index.html">morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../morphapi/usage/downloading-data.html">Downloading data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../morphapi/usage/rendering-data.html">Rendering data</a></li>
 </ul>
@@ -633,6 +634,8 @@ document.write(`
 
 
 
+
+
 <nav aria-label="Breadcrumb">
   <ul class="bd-breadcrumbs">
     
@@ -645,9 +648,12 @@ document.write(`
     <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Documentation</a></li>
     
     
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">cellfinder</a></li>
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Retraining...</li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link"><code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command line tool</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Debugging...</li>
   </ul>
 </nav>
 </div>
@@ -664,59 +670,45 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-<section class="tex2jax_ignore mathjax_ignore" id="retraining-the-pre-trained-network">
-<h1>Retraining the pre-trained network<a class="headerlink" href="#retraining-the-pre-trained-network" title="Link to this heading">#</a></h1>
-<p>Retraining the classification network is often the key step to ensure high-performance of cellfinder.
-We recommend that the presupplied network is retrained for each new application (e.g. microscope, labelling strategy etc.).
-The design of the cellfinder software means that this is different, but often simpler than other deep-learning-based analysis tools you may have used.</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>It may be useful to consult the <a class="reference external" href="https://doi.org/10.1371/journal.pcbi.1009074">original PLOS Computational Biology paper</a>
-to get a better idea of the ideas behind the software.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="debugging-common-error-messages">
+<h1>Debugging common error messages<a class="headerlink" href="#debugging-common-error-messages" title="Link to this heading">#</a></h1>
+<section id="error-messages">
+<h2>Error messages<a class="headerlink" href="#error-messages" title="Link to this heading">#</a></h2>
+<p>Some error in <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> may come from the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> cell detection algorithm. Please also check the
+<a class="reference internal" href="../../cellfinder/troubleshooting/error-messages.html"><span class="doc std std-doc">cellfinder error messages section</span></a>.</p>
+<section id="oserror-errno-24-too-many-open-files">
+<h3>OSError: [Errno 24] Too many open files<a class="headerlink" href="#oserror-errno-24-too-many-open-files" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>OSError:<span class="w"> </span><span class="o">[</span>Errno<span class="w"> </span><span class="m">24</span><span class="o">]</span><span class="w"> </span>Too<span class="w"> </span>many<span class="w"> </span>open<span class="w"> </span>files
+</pre></div>
 </div>
-<section id="pre-trained-network">
-<h2>Pre-trained network<a class="headerlink" href="#pre-trained-network" title="Link to this heading">#</a></h2>
-<p>cellfinder is supplied with a network that was trained on approximately 100,000 manually annotated cell candidates (with a roughly 50/50 split between cells and non-cells).
-These came from serial-section two-photon data with whole-cell labelling.
-This is likely to be different from your data in some ways, e.g.:</p>
-<ul class="simple">
-<li><p>Microscopy technique</p></li>
-<li><p>Fluorescent label</p></li>
-<li><p>Labelled brain regions</p></li>
-<li><p>Labelled cell types</p></li>
-</ul>
-<p>However, we usually find that this network is a good starting point in a new analysis.</p>
+<p>This is likely because your default limits are set too low.
+To fix this, follow the instructions <a class="reference external" href="https://easyengine.io/tutorials/linux/increase-open-files-limit/">here</a>.
+If for any reason you don’t want to or can’t change the system-wide limits, running <code class="docutils literal notranslate"><span class="pre">ulimit</span> <span class="pre">-n</span> <span class="pre">60000</span></code> before running <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> should work.
+This setting will persist for the present shell session, but will have to be repeated if you open a new terminal.</p>
 </section>
-<section id="workflow">
-<h2>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">#</a></h2>
-<p>The typical workflow for using cellfinder on new data is:</p>
-<ol class="arabic simple">
-<li><p>Run cellfinder using the pre-trained network (or a network you or a collaborator has already trained)</p></li>
-<li><p>Assess the performance of the network</p></li>
-<li><p>Generate training data to “correct” the network in areas it has performed poorly</p></li>
-<li><p>Retrain the network</p></li>
-<li><p>Run cellfinder with the new network</p></li>
-<li><p>Repeat steps 2 to 5</p></li>
-</ol>
-<p>Considering generating training data requires the input of a skilled human, but the other steps can be run automatically, we suggest that only small amounts of training data are generated at a time.
-Training data can be pooled from separate batches of annotations, so the network can be iteratively improved step by step.</p>
-</section>
-<section id="training-data-generation-strategy">
-<h2>Training data generation strategy<a class="headerlink" href="#training-data-generation-strategy" title="Link to this heading">#</a></h2>
-<p>There is no “correct” way to create training data, but it is usually best to target the areas in which the current network performs worse.
-Typically, we recommend generating 1000-5000 cell candidates with a roughly even split between;</p>
-<ul class="simple">
-<li><p>Correctly classified cells</p></li>
-<li><p>Correctly classified artefacts</p></li>
-<li><p>Incorrectly classified cells</p></li>
-<li><p>Incorrectly classified artefacts</p></li>
-</ul>
-<p>This process would usually take 2-4 hours (with practice it usually becomes much quicker!).
-Once the network is retrained, the process can be repeated until performance is satisfactory for the application.</p>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>Make sure you save all your training data, you can re-use it later (or share it with others).</p>
+<section id="error-unrecognized-arguments">
+<h3>error: unrecognized arguments<a class="headerlink" href="#error-unrecognized-arguments" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>main.py:<span class="w"> </span>error:<span class="w"> </span>unrecognized<span class="w"> </span>arguments:<span class="w"> </span>data/dataset1
+</pre></div>
 </div>
+<p>If what comes after <code class="docutils literal notranslate"><span class="pre">unrecognised</span> <span class="pre">arguments</span></code> looks to be the part of the filepath you entered, after a space, then you
+should enclose the full path in quotation marks.
+For example, use <code class="docutils literal notranslate"><span class="pre">&quot;/path/to/my</span> <span class="pre">data&quot;</span></code> not <code class="docutils literal notranslate"><span class="pre">path/to/my</span> <span class="pre">data</span></code>.
+Otherwise, <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> will interpret the path as two inputs, separated by a space.</p>
+</section>
+<section id="commandlineinputerror-file-path-cannot-be-found">
+<h3>CommandLineInputError: File path: cannot be found.<a class="headerlink" href="#commandlineinputerror-file-path-cannot-be-found" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brainglobe_utils.general.exceptions.CommandLineInputError:<span class="w"> </span>File<span class="w"> </span>path:<span class="w"> </span><span class="s1">&#39;/media/adam/Storage/brainmapper/data/dataset1&#39;</span><span class="w"> </span>cannot<span class="w"> </span>be<span class="w"> </span>found.
+</pre></div>
+</div>
+<p>If you see an error like this, there could be a few possible reasons, e.g.:</p>
+<ul class="simple">
+<li><p>The filepath that you’ve passed to <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> does not exist, maybe it’s misspelled, or on a drive that isn’t mounted?</p></li>
+<li><p>If the filepath that cannot be found looks to be the part of the filepath you entered, after a space, then you
+should enclose the full path in quotation marks. (<strong>i.e. <code class="docutils literal notranslate"><span class="pre">&quot;/path/to/my</span> <span class="pre">data&quot;</span></code> not <code class="docutils literal notranslate"><span class="pre">path/to/my</span> <span class="pre">data</span></code></strong>) . Otherwise
+<code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> will interpret the path as two inputs, separated by a space.)</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -735,20 +727,20 @@ Once the network is retrained, the process can be repeated until performance is 
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cellfinder-core.html"
+       href="output-files.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">cellfinder.core API</p>
+        <p class="prev-next-title">Output files</p>
       </div>
     </a>
     <a class="right-next"
-       href="../troubleshooting/index.html"
+       href="../../cellfinder/user-guide/training/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Troubleshooting</p>
+        <p class="prev-next-title">Retraining the pre-trained network</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -770,9 +762,12 @@ Once the network is retrained, the process can be repeated until performance is 
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-trained-network">Pre-trained network</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-data-generation-strategy">Training data generation strategy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-messages">Error messages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oserror-errno-24-too-many-open-files">OSError: [Errno 24] Too many open files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-unrecognized-arguments">error: unrecognized arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commandlineinputerror-file-path-cannot-be-found">CommandLineInputError: File path: cannot be found.</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

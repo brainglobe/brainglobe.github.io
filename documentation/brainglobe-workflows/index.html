@@ -542,13 +542,13 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="brainmapper/candidate-detection.html">Cell candidate detection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainmapper/classification.html">Cell candidate classification</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../brainreg/user-guide/parameters.html">Registration parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainmapper/using-brainmapper-at-the-swc.html">Using <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> at the SWC</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="brainmapper/visualisation.html">Visualisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="brainmapper/output-files.html">Output files</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="brainmapper/training/index.html">Training the network</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="brainmapper/training/using-supplied-data.html">Using supplied training data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="brainmapper/error-messages.html">Debugging common error messages</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../cellfinder/user-guide/training/index.html">Retraining the pre-trained network</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cellfinder/user-guide/training/using-supplied-data.html">Using supplied training data</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../tutorials/brainmapper/index.html">Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -589,17 +589,18 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../cellfinder/user-guide/cellfinder-core.html">cellfinder.core API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cellfinder/user-guide/training-strategy.html">Retraining the pre-trained network</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../cellfinder/troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cellfinder/user-guide/training/index.html">Retraining the pre-trained network</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cellfinder/user-guide/training/using-supplied-data.html">Using supplied training data</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cellfinder/troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../cellfinder/troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cellfinder/troubleshooting/error-messages.html">Debugging common error messages</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../cellfinder/troubleshooting/error-messages.html">Debugging common error messages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cellfinder/troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../morphapi/index.html">morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../morphapi/index.html">morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../morphapi/usage/downloading-data.html">Downloading data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../morphapi/usage/rendering-data.html">Rendering data</a></li>
 </ul>
@@ -686,12 +687,11 @@ It currently provides:</p>
 <h2>Installing with <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> versions older than <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code><a class="headerlink" href="#installing-with-cellfinder-versions-older-than-v1-0-0" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> package, command-line tool, and workflow have undergone significant changes in the move to version 1.
 You can find a case-by-case breakdown of what you will need to do if you want to upgrade/install <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code> whilst retaining the functionality of old <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> installs (and the command-line tool) <a class="reference internal" href="../../community/releases/v1/cellfinder-migration.html"><span class="std std-doc">in the corresponding changelog</span></a>.</p>
-<p>However, the simplest option is to create a fresh Python environment and</p>
+<p>However, the simplest option is to create a fresh Python environment and install <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>brainglobe-workflows
 </pre></div>
 </div>
-<p>into it.
-This will fetch the latest version of <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code>, providing you with the <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command-line tool / workflow which is functionally equivalent to the old “cellfinder” command-line tool.
+<p>This will fetch the latest version of <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code>, providing you with the <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command-line tool / workflow which is functionally equivalent to the old “cellfinder” command-line tool.
 It will also provide you with the updated <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> package (at least <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code>) whose API and package structure matches that described in the documentation.</p>
 </section>
 </section>

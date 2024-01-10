@@ -58,7 +58,7 @@
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Training the network" href="training/index.html" />
+    <link rel="next" title="Debugging common error messages" href="error-messages.html" />
     <link rel="prev" title="Visualisation" href="visualisation.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -542,13 +542,13 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="candidate-detection.html">Cell candidate detection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classification.html">Cell candidate classification</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../brainreg/user-guide/parameters.html">Registration parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="using-brainmapper-at-the-swc.html">Using <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> at the SWC</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="visualisation.html">Visualisation</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Output files</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="training/index.html">Training the network</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="training/using-supplied-data.html">Using supplied training data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="error-messages.html">Debugging common error messages</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../cellfinder/user-guide/training/index.html">Retraining the pre-trained network</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../cellfinder/user-guide/training/using-supplied-data.html">Using supplied training data</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../tutorials/brainmapper/index.html">Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -589,17 +589,18 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../cellfinder/user-guide/cellfinder-core.html">cellfinder.core API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cellfinder/user-guide/training-strategy.html">Retraining the pre-trained network</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../cellfinder/troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cellfinder/user-guide/training/index.html">Retraining the pre-trained network</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/training/using-supplied-data.html">Using supplied training data</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cellfinder/troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../cellfinder/troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../cellfinder/troubleshooting/error-messages.html">Debugging common error messages</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../cellfinder/troubleshooting/error-messages.html">Debugging common error messages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cellfinder/troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../morphapi/index.html">morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../morphapi/index.html">morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../morphapi/usage/downloading-data.html">Downloading data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../morphapi/usage/rendering-data.html">Rendering data</a></li>
 </ul>
@@ -695,15 +696,14 @@ The file descriptions are ordered by the subdirectory that they are found in, wi
 <li><p><code class="docutils literal notranslate"><span class="pre">downsampled.points</span></code> - Detected cell coordinates, in the coordinate space of the raw data, but downsampled and reoriented to match the atlas (but not yet warped to the atlas). This can be loaded with <code class="docutils literal notranslate"><span class="pre">pandas.read_hdf()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">atlas.points</span></code> - As above, but warped to the atlas. This can be loaded with <code class="docutils literal notranslate"><span class="pre">pandas.read_hdf()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">points.npy</span></code> - Cell coordinates, transformed into atlas space, for visualisation using <a class="reference external" href="https://github.com/brainglobe/brainrender">brainrender</a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">abc4d.npy</span></code> - Exported file for use with <a class="reference external" href="https://github.com/valeriabonapersona/abc4d">abc4d</a></p></li>
 </ul>
 </section>
 <section id="registration">
 <h2>Registration<a class="headerlink" href="#registration" title="Link to this heading">#</a></h2>
 <p>The registration directory is simply a <code class="docutils literal notranslate"><span class="pre">brainreg</span></code> output directory.
 To understand these files, please see the <a class="reference internal" href="../../brainreg/user-guide/output-files.html"><span class="doc std std-doc">brainreg output files</span></a> page.</p>
-<p>Two other files are also saved, <code class="docutils literal notranslate"><span class="pre">cellfinder.json</span></code> and <code class="docutils literal notranslate"><span class="pre">cellfinder_DATE_TIME.log</span></code>.
-These files contain information about how cellfinder was run, and are useful for troubleshooting and debugging.
+<p>Two other files are also saved, <code class="docutils literal notranslate"><span class="pre">brainmapper.json</span></code> and <code class="docutils literal notranslate"><span class="pre">brainglobe_workflows_DATE_TIME.log</span></code>.
+These files contain information about how brainmapper was run, and are useful for troubleshooting and debugging.
 If you ask for help (e.g. on the <a class="reference external" href="https://forum.image.sc/tag/brainglobe">image.sc. forum</a>), we may ask you to send the log file.</p>
 </section>
 </section>
@@ -732,11 +732,11 @@ If you ask for help (e.g. on the <a class="reference external" href="https://for
       </div>
     </a>
     <a class="right-next"
-       href="training/index.html"
+       href="error-messages.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Training the network</p>
+        <p class="prev-next-title">Debugging common error messages</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

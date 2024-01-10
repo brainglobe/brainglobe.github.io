@@ -542,13 +542,13 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="candidate-detection.html">Cell candidate detection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classification.html">Cell candidate classification</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../brainreg/user-guide/parameters.html">Registration parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="using-brainmapper-at-the-swc.html">Using <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> at the SWC</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="visualisation.html">Visualisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="output-files.html">Output files</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="training/index.html">Training the network</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="training/using-supplied-data.html">Using supplied training data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="error-messages.html">Debugging common error messages</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../cellfinder/user-guide/training/index.html">Retraining the pre-trained network</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../cellfinder/user-guide/training/using-supplied-data.html">Using supplied training data</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../tutorials/brainmapper/index.html">Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -589,17 +589,18 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../cellfinder/user-guide/cellfinder-core.html">cellfinder.core API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cellfinder/user-guide/training-strategy.html">Retraining the pre-trained network</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../cellfinder/troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cellfinder/user-guide/training/index.html">Retraining the pre-trained network</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cellfinder/user-guide/training/using-supplied-data.html">Using supplied training data</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cellfinder/troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../cellfinder/troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../cellfinder/troubleshooting/error-messages.html">Debugging common error messages</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../cellfinder/troubleshooting/error-messages.html">Debugging common error messages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cellfinder/troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../morphapi/index.html">morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../morphapi/index.html">morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../morphapi/usage/downloading-data.html">Downloading data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../morphapi/usage/rendering-data.html">Rendering data</a></li>
 </ul>
@@ -668,11 +669,11 @@ document.write(`
 <h1><code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command line tool<a class="headerlink" href="#brainmapper-command-line-tool" title="Link to this heading">#</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> can:</p>
 <ul class="simple">
-<li><p>Detect labelled cells in 3D in whole-brain images (many hundreds of GB),</p></li>
-<li><p>Register the image to an atlas (such as the <a class="reference external" href="https://atlas.brain-map.org/atlas?atlas=602630314">Allen Mouse Brain Atlas</a>),</p></li>
-<li><p>Segment the brain based on the reference atlas,</p></li>
-<li><p>Calculate the volume of each brain area, and the number of labelled cells within it,</p></li>
-<li><p>Transform everything into standard space for analysis and visualisation.</p></li>
+<li><p>Detect labelled cells in 3D in whole-brain images (many hundreds of GB)</p></li>
+<li><p>Register the image to an atlas (such as the <a class="reference external" href="https://atlas.brain-map.org/atlas?atlas=602630314">Allen Mouse Brain Atlas</a>)</p></li>
+<li><p>Segment the brain based on the reference atlas</p></li>
+<li><p>Calculate the volume of each brain area, and the number of labelled cells within it</p></li>
+<li><p>Transform everything into standard space for analysis and visualisation</p></li>
 </ul>
 <section id="user-guide">
 <h2>User Guide<a class="headerlink" href="#user-guide" title="Link to this heading">#</a></h2>
@@ -682,7 +683,8 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="cli.html">Command line interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualisation.html">Visualisation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="output-files.html">Output files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="training/index.html">Training the network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="error-messages.html">Debugging common error messages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cellfinder/user-guide/training/index.html">Retraining the pre-trained network</a></li>
 </ul>
 </div>
 </section>
@@ -694,10 +696,21 @@ document.write(`
 </ul>
 </div>
 </section>
-<section id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
-<p>Since <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> uses <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code>, you may encounter issues when using the command-line tool that are <a class="reference internal" href="../../cellfinder/troubleshooting/index.html"><span class="std std-doc">documented on the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> page</span></a>.
-<a class="reference internal" href="../../cellfinder/troubleshooting/index.html"><span class="std std-doc">Head there</span></a> for more information on some common issues and debugging tips.</p>
+<section id="citing-cellfinder">
+<h2>Citing cellfinder<a class="headerlink" href="#citing-cellfinder" title="Link to this heading">#</a></h2>
+<p>If you find <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> useful, and use it in your research, please cite the papers outlining the registration and cell detection algorithms:</p>
+<blockquote>
+<div><p>Tyson, A. L., Vélez-Fort, M.,  Rousseau, C. V., Cossell, L., Tsitoura, C., Lenzi, S. C., Obenhaus, H. A., Claudi, F., Branco, T.,  Margrie, T. W. (2022). Accurate determination of marker location within whole-brain microscopy images. Scientific Reports, 12, 867 <a class="reference external" href="https://doi.org/10.1038/s41598-021-04676-9">doi.org/10.1038/s41598-021-04676-9</a></p>
+</div></blockquote>
+<blockquote>
+<div><p>Tyson, A. L., Rousseau, C. V., Niedworok, C. J., Keshavarzi, S., Tsitoura, C., Cossell, L., Strom, M. and Margrie, T. W. (2021) “A deep learning algorithm for 3D cell detection in whole mouse brain image datasets’ PLOS Computational Biology, 17(5), e1009074
+<a class="reference external" href="https://doi.org/10.1371/journal.pcbi.1009074">https://doi.org/10.1371/journal.pcbi.1009074</a></p>
+</div></blockquote>
+<p>Lastly, if you can, please cite the BrainGlobe Atlas API that provided the atlas:</p>
+<blockquote>
+<div><p>Claudi, F., Petrucco, L., Tyson, A. L., Branco, T., Margrie, T. W. and Portugues, R. (2020). BrainGlobe Atlas API: a common interface for neuroanatomical atlases. Journal of Open Source Software, 5(54), 2668, <a class="reference external" href="https://doi.org/10.21105/joss.02668">https://doi.org/10.21105/joss.02668</a></p>
+</div></blockquote>
+<p><strong>Don’t forget to cite the developers of the atlas that you used (e.g. the Allen Brain Atlas)!</strong></p>
 </section>
 <section id="notes">
 <h2>Notes<a class="headerlink" href="#notes" title="Link to this heading">#</a></h2>
@@ -760,7 +773,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-guide">User Guide</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorials">Tutorials</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citing-cellfinder">Citing cellfinder</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
 </ul>
   </nav></div>

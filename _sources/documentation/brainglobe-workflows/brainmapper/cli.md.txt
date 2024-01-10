@@ -70,13 +70,3 @@ candidate-detection
 classification
 /documentation/brainreg/user-guide/parameters
 ```
-
-:::{hint}
-If you're using `brainmapper` at the [Sainsbury Wellcome Centre](https://www.sainsburywellcome.org/web/), you may wish to see the [instructions for using brainmapper on the SWC HPC system](using-brainmapper-at-the-swc).
-:::
-
-```{toctree}
-:maxdepth: 1
-:hidden:
-using-brainmapper-at-the-swc
-```

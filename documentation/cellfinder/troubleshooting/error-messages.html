@@ -542,13 +542,13 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="../../brainglobe-workflows/brainmapper/candidate-detection.html">Cell candidate detection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../brainglobe-workflows/brainmapper/classification.html">Cell candidate classification</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../brainreg/user-guide/parameters.html">Registration parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../brainglobe-workflows/brainmapper/using-brainmapper-at-the-swc.html">Using <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> at the SWC</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../brainglobe-workflows/brainmapper/visualisation.html">Visualisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../brainglobe-workflows/brainmapper/output-files.html">Output files</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../brainglobe-workflows/brainmapper/training/index.html">Training the network</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../brainglobe-workflows/brainmapper/training/using-supplied-data.html">Using supplied training data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../brainglobe-workflows/brainmapper/error-messages.html">Debugging common error messages</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../user-guide/training/index.html">Retraining the pre-trained network</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../user-guide/training/using-supplied-data.html">Using supplied training data</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../tutorials/brainmapper/index.html">Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command line tool</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -589,17 +589,18 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../user-guide/cellfinder-core.html">cellfinder.core API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user-guide/training-strategy.html">Retraining the pre-trained network</a></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Troubleshooting</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../user-guide/training/index.html">Retraining the pre-trained network</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/training/using-supplied-data.html">Using supplied training data</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Troubleshooting</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="speed-up.html">Speeding up cellfinder</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Debugging common error messages</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Debugging common error messages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="speed-up.html">Speeding up cellfinder</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../morphapi/index.html">morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../morphapi/index.html">morphapi</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../morphapi/usage/downloading-data.html">Downloading data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../morphapi/usage/rendering-data.html">Rendering data</a></li>
 </ul>
@@ -673,38 +674,6 @@ document.write(`
 <h1>Debugging common error messages<a class="headerlink" href="#debugging-common-error-messages" title="Link to this heading">#</a></h1>
 <section id="error-messages">
 <h2>Error messages<a class="headerlink" href="#error-messages" title="Link to this heading">#</a></h2>
-<section id="oserror-errno-24-too-many-open-files">
-<h3>OSError: [Errno 24] Too many open files<a class="headerlink" href="#oserror-errno-24-too-many-open-files" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>OSError:<span class="w"> </span><span class="o">[</span>Errno<span class="w"> </span><span class="m">24</span><span class="o">]</span><span class="w"> </span>Too<span class="w"> </span>many<span class="w"> </span>open<span class="w"> </span>files
-</pre></div>
-</div>
-<p>This is likely because your default limits are set too low.
-To fix this, follow the instructions <a class="reference external" href="https://easyengine.io/tutorials/linux/increase-open-files-limit/">here</a>.
-If for any reason you don’t want to or can’t change the system-wide limits, running <code class="docutils literal notranslate"><span class="pre">ulimit</span> <span class="pre">-n</span> <span class="pre">60000</span></code> before running <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> should work.
-This setting will persist for the present shell session, but will have to be repeated if you open a new terminal.</p>
-</section>
-<section id="error-unrecognized-arguments">
-<h3>error: unrecognized arguments<a class="headerlink" href="#error-unrecognized-arguments" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>main.py:<span class="w"> </span>error:<span class="w"> </span>unrecognized<span class="w"> </span>arguments:<span class="w"> </span>data/dataset1
-</pre></div>
-</div>
-<p>If what comes after <code class="docutils literal notranslate"><span class="pre">urecognised</span> <span class="pre">arguements</span></code> looks to be the part of the filepath you entered, after a space, then you should enclose the full path in quotation marks.
-For example, use <code class="docutils literal notranslate"><span class="pre">&quot;/path/to/my</span> <span class="pre">data&quot;</span></code> not <code class="docutils literal notranslate"><span class="pre">path/to/my</span> <span class="pre">data</span></code>.
-Otherwise cellfinder will interpret the path as two inputs, separated by a space.</p>
-</section>
-<section id="commandlineinputerror-file-path-cannot-be-found">
-<h3>CommandLineInputError: File path: cannot be found.<a class="headerlink" href="#commandlineinputerror-file-path-cannot-be-found" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>imlib.general.exceptions.CommandLineInputError:<span class="w"> </span>File<span class="w"> </span>path:<span class="w"> </span><span class="s1">&#39;/media/adam/Storage/cellfinder/data/dataset1&#39;</span><span class="w"> </span>cannot<span class="w"> </span>be<span class="w"> </span>found.
-</pre></div>
-</div>
-<p>If you see an error like this, there could be a few possible reasons, e.g.:</p>
-<ul class="simple">
-<li><p>The filepath that you’ve passed to cellfinder does not exist, maybe it’s misspelled, or on a drive that isn’t mounted?</p></li>
-<li><p>If the filepath that cannot be found looks to be the part of the filepath you entered, after a space, then you
-should enclose the full path in quotation marks. (<strong>i.e. <code class="docutils literal notranslate"><span class="pre">&quot;/path/to/my</span> <span class="pre">data&quot;</span></code> not <code class="docutils literal notranslate"><span class="pre">path/to/my</span> <span class="pre">data</span></code></strong>) . Otherwise
-cellfinder will interpret the path as two inputs, separated by a space.)</p></li>
-</ul>
-</section>
 <section id="info-tensorflow-error-reported-to-coordinator-failed-to-get-convolution-algorithm">
 <h3>INFO:tensorflow:Error reported to Coordinator: Failed to get convolution algorithm<a class="headerlink" href="#info-tensorflow-error-reported-to-coordinator-failed-to-get-convolution-algorithm" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:global_step/sec:<span class="w"> </span><span class="m">0</span>
@@ -751,26 +720,6 @@ following the instructions <a class="reference internal" href="../../setting-up/
 <p>If this occurs on Windows, it is likely that you need to install “Microsoft Visual C++ Redistributable for Visual
 Studio 2015, 2017 and 2019”, available from Microsoft’s website
 <a class="reference external" href="https://learn.microsoft.com/en-GB/cpp/windows/latest-supported-vc-redist?view=msvc-170">here</a>.</p>
-</section>
-<section id="syntaxerror-invalid-syntax-logging">
-<h3>SyntaxError: invalid syntax (logging)<a class="headerlink" href="#syntaxerror-invalid-syntax-logging" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/home/adam/projects/cellfinder/cellfinder/tools/tools.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">444</span>
-<span class="w">    </span>logging.debug<span class="o">(</span>f<span class="s2">&quot;Free memory is: {free_mem} bytes.&quot;</span><span class="o">)</span>
-<span class="w">                                                     </span>^
-SyntaxError:<span class="w"> </span>invalid<span class="w"> </span>syntax
-</pre></div>
-</div>
-</section>
-<section id="cant-find-usr-local-opt-libpng-lib-libpng16-16-dylib">
-<h3>Can’t find /usr/local/opt/libpng/lib/libpng16.16.dylib<a class="headerlink" href="#cant-find-usr-local-opt-libpng-lib-libpng16-16-dylib" title="Link to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Can</span><span class="s1">&#39;t find /usr/local/opt/libpng/lib/libpng16.16.dylib</span>
-</pre></div>
-</div>
-<p>This sometimes happens when running registration on macOS. You may need to install <code class="docutils literal notranslate"><span class="pre">libpng</span></code>. The first thing to
-do is to <a class="reference external" href="https://brew.sh/">install homebrew</a> and then run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">libpng</span>
-</pre></div>
-</div>
 </section>
 </section>
 <section id="things-that-look-like-errors-but-arent">
@@ -848,13 +797,8 @@ usually be safely ignored.</p>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-messages">Error messages</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oserror-errno-24-too-many-open-files">OSError: [Errno 24] Too many open files</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-unrecognized-arguments">error: unrecognized arguments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commandlineinputerror-file-path-cannot-be-found">CommandLineInputError: File path: cannot be found.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#info-tensorflow-error-reported-to-coordinator-failed-to-get-convolution-algorithm">INFO:tensorflow:Error reported to Coordinator: Failed to get convolution algorithm</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importerror-dll-load-failed-the-specified-module-could-not-be-found">ImportError: DLL load failed: The specified module could not be found.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaxerror-invalid-syntax-logging">SyntaxError: invalid syntax (logging)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cant-find-usr-local-opt-libpng-lib-libpng16-16-dylib">Can’t find /usr/local/opt/libpng/lib/libpng16.16.dylib</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#things-that-look-like-errors-but-arent">Things that look like errors, but aren’t:</a><ul class="nav section-nav flex-column">
