@@ -98,13 +98,10 @@ With `brainrender`, you can load the `npy` file with the [scene class](/document
 You may want to use different [color](https://github.com/FedeClaudi/myterial) for each probe.
 :::
 
-For example: (package importing and rendering code can refer to [this example](https://github.com/brainglobe/brainrender/blob/main/examples/add_cells.py))
-```python
-# Highlight the recording target area
-mos = scene.add_brain_region("MOs", alpha=0.15)
+Here you can find an example to plot two probes in a mouse brain. With two target regions highlighted: [probe_tracks.py](https://github.com/brainglobe/brainrender/blob/main/examples/probe_tracks.py). Data for this example can be found [here](https://github.com/brainglobe/brainrender/tree/main/brainrender/resources).
 
-# Show the probe track by plotting each point of the fitter spline
-scene.add(Points(np.load(os.path.join(data_folder, 'probe_1_ALM.npy')), name="probe_1", colors="darkred",radius=50))
-```
+You will get a 3D interactive display of those probe tracks after running this code:
+![](./images/probe_tracks_brainrender.png)
+
 
 **Adapted from instructions by** [**Mateo Vélez-Fort**](https://www.sainsburywellcome.org/web/people/mateo-velez-fort) and [**Jingjie Li**](https://www.sainsburywellcome.org/web/people/jingjie-li)
