@@ -20,13 +20,12 @@ The file descriptions are ordered by the subdirectory that they are found in, wi
 - `downsampled.points` - Detected cell coordinates, in the coordinate space of the raw data, but downsampled and reoriented to match the atlas (but not yet warped to the atlas). This can be loaded with `pandas.read_hdf()`
 - `atlas.points` - As above, but warped to the atlas. This can be loaded with `pandas.read_hdf()`
 - `points.npy` - Cell coordinates, transformed into atlas space, for visualisation using [brainrender](https://github.com/brainglobe/brainrender)
-- `abc4d.npy` - Exported file for use with [abc4d](https://github.com/valeriabonapersona/abc4d)
 
 ## Registration
 
 The registration directory is simply a `brainreg` output directory.
 To understand these files, please see the [brainreg output files](/documentation/brainreg/user-guide/output-files/) page.
 
-Two other files are also saved, `cellfinder.json` and `cellfinder_DATE_TIME.log`.
-These files contain information about how cellfinder was run, and are useful for troubleshooting and debugging.
+Two other files are also saved, `brainmapper.json` and `brainglobe_workflows_DATE_TIME.log`.
+These files contain information about how brainmapper was run, and are useful for troubleshooting and debugging.
 If you ask for help (e.g. on the [image.sc. forum](https://forum.image.sc/tag/brainglobe)), we may ask you to send the log file.

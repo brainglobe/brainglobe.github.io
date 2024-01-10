@@ -14,16 +14,16 @@ from brainrender.actors import Points
 
 cells_path = "test_brain/output/points/points.npy"
 
-# initialise brainrender scene
+# Initialise brainrender scene
 scene = Scene()
 
-# create points actor
+# Create points actor
 cells = Points(cells_path, radius=45, colors="palegoldenrod", alpha=0.8)
 
-# visualise injection site (retrosplenial cortex)
-scene.add_brain_regions(["RSPd"], colors="mediumseagreen", alpha=0.6)
-scene.add_brain_regions(["RSPv"], colors="purple", alpha=0.6)
-scene.add_brain_regions(["RSPagl"], colors="mediumseagreen", alpha=0.6)
+# Visualise injection site (retrosplenial cortex)
+scene.add_brain_region(["RSPd"], color="mediumseagreen", alpha=0.6)
+scene.add_brain_region(["RSPv"], color="purple", alpha=0.6)
+scene.add_brain_region(["RSPagl"], color="mediumseagreen", alpha=0.6)
 
 # Add cells
 scene.add(cells)
