@@ -22,7 +22,7 @@ This setting will persist for the present shell session, but will have to be rep
 main.py: error: unrecognized arguments: data/dataset1
 ```
 
-If what comes after `urecognised arguements` looks to be the part of the filepath you entered, after a space, then you 
+If what comes after `unrecognised arguments` looks to be the part of the filepath you entered, after a space, then you 
 should enclose the full path in quotation marks.
 For example, use `"/path/to/my data"` not `path/to/my data`.
 Otherwise, `brainmapper` will interpret the path as two inputs, separated by a space.
