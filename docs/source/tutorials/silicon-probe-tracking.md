@@ -101,7 +101,8 @@ You may want to use different [color](https://github.com/FedeClaudi/myterial) fo
 Here you can find an example to plot two probes in a mouse brain. With two target regions highlighted: [probe_tracks.py](https://github.com/brainglobe/brainrender/blob/main/examples/probe_tracks.py). Data for this example can be found [here](https://github.com/brainglobe/brainrender/tree/main/brainrender/resources).
 
 You will get a 3D interactive display of those probe tracks after running this code:
-![](./images/probe_tracks_brainrender.png)
+
+![brainrender visualisation](./images/probe_tracks_brainrender.png)
 
 
 **Adapted from instructions by** [**Mateo Vélez-Fort**](https://www.sainsburywellcome.org/web/people/mateo-velez-fort) and [**Jingjie Li**](https://www.sainsburywellcome.org/web/people/jingjie-li)
