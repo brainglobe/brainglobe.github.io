@@ -88,10 +88,10 @@ directory, and follow the main brainglobe-segmentation instructions [here](./seg
 segmenting a 1D track. Setting `Spline points` will determine how many times along the length of the track that 
 the brain region is sampled at. This can be used to determine the brain region for each recording site on your probe.
 
-after the generation of spline, a [csv](/documentation/brainglobe-segmentation/output-files) file will be saved in `reg_result_path/segmentation/atlas_space/tracks` for each track. You can then get the presumed brain area for each recording channel by matching the `distance` in the csv file and the `depth` you have from the geomotery defination of you recording probe.
+after the generation of spline, a `csv` file will be saved in `reg_result_path/segmentation/atlas_space/tracks` for each track. You can then get the presumed brain area for each recording channel by matching the `distance` in the csv file and the `depth` you have from the geomotery defination of you recording probe.
 
 ## Visualize the probe track with brainrender
-After the segmentation process, click the `To brainrender` button in segmentation GUI. A [npy file](/documentation/brainglobe-segmentation/output-files) will be saved for each track. 
+After the segmentation process, click the `To brainrender` button in segmentation GUI. An `npy` will be saved for each track. 
 With `brainrender`, you can load the `npy` file with the [scene class](/documentation/brainrender/usage/scene). 
 
 :::{note}
