@@ -83,26 +83,25 @@ Make sure your conda environment is still activated!
 To open the graphical user interface, open napari and then load the `brainglobe-segmentation` plugin (see 
 [User guide](/documentation/brainglobe-segmentation/user-guide/index)).
 
-The `brainglobe-segmentation`graphical user interface opens and shows a set of tools.You can then load your brainreg output 
-directory, and follow the main brainglobe-segmentation instructions [here](./segmenting-1d-tracks) for 
+The `brainglobe-segmentation`graphical user interface opens and shows a set of tools. You can then load your brainreg output 
+directory, and follow the main `brainglobe-segmentation instructions` [here](./segmenting-1d-tracks) for 
 segmenting a 1D track. Setting `Spline points` will determine how many times along the length of the track that 
 the brain region is sampled at. This can be used to determine the brain region for each recording site on your probe.
 
-after the generation of spline, a `csv` file will be saved in `reg_result_path/segmentation/atlas_space/tracks` for each track. You can then get the presumed brain area for each recording channel by matching the `distance` in the csv file and the `depth` you have from the geomotery defination of you recording probe.
+After the spline fit is performed, a `csv` file will be saved in `brainreg_output/segmentation/atlas_space/tracks` for each track. 
+You can then find the brain area for each recording channel by matching the `distance` in the csv file and the 
+`depth` to the geometry of your recording probe.
 
 ## Visualize the probe track with brainrender
-After the segmentation process, click the `To brainrender` button in segmentation GUI. An `npy` will be saved for each track. 
-With `brainrender`, you can load the `npy` file with the [scene class](/documentation/brainrender/usage/scene). 
-
-:::{note}
-You may want to use different [color](https://github.com/FedeClaudi/myterial) for each probe.
-:::
-
-Here you can find an example to plot two probes in a mouse brain. With two target regions highlighted: [probe_tracks.py](https://github.com/brainglobe/brainrender/blob/main/examples/probe_tracks.py). Data for this example can be found [here](https://github.com/brainglobe/brainrender/tree/main/brainrender/resources).
-
-You will get a 3D interactive display of those probe tracks after running this code:
+If you then click the `To brainrender` button, a `.npy` file will be saved for each track. 
+With `brainrender`, you can load the `npy` file using the [scene class](/documentation/brainrender/usage/scene). 
+This will provide a 3D interactive display of the probe tracks:
 
 ![brainrender visualisation](./images/probe_tracks_brainrender.png)
+**Visualisation of two probe tracks using brainrender**
 
+:::{tip}
+The code to run this example can be found at [probe_tracks.py](https://github.com/brainglobe/brainrender/blob/main/examples/probe_tracks.py).
+:::
 
-**Adapted from instructions by** [**Mateo Vélez-Fort**](https://www.sainsburywellcome.org/web/people/mateo-velez-fort) and [**Jingjie Li**](https://www.sainsburywellcome.org/web/people/jingjie-li)
+**Tutorial adapted from instructions by** [**Mateo Vélez-Fort**](https://www.sainsburywellcome.org/web/people/mateo-velez-fort) and [**Jingjie Li**](https://www.sainsburywellcome.org/web/people/jingjie-li)
