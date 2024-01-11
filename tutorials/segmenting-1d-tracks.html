@@ -607,11 +607,20 @@ document.write(`
 <strong>A new Points layer containing the fitted points named <code class="docutils literal notranslate"><span class="pre">track_0_fit</span></code> appears on the left hand side and in the napari window, and a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file will be saved, showing the brain region for every spline point along the track along with the distance from the start of the track.</strong></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>All data will be saved into your brainreg output directory</p>
+<p>All data will be saved into your brainreg output directory at <code class="docutils literal notranslate"><span class="pre">/segmentation/atlas_space/tracks</span></code> subfolder if you loaded the data from atlas space, otherwise, it will be in the <code class="docutils literal notranslate"><span class="pre">sample_space</span></code> subfolder.</p>
 </div>
 <ol class="arabic simple" start="14">
-<li><p>(Optional) Use the <code class="docutils literal notranslate"><span class="pre">Save</span></code> button to save your points to be reloaded at a later date.</p></li>
+<li><p>(Optional) Use the <code class="docutils literal notranslate"><span class="pre">Save</span></code> button to save your points as <code class="docutils literal notranslate"><span class="pre">.points</span></code> to be reloaded at a later date. Use the <code class="docutils literal notranslate"><span class="pre">To</span> <span class="pre">Brainrender</span></code> button to save the fitted spline as <code class="docutils literal notranslate"><span class="pre">.npy</span></code> for <a class="reference internal" href="../documentation/brainrender/index.html"><span class="doc std std-doc">brainrender</span></a> visualisation.</p></li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Three files will be saved for each 1D track:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">TRACK_NAME.csv</span></code> - a csv file summarising the depth, atlas region name, and atlas region ID (based on your chosen atlas) for each point of the fitted spline.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TRACK_NAME.npy</span></code> - a numpy array containing the coordinates for each point of the fitted spline. This array can be <a class="reference external" href="https://github.com/brainglobe/brainrender/blob/main/examples/probe_tracks.py">visualised in 3D with brainrender</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TRACK_NAME.points</span></code> - a <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_hdf.html">pandas HDF5 dataframe</a> containing the coordinates for each point used to create the track (e.g., from manual annotation).</p></li>
+</ul>
+</div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>For more information about how to use automated methods to segment your feature of interest, please see <a class="reference internal" href="../documentation/brainglobe-segmentation/user-guide/analysing-external-segmentation.html"><span class="doc std std-doc">Analysing segmentation from other napari plugins</span></a>.

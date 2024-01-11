@@ -625,11 +625,26 @@ trace the probe track.</p>
 </div>
 <p>To open the graphical user interface, open napari and then load the <code class="docutils literal notranslate"><span class="pre">brainglobe-segmentation</span></code> plugin (see
 <a class="reference internal" href="../documentation/brainglobe-segmentation/user-guide/index.html"><span class="doc std std-doc">User guide</span></a>).</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">brainglobe-segmentation</span></code>graphical user interface opens and shows a set of tools.You can then load your brainreg output
-directory, and follow the main brainglobe-segmentation instructions <a class="reference internal" href="segmenting-1d-tracks.html"><span class="doc std std-doc">here</span></a> for
+<p>The <code class="docutils literal notranslate"><span class="pre">brainglobe-segmentation</span></code>graphical user interface opens and shows a set of tools. You can then load your brainreg output
+directory, and follow the main <code class="docutils literal notranslate"><span class="pre">brainglobe-segmentation</span> <span class="pre">instructions</span></code> <a class="reference internal" href="segmenting-1d-tracks.html"><span class="doc std std-doc">here</span></a> for
 segmenting a 1D track. Setting <code class="docutils literal notranslate"><span class="pre">Spline</span> <span class="pre">points</span></code> will determine how many times along the length of the track that
 the brain region is sampled at. This can be used to determine the brain region for each recording site on your probe.</p>
-<p><strong>Adapted from instructions by</strong> <a class="reference external" href="https://www.sainsburywellcome.org/web/people/mateo-velez-fort"><strong>Mateo Vélez-Fort</strong></a></p>
+<p>After the spline fit is performed, a <code class="docutils literal notranslate"><span class="pre">csv</span></code> file will be saved in <code class="docutils literal notranslate"><span class="pre">brainreg_output/segmentation/atlas_space/tracks</span></code> for each track.
+You can then find the brain area for each recording channel by matching the <code class="docutils literal notranslate"><span class="pre">distance</span></code> in the csv file and the
+<code class="docutils literal notranslate"><span class="pre">depth</span></code> to the geometry of your recording probe.</p>
+</section>
+<section id="visualize-the-probe-track-with-brainrender">
+<h2>Visualize the probe track with brainrender<a class="headerlink" href="#visualize-the-probe-track-with-brainrender" title="Link to this heading">#</a></h2>
+<p>If you then click the <code class="docutils literal notranslate"><span class="pre">To</span> <span class="pre">brainrender</span></code> button, a <code class="docutils literal notranslate"><span class="pre">.npy</span></code> file will be saved for each track.
+With <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>, you can load the <code class="docutils literal notranslate"><span class="pre">npy</span></code> file using the <a class="reference internal" href="../documentation/brainrender/usage/scene.html"><span class="doc std std-doc">scene class</span></a>.
+This will provide a 3D interactive display of the probe tracks:</p>
+<p><img alt="brainrender visualisation" src="../_images/probe_tracks_brainrender.png" />
+<strong>Visualisation of two probe tracks using brainrender</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The code to run this example can be found at <a class="reference external" href="https://github.com/brainglobe/brainrender/blob/main/examples/probe_tracks.py">probe_tracks.py</a>.</p>
+</div>
+<p><strong>Tutorial adapted from instructions by</strong> <a class="reference external" href="https://www.sainsburywellcome.org/web/people/mateo-velez-fort"><strong>Mateo Vélez-Fort</strong></a> and <a class="reference external" href="https://www.sainsburywellcome.org/web/people/jingjie-li"><strong>Jingjie Li</strong></a></p>
 </section>
 </section>
 
@@ -687,6 +702,7 @@ the brain region is sampled at. This can be used to determine the brain region f
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-tracing-probe-tracks">Before tracing probe tracks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-registration-to-an-atlas">Brain registration to an atlas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probe-track-tracing">Probe track tracing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-the-probe-track-with-brainrender">Visualize the probe track with brainrender</a></li>
 </ul>
   </nav></div>
 
