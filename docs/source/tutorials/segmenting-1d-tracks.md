@@ -59,12 +59,12 @@ Make sure you select the points in the order you wish them to be joined.
 All data will be saved into your brainreg output directory at `/segmentation/atlas_space/tracks` subfolder if you loaded the data from atlas space, otherwise, it will be in the `sample_space` subfolder.
 :::
 
-14. (Optional) Use the `Save` button to save your points as `.points` to be reloaded at a later date. Use the `To Brainrender` button to save the fitter spline as `.npy` for [brainrender](https://github.com/brainglobe/brainrender) visualisation.
+14. (Optional) Use the `Save` button to save your points as `.points` to be reloaded at a later date. Use the `To Brainrender` button to save the fitted spline as `.npy` for [brainrender](/documentation/brainrender/index) visualisation.
 
 :::{note}
 Three files will be saved for each 1D track:
 + `TRACK_NAME.csv` - a csv file summarising the depth, atlas region name, and atlas region ID (based on your chosen atlas) for each point of the fitted spline.
-+ `TRACK_NAME.npy` - a numpy array containing the coordinates for each point of the fitted spline. This array can be imported to [brainrender](/documentation/brainrender/index) for visualization.
++ `TRACK_NAME.npy` - a numpy array containing the coordinates for each point of the fitted spline. This array can be [visualised in 3D with brainrender](https://github.com/brainglobe/brainrender/blob/main/examples/probe_tracks.py).
 + `TRACK_NAME.points` - a [pandas HDF5 dataframe](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_hdf.html) containing the coordinates for each point used to create the track (e.g., from manual annotation).
 :::
 
