@@ -67,7 +67,7 @@ Warning: for large and complex scenes the resulting html file might be fairly la
 interactive scene in your web browser might take a few minutes.
 :::
 
-Exporting to `html` is very easy, all you need to do is create a `Scene`, add elements to it and once you're happy
+Exporting to `html` is simple, all you need to do is create a `Scene`, add elements to it and once you're happy
 with it use the `export` method of `Scene` to create the `.html`. e.g.:
 
 ```python
@@ -93,15 +93,8 @@ scene.render()
 scene.export("brain_regions.html")
 ```
 
-
-
 :::{important}
 Not all of `brainrender's` features can be included into your web export (because of limitations with the
 `k3d` package.  For instance the appearance of your exported scene might be different from the one you
 saw in `brainrender.`
 :::
-
-
-
-
-
