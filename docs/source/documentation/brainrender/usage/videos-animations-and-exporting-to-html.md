@@ -60,7 +60,7 @@ Videos are an improvement over screenshots in that they let the viewer see the s
 Ideally though you would need a way to let the viewer explore the scene at their own will, moving the camera around,
 zooming etc., the same way you do when you create your renderings. `brainrender` also lets you
 export your scene to an `.html` file which you can send to your colleagues (so that they can open it in their web
-browser) or embed in a website.
+browser) or embed in a website [such as this one](https://brainglobe.info/_static/brainrender_web.html).
 
 :::{caution}
 Warning: for large and complex scenes the resulting html file might be fairly large (>100MB) and loading the
