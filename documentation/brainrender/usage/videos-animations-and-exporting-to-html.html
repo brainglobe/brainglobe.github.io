@@ -718,7 +718,7 @@ necessary.</p>
 <h2>Exporting to html<a class="headerlink" href="#exporting-to-html" title="Link to this heading">#</a></h2>
 <p>Videos are an improvement over screenshots in that they let the viewer see the scene from multiple points of view.
 Ideally though you would need a way to let the viewer explore the scene at their own will, moving the camera around,
-zooming etc., the same way you do when you create your renderings. Well, <strong>fear not!</strong> <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> now lets you
+zooming etc., the same way you do when you create your renderings. <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> also lets you
 export your scene to an <code class="docutils literal notranslate"><span class="pre">.html</span></code> file which you can send to your colleagues (so that they can open it in their web
 browser) or embed in a website.</p>
 <div class="admonition caution">
@@ -726,13 +726,32 @@ browser) or embed in a website.</p>
 <p>Warning: for large and complex scenes the resulting html file might be fairly large (&gt;100MB) and loading the
 interactive scene in your web browser might take a few minutes.</p>
 </div>
-<p>Exporting to <code class="docutils literal notranslate"><span class="pre">html</span></code> is very easy, all you need to do is create a <code class="docutils literal notranslate"><span class="pre">Scene</span></code>, add elements to it and once you’re happy
-with it use the <code class="docutils literal notranslate"><span class="pre">export_for_web</span></code> method of <code class="docutils literal notranslate"><span class="pre">Scene</span></code> to create the <code class="docutils literal notranslate"><span class="pre">.html</span></code>.</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>The web export functionality requires <code class="docutils literal notranslate"><span class="pre">k3d==2.7.4</span></code> and won’t work with other versions of this package</p>
+<p>Exporting to <code class="docutils literal notranslate"><span class="pre">html</span></code> is simple, all you need to do is create a <code class="docutils literal notranslate"><span class="pre">Scene</span></code>, add elements to it and once you’re happy
+with it use the <code class="docutils literal notranslate"><span class="pre">export</span></code> method of <code class="docutils literal notranslate"><span class="pre">Scene</span></code> to create the <code class="docutils literal notranslate"><span class="pre">.html</span></code>. e.g.:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">from</span> <span class="nn">myterial</span> <span class="kn">import</span> <span class="n">orange</span>
+<span class="kn">from</span> <span class="nn">rich</span> <span class="kn">import</span> <span class="nb">print</span>
+
+<span class="kn">from</span> <span class="nn">brainrender</span> <span class="kn">import</span> <span class="n">Scene</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">orange</span><span class="si">}</span><span class="s2">]Running example: </span><span class="si">{</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create a brainrender scene</span>
+<span class="n">scene</span> <span class="o">=</span> <span class="n">Scene</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;brainrender web export&quot;</span><span class="p">)</span>
+
+<span class="c1"># Add brain regions</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add_brain_region</span><span class="p">(</span><span class="s2">&quot;MOs&quot;</span><span class="p">,</span> <span class="s2">&quot;CA1&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+
+<span class="c1"># Render!</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+
+<span class="c1"># Export to web</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="s2">&quot;brain_regions.html&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="danger docutils">
+<div class="admonition important">
+<p class="admonition-title">Important</p>
 <p>Not all of <code class="docutils literal notranslate"><span class="pre">brainrender's</span></code> features can be included into your web export (because of limitations with the
 <code class="docutils literal notranslate"><span class="pre">k3d</span></code> package.  For instance the appearance of your exported scene might be different from the one you
 saw in <code class="docutils literal notranslate"><span class="pre">brainrender.</span></code></p>
