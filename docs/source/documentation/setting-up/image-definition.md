@@ -4,7 +4,7 @@ In some BrainGlobe tools, you need to specify the orientation and resolution of 
 
 ## Orientation
 When you need to specify the orientation of your data, you will usually need to enter a string in the 
-[bg-space](https://github.com/brainglobe/bg-space) "initials" form, to describe the origin voxel.
+[brainglobe-space](https://github.com/brainglobe/brainglobe-space) "initials" form, to describe the origin voxel.
 
 When you work with a stack, the origin is the upper left corner when you show the first element `stack[0, :, :]` with 
 matplotlib or when you open the stack with ImageJ. The first dimension is the one that you are slicing, the second is 

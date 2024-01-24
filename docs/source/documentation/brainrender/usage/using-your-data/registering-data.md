@@ -16,7 +16,7 @@ to atlases, this is still a not-trivial steps in the analysis of any anatomical 
 
 ## Aligning to atlas's space
 
-Brainglobe's Atlas API relies on [bg-space](/documentation/bg-space/index) for transforming data (e.g. image stacks) 
+Brainglobe's Atlas API relies on [brainglobe-space](/documentation/brainglobe-space/index) for transforming data (e.g. image stacks) 
 so that they are all oriented the same way. Bg-space provides a convenient naming convection to define the orientation 
 of your data based on where the origin is and the direction that the three main axes (first three dimensions of your 
 image data) point towards.
@@ -38,7 +38,7 @@ shape: (528, 320, 456)
 """
 ```
 
-Check the [bg-space documentation](/documentation/bg-space/index)) for more details.
+Check the [brainglobe-space documentation](/documentation/brainglobe-space/index)) for more details.
 
 ## Matching resolution and offset
 
@@ -48,7 +48,7 @@ different resolution or to a different offset. Resolution refers to how many mic
 microns) the side of the voxels in your image correspond to. Offset refers to the fact that the origin of your 
 image might be offset from the origin of the atlas space (e.g. if you didn't image the entire brain). 
 
-Here too bg-space provides tools to address mismatches in these two aspects.
+Here too brainglobe-space provides tools to address mismatches in these two aspects.
 
 
 

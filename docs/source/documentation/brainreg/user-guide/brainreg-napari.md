@@ -26,7 +26,7 @@ docked widget will appear in your napari window.
 
 Choose the napari image layer you wish to be registered from `Image layer`, along with the atlas you want to use from 
 `Atlas`. You must also set the voxel sizes in the axial (z) and in-plane (x, y) dimensions, along with the data 
-orientation. The orientation is defined by three letters, based on [bg-space](https://github.com/brainglobe/bg-space), 
+orientation. The orientation is defined by three letters, based on [brainglobe-space](https://github.com/brainglobe/brainglobe-space), 
 e.g. `psl`. For more details on this, see the outline 
 [here](/documentation/setting-up/image-definition). Lastly, set an `Output directory` 
 (where you want to save the data).

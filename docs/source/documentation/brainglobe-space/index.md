@@ -28,7 +28,7 @@ target_origin = ("Inferior", "Posterior", "Right")
 A stack can be then easily transformed from the source to the target space:
 
 ```python
-import bg_space as bg
+import brainglobe_space as bg
 import numpy as np
 stack = np.random.rand(3, 2, 4)
 

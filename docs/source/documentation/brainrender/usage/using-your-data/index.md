@@ -18,7 +18,7 @@ some of these are focused on showing how to load and use your data in brainrende
 In order to visualize your data in brainrender, it has to be in register with the axes system in brainrender. If 
 you used tools like [brainreg](/documentation/brainreg/index) your data will already be registered, and you can skip 
 this step. If not, you will have to transform your data so that its axes match brainrender's.  
-BrainGlobe includes [bg-space](/documentation/bg-space/index), software that aims at facilitating the operation of 
+BrainGlobe includes [brainglobe-space](/documentation/brainglobe-space/index), software that aims at facilitating the operation of 
 swapping axes around, which can get confusing rapidly otherwise. 
 
 Check [Registering data](registering-data) for more details.
