@@ -24,6 +24,13 @@ pip install brainglobe --update
 ```
 
 in your environment, which will fetch the new version of all the affected packages.
+You can use `pip show brainglobe` to check your version has updated - you should find you now have `brainglobe` version as 1.0.1 or higher.
 
 If you are manually managing your BrainGlobe tools, you will need to uninstall `bg-space` and install `brainglobe-space` in its place.
-You'll also need to update the following packages, which now depend on `brainglobe-space`:
+You'll also need to update the following packages, which have dropped their `bg-space` dependency and now depend on `brainglobe-space`:
+
+- `bg-atlasapi`, version 1.0.3 or newer.
+- `brainglobe-napari-io`, version 0.3.3 or newer.
+- `morphapi`, version 0.2.2 or newer.
+- `brainrender`, version 2.1.5 or newer.
+- `brainreg`, version 1.0.4 or newer.
