@@ -17,12 +17,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="_static/documentation_options.js?v=d45e8c67"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
@@ -80,7 +80,6 @@
   <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -121,15 +120,13 @@
 </form></div>
   </div>
 
-  <header>
-
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
     <div class="bd-header-announcement__content">BrainGlobe version 1 is here! Head over to  <a href='https://brainglobe.info/blog/version1/version_1_released.html'>the blog</a> to find out more</div>
   </div>
 
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
 <div class="bd-header__inner bd-page-width">
   <label class="sidebar-toggle primary-toggle" for="__primary">
     <span class="fa-solid fa-bars"></span>
@@ -336,15 +333,10 @@ document.write(`
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
-      <span class="fa-solid fa-outdent"></span>
-    </label>
-  
 </div>
 
-    </div>
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
@@ -563,6 +555,100 @@ document.write(`
   
   <div class="section ablog-post">
     <h2 class="ablog-post-title">
+      <a href="blog/bg-space-rename.html">bg-space has been renamed</a>
+    </h2>
+    <ul class="ablog-archive">
+      <li>
+        
+        
+        <i class="fa fa-calendar"></i>
+        
+        24 January 2024
+        
+      </li>
+      <div class="ablog-sidebar-item ablog__postcard2">
+
+
+<li id="ablog-sidebar-item author ablog__author">
+  <span>
+    
+    <i class="fa-fw fa fa-user"></i>
+    
+    </span>
+  
+  
+  <a href="blog/author/will-graham.html">Will Graham</a>
+  
+  
+  
+</li>
+
+
+<li id="ablog-sidebar-item location ablog__location">
+  <span>
+    
+    <i class="fa-fw fa fa-location-arrow"></i>
+    
+    </span>
+  
+  
+  <a href="blog/location/england.html">England</a>
+  
+  ,
+  
+  
+  
+  
+  <a href="blog/location/london.html">London</a>
+  
+  
+  
+</li>
+
+
+<li id="ablog-sidebar-item language ablog__language">
+  <span>
+    
+    <i class="fa-fw fa fa-language"></i>
+    
+    </span>
+  
+  
+  <a href="blog/language/english.html">English</a>
+  
+  
+  
+</li>
+
+
+<li id="ablog-sidebar-item category ablog__category">
+  <span>
+    
+    <i class="fa-fw fa fa-folder-open"></i>
+    
+    </span>
+  
+  
+  <a href="blog/category/brainglobe.html">brainglobe</a>
+  
+  
+  
+</li>
+
+
+
+</div>
+    </ul>
+    <p class="ablog-post-excerpt"><p>The “bg” prefix that a number of BrainGlobe tools carry is not very distinctive nor informative, so we are rolling out minor name changes to a lot of our packages that contain this prefix.
+We are also taking this opportunity to bring these tools into line with our developer guidelines for automatic deployment, tooling, and testing.</p>
+</p>
+
+    <p class="ablog-post-expand"><a href="blog/bg-space-rename.html"><em>Read more ...</em></a></p>
+    <hr/>
+  </div>
+  
+  <div class="section ablog-post">
+    <h2 class="ablog-post-title">
       <a href="blog/version1/version_1_released.html">BrainGlobe version 1 is here!</a>
     </h2>
     <ul class="ablog-archive">
@@ -600,14 +686,14 @@ document.write(`
     </span>
   
   
-  <a href="blog/location/london.html">London</a>
+  <a href="blog/location/england.html">England</a>
   
   ,
   
   
   
   
-  <a href="blog/location/england.html">England</a>
+  <a href="blog/location/london.html">London</a>
   
   
   
@@ -694,14 +780,14 @@ Users can now enjoy:</p>
     </span>
   
   
-  <a href="blog/location/london.html">London</a>
+  <a href="blog/location/england.html">England</a>
   
   ,
   
   
   
   
-  <a href="blog/location/england.html">England</a>
+  <a href="blog/location/london.html">London</a>
   
   
   
@@ -883,14 +969,14 @@ As such;</p>
     </span>
   
   
-  <a href="blog/location/london.html">London</a>
+  <a href="blog/location/england.html">England</a>
   
   ,
   
   
   
   
-  <a href="blog/location/england.html">England</a>
+  <a href="blog/location/london.html">London</a>
   
   
   
@@ -977,14 +1063,14 @@ Please note that we will no longer be providing Docker images for <code class="d
     </span>
   
   
-  <a href="blog/location/london.html">London</a>
+  <a href="blog/location/england.html">England</a>
   
   ,
   
   
   
   
-  <a href="blog/location/england.html">England</a>
+  <a href="blog/location/london.html">London</a>
   
   
   
@@ -1071,14 +1157,14 @@ Previously, there were three tools with the prefix <code class="docutils literal
     </span>
   
   
-  <a href="blog/location/london.html">London</a>
+  <a href="blog/location/england.html">England</a>
   
   ,
   
   
   
   
-  <a href="blog/location/england.html">England</a>
+  <a href="blog/location/london.html">London</a>
   
   
   
@@ -1160,8 +1246,8 @@ Particular pinch points include:</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1175,7 +1261,7 @@ Created using <a href="https://sphinx-doc.org/">Sphinx</a> 7.2.6.
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.15.1.
+0.15.2.
 </p></div>
       
     </div>
