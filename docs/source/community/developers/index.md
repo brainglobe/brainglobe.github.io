@@ -2,12 +2,15 @@
 
 ## Introduction
 
-**Contributors to BrainGlobe are absolutely encouraged**, whether to fix a bug, develop a new feature, or add a new atlas.
+**Contributors to BrainGlobe are absolutely encouraged**, whether to fix a bug, develop a new feature, or add a new atlas. The core development team will support you in doing this, no matter your experience.
+
+At the same time, they will hold you to the same standards as they do each other on review, to ensure BrainGlobe remains easy-to-maintain. 
 
 There are many BrainGlobe repositories, so it may not be obvious where a new contribution should go.
 If you're unsure about any part of the contributing process, please [get in touch](../../contact.md). 
+
 The best place for questions about contributing is probably
-the [BrainGlobe Zulip chat](https://brainglobe.zulipchat.com/).
+the [BrainGlobe Zulip chat](https://brainglobe.zulipchat.com/). Everyone is furthermore welcome to join the bi-weekly developer meetings and contribute items to the agenda - check out the [#developer-meeting stream on Zulip](https://brainglobe.zulipchat.com/#narrow/stream/414089-developer-meeting) for more information.
 
 If for any reason, you'd rather not reach out in public, feel free to send a direct message on Zulip 
 to [Adam Tyson](https://github.com/adamltyson), one of the core developers.
@@ -19,7 +22,11 @@ You can view these repositories and the relevant information by heading to the [
 
 To add a new BrainGlobe atlas, please see the guide [here](/documentation/bg-atlasapi/adding-a-new-atlas).
 
-## Creating a development environment
+## To contribute code
+
+Before contributing code, it may be useful to familiarise yourself with the [High-level introduction to the BrainGlobe Codebase](./intro_to_codebase.md) as well as the [testing](./testing.md) and [developer tooling](./tooling.md) sections.
+
+### Creating a development environment
 
 It is recommended to use `conda` to install a development environment for
 BrainGlobe projects. Once you have `conda` installed, the following commands
@@ -51,7 +58,7 @@ pip install -e '.[dev]'
 from inside the repository. This will install the package, its dependencies,
 and its development dependencies.
 
-## Pull requests
+### Pull requests
 
 In all cases, please submit code to the main repository via a pull request. The developers recommend, and adhere,
 to the following conventions:
@@ -98,5 +105,6 @@ conventions
 testing
 new_releases
 specific_repos
+intro_to_codebase
 Code of conduct <https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT.md>
 :::
