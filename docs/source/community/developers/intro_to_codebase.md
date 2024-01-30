@@ -1,8 +1,8 @@
-# The BrainGlobe Codebase
+# Introduction to the BrainGlobe codebase for developers
 
 This is an introduction to the high-level organisation of the BrainGlobe codebase for developers. It serves as an introduction for new contributors and as a reference for all contributors.
 
-It will cover BrainGlobe's guiding principles for development, its software architecture, and preferences for the technical stack. Note that this high-level organisation is (at least partially) aspirational, and implementing it is work-in-progress (see [current roadmap](/community/roadmaps/index.md))
+It will cover BrainGlobe's guiding principles for development and the default software architecture for BrainGlobe repositories. Note that this high-level organisation is (at least partially) aspirational, and implementing it is work-in-progress (see [current roadmap](/community/roadmaps/index.md))
 
 
 ## Guiding principles for development
