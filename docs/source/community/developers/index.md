@@ -8,7 +8,7 @@ There are many BrainGlobe repositories, so it may not be obvious where a new con
 If you're unsure about any part of the contributing process, please [get in touch](../../contact.md). 
 
 The best place for questions about contributing is probably
-the [BrainGlobe Zulip chat](https://brainglobe.zulipchat.com/). You are furthermore welcome to join the bi-weekly developer meetings and contribute items to the agenda - check out the [#developer-meeting stream on Zulip](https://brainglobe.zulipchat.com/#narrow/stream/414089-developer-meeting) for more information.
+the [BrainGlobe Zulip chat](https://brainglobe.zulipchat.com/). You are furthermore welcome to join the bi-weekly developer meetings and contribute items to the agenda - check out the [#developer-meeting stream on Zulip](https://brainglobe.zulipchat.com/#narrow/stream/414089-developer-meeting) (requires sign-in) for more information.
 
 If for any reason, you'd rather not reach out in public, feel free to send a direct message on Zulip 
 to [Adam Tyson](https://github.com/adamltyson), one of the core developers.
