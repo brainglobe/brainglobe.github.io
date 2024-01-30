@@ -2,7 +2,7 @@
 
 This is an introduction to the high-level organisation of the BrainGlobe codebase for developers. It serves as an introduction for new contributors and as a reference for all contributors.
 
-It will cover BrainGlobe's guiding principles for development and the default software architecture for BrainGlobe repositories. Note that this high-level organisation is (at least partially) aspirational, and implementing it is work-in-progress (see [current roadmap](/community/roadmaps/index.md))
+It will cover BrainGlobe's guiding principles for development and the default software architecture for BrainGlobe repositories. Note that this high-level organisation is (at least partially) aspirational, and implementing it is work-in-progress (see [the current roadmap](/community/roadmaps/index.md) and the [Core Development Project Board](https://github.com/orgs/brainglobe/projects/2))
 
 
 ## Guiding principles for development
