@@ -17,4 +17,4 @@ supported.
 
 ## Axis ordering in spatial arrays
 
-For arrays representing spatial data, we follow `zyx` axis ordering in the same way as `numpy` and `napari`. The origin is the upper left corner when you show the first element `stack[0, :, :]`. The first dimension is the one that you are slicing, the second is the height of the image, and the third is the width of the image. The [`brainglobe-space`](/documentation/) provides an interface to manipulate data following different conventions to adhere to this standard.
+For arrays representing spatial data, we follow `zyx` axis ordering in the same way as `numpy` and `napari`. The origin is the upper left corner when you show the first element `stack[0, :, :]`. The first dimension is the one that you are slicing, the second is the height of the image, and the third is the width of the image. The [`brainglobe-space` package](/documentation/brainglobe-space/index.md) provides an interface to manipulate data following different conventions to adhere to this standard.

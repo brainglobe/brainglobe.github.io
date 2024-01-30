@@ -30,17 +30,17 @@ Choices around the software architecture and technology stack (detailed below) a
 Code providing functionality related to a specific analysis or visualisation step is referred to as a BrainGlobe "tool". Each BrainGlobe tool has its own Github repository on the BrainGlobe organisation. 
 
 Currently stable tools are:
-- [`brainglobe-atlasapi`](github.com/brainglobe/bg-atlasapi)
-- [`brainglobe-heatmap`](github.com/brainglobe/brainglobe-heatmap)
-- [`brainglobe-segmentation`](github.com/brainglobe/brainglobe-segmentation)
-- [`brainreg`](github.com/brainglobe/brainreg)
-- [`brainrender`](github.com/brainglobe/brainrender)
-- [`cellfinder`](github.com/brainglobe/cellfinder)
-- [`morphapi`](github.com/brainglobe/morphapi)
+- [`brainglobe-atlasapi`](https://github.com/brainglobe/bg-atlasapi)
+- [`brainglobe-heatmap`](https://github.com/brainglobe/brainglobe-heatmap)
+- [`brainglobe-segmentation`](https://github.com/brainglobe/brainglobe-segmentation)
+- [`brainreg`](https://github.com/brainglobe/brainreg)
+- [`brainrender`](https://github.com/brainglobe/brainrender)
+- [`cellfinder`](https://github.com/brainglobe/cellfinder)
+- [`morphapi`](https://github.com/brainglobe/morphapi)
 
 Tools currently in development are
-- [`brainglobe-registration`](github.com/brainglobe/brainglobe-registration)
-- [`brainrender-napari`](github.com/brainglobe/brainrender-napari)
+- [`brainglobe-registration`](https://github.com/brainglobe/brainglobe-registration)
+- [`brainrender-napari`](https://github.com/brainglobe/brainrender-napari)
 
 The BrainGlobe Github organisation also hosts the [`brainglobe` (meta-)package](./repositories/brainglobe-meta/index.md) and the [`brainglobe-workflows` collection](./repositories/brainglobe-workflows/index.md) in separate repositories (which are not tools in themselves), as well as the utility packages `brainglobe-utils` and `brainglobe-space`.
 
