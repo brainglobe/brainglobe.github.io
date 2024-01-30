@@ -22,7 +22,7 @@ To add a new BrainGlobe atlas, please see the guide [here](/documentation/bg-atl
 
 ## To contribute code
 
-Before contributing code, it may be useful to familiarise yourself with the [introduction to the BrainGlobe code for developers](./intro_to_codebase.md) as well as the [testing](./testing.md) and [developer tooling](./tooling.md) sections. 
+Before contributing code, it may be useful to familiarise yourself with the [introduction to the BrainGlobe code for developers](./intro_to_codebase.md) as well as the [testing](./testing.md), [developer tooling](./tooling.md) and [conventions](./conventions.md) sections. 
 
 The core development team will support you in contributing code, irrespective of your experience. At the same time, they will hold you to the same standards as they do each other on review, to ensure BrainGlobe remains easy-to-maintain. 
 
