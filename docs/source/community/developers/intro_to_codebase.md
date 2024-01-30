@@ -46,6 +46,10 @@ The BrainGlobe Github organisation also hosts the [`brainglobe` (meta-)package](
 
 As can be seen from the package names, we follow a **loose** naming convention for packages following a pattern of {brain(globe) || cell}-{noun describing what the tool does}. The most important criterion is the expressiveness of the name. The `bg-` prefix for BrainGlobe tools has been discontinued.
 
+### User data
+
+User data is kept in hidden folders, usually in the user's `$HOME` directory. These folders are named after the tools (e.g. `~/.cellfinder/`) or in appropriate subfolders of `.brainglobe` (e.g. `~/.brainglobe/mpin_zfish_1um_v1.0/`). Data that we provide (e.g. atlas data and test data) should be hosted on [GIN/BrainGlobe](https://gin.g-node.org/BrainGlobe/), and not on GitHub itself (unless it's a small package-specific text file, in which case it can go in [the package resources and accessed via `importlib`](https://docs.python.org/3/library/importlib.resources.html)). We rely on [the `pooch` package](https://www.fatiando.org/pooch/latest/) to fetch data from GIN.
+
 ### Default architecture for BrainGlobe Tools
 
 By default, each brainglobe tool should be organised into three distinct submodules: `core`, `qt`, and `napari`. These submodules should live in the same GitHub repository and are packaged together on PyPI. It is acceptable to deviate from the default where there is a reason to.
