@@ -94,10 +94,10 @@ options:
 The `-l` (`--list`) option will provide you with a list of citation formats that the tool supports, and the list of tools that the program is aware of.
 Currently supported citation formats are:
 
-- Bibtex (`*.tex`)
-- Text (`*.txt`) - this option is mostly if you want to generate a citation you can copy/paste into a bibliography, or an acknowledgements section.
+- Bibtex (`*.tex`), use `--format bibtex` to request this citation type.
+- Text (`*.txt`), use `--format text` to request this citation type. This option is mainly for when you want to generate a citation you can copy/paste into a bibliography, or an acknowledgements section.
 
-The `-s` (`--software-citations`) option will prioritise citing BrainGlobe tool _software_ - that is, the course code or program - rather than the article or journal entry that provides the theoretical basis for the tool.
+The `-s` (`--software-citations`) option will prioritise citing BrainGlobe tool _software_ - that is, the source code or program - rather than the article or journal entry that provides the theoretical basis for the tool or algorithm.
 By default we expect users to prefer citing the article, however if you specifically want to credit the software or tool implementation - in cases where you have made a contribution to the source code for example - you can use this option.
 Keep in mind that this option is set for _all_ tools that you ask to be cited.
 If you want to cite some tools by software, and others by article, you will need to run `cite-brainglobe` twice - once with the `-s` flag and once without.
