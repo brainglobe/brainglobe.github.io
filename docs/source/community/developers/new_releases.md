@@ -9,12 +9,17 @@ The `X`, `Y`, and `Z` values should be integers corresponding to the new version
 
 ## Coordinating releases with the documentation and the metapackage
 
-Releases will be made ad-hoc as bug-fixes and new features become available. When releasing a new version of a BrainGlobe repository, we also need to update the website and the metapackage accordingly.
-This means we will typically have up to three dependent PRs, one each in
-- the repository itself (containing the bugfix or new feature we'd like to release)
-- the [website repository](https://github.com/brainglobe/brainglobe.github.io) (if necessary)
-- the [metapackage repository](https://github.com/brainglobe/brainglobe-meta)
-We should cross-link the latter to, and release all of them simultaneously once they are all merged into `main`.
+Releases will be made ad-hoc as bug-fixes and new features become available.
+When releasing a new version of a BrainGlobe repository, we also need to update the website, the metapackage, and any other tools that depend on that repository accordingly.
+This means we will typically at least three dependent PRs;
+- One in the repository itself (containing the bugfix or new feature we'd like to release)
+- One in the [website repository](https://github.com/brainglobe/brainglobe.github.io) (if necessary)
+- One for each repository that depends on the updated tool, to bump the dependency version.
+- One in the [metapackage repository](https://github.com/brainglobe/brainglobe-meta), which pins the new versions of all affected tools at once.
+
+We should cross-link the latter to the website update, and release all affected packages to PyPI (and conda if appropriate) once they are all merged into `main`.
+Ideally, updates and releases should be made in an order that [follows the dependency tree](./repositories/brainglobe-meta/index#dependency-tree) - starting with our lower level tools, than their dependents, then dependents of those dependents, and so on.
+The meta-package itself will always be the last by this convention.
 
 ## Triggering a new release
 
