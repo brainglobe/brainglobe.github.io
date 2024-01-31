@@ -31,8 +31,9 @@ At the same time, they will hold you to the same standards as they do each other
 
 ### Creating a development environment
 
-It is recommended to use `conda` to install a development environment for
-BrainGlobe projects. Once you have `conda` installed, the following commands
+It is recommended to use a recent `conda` to install a development environment for
+BrainGlobe projects ([`conda` versions >=23.10.0](https://conda.org/blog/2023-11-06-conda-23-10-0-release/) 
+will significantly speed up installation time). Once you have `conda` installed, the following commands
 will create and activate a `conda` environment with the requirements needed
 for a development environment:
 
