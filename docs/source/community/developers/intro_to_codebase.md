@@ -21,7 +21,7 @@ Choices around the software architecture and technology stack (detailed below) a
 ### Examples of guiding principles in practice
 
 * ease of installation: through the metapackage, we provide a one-line command to install all BrainGlobe tools at once. None of the packages depend on anything other than Python (we've removed historical compiled code), and are therefore easy to install cross-platform.
-* accessibility: we aim to provide a Graphical User Interface (GUI) for all BrainGlobe tools. By asking users for feedback, we ensure that the GUI provides an nice user experience.
+* accessibility: we aim to provide a Graphical User Interface (GUI) for all BrainGlobe tools. By asking users for feedback, we ensure that the GUI provides a nice user experience.
 * ease of use through Python/interoperability: we aim to provide a well-documented Python API for all BrainGlobe tools.
 * performance: By running weekly benchmarks comparing the latest release with the development version, we guarantee that performance will not deteriorate as BrainGlobe evolves.
 * species/modality independent: none of the code makes any assumptions about the imaging modality or the species of the model organism of interest. We provide atlases for a variety of model organisms.
