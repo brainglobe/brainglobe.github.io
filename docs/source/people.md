@@ -422,6 +422,12 @@ In no particular order:
 :img-bottom: https://avatars.githubusercontent.com/u/16413662?v=4
 :link: https://github.com/jingjie-li
 :::
+
+:::{grid-item-card}    Guillaume Le Goc
+:img-bottom: https://avatars.githubusercontent.com/u/22011231?v=4
+:link: https://github.com/GuillaumeLeGoc
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
