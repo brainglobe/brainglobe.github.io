@@ -54,23 +54,23 @@ bg_tool = Repository("bg-tool", ["list", "of", "alternative", "or", "informal", 
 
 This defines a repository that `cite-brainglobe` expects to be called `bg-tool`, under the `brainglobe` organisation on GitHub.
 It also expects the CITATION.cff file to be on the `main` branch of this repository - though this location (and the organisation if we really need to point to non-BrainGlobe tools) can be changed when calling the constructor.
-The second argument defines the (case-insensitive) names (in addition to the repository name itself) that `cite-brainglobe` will match to this repository.
-For example,
+The second argument defines the (case-insensitive) names (in addition to the repository name itself) that `cite-brainglobe` will match to this repository; some of these names are automatically generated from the repository name, by the following rules:
+
+- The characters `"_"`, `"-"`, and `" "` are considered interchangeable. Providing `brainglobe-utils` as a name will automatically cause `brainglobe_utils` and `brainglobe utils` to be alternative names that the repository can be referred to by, for example.
+- The `brainglobe` prefix can be dropped from the name automatically. `brainglobe-utils` being provided as the repository name will mean that the repository can also be referred to as `utils`, for example.
+
+To illustrate,
 
 ```python
-bg_atlasapi = Repository(
-    "bg-atlasapi",
+brainglobe_utils = Repository(
+    "brainglobe_utils",
     [
-        "bg_atlasapi",
-        "BrainGlobe AtlasAPI",
-        "BrainGlobe AtlasAPI",
-        "AtlasAPI",
-        "Atlas API",
+        "utilities",
     ],
 )
 ```
 
-means that if the user asks `cite-brainglobe` to cite "atlasapi", the program will recognise this as an alternative alias for `bg-atlasapi`.
+creates a `Repository` object which, if the user asks `cite-brainglobe` to cite any one of `"brainglobe-utils"`, `"brainglobe_utils"`, `"brainglobe utils"`, `"utils"`, or `"utilities"`, the program will recognise as the `brainglobe-utils` package.
 
 The `all_citable_repositories` function is intended for imports in other areas of th `citation` submodule - it automatically detects the static `Repository` instances that we define in the `repositories` and returns them as a set.
 
