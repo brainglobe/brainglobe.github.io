@@ -1,7 +1,7 @@
 # Generating Citations for BrainGlobe tools
 
 If you have `brainglobe-utils` installed, you can use the `cite-brainglobe` command-line tool it provides to generate citations or acknowledgement sentences.
-`brainglobe-utils` comes with the one-line BrainGlobe install, but will also be fetched by most of our tools if you decide to install them as standalone.
+`brainglobe-utils` comes with the one-line BrainGlobe install (`pip install brainglobe`), but will also be fetched by most of our tools if you decide to install them as standalone.
 You can check whether or not you have the `cite-brainglobe` program available by running
 
 ```bash
@@ -97,12 +97,12 @@ Currently supported citation formats are:
 - Bibtex (`*.tex`), use `--format bibtex` to request this citation type.
 - Text (`*.txt`), use `--format text` to request this citation type. This option is mainly for when you want to generate a citation you can copy/paste into a bibliography, or an acknowledgements section.
 
-The `-s` (`--software-citations`) option will prioritise citing BrainGlobe tool _software_ - that is, the source code or program - rather than the article or journal entry that provides the theoretical basis for the tool or algorithm.
+The `-s` (`--software-citations`) option will prioritise citing BrainGlobe tool _software_ — that is, the source code or program — rather than the article or journal entry that provides the theoretical basis for the tool or algorithm.
 By default we expect users to prefer citing the article, however if you specifically want to credit the software or tool implementation - in cases where you have made a contribution to the source code for example - you can use this option.
 Keep in mind that this option is set for _all_ tools that you ask to be cited.
-If you want to cite some tools by software, and others by article, you will need to run `cite-brainglobe` twice - once with the `-s` flag and once without.
+If you want to cite some tools by software, and others by article, you will need to run `cite-brainglobe` twice, once with the `-s` flag and once without.
 
-Some citation formats do no make use of all the metadata that we make available.
+Some citation formats do not make use of all the metadata that we make available.
 If you want to be aware of cases where metadata has not been used, you can pass the `-w` or `--warn-unused` flag.
 This flag primarily exists for developers when debugging the tool.
 
