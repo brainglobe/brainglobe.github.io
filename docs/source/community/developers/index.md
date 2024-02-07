@@ -6,8 +6,10 @@
 
 There are many BrainGlobe repositories, so it may not be obvious where a new contribution should go.
 If you're unsure about any part of the contributing process, please [get in touch](../../contact.md). 
+
 The best place for questions about contributing is probably
 the [BrainGlobe Zulip chat](https://brainglobe.zulipchat.com/).
+You are furthermore welcome to join the bi-weekly developer meetings and contribute items to the agenda - check out the [developer-meeting stream on Zulip](https://brainglobe.zulipchat.com/#narrow/stream/414089-developer-meeting) (requires sign-up) for more information.
 
 If for any reason, you'd rather not reach out in public, feel free to send a direct message on Zulip 
 to [Adam Tyson](https://github.com/adamltyson), one of the core developers.
@@ -19,10 +21,20 @@ You can view these repositories and the relevant information by heading to the [
 
 To add a new BrainGlobe atlas, please see the guide [here](/documentation/bg-atlasapi/adding-a-new-atlas).
 
-## Creating a development environment
+## To contribute code
 
-It is recommended to use `conda` to install a development environment for
-BrainGlobe projects. Once you have `conda` installed, the following commands
+Before contributing code, it may be useful to familiarise yourself with the [introduction to the BrainGlobe code for developers](./intro_to_codebase.md) as well as the [testing](./testing.md), [developer tooling](./tooling.md) and [conventions](./conventions.md) sections. 
+
+The core development team will support you in contributing code, irrespective of your experience.
+To ensure BrainGlobe remains easy-to-maintain, they will help ensure all code contributions meet 
+a high standard.
+
+
+### Creating a development environment
+
+It is recommended to use a recent version of `conda` to install a development environment for
+BrainGlobe projects ([`conda` versions >=23.10.0](https://conda.org/blog/2023-11-06-conda-23-10-0-release/) 
+will significantly speed up installation time). Once you have `conda` installed, the following commands
 will create and activate a `conda` environment with the requirements needed
 for a development environment:
 
@@ -51,7 +63,7 @@ pip install -e '.[dev]'
 from inside the repository. This will install the package, its dependencies,
 and its development dependencies.
 
-## Pull requests
+### Pull requests
 
 In all cases, please submit code to the main repository via a pull request. The developers recommend, and adhere,
 to the following conventions:
@@ -93,6 +105,7 @@ If you aren't sure where the changes should be made, please
 
 :::{toctree}
 :maxdepth: 1
+intro_to_codebase
 tooling
 conventions
 testing

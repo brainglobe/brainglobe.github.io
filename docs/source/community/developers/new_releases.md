@@ -7,6 +7,20 @@ Maintainers can trigger a new release by pushing a new tag, in the format `vX.Y.
 The `v` prefix **is necessary** as the workflow will only attempt to upload to `PyPI` if the tag matches the format previously provided.
 The `X`, `Y`, and `Z` values should be integers corresponding to the new version number.
 
+## Coordinating releases with the documentation and the metapackage
+
+Releases will be made ad-hoc as bug-fixes and new features become available.
+When releasing a new version of a BrainGlobe repository, we also need to update the website, the metapackage, and any other tools that depend on that repository accordingly.
+This means we will typically create at least three dependent PRs;
+- One in the repository itself (containing the bugfix or new feature we'd like to release)
+- One in the [website repository](https://github.com/brainglobe/brainglobe.github.io) (to update documentation if necessary)
+- One for each repository that depends on the updated tool, to bump the dependency version
+- One in the [metapackage repository](https://github.com/brainglobe/brainglobe-meta), which pins the new versions of all affected tools at once
+
+We should cross-link the latter to the website update, and release all affected packages to PyPI (and conda if appropriate) once they are all merged into `main`.
+Ideally, updates and releases should be made in an order that [follows the dependency tree](<project:repositories/brainglobe-meta/index.md#dependency-tree>) - starting with our lower level tools, than their dependents, then dependents of those dependents, and so on.
+The meta-package itself will always be the last by this convention.
+
 ## Triggering a new release
 
 The steps for triggering a new release are:
