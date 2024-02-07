@@ -11,11 +11,11 @@ The `X`, `Y`, and `Z` values should be integers corresponding to the new version
 
 Releases will be made ad-hoc as bug-fixes and new features become available.
 When releasing a new version of a BrainGlobe repository, we also need to update the website, the metapackage, and any other tools that depend on that repository accordingly.
-This means we will typically at least three dependent PRs;
+This means we will typically create at least three dependent PRs;
 - One in the repository itself (containing the bugfix or new feature we'd like to release)
-- One in the [website repository](https://github.com/brainglobe/brainglobe.github.io) (if necessary)
-- One for each repository that depends on the updated tool, to bump the dependency version.
-- One in the [metapackage repository](https://github.com/brainglobe/brainglobe-meta), which pins the new versions of all affected tools at once.
+- One in the [website repository](https://github.com/brainglobe/brainglobe.github.io) (to update documentation if necessary)
+- One for each repository that depends on the updated tool, to bump the dependency version
+- One in the [metapackage repository](https://github.com/brainglobe/brainglobe-meta), which pins the new versions of all affected tools at once
 
 We should cross-link the latter to the website update, and release all affected packages to PyPI (and conda if appropriate) once they are all merged into `main`.
 Ideally, updates and releases should be made in an order that [follows the dependency tree](./repositories/brainglobe-meta/index#dependency-tree) - starting with our lower level tools, than their dependents, then dependents of those dependents, and so on.

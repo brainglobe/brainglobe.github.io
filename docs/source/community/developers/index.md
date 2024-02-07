@@ -9,7 +9,7 @@ If you're unsure about any part of the contributing process, please [get in touc
 
 The best place for questions about contributing is probably
 the [BrainGlobe Zulip chat](https://brainglobe.zulipchat.com/).
-You are furthermore welcome to join the bi-weekly developer meetings and contribute items to the agenda - check out the [#developer-meeting stream on Zulip](https://brainglobe.zulipchat.com/#narrow/stream/414089-developer-meeting) (requires sign-in) for more information.
+You are furthermore welcome to join the bi-weekly developer meetings and contribute items to the agenda - check out the [developer-meeting stream on Zulip](https://brainglobe.zulipchat.com/#narrow/stream/414089-developer-meeting) (requires sign-up) for more information.
 
 If for any reason, you'd rather not reach out in public, feel free to send a direct message on Zulip 
 to [Adam Tyson](https://github.com/adamltyson), one of the core developers.
@@ -31,7 +31,7 @@ At the same time, they will hold you to the same standards as they do each other
 
 ### Creating a development environment
 
-It is recommended to use a recent `conda` to install a development environment for
+It is recommended to use a recent version of `conda` to install a development environment for
 BrainGlobe projects ([`conda` versions >=23.10.0](https://conda.org/blog/2023-11-06-conda-23-10-0-release/) 
 will significantly speed up installation time). Once you have `conda` installed, the following commands
 will create and activate a `conda` environment with the requirements needed
