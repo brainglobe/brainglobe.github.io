@@ -18,7 +18,7 @@ This means we will typically create at least three dependent PRs;
 - One in the [metapackage repository](https://github.com/brainglobe/brainglobe-meta), which pins the new versions of all affected tools at once
 
 We should cross-link the latter to the website update, and release all affected packages to PyPI (and conda if appropriate) once they are all merged into `main`.
-Ideally, updates and releases should be made in an order that [follows the dependency tree](./repositories/brainglobe-meta/index#dependency-tree) - starting with our lower level tools, than their dependents, then dependents of those dependents, and so on.
+Ideally, updates and releases should be made in an order that [follows the dependency tree](<project:repositories/brainglobe-meta/index.md#dependency-tree>) - starting with our lower level tools, than their dependents, then dependents of those dependents, and so on.
 The meta-package itself will always be the last by this convention.
 
 ## Triggering a new release
