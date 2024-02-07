@@ -498,6 +498,7 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html">Developer’s guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../intro_to_codebase.html">Introduction to the BrainGlobe codebase for developers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tooling.html">Tooling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../conventions.html">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../testing.html">Testing</a></li>
@@ -659,7 +660,7 @@ As such, all BrainGlobe dependencies in the meta-package <code class="docutils l
 </section>
 </section>
 <section id="dependency-tree">
-<h2>Dependency Tree<a class="headerlink" href="#dependency-tree" title="Link to this heading">#</a></h2>
+<span id="id1"></span><h2>Dependency Tree<a class="headerlink" href="#dependency-tree" title="Link to this heading">#</a></h2>
 <p>BrainGlobe comprises a number of tools, spread across a number of repositories.
 These tools are all interlinked and interdependent, but the meta-package allows us to abstract this complexity away from the user.</p>
 <p>To ensure we retain explicit control over what <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> provides to users, it is important that the meta-package explicitly depends on all BrainGlobe tools that it wants to provide, including “redundant dependencies”.

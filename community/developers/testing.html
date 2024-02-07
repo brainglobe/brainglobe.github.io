@@ -498,6 +498,7 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Developer’s guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro_to_codebase.html">Introduction to the BrainGlobe codebase for developers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tooling.html">Tooling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conventions.html">Conventions</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Testing</a></li>
@@ -620,6 +621,12 @@ from PyPI to be set in repository secrets.</p></li>
 <a class="reference external" href="https://github.com/neuroinformatics-unit/actions">neuroinformatics-unit/actions</a>. Feel free to raise a PR to that
 repository!</p>
 </section>
+<section id="test-data">
+<h2>Test data<a class="headerlink" href="#test-data" title="Link to this heading">#</a></h2>
+<p>Data used by the tests should be kept on <a class="reference external" href="https://gin.g-node.org/BrainGlobe/">GIN</a> and fetched using <code class="docutils literal notranslate"><span class="pre">pooch</span></code>.
+Test data should not live on GitHub.
+To avoid local tests running checks on user data interfering with separate user data on the same machine, tests should mock test-user data by mocking <code class="docutils literal notranslate"><span class="pre">Path.home()</span></code> - an example of how to achieve this can <a class="reference external" href="https://github.com/brainglobe/brainrender-napari/blob/014f5c5908065ddaa5d6b05ecdf90493383cfa2f/tests/conftest.py">be viewed in <code class="docutils literal notranslate"><span class="pre">brainrender-napari</span></code></a>.</p>
+</section>
 </section>
 
 <div class="section ablog__blog_comments">
@@ -674,6 +681,7 @@ repository!</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#long-running-tests">Long running tests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration">Continuous integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-data">Test data</a></li>
 </ul>
   </nav></div>
 

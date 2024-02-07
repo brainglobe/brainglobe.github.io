@@ -58,7 +58,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Tooling" href="tooling.html" />
+    <link rel="next" title="Introduction to the BrainGlobe codebase for developers" href="intro_to_codebase.html" />
     <link rel="prev" title="Community" href="../index.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -498,6 +498,7 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Developer’s guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro_to_codebase.html">Introduction to the BrainGlobe codebase for developers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tooling.html">Tooling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conventions.html">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
@@ -593,9 +594,10 @@ document.write(`
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p><strong>Contributors to BrainGlobe are absolutely encouraged</strong>, whether to fix a bug, develop a new feature, or add a new atlas.</p>
 <p>There are many BrainGlobe repositories, so it may not be obvious where a new contribution should go.
-If you’re unsure about any part of the contributing process, please <a class="reference internal" href="../../contact.html"><span class="std std-doc">get in touch</span></a>.
-The best place for questions about contributing is probably
-the <a class="reference external" href="https://brainglobe.zulipchat.com/">BrainGlobe Zulip chat</a>.</p>
+If you’re unsure about any part of the contributing process, please <a class="reference internal" href="../../contact.html"><span class="std std-doc">get in touch</span></a>.</p>
+<p>The best place for questions about contributing is probably
+the <a class="reference external" href="https://brainglobe.zulipchat.com/">BrainGlobe Zulip chat</a>.
+You are furthermore welcome to join the bi-weekly developer meetings and contribute items to the agenda - check out the <a class="reference external" href="https://brainglobe.zulipchat.com/#narrow/stream/414089-developer-meeting">developer-meeting stream on Zulip</a> (requires sign-up) for more information.</p>
 <p>If for any reason, you’d rather not reach out in public, feel free to send a direct message on Zulip
 to <a class="reference external" href="https://github.com/adamltyson">Adam Tyson</a>, one of the core developers.</p>
 <p>Some of our tools have additional information about how data files are organised, where user caches are placed, and similar.
@@ -605,10 +607,17 @@ You can view these repositories and the relevant information by heading to the <
 <h2>To contribute a new atlas<a class="headerlink" href="#to-contribute-a-new-atlas" title="Link to this heading">#</a></h2>
 <p>To add a new BrainGlobe atlas, please see the guide <a class="reference internal" href="../../documentation/bg-atlasapi/adding-a-new-atlas.html"><span class="doc std std-doc">here</span></a>.</p>
 </section>
+<section id="to-contribute-code">
+<h2>To contribute code<a class="headerlink" href="#to-contribute-code" title="Link to this heading">#</a></h2>
+<p>Before contributing code, it may be useful to familiarise yourself with the <a class="reference internal" href="intro_to_codebase.html"><span class="std std-doc">introduction to the BrainGlobe code for developers</span></a> as well as the <a class="reference internal" href="testing.html"><span class="std std-doc">testing</span></a>, <a class="reference internal" href="tooling.html"><span class="std std-doc">developer tooling</span></a> and <a class="reference internal" href="conventions.html"><span class="std std-doc">conventions</span></a> sections.</p>
+<p>The core development team will support you in contributing code, irrespective of your experience.
+To ensure BrainGlobe remains easy-to-maintain, they will help ensure all code contributions meet
+a high standard.</p>
 <section id="creating-a-development-environment">
-<h2>Creating a development environment<a class="headerlink" href="#creating-a-development-environment" title="Link to this heading">#</a></h2>
-<p>It is recommended to use <code class="docutils literal notranslate"><span class="pre">conda</span></code> to install a development environment for
-BrainGlobe projects. Once you have <code class="docutils literal notranslate"><span class="pre">conda</span></code> installed, the following commands
+<h3>Creating a development environment<a class="headerlink" href="#creating-a-development-environment" title="Link to this heading">#</a></h3>
+<p>It is recommended to use a recent version of <code class="docutils literal notranslate"><span class="pre">conda</span></code> to install a development environment for
+BrainGlobe projects (<a class="reference external" href="https://conda.org/blog/2023-11-06-conda-23-10-0-release/"><code class="docutils literal notranslate"><span class="pre">conda</span></code> versions &gt;=23.10.0</a>
+will significantly speed up installation time). Once you have <code class="docutils literal notranslate"><span class="pre">conda</span></code> installed, the following commands
 will create and activate a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment with the requirements needed
 for a development environment:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>brainglobe-dev<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11<span class="w"> </span>napari
@@ -631,7 +640,7 @@ GitHub repository, and then run</p>
 and its development dependencies.</p>
 </section>
 <section id="pull-requests">
-<h2>Pull requests<a class="headerlink" href="#pull-requests" title="Link to this heading">#</a></h2>
+<h3>Pull requests<a class="headerlink" href="#pull-requests" title="Link to this heading">#</a></h3>
 <p>In all cases, please submit code to the main repository via a pull request. The developers recommend, and adhere,
 to the following conventions:</p>
 <ul class="simple">
@@ -643,6 +652,7 @@ allow for discussion.</p></li>
 <li><p>Ask for a review from someone specific if you think they would be a particularly suited reviewer (possibly noting
 why they are suited on the PR description)</p></li>
 </ul>
+</section>
 </section>
 <section id="to-improve-the-documentation">
 <h2>To improve the documentation<a class="headerlink" href="#to-improve-the-documentation" title="Link to this heading">#</a></h2>
@@ -673,6 +683,7 @@ structure mostly mirrors the rendered website. To edit a page, please:</p>
 <h2>Further information<a class="headerlink" href="#further-information" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="intro_to_codebase.html">Introduction to the BrainGlobe codebase for developers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tooling.html">Tooling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
@@ -708,11 +719,11 @@ structure mostly mirrors the rendered website. To edit a page, please:</p>
       </div>
     </a>
     <a class="right-next"
-       href="tooling.html"
+       href="intro_to_codebase.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tooling</p>
+        <p class="prev-next-title">Introduction to the BrainGlobe codebase for developers</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -736,8 +747,11 @@ structure mostly mirrors the rendered website. To edit a page, please:</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-contribute-a-new-atlas">To contribute a new atlas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-development-environment">Creating a development environment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-requests">Pull requests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-contribute-code">To contribute code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-development-environment">Creating a development environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-requests">Pull requests</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-improve-the-documentation">To improve the documentation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#editing-the-documentation">Editing the documentation</a></li>
 </ul>

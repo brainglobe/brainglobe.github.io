@@ -69,6 +69,7 @@ This ensures that:
 - Major or breaking changes to BrainGlobe tools are **not** automatically picked up on update!
 - We can force certain (combinations of) minor/patch updates to tools on users by simply releasing minor/patch updates to `brainglobe`. Changing `cellfinder>=1.1.0,<2` to `cellfinder>=1.1.4,<2` and `brainrender>=2.1.3,<3"` to `brainrender>=2.2.1,<3"`, then creating a new `brainglobe` minor/patch release, allows the user to update both of these packages with an update to `brainglobe`, not having to worry about the individual packages themselves.
 
+(dependency_tree)=
 ## Dependency Tree
 
 BrainGlobe comprises a number of tools, spread across a number of repositories.

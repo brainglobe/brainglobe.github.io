@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Publishing new releases &#8212; BrainGlobe</title>
+    <title>Introduction to the BrainGlobe codebase for developers &#8212; BrainGlobe</title>
   
   
   
@@ -52,14 +52,14 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'community/developers/new_releases';</script>
-    <link rel="canonical" href="https://brainglobe.info/community/developers/new_releases.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'community/developers/intro_to_codebase';</script>
+    <link rel="canonical" href="https://brainglobe.info/community/developers/intro_to_codebase.html" />
     <link rel="icon" href="../../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Specific Repository Developer Documentation" href="specific_repos.html" />
-    <link rel="prev" title="Testing" href="testing.html" />
+    <link rel="next" title="Tooling" href="tooling.html" />
+    <link rel="prev" title="Developer’s guide" href="index.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -498,11 +498,11 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Developer’s guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="intro_to_codebase.html">Introduction to the BrainGlobe codebase for developers</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Introduction to the BrainGlobe codebase for developers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tooling.html">Tooling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conventions.html">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Publishing new releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_releases.html">Publishing new releases</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="specific_repos.html">Specific Repository Developer Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="repositories/brainglobe-meta/index.html">brainglobe-meta</a></li>
 <li class="toctree-l3"><a class="reference internal" href="repositories/brainglobe-workflows/index.html">brainglobe-workflows</a></li>
@@ -574,7 +574,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Developer’s guide</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Publishing...</li>
+    <li class="breadcrumb-item active" aria-current="page">Introduction...</li>
   </ul>
 </nav>
 </div>
@@ -591,97 +591,83 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-<section class="tex2jax_ignore mathjax_ignore" id="publishing-new-releases">
-<h1>Publishing new releases<a class="headerlink" href="#publishing-new-releases" title="Link to this heading">#</a></h1>
-<p>BrianGlobe packages hosted on GitHub have CI workflows setup that are used to automatically upload and publish new version releases when they are made available.
-This is the preferred method for publishing new versions to <code class="docutils literal notranslate"><span class="pre">PyPI</span></code> (and where appropriate, the linked <code class="docutils literal notranslate"><span class="pre">conda</span></code> feedstocks) - avoid manual uploads where possible.</p>
-<p>Maintainers can trigger a new release by pushing a new tag, in the format <code class="docutils literal notranslate"><span class="pre">vX.Y.Z</span></code>, to the main branch of a package repository.
-The <code class="docutils literal notranslate"><span class="pre">v</span></code> prefix <strong>is necessary</strong> as the workflow will only attempt to upload to <code class="docutils literal notranslate"><span class="pre">PyPI</span></code> if the tag matches the format previously provided.
-The <code class="docutils literal notranslate"><span class="pre">X</span></code>, <code class="docutils literal notranslate"><span class="pre">Y</span></code>, and <code class="docutils literal notranslate"><span class="pre">Z</span></code> values should be integers corresponding to the new version number.</p>
-<section id="coordinating-releases-with-the-documentation-and-the-metapackage">
-<h2>Coordinating releases with the documentation and the metapackage<a class="headerlink" href="#coordinating-releases-with-the-documentation-and-the-metapackage" title="Link to this heading">#</a></h2>
-<p>Releases will be made ad-hoc as bug-fixes and new features become available.
-When releasing a new version of a BrainGlobe repository, we also need to update the website, the metapackage, and any other tools that depend on that repository accordingly.
-This means we will typically create at least three dependent PRs;</p>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction-to-the-brainglobe-codebase-for-developers">
+<h1>Introduction to the BrainGlobe codebase for developers<a class="headerlink" href="#introduction-to-the-brainglobe-codebase-for-developers" title="Link to this heading">#</a></h1>
+<p>This is an introduction to the high-level organisation of the BrainGlobe codebase for developers.
+It serves as an introduction for new contributors and as a reference for all contributors.</p>
+<p>It will cover BrainGlobe’s guiding principles for development and the default software architecture for BrainGlobe repositories.
+Note that this high-level organisation is (at least partially) aspirational, and implementing it is work-in-progress (see <a class="reference internal" href="../roadmaps/index.html"><span class="std std-doc">the current roadmap</span></a> and the <a class="reference external" href="https://github.com/orgs/brainglobe/projects/2">Core Development Project Board</a>)</p>
+<section id="guiding-principles-for-development">
+<h2>Guiding principles for development<a class="headerlink" href="#guiding-principles-for-development" title="Link to this heading">#</a></h2>
+<p>The first guiding principle is that BrainGlobe should be easy-to-use by everyone.
+In practice, this means that BrainGlobe code should be independent of species of interest or image modality, and should be installable and runnable by anyone with a reasonably modern laptop within minutes.
+Users should be able to achieve their aims regardless of their level of programming expertise.
+This means we aim to cater to a range of potential users.</p>
+<p>As a secondary guiding principle, we additionally aim to make the codebase <strong>easy to maintain</strong>, and <strong>easy to contribute to</strong>, where this doesn’t interfere with the first principle.</p>
+<p>Choices around the software architecture and technology stack (detailed below) are taken with these principles in mind.</p>
+<section id="examples-of-guiding-principles-in-practice">
+<h3>Examples of guiding principles in practice<a class="headerlink" href="#examples-of-guiding-principles-in-practice" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>One in the repository itself (containing the bugfix or new feature we’d like to release)</p></li>
-<li><p>One in the <a class="reference external" href="https://github.com/brainglobe/brainglobe.github.io">website repository</a> (to update documentation if necessary)</p></li>
-<li><p>One for each repository that depends on the updated tool, to bump the dependency version</p></li>
-<li><p>One in the <a class="reference external" href="https://github.com/brainglobe/brainglobe-meta">metapackage repository</a>, which pins the new versions of all affected tools at once</p></li>
-</ul>
-<p>We should cross-link the latter to the website update, and release all affected packages to PyPI (and conda if appropriate) once they are all merged into <code class="docutils literal notranslate"><span class="pre">main</span></code>.
-Ideally, updates and releases should be made in an order that <a class="reference internal" href="repositories/brainglobe-meta/index.html#id1"><span class="std std-ref">follows the dependency tree</span></a> - starting with our lower level tools, than their dependents, then dependents of those dependents, and so on.
-The meta-package itself will always be the last by this convention.</p>
-</section>
-<section id="triggering-a-new-release">
-<h2>Triggering a new release<a class="headerlink" href="#triggering-a-new-release" title="Link to this heading">#</a></h2>
-<p>The steps for triggering a new release are:</p>
-<ol class="arabic simple">
-<li><p>Head to the “releases” UI on GitHub for the package you want to release a new version for, and select “draft a new release”.</p></li>
-<li><p>In the “choose a tag” box, opt to create a new tag in the format described above. Ensure that the target is <code class="docutils literal notranslate"><span class="pre">main</span></code> (or the desired commit on <code class="docutils literal notranslate"><span class="pre">main</span></code> if the current <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> is not the desired release state).</p></li>
-<li><p>Choose the release title. Typically, this is the same as the tag that will be created.</p></li>
-<li><p>In the “write” box, you should have the option to select the “previous tag”. Choose the tag of the previous release, then select “generate release notes”.</p></li>
-<li><p>Check the “set as latest release” box.</p></li>
-<li><p>Then hit “publish release”.</p></li>
-</ol>
-<p>This will trigger a tag-push event to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, which will set the <a class="reference internal" href="#workflow-for-publishing-new-releases"><span class="std std-ref">deployment workflow</span></a> in motion.
-You can now relax whilst the workflow uploads the new package version to <code class="docutils literal notranslate"><span class="pre">PyPI</span></code>; however you will need to look out for <a class="reference internal" href="#conda-forge-feedstocks"><span class="std std-ref">conda-forge feedstock updates</span></a> in the next couple of days, or pre-empt this by making your own.
-See the section on feedstocks for more information.</p>
-<section id="on-the-command-line">
-<h3>On the command line<a class="headerlink" href="#on-the-command-line" title="Link to this heading">#</a></h3>
-<p>If you have an up-to-date clone of the package repository, you can create a release tag on the command line with</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>tag<span class="w"> </span>vX.Y.Z<span class="w"> </span>
-</pre></div>
-</div>
-<p>or one of</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>vX.Y.Z
-git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>vX.Y.Z<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Tag annotation message&quot;</span>
-</pre></div>
-</div>
-<p>if you want to annotate the tag; which is useful for tagging single-commit hotfixes or patches that might come after a release.</p>
-<p>Once you have created the tag, you can <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--tags</span></code> back to the main repository to trigger the release workflow.
-<strong>However</strong> you still need to create release notes using the GitHub UI as described in <a class="reference internal" href="#triggering-a-new-release"><span class="std std-ref">the section above</span></a>.
-You will need to select the tag you just pushed, rather than creating a new tag, when you start drafting the release notes.</p>
-</section>
-<section id="failed-workflows">
-<h3>Failed workflows<a class="headerlink" href="#failed-workflows" title="Link to this heading">#</a></h3>
-<p>In the event that the release workflows fails after publishing a release, you will need to:</p>
-<ul class="simple">
-<li><p>Delete the tag from the repository from the GitHub tags UI</p></li>
-<li><p>Delete the release notes and release from the GitHub releases UI</p></li>
-<li><p>Debug the build failure and the commits with the fix are merged into <code class="docutils literal notranslate"><span class="pre">main</span></code></p></li>
-<li><p>Begin the process over again.</p></li>
+<li><p>Ease of installation: through the metapackage, we provide a one-line command to install all BrainGlobe tools at once. None of the packages depend on anything other than Python (we’ve removed historical compiled code), and are therefore easy to install cross-platform.</p></li>
+<li><p>Accessibility: we aim to provide a Graphical User Interface (GUI) for all BrainGlobe tools. By asking users for feedback, we ensure that the GUI provides a nice user experience.</p></li>
+<li><p>Ease of use through Python/interoperability: we aim to provide a well-documented Python API for all BrainGlobe tools.</p></li>
+<li><p>Performance: By running weekly benchmarks comparing the latest release with the development version, we guarantee that performance will not deteriorate as BrainGlobe evolves.</p></li>
+<li><p>Species/modality independent: none of the code makes any assumptions about the imaging modality or the species of the model organism of interest. We provide atlases for a variety of model organisms.</p></li>
+<li><p>Useability: we sacrifice the code simplicity provided by <code class="docutils literal notranslate"><span class="pre">magicgui</span></code> in exchange for fine-grained control of the user experience by writing brainglobe widgets in <code class="docutils literal notranslate"><span class="pre">qtpy</span></code>. This is an example where the first guiding principle takes priority over the second.</p></li>
+<li><p>Easy-to-maintain: we move functionality used by more than one independent BrainGlobe tool to <code class="docutils literal notranslate"><span class="pre">brainglobe-utils</span></code> to reduce code duplication and make maintenance easier.</p></li>
 </ul>
 </section>
-<section id="conda-forge-feedstocks">
-<h3><code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> feedstocks<a class="headerlink" href="#conda-forge-feedstocks" title="Link to this heading">#</a></h3>
-<p>A number of BrainGlobe packages are also available through <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>, providing an alternative installation method to <code class="docutils literal notranslate"><span class="pre">pip</span></code>.
-Each package available in this way has a feedstock repository, usually at the GitHub repository:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span><span class="o">-</span><span class="n">forge</span><span class="o">/&lt;</span><span class="n">package</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;-</span><span class="n">feedstock</span>
-</pre></div>
-</div>
-<p>These feedstocks are linked to their <code class="docutils literal notranslate"><span class="pre">PyPI</span></code> counterparts - when a new version comes available on <code class="docutils literal notranslate"><span class="pre">PyPI</span></code>, the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> admin bot should open a PR in the feedstock repository which will update the version of the package available through <code class="docutils literal notranslate"><span class="pre">conda</span></code>.
-These PRs must be approved by one of the feedstock maintainers before they are merged in.</p>
+</section>
+<section id="brainglobe-tools">
+<h2>BrainGlobe Tools<a class="headerlink" href="#brainglobe-tools" title="Link to this heading">#</a></h2>
+<p>Code providing functionality related to a specific analysis or visualisation step is referred to as a BrainGlobe “tool”.
+Each BrainGlobe tool has its own Github repository on the BrainGlobe organisation.</p>
+<p>Currently stable tools are:</p>
 <ul class="simple">
-<li><p>Feedstock maintainers and package maintainers may be different</p></li>
-<li><p>New versions of packages will <strong>NOT</strong> be available through <code class="docutils literal notranslate"><span class="pre">conda</span></code> until these PRs are merged in.</p></li>
+<li><p><a class="reference external" href="https://github.com/brainglobe/bg-atlasapi"><code class="docutils literal notranslate"><span class="pre">brainglobe-atlasapi</span></code></a></p></li>
+<li><p><a class="reference external" href="https://github.com/brainglobe/brainglobe-heatmap"><code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code></a></p></li>
+<li><p><a class="reference external" href="https://github.com/brainglobe/brainglobe-segmentation"><code class="docutils literal notranslate"><span class="pre">brainglobe-segmentation</span></code></a></p></li>
+<li><p><a class="reference external" href="https://github.com/brainglobe/brainreg"><code class="docutils literal notranslate"><span class="pre">brainreg</span></code></a></p></li>
+<li><p><a class="reference external" href="https://github.com/brainglobe/brainrender"><code class="docutils literal notranslate"><span class="pre">brainrender</span></code></a></p></li>
+<li><p><a class="reference external" href="https://github.com/brainglobe/cellfinder"><code class="docutils literal notranslate"><span class="pre">cellfinder</span></code></a></p></li>
+<li><p><a class="reference external" href="https://github.com/brainglobe/morphapi"><code class="docutils literal notranslate"><span class="pre">morphapi</span></code></a></p></li>
+<li><p><a class="reference external" href="https://github.com/brainglobe/brainglobe-space"><code class="docutils literal notranslate"><span class="pre">brainglobe-space</span></code></a></p></li>
 </ul>
-<p>If the new version changes are extensive or non-trivial; a manual update to the <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> “recipe” file might be needed, as the admin bot is unable to resolve complex edits.
-Examples of such changes are; changing package dependencies, introducing new submodules, and/or editing command-line entry-points.
-You will need to use the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> CI to debug the builds when manually updating in this way.</p>
+<p>Tools currently in development are</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/brainglobe/brainglobe-registration"><code class="docutils literal notranslate"><span class="pre">brainglobe-registration</span></code></a></p></li>
+<li><p><a class="reference external" href="https://github.com/brainglobe/brainrender-napari"><code class="docutils literal notranslate"><span class="pre">brainrender-napari</span></code></a></p></li>
+</ul>
+<p>The BrainGlobe Github organisation also hosts the <a class="reference internal" href="repositories/brainglobe-meta/index.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> (meta-)package</span></a> and the <a class="reference internal" href="repositories/brainglobe-workflows/index.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code> collection</span></a> in separate repositories (which are not tools in themselves), as well as the <a class="reference external" href="https://github.com/brainglobe/brainglobe-utils">utility package <code class="docutils literal notranslate"><span class="pre">brainglobe-utils</span></code></a>.</p>
+<p>As can be seen from the package names, we follow a <strong>loose</strong> naming convention for packages following a pattern of {brain(globe) || cell}-{noun describing what the tool does}. The most important criterion is the expressiveness of the name.
+The <code class="docutils literal notranslate"><span class="pre">bg-</span></code> prefix for BrainGlobe tools has been discontinued.</p>
+<section id="user-data">
+<h3>User data<a class="headerlink" href="#user-data" title="Link to this heading">#</a></h3>
+<p>User data is stored locally in hidden folders, usually in the user’s <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> directory.
+These folders are named after the tools (e.g. <code class="docutils literal notranslate"><span class="pre">~/.cellfinder/</span></code>) or in appropriate subfolders of <code class="docutils literal notranslate"><span class="pre">.brainglobe</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">~/.brainglobe/mpin_zfish_1um_v1.0/</span></code>).
+We plan to move all user data to <code class="docutils literal notranslate"><span class="pre">~/.brainglobe</span></code> in the future, and this is therefore the place to add new kinds of user data (in appropriately named subfolders).
+Data that we provide (e.g. atlas data and test data) should be hosted on <a class="reference external" href="https://gin.g-node.org/BrainGlobe/">GIN/BrainGlobe</a>, and not on GitHub itself (unless it’s a small package-specific text file, in which case it can go in <a class="reference external" href="https://docs.python.org/3/library/importlib.resources.html">the package resources and accessed via <code class="docutils literal notranslate"><span class="pre">importlib</span></code></a>).
+We rely on <a class="reference external" href="https://www.fatiando.org/pooch/latest/">the <code class="docutils literal notranslate"><span class="pre">pooch</span></code> package</a> to fetch data from GIN.</p>
 </section>
+<section id="default-architecture-for-brainglobe-tools">
+<h3>Default architecture for BrainGlobe Tools<a class="headerlink" href="#default-architecture-for-brainglobe-tools" title="Link to this heading">#</a></h3>
+<p>By default, each BrainGlobe tool should be organised into up to three distinct submodules: <code class="docutils literal notranslate"><span class="pre">core</span></code>, <code class="docutils literal notranslate"><span class="pre">qt</span></code>, and <code class="docutils literal notranslate"><span class="pre">napari</span></code>.
+These submodules should live in the same GitHub repository and are packaged together on PyPI.
+It is acceptable to deviate from the default where there is a reason to (e.g. not all tools will have a GUI).</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">core</span></code> contains the central logic to use this tool and exposes it through a Python API</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qt</span></code> contains user-friendly widgets and related Qt code that is implemented using <code class="docutils literal notranslate"><span class="pre">qtpy</span></code>. Each of these widgets provides an intuitive graphical user interface for one part (or few related parts) of the Python API defined in <code class="docutils literal notranslate"><span class="pre">core</span></code>.
+The widgets additionally emit Qt signals that any frontend (e.g. the code in <code class="docutils literal notranslate"><span class="pre">napari</span></code>) can connect to.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">napari</span></code> contains at least one Napari plugin that connects to signals in <code class="docutils literal notranslate"><span class="pre">qt</span></code> and implements a napari-specific response (e.g. adding a Napari layer) to them.</p></li>
+</ul>
+<p>The architecture has a number of advantages;</p>
+<ul class="simple">
+<li><p>The modularity ensure each of submodule can (and should be) tested individually in the first instance</p></li>
+<li><p>Widgets can be re-used outside of napari</p></li>
+<li><p>Integration tests in the same repo to avoid messy CI dependencies</p></li>
+</ul>
+<p>Additionally, keeping the architecture consistent across BrainGlobe tools should make it easier to contribute to several tools once someone has contributed to one tool, due to the familiar codebase organisation.</p>
 </section>
-<section id="workflow-for-publishing-new-releases">
-<h2>Workflow for publishing new releases<a class="headerlink" href="#workflow-for-publishing-new-releases" title="Link to this heading">#</a></h2>
-<p>BrainGlobe repositories hosted on GitHub each possess a <code class="docutils literal notranslate"><span class="pre">test_and_deploy.yaml</span></code> workflow.
-The basic functionality of these workflows use the <a class="reference external" href="https://github.com/neuroinformatics-unit/actions">neuroinformatics-unit</a> actions to:</p>
-<ol class="arabic simple">
-<li><p>Lint the source code</p></li>
-<li><p>Check the package manifest</p></li>
-<li><p>Run the package tests</p></li>
-</ol>
-<p>These checks are run against <em>all</em> PRs opened against the repository, and on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch when they are merged in.
-When a tag in the <code class="docutils literal notranslate"><span class="pre">vX.Y.Z</span></code> format is pushed to <code class="docutils literal notranslate"><span class="pre">main</span></code>, these checks are run again and <em>if they are successful</em> the workflow will build the source distribution and upload this to <code class="docutils literal notranslate"><span class="pre">PyPI</span></code>.</p>
 </section>
 </section>
 
@@ -700,20 +686,20 @@ When a tag in the <code class="docutils literal notranslate"><span class="pre">v
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="testing.html"
+       href="index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Testing</p>
+        <p class="prev-next-title">Developer’s guide</p>
       </div>
     </a>
     <a class="right-next"
-       href="specific_repos.html"
+       href="tooling.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Specific Repository Developer Documentation</p>
+        <p class="prev-next-title">Tooling</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -735,14 +721,15 @@ When a tag in the <code class="docutils literal notranslate"><span class="pre">v
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinating-releases-with-the-documentation-and-the-metapackage">Coordinating releases with the documentation and the metapackage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#triggering-a-new-release">Triggering a new release</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-the-command-line">On the command line</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#failed-workflows">Failed workflows</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-forge-feedstocks"><code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> feedstocks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guiding-principles-for-development">Guiding principles for development</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-guiding-principles-in-practice">Examples of guiding principles in practice</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-for-publishing-new-releases">Workflow for publishing new releases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe-tools">BrainGlobe Tools</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-data">User data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#default-architecture-for-brainglobe-tools">Default architecture for BrainGlobe Tools</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

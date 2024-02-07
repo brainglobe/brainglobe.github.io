@@ -498,6 +498,7 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Developer’s guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro_to_codebase.html">Introduction to the BrainGlobe codebase for developers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tooling.html">Tooling</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
@@ -607,6 +608,10 @@ determine the <strong>minimum</strong> set of supported package versions:</p>
 <p>In addition to this, the last 24 months of other dependencies should also be
 supported.</p>
 </section>
+<section id="axis-ordering-in-spatial-arrays">
+<h2>Axis ordering in spatial arrays<a class="headerlink" href="#axis-ordering-in-spatial-arrays" title="Link to this heading">#</a></h2>
+<p>For arrays representing spatial data, we follow <code class="docutils literal notranslate"><span class="pre">zyx</span></code> axis ordering in the same way as <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">napari</span></code>. The origin is the upper left corner when you show the first element <code class="docutils literal notranslate"><span class="pre">stack[0,</span> <span class="pre">:,</span> <span class="pre">:]</span></code>. The first dimension is the one that you are slicing, the second is the height of the image, and the third is the width of the image. The <a class="reference internal" href="../../documentation/brainglobe-space/index.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">brainglobe-space</span></code> package</span></a> provides an interface to manipulate data following different conventions to adhere to this standard.</p>
+</section>
 </section>
 
 <div class="section ablog__blog_comments">
@@ -660,6 +665,7 @@ supported.</p>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency-support">Dependency support</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-ordering-in-spatial-arrays">Axis ordering in spatial arrays</a></li>
 </ul>
   </nav></div>
 
