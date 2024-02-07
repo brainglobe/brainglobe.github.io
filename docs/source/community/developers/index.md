@@ -26,7 +26,8 @@ To add a new BrainGlobe atlas, please see the guide [here](/documentation/bg-atl
 Before contributing code, it may be useful to familiarise yourself with the [introduction to the BrainGlobe code for developers](./intro_to_codebase.md) as well as the [testing](./testing.md), [developer tooling](./tooling.md) and [conventions](./conventions.md) sections. 
 
 The core development team will support you in contributing code, irrespective of your experience.
-At the same time, they will hold you to the same standards as they do each other on review, to ensure BrainGlobe remains easy-to-maintain. 
+To ensure BrainGlobe remains easy-to-maintain, they will help ensure all code contributions meet 
+a high standard.
 
 
 ### Creating a development environment
@@ -104,11 +105,11 @@ If you aren't sure where the changes should be made, please
 
 :::{toctree}
 :maxdepth: 1
+intro_to_codebase
 tooling
 conventions
 testing
 new_releases
 specific_repos
-intro_to_codebase
 Code of conduct <https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT.md>
 :::
