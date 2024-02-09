@@ -16,7 +16,7 @@ This decision was made because:
 - There was [a circular dependency](https://github.com/brainglobe/BrainGlobe/issues/64) between the two packages. Whilst not a circular import, this behaviour is undesirable going forward.
 - It reduces the number of repositories that have to be maintained.
 
-`imio`'s functionality will be available under the new `brainglobe_utils.image_io` submodule, and can otherwise we interacted with in the same way as the old `imio` library.
+`imio`'s functionality will be available under the new `brainglobe_utils.image_io` submodule, and can otherwise be interacted with in the same way as the old `imio` library.
 In terms of your source code, the only necessary changes should be to:
 
 - Pin `brainglobe_utils` to at least version 0.4.0, which provides the `image_io` submodule.
