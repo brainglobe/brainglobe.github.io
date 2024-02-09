@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>bg-space has been renamed &#8212; BrainGlobe</title>
+    <title>imio will be merging into brainglobe-utils &#8212; BrainGlobe</title>
   
   
   
@@ -52,8 +52,8 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/bg-space-rename';</script>
-    <link rel="canonical" href="https://brainglobe.info/blog/bg-space-rename.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/imio-retirement';</script>
+    <link rel="canonical" href="https://brainglobe.info/blog/imio-retirement.html" />
     <link rel="icon" href="../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -540,12 +540,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-<section class="tex2jax_ignore mathjax_ignore" id="bg-space-has-been-renamed">
-<h1><code class="docutils literal notranslate"><span class="pre">bg-space</span></code> has been renamed<a class="headerlink" href="#bg-space-has-been-renamed" title="Link to this heading">#</a></h1>
-<p>The “bg” prefix that a number of BrainGlobe tools carry is not very distinctive nor informative, so we are rolling out minor name changes to a lot of our packages that contain this prefix.
-We are also taking this opportunity to bring these tools into line with our developer guidelines for automatic deployment, tooling, and testing.</p>
-<p>The first on our list is <code class="docutils literal notranslate"><span class="pre">bg-space</span></code>, which will be changing name to the more explicit <code class="docutils literal notranslate"><span class="pre">brainglobe-space</span></code>.
-Beyond this name change, there will be no functionality changes to the package, but several other tools will switch to depending on <code class="docutils literal notranslate"><span class="pre">brainglobe-space</span></code> from now on, and <code class="docutils literal notranslate"><span class="pre">bg-space</span></code> will be archived and not receive any future updates.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="imio-will-be-merging-into-brainglobe-utils">
+<h1><code class="docutils literal notranslate"><span class="pre">imio</span></code> will be merging into <code class="docutils literal notranslate"><span class="pre">brainglobe-utils</span></code><a class="headerlink" href="#imio-will-be-merging-into-brainglobe-utils" title="Link to this heading">#</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">imio</span></code> package will be absorbed into <code class="docutils literal notranslate"><span class="pre">brainglobe-utils</span></code> as a submodule, so will no longer be receiving standalone updates.
+This decision was made because:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">imio</span></code> only has <code class="docutils literal notranslate"><span class="pre">brainglobe-utils</span></code> as a direct dependency as it stands anyway, so users are already installing <code class="docutils literal notranslate"><span class="pre">brainglobe_utils</span></code> to get <code class="docutils literal notranslate"><span class="pre">imio</span></code> currently.</p></li>
+<li><p>There was <a class="reference external" href="https://github.com/brainglobe/BrainGlobe/issues/64">a circular dependency</a> between the two packages. Whilst not a circular import, this behaviour is undesirable going forward.</p></li>
+<li><p>It reduces the number of repositories that have to be maintained.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">imio</span></code>’s functionality will be available under the new <code class="docutils literal notranslate"><span class="pre">brainglobe_utils.image_io</span></code> submodule, and can otherwise be interacted with in the same way as the old <code class="docutils literal notranslate"><span class="pre">imio</span></code> library.
+In terms of your source code, the only necessary changes should be to:</p>
+<ul class="simple">
+<li><p>Pin <code class="docutils literal notranslate"><span class="pre">brainglobe_utils</span></code> to at least version 0.4.0, which provides the <code class="docutils literal notranslate"><span class="pre">image_io</span></code> submodule.</p></li>
+<li><p>Remove any dependencies on <code class="docutils literal notranslate"><span class="pre">imio</span></code>.</p></li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">imio</span> <span class="pre">import</span> <span class="pre">X</span></code> with <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">brainglobe_utils.image_io</span> <span class="pre">import</span> <span class="pre">X</span></code> everywhere in your source code.</p></li>
+</ul>
 <section id="what-do-i-need-to-do">
 <h2>What do I need to do?<a class="headerlink" href="#what-do-i-need-to-do" title="Link to this heading">#</a></h2>
 <p>Users who installed BrainGlobe through it’s single (“meta”) package install with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">brainglobe</span></code> will just need to update the package by running</p>
@@ -553,15 +563,16 @@ Beyond this name change, there will be no functionality changes to the package, 
 </pre></div>
 </div>
 <p>in your environment, which will fetch the new version of all the affected packages.
-You can use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">show</span> <span class="pre">brainglobe</span></code> to check your version has updated - you should find you now have <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> version as 1.0.1 or higher.</p>
-<p>If you are manually managing your BrainGlobe tools, you will need to uninstall <code class="docutils literal notranslate"><span class="pre">bg-space</span></code> and install <code class="docutils literal notranslate"><span class="pre">brainglobe-space</span></code> in its place.
-You’ll also need to update the following packages, which have dropped their <code class="docutils literal notranslate"><span class="pre">bg-space</span></code> dependency and now depend on <code class="docutils literal notranslate"><span class="pre">brainglobe-space</span></code>:</p>
+You can use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">show</span> <span class="pre">brainglobe</span></code> to check your version has updated - you should find you now have <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> version as 1.0.2 or higher.</p>
+<p>If you are manually managing your BrainGlobe tools, you will need to uninstall <code class="docutils literal notranslate"><span class="pre">imio</span></code> and update <code class="docutils literal notranslate"><span class="pre">brainglobe-utils</span></code> to at least version 0.4.0, through</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>uninstall<span class="w"> </span>imio
+pip<span class="w"> </span>install<span class="w"> </span>--update<span class="w"> </span>brainglobe-utils
+</pre></div>
+</div>
+<p>You’ll also need to update the following packages, which now depend on at least <code class="docutils literal notranslate"><span class="pre">brainglobe-utils</span></code> version 0.4.0 instead of <code class="docutils literal notranslate"><span class="pre">imio</span></code>:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">bg-atlasapi</span></code>, version 1.0.3 or newer.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">brainglobe-napari-io</span></code>, version 0.3.3 or newer.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">morphapi</span></code>, version 0.2.2 or newer.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">brainrender</span></code>, version 2.1.5 or newer.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">brainreg</span></code>, version 1.0.4 or newer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brainglobe-segment</span></code>, version 1.2.2 or newer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brainreg</span></code>, version 1.0.5 or newer.</p></li>
 </ul>
 </section>
 </section>
@@ -575,24 +586,16 @@ You’ll also need to update the following packages, which have dropped their <c
   <span class="ablog__prev">
     
     
-    <a href="version1/version_1_released.html">
+    <a href="bg-space-rename.html">
       
       <i class="fa fa-arrow-circle-left"></i>
       
-      <span>BrainGlobe version 1 is here!</span>
+      <span>bg-space has been renamed</span>
     </a>
     
   </span>
   <span class="ablog__spacer">&nbsp;</span>
   <span class="ablog__next">
-    
-    
-    <a href="imio-retirement.html">
-      <span>imio will be merging into brainglobe-utils</span>
-      
-      <i class="fa fa-arrow-circle-right" ></i>
-      
-    </a>
     
   </span>
 </div>
