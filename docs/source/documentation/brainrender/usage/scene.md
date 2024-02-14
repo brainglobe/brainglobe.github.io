@@ -5,7 +5,7 @@ visualization, to add brain regions meshes (by interacting with the `Atlas` clas
 it to export images (using the `Render` class). Finally, the creation of a `Scene` is the first step towards the 
 generation of [videos and animations](videos-animations-and-exporting-to-html) as well.
 
-Given its integration with the [BrainGlobe Atlas API](/documentation/bg-atlasapi/index), `brainrender` can be used with 
+Given its integration with the [BrainGlobe Atlas API](/documentation/brainglobe-atlasapi/index), `brainrender` can be used with 
 any atlas supported by the API. The moment when you're creating your `Scene` is when you have a chance to specify 
 which atlas you intend to use by passing `atlas_name='atlas to use'` to `Scene()`.
 

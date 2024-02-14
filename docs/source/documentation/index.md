@@ -55,7 +55,7 @@ Once you have installed `brainglobe`, or [installed an individual tool](#install
 ```{toctree}
 :maxdepth: 1
 setting-up/index
-bg-atlasapi/index
+brainglobe-atlasapi/index
 brainglobe-space/index
 brainreg/index
 brainglobe-segmentation/index
