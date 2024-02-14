@@ -2,8 +2,7 @@
 
 ## How are BrainGlobe atlases distributed?
 
-BrainGlobe atlases are downloaded locally to the user’s machine whenever they try to use an atlas that has not yet been 
-downloaded.
+BrainGlobe atlases are downloaded locally to the user’s machine whenever they try to use an atlas that has not yet been downloaded.
 By default, they will end up in the `.../username/.brainglobe` folder,
 unless differently specified in the `bg-atlasapi` configuration.
 
@@ -20,12 +19,12 @@ The repository of atlases is automatically updated by scripts that reformat atla
 and upload them. This process will be run every time a new atlas is added or an old atlas is updated. Each atlas is 
 generated in a separate script, so if you want to contribute with a new atlas:
 
-* Fork [github.com/brainglobe/bg-atlasgen](https://github.com/brainglobe/bg-atlasgen)
-* Create an atlas generation script in the `atlas_scripts` directory (see below)
+* Fork [github.com/brainglobe/brainglobe-atlasapi](https://github.com/brainglobe/brainglobe-atlasapi)
+* Create an atlas generation script in the `atlas_generation/atlas_scripts` directory (see below)
 * Submit a pull request back to the original repository.
 
 If you are new to GitHub, or you have any questions about writing your script, feel free to reach out via a 
-[GitHub issue](https://github.com/brainglobe/bg-atlasgen/issues) or by starting a discussion using the 
+[GitHub issue](https://github.com/brainglobe/brainglobe-atlasapi/issues) or by starting a discussion using the 
 [BrainGlobe tag over at the image.sc forum](https://forum.image.sc/tag/brainglobe) and we’ll be very happy to provide 
 you with all the assistance you need to contribute to the project!
 
@@ -47,7 +46,7 @@ annotation and the region hierarchy information (more on that later).
 * A description of all the structures of the brain and their hierarchy. This represented in BrainGlobe with a list of 
 dictionaries where each dictionary describes a region with the following keys:
 
-```
+```python
 STRUCTURE_TEMPLATE = {
    "acronym": "VIS",  # shortened name of the region
    "id": 3,  # region id
@@ -74,7 +73,7 @@ Do not use 0 (zero) as the id of a structure, because the annotation stack will 
 **Atlas generation takes place in two steps:**
 
 1. Generate an “Atlas script” written in python
-2. Use the atlas generation code [available from BrainGlobe](https://github.com/brainglobe/bg-atlasgen/tree/main/bg\_atlasgen) 
+2. Use the atlas generation code [available from BrainGlobe](https://github.com/brainglobe/brainglobe-atlasapi/tree/main/brainglobe_atlasapi/atlas_generation/) 
 3. to generate the atlas from the atlas script.
 
 ### Atlas scripts
@@ -159,7 +158,7 @@ To inspect the meshes, BrainGlobe provides a simple tool
 load and visualize a set of .obj files for quick inspection, e.g.:
 
 ```python
-from bg_atlasgen.mesh_utils import inspect_meshes_folder
+from brainglobe_atlasapi.atlas_generation.mesh_utils import inspect_meshes_folder
 
 inspect_meshes_folder("/home/username/.brainglobe/temp/allen_mouse_10um_v1.0/meshes")
 ```
