@@ -7,7 +7,7 @@ version of this atlas files will be downloaded from the [remote GIN repository](
 and stored on your local machine (by default, in `~..brainglobe`):
 
 ```python
-from bg_atlasapi import BrainGlobeAtlas
+from brainglobe_atlasapi import BrainGlobeAtlas
 from pprint import pprint
 
 bg_atlas = BrainGlobeAtlas("allen_mouse_100um", check_latest=False)
@@ -17,7 +17,7 @@ To know what atlases are available through BrainGlobe, we can use the `show_atla
 (requires an internet connection):
 
 ```python
-from bg_atlasapi import show_atlases
+from brainglobe_atlasapi import show_atlases
 show_atlases()
 ```
 
