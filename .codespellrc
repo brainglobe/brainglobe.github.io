@@ -1,0 +1,4 @@
+[codespell]
+skip = '.git',docs/source/_static/brainrender_web.html,*.svg
+ignore-words-list = portugues,utput
+check-hidden = true

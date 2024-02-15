@@ -20,7 +20,7 @@ registration ([`brainreg-napari`](https://github.com/brainglobe/brainreg-napari)
 [`cellfinder-core`](https://github.com/brainglobe/cellfinder-core), [`cellfinder-napari`](https://github.com/brainglobe/cellfinder-napari))
 * The mix of napari plugins, Python APIs and command line tools make the ecosystem appear more complicated than it should
 * It is not yet possible to carry out all analyses and visualisation within a single platform (napari)
-    * Some non-image processing steps need to be carried out seperately (e.g. assigning cells to brain regions)
+    * Some non-image processing steps need to be carried out separately (e.g. assigning cells to brain regions)
     * Some visualisation relies on exporting data from napari to brainrender
 
 ## v1 (Q4 2023)

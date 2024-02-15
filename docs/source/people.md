@@ -1,6 +1,6 @@
 # People
 ## Leadership
-The BrainGlobe Initative was originally established in the labs of 
+The BrainGlobe Initiative was originally established in the labs of 
 [Troy Margrie](https://www.sainsburywellcome.org/web/groups/margrie-lab),
 [Tiago Branco](https://www.sainsburywellcome.org/web/groups/branco-lab) and [Ruben Portugues](https://portugueslab.com/) 
 by [Adam Tyson](https://github.com/adamltyson), [Federico Claudi](https://github.com/FedeClaudi) and 
@@ -12,7 +12,7 @@ Development is now led by the [Neuroinformatics Unit](https://neuroinformatics.d
 found [here](https://github.com/orgs/brainglobe/teams/active-devs).
 
 ## Contributors
-The BrainGlobe Initative is a community effort and is only possible due to the hard work of many, many people. 
+The BrainGlobe Initiative is a community effort and is only possible due to the hard work of many, many people. 
 In no particular order:
 
 ::::{grid} 2 4 5 5

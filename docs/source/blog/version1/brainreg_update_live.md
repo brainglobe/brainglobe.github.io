@@ -17,7 +17,7 @@ Previously, there were three tools with the prefix `brainreg` ("brain registrati
 - `brainreg-segment` was a companion to `brainreg` that allowed for segmentation of regions/objects within the brain. However it was not necessarily involved with the registration process itself.
 
 This release sees `brainreg` come bundled with its napari plugin as an optional package extra, rather than requiring users to install the two packages separately.
-Consequentially, `brainreg-napari` has been retired; we recommend you uninstall this package from your environments when you update.
+Consequently, `brainreg-napari` has been retired; we recommend you uninstall this package from your environments when you update.
 The "combined" `brainreg` is now tagged as `brainreg v1.0.0` and should be considered a stable first release of this tool.
 
 `brainglobe-segmentation` is the new name of the `brainreg-segment` tool.
