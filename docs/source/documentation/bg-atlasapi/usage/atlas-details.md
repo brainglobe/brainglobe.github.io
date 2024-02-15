@@ -8,7 +8,7 @@ The BrainGlobe atlas API includes a number of atlases in a standardised form tha
 - Brain region annotations
 - Resolution
 
-Sometimes chooseing the most appropriate atlas for a specific question is easy (e.g., there is currently only one 
+Sometimes choosing the most appropriate atlas for a specific question is easy (e.g., there is currently only one 
 rat atlas in the API). However, in some cases (e.g. adult mouse brains) there are many options. In some cases 
 the annotations included with an atlas will dictate the choice — if the brain region you are studying is not included 
 in an atlas, it is not much use! In other cases the reference image will be important. If you have imaged your sample 
