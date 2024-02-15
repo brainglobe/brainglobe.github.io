@@ -40,7 +40,7 @@ The resulting `brainglobe` version 1.0.0 release prevents users from installing 
 
 Minor or patch updates to `brainglobe` we envision to be cases where multiple tools have undergone performance improvements, minor patches, or under-the-hood code refactoring that we feel benefits the user experience, but does not require a change in how the user interacts with these tools.
 A typical example of this might be when a function appears in both `brainglobe-tool-A` and `brainglobe-tool-B`, so we decide to refactor it into `brainglobe-utils` which is a common dependency.
-In this case; each of `brainglobe-tool-A`, `brainglobe-tool-B`, and `brainglobe-utils` would get new releases, and furthermore both `brainglobe-tool-A` and `brainglobe-tool-B` would now depend on the new version of `brainglobe-utils`.
+In this case, each of `brainglobe-tool-A`, `brainglobe-tool-B`, and `brainglobe-utils` would get new releases, and furthermore both `brainglobe-tool-A` and `brainglobe-tool-B` would now depend on the new version of `brainglobe-utils`.
 We would then decide to release a minor version of the meta-package, which updates the minimum version of these three packages - from the user perspective, this will come in a single update.
 
 ### Dependency Pinning

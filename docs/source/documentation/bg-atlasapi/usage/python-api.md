@@ -4,7 +4,7 @@
 
 To instantiate a `BrainGlobeAtlas` object, we need to instantiate it with the atlas name. The first time we use it, a 
 version of this atlas files will be downloaded from the [remote GIN repository](http://gin.g-node.org/brainglobe/atlases) 
-and stored on your local machine (by default, in `~..brainglobe`):
+and stored on your local machine (by default, in `~/.brainglobe`):
 
 ```python
 from bg_atlasapi import BrainGlobeAtlas

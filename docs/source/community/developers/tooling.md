@@ -29,7 +29,8 @@ to edit the `.pre-commit-config.yaml` file by adding the additional dependency t
 ```
 
 ## Versioning
-We use [semantic versioning](https://semver.org/), which uses a `MAJOR`.`MINOR`.`PATCH` versiong number where these mean:
+
+We use [semantic versioning](https://semver.org/), which uses a `MAJOR`.`MINOR`.`PATCH` versioning number where these mean:
 
 * PATCH = small bugfix
 * MINOR = new feature
