@@ -667,7 +667,7 @@ document.write(`
 <h2>How are BrainGlobe atlases distributed?<a class="headerlink" href="#how-are-brainglobe-atlases-distributed" title="Link to this heading">#</a></h2>
 <p>BrainGlobe atlases are downloaded locally to the user’s machine whenever they try to use an atlas that has not yet been
 downloaded.
-By default, they will end up in the <code class="docutils literal notranslate"><span class="pre">.../username/.brainglobe</span></code> folder,
+By default, they will end up in the <code class="docutils literal notranslate"><span class="pre">~/.brainglobe</span></code> folder,
 unless differently specified in the <code class="docutils literal notranslate"><span class="pre">bg-atlasapi</span></code> configuration.</p>
 <p>The BrainGlobeAtlas class fetches those atlases from a dedicated GIN repository
 (<a class="reference external" href="https://gin.g-node.org/brainglobe/atlases">https://gin.g-node.org/brainglobe/atlases</a>). GIN repos are very similar
@@ -815,7 +815,7 @@ with a higher index, you are moving from anterior to posterior.</p>
 load and visualize a set of .obj files for quick inspection, e.g.:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bg_atlasgen.mesh_utils</span> <span class="kn">import</span> <span class="n">inspect_meshes_folder</span>
 
-<span class="n">inspect_meshes_folder</span><span class="p">(</span><span class="s2">&quot;/home/username/.brainglobe/temp/allen_mouse_10um_v1.0/meshes&quot;</span><span class="p">)</span>
+<span class="n">inspect_meshes_folder</span><span class="p">(</span><span class="s2">&quot;~/.brainglobe/temp/allen_mouse_10um_v1.0/meshes&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Once an atlas is created with BrainGlobe’s atlas generation tools,

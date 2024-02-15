@@ -2,7 +2,7 @@
 
 Although the API should provide you with the tools you need to work with the atlas \(and if they don't, please [raise an issue](https://github.com/brainglobe/bg-atlasapi/issues)\), you may wish to find the files themselves.
 
-By default, atlases will be downloaded and saved into your home directory in a hidden directory \(`.brainglobe`\), with one directory per atlas e.g. `/home/username/.brainglobe/allen_mouse_10um_v0.3`\).
+By default, atlases will be downloaded and saved into your home directory in a hidden directory \(`.brainglobe`\), with one directory per atlas e.g. `~/.brainglobe/allen_mouse_10um_v0.3`\).
 
 In each atlas directory, there will be the following subdirectories and files:
 

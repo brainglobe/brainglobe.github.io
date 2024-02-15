@@ -4,7 +4,7 @@
 
 BrainGlobe atlases are downloaded locally to the user’s machine whenever they try to use an atlas that has not yet been 
 downloaded.
-By default, they will end up in the `.../username/.brainglobe` folder,
+By default, they will end up in the `~/.brainglobe` folder,
 unless differently specified in the `bg-atlasapi` configuration.
 
 The BrainGlobeAtlas class fetches those atlases from a dedicated GIN repository
@@ -161,7 +161,7 @@ load and visualize a set of .obj files for quick inspection, e.g.:
 ```python
 from bg_atlasgen.mesh_utils import inspect_meshes_folder
 
-inspect_meshes_folder("/home/username/.brainglobe/temp/allen_mouse_10um_v1.0/meshes")
+inspect_meshes_folder("~/.brainglobe/temp/allen_mouse_10um_v1.0/meshes")
 ```
 
 
