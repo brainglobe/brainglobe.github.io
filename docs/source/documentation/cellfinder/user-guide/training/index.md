@@ -52,7 +52,7 @@ This process would usually take 2-4 hours (with practice it usually becomes much
 Once the network is retrained, the process can be repeated until performance is satisfactory for the application.
 
 :::{caution}
-Make sure you save all your training data, you can re-use it later (or share it with others).
+Make sure you save all your training data, you can reuse it later (or share it with others).
 :::
 
 ## Training the network
