@@ -15,7 +15,7 @@ This means that there is no longer any need to keep the "backend" package (`cell
 As such;
 
 - [`cellfinder-core`](https://github.com/brainglobe/cellfinder-core) and [`cellfinder-napari`](https://github.com/brainglobe/cellfinder-napari) will be deprecated.
-- [A _package_ called `cellfinder`](https://github.com/brainglobe/cellfinder) will become available as a replacement for this functionality. Note that this will re-use the old "cellfinder" name that the command-line-interface had, [prior to its migration](./cellfinder_migration_live.md).
+- [A _package_ called `cellfinder`](https://github.com/brainglobe/cellfinder) will become available as a replacement for this functionality. Note that this will reuse the old "cellfinder" name that the command-line-interface had, [prior to its migration](./cellfinder_migration_live.md).
 - The `cellfinder-napari` plugin is now simply called "cellfinder" internally, and when loaded up in napari.
 - The "cellfinder" name for the whole-brain registration and analysis workflow provided by [`brainglobe-workflows`](/documentation/brainglobe-workflows/index.md) will be deprecated to avoid confusion. This workflow will now be available as "`brainmapper`".
 
@@ -35,7 +35,7 @@ If you were previously using `cellfinder-napari`, you'll need to uninstall it an
 Any references you have made to the `cellfinder_napari` plugin in your analysis will need to change to the "`cellfinder` plugin" instead.
 
 If you were using the cellfinder command-line tool that was provided by `brainglobe-workflows`, you will need to update your version of `brainglobe-workflows`.
-If you were still using the cellfinder command-line tool provided by the `cellfinder` _package_, with version less than `1.0.0`, you will need to take slightly more involved action - we recommand you look at the instructions on the [full changelog](#full-changelog) for details.
+If you were still using the cellfinder command-line tool provided by the `cellfinder` _package_, with version less than `1.0.0`, you will need to take slightly more involved action - we recommend you look at the instructions on the [full changelog](#full-changelog) for details.
 
 You can take a look at the instructions in the [full changelog](#full-changelog) for more details about updating to the new package.
 

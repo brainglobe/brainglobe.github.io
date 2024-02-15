@@ -20,7 +20,7 @@ Whilst the workflow should still run on Python 3.8 in the immediate future, the 
 ## cellfinder (package)
 
 This package should now be considered deprecated to users.
-Consequentially, the `cellfinder` (CLI) tool provided by this package will no longer receive updates.
+Consequently, the `cellfinder` (CLI) tool provided by this package will no longer receive updates.
 If you want to keep the `cellfinder` (CLI) up to date, you will need to [install `brainglobe-workflows`](#updating-to-the-new-cellfinder-cli-tool) and use the `cellfinder` (CLI) provided there.
 
 ### Future-warning
