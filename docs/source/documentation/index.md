@@ -55,6 +55,7 @@ Once you have installed `brainglobe`, or [installed an individual tool](#install
 ```{toctree}
 :maxdepth: 1
 setting-up/index
+brainglobe-utils/citation-module
 bg-atlasapi/index
 brainglobe-space/index
 brainreg/index
