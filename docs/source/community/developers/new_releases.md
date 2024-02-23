@@ -33,7 +33,7 @@ The steps for triggering a new release are:
 6. Then hit "publish release".
 
 This will trigger a tag-push event to the `main` branch, which will set the [deployment workflow](#workflow-for-publishing-new-releases) in motion.
-You can now relax whilst the workflow uploads the new package version to `PyPI`; however you will need to look out for [`conda-forge` feedstock updates](#conda-forge-feedstocks) in the next couple of days, or pre-empt this by making your own.
+You can now relax whilst the workflow uploads the new package version to `PyPI`; however you will need to look out for [`conda-forge` feedstock updates](#conda-forge-feedstocks) in the next couple of days, or preempt this by making your own.
 See the section on feedstocks for more information.
 
 ### On the command line

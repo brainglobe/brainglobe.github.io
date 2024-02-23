@@ -26,7 +26,7 @@ Choices around the software architecture and technology stack (detailed below) a
 * Ease of use through Python/interoperability: we aim to provide a well-documented Python API for all BrainGlobe tools.
 * Performance: By running weekly benchmarks comparing the latest release with the development version, we guarantee that performance will not deteriorate as BrainGlobe evolves.
 * Species/modality independent: none of the code makes any assumptions about the imaging modality or the species of the model organism of interest. We provide atlases for a variety of model organisms.
-* Useability: we sacrifice the code simplicity provided by `magicgui` in exchange for fine-grained control of the user experience by writing brainglobe widgets in `qtpy`. This is an example where the first guiding principle takes priority over the second.
+* Usability: we sacrifice the code simplicity provided by `magicgui` in exchange for fine-grained control of the user experience by writing brainglobe widgets in `qtpy`. This is an example where the first guiding principle takes priority over the second.
 * Easy-to-maintain: we move functionality used by more than one independent BrainGlobe tool to `brainglobe-utils` to reduce code duplication and make maintenance easier.
 
 
