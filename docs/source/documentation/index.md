@@ -58,6 +58,7 @@ Once you have installed `brainglobe`, or [installed an individual tool](#install
 setting-up/index
 brainglobe-atlasapi/index
 brainglobe-space/index
+brainglobe-utils/citation-module
 brainreg/index
 brainglobe-segmentation/index
 brainglobe-workflows/index
