@@ -1,6 +1,6 @@
 # Software built by the community
 
-Tools like the [BrainGlobe Atlas API](/documentation/bg-atlasapi/index) were developed to help establish a community of 
+Tools like the [BrainGlobe Atlas API](/documentation/brainglobe-atlasapi/index) were developed to help establish a community of 
 developers creating interoperable tools. The BrainGlobe core developers have created a number of such tools
 ([cellfinder](/documentation/cellfinder/index), [brainreg](/documentation/brainreg/index), 
 [brainrender](/documentation/brainrender/index) etc.). More recently, members of the community have built their own 

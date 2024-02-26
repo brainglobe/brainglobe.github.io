@@ -8,7 +8,7 @@
 A core design goal is to facilitate the rendering of any data registered to a reference atlas. To this end, 
 `brainrender` facilitates the creation of 3D objects from many different types of data (e.g. cell locations, 
 brain regions) within minimal need for the development of dedicated code. In addition, `brainrender` is fully 
-integrated with the [BrainGlobe Atlas API](/documentation/bg-atlasapi/index) ensuring that you can use `brainrender` 
+integrated with the [BrainGlobe Atlas API](/documentation/brainglobe-atlasapi/index) ensuring that you can use `brainrender` 
 with any atlas supported by the API with no need for any changes in your code.
 
 ![Overview of brainrender's workflow](images/design_principles.png)

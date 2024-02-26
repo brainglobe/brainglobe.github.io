@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Using the files directly &#8212; BrainGlobe</title>
+    <title>Atlas details &#8212; BrainGlobe</title>
   
   
   
@@ -52,14 +52,14 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/bg-atlasapi/usage/using-the-files-directly';</script>
-    <link rel="canonical" href="https://brainglobe.info/documentation/bg-atlasapi/usage/using-the-files-directly.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/brainglobe-atlasapi/usage/atlas-details';</script>
+    <link rel="canonical" href="https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html" />
     <link rel="icon" href="../../../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Adding a new atlas" href="../adding-a-new-atlas.html" />
-    <link rel="prev" title="Command line interface" href="command-line-interface.html" />
+    <link rel="next" title="Python API" href="python-api.html" />
+    <link rel="prev" title="BrainGlobe Atlas API (brainglobe-atlasapi)" href="../index.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -329,6 +329,10 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
     </header>
@@ -499,17 +503,17 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../../setting-up/image-definition.html">Image space definition</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../brainglobe-utils/citation-module.html">Generating Citations for BrainGlobe tools</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">BrainGlobe Atlas API (bg-atlasapi)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="atlas-details.html">Atlas details</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">BrainGlobe Atlas API (brainglobe-atlasapi)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Atlas details</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="python-api.html">Python API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="command-line-interface.html">Command line interface</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Using the files directly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-the-files-directly.html">Using the files directly</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../adding-a-new-atlas.html">Adding a new atlas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../brainglobe-space/index.html">bg-space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../brainglobe-utils/citation-module.html">Generating Citations for BrainGlobe tools</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../brainreg/index.html">brainreg</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../brainreg/installation.html">Requirements</a></li>
 
@@ -639,9 +643,9 @@ document.write(`
     <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Documentation</a></li>
     
     
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">BrainGlobe Atlas API (bg-atlasapi)</a></li>
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">BrainGlobe Atlas API (brainglobe-atlasapi)</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Using the...</li>
+    <li class="breadcrumb-item active" aria-current="page">Atlas details</li>
   </ul>
 </nav>
 </div>
@@ -658,19 +662,180 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-<section class="tex2jax_ignore mathjax_ignore" id="using-the-files-directly">
-<h1>Using the files directly<a class="headerlink" href="#using-the-files-directly" title="Link to this heading">#</a></h1>
-<p>Although the API should provide you with the tools you need to work with the atlas (and if they don’t, please <a class="reference external" href="https://github.com/brainglobe/bg-atlasapi/issues">raise an issue</a>), you may wish to find the files themselves.</p>
-<p>By default, atlases will be downloaded and saved into your home directory in a hidden directory (<code class="docutils literal notranslate"><span class="pre">.brainglobe</span></code>), with one directory per atlas e.g. <code class="docutils literal notranslate"><span class="pre">~/.brainglobe/allen_mouse_10um_v0.3</span></code>).</p>
-<p>In each atlas directory, there will be the following subdirectories and files:</p>
+<section class="tex2jax_ignore mathjax_ignore" id="atlas-details">
+<h1>Atlas details<a class="headerlink" href="#atlas-details" title="Link to this heading">#</a></h1>
+<p>The BrainGlobe atlas API includes a number of atlases in a standardised form that vary based on:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">reference.tiff</span></code> The “template” brain image, i.e., a structural image of the brain (or average of brains) in which the annotations are defined</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">annotation.tiff</span></code> An image of the same shape as <code class="docutils literal notranslate"><span class="pre">reference.tiff</span></code> but in which each pixel value corresponds to a unique brain area. A pixel value of 0 typically refers to areas outside the brain</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">meshes</span></code> A directory of mesh files (as <code class="docutils literal notranslate"><span class="pre">.obj</span></code>) for each brain region, defined by the unique region ID</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">structures.json</span></code> A file describing the mapping of brain region ID to region name, and the hierarchy of brain structures</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">metadata.json</span></code> A file containing the atlas metadata, such as the shape of the images, the anatomical orientation, and the details of the source of the atlas</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">README.txt</span></code> A human-readable version of the metadata and brain region hierarchies</p></li>
+<li><p>Species</p></li>
+<li><p>Organ</p></li>
+<li><p>Developmental stage</p></li>
+<li><p>Reference image modality</p></li>
+<li><p>Brain region annotations</p></li>
+<li><p>Resolution</p></li>
 </ul>
+<p>Sometimes choosing the most appropriate atlas for a specific question is easy (e.g., there is currently only one
+rat atlas in the API). However, in some cases (e.g. adult mouse brains) there are many options. In some cases
+the annotations included with an atlas will dictate the choice — if the brain region you are studying is not included
+in an atlas, it is not much use! In other cases the reference image will be important. If you have imaged your sample
+with lightsheet microscopy (LSFM) it may be useful to use an atlas that also uses this modality. An atlas using a
+different modality (such as serial section two-photon, STP) may produce inferior registration results.</p>
+<p>In most software you can choose the atlas from a list, but if using a command line tool, or the API directly, the
+unique key (e.g. <code class="docutils literal notranslate"><span class="pre">example_mouse_100um</span></code> must be used).</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="available-atlases">
+<h1>Available atlases<a class="headerlink" href="#available-atlases" title="Link to this heading">#</a></h1>
+<section id="mouse">
+<h2>Mouse<a class="headerlink" href="#mouse" title="Link to this heading">#</a></h2>
+<section id="allen-adult-mouse-brain-atlas">
+<h3><a class="reference external" href="https://portal.brain-map.org">Allen Adult Mouse Brain Atlas</a><a class="headerlink" href="#allen-adult-mouse-brain-atlas" title="Link to this heading">#</a></h3>
+<p>For many researchers working with mice, this is the “default” atlas for a variety of tasks. It is also the basis for
+the most commonly used common coordinate space (CCFv3). It is usually the best mouse atlas to start with, but it has
+some disadvantages. It has a reference image based on STP, which may not produce the best
+results for other imaging modalities, and you may want to try atlases based on other modalities (see below). It also has
+limited annotations in some regions (alternatives such as the Enhanced and Unified Mouse Brain Atlas may be better
+if the Allen Adult Mouse Brain Atlas is not annotated sufficiently).</p>
+<p>Available versions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">allen_mouse_10um</span></code> - 10μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">allen_mouse_25um</span></code> - 25μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">allen_mouse_50um</span></code> - 50μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">allen_mouse_100um</span></code> - 100μm resolution</p></li>
+</ul>
+</section>
+<section id="enhanced-and-unified-mouse-brain-atlas">
+<h3><a class="reference external" href="https://kimlab.io/brain-map/atlas/">Enhanced and Unified Mouse Brain Atlas</a><a class="headerlink" href="#enhanced-and-unified-mouse-brain-atlas" title="Link to this heading">#</a></h3>
+<p>This atlas from <a class="reference external" href="https://doi.org/10.1038/s41467-019-13057-w">Chon et al. (2019)</a> is very similar to the Allen Adult
+Mouse Brain Atlas (it has the same reference image), but it includes additional annotations (e.g. from the
+Franklin-Paxinos atlas). This atlas may be a good choice for those brain regions not annotated sufficiently in the
+Allen Adult Mouse Brain Atlas.</p>
+<p>Available versions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_mouse_10um</span></code> - 10μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_mouse_25um</span></code> - 25μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_mouse_50um</span></code> - 50μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_mouse_100um</span></code> - 100μm resolution</p></li>
+</ul>
+</section>
+<section id="gubras-lsfm-mouse-brain-atlas">
+<h3><a class="reference external" href="https://doi.org/10.1007/s12021-020-09490-8">Gubra’s LSFM mouse brain atlas</a><a class="headerlink" href="#gubras-lsfm-mouse-brain-atlas" title="Link to this heading">#</a></h3>
+<p>This atlas from <a class="reference external" href="https://doi.org/10.1007/s12021-020-09490-8">Perens et al. (2020)</a> provides a version of the Allen
+Adult Mouse Brain Atlas, based on solvent-cleared brains imaged with LSFM. This atlas may be a
+good choice for registering other similar images. However, please note that this atlas is in a different coordinate
+space to the original Allen atlas (CCFv3).</p>
+<p>This atlas is only available at 20μm resolution:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">perens_lsfm_mouse_20um</span></code></p></li>
+</ul>
+</section>
+<section id="princeton-mouse-brain-atlas">
+<h3><a class="reference external" href="https://brainmaps.princeton.edu/2020/09/princeton-mouse-brain-atlas-links">Princeton Mouse Brain Atlas</a><a class="headerlink" href="#princeton-mouse-brain-atlas" title="Link to this heading">#</a></h3>
+<p>This atlas from <a class="reference external" href="https://doi.org/10.1016/j.celrep.2021.109721">Pisano et al. (2021)</a> is a version of the Allen
+Adult Mouse Brain Atlas with two main differences. Unlike the Allen Adult Mouse Brain Atlas it includes a full
+cerebellum, and the reference image is based on LSFM rather than STP.</p>
+<p>This atlas is only available at 20μm resolution:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">princeton_mouse_20um</span></code></p></li>
+</ul>
+</section>
+<section id="d-edge-aware-refined-atlases-derived-from-the-allen-developing-mouse-brain-atlases">
+<h3><a class="reference external" href="https://doi.org/10.7554/eLife.61408">3D Edge-Aware Refined Atlases Derived from the Allen Developing Mouse Brain Atlases</a><a class="headerlink" href="#d-edge-aware-refined-atlases-derived-from-the-allen-developing-mouse-brain-atlases" title="Link to this heading">#</a></h3>
+<p>These atlases from <a class="reference external" href="https://doi.org/10.7554/eLife.61408">Young et al. (2021)</a> are 3D reconstructions of the eight
+developmental stages from the
+<a class="reference external" href="https://developingmouse.brain-map.org/">Allen Developing Mouse Brain Atlas</a>.
+This allows them to be used in automated 3D registration pipelines.</p>
+<p>These atlases vary slightly, as the E11.5, E13.5 and E15.5 atlases contain the complete embryo. The other atlases
+(E18.5, P4, P14, P28 and P56) only contain the brain.</p>
+<p>Available versions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">admba_3d_e11_5_mouse_16um</span></code> - E11.5 at 16μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">admba_3d_e13_5_mouse_16um</span></code> - E13.5 at 16μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">admba_3d_e15_5_mouse_16um</span></code> - E15.5 at 16μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">admba_3d_e18_5_mouse_16um</span></code> - E18.5 at 16μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">admba_3d_p4_mouse_16.752um</span></code> - P4 at 16.752μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">admba_3d_p14_mouse_16.752um</span></code> - P14 at 16.752μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">admba_3d_p28_mouse_16.752um</span></code> - P28 at 16.752μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">admba_3d_p56_mouse_25um</span></code> - P56 at 25μm resolution</p></li>
+</ul>
+</section>
+<section id="kim-lab-developmental-ccf-p56">
+<h3><a class="reference external" href="https://data.mendeley.com/datasets/2svx788ddf/1">Kim Lab Developmental CCF (P56)</a><a class="headerlink" href="#kim-lab-developmental-ccf-p56" title="Link to this heading">#</a></h3>
+<p>This atlas is part of a new developmental atlas following Luis Puelles’ Developmental Vertebrate Ontology. BrainGlobe
+currently hosts the P56 version of this atlas at 10μm resolution with eight versions, each with a different reference
+image - STP, LSFM (iDISCO) and MRI (a0, adc, dwo, fa, MTR, T2).</p>
+<p>Available versions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_dev_mouse_stp_10um</span></code> - “normal” CCF serial 2p template at 10μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_dev_mouse_idisco_10um</span></code> - iDISCO LSFM template at 10μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_dev_mouse_mri_a0_10um</span></code> - MRI a0 template at 10μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_dev_mouse_mri_adc_10um</span></code> - MRI ADC (apparent diffusion coefficient) template at 10μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_dev_mouse_mri_dwi_10um</span></code> - MRI DWI (diffusion-weighted imaging) template at 10μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_dev_mouse_mri_fa_10um</span></code> - MRI FA (fractional anisotropy) template at 10μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_dev_mouse_mri_mtr_10um</span></code> - MRI MTR (magnetic transfer ratio) template at 10μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kim_dev_mouse_mri_t2_10um</span></code> - MRI T2 template at 10μm resolution</p></li>
+</ul>
+</section>
+<section id="d-version-of-the-allen-mouse-spinal-cord-atlas">
+<h3><a class="reference external" href="https://doi.org/10.1101/2021.05.06.443008">3D version of the Allen mouse spinal cord atlas</a><a class="headerlink" href="#d-version-of-the-allen-mouse-spinal-cord-atlas" title="Link to this heading">#</a></h3>
+<p>This atlas from <a class="reference external" href="https://doi.org/10.1101/2021.05.06.443008">Fiederling et al. (2021)</a> is a 3D reconstruction of the
+<a class="reference external" href="https://mousespinal.brain-map.org/">Allen Spinal Cord Atlas</a>.</p>
+<p>This atlas is only available at a single (20 x 10 x 10μm) resolution:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">allen_cord_20um</span></code></p></li>
+</ul>
+</section>
+<section id="smoothed-version-of-the-kim-et-al-mouse-reference-atlas">
+<h3><a class="reference external" href="https://doi.org/10.1016/j.celrep.2014.12.014">Smoothed version of the Kim et al. mouse reference atlas</a><a class="headerlink" href="#smoothed-version-of-the-kim-et-al-mouse-reference-atlas" title="Link to this heading">#</a></h3>
+<p>This atlas is part of the API to support some existing projects. We do not recommend it for any new projects
+(use the Allen Adult Mouse Brain Atlas instead).</p>
+<p>Available versions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">osten_mouse_10um</span></code> - 10μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">osten_mouse_25um</span></code> - 25μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">osten_mouse_50um</span></code> - 50μm resolution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">osten_mouse_100um</span></code> - 100μm resolution</p></li>
+</ul>
+</section>
+</section>
+<section id="rat">
+<h2>Rat<a class="headerlink" href="#rat" title="Link to this heading">#</a></h2>
+<section id="waxholm-space-atlas-of-the-sprague-dawley-rat-brain-at-39-micron-resolution">
+<h3><a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2014.04.001">Waxholm Space atlas of the Sprague Dawley rat brain</a> at 39 micron resolution<a class="headerlink" href="#waxholm-space-atlas-of-the-sprague-dawley-rat-brain-at-39-micron-resolution" title="Link to this heading">#</a></h3>
+<p>This atlas is only available at 39μm resolution:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">whs_sd_rat_39um</span></code> - 39μm resolution</p></li>
+</ul>
+</section>
+</section>
+<section id="zebrafish">
+<h2>Zebrafish<a class="headerlink" href="#zebrafish" title="Link to this heading">#</a></h2>
+<section id="max-planck-zebrafish-brain-atlas">
+<h3><a class="reference external" href="http://fishatlas.neuro.mpg.de">Max Planck Zebrafish Brain Atlas</a><a class="headerlink" href="#max-planck-zebrafish-brain-atlas" title="Link to this heading">#</a></h3>
+<p>This atlas is only available at 1μm resolution:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mpin_zfish_1um</span></code></p></li>
+</ul>
+</section>
+<section id="azba-a-3d-adult-zebrafish-brain-atlas">
+<h3><a class="reference external" href="https://doi.org/10.1101/2021.05.04.442625">AZBA: A 3D Adult Zebrafish Brain Atlas</a><a class="headerlink" href="#azba-a-3d-adult-zebrafish-brain-atlas" title="Link to this heading">#</a></h3>
+<p>This atlas is only available at 4μm resolution:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">azba_zfish_4um</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="human">
+<h2>Human<a class="headerlink" href="#human" title="Link to this heading">#</a></h2>
+<section id="allen-human-brain-atlas">
+<h3><a class="reference external" href="https://www.brain-map.org">Allen Human Brain Atlas</a><a class="headerlink" href="#allen-human-brain-atlas" title="Link to this heading">#</a></h3>
+<p>This atlas is included mostly for visualisation and comparison to the other atlases.
+Note that it is also only a single hemisphere. There are many better atlases
+(and indeed software tools) for the analysis of human neuroimaging data.</p>
+<p>This atlas is only available at 500μm resolution:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">allen_human_500um</span></code></p></li>
+</ul>
+</section>
+</section>
 </section>
 
 <div class="section ablog__blog_comments">
@@ -688,20 +853,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="command-line-interface.html"
+       href="../index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Command line interface</p>
+        <p class="prev-next-title">BrainGlobe Atlas API (brainglobe-atlasapi)</p>
       </div>
     </a>
     <a class="right-next"
-       href="../adding-a-new-atlas.html"
+       href="python-api.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Adding a new atlas</p>
+        <p class="prev-next-title">Python API</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -712,7 +877,50 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Atlas details</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#available-atlases">Available atlases</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mouse">Mouse</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#allen-adult-mouse-brain-atlas">Allen Adult Mouse Brain Atlas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enhanced-and-unified-mouse-brain-atlas">Enhanced and Unified Mouse Brain Atlas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gubras-lsfm-mouse-brain-atlas">Gubra’s LSFM mouse brain atlas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#princeton-mouse-brain-atlas">Princeton Mouse Brain Atlas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-edge-aware-refined-atlases-derived-from-the-allen-developing-mouse-brain-atlases">3D Edge-Aware Refined Atlases Derived from the Allen Developing Mouse Brain Atlases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kim-lab-developmental-ccf-p56">Kim Lab Developmental CCF (P56)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-version-of-the-allen-mouse-spinal-cord-atlas">3D version of the Allen mouse spinal cord atlas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smoothed-version-of-the-kim-et-al-mouse-reference-atlas">Smoothed version of the Kim et al. mouse reference atlas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rat">Rat</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waxholm-space-atlas-of-the-sprague-dawley-rat-brain-at-39-micron-resolution">Waxholm Space atlas of the Sprague Dawley rat brain at 39 micron resolution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zebrafish">Zebrafish</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max-planck-zebrafish-brain-atlas">Max Planck Zebrafish Brain Atlas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#azba-a-3d-adult-zebrafish-brain-atlas">AZBA: A 3D Adult Zebrafish Brain Atlas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#human">Human</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#allen-human-brain-atlas">Allen Human Brain Atlas</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>

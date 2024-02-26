@@ -23,7 +23,7 @@ pip install cellfinder[napari]>=1.0.0 # Run this if you want to install the API 
 
 ### Installing BrainGlobe Atlases
 
-To install download BrainGlobe atlases in advance, please see the guide to [the BrainGlobe Atlas API command-line interface](/documentation/bg-atlasapi/usage/command-line-interface).
+To install download BrainGlobe atlases in advance, please see the guide to [the BrainGlobe Atlas API command-line interface](/documentation/brainglobe-atlasapi/usage/command-line-interface).
 
 ### Installing `brainmapper`
 

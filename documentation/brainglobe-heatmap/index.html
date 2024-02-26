@@ -503,17 +503,17 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../setting-up/image-definition.html">Image space definition</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../brainglobe-utils/citation-module.html">Generating Citations for BrainGlobe tools</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../bg-atlasapi/index.html">BrainGlobe Atlas API (bg-atlasapi)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../bg-atlasapi/usage/atlas-details.html">Atlas details</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../brainglobe-atlasapi/index.html">BrainGlobe Atlas API (brainglobe-atlasapi)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../brainglobe-atlasapi/usage/atlas-details.html">Atlas details</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../bg-atlasapi/usage/python-api.html">Python API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bg-atlasapi/usage/command-line-interface.html">Command line interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bg-atlasapi/usage/using-the-files-directly.html">Using the files directly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bg-atlasapi/adding-a-new-atlas.html">Adding a new atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brainglobe-atlasapi/usage/python-api.html">Python API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brainglobe-atlasapi/usage/command-line-interface.html">Command line interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brainglobe-atlasapi/usage/using-the-files-directly.html">Using the files directly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brainglobe-atlasapi/adding-a-new-atlas.html">Adding a new atlas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../brainglobe-space/index.html">bg-space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brainglobe-utils/citation-module.html">Generating Citations for BrainGlobe tools</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../brainreg/index.html">brainreg</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../brainreg/installation.html">Requirements</a></li>
 
@@ -783,9 +783,9 @@ In <code class="docutils literal notranslate"><span class="pre">examples/plan.py
 </section>
 </section>
 <section id="using-brainglobe-heatmap-with-other-atlases">
-<h2>Using <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> with other atlases.<a class="headerlink" href="#using-brainglobe-heatmap-with-other-atlases" title="Link to this heading">#</a></h2>
+<h2>Using <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> with other atlases<a class="headerlink" href="#using-brainglobe-heatmap-with-other-atlases" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> uses <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> which, in turn, uses brainglobe’s <code class="docutils literal notranslate"><span class="pre">Atlas</span> <span class="pre">API</span></code> under the hood. That means that all of <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code>’s functionality is compatible with any of the atlases supported by the atlas API. <code class="docutils literal notranslate"><span class="pre">bgh.heatmap</span></code>, <code class="docutils literal notranslate"><span class="pre">bgh.planner</span></code> and <code class="docutils literal notranslate"><span class="pre">bgh.get_plane_coordinates</span></code> all accept a <code class="docutils literal notranslate"><span class="pre">atlas_name</span></code> argument, pass the name of the atlas name you’d like to use!
-For more information see the API’s <a class="reference external" href="https://brainglobe.info/documentation/bg-atlasapi/index.html">documentation</a>.</p>
+For more information see the API’s <a class="reference internal" href="../brainglobe-atlasapi/index.html"><span class="std std-doc">documentation</span></a>.</p>
 </section>
 <section id="contributing">
 <h2>Contributing<a class="headerlink" href="#contributing" title="Link to this heading">#</a></h2>
@@ -858,7 +858,7 @@ For more information see the API’s <a class="reference external" href="https:/
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regions-coordinates">Regions coordinates</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-brainglobe-heatmap-with-other-atlases">Using <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> with other atlases.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-brainglobe-heatmap-with-other-atlases">Using <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> with other atlases</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing">Contributing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citing-brainglobe-heatmap">Citing <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code></a></li>
 </ul>

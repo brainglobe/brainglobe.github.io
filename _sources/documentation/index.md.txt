@@ -8,6 +8,7 @@ Your environment should run Python 3.9 or 3.10. To specify the Python version fo
 ```bash
 conda create -n brainglobe-env python=3.10
 ```
+
 Once you have created and activated your desired environment, you can install all BrainGlobe tools using `pip`:
 
 ```bash
@@ -55,9 +56,9 @@ Once you have installed `brainglobe`, or [installed an individual tool](#install
 ```{toctree}
 :maxdepth: 1
 setting-up/index
-brainglobe-utils/citation-module
-bg-atlasapi/index
+brainglobe-atlasapi/index
 brainglobe-space/index
+brainglobe-utils/citation-module
 brainreg/index
 brainglobe-segmentation/index
 brainglobe-workflows/index

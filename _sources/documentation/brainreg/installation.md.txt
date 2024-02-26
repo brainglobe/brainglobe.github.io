@@ -76,4 +76,4 @@ If you are using macOS then please also run `conda install -c conda-forge niftyr
 
 When brainreg runs, the appropriate reference atlas will be downloaded (if not previously
 done so). To install download BrainGlobe atlases in advance, please see the guide to
-[the BrainGlobe Atlas API command-line interface](/documentation/bg-atlasapi/usage/command-line-interface) for details.
+[the BrainGlobe Atlas API command-line interface](/documentation/brainglobe-atlasapi/usage/command-line-interface) for details.

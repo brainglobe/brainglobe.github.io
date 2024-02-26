@@ -19,7 +19,7 @@ You can view these repositories and the relevant information by heading to the [
 
 ## To contribute a new atlas
 
-To add a new BrainGlobe atlas, please see the guide [here](/documentation/bg-atlasapi/adding-a-new-atlas).
+To add a new BrainGlobe atlas, please see the guide [here](/documentation/brainglobe-atlasapi/adding-a-new-atlas).
 
 ## To contribute code
 
