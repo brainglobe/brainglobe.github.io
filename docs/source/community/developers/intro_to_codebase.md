@@ -36,7 +36,7 @@ Code providing functionality related to a specific analysis or visualisation ste
 Each BrainGlobe tool has its own Github repository on the BrainGlobe organisation. 
 
 Currently stable tools are:
-- [`brainglobe-atlasapi`](https://github.com/brainglobe/bg-atlasapi)
+- [`brainglobe-atlasapi`](https://github.com/brainglobe/brainglobe-atlasapi)
 - [`brainglobe-heatmap`](https://github.com/brainglobe/brainglobe-heatmap)
 - [`brainglobe-segmentation`](https://github.com/brainglobe/brainglobe-segmentation)
 - [`brainreg`](https://github.com/brainglobe/brainreg)

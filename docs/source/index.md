@@ -7,7 +7,7 @@ We have three aims:
 * Develop specialist software for specific analysis and visualisation needs, such as 
 [cellfinder](/documentation/cellfinder/index) and [brainrender](/documentation/brainrender/index).
 * Develop core tools to facilitate [others to build interoperable tools in Python](community/external-tools.md), e.g., the 
-[BrainGlobe Atlas API](/documentation/bg-atlasapi/index).
+[BrainGlobe Atlas API](/documentation/brainglobe-atlasapi/index).
 * Build a community of neuroscientists and developers to share knowledge, build software and engage with the 
 scientific, and open-source community (e.g., by organising hackathons).
 

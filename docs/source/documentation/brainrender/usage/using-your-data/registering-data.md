@@ -1,7 +1,7 @@
 # Registering data
 
 To get the most out of brainrender, your data should be registered to one of the atlases supported by
-the [BrainGlobe Atlas API](/documentation/bg-atlasapi/index). If you've used BrainGlobe's software for processing your 
+the [BrainGlobe Atlas API](/documentation/brainglobe-atlasapi/index). If you've used BrainGlobe's software for processing your 
 raw data (e.g. [brainreg](/documentation/brainreg/index)) your data will already be registered, and you need not 
 worry about any of this. If not, then some steps are necessary for registering your data. 
 

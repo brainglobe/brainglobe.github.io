@@ -1,4 +1,5 @@
 # brainglobe-heatmap
+
 `brainglobe-heatmap` allows you to create heatmaps, mapping scalar values for each brain region (e.g., number of labelled cells in each region) to a color and creating beautiful visualizations in 2D (using [matplotlib](https://matplotlib.org/) or 3D (using [brainrender](https://brainglobe.info/documentation/brainrender/index.html)).
 
 ![2D heatmap generated using matplotlib](https://raw.githubusercontent.com/brainglobe/brainglobe-heatmap/main/images/hm_2d.png)
@@ -10,10 +11,11 @@
 **3D heatmap generated using brainrender**
 
 ## Installation
+
 `pip install brainglobe-heatmap`
 
-
 ## User guide
+
 The starting point for a heatmap visualization is a `dict` assigning scalar values to a set of brain regions (identified by their acronym).
 For example:
 
@@ -47,6 +49,7 @@ To keep a section of the 3D brain, two planes with normal vectors facing in oppo
 and everything in-between the two planes is kept as a slice.
 
 ### Slicing plane position
+
 Finding the right position and orientation to the plane can take some tweaking. `brainglobe-heatmap` provides a `planner` class that makes the process easier by showing the position of the planes and how they intersect with the user provided regions (see image above).
 In `examples/plan.py` there's an example showing how to use the `planner`:
 
@@ -83,6 +86,7 @@ f = bgh.heatmap(
 ```
 
 Also, you can create a slice with a plane centered in the brain by passing `position=None`:
+
 ```python
 f = bgh.heatmap(
     values,
@@ -96,6 +100,7 @@ f = bgh.heatmap(
 ```
 
 ### Visualization
+
 Once happy with the position of the slicing planes, creating a visualization is as simple as:
 
 ```python
@@ -119,8 +124,8 @@ bgh.heatmap(
 Here, `format` specifies if a 2D plot should be made (using `matplotlib`) or a 3D rendering instead (using `brainrender`). The `cmap` parameter specifies the colormap used and `vmin, vmax` the color range.
 
 ### Regions coordinates
-You can use `brainglobe-heatmap` to get the coordinates of the 2D 'slices' (in the 2D plane's coordinates system):
 
+You can use `brainglobe-heatmap` to get the coordinates of the 2D 'slices' (in the 2D plane's coordinates system):
 
 ```python
 
@@ -138,15 +143,17 @@ coordinates = bgh.get_plane_coordinates(
 )
 ```
 
-## Using `brainglobe-heatmap` with other atlases.
+## Using `brainglobe-heatmap` with other atlases
 
 `brainglobe-heatmap` uses `brainrender` which, in turn, uses brainglobe's `Atlas API` under the hood. That means that all of `brainglobe-heatmap`'s functionality is compatible with any of the atlases supported by the atlas API. `bgh.heatmap`, `bgh.planner` and `bgh.get_plane_coordinates` all accept a `atlas_name` argument, pass the name of the atlas name you'd like to use!
-For more information see the API's [documentation](https://brainglobe.info/documentation/bg-atlasapi/index.html).
+For more information see the API's [documentation](../brainglobe-atlasapi/index.md).
 
 ## Contributing
+
 Contributions to `brainglobe-heatmap` are more than welcome. Please see the [Developer's guide](https://github.com/brainglobe/.github/blob/main/CONTRIBUTING.md).
 
 ## Citing `brainglobe-heatmap`
+
 If you use `brainglobe-heatmap` in your work, please cite it as:
 
 ```

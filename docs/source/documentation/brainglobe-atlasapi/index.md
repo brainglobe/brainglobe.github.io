@@ -1,10 +1,11 @@
-# BrainGlobe Atlas API (bg-atlasapi)
-Many excellent brain atlases exist for different species. Some of them have an API (application programming interface) 
-to allow users to interact with the data programmatically (e.g. the excellent 
-[Allen Mouse Brain Atlas](https://portal.brain-map.org)), but many do not, and there is no consistent way to process 
+# BrainGlobe Atlas API (brainglobe-atlasapi)
+
+Many excellent brain atlases exist for different species. Some of them have an API (application programming interface)
+to allow users to interact with the data programmatically (e.g. the excellent
+[Allen Mouse Brain Atlas](https://portal.brain-map.org)), but many do not, and there is no consistent way to process
 data from multiple sources.
 
-The brainglobe atlas API (BG-AtlasAPI) deals with this problem by providing a common interface for programmers to download and process data from multiple sources.
+The brainglobe atlas API deals with this problem by providing a common interface for programmers to download and process data from multiple sources.
 
 Each atlas consists of data files in a common format:
 
@@ -33,14 +34,14 @@ A number of atlases are in development, but those available currently are:
 
 ## Installation
 
-BG-AtlasAPI works with Python >3.6, and can be installed from PyPI with:
+BrainGlobe AtlasAPI works with Python >3.6, and can be installed from PyPI with:
 
 ```bash
-pip install bg-atlasapi
+pip install brainglobe-atlasapi
 ```
 
-
 ## Usage
+
 ```{toctree}
 :maxdepth: 2
 usage/atlas-details
@@ -51,14 +52,16 @@ usage/using-the-files-directly
 ```
 
 ## More details
+
 ```{toctree}
 :maxdepth: 1
 adding-a-new-atlas
 ```
 
 ## Citation
+
 If you find the BrainGlobe Atlas API useful, please cite the paper in your work:
 
->Claudi, F., Petrucco, L., Tyson, A. L., Branco, T., Margrie, T. W. and Portugues, R. (2020). BrainGlobe Atlas API: a common interface for neuroanatomical atlases. Journal of Open Source Software, 5(54), 2668, https://doi.org/10.21105/joss.02668
+>Claudi, F., Petrucco, L., Tyson, A. L., Branco, T., Margrie, T. W. and Portugues, R. (2020). BrainGlobe Atlas API: a common interface for neuroanatomical atlases. Journal of Open Source Software, 5(54), 2668, <https://doi.org/10.21105/joss.02668>
 
 **Don't forget to cite the developers of the atlas that you used!**

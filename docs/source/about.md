@@ -23,7 +23,7 @@ We aim to facilitate the access to available datasets, and have developed severa
 download gene expression and mesoscale connectomics data for the mouse brain from the Allen institute.
 
 A core step towards facilitating the usage of atlas data was also taken by developing the 
-[BrainGlobe AtlasAPI](/documentation/bg-atlasapi/index). This tool provides a 
+[BrainGlobe AtlasAPI](/documentation/brainglobe-atlasapi/index). This tool provides a 
 simple and unified interface for downloading and using data from a number of available atlases. Additionally, new atlases 
 can easily be added to the API. With this tool we address a major obstacle when developing software for neuroanatomy:
 few of the available atlases provide programmatic access to their data, and the APIs used to access the data vary 

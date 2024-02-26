@@ -12,7 +12,7 @@ orientation and the voxel sizes](/documentation/setting-up/image-definition). Pl
 ## Improving registration performance
 There are many ways to improve registration performance, but this will depend on your data. Some options to try include:
 * [Changing registration parameters](user-guide/parameters)
-* Registration to a [different resolution atlas](/documentation/bg-atlasapi/usage/atlas-details) (if available)
+* Registration to a [different resolution atlas](/documentation/brainglobe-atlasapi/usage/atlas-details) (if available)
 * Improving data quality. brainreg relies on high-contrast data. Poorly cleared tissue, or tissue with limited 
 autofluorescence may not register well
 

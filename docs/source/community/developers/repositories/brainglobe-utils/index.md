@@ -29,7 +29,7 @@ The `citation` submodule itself breaks down further to accommodate the steps of 
 
 `cite-brainglobe` is only aware of the repositories that we tell it about - and any such repository must have a CITATION.cff (or equivalent metadata file) present in it that we can fetch.
 
-To make `cite-brainglobe` aware of a new BrainGlobe tool, add a static `Repository` instance to the `citation.repositories` submodule [as detailed here](#citationrepositories), specifying the required information.
+To make `cite-brainglobe` aware of a new BrainGlobe tool, add a static `Repository` instance to the `citation.repositories` submodule as detailed in the `citation.repositories` section, specifying the required information.
 
 ### Adding a new supported citation format
 
