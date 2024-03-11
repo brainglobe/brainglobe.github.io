@@ -21,7 +21,7 @@ unique key (e.g. `example_mouse_100um` must be used).
 # Available atlases
 
 ## Mouse
-### [Allen Adult Mouse Brain Atlas](https://portal.brain-map.org)
+### [Allen Adult Mouse Brain Atlas](https://doi.org/10.1016/j.cell.2020.04.007)
 For many researchers working with mice, this is the "default" atlas for a variety of tasks. It is also the basis for 
 the most commonly used common coordinate space (CCFv3). It is usually the best mouse atlas to start with, but it has 
 some disadvantages. It has a reference image based on STP, which may not produce the best 
@@ -119,7 +119,7 @@ Available versions:
 * `osten_mouse_100um` - 100μm resolution
 
 ## Rat
-### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1016/j.neuroimage.2014.04.001) at 39 micron resolution
+### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)) at 39 micron resolution
 This atlas is only available at 39μm resolution:
 * `whs_sd_rat_39um` - 39μm resolution
 
