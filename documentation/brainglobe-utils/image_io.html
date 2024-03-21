@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Image space definition &#8212; BrainGlobe</title>
+    <title>image_io &#8212; BrainGlobe</title>
   
   
   
@@ -52,14 +52,14 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/setting-up/image-definition';</script>
-    <link rel="canonical" href="https://brainglobe.info/documentation/setting-up/image-definition.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/brainglobe-utils/image_io';</script>
+    <link rel="canonical" href="https://brainglobe.info/documentation/brainglobe-utils/image_io.html" />
     <link rel="icon" href="../../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="BrainGlobe Atlas API (brainglobe-atlasapi)" href="../brainglobe-atlasapi/index.html" />
-    <link rel="prev" title="Setting up your GPU" href="gpu.html" />
+    <link rel="next" title="brainreg" href="../brainreg/index.html" />
+    <link rel="prev" title="Generating Citations for BrainGlobe tools" href="citation-module.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -497,10 +497,10 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Setting up</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="conda.html">Using conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gpu.html">Setting up your GPU</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Image space definition</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../setting-up/index.html">Setting up</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../setting-up/conda.html">Using conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setting-up/gpu.html">Setting up your GPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setting-up/image-definition.html">Image space definition</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../brainglobe-atlasapi/index.html">BrainGlobe Atlas API (brainglobe-atlasapi)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -513,8 +513,8 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../brainglobe-space/index.html">bg-space</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../brainglobe-utils/citation-module.html">Generating Citations for BrainGlobe tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../brainglobe-utils/image_io.html">image_io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citation-module.html">Generating Citations for BrainGlobe tools</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">image_io</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../brainreg/index.html">brainreg</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../brainreg/installation.html">Requirements</a></li>
 
@@ -643,10 +643,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Documentation</a></li>
     
-    
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Setting up</a></li>
-    
-    <li class="breadcrumb-item active" aria-current="page">Image space...</li>
+    <li class="breadcrumb-item active" aria-current="page">image_io</li>
   </ul>
 </nav>
 </div>
@@ -663,42 +660,64 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-<section class="tex2jax_ignore mathjax_ignore" id="image-space-definition">
-<h1>Image space definition<a class="headerlink" href="#image-space-definition" title="Link to this heading">#</a></h1>
-<p>In some BrainGlobe tools, you need to specify the orientation and resolution of the data.</p>
-<section id="orientation">
-<h2>Orientation<a class="headerlink" href="#orientation" title="Link to this heading">#</a></h2>
-<p>When you need to specify the orientation of your data, you will usually need to enter a string in the
-<a class="reference external" href="https://github.com/brainglobe/brainglobe-space">brainglobe-space</a> “initials” form, to describe the origin voxel.</p>
-<p>When you work with a stack, the origin is the upper left corner when you show the first element <code class="docutils literal notranslate"><span class="pre">stack[0,</span> <span class="pre">:,</span> <span class="pre">:]</span></code> with
-matplotlib or when you open the stack with ImageJ. The first dimension is the one that you are slicing, the second is
-the height of the image, and the third is the width of the image.</p>
-<p>If the origin of your data (first, top left voxel) is the most anterior, superior, left part of the brain, then the
-orientation string would be “asl” (anterior, superior, left), and you would use <code class="docutils literal notranslate"><span class="pre">asr</span></code>.</p>
-<p>The order of the three initials must be the same as the axis order (sliced plane, height, width).</p>
-<p>For help with setting the orientation, the brainreg napari plugin comes with a tool to interactively check the orientation
-(<a class="reference internal" href="../brainreg/user-guide/checking-orientation.html"><span class="doc std std-doc">see documentation</span></a>).</p>
-<section id="examples">
-<h3>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
-<section id="coronal-section">
-<h4>Coronal section<a class="headerlink" href="#coronal-section" title="Link to this heading">#</a></h4>
-<p>If the first plane of this image was olfactory bulb, it would be <code class="docutils literal notranslate"><span class="pre">asr</span></code> (or <code class="docutils literal notranslate"><span class="pre">asl</span></code>). If the first plane was cerebellum, it would be <code class="docutils literal notranslate"><span class="pre">psr</span></code> or <code class="docutils literal notranslate"><span class="pre">psl</span></code>.
-<img alt="coronal-section" src="../../_images/orientation-asr.webp" /></p>
+<section class="tex2jax_ignore mathjax_ignore" id="image-io">
+<h1>image_io<a class="headerlink" href="#image-io" title="Link to this heading">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">image_io</span></code> provides various options to load and save image data.
+It supports common formats like <code class="docutils literal notranslate"><span class="pre">tiff</span></code>, <code class="docutils literal notranslate"><span class="pre">nrrd</span></code> and <code class="docutils literal notranslate"><span class="pre">nifti</span></code>.</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">image_io</span></code> is provided as part of <code class="docutils literal notranslate"><span class="pre">brainglobe_utils</span></code> which comes with the one-line BrainGlobe install (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">brainglobe</span></code>).
+It will also be fetched by most of our tools if you decide to install them as standalone.</p>
 </section>
-<section id="horizontal-section">
-<h4>Horizontal section<a class="headerlink" href="#horizontal-section" title="Link to this heading">#</a></h4>
-<p>If the first plane of this image was the top of the brain it would be <code class="docutils literal notranslate"><span class="pre">sal</span></code>/<code class="docutils literal notranslate"><span class="pre">sar</span></code>. If the first plane was the base it would be <code class="docutils literal notranslate"><span class="pre">ial</span></code>/<code class="docutils literal notranslate"><span class="pre">iar</span></code>.</p>
-<p><img alt="horizontal-section" src="../../_images/orientation-sal.webp" /></p>
+<section id="loading-images">
+<h2>Loading images<a class="headerlink" href="#loading-images" title="Link to this heading">#</a></h2>
+<p>All options to load images are provided under <code class="docutils literal notranslate"><span class="pre">brainglobe_utils.image_io.load</span></code>.
+For example, the general purpose <code class="docutils literal notranslate"><span class="pre">load_any</span></code> function which can load many common file formats:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brainglobe_utils.image_io</span> <span class="kn">import</span> <span class="n">load</span>
+<span class="n">load</span><span class="o">.</span><span class="n">load_any</span><span class="p">(</span><span class="s1">&#39;mydata.tif&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>There are also functions specific to particular file formats:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brainglobe_utils.image_io</span> <span class="kn">import</span> <span class="n">load</span>
+
+<span class="c1"># tiff</span>
+<span class="n">load</span><span class="o">.</span><span class="n">load_img_stack</span><span class="p">(</span><span class="s1">&#39;mydata.tif&#39;</span><span class="p">,</span> <span class="n">x_scaling_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y_scaling_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">z_scaling_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># directory containing a sequence of 2D tiffs</span>
+<span class="n">load</span><span class="o">.</span><span class="n">load_from_folder</span><span class="p">(</span><span class="s1">&#39;/path/to/dir&#39;</span><span class="p">)</span>
+
+<span class="c1"># nrrd</span>
+<span class="n">load</span><span class="o">.</span><span class="n">load_nrrd</span><span class="p">(</span><span class="s1">&#39;mydata.nrrd&#39;</span><span class="p">)</span>
+
+<span class="c1"># nifti</span>
+<span class="n">load</span><span class="o">.</span><span class="n">load_nii</span><span class="p">(</span><span class="s1">&#39;mydata.nii&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
-</section>
-</section>
-<section id="voxel-sizes">
-<h2>Voxel sizes<a class="headerlink" href="#voxel-sizes" title="Link to this heading">#</a></h2>
-<p>You may also need to specify the size of your voxels. These voxel sizes are in microns, and come in the same order
-as your orientation definition.</p>
-<p>As an example, we will assume, as above, the origin of your data (first, top left voxel) is the most anterior, superior,
-left part of the brain. If your plane spacing (i.e., the z-depth is 5 microns), and your in-plane resolution is 2x2
-microns, then the voxel sizes would be <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">2</span> <span class="pre">2</span></code>.</p>
+<section id="saving-images">
+<h2>Saving images<a class="headerlink" href="#saving-images" title="Link to this heading">#</a></h2>
+<p>All options to save images are provided under <code class="docutils literal notranslate"><span class="pre">brainglobe_utils.image_io.save</span></code>.
+For example, the general purpose <code class="docutils literal notranslate"><span class="pre">save_any</span></code> function which can save a numpy array to many common file formats:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brainglobe_utils.image_io</span> <span class="kn">import</span> <span class="n">save</span>
+<span class="n">save</span><span class="o">.</span><span class="n">save_any</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="s1">&#39;mydata.tif&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>There are also functions specific to particular file formats:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brainglobe_utils.image_io</span> <span class="kn">import</span> <span class="n">save</span>
+
+<span class="c1"># tiff</span>
+<span class="n">save</span><span class="o">.</span><span class="n">to_tiff</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="s1">&#39;mydata.tif&#39;</span><span class="p">)</span>
+
+<span class="c1"># directory containing a sequence of 2D tiffs</span>
+<span class="n">save</span><span class="o">.</span><span class="n">to_tiffs</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="s1">&#39;/path/to/dir/prefix&#39;</span><span class="p">)</span>
+
+<span class="c1"># nrrd</span>
+<span class="n">save</span><span class="o">.</span><span class="n">to_nrrd</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="s1">&#39;mydata.nrrd&#39;</span><span class="p">)</span>
+
+<span class="c1"># nifti</span>
+<span class="n">save</span><span class="o">.</span><span class="n">to_nii</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="s1">&#39;mydata.nii&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -717,20 +736,20 @@ microns, then the voxel sizes would be <code class="docutils literal notranslate
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="gpu.html"
+       href="citation-module.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Setting up your GPU</p>
+        <p class="prev-next-title">Generating Citations for BrainGlobe tools</p>
       </div>
     </a>
     <a class="right-next"
-       href="../brainglobe-atlasapi/index.html"
+       href="../brainreg/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">BrainGlobe Atlas API (brainglobe-atlasapi)</p>
+        <p class="prev-next-title">brainreg</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -752,15 +771,9 @@ microns, then the voxel sizes would be <code class="docutils literal notranslate
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orientation">Orientation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#coronal-section">Coronal section</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#horizontal-section">Horizontal section</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voxel-sizes">Voxel sizes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-images">Loading images</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-images">Saving images</a></li>
 </ul>
   </nav></div>
 

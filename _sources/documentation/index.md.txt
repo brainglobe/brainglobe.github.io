@@ -59,6 +59,7 @@ setting-up/index
 brainglobe-atlasapi/index
 brainglobe-space/index
 brainglobe-utils/citation-module
+brainglobe-utils/image_io
 brainreg/index
 brainglobe-segmentation/index
 brainglobe-workflows/index

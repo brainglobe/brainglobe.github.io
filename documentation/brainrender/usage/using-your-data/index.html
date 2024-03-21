@@ -514,6 +514,7 @@ document.write(`
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../brainglobe-space/index.html">bg-space</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../brainglobe-utils/citation-module.html">Generating Citations for BrainGlobe tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../brainglobe-utils/image_io.html">image_io</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../brainreg/index.html">brainreg</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../brainreg/installation.html">Requirements</a></li>
 
@@ -706,9 +707,9 @@ and process neuron morphology data.</p>
 <h3>Loading the data<a class="headerlink" href="#loading-the-data" title="Link to this heading">#</a></h3>
 <p>Given the popularity of python for scientific research, there are tools to load almost all data formats. These include
 numpy to load <code class="docutils literal notranslate"><span class="pre">.npy</span></code> files,  <code class="docutils literal notranslate"><span class="pre">tiffiles</span></code> for <code class="docutils literal notranslate"><span class="pre">.tiff</span></code> etc. BrainGlobe provides a general purpose software tool for
-loading and saving image data (<a class="reference external" href="https://github.com/brainglobe/imio">imio</a>). You can use <code class="docutils literal notranslate"><span class="pre">imio</span></code> to load most types of
+loading and saving image data (<a class="reference internal" href="../../../brainglobe-utils/image_io.html"><span class="doc std std-doc">image_io</span></a>). You can use <code class="docutils literal notranslate"><span class="pre">image_io</span></code> to load most types of
 data (e.g.  <code class="docutils literal notranslate"><span class="pre">.nrrd</span></code>, <code class="docutils literal notranslate"><span class="pre">.tiff</span></code>, <code class="docutils literal notranslate"><span class="pre">.nifti</span></code> etc), e.g.:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">imio</span> <span class="kn">import</span> <span class="n">load</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brainglobe_utils.image_io</span> <span class="kn">import</span> <span class="n">load</span>
 <span class="n">load</span><span class="o">.</span><span class="n">load_any</span><span class="p">(</span><span class="s1">&#39;mydata.tif&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
