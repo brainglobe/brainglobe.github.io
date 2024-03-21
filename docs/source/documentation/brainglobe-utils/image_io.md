@@ -1,6 +1,7 @@
 # image_io
 
-`image_io` provides various options to load and save image data. It supports common formats like `tiff`, `nrrd` and `nifti`.
+`image_io` provides various options to load and save image data. 
+It supports common formats like `tiff`, `nrrd` and `nifti`.
 
 ## Installation
 
@@ -9,8 +10,8 @@ It will also be fetched by most of our tools if you decide to install them as st
 
 ## Loading images
 
-All options to load images are provided under `brainglobe_utils.image_io.load`. For example, the general purpose `load_any`
-function which can load many common file formats:
+All options to load images are provided under `brainglobe_utils.image_io.load`. 
+For example, the general purpose `load_any` function which can load many common file formats:
 
 ```python
 from brainglobe_utils.image_io import load
@@ -37,8 +38,8 @@ load.load_nii('mydata.nii')
 
 ## Saving images
 
-All options to save images are provided under `brainglobe_utils.image_io.save`. For example, the general purpose `save_any` 
-function which can save a numpy array to many common file formats:
+All options to save images are provided under `brainglobe_utils.image_io.save`. 
+For example, the general purpose `save_any` function which can save a numpy array to many common file formats:
 
 ```python
 from brainglobe_utils.image_io import save
