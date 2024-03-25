@@ -613,6 +613,34 @@ This means we will typically create at least three dependent PRs;</p>
 <p>We should cross-link the latter to the website update, and release all affected packages to PyPI (and conda if appropriate) once they are all merged into <code class="docutils literal notranslate"><span class="pre">main</span></code>.
 Ideally, updates and releases should be made in an order that <a class="reference internal" href="repositories/brainglobe-meta/index.html#id1"><span class="std std-ref">follows the dependency tree</span></a> - starting with our lower level tools, than their dependents, then dependents of those dependents, and so on.
 The meta-package itself will always be the last by this convention.</p>
+<section id="example-highlighting-pinning-from-below">
+<h3>Example, highlighting pinning from below<a class="headerlink" href="#example-highlighting-pinning-from-below" title="Link to this heading">#</a></h3>
+<p>It should be noted that our convention is to pin all our dependencies from below.
+This allows us to minimise the number of new releases we have to make when updating one of our tools that several others depend on.
+As such, when a package has a new release, only tools that depend on that package <em>that rely on the new features / structure</em> need to receive their own version bump (and thus a PR in the chain described above).</p>
+<p>For example, suppose we have package <code class="docutils literal notranslate"><span class="pre">BG-A</span></code> at version <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code> which provides three features; <code class="docutils literal notranslate"><span class="pre">F1.foo</span></code>, <code class="docutils literal notranslate"><span class="pre">F1.bar</span></code>, and <code class="docutils literal notranslate"><span class="pre">F2</span></code>.
+Then we have packages:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BG-B</span></code>, version <code class="docutils literal notranslate"><span class="pre">v1.2.0</span></code>, that uses <code class="docutils literal notranslate"><span class="pre">F1.foo</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BG-C</span></code>, version <code class="docutils literal notranslate"><span class="pre">v1.5.0</span></code>, that uses <code class="docutils literal notranslate"><span class="pre">F1.bar</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BG-D</span></code>, version <code class="docutils literal notranslate"><span class="pre">v1.7.0</span></code>, that uses <code class="docutils literal notranslate"><span class="pre">F2</span></code>.</p></li>
+</ul>
+<p>Let’s pretend that update <code class="docutils literal notranslate"><span class="pre">v1.1.0</span></code> to <code class="docutils literal notranslate"><span class="pre">BG-A</span></code> is going to re-write <code class="docutils literal notranslate"><span class="pre">F1.foo</span></code> to be more efficient (but keep the name), move <code class="docutils literal notranslate"><span class="pre">F1.bar</span></code> to <code class="docutils literal notranslate"><span class="pre">F2.bar</span></code>, and not change <code class="docutils literal notranslate"><span class="pre">F2</span></code>.
+In this case, the PR chain would consist of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BG-B</span></code> needs a new version (say <code class="docutils literal notranslate"><span class="pre">v1.2.1</span></code>), with the <code class="docutils literal notranslate"><span class="pre">BG-A</span></code> dependency pinned to <code class="docutils literal notranslate"><span class="pre">&gt;=1.1.0</span></code>. This is so that the new <code class="docutils literal notranslate"><span class="pre">F1.foo</span></code> is used when <code class="docutils literal notranslate"><span class="pre">BG-A</span></code> is fetched by pip/conda.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BG-C</span></code> needs a new version (say <code class="docutils literal notranslate"><span class="pre">v1.6.0</span></code>), with the <code class="docutils literal notranslate"><span class="pre">BG-A</span></code> dependency pinned to <code class="docutils literal notranslate"><span class="pre">&gt;=1.1.0</span></code> too. This is because version <code class="docutils literal notranslate"><span class="pre">v1.1.0</span></code> of <code class="docutils literal notranslate"><span class="pre">BG-A</span></code> is incompatible with <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code>. If we don’t release a new <code class="docutils literal notranslate"><span class="pre">BG-C</span></code> version with this change, a user could <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">BG-C</span></code>, have <code class="docutils literal notranslate"><span class="pre">BG-A</span></code> <code class="docutils literal notranslate"><span class="pre">v1.1.0</span></code> fetched as part of the dependency resolution, then would encounter an error whenever they tried to use <code class="docutils literal notranslate"><span class="pre">BG-C</span></code> since <code class="docutils literal notranslate"><span class="pre">F1.bar</span></code> would be unavailable (it’s now <code class="docutils literal notranslate"><span class="pre">F2.bar</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BG-D</span></code> doesn’t need any new releases, since <code class="docutils literal notranslate"><span class="pre">F2</span></code> has not been affected by the <code class="docutils literal notranslate"><span class="pre">v1.1.0</span></code> update to <code class="docutils literal notranslate"><span class="pre">BG-A</span></code>.</p></li>
+<li><p>The metapackage then needs a new version which pins:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">BG-A</span> <span class="pre">&gt;=</span> <span class="pre">v1.1.0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BG-B</span> <span class="pre">&gt;=</span> <span class="pre">v1.2.1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BG-C</span> <span class="pre">&gt;=</span> <span class="pre">v1.6.0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BG-D</span> <span class="pre">&gt;=</span> <span class="pre">v1.7.0</span></code> (no change)</p></li>
+</ul>
+</li>
+</ul>
+</section>
 </section>
 <section id="triggering-a-new-release">
 <h2>Triggering a new release<a class="headerlink" href="#triggering-a-new-release" title="Link to this heading">#</a></h2>
@@ -658,7 +686,7 @@ You will need to select the tag you just pushed, rather than creating a new tag,
 <h3><code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> feedstocks<a class="headerlink" href="#conda-forge-feedstocks" title="Link to this heading">#</a></h3>
 <p>A number of BrainGlobe packages are also available through <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>, providing an alternative installation method to <code class="docutils literal notranslate"><span class="pre">pip</span></code>.
 Each package available in this way has a feedstock repository, usually at the GitHub repository:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span><span class="o">-</span><span class="n">forge</span><span class="o">/&lt;</span><span class="n">package</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;-</span><span class="n">feedstock</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda-forge/&lt;package-name&gt;-feedstock
 </pre></div>
 </div>
 <p>These feedstocks are linked to their <code class="docutils literal notranslate"><span class="pre">PyPI</span></code> counterparts - when a new version comes available on <code class="docutils literal notranslate"><span class="pre">PyPI</span></code>, the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> admin bot should open a PR in the feedstock repository which will update the version of the package available through <code class="docutils literal notranslate"><span class="pre">conda</span></code>.
@@ -736,7 +764,10 @@ When a tag in the <code class="docutils literal notranslate"><span class="pre">v
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinating-releases-with-the-documentation-and-the-metapackage">Coordinating releases with the documentation and the metapackage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinating-releases-with-the-documentation-and-the-metapackage">Coordinating releases with the documentation and the metapackage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-highlighting-pinning-from-below">Example, highlighting pinning from below</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#triggering-a-new-release">Triggering a new release</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-the-command-line">On the command line</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#failed-workflows">Failed workflows</a></li>
