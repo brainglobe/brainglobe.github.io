@@ -12,6 +12,7 @@ The `X`, `Y`, and `Z` values should be integers corresponding to the new version
 Releases will be made ad-hoc as bug-fixes and new features become available.
 When releasing a new version of a BrainGlobe repository, we also need to update the website, the metapackage, and any other tools that depend on that repository accordingly.
 This means we will typically create at least three dependent PRs;
+
 - One in the repository itself (containing the bugfix or new feature we'd like to release)
 - One in the [website repository](https://github.com/brainglobe/brainglobe.github.io) (to update documentation if necessary)
 - One for each repository that depends on the updated tool, to bump the dependency version
@@ -20,6 +21,31 @@ This means we will typically create at least three dependent PRs;
 We should cross-link the latter to the website update, and release all affected packages to PyPI (and conda if appropriate) once they are all merged into `main`.
 Ideally, updates and releases should be made in an order that [follows the dependency tree](<project:repositories/brainglobe-meta/index.md#dependency-tree>) - starting with our lower level tools, than their dependents, then dependents of those dependents, and so on.
 The meta-package itself will always be the last by this convention.
+
+### Example, highlighting pinning from below
+
+It should be noted that our convention is to pin all our dependencies from below.
+This allows us to minimise the number of new releases we have to make when updating one of our tools that several others depend on.
+As such, when a package has a new release, only tools that depend on that package *that rely on the new features / structure* need to receive their own version bump (and thus a PR in the chain described above).
+
+For example, suppose we have package `BG-A` at version `v1.0.0` which provides three features; `F1.foo`, `F1.bar`, and `F2`.
+Then we have packages:
+
+- `BG-B`, version `v1.2.0`, that uses `F1.foo`,
+- `BG-C`, version `v1.5.0`, that uses `F1.bar`,
+- `BG-D`, version `v1.7.0`, that uses `F2`.
+
+Let's pretend that update `v1.1.0` to `BG-A` is going to re-write `F1.foo` to be more efficient (but keep the name), move `F1.bar` to `F2.bar`, and not change `F2`.
+In this case, the PR chain would consist of:
+
+- `BG-B` needs a new version (say `v1.2.1`), with the `BG-A` dependency pinned to `>=1.1.0`. This is so that the new `F1.foo` is used when `BG-A` is fetched by pip/conda.
+- `BG-C` needs a new version (say `v1.6.0`), with the `BG-A` dependency pinned to `>=1.1.0` too. This is because version `v1.1.0` of `BG-A` is incompatible with `v1.0.0`. If we don't release a new `BG-C` version with this change, a user could `pip install BG-C`, have `BG-A` `v1.1.0` fetched as part of the dependency resolution, then would encounter an error whenever they tried to use `BG-C` since `F1.bar` would be unavailable (it's now `F2.bar`).
+- `BG-D` doesn't need any new releases, since `F2` has not been affected by the `v1.1.0` update to `BG-A`.
+- The metapackage then needs a new version which pins:
+  - `BG-A >= v1.1.0`
+  - `BG-B >= v1.2.1`
+  - `BG-C >= v1.6.0`
+  - `BG-D >= v1.7.0` (no change)
 
 ## Triggering a new release
 
@@ -55,7 +81,7 @@ if you want to annotate the tag; which is useful for tagging single-commit hotfi
 
 Once you have created the tag, you can `git push --tags` back to the main repository to trigger the release workflow.
 **However** you still need to create release notes using the GitHub UI as described in [the section above](#triggering-a-new-release).
-You will need to select the tag you just pushed, rather than creating a new tag, when you start drafting the release notes. 
+You will need to select the tag you just pushed, rather than creating a new tag, when you start drafting the release notes.
 
 ### Failed workflows
 
@@ -71,10 +97,9 @@ In the event that the release workflows fails after publishing a release, you wi
 A number of BrainGlobe packages are also available through `conda-forge`, providing an alternative installation method to `pip`.
 Each package available in this way has a feedstock repository, usually at the GitHub repository:
 
-```
+```sh
 conda-forge/<package-name>-feedstock
 ```
-
 
 These feedstocks are linked to their `PyPI` counterparts - when a new version comes available on `PyPI`, the `conda-forge` admin bot should open a PR in the feedstock repository which will update the version of the package available through `conda`.
 These PRs must be approved by one of the feedstock maintainers before they are merged in.
@@ -95,5 +120,5 @@ The basic functionality of these workflows use the [neuroinformatics-unit](https
 1. Check the package manifest
 1. Run the package tests
 
-These checks are run against _all_ PRs opened against the repository, and on the `main` branch when they are merged in.
-When a tag in the `vX.Y.Z` format is pushed to `main`, these checks are run again and _if they are successful_ the workflow will build the source distribution and upload this to `PyPI`.
+These checks are run against *all* PRs opened against the repository, and on the `main` branch when they are merged in.
+When a tag in the `vX.Y.Z` format is pushed to `main`, these checks are run again and *if they are successful* the workflow will build the source distribution and upload this to `PyPI`.
