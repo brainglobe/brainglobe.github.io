@@ -34,7 +34,7 @@ A number of atlases are in development, but those available currently are:
 
 ## Installation
 
-BrainGlobe AtlasAPI works with Python >3.6, and can be installed from PyPI with:
+BrainGlobe AtlasAPI works with Python >=3.9, and can be installed from PyPI with:
 
 ```bash
 pip install brainglobe-atlasapi
