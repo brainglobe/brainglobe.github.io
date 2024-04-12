@@ -428,6 +428,11 @@ In no particular order:
 :link: https://github.com/GuillaumeLeGoc
 :::
 
+:::{grid-item-card}    Harry Carey 
+:img-bottom: https://avatars.githubusercontent.com/u/38996929?v=4
+:link: https://github.com/PolarBean
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
