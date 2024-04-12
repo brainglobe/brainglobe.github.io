@@ -438,6 +438,11 @@ In no particular order:
 :link: https://github.com/matham
 :::
 
+:::{grid-item-card}      Kimberly Meechan 
+:img-bottom: https://avatars.githubusercontent.com/u/24316371?v=4
+:link: https://github.com/K-Meech
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
