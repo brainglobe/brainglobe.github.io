@@ -21,6 +21,7 @@ loading commonly used data types.
 coordinates can be passed to it.
 * `brainrender.actors.Streamlines` is used to render streamlines tractography data. It expects the data as a 
 `pandas` DataFrame and can load data from a `.json` file.
+* `brainrender.actors.Line` is used to render a line. It expects a (N, 3) numpy array of coordinates.
 * `brainrender.actors.Volume` renders volumetric data (e.g. gene expression) from a numpy array or from a `.npy` file.
 * Other actor classes like `Cylinder`, `Point` and `Ruler` can be used to render other types of data.
 
