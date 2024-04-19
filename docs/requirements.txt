@@ -1,4 +1,4 @@
-sphinx<=7.2.6
+sphinx
 pydata-sphinx-theme
 myst-parser
 numpydoc
@@ -9,4 +9,4 @@ sphinx-togglebutton
 sphinx-notfound-page
 sphinx-sitemap
 sphinx-copybutton
-ablog>=0.11.0rc2
+ablog>=0.11.8
