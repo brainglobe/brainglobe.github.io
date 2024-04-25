@@ -678,9 +678,14 @@ and interactive online visualizations with your renderings.</p>
 <a class="reference external" href="https://github.com/brainglobe/brainrender/tree/master/examples">GitHub repository</a>.</p>
 <section id="screenshots">
 <h2>Screenshots<a class="headerlink" href="#screenshots" title="Link to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">Scene</span></code> class has a <code class="docutils literal notranslate"><span class="pre">screenshot</span></code> method that allows you to save a <code class="docutils literal notranslate"><span class="pre">.png</span></code> image showing the current view of the
+<p>The <code class="docutils literal notranslate"><span class="pre">Scene</span></code> class has a <code class="docutils literal notranslate"><span class="pre">screenshot</span></code> method that allows you to save a <code class="docutils literal notranslate"><span class="pre">.png</span></code>, <code class="docutils literal notranslate"><span class="pre">.jpg</span></code>, <code class="docutils literal notranslate"><span class="pre">.svg</span></code>, <code class="docutils literal notranslate"><span class="pre">.pdf</span></code>, or <code class="docutils literal notranslate"><span class="pre">.eps</span></code> image showing the current view of the
 rendering.  By default, the screenshots are saved in the current directory, but you can use <code class="docutils literal notranslate"><span class="pre">screenshots_folder</span></code> to
 pass a path to the folder where you want them to be saved when you’re creating an instance of Scene.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When saving a <code class="docutils literal notranslate"><span class="pre">.svg</span></code> or <code class="docutils literal notranslate"><span class="pre">.eps</span></code> file the output will be compressed as a <code class="docutils literal notranslate"><span class="pre">.gz</span></code> and will need to be extracted
+before it can be viewed.</p>
+</div>
 <p>You can take a screenshot while viewing and interacting with a rendered scene by pressing the <code class="docutils literal notranslate"><span class="pre">s</span></code> key in your keyboard.
 Using <code class="docutils literal notranslate"><span class="pre">Scene.screenshot</span></code> however gives you the freedom to specify a name for the image file to be saved.</p>
 <p>By default <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> is set up to ignore the background when saving the screenshots. That means that you will have
