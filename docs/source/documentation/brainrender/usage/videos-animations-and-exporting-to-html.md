@@ -10,9 +10,14 @@ You can find examples about how to do all of this at the
 
 ## Screenshots
 
-The `Scene` class has a `screenshot` method that allows you to save a `.png` image showing the current view of the
+The `Scene` class has a `screenshot` method that allows you to save a `.png`, `.jpg`, `.svg`, `.pdf`, or `.eps` image showing the current view of the
 rendering.  By default, the screenshots are saved in the current directory, but you can use `screenshots_folder` to
 pass a path to the folder where you want them to be saved when you're creating an instance of Scene.
+
+:::{note}
+When saving a `.svg` or `.eps` file the output will be compressed as a `.gz` and will need to be extracted
+before it can be viewed.
+:::
 
 You can take a screenshot while viewing and interacting with a rendered scene by pressing the `s` key in your keyboard.
 Using `Scene.screenshot` however gives you the freedom to specify a name for the image file to be saved.
