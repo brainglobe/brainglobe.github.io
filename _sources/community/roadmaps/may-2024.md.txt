@@ -1,0 +1,69 @@
+# May 2024
+
+The [November 2023 roadmap](november-2023) was our first. This document looks back on the last six months of work 
+and outlines plans for the next year.
+
+## Current status
+
+### Progress since the last roadmap
+The past few months have focused mostly on improving the maintainability of BrainGlobe as a whole, and making it easier 
+to develop new tools in the future. Some developments include (for more details on these, see the [blog](https://brainglobe.info/blog/)):
+* The `brainreg` napari plugin is now bundled with `brainreg` to simplify maintenance.
+* `brainreg-segment` is now called `brainglobe-segmentation` to reflect its future compatibility with other registration tools.
+* The old `cellfinder` command-line tool is now called `brainmapper` and is part of `brainglobe-workflows`. This is part of
+work to separate the core BrainGlobe software from convenience tools ("workflows") developed for specific applications.
+* The old `cellfinder-core` and `cellfinder-napari` tools have been merged, and are now known just as `cellfinder`. 
+This is to simplify maintenance and reduce confusion (we used to have three cellfinders!).
+* `bg-space` is now known as `brainglobe-space` to standardise naming.
+* `bg-atlasapi` and `bg-atlasgen` have been merged and are now known as `brainglobe-atlasapi` to standardise naming.
+* `imio` has been brought into the `brainglobe-utils` package, to reduce the number of packages we maintain. 
+* We've increased the robustness of `brainglobe-utils` by adding lots of automated tests.
+* `brainrender` has been updated so that it now works with the newest versions of Python.
+* A new `LineActor` has been added to `brainrender`.
+* `bgheatmap` has been updated so that it now works with the newest versions of Python and now released as `brainglobe-heatmap`.
+* `brainglobe` version 1 has been released. This new "metapackage" allows one line installation of all BrainGlobe tools.
+* We've fixed a lot of small bugs and hugely reduced the number of open issues. 
+* We've standardised the tooling for all repos to simplify development and maintenance.
+* We've released `brainrender-napari` to allow for visualisation of atlas-registered data in napari 
+(alongside the existing `brainrender`).
+* We've fixed a number of scaling and rotation issues with some BrainGlobe atlases.
+
+### Issues
+* It is not yet possible to carry out all BrainGlobe functionality via the GUI (although we are 90% of the way there)
+* Documentation for some tools is sparse
+* Docstrings are often missing, incomplete or not standardised
+* We have very few API docs
+* Test coverage is variable (some repos are in excellent shape, others not so much!)
+* cellfinder uses TensorFlow, and so we're limited to what Python versions we can support for the metapackage
+* Only some tools are available on `conda-forge`, and so `conda install brainglobe` is not yet possible.
+* There's still a lot of small bugs hanging around
+* Use of the napari plugins isn't very integrated (lots of opening and closing, saving & reopening)
+* Some of the atlases have inconsistencies that make their use with particular tools difficult
+
+
+## Future 
+### Q3 2024
+* PyTorch backend for cellfinder, enabling use with the latest versions of Python & release on conda-forge.
+* All tools installable via `conda install brainglobe -c conda-forge`
+* Automated benchmarks for cell detection on "real" (full size) data
+* Re-release of all (fully standardised) atlases
+
+
+### Q4 2024
+* Generic layer interpreters ([BrainGlobe/10](https://github.com/brainglobe/BrainGlobe/issues/10))
+* All analyses possible without leaving napari
+* Automated benchmarks for 3D atlas registration on "real" (full size) data
+* Registration of 2D (e.g. conventional sections) data to an atlas
+* All tools fully documented
+
+### Q1 2025
+* All visualisation possible without leaving napari
+* Consistent and documented API, e.g. `from brainglobe import cellfinder` or `from brainglobe import cell_detector_3D` (or both)
+* Registration of 3D subvolume data to an atlas
+* Intuitive navigation of napari plugins
+  * Create "metaplugin"
+  
+### Q2 2025
+* Atlas generation within napari
+* Facilitate common analyses/visualisation within napari
+  * Plot cells per brain region
