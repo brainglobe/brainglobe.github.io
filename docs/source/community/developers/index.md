@@ -17,6 +17,11 @@ to [Adam Tyson](https://github.com/adamltyson), one of the core developers.
 Some of our tools have additional information about how data files are organised, where user caches are placed, and similar.
 You can view these repositories and the relevant information by heading to the [specific repository developer docs page](./specific_repos.md).
 
+:::{note}
+Reviewing code can take a long time, and the BrainGlobe team are usually pretty busy. We'll try to review your 
+contributions as soon as we can, but it can sometimes take a few weeks. We will always get back to you though!
+:::
+
 ## To contribute a new atlas
 
 To add a new BrainGlobe atlas, please see the guide [here](/documentation/brainglobe-atlasapi/adding-a-new-atlas).
