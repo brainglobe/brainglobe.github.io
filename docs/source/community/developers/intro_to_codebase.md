@@ -57,8 +57,7 @@ The `bg-` prefix for BrainGlobe tools has been discontinued.
 ### User data
 
 User data is stored locally in hidden folders, usually in the user's `$HOME` directory.
-These folders are named after the tools (e.g. `~/.cellfinder/`) or in appropriate subfolders of `.brainglobe` (e.g. `~/.brainglobe/mpin_zfish_1um_v1.0/`).
-We plan to move all user data to `~/.brainglobe` in the future, and this is therefore the place to add new kinds of user data (in appropriately named subfolders).
+These folders are usually in appropriate subfolders of `.brainglobe` (e.g. `~/.brainglobe/cellfinder/`).
 Data that we provide (e.g. atlas data and test data) should be hosted on [GIN/BrainGlobe](https://gin.g-node.org/BrainGlobe/), and not on GitHub itself (unless it's a small package-specific text file, in which case it can go in [the package resources and accessed via `importlib`](https://docs.python.org/3/library/importlib.resources.html)).
 We rely on [the `pooch` package](https://www.fatiando.org/pooch/latest/) to fetch data from GIN.
 
