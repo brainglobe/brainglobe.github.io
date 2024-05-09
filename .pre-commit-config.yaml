@@ -9,3 +9,4 @@ repos:
     rev: v2.2.6
     hooks:
       - id: codespell
+        exclude: docs/source/publications.md # lots of author names
