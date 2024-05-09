@@ -5,7 +5,7 @@
 To run `brainmapper`, use this general syntax
 
 ```bash
-    brainmapper -s signal_channel_images  optional_signal_channel_images -b background_channel_images -o /path/to/output_directory -v 5 2 2 --orientation asl
+brainmapper -s signal_channel_images  optional_signal_channel_images -b background_channel_images -o /path/to/output_directory -v 5 2 2 --orientation asl
 ```
 
 :::{hint}
