@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Requirements &#8212; BrainGlobe</title>
+    <title>Installation &#8212; BrainGlobe</title>
   
   
   
@@ -578,7 +578,7 @@ document.write(`
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../brainglobe-heatmap/index.html">brainglobe-heatmap</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">cellfinder</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Requirements</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Installation</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="user-guide/napari-plugin/index.html">cellfinder napari plugin</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="user-guide/napari-plugin/cell-detection.html">Cell detection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user-guide/napari-plugin/training-the-network.html">Retraining the network for new data</a></li>
@@ -591,6 +591,7 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="user-guide/training/using-supplied-data.html">Using supplied training data</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/cellfinder-download.html">Downloading the pre-trained model in advance</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="troubleshooting/index.html">Troubleshooting</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="troubleshooting/speed-up.html">Speeding up cellfinder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="troubleshooting/error-messages.html">Debugging common error messages</a></li>
@@ -646,7 +647,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">cellfinder</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Requirements</li>
+    <li class="breadcrumb-item active" aria-current="page">Installation</li>
   </ul>
 </nav>
 </div>
@@ -663,13 +664,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-<section class="tex2jax_ignore mathjax_ignore" id="requirements">
-<h1>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h1>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> should run on most machines, but for routine use on large datasets, you will need a fairly high-powered computer (see the guide to <a class="reference internal" href="troubleshooting/speed-up.html"><span class="doc std std-doc">Speeding up cellfinder</span></a> for details).</p>
 <p>Using an NVIDIA GPU will speed up cell classification considerably.
 See <a class="reference internal" href="../setting-up/gpu.html"><span class="doc std std-doc">setting up your GPU</span></a> for details.</p>
-<section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
 <p>To use cellfinder, you will need to have Python on your machine.
 Your machine may already have Python installed, but we recommend installing miniconda.
 See <a class="reference internal" href="../setting-up/conda.html"><span class="doc std std-doc">Using conda</span></a> for details.</p>
@@ -677,14 +678,15 @@ See <a class="reference internal" href="../setting-up/conda.html"><span class="d
 <h3>Installing the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> package<a class="headerlink" href="#installing-the-cellfinder-package" title="Link to this heading">#</a></h3>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">pip</span></code> from inside your activated Python environment to install the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> package directly.
 Make sure to install version <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code> or later!</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>cellfinder&gt;<span class="o">=</span><span class="m">1</span>.0.0<span class="w"> </span><span class="c1"># Run this if you only want the Python API (for use in scripts)</span>
-pip<span class="w"> </span>install<span class="w"> </span>cellfinder<span class="o">[</span>napari<span class="o">]</span>&gt;<span class="o">=</span><span class="m">1</span>.0.0<span class="w"> </span><span class="c1"># Run this if you want to install the API and the napari plugin</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>cellfinder<span class="w"> </span><span class="c1"># Run this if you only want the Python API (for use in scripts)</span>
+pip<span class="w"> </span>install<span class="w"> </span>cellfinder<span class="o">[</span>napari<span class="o">]</span><span class="w"> </span><span class="c1"># Run this if you want to install the API and the napari plugin</span>
 </pre></div>
 </div>
 </section>
-<section id="installing-brainglobe-atlases">
-<h3>Installing BrainGlobe Atlases<a class="headerlink" href="#installing-brainglobe-atlases" title="Link to this heading">#</a></h3>
-<p>To install download BrainGlobe atlases in advance, please see the guide to <a class="reference internal" href="../brainglobe-atlasapi/usage/command-line-interface.html"><span class="doc std std-doc">the BrainGlobe Atlas API command-line interface</span></a>.</p>
+<section id="downloading-pre-trained-models">
+<h3>Downloading pre-trained models<a class="headerlink" href="#downloading-pre-trained-models" title="Link to this heading">#</a></h3>
+<p>If you would like to download the pre-trained models in advance (otherwise they will download as needed),
+please see <a class="reference internal" href="user-guide/cellfinder-download.html"><span class="doc std std-doc">Downloading the pre-trained model in advance</span></a>.</p>
 </section>
 <section id="installing-brainmapper">
 <h3>Installing <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code><a class="headerlink" href="#installing-brainmapper" title="Link to this heading">#</a></h3>
@@ -744,9 +746,9 @@ You can read more about it <a class="reference internal" href="../brainglobe-wor
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-cellfinder-package">Installing the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> package</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-brainglobe-atlases">Installing BrainGlobe Atlases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-pre-trained-models">Downloading pre-trained models</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-brainmapper">Installing <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code></a></li>
 </ul>
 </li>

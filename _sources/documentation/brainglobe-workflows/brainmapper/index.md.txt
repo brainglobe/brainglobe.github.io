@@ -20,6 +20,11 @@ error-messages
 /documentation/cellfinder/user-guide/training/index
 ```
 
+:::{note}  If you would like to use `brainmapper` offline, you will need to 
+[download an appropriate atlas](/documentation/brainglobe-atlasapi/usage/command-line-interface) and 
+[download a pre-trained cellfinder model](/documentation/cellfinder/user-guide/cellfinder-download) in advance. 
+:::
+
 ## Tutorials
 
 ```{toctree}
