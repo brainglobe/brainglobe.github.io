@@ -73,42 +73,41 @@ detected_cells = cellfinder_run(signal_array,background_array,voxel_sizes)
 
 ```python
 import tifffile
-from pathlib import Path
 
 from cellfinder.core.detect import detect
 from cellfinder.core.classify import classify
-from cellfinder.core.tools.prep import prep_classification
+from cellfinder.core.tools.prep import prep_models
+from cellfinder.core.download.download import DEFAULT_DOWNLOAD_DIRECTORY
 
 signal_array = tifffile.imread("/path/to/signal_image.tif")
 background_array = tifffile.imread("/path/to/background_image.tif")
 voxel_sizes = [5, 2, 2] # in microns
 
-home = Path.home()
-install_path = home / ".cellfinder" # default
+start_plane = 0
+end_plane = -1
+trained_model = None
+model_weights = None
+model = "resnet50_tv"
+batch_size = 32
+n_free_cpus = 2
+network_voxel_sizes = [5, 1, 1]
+soma_diameter = 16
+ball_xy_size = 6
+ball_z_size = 15
+ball_overlap_fraction = 0.6
+log_sigma_size = 0.2
+n_sds_above_mean_thresh = 10
+soma_spread_factor = 1.4
+max_cluster_size = 100000
+cube_width = 50
+cube_height = 50
+cube_depth = 20
+network_depth = "50"
 
-start_plane=0
-end_plane=-1
-trained_model=None
-model_weights=None
-model="resnet50_tv"
-batch_size=32
-n_free_cpus=2
-network_voxel_sizes=[5, 1, 1]
-soma_diameter=16
-ball_xy_size=6
-ball_z_size=15
-ball_overlap_fraction=0.6
-log_sigma_size=0.2
-n_sds_above_mean_thresh=10
-soma_spread_factor=1.4
-max_cluster_size=100000
-cube_width=50
-cube_height=50
-cube_depth=20
-network_depth="50"
-
-model_weights = prep_classification(
-    trained_model, model_weights, install_path, model, n_free_cpus
+model_weights = prep_models(
+    model_weights,
+    DEFAULT_DOWNLOAD_DIRECTORY, 
+    model,
 )
 
 cell_candidates = detect.main(
@@ -127,7 +126,7 @@ cell_candidates = detect.main(
     n_sds_above_mean_thresh,
 )
 
-if len(cell_candidates) > 0: # Don't run if there's nothing to classify
+if len(cell_candidates) > 0:  # Don't run if there's nothing to classify
     classified_cells = classify.main(
         cell_candidates,
         signal_array,
@@ -164,13 +163,9 @@ yaml_files = [Path("/path/to/training_yml.yml)]
 # where to save the output
 output_directory = Path("/path/to/saved_training_data")
 
-home = Path.home()
-install_path = home / ".cellfinder"  # default
-
 run_training(
     output_directory,
     yaml_files,
-    install_path=install_path,
     learning_rate=0.0001,
     continue_training=True, # by default use supplied model
     test_fraction=0.1,

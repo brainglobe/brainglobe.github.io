@@ -646,8 +646,7 @@ The <code class="docutils literal notranslate"><span class="pre">bg-</span></cod
 <section id="user-data">
 <h3>User data<a class="headerlink" href="#user-data" title="Link to this heading">#</a></h3>
 <p>User data is stored locally in hidden folders, usually in the user’s <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> directory.
-These folders are named after the tools (e.g. <code class="docutils literal notranslate"><span class="pre">~/.cellfinder/</span></code>) or in appropriate subfolders of <code class="docutils literal notranslate"><span class="pre">.brainglobe</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">~/.brainglobe/mpin_zfish_1um_v1.0/</span></code>).
-We plan to move all user data to <code class="docutils literal notranslate"><span class="pre">~/.brainglobe</span></code> in the future, and this is therefore the place to add new kinds of user data (in appropriately named subfolders).
+These folders are usually in appropriate subfolders of <code class="docutils literal notranslate"><span class="pre">.brainglobe</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">~/.brainglobe/cellfinder/</span></code>).
 Data that we provide (e.g. atlas data and test data) should be hosted on <a class="reference external" href="https://gin.g-node.org/BrainGlobe/">GIN/BrainGlobe</a>, and not on GitHub itself (unless it’s a small package-specific text file, in which case it can go in <a class="reference external" href="https://docs.python.org/3/library/importlib.resources.html">the package resources and accessed via <code class="docutils literal notranslate"><span class="pre">importlib</span></code></a>).
 We rely on <a class="reference external" href="https://www.fatiando.org/pooch/latest/">the <code class="docutils literal notranslate"><span class="pre">pooch</span></code> package</a> to fetch data from GIN.</p>
 </section>
