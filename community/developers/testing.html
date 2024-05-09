@@ -595,8 +595,12 @@ document.write(`
                   
 <section class="tex2jax_ignore mathjax_ignore" id="testing">
 <h1>Testing<a class="headerlink" href="#testing" title="Link to this heading">#</a></h1>
-<p>We use <a class="reference external" href="https://docs.pytest.org/en/latest/">pytest</a> for testing. Please try to ensure that all functions
-are tested, including both unit and integration tests.</p>
+<ul class="simple">
+<li><p>We use <a class="reference external" href="https://docs.pytest.org/en/latest/">pytest</a> for testing. Please try to ensure that all functions
+are tested, including both unit and integration tests. We aim for 100% coverage where possible.</p></li>
+<li><p>We use <a class="reference external" href="https://about.codecov.io/">codecov</a> as the coverage reporting tool. This is free for open-source
+projects and integrates with GitHub actions.</p></li>
+</ul>
 <section id="long-running-tests">
 <h2>Long running tests<a class="headerlink" href="#long-running-tests" title="Link to this heading">#</a></h2>
 <p>Some tests may take a long time, e.g. those requiring <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code> if you don’t have a GPU. These tests should be
@@ -618,6 +622,8 @@ marked with <code class="docutils literal notranslate"><span class="pre">&#64;py
 <li><p>Testing (only if linting checks pass)</p></li>
 <li><p>Release to PyPI (only if a git tag is present and if tests pass). Requires <code class="docutils literal notranslate"><span class="pre">TWINE_API_KEY</span></code>
 from PyPI to be set in repository secrets.</p></li>
+<li><p>Sometimes additional, cross-repository, tests are run such as testing <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> with a development version of
+<code class="docutils literal notranslate"><span class="pre">cellfinder</span></code></p></li>
 </ul>
 <p>Many of these workflows use actions from
 <a class="reference external" href="https://github.com/neuroinformatics-unit/actions">neuroinformatics-unit/actions</a>. Feel free to raise a PR to that

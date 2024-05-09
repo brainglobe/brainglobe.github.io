@@ -20,6 +20,11 @@ brainglobe-workflows can be installed into your Python environment using `pip`:
 pip install brainglobe-workflows
 ```
 
+:::{note}
+If you are using macOS, and you require 3D registration functionality (e.g. in `brainmapper`),
+please also run `conda install -c conda-forge niftyreg`
+:::
+
 Doing so will make all of the command-line tools that `brainglobe-workflows` provides visible whilst working inside your environment.
 
 ## Installing with `cellfinder` versions older than `v1.0.0`

@@ -595,6 +595,14 @@ document.write(`
                   
 <section class="tex2jax_ignore mathjax_ignore" id="conventions">
 <h1>Conventions<a class="headerlink" href="#conventions" title="Link to this heading">#</a></h1>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>We use <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a> to generate documentation (hosted on this website), built with the <a class="reference external" href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>.</p></li>
+<li><p>Docstrings should be written in <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">numpydoc</a> format.</p></li>
+<li><p>Documentation structure should be informed by the <a class="reference external" href="https://diataxis.fr">diataxis</a> framework.</p></li>
+</ul>
+</section>
 <section id="dependency-support">
 <h2>Dependency support<a class="headerlink" href="#dependency-support" title="Link to this heading">#</a></h2>
 <p>Packages have to choose which versions of dependencies they officially support,
@@ -612,7 +620,11 @@ supported.</p>
 </section>
 <section id="axis-ordering-in-spatial-arrays">
 <h2>Axis ordering in spatial arrays<a class="headerlink" href="#axis-ordering-in-spatial-arrays" title="Link to this heading">#</a></h2>
-<p>For arrays representing spatial data, we follow <code class="docutils literal notranslate"><span class="pre">zyx</span></code> axis ordering in the same way as <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">napari</span></code>. The origin is the upper left corner when you show the first element <code class="docutils literal notranslate"><span class="pre">stack[0,</span> <span class="pre">:,</span> <span class="pre">:]</span></code>. The first dimension is the one that you are slicing, the second is the height of the image, and the third is the width of the image. The <a class="reference internal" href="../../documentation/brainglobe-space/index.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">brainglobe-space</span></code> package</span></a> provides an interface to manipulate data following different conventions to adhere to this standard.</p>
+<p>For arrays representing spatial data, we follow <code class="docutils literal notranslate"><span class="pre">zyx</span></code> axis ordering in the same way as <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">napari</span></code>.
+The origin is the upper left corner when you show the first element <code class="docutils literal notranslate"><span class="pre">stack[0,</span> <span class="pre">:,</span> <span class="pre">:]</span></code>. The first dimension is the one
+that you are slicing, the second is the height of the image, and the third is the width of the image.
+The <a class="reference internal" href="../../documentation/brainglobe-space/index.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">brainglobe-space</span></code> package</span></a> provides an interface to manipulate data following different conventions
+to adhere to this standard.</p>
 </section>
 </section>
 
@@ -666,6 +678,7 @@ supported.</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency-support">Dependency support</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-ordering-in-spatial-arrays">Axis ordering in spatial arrays</a></li>
 </ul>
