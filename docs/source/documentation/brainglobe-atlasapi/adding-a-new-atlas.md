@@ -91,7 +91,7 @@ Do not use 0 (zero) as the id of a structure, because the annotation stack will 
 * ATLAS\_LINK: a link to a website describing the atlas or any other relevant online resource
 * CITATION: the details of a published paper/preprint in which the atlas was first described
 * ATLAS\_PACKAGER: contact (name / email) of the person who packaged the atlas in BrainGlobe
-* ORIENTATION: a string specifying the orientation in bg-space format
+* ORIENTATION: a string specifying the orientation in brainglobe-space format
 * \_\_version\_\_: the version number of the atlas: when atlases get updated/modified new versions are released.
 * root structure id: ID of the root (base) brain region in the hierarchy of brain regions.
 
