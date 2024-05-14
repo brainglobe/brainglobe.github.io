@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>bg-space &#8212; BrainGlobe</title>
+    <title>brainglobe-space &#8212; BrainGlobe</title>
   
   
   
@@ -512,7 +512,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../brainglobe-atlasapi/adding-a-new-atlas.html">Adding a new atlas</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">bg-space</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">brainglobe-space</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../brainglobe-utils/citation-module.html">Generating Citations for BrainGlobe tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../brainglobe-utils/image_io.html">image_io</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../brainreg/index.html">brainreg</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -644,7 +644,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Documentation</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">bg-space</li>
+    <li class="breadcrumb-item active" aria-current="page">brainglobe-space</li>
   </ul>
 </nav>
 </div>
@@ -661,20 +661,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-<section class="tex2jax_ignore mathjax_ignore" id="bg-space">
-<h1>bg-space<a class="headerlink" href="#bg-space" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="brainglobe-space">
+<h1>brainglobe-space<a class="headerlink" href="#brainglobe-space" title="Link to this heading">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>Working with anatomical images, one often encounters the problem of matching the orientation of stacks with
 different conventions about axes orientation and order. Moreover, when multiple swaps and flips are involved,
 it can be annoying to map the same transformations to volumes and points (e.g., coordinates or meshes).</p>
-<p><code class="docutils literal notranslate"><span class="pre">bg-space</span></code> provides a neat way of defining an anatomical space, and of operating stacks and point transformations
+<p><code class="docutils literal notranslate"><span class="pre">brainglobe-space</span></code> provides a neat way of defining an anatomical space, and of operating stacks and point transformations
 between spaces.</p>
 </section>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
-<p>You can install <code class="docutils literal notranslate"><span class="pre">bg-space</span></code> with:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pip install bg-space
+<p>You can install <code class="docutils literal notranslate"><span class="pre">brainglobe-space</span></code> with:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pip install brainglobe-space
 </pre></div>
 </div>
 </section>
@@ -752,7 +752,7 @@ with the correct padding/cropping simply by specifying a target offset:</p>
 </section>
 <section id="easy-iteration-over-projections">
 <h3>Easy iteration over projections<a class="headerlink" href="#easy-iteration-over-projections" title="Link to this heading">#</a></h3>
-<p>Finally, another convenient feature of BG-Space is the possibility of iterating easily through the projections of
+<p>Finally, another convenient feature of brainglobe-space is the possibility of iterating easily through the projections of
 the stack and generate section names and axes labels:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sc</span> <span class="o">=</span> <span class="n">bg</span><span class="o">.</span><span class="n">SpaceConvention</span><span class="p">(</span><span class="s2">&quot;asl&quot;</span><span class="p">)</span>  <span class="c1"># origin for the stack to be plotted</span>
 
