@@ -1,19 +1,19 @@
-# bg-space
+# brainglobe-space
 
 ## Introduction
 Working with anatomical images, one often encounters the problem of matching the orientation of stacks with 
 different conventions about axes orientation and order. Moreover, when multiple swaps and flips are involved, 
 it can be annoying to map the same transformations to volumes and points (e.g., coordinates or meshes).
 
-`bg-space` provides a neat way of defining an anatomical space, and of operating stacks and point transformations 
+`brainglobe-space` provides a neat way of defining an anatomical space, and of operating stacks and point transformations 
 between spaces.
 
 ## Installation
 
-You can install `bg-space` with:
+You can install `brainglobe-space` with:
 
 ```text
-pip install bg-space
+pip install brainglobe-space
 ```
 
 ## Usage
@@ -68,7 +68,7 @@ mapped_annotations = source_space.map_points_to("ipr", annotations)  # transform
 ```
 
 The points are transformed through the generation of a transformation matrix. Finally, if we want to log this 
-matrix \(e.g., to reconstruct the full transformations sequence of a registration\), we can get it:
+matrix (e.g., to reconstruct the full transformations sequence of a registration), we can get it:
 
 ```python
 target_space = bg.SpaceConvention("ipr", stack.shape)
@@ -104,7 +104,7 @@ source_space.transformation_matrix_to(target_space, stack, to_target_shape=True)
 
 ### Easy iteration over projections
 
-Finally, another convenient feature of BG-Space is the possibility of iterating easily through the projections of 
+Finally, another convenient feature of brainglobe-space is the possibility of iterating easily through the projections of 
 the stack and generate section names and axes labels:
 
 ```python

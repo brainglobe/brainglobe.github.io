@@ -17,12 +17,12 @@ to atlases, this is still a not-trivial steps in the analysis of any anatomical 
 ## Aligning to atlas's space
 
 Brainglobe's Atlas API relies on [brainglobe-space](/documentation/brainglobe-space/index) for transforming data (e.g. image stacks) 
-so that they are all oriented the same way. Bg-space provides a convenient naming convection to define the orientation 
+so that they are all oriented the same way. brainglobe-space provides a convenient naming convection to define the orientation 
 of your data based on where the origin is and the direction that the three main axes (first three dimensions of your 
 image data) point towards.
 
 The process of transforming data from one axes system requires knowing the "space" of your target (i.e. of brainrender's 
-atlas data\) and of the source \(your data\). The orientation of your data depends on your experimental set-up and 
+atlas data) and of the source (your data). The orientation of your data depends on your experimental set-up and 
 subsequent pre-processing steps. To know what brainrender's target space is:
 
 ```python
