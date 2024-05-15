@@ -1,27 +1,27 @@
-# image_io
+# Image IO submodule
 
-`image_io` provides various options to load and save image data. 
+The image IO submodule provides various options to load and save image data. 
 It supports common formats like `tiff`, `nrrd` and `nifti`.
 
 ## Installation
 
-`image_io` is provided as part of `brainglobe_utils` which comes with the one-line BrainGlobe install (`pip install brainglobe`).
+The image IO submodule is provided as part of `brainglobe_utils` which comes with the one-line BrainGlobe install (`pip install brainglobe`).
 It will also be fetched by most of our tools if you decide to install them as standalone.
 
 ## Loading images
 
-All options to load images are provided under `brainglobe_utils.image_io.load`. 
+All options to load images are provided under `brainglobe_utils.IO.image.load`. 
 For example, the general purpose `load_any` function which can load many common file formats:
 
 ```python
-from brainglobe_utils.image_io import load
+from brainglobe_utils.IO.image import load
 load.load_any('mydata.tif')
 ```
 
 There are also functions specific to particular file formats:
 
 ```python
-from brainglobe_utils.image_io import load
+from brainglobe_utils.IO.image import load
 
 # tiff
 load.load_img_stack('mydata.tif', x_scaling_factor=1, y_scaling_factor=1, z_scaling_factor=1)
@@ -36,20 +36,28 @@ load.load_nrrd('mydata.nrrd')
 load.load_nii('mydata.nii')
 ```
 
+Or to load a directory containing a series of 2D tiffs as a dask array:
+
+```python
+from brainglobe_utils.IO.image.load import read_with_dask
+
+signal_array = read_with_dask("/path/to/image_directory")
+```
+
 ## Saving images
 
-All options to save images are provided under `brainglobe_utils.image_io.save`. 
+All options to save images are provided under `brainglobe_utils.IO.image.save`. 
 For example, the general purpose `save_any` function which can save a numpy array to many common file formats:
 
 ```python
-from brainglobe_utils.image_io import save
+from brainglobe_utils.IO.image import save
 save.save_any(my_array, 'mydata.tif')
 ```
 
 There are also functions specific to particular file formats:
 
 ```python
-from brainglobe_utils.image_io import save
+from brainglobe_utils.IO.image import save
 
 # tiff
 save.to_tiff(my_array, 'mydata.tif')

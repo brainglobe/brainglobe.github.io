@@ -60,7 +60,7 @@ Using [Dask arrays](https://docs.dask.org/en/latest/array.html) allows for lazy 
 
 ```python
 from cellfinder.core.main import main as cellfinder_run
-from cellfinder.core.tools.IO import read_with_dask
+from brainglobe_utils.IO.image.load import read_with_dask
 
 signal_array = read_with_dask("/path/to/signal_image_directory")
 background_array = read_with_dask("/path/to/background_image_directory")
