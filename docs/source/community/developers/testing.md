@@ -5,20 +5,6 @@ are tested, including both unit and integration tests. We aim for 100% coverage 
 * We use [codecov](https://about.codecov.io/) as the coverage reporting tool. This is free for open-source
   projects and integrates with GitHub actions.
 
-## Long running tests
-Some tests may take a long time, e.g. those requiring `TensorFlow` if you don't have a GPU. These tests should be
-marked with `@pytest.mark.slow`, e.g.:
-
-```python
-import pytest
-@pytest.mark.slow
-def test_something_slow() -> None:
-    slow_result = run_slow_processes()
-    assert slow_result == expected_slow_thing, "some useful error message"
-```
-
-During development, these "slow" tests can be skipped by running `pytest -m "not slow"`.
-
 ## Continuous integration
 A GitHub actions workflow (`.github/workflows/test_and_deploy.yml`) has been set up to run (on each commit/PR):
 * Linting checks (pre-commit).
