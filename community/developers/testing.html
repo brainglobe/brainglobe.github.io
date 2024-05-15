@@ -601,19 +601,6 @@ are tested, including both unit and integration tests. We aim for 100% coverage 
 <li><p>We use <a class="reference external" href="https://about.codecov.io/">codecov</a> as the coverage reporting tool. This is free for open-source
 projects and integrates with GitHub actions.</p></li>
 </ul>
-<section id="long-running-tests">
-<h2>Long running tests<a class="headerlink" href="#long-running-tests" title="Link to this heading">#</a></h2>
-<p>Some tests may take a long time, e.g. those requiring <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code> if you don’t have a GPU. These tests should be
-marked with <code class="docutils literal notranslate"><span class="pre">&#64;pytest.mark.slow</span></code>, e.g.:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
-<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">slow</span>
-<span class="k">def</span> <span class="nf">test_something_slow</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">slow_result</span> <span class="o">=</span> <span class="n">run_slow_processes</span><span class="p">()</span>
-    <span class="k">assert</span> <span class="n">slow_result</span> <span class="o">==</span> <span class="n">expected_slow_thing</span><span class="p">,</span> <span class="s2">&quot;some useful error message&quot;</span>
-</pre></div>
-</div>
-<p>During development, these “slow” tests can be skipped by running <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">-m</span> <span class="pre">&quot;not</span> <span class="pre">slow&quot;</span></code>.</p>
-</section>
 <section id="continuous-integration">
 <h2>Continuous integration<a class="headerlink" href="#continuous-integration" title="Link to this heading">#</a></h2>
 <p>A GitHub actions workflow (<code class="docutils literal notranslate"><span class="pre">.github/workflows/test_and_deploy.yml</span></code>) has been set up to run (on each commit/PR):</p>
@@ -687,7 +674,6 @@ To avoid local tests running checks on user data interfering with separate user 
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#long-running-tests">Long running tests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration">Continuous integration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-data">Test data</a></li>
 </ul>
