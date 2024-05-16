@@ -26,7 +26,13 @@ latest version with:
 pip install --update brainglobe
 ```
 
-If you have a single tool installed, then just update that tool. For example to update `brainrender`, run:
+If you use `brainglobe-workflows` (e.g. for `brainmapper`) you will need to update it individually, as it is not 
+included within the metapackage:
+```bash
+pip install --update brainrender
+```
+
+If you have a single tool installed, you can just update that tool. For example to update `brainrender`, run:
 ```bash
 pip install --update brainrender
 ```
