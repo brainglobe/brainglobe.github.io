@@ -7,7 +7,7 @@ category: brainglobe
 language: English
 ---
 
-# BrainGlobe version 1.1 is released!
+# BrainGlobe version 1.1.0 is released!
 
 A new version of the BrainGlobe metapackage has been released following updates to lots of BrainGlobe tools 
 (details below). 
