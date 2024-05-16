@@ -64,7 +64,7 @@ for more details.
 ### `brainrender`
 - Automatically downloaded data are now saved to `.brainglobe/brainrender` in your home directory. Previously data were 
 saved to `.brainglobe`. Some scripts may take slightly longer the next time you run them as data is re-downloaded. You 
-can safely delete the `.brainglobe` directory in your home directory if you would like to clear space. Be aware this 
+can safely delete the `.brainrender` directory in your home directory if you would like to clear space. Be aware this 
 directory is usually hidden by default in most file navigation applications.
 - [Screenshots can now be saved into multiple formats](/documentation/brainrender/usage/videos-animations-and-exporting-to-html).
 - A bug in the default (cartoon) shader mode which caused the scene to appear jagged when rotated has been fixed.
