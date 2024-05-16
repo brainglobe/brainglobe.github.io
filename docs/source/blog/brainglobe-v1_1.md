@@ -29,7 +29,7 @@ pip install --update brainglobe
 If you use `brainglobe-workflows` (e.g. for `brainmapper`) you will need to update it individually, as it is not 
 included within the metapackage:
 ```bash
-pip install --update brainrender
+pip install --update brainglobe-workflows
 ```
 
 If you have a single tool installed, you can just update that tool. For example to update `brainrender`, run:
