@@ -1,6 +1,6 @@
 # Publishing new releases
 
-BrianGlobe packages hosted on GitHub have CI workflows setup that are used to automatically upload and publish new version releases when they are made available.
+BrainGlobe packages hosted on GitHub have CI workflows setup that are used to automatically upload and publish new version releases when they are made available.
 This is the preferred method for publishing new versions to `PyPI` (and where appropriate, the linked `conda` feedstocks) - avoid manual uploads where possible.
 
 Maintainers can trigger a new release by pushing a new tag, in the format `vX.Y.Z`, to the main branch of a package repository.
