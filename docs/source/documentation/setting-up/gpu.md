@@ -25,9 +25,12 @@ The first thing you definitely need is the drivers for your GPU, which can be do
 [here](https://www.nvidia.com/download/index.aspx?lang=en-us). Hopefully, these will have been installed when your 
 machine was set up, but for GPU support in BrainGlobe, you will need version **450.x or greater**.
 
-### Installing CUDA and cuDNN
+### Installing PyTorch with GPU support
 
 BrainGlobe uses [PyTorch](https://pytorch.org/) which relies upon [CUDA](https://en.wikipedia.org/wiki/CUDA) 
-and [cuDNN](https://developer.nvidia.com/cudnn). BrainGlobe requires **CUDA** and **cuDNN.** PyTorch
-will install the correct versions of CUDA and cuDNN for you based on the
-choices you make when [installing PyTorch](https://pytorch.org/get-started/locally/).
+and [cuDNN](https://developer.nvidia.com/cudnn). PyTorch will install the correct versions of CUDA and cuDNN
+for you based on the choices you make when [installing PyTorch](https://pytorch.org/get-started/locally/).
+
+We recommend using the `conda` installation method. Ensure you have the
+`cellfinder` conda environment activated before running the command provided
+by [PyTorch](https://pytorch.org/get-started/locally/).
