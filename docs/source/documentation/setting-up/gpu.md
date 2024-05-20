@@ -31,6 +31,6 @@ BrainGlobe uses [PyTorch](https://pytorch.org/) which relies upon [CUDA](https:/
 and [cuDNN](https://developer.nvidia.com/cudnn). PyTorch will install the correct versions of CUDA and cuDNN
 for you based on the choices you make when [installing PyTorch](https://pytorch.org/get-started/locally/).
 
-We recommend using the `conda` installation method. Ensure you have the
-`cellfinder` conda environment activated before running the command provided
-by [PyTorch](https://pytorch.org/get-started/locally/).
+We recommend selecting the `Stable` PyTorch build, the `Conda` package, and
+`CUDA 11.8` as the compute platform. Ensure you have the `cellfinder` conda
+environment activated before running the command provided.
