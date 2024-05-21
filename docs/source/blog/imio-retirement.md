@@ -28,7 +28,7 @@ In terms of your source code, the only necessary changes should be to:
 Users who installed BrainGlobe through it's single ("meta") package install with `pip install brainglobe` will just need to update the package by running
 
 ```bash
-pip install brainglobe --update
+pip install brainglobe --upgrade
 ```
 
 in your environment, which will fetch the new version of all the affected packages.
@@ -38,7 +38,7 @@ If you are manually managing your BrainGlobe tools, you will need to uninstall `
 
 ```bash
 pip uninstall imio
-pip install --update brainglobe-utils
+pip install --upgrade brainglobe-utils
 ```
 
 You'll also need to update the following packages, which now depend on at least `brainglobe-utils` version 0.4.0 instead of `imio`:

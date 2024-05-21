@@ -20,7 +20,7 @@ Beyond this name change, there will be no functionality changes to the package, 
 Users who installed BrainGlobe through it's single ("meta") package install with `pip install brainglobe` will just need to update the package by running
 
 ```bash
-pip install brainglobe --update
+pip install brainglobe --upgrade
 ```
 
 in your environment, which will fetch the new version of all the affected packages.

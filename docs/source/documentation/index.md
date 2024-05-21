@@ -36,7 +36,7 @@ Otherwise, it will use the version of `brainglobe` that you already have install
 You can update your BrainGlobe tools by running
 
 ```bash
-pip install brainglobe --update
+pip install brainglobe --upgrade
 ```
 
 in your virtual environment.

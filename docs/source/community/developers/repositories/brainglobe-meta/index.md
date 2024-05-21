@@ -23,7 +23,7 @@ or
 python -m pip install brainglobe
 ```
 
-Pass the `-U` or `--update` flag to `pip` to force an update on an existing install.
+Pass the `-U` or `--upgrade` flag to `pip` to force an update on an existing install.
 
 ## Conventions
 

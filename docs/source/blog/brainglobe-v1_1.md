@@ -23,18 +23,18 @@ release. In particular, he has made many contributions to `cellfinder`, includin
 If you have an installation of the metapackage (recommended) then all you need to do is update `brainglobe` to the 
 latest version with:
 ```bash
-pip install --update brainglobe
+pip install --upgrade brainglobe
 ```
 
 If you use `brainglobe-workflows` (e.g. for `brainmapper`) you will need to update it individually, as it is not 
 included within the metapackage:
 ```bash
-pip install --update brainglobe-workflows
+pip install --upgrade brainglobe-workflows
 ```
 
 If you have a single tool installed, you can just update that tool. For example to update `brainrender`, run:
 ```bash
-pip install --update brainrender
+pip install --upgrade brainrender
 ```
 
 ## Details
