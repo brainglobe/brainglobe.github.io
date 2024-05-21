@@ -21,7 +21,7 @@ As such, it has now been moved into a submodule, `brainglobe_atlasapi.atlas_gene
 If you are using an install of `bg-atlasapi` that you got through `pip install brainglobe`, then all you need to do is update `brainglobe` to the latest version with
 
 ```bash
-pip install --update brainglobe
+pip install --upgrade brainglobe
 ```
 
 This will remove the old packages from your environment, install `brainglobe-atlasapi`, and also update all your other BrainGlobe tools to use the new package rather than the old `bg-atlasapi`.
