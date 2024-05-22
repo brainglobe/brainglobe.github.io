@@ -559,14 +559,14 @@ In terms of your source code, the only necessary changes should be to:</p>
 <section id="what-do-i-need-to-do">
 <h2>What do I need to do?<a class="headerlink" href="#what-do-i-need-to-do" title="Link to this heading">#</a></h2>
 <p>Users who installed BrainGlobe through it’s single (“meta”) package install with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">brainglobe</span></code> will just need to update the package by running</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>brainglobe<span class="w"> </span>--update
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>brainglobe<span class="w"> </span>--upgrade
 </pre></div>
 </div>
 <p>in your environment, which will fetch the new version of all the affected packages.
 You can use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">show</span> <span class="pre">brainglobe</span></code> to check your version has updated - you should find you now have <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> version as 1.0.2 or higher.</p>
 <p>If you are manually managing your BrainGlobe tools, you will need to uninstall <code class="docutils literal notranslate"><span class="pre">imio</span></code> and update <code class="docutils literal notranslate"><span class="pre">brainglobe-utils</span></code> to at least version 0.4.0, through</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>uninstall<span class="w"> </span>imio
-pip<span class="w"> </span>install<span class="w"> </span>--update<span class="w"> </span>brainglobe-utils
+pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>brainglobe-utils
 </pre></div>
 </div>
 <p>You’ll also need to update the following packages, which now depend on at least <code class="docutils literal notranslate"><span class="pre">brainglobe-utils</span></code> version 0.4.0 instead of <code class="docutils literal notranslate"><span class="pre">imio</span></code>:</p>
