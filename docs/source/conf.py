@@ -193,5 +193,8 @@ notfound_urls_prefix = None
 
 linkcheck_ignore = [
     "https://neuromorpho.org/",
-    "https://brainglobe.zulipchat.com/#narrow/stream/414089-developer-meeting"
+    "https://brainglobe.zulipchat.com/#narrow/stream/414089-developer-meeting",
+    "https://easyengine.io",
+    "https://www.scientifica.uk.com",
+    "https://brainglobe.info"
     ]
