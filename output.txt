@@ -1,27 +1,27 @@
 documentation/brainglobe-atlasapi/index.md:24: [redirected permanently] http://fishatlas.neuro.mpg.de to https://mapzebrain.org/
 documentation/brainglobe-atlasapi/usage/python-api.md:5: [redirected permanently] http://gin.g-node.org/brainglobe/atlases to https://gin.g-node.org/brainglobe/atlases
-documentation/brainglobe-atlasapi/usage/atlas-details.md:62: [redirected with Found] https://doi.org/10.1016/j.celrep.2021.109721 to https://linkinghub.elsevier.com/retrieve/pii/S2211124721011700
 documentation/brainglobe-atlasapi/usage/atlas-details.md:24: [redirected with Found] https://doi.org/10.1016/j.cell.2020.04.007 to https://linkinghub.elsevier.com/retrieve/pii/S0092867420304025
-documentation/brainglobe-atlasapi/index.md:28: [redirected with Found] https://doi.org/10.1016/j.crmeth.2021.100074 to https://linkinghub.elsevier.com/retrieve/pii/S2667237521001260
+documentation/brainglobe-atlasapi/usage/atlas-details.md:62: [redirected with Found] https://doi.org/10.1016/j.celrep.2021.109721 to https://linkinghub.elsevier.com/retrieve/pii/S2211124721011700
 documentation/brainglobe-atlasapi/index.md:26: [redirected with Found] https://doi.org/10.1016/j.celrep.2014.12.014 to https://linkinghub.elsevier.com/retrieve/pii/S2211124714010432
-documentation/brainglobe-atlasapi/index.md:30: [redirected with Found] https://doi.org/10.1016/j.neuroimage.2014.04.001 to https://linkinghub.elsevier.com/retrieve/pii/S1053811914002419
+documentation/brainglobe-atlasapi/index.md:28: [redirected with Found] https://doi.org/10.1016/j.crmeth.2021.100074 to https://linkinghub.elsevier.com/retrieve/pii/S2667237521001260
 tutorials/visualise-atlas-napari.md:3: [redirected with Found] https://doi.org/10.1016/j.neuron.2019.04.034 to https://linkinghub.elsevier.com/retrieve/pii/S0896627319303915
+documentation/brainglobe-atlasapi/index.md:30: [redirected with Found] https://doi.org/10.1016/j.neuroimage.2014.04.001 to https://linkinghub.elsevier.com/retrieve/pii/S1053811914002419
 documentation/brainglobe-atlasapi/index.md:27: [redirected with Found] https://doi.org/10.1007/s12021-020-09490-8 to https://link.springer.com/article/10.1007/s12021-020-09490-8
-documentation/brainglobe-atlasapi/usage/atlas-details.md:39: [redirected with Found] https://doi.org/10.1038/s41467-019-13057-w to https://www.nature.com/articles/s41467-019-13057-w
 documentation/brainglobe-segmentation/index.md:37: [redirected with Found] https://doi.org/10.1038/s41598-021-04676-9 to https://www.nature.com/articles/s41598-021-04676-9
 documentation/brainreg/index.md:51: [redirected with Found] https://doi.org/10.1038/ncomms11879 to https://www.nature.com/articles/ncomms11879
 documentation/brainglobe-atlasapi/usage/atlas-details.md:122: [redirected with Found] https://doi.org/10.1038/s41592-023-02034-3 to https://www.nature.com/articles/s41592-023-02034-3
-documentation/brainglobe-atlasapi/index.md:65: [redirected with Found] https://doi.org/10.21105/joss.02668 to https://joss.theoj.org/papers/10.21105/joss.02668
+documentation/brainglobe-atlasapi/usage/atlas-details.md:39: [redirected with Found] https://doi.org/10.1038/s41467-019-13057-w to https://www.nature.com/articles/s41467-019-13057-w
 documentation/brainglobe-atlasapi/index.md:31: [redirected with Found] https://doi.org/10.7554/eLife.61408 to https://elifesciences.org/articles/61408
-documentation/brainglobe-atlasapi/index.md:29: [redirected with Found] https://doi.org/10.7554/eLife.69988 to https://elifesciences.org/articles/69988
+documentation/brainglobe-atlasapi/index.md:65: [redirected with Found] https://doi.org/10.21105/joss.02668 to https://joss.theoj.org/papers/10.21105/joss.02668
 documentation/brainrender/index.md:48: [redirected with Found] https://doi.org/10.7554/eLife.65751 to https://elifesciences.org/articles/65751
 documentation/brainglobe-workflows/brainmapper/index.md:40: [redirected permanently] https://doi.org/10.1371/journal.pcbi.1009074 to https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009074
+documentation/brainglobe-atlasapi/index.md:29: [redirected with Found] https://doi.org/10.7554/eLife.69988 to https://elifesciences.org/articles/69988
 documentation/brainglobe-atlasapi/usage/atlas-details.md:131: [redirected permanently] https://doi.org/10.1101/2021.05.04.442625 to https://www.biorxiv.org/content/10.1101/2021.05.04.442625v2
 documentation/brainglobe-atlasapi/usage/atlas-details.md:104: [redirected permanently] https://doi.org/10.1101/2021.05.06.443008 to https://www.biorxiv.org/content/10.1101/2021.05.06.443008v1
 community/roadmaps/november-2023.md:62: [redirected with Found] https://github.com/brainglobe/bg-atlasgen/issues/46 to https://github.com/brainglobe/brainglobe-atlasapi/issues/233
 community/roadmaps/november-2023.md:63: [redirected with Found] https://github.com/brainglobe/bg-atlasgen/issues/71 to https://github.com/brainglobe/brainglobe-atlasapi/issues/225
-community/roadmaps/november-2023.md:60: [redirected permanently] https://github.com/brainglobe/bg-atlasapi/issues/141 to https://github.com/brainglobe/brainglobe-atlasapi/issues/141
 community/roadmaps/november-2023.md:65: [redirected with Found] https://github.com/brainglobe/bg-atlasgen/issues/84 to https://github.com/brainglobe/brainglobe-atlasapi/issues/215
+community/roadmaps/november-2023.md:60: [redirected permanently] https://github.com/brainglobe/bg-atlasapi/issues/141 to https://github.com/brainglobe/brainglobe-atlasapi/issues/141
 community/roadmaps/november-2023.md:64: [redirected with Found] https://github.com/brainglobe/bg-atlasgen/issues/85 to https://github.com/brainglobe/brainglobe-atlasapi/issues/212
 documentation/brainrender/usage/using-your-data/index.md:12: [redirected with Found] https://github.com/brainglobe/brainrender/tree/master/examples to https://github.com/brainglobe/brainrender/tree/main/examples
 documentation/brainglobe-atlasapi/usage/atlas-details.md:136: [redirected with Found] https://www.brain-map.org to https://portal.brain-map.org/
