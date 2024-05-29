@@ -11,7 +11,9 @@ Once you've [installed brainrender](/documentation/brainrender/installation), yo
 ```python
 from brainrender.scene import Scene
 from brainrender.actors import Points
+from brainrender import settings
 
+settings.SHADER_STYLE = "plastic"
 cells_path = "test_brain/output/points/points.npy"
 
 # Initialise brainrender scene
@@ -21,9 +23,9 @@ scene = Scene()
 cells = Points(cells_path, radius=45, colors="palegoldenrod", alpha=0.8)
 
 # Visualise injection site (retrosplenial cortex)
-scene.add_brain_region(["RSPd"], color="mediumseagreen", alpha=0.6)
-scene.add_brain_region(["RSPv"], color="purple", alpha=0.6)
-scene.add_brain_region(["RSPagl"], color="mediumseagreen", alpha=0.6)
+scene.add_brain_region("RSPd", color="mediumseagreen", alpha=0.6)
+scene.add_brain_region("RSPv", color="purple", alpha=0.6)
+scene.add_brain_region("RSPagl", color="mediumseagreen", alpha=0.6)
 
 # Add cells
 scene.add(cells)
@@ -32,6 +34,6 @@ scene.render()
 ```
 
 :::{hint}
-As the `points.h5`file contains the detected cells in atlas space, you can load cells from 
+As the `points.npy`file contains the detected cells in atlas space, you can load cells from 
 multiple brains (e.g., in a different colour).
 :::
