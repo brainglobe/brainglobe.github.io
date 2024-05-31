@@ -88,7 +88,7 @@ end_plane = -1
 trained_model = None
 model_weights = None
 model = "resnet50_tv"
-batch_size = 32
+batch_size = 64
 n_free_cpus = 2
 network_voxel_sizes = [5, 1, 1]
 soma_diameter = 16
@@ -169,7 +169,7 @@ run_training(
     learning_rate=0.0001,
     continue_training=True, # by default use supplied model
     test_fraction=0.1,
-    batch_size=32,
+    batch_size=16,
     save_progress=True,
     epochs=10,
 )
