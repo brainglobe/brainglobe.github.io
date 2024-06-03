@@ -39,7 +39,13 @@ pip install --upgrade cellfinder
 The classification performance between the two versions is comparable. Below is a comparison of the performance between the two versions using data from the [`cellfinder` paper](https://doi.org/10.1371/journal.pcbi.1009074). Running `cellfinder` with a PyTorch backend results in a  comparable Pearson correlation and slightly improved linear best-fit slope (labelled as "coeff" in the plot) when comparing to manual cell counts. For more details on how the graphs were generated, see the [`cellfinder` paper](https://doi.org/10.1371/journal.pcbi.1009074).
 
 ### TensorFlow backend
-![TensorFlow Performance](../_static/comparison_tensorflow.png)
+
+<p align="center">
+    <img src="../_static/comparison_tensorflow.png" width="60%">
+</p>
 
 ### PyTorch backend
-![PyTorch Performance](../_static/comparison_torch.png)
+
+<p align="center">
+    <img src="../_static/comparison_torch.png" width="60%">
+</p>
