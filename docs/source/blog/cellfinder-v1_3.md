@@ -41,11 +41,11 @@ The classification performance between the two versions is comparable. Below is 
 ### TensorFlow backend
 
 <p align="center">
-    <img src="../_static/comparison_tensorflow.png" width="60%">
+    <img src="../_static/comparison_tensorflow.png" width="800px">
 </p>
 
 ### PyTorch backend
 
 <p align="center">
-    <img src="../_static/comparison_torch.png" width="60%">
+    <img src="../_static/comparison_torch.png" width="800px-">
 </p>
