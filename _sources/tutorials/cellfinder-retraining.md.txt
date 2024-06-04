@@ -46,7 +46,7 @@ is inside the `cellfinder-retraining` directory created earlier
 
 18. Click `run`
 19. The training will then run, watch the terminal for updates. Once complete, there will be trained models
-(files ending in `.h5`) in the `trained_network` directory that can be used for cell detection.
+(files ending in `.keras`) in the `trained_network` directory that can be used for cell detection.
 
 :::{hint}
 For more information about how to use the curation and training plugins, please see 

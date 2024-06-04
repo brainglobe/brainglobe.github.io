@@ -25,7 +25,7 @@ For more details, please see the guide to [retraining the pre-trained network](/
 
 As `brainmapper` relies on a number of third party libraries, notably
 
-- [TensorFlow](https://www.tensorflow.org/),
+- [PyTorch](https://pytorch.org/),
 - [CUDA](https://developer.nvidia.com/cuda-zone),
 - [cuDNN](https://developer.nvidia.com/cudnn),
 

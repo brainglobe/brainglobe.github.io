@@ -675,7 +675,7 @@ document.write(`
 <p>Some BrainGlobe software will run faster if you have an NVIDIA GPU, and the appropriate software installed.</p>
 <section id="requirements">
 <h3>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h3>
-<p>The requirements are the same as those for <a class="reference external" href="https://www.tensorflow.org/install/pip">tensorflow GPU support</a>,
+<p>The requirements are the same as those for <a class="reference external" href="https://pytorch.org/get-started/locally/">PyTorch GPU support</a>,
 but essentially you need:</p>
 <ul class="simple">
 <li><p>A relatively modern <strong>Windows or Linux based machine</strong> (unfortunately, CUDA acceleration on macOS is not supported).</p></li>
@@ -696,21 +696,14 @@ your institute will let you have).</p>
 <a class="reference external" href="https://www.nvidia.com/download/index.aspx?lang=en-us">here</a>. Hopefully, these will have been installed when your
 machine was set up, but for GPU support in BrainGlobe, you will need version <strong>450.x or greater</strong>.</p>
 </section>
-<section id="installing-cuda-and-cudnn">
-<h3>Installing CUDA and cuDNN<a class="headerlink" href="#installing-cuda-and-cudnn" title="Link to this heading">#</a></h3>
-<p>BrainGlobe uses <a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a> which relies upon <a class="reference external" href="https://en.wikipedia.org/wiki/CUDA">CUDA</a>
-and <a class="reference external" href="https://developer.nvidia.com/cudnn">cuDNN</a>. BrainGlobe requires <strong>CUDA</strong> and <strong>cuDNN.</strong></p>
-<p>CUDA and cuDNN are not too hard to install, but sometimes other software on your machine relies on different versions.
-It is possible to switch between the two, and it is easier if you are <a class="reference internal" href="#"><span class="doc std std-doc">using conda</span></a>
-(see <a class="reference external" href="https://blog.kovalevskyi.com/multiple-version-of-cuda-libraries-on-the-same-machine-b9502d50ae77">here</a>).</p>
-<p>However, we recommend that you install CUDA 11.2 and cuDNN 8.1 via conda if possible:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">cudatoolkit</span><span class="o">=</span><span class="mf">11.2</span> <span class="n">cudnn</span><span class="o">=</span><span class="mf">8.1.0</span>
-</pre></div>
-</div>
-<p>This method is easier and also doesn’t require any admin rights (useful on a cluster or shared machine).</p>
-<p>If this does not work for any reason, or you wish to have a system-wide installation of CUDA and cuDNN, then CUDA can
-be downloaded <a class="reference external" href="https://developer.nvidia.com/cuda-toolkit-archive">here</a> and cuDNN from
-<a class="reference external" href="https://developer.nvidia.com/cudnn">here</a>. N.B. you will need to sign up for a (free) account to download cuDNN.</p>
+<section id="installing-pytorch-with-gpu-support">
+<h3>Installing PyTorch with GPU support<a class="headerlink" href="#installing-pytorch-with-gpu-support" title="Link to this heading">#</a></h3>
+<p>BrainGlobe uses <a class="reference external" href="https://pytorch.org/">PyTorch</a> which relies upon <a class="reference external" href="https://en.wikipedia.org/wiki/CUDA">CUDA</a>
+and <a class="reference external" href="https://developer.nvidia.com/cudnn">cuDNN</a>. PyTorch will install the correct versions of CUDA and cuDNN
+for you based on the choices you make when <a class="reference external" href="https://pytorch.org/get-started/locally/">installing PyTorch</a>.</p>
+<p>We recommend selecting the <code class="docutils literal notranslate"><span class="pre">Stable</span></code> PyTorch build, the <code class="docutils literal notranslate"><span class="pre">Conda</span></code> package, and
+<code class="docutils literal notranslate"><span class="pre">CUDA</span> <span class="pre">11.8</span></code> as the compute platform. Ensure you have the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> conda
+environment activated before running the command provided.</p>
 </section>
 </section>
 </section>
@@ -771,7 +764,7 @@ be downloaded <a class="reference external" href="https://developer.nvidia.com/c
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-nvidia-drivers">Installing NVIDIA drivers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-cuda-and-cudnn">Installing CUDA and cuDNN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-pytorch-with-gpu-support">Installing PyTorch with GPU support</a></li>
 </ul>
 </li>
 </ul>

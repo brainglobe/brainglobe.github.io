@@ -47,40 +47,26 @@ Open a terminal (or Anaconda Prompt), start Python,
   python
 ```
 
-and check that tensorflow can use the GPU,
+and check that PyTorch can use the GPU,
 
 ```python
-import tensorflow as tf
-tf.test.is_gpu_available()
+import torch
+print(torch.cuda.is_available())
+print([(i, torch.cuda.get_device_properties(i)) for i in range(torch.cuda.device_count())])
 ```
 
 If you see something like the output below, then all is well.
 
 ```bash
-2019-06-26 10:51:34.697900: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
-2019-06-26 10:51:34.881183: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 0 with properties: 
-name: TITAN RTX major: 7 minor: 5 memoryClockRate(GHz): 1.77
-pciBusID: 0000:2d:00.0
-totalMemory: 23.62GiB freeMemory: 504.25MiB
-2019-06-26 10:51:34.881217: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
-2019-06-26 10:51:35.251465: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
-2019-06-26 10:51:35.251505: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 
-2019-06-26 10:51:35.251511: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N 
-2019-06-26 10:51:35.251729: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/device:GPU:0 with 195 MB memory) -> physical GPU (device: 0, name: TITAN RTX, pci bus id: 0000:2d:00.0, compute capability: 7.5)
 True
+[(0, _CudaDeviceProperties(name='NVIDIA GeForce RTX 4080', major=8, minor=9, total_memory=16049MB, multi_processor_count=76))]
 ```
 
 If you see something like this:
 
 ```bash
-2020-05-11 12:02:11.891275: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
-2020-05-11 12:02:11.948022: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 1992000000 Hz
-2020-05-11 12:02:11.949756: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55ae9ffc5860 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-2020-05-11 12:02:11.949823: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
-2020-05-11 12:02:11.954796: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
-2020-05-11 12:02:11.954847: E tensorflow/stream_executor/cuda/cuda_driver.cc:351] failed call to cuInit: UNKNOWN ERROR (303)
-2020-05-11 12:02:11.954894: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (hostname): /proc/driver/nvidia/version does not exist
 False
+[]
 ```
 
 Then your GPU is not properly configured.
