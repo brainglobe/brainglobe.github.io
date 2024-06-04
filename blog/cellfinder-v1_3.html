@@ -6,8 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Posted in 2024 &#8212; BrainGlobe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Cellfinder version 1.3.0 is released! &#8212; BrainGlobe</title>
   
   
   
@@ -51,8 +52,8 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/2024';</script>
-    <link rel="canonical" href="https://brainglobe.info/blog/2024.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/cellfinder-v1_3';</script>
+    <link rel="canonical" href="https://brainglobe.info/blog/cellfinder-v1_3.html" />
     <link rel="icon" href="../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -60,13 +61,6 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-
-<link
-  rel="alternate"
-  type="application/atom+xml"
-  href="../blog/atom.xml"
-  title="Posted in 2024"
-/>
 
 
 
@@ -331,6 +325,10 @@ document.write(`
   
 
   
+    <button class="sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
 
     </header>
@@ -526,7 +524,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Posted in 2024</li>
+    <li class="breadcrumb-item active" aria-current="page">Cellfinder...</li>
   </ul>
 </nav>
 </div>
@@ -543,676 +541,71 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
+<section class="tex2jax_ignore mathjax_ignore" id="cellfinder-version-1-3-0-is-released">
+<h1>Cellfinder version 1.3.0 is released!<a class="headerlink" href="#cellfinder-version-1-3-0-is-released" title="Link to this heading">#</a></h1>
+<p>We are excited to announce that a new version of <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> has been released.</p>
+<section id="main-updates">
+<h2>Main updates<a class="headerlink" href="#main-updates" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>This update brings a significant change to the backend of <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code>, as we have switched from TensorFlow to PyTorch. This change allows <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> to support python versions 3.11+, and simplifies the installation process. The new <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> version maintains the same classification accuracy. Models trained using previous versions of <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> will continue to work with the new version.</p></li>
+<li><p>The default batch size used for detection has been increased to 64, which improves classification speed by approximately 40% on most systems. The batch size used for detection can now also be adjusted in the <code class="docutils literal notranslate"><span class="pre">napari</span></code> plugin.</p></li>
+</ul>
+</section>
+<section id="what-do-i-need-to-do">
+<h2>What do I need to do?<a class="headerlink" href="#what-do-i-need-to-do" title="Link to this heading">#</a></h2>
+<p>We recommend using a fresh conda environment to simplify the update.
+For GPU support, please follow the installation instructions in the <a class="reference internal" href="../documentation/setting-up/gpu.html"><span class="std std-doc">documentation</span></a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>cellfinder<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+conda<span class="w"> </span>activate<span class="w"> </span>cellfinder
+pip<span class="w"> </span>install<span class="w"> </span>cellfinder
+</pre></div>
+</div>
+<p>You can also update an existing installation of <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> using pip:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>cellfinder
+</pre></div>
+</div>
+</section>
+<section id="classification-performance">
+<h2>Classification performance<a class="headerlink" href="#classification-performance" title="Link to this heading">#</a></h2>
+<p>The classification performance between the two versions is comparable. Below is a comparison of the performance between the two versions using data from the <a class="reference external" href="https://doi.org/10.1371/journal.pcbi.1009074"><code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> paper</a>. Running <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> with a PyTorch backend results in a  comparable Pearson correlation and slightly improved linear best-fit slope (labelled as “coeff” in the plot) when comparing to manual cell counts. For more details on how the plots were generated, see the <a class="reference external" href="https://doi.org/10.1371/journal.pcbi.1009074"><code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> paper</a>.</p>
+<section id="tensorflow-backend">
+<h3>TensorFlow backend<a class="headerlink" href="#tensorflow-backend" title="Link to this heading">#</a></h3>
+<p align="center">
+    <img src="../_static/comparison_tensorflow.png" width="800px">
+</p>
+</section>
+<section id="pytorch-backend">
+<h3>PyTorch backend<a class="headerlink" href="#pytorch-backend" title="Link to this heading">#</a></h3>
+<p align="center">
+    <img src="../_static/comparison_torch.png" width="800px-">
+</p>
+</section>
+</section>
+</section>
 
-<div class="section ablog__collection">
-  <h1>
+<div class="section ablog__blog_comments">
+  
+  
+
+
+<div class="section ablog__prev-next">
+  <span class="ablog__prev">
     
-      <span>Posted in
+    
+    <a href="brainglobe-v1_1.html">
       
-    2024
+      <i class="fa fa-arrow-circle-left"></i>
+      
+      <span>BrainGlobe version 1.1.0 is released!</span>
+    </a>
     
   </span>
-  </h1>
-  
-  
-  <div class="section ablog-post">
-    <h2 class="ablog-post-title">
-      <a href="cellfinder-v1_3.html">Cellfinder version 1.3.0 is released!</a>
-    </h2>
-    <ul class="ablog-archive">
-      <li>
-        
-        
-        <i class="fa fa-calendar"></i>
-        
-        <span>03 June 2024</span>
-        
-      </li>
-      <div class="ablog-sidebar-item ablog__postcard2">
-
-
-<li id="ablog-sidebar-item author ablog__author">
-  <span>
+  <span class="ablog__spacer">&nbsp;</span>
+  <span class="ablog__next">
     
-    <i class="fa-fw fa fa-user"></i>
-    
-    </span>
-  
-  
-  <a href="author/igor-tatarnikov.html">Igor Tatarnikov</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item location ablog__location">
-  <span>
-    
-    <i class="fa-fw fa fa-location-arrow"></i>
-    
-    </span>
-  
-  
-  <a href="location/london.html">London</a>
-  
-  ,
-  
-  
-  
-  
-  <a href="location/england.html">England</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item language ablog__language">
-  <span>
-    
-    <i class="fa-fw fa fa-language"></i>
-    
-    </span>
-  
-  
-  <a href="language/english.html">English</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item category ablog__category">
-  <span>
-    
-    <i class="fa-fw fa fa-folder-open"></i>
-    
-    </span>
-  
-  
-  <a href="category/brainglobe.html">brainglobe</a>
-  
-  
-  
-</li>
-
-
-
+  </span>
 </div>
-    </ul>
-    <p class="ablog-post-excerpt"><p>We are excited to announce that a new version of <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> has been released.</p>
-</p>
 
-    <p class="ablog-post-expand"><a href="cellfinder-v1_3.html"><em>Read more ...</em></a></p>
-    <hr/>
-  </div>
-  
-  <div class="section ablog-post">
-    <h2 class="ablog-post-title">
-      <a href="brainglobe-v1_1.html">BrainGlobe version 1.1.0 is released!</a>
-    </h2>
-    <ul class="ablog-archive">
-      <li>
-        
-        
-        <i class="fa fa-calendar"></i>
-        
-        <span>16 May 2024</span>
-        
-      </li>
-      <div class="ablog-sidebar-item ablog__postcard2">
-
-
-<li id="ablog-sidebar-item author ablog__author">
-  <span>
-    
-    <i class="fa-fw fa fa-user"></i>
-    
-    </span>
-  
-  
-  <a href="author/adam-tyson.html">Adam Tyson</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item location ablog__location">
-  <span>
-    
-    <i class="fa-fw fa fa-location-arrow"></i>
-    
-    </span>
-  
-  
-  <a href="location/london.html">London</a>
-  
-  ,
-  
-  
-  
-  
-  <a href="location/england.html">England</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item language ablog__language">
-  <span>
-    
-    <i class="fa-fw fa fa-language"></i>
-    
-    </span>
-  
-  
-  <a href="language/english.html">English</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item category ablog__category">
-  <span>
-    
-    <i class="fa-fw fa fa-folder-open"></i>
-    
-    </span>
-  
-  
-  <a href="category/brainglobe.html">brainglobe</a>
-  
-  
-  
-</li>
-
-
-
-</div>
-    </ul>
-    <p class="ablog-post-excerpt"><p>A new version of the BrainGlobe metapackage has been released following updates to lots of BrainGlobe tools
-(details below).</p>
-</p>
-
-    <p class="ablog-post-expand"><a href="brainglobe-v1_1.html"><em>Read more ...</em></a></p>
-    <hr/>
-  </div>
-  
-  <div class="section ablog-post">
-    <h2 class="ablog-post-title">
-      <a href="atlasapi-atlasgen-merge.html">bg-atlasapi and bg-atlasgen have merged under a new name</a>
-    </h2>
-    <ul class="ablog-archive">
-      <li>
-        
-        
-        <i class="fa fa-calendar"></i>
-        
-        <span>14 February 2024</span>
-        
-      </li>
-      <div class="ablog-sidebar-item ablog__postcard2">
-
-
-<li id="ablog-sidebar-item author ablog__author">
-  <span>
-    
-    <i class="fa-fw fa fa-user"></i>
-    
-    </span>
-  
-  
-  <a href="author/will-graham.html">Will Graham</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item location ablog__location">
-  <span>
-    
-    <i class="fa-fw fa fa-location-arrow"></i>
-    
-    </span>
-  
-  
-  <a href="location/london.html">London</a>
-  
-  ,
-  
-  
-  
-  
-  <a href="location/england.html">England</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item language ablog__language">
-  <span>
-    
-    <i class="fa-fw fa fa-language"></i>
-    
-    </span>
-  
-  
-  <a href="language/english.html">English</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item category ablog__category">
-  <span>
-    
-    <i class="fa-fw fa fa-folder-open"></i>
-    
-    </span>
-  
-  
-  <a href="category/brainglobe.html">brainglobe</a>
-  
-  
-  
-</li>
-
-
-
-</div>
-    </ul>
-    <p class="ablog-post-excerpt"><p><code class="docutils literal notranslate"><span class="pre">bg-atlasapi</span></code> and <code class="docutils literal notranslate"><span class="pre">bg-atlasgen</span></code> have merged into a single package, now called <code class="docutils literal notranslate"><span class="pre">brainglobe-atlasapi</span></code>.
-<code class="docutils literal notranslate"><span class="pre">brainglobe-atlasapi</span></code> now provides the same API that <code class="docutils literal notranslate"><span class="pre">bg-atlasapi</span></code> provided, in exactly the same way - all that needs to happen is a name change in your scripts.</p>
-</p>
-
-    <p class="ablog-post-expand"><a href="atlasapi-atlasgen-merge.html"><em>Read more ...</em></a></p>
-    <hr/>
-  </div>
-  
-  <div class="section ablog-post">
-    <h2 class="ablog-post-title">
-      <a href="imio-retirement.html">imio will be merging into brainglobe-utils</a>
-    </h2>
-    <ul class="ablog-archive">
-      <li>
-        
-        
-        <i class="fa fa-calendar"></i>
-        
-        <span>08 February 2024</span>
-        
-      </li>
-      <div class="ablog-sidebar-item ablog__postcard2">
-
-
-<li id="ablog-sidebar-item author ablog__author">
-  <span>
-    
-    <i class="fa-fw fa fa-user"></i>
-    
-    </span>
-  
-  
-  <a href="author/will-graham.html">Will Graham</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item location ablog__location">
-  <span>
-    
-    <i class="fa-fw fa fa-location-arrow"></i>
-    
-    </span>
-  
-  
-  <a href="location/london.html">London</a>
-  
-  ,
-  
-  
-  
-  
-  <a href="location/england.html">England</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item language ablog__language">
-  <span>
-    
-    <i class="fa-fw fa fa-language"></i>
-    
-    </span>
-  
-  
-  <a href="language/english.html">English</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item category ablog__category">
-  <span>
-    
-    <i class="fa-fw fa fa-folder-open"></i>
-    
-    </span>
-  
-  
-  <a href="category/brainglobe.html">brainglobe</a>
-  
-  
-  
-</li>
-
-
-
-</div>
-    </ul>
-    <p class="ablog-post-excerpt"><p>The <code class="docutils literal notranslate"><span class="pre">imio</span></code> package will be absorbed into <code class="docutils literal notranslate"><span class="pre">brainglobe-utils</span></code> as a submodule, so will no longer be receiving standalone updates.
-This decision was made because:</p>
-</p>
-
-    <p class="ablog-post-expand"><a href="imio-retirement.html"><em>Read more ...</em></a></p>
-    <hr/>
-  </div>
-  
-  <div class="section ablog-post">
-    <h2 class="ablog-post-title">
-      <a href="bg-space-rename.html">bg-space has been renamed</a>
-    </h2>
-    <ul class="ablog-archive">
-      <li>
-        
-        
-        <i class="fa fa-calendar"></i>
-        
-        <span>24 January 2024</span>
-        
-      </li>
-      <div class="ablog-sidebar-item ablog__postcard2">
-
-
-<li id="ablog-sidebar-item author ablog__author">
-  <span>
-    
-    <i class="fa-fw fa fa-user"></i>
-    
-    </span>
-  
-  
-  <a href="author/will-graham.html">Will Graham</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item location ablog__location">
-  <span>
-    
-    <i class="fa-fw fa fa-location-arrow"></i>
-    
-    </span>
-  
-  
-  <a href="location/london.html">London</a>
-  
-  ,
-  
-  
-  
-  
-  <a href="location/england.html">England</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item language ablog__language">
-  <span>
-    
-    <i class="fa-fw fa fa-language"></i>
-    
-    </span>
-  
-  
-  <a href="language/english.html">English</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item category ablog__category">
-  <span>
-    
-    <i class="fa-fw fa fa-folder-open"></i>
-    
-    </span>
-  
-  
-  <a href="category/brainglobe.html">brainglobe</a>
-  
-  
-  
-</li>
-
-
-
-</div>
-    </ul>
-    <p class="ablog-post-excerpt"><p>The “bg” prefix that a number of BrainGlobe tools carry is not very distinctive nor informative, so we are rolling out minor name changes to a lot of our packages that contain this prefix.
-We are also taking this opportunity to bring these tools into line with our developer guidelines for automatic deployment, tooling, and testing.</p>
-</p>
-
-    <p class="ablog-post-expand"><a href="bg-space-rename.html"><em>Read more ...</em></a></p>
-    <hr/>
-  </div>
-  
-  <div class="section ablog-post">
-    <h2 class="ablog-post-title">
-      <a href="version1/version_1_released.html">BrainGlobe version 1 is here!</a>
-    </h2>
-    <ul class="ablog-archive">
-      <li>
-        
-        
-        <i class="fa fa-calendar"></i>
-        
-        <span>08 January 2024</span>
-        
-      </li>
-      <div class="ablog-sidebar-item ablog__postcard2">
-
-
-<li id="ablog-sidebar-item author ablog__author">
-  <span>
-    
-    <i class="fa-fw fa fa-user"></i>
-    
-    </span>
-  
-  
-  <a href="author/will-graham.html">Will Graham</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item location ablog__location">
-  <span>
-    
-    <i class="fa-fw fa fa-location-arrow"></i>
-    
-    </span>
-  
-  
-  <a href="location/london.html">London</a>
-  
-  ,
-  
-  
-  
-  
-  <a href="location/england.html">England</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item language ablog__language">
-  <span>
-    
-    <i class="fa-fw fa fa-language"></i>
-    
-    </span>
-  
-  
-  <a href="language/english.html">English</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item category ablog__category">
-  <span>
-    
-    <i class="fa-fw fa fa-folder-open"></i>
-    
-    </span>
-  
-  
-  <a href="category/brainglobe-v1.html">BrainGlobe-v1</a>
-  
-  
-  
-</li>
-
-
-
-</div>
-    </ul>
-    <p class="ablog-post-excerpt"><p>Following our series of incremental updates to a number of BrainGlobe tools, we are pleased to announce that BrainGlobe version 1 has been released today!
-Users can now enjoy:</p>
-</p>
-
-    <p class="ablog-post-expand"><a href="version1/version_1_released.html"><em>Read more ...</em></a></p>
-    <hr/>
-  </div>
-  
-  <div class="section ablog-post">
-    <h2 class="ablog-post-title">
-      <a href="version1/core_and_napari_merge.html">cellfinder-core and cellfinder-napari have merged</a>
-    </h2>
-    <ul class="ablog-archive">
-      <li>
-        
-        
-        <i class="fa fa-calendar"></i>
-        
-        <span>02 January 2024</span>
-        
-      </li>
-      <div class="ablog-sidebar-item ablog__postcard2">
-
-
-<li id="ablog-sidebar-item author ablog__author">
-  <span>
-    
-    <i class="fa-fw fa fa-user"></i>
-    
-    </span>
-  
-  
-  <a href="author/will-graham.html">Will Graham</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item location ablog__location">
-  <span>
-    
-    <i class="fa-fw fa fa-location-arrow"></i>
-    
-    </span>
-  
-  
-  <a href="location/london.html">London</a>
-  
-  ,
-  
-  
-  
-  
-  <a href="location/england.html">England</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item language ablog__language">
-  <span>
-    
-    <i class="fa-fw fa fa-language"></i>
-    
-    </span>
-  
-  
-  <a href="language/english.html">English</a>
-  
-  
-  
-</li>
-
-
-<li id="ablog-sidebar-item category ablog__category">
-  <span>
-    
-    <i class="fa-fw fa fa-folder-open"></i>
-    
-    </span>
-  
-  
-  <a href="category/brainglobe-v1.html">BrainGlobe-v1</a>
-  
-  
-  
-</li>
-
-
-
-</div>
-    </ul>
-    <p class="ablog-post-excerpt"><p><a class="reference internal" href="version1/version_1_announcement.html"><span class="std std-doc">BrainGlobe version 1</span></a> is almost ready, and the next stage of its release journey is the merging of the “backend” <code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code> and <code class="docutils literal notranslate"><span class="pre">cellfinder-napari</span></code> packages into one.
-We had previously <a class="reference internal" href="version1/cellfinder_migration_live.html"><span class="std std-doc">migrated the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> data analysis workflow</span></a> into the new <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code> package, as part of our efforts to separate “backend” BrainGlobe tools from common analysis pipelines.
-This means that there is no longer any need to keep the “backend” package (<code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code>) and nor the visualisation plugin (<code class="docutils literal notranslate"><span class="pre">cellfinder-napari</span></code>) stored in separate, lower-level packages.
-As such;</p>
-</p>
-
-    <p class="ablog-post-expand"><a href="version1/core_and_napari_merge.html"><em>Read more ...</em></a></p>
-    <hr/>
-  </div>
   
   
 </div>
@@ -1232,6 +625,29 @@ As such;</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-updates">Main updates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-i-need-to-do">What do I need to do?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-performance">Classification performance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-backend">TensorFlow backend</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-backend">PyTorch backend</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
