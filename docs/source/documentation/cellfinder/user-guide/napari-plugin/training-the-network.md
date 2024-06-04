@@ -57,4 +57,4 @@ The values can be reset by clicking the **Reset defaults** button.
 Click the **Run** button.&#x20;
 
 The plugin will then run (this may take a while if you have lots of training data, or you have set many epochs).
-Trained models (`.h5` files) will be saved into your output directory, to be used for cell detection.
+Trained models (`.keras` files) will be saved into your output directory, to be used for cell detection.
