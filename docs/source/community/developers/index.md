@@ -44,7 +44,7 @@ will create and activate a `conda` environment with the requirements needed
 for a development environment:
 
 ```sh
-conda create -n brainglobe-dev -c conda-forge python=3.10 napari
+conda create -n brainglobe-dev -c conda-forge python=3.11 napari
 conda activate brainglobe-dev
 ```
 
