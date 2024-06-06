@@ -671,7 +671,7 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="image-io-submodule">
 <h1>Image IO submodule<a class="headerlink" href="#image-io-submodule" title="Link to this heading">#</a></h1>
 <p>The image IO submodule provides various options to load and save image data.
-It supports common formats like <code class="docutils literal notranslate"><span class="pre">tiff</span></code>, <code class="docutils literal notranslate"><span class="pre">nrrd</span></code> and <code class="docutils literal notranslate"><span class="pre">nifti</span></code>.</p>
+It supports common formats like <code class="docutils literal notranslate"><span class="pre">tiff</span></code> and <code class="docutils literal notranslate"><span class="pre">nifti</span></code>.</p>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
 <p>The image IO submodule is provided as part of <code class="docutils literal notranslate"><span class="pre">brainglobe_utils</span></code> which comes with the one-line BrainGlobe install (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">brainglobe</span></code>).
@@ -693,9 +693,6 @@ For example, the general purpose <code class="docutils literal notranslate"><spa
 
 <span class="c1"># directory containing a sequence of 2D tiffs</span>
 <span class="n">load</span><span class="o">.</span><span class="n">load_from_folder</span><span class="p">(</span><span class="s1">&#39;/path/to/dir&#39;</span><span class="p">)</span>
-
-<span class="c1"># nrrd</span>
-<span class="n">load</span><span class="o">.</span><span class="n">load_nrrd</span><span class="p">(</span><span class="s1">&#39;mydata.nrrd&#39;</span><span class="p">)</span>
 
 <span class="c1"># nifti</span>
 <span class="n">load</span><span class="o">.</span><span class="n">load_nii</span><span class="p">(</span><span class="s1">&#39;mydata.nii&#39;</span><span class="p">)</span>
@@ -724,9 +721,6 @@ For example, the general purpose <code class="docutils literal notranslate"><spa
 
 <span class="c1"># directory containing a sequence of 2D tiffs</span>
 <span class="n">save</span><span class="o">.</span><span class="n">to_tiffs</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="s1">&#39;/path/to/dir/prefix&#39;</span><span class="p">)</span>
-
-<span class="c1"># nrrd</span>
-<span class="n">save</span><span class="o">.</span><span class="n">to_nrrd</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="s1">&#39;mydata.nrrd&#39;</span><span class="p">)</span>
 
 <span class="c1"># nifti</span>
 <span class="n">save</span><span class="o">.</span><span class="n">to_nii</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="s1">&#39;mydata.nii&#39;</span><span class="p">)</span>

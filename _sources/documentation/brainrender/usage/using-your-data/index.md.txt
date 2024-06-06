@@ -40,8 +40,8 @@ and process neuron morphology data.
 
 Given the popularity of python for scientific research, there are tools to load almost all data formats. These include 
 numpy to load `.npy` files,  `tiffiles` for `.tiff` etc. BrainGlobe provides a general purpose software tool for 
-loading and saving image data ([image_io](/documentation/brainglobe-utils/image_io)). You can use `image_io` to load most types of 
-data (e.g.  `.nrrd`, `.tiff`, `.nifti` etc), e.g.:
+loading and saving image data ([image_io](/documentation/brainglobe-utils/image_io)). You can use `image_io` to load many types of 
+data (e.g. `.tiff`, `.nifti` etc), e.g.:
 
 ```python
 from brainglobe_utils.image_io import load
