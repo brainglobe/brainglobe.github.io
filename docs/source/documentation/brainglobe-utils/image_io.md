@@ -1,7 +1,7 @@
 # Image IO submodule
 
 The image IO submodule provides various options to load and save image data. 
-It supports common formats like `tiff`, `nrrd` and `nifti`.
+It supports common formats like `tiff` and `nifti`.
 
 ## Installation
 
@@ -28,9 +28,6 @@ load.load_img_stack('mydata.tif', x_scaling_factor=1, y_scaling_factor=1, z_scal
 
 # directory containing a sequence of 2D tiffs
 load.load_from_folder('/path/to/dir')
-
-# nrrd
-load.load_nrrd('mydata.nrrd')
 
 # nifti
 load.load_nii('mydata.nii')
@@ -64,9 +61,6 @@ save.to_tiff(my_array, 'mydata.tif')
 
 # directory containing a sequence of 2D tiffs
 save.to_tiffs(my_array, '/path/to/dir/prefix')
-
-# nrrd
-save.to_nrrd(my_array, 'mydata.nrrd')
 
 # nifti
 save.to_nii(my_array, 'mydata.nii')
