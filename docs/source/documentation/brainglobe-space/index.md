@@ -61,7 +61,7 @@ To handle this situation, we can define a source space using the `SpaceConventio
 stack = np.random.rand(3, 2, 4)  # a stack in source space
 annotations = np.array([[0, 0, 0], [2, 1, 3]])  # related point annotations
 
-source_space = bg.SpaceConvention(target_origin, stack.shape)
+source_space = bg.SpaceConvention(source_origin, stack.shape)
 
 mapped_stack = source_space.map_stack_to("ipr", stack)  # transform the stack
 mapped_annotations = source_space.map_points_to("ipr", annotations)  # transform the points
