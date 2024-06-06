@@ -56,7 +56,7 @@ to use any of these cameras just pass the corresponding name to `Scene.render` (
 
 You can, however, create a **custom** camera for your needs by specifying a set of **camera parameters** and pass that 
 (as a dictionary) to `scene.render`. To get the parameters you need, the simplest thing is to render your scene with 
-any camera, move the scene to get the point of view you need and press `c` on your keyboard. This will print out 
+any camera, move the scene to get the point of view you need and press `shift-C` on your keyboard. This will print out 
 the current camera parameters. You can then close your scene and copy-paste the camera parameters in your code. 
 The next time you render your scene it will use your parameters.
 
