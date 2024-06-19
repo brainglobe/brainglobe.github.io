@@ -443,6 +443,11 @@ In no particular order:
 :link: https://github.com/K-Meech
 :::
 
+:::{grid-item-card} Robert Kozel
+:img-bottom: https://avatars.githubusercontent.com/u/26252970?v=4
+:link: https://github.com/Robkozol
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
