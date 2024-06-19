@@ -123,7 +123,7 @@ Available versions:
 This atlas is only available at 39μm resolution:
 * `whs_sd_rat_39um` - 39μm resolution
 
-## Zebrafish
+## Fish
 ### [Max Planck Zebrafish Brain Atlas](http://fishatlas.neuro.mpg.de)
 This atlas is only available at 1μm resolution:
 * `mpin_zfish_1um`
@@ -132,6 +132,10 @@ This atlas is only available at 1μm resolution:
 This atlas is only available at 4μm resolution:
 * `azba_zfish_4um`
 
+### [Blind Mexican cavefish Brain Atlas](https://elifesciences.org/articles/80777)
+This atlas is only available at 2μm resolution:
+* `sju_cavefish_2um`
+  
 ## Human
 ### [Allen Human Brain Atlas](https://www.brain-map.org)
 This atlas is included mostly for visualisation and comparison to the other atlases. 
