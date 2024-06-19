@@ -443,7 +443,7 @@ In no particular order:
 :link: https://github.com/K-Meech
 :::
 
-:::{grid-item-card} Robert Kozel
+:::{grid-item-card} Robert Kozol
 :img-bottom: https://avatars.githubusercontent.com/u/26252970?v=4
 :link: https://github.com/Robkozol
 :::
