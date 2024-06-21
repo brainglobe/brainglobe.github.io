@@ -150,7 +150,7 @@ inspect_meshes_folder("~/.brainglobe/temp/allen_mouse_10um_v1.0/meshes")
 ```
 
 Once an atlas is created with BrainGlobe’s atlas generation tools, it can be used with most software from the BrainGlobe software suite.
-These include [brainrender](/documentation/brainrender/index) and [brainrender-napari](tutorials/visualise-atlas-napari) which provide convenient GUIs for visually inspecting the generated atlas meshes.
+These include [brainrender](/documentation/brainrender/index) and [brainrender-napari](/tutorials/visualise-atlas-napari) which provide a convenient way to visually inspect the generated atlas meshes.
 
 For example, you can visualise various parts of the atlas next to each other by running the script below, replacing the content between `<>` in the code.
 
