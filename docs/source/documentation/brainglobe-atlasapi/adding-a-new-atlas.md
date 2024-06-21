@@ -152,7 +152,7 @@ inspect_meshes_folder("~/.brainglobe/temp/allen_mouse_10um_v1.0/meshes")
 Once an atlas is created with BrainGlobe’s atlas generation tools, it can be used with most software from the BrainGlobe software suite.
 These include [brainrender](/documentation/brainrender/index) and [brainrender-napari](/tutorials/visualise-atlas-napari) which provide a convenient way to visually inspect the generated atlas meshes.
 
-For example, you can visualise various parts of the Max Planck Zebrafish Brain Atlas next to each other by running the script below. You can do the same with your own newly-packaged atlas (or any other BrainGlobe atlas) by replacing the atlas name as explained in the comments below:
+For example, you can visualise various parts of the Max Planck Zebrafish Brain Atlas next to each other by running the script below. You can do the same with your own newly-packaged atlas (or any other BrainGlobe atlas) by replacing the atlas name, the name of the additional reference, and the acronym of the structure you're interested in, as explained in the comments below:
 
 ```python
 from brainrender_napari.napari_atlas_representation import NapariAtlasRepresentation
