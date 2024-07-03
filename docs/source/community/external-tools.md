@@ -42,6 +42,10 @@ BrainAtlas wraps the BrainGlobe Atlas API into a package for easy use with the U
 - [GitHub repository](https://github.com/VirtualBrainLab/BrainAtlas/)
 - [Documentation](https://virtualbrainlab.org/misc/brain_atlas.html)
 
+## ClearFinder
+ClearFinder is a graphical user interface that allows users without programming experience to use cellfinder and ClearMap for cell counting and reference atlas annotation of the whole volume of adult tissue-cleared mouse brains. Basic statistics and visualization round up the analysis.
+- [GitHub repository](https://github.com/stegiopast/ClearFinder)
+- [Preprint](https://www.biorxiv.org/content/10.1101/2024.06.21.599877v1)
 
 :::{hint}
 if you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. 
