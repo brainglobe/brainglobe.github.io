@@ -1,13 +1,13 @@
 # Contact
 
 ## Questions
-If you have any questions, the first point of call is the [image.sc forum](https://forum.image.sc/tag/brainglobe). 
+If you need any help using any BrainGlobe software, the first point of call is the [image.sc forum](https://forum.image.sc/tag/brainglobe). 
 Please ask any questions you may have on here, and we will do our best to answer them. Please tag your question with both
 `brainglobe` and the name of the tool you are using (e.g. `cellfinder`). Asking questions on the public forum allows 
 others to benefit from the answers, and also allows users and developers of other, related, tools to 
 contribute to the discussion.
 
-If you just want to get in touch and ask us a question, please use the
+If you would like to get in touch with the development team, e.g. to ask a question about contributing to BrainGlobe, or anything else that isn't troubleshooting, please use the
 [BrainGlobe Zulip chat](https://brainglobe.zulipchat.com/).
 
 ## Bugs
