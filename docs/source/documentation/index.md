@@ -6,7 +6,7 @@ We always recommend that you install BrainGlobe tools into a virtual environment
 Your environment should run Python 3.10, 3.11 or 3.12. To specify the Python version for new conda environment, add it as a parameter on creation:
 
 ```bash
-conda create -n brainglobe-env python=3.11
+conda create -n brainglobe-env python=3.12
 ```
 
 Once you have created and activated your desired environment, you can install all BrainGlobe tools using `pip`:

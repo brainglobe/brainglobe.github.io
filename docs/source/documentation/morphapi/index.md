@@ -17,7 +17,7 @@ project \([github](https://github.com/BlueBrain/NeuroM)\) to reconstruct morphol
 
 ## Installation
 
-To install `morphapi` in a python environment with `python >= 3.6` simply:
+To install `morphapi` in a python environment with `python >= 3.10` simply:
 
 ```text
 pip install morphapi
