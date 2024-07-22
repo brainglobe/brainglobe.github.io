@@ -9,13 +9,11 @@ language: English
 
 # A mouse brain atlas with barrel field annotations has been added to BrainGlobe
 
-[Bolaños-Puchet et al., 2024](https://elifesciences.org/articles/80777) recently published annotations of the mouse
-[barrel cortex](https://en.wikipedia.org/wiki/Barrel_cortex) in the 
+[Bolaños-Puchet et al., 2024](https://doi.org/10.1162/imag_a_00209) recently published annotations of 33 barrels and barrel columns of the mouse isocortex in the
 [Allen Mouse Brain Common Coordinate Framework](https://doi.org/10.1016/j.cell.2020.04.007).
-The Allen Mouse Brain Atlas (and particularly it's Common Coordinate Framework) has been key to advances in 
-computational neuroanatomy in the adult mouse. However, this atlas does not contain any barrel cortex annotations.
-These annotations allow researchers to much more precisely localise regions of interest within specific barrels, 
-rather than barrel cortex as a whole. 
+The Allen Mouse Brain Atlas (and particularly its Common Coordinate Framework) has been key to advances in computational neuroanatomy in the adult mouse. 
+However, this atlas does not contain detailed annotations of the [barrel cortex](https://en.wikipedia.org/wiki/Barrel_cortex), which is the dominant topographically represented whisker-related area of the primary somatosensory cortex. The barrel cortex is a highly relevant system to study as mice are nocturnal, tunnel-dwelling animals that largely rely on their whiskers to survive.
+These annotations allow researchers to much more precisely localise features of interest within specific barrel columns vs. other barrels, within barrels vs. septa, for example, rather than the barrel field as a whole. 
 
 
 <img src="./images/barrel_annotations.png" alt="barrel annotations" width="700"/>
