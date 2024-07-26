@@ -8,23 +8,24 @@ You will need `napari` installed on your computer - please follow [`napari`'s in
 
 1. Open `napari`.
 2. Install `brainrender-napari` by selecting `Plugins > Install/Uninstall plugins` and searching for `brainrender-napari` in the searchbox. Then click on the `Install` button.
-3. Open the `brainrender` widget by selecting `Plugins > Brainrender (brainrender-napari)` in the napari menu bar near the top left of the window. 
+
+:::{note}
+If you've not used BrainGlobe atlases before, you will need to download those you need. You can do this through the [command line](/documentation/brainglobe-atlasapi/usage/command-line-interface), or by following our (very short) ["Download an atlas in napari" tutorial](./manage-atlases-in-GUI).
+:::
+
+
+3. Open the `brainrender` widget by selecting `Plugins > brainrender > Brainrender` in the napari menu bar near the top left of the window. 
 ![brainrender widget](./images/brainrender-napari/plugin-menu-brainrender-napari.png)
 
-**The brainrender widget appears on the right hand side of the window.**
+**The brainrender widget appears on the right hand side of the window, listing all atlases you have downloaded**
 
-4. In the `brainrender` widget's `Atlas table view` section, double-click the row which contains the `mpin_zfish_1um` atlas (you may have to scroll down slightly).
+4. In the `brainrender` widget's `Atlas table view` section, double-click the row which contains the `mpin_zfish_1um` atlas (you may have to scroll down slightly, if you've downloaded many atlases).
 
 ![brainrender widget with added annotations](./images/brainrender-napari/added-brainrender-napari.png)
 
 **You have now added the annotations image and the default reference image to napari: They appear as layers in the napari layers list on the lower left of the window. A `3D Atlas region meshes` section appears below the `Atlas table view` section.**
 
-:::{note}
-If you haven't downloaded the atlas before, the plugin will prompt you to download it (click yes). It may take a long time
-(depending on your internet speed) so please be patient. Once downloaded, double-click again to view the atlas.
-:::
-
-5. Toggle the napari display from 2D to 3D by pressing the button with the square icon on the lower left of the window.
+1. Toggle the napari display from 2D to 3D by pressing the button with the square icon on the lower left of the window.
 
 ![brainrender widget with 3d display](./images/brainrender-napari/toggle-ndisplay-brainrender-napari.png)
 
