@@ -5,6 +5,13 @@
 ::::{grid} 1 2 2 3
 :gutter: 3
 
+:::{grid-item-card} {fas}`brain;sd-text-primary` Atlas download
+:img-bottom: images/visualise-atlas-napari.png
+:link: manage-atlases-in-GUI
+:link-type: doc
+Download an atlas through napari
+:::
+
 :::{grid-item-card} {fas}`brain;sd-text-primary` Atlas visualisation
 :img-bottom: images/visualise-atlas-napari.png
 :link: visualise-atlas-napari
@@ -81,6 +88,7 @@ Whole brain cell detection and registration
 :caption: Index
 :hidden:
 visualise-atlas-napari
+manage-atlases-in-GUI
 tutorial-whole-brain-registration
 segmenting-1d-tracks
 segmenting-3d-structures
