@@ -6,7 +6,7 @@
 :gutter: 3
 
 :::{grid-item-card} {fas}`brain;sd-text-primary` Atlas download
-:img-bottom: images/visualise-atlas-napari.png
+:img-bottom: images/atlas-versions.png
 :link: manage-atlases-in-GUI
 :link-type: doc
 Download an atlas through napari
