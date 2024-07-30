@@ -46,6 +46,13 @@ Detecting cells in 3D with cellfinder in napari
 :link-type: doc
 Retraining the cellfinder cell classification network in napari
 :::
+
+:::{grid-item-card} {fas}`brain;sd-text-primary` Atlas download
+:img-bottom: images/atlas-versions.png
+:link: manage-atlases-in-GUI
+:link-type: doc
+Download an atlas with napari
+:::
 ::::
 
 ## Specific applications
@@ -81,6 +88,7 @@ Whole brain cell detection and registration
 :caption: Index
 :hidden:
 visualise-atlas-napari
+manage-atlases-in-GUI
 tutorial-whole-brain-registration
 segmenting-1d-tracks
 segmenting-3d-structures

@@ -58,7 +58,7 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Registering a whole-brain image to an atlas" href="tutorial-whole-brain-registration.html" />
+    <link rel="next" title="Download an atlas through napari" href="manage-atlases-in-GUI.html" />
     <link rel="prev" title="Tutorials" href="index.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -498,6 +498,7 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Index</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Visualise an atlas in napari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manage-atlases-in-GUI.html">Download an atlas through napari</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial-whole-brain-registration.html">Registering a whole-brain image to an atlas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="segmenting-1d-tracks.html">Segmenting a 1D track</a></li>
 <li class="toctree-l1"><a class="reference internal" href="segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
@@ -580,32 +581,37 @@ document.write(`
 <ol class="arabic simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">napari</span></code>.</p></li>
 <li><p>Install <code class="docutils literal notranslate"><span class="pre">brainrender-napari</span></code> by selecting <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">Install/Uninstall</span> <span class="pre">plugins</span></code> and searching for <code class="docutils literal notranslate"><span class="pre">brainrender-napari</span></code> in the searchbox. Then click on the <code class="docutils literal notranslate"><span class="pre">Install</span></code> button.</p></li>
-<li><p>Open the <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> widget by selecting <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">Brainrender</span> <span class="pre">(brainrender-napari)</span></code> in the napari menu bar near the top left of the window.
-<img alt="brainrender widget" src="../_images/plugin-menu-brainrender-napari.png" /></p></li>
 </ol>
-<p><strong>The brainrender widget appears on the right hand side of the window.</strong></p>
-<ol class="arabic simple" start="4">
-<li><p>In the <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> widget’s <code class="docutils literal notranslate"><span class="pre">Atlas</span> <span class="pre">table</span> <span class="pre">view</span></code> section, double-click the row which contains the <code class="docutils literal notranslate"><span class="pre">mpin_zfish_1um</span></code> atlas (you may have to scroll down slightly).</p></li>
-</ol>
-<p><img alt="brainrender widget with added annotations" src="../_images/added-brainrender-napari.png" /></p>
-<p><strong>You have now added the annotations image and the default reference image to napari: They appear as layers in the napari layers list on the lower left of the window. A <code class="docutils literal notranslate"><span class="pre">3D</span> <span class="pre">Atlas</span> <span class="pre">region</span> <span class="pre">meshes</span></code> section appears below the <code class="docutils literal notranslate"><span class="pre">Atlas</span> <span class="pre">table</span> <span class="pre">view</span></code> section.</strong></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you haven’t downloaded the atlas before, the plugin will prompt you to download it (click yes). It may take a long time
-(depending on your internet speed) so please be patient. Once downloaded, double-click again to view the atlas.</p>
+<p>If you’ve not used BrainGlobe atlases before, you will need to download those you need. You can do this through the <a class="reference internal" href="../documentation/brainglobe-atlasapi/usage/command-line-interface.html"><span class="doc std std-doc">command line</span></a>, or by following our (very short) <a class="reference internal" href="manage-atlases-in-GUI.html"><span class="doc std std-doc">“Download an atlas in napari” tutorial</span></a>.</p>
 </div>
+<ol class="arabic simple" start="3">
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> widget by selecting <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">brainrender</span> <span class="pre">&gt;</span> <span class="pre">Brainrender</span></code> in the napari menu bar near the top left of the window.
+<img alt="brainrender widget" src="../_images/plugin-menu-brainrender-napari.png" /></p></li>
+</ol>
+<p><strong>The brainrender widget appears on the right hand side of the window, listing all atlases you have downloaded</strong></p>
+<ol class="arabic simple" start="4">
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> widget’s <code class="docutils literal notranslate"><span class="pre">Atlas</span> <span class="pre">Viewer</span></code> section, double-click the row which contains the <code class="docutils literal notranslate"><span class="pre">mpin_zfish_1um</span></code> atlas (you may have to scroll down slightly, if you’ve downloaded many atlases).</p></li>
+</ol>
+<p><img alt="brainrender widget with added annotations" src="../_images/added-brainrender-napari.png" /></p>
+<p><strong>You have now added the annotations image and the default reference image to napari: They appear as layers in the napari layers list on the lower left of the window. A <code class="docutils literal notranslate"><span class="pre">3D</span> <span class="pre">Atlas</span> <span class="pre">region</span> <span class="pre">meshes</span></code> section appears below the <code class="docutils literal notranslate"><span class="pre">Atlas</span> <span class="pre">Viewer</span></code> section.</strong></p>
 <ol class="arabic simple" start="5">
 <li><p>Toggle the napari display from 2D to 3D by pressing the button with the square icon on the lower left of the window.</p></li>
 </ol>
 <p><img alt="brainrender widget with 3d display" src="../_images/toggle-ndisplay-brainrender-napari.png" /></p>
-<p><strong>The annotations image should now be displayed in 3D.</strong>
-6. Navigate the brain region tree in the <code class="docutils literal notranslate"><span class="pre">3D</span> <span class="pre">Atlas</span> <span class="pre">region</span> <span class="pre">meshes</span></code> section by opening “forebrain”. Double-click on <code class="docutils literal notranslate"><span class="pre">telencephalon</span></code>.</p>
+<p><strong>The annotations image should now be displayed in 3D.</strong></p>
+<ol class="arabic simple" start="6">
+<li><p>Navigate the brain region tree in the <code class="docutils literal notranslate"><span class="pre">3D</span> <span class="pre">Atlas</span> <span class="pre">region</span> <span class="pre">meshes</span></code> section by opening “forebrain”. Double-click on <code class="docutils literal notranslate"><span class="pre">telencephalon</span></code>.</p></li>
+</ol>
 <p><img alt="brainrender widget with region mesh" src="../_images/add-region-brainrender-napari.png" /></p>
-<p><strong>You have now added a 3D atlas region mesh layer, which appears as a mesh in the viewer and as a new layer in the layers list.</strong>
-7. Back in the “Atlas table view” section, right-click on the <code class="docutils literal notranslate"><span class="pre">mpin_zfish_1um</span></code> row. In the menu that appears, select <code class="docutils literal notranslate"><span class="pre">GAD1b</span></code>.</p>
+<p><strong>You have now added a 3D atlas region mesh layer, which appears as a mesh in the viewer and as a new layer in the layers list.</strong></p>
+<ol class="arabic simple" start="7">
+<li><p>Back in the “Atlas Viewer” section, right-click on the <code class="docutils literal notranslate"><span class="pre">mpin_zfish_1um</span></code> row. In the menu that appears, select <code class="docutils literal notranslate"><span class="pre">GAD1b</span></code>.</p></li>
+</ol>
 <p><img alt="brainrender widget with additional reference" src="../_images/additional-reference-brainrender-napari.png" /></p>
 <p><strong>You have now added an additional reference image, which appears as a grey scale image in the viewer and as a new layer in the layers list.</strong></p>
-<p>You have now added all possible kinds of BrainGlobe atlas components (annotations image, reference image, 3D atlas region mesh, additional reference) to napari - well done! You can now add any of the other atlases listed in the <code class="docutils literal notranslate"><span class="pre">Atlas</span> <span class="pre">table</span> <span class="pre">view</span></code> if you like (note that not all atlases have additional references!).</p>
+<p>You have now added all possible kinds of BrainGlobe atlas components (annotations image, reference image, 3D atlas region mesh, additional reference) to napari! You can now add any of the other atlases listed in the <code class="docutils literal notranslate"><span class="pre">Atlas</span> <span class="pre">Viewer</span></code> section if you like (note that not all atlases have additional references!).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Hover over any of the elements in the <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> widget to get additional hints about how to use them!</p>
@@ -636,11 +642,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="tutorial-whole-brain-registration.html"
+       href="manage-atlases-in-GUI.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Registering a whole-brain image to an atlas</p>
+        <p class="prev-next-title">Download an atlas through napari</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

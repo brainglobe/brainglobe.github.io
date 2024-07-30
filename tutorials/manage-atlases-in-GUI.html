@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Whole brain cell detection and registration with the brainmapper command line tool &#8212; BrainGlobe</title>
+    <title>Download an atlas through napari &#8212; BrainGlobe</title>
   
   
   
@@ -18,50 +18,48 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=1227d6e8" />
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=1227d6e8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=d45e8c67"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
-    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/brainmapper/index';</script>
-    <link rel="canonical" href="https://brainglobe.info/tutorials/brainmapper/index.html" />
-    <link rel="icon" href="../../_static/brainglobe.png"/>
-    <link rel="author" title="About these documents" href="../../about.html" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Setting up" href="setting-up.html" />
-    <link rel="prev" title="Analyze and visualize bulk fluorescence tracing data" href="../tracing-tracking.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/manage-atlases-in-GUI';</script>
+    <link rel="canonical" href="https://brainglobe.info/tutorials/manage-atlases-in-GUI.html" />
+    <link rel="icon" href="../_static/brainglobe.png"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Registering a whole-brain image to an atlas" href="tutorial-whole-brain-registration.html" />
+    <link rel="prev" title="Visualise an atlas in napari" href="visualise-atlas-napari.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -97,7 +95,7 @@
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="../../search.html"
+      action="../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -137,7 +135,7 @@
     
   
 
-<a class="navbar-brand logo" href="../../index.html">
+<a class="navbar-brand logo" href="../index.html">
   
   
   
@@ -148,8 +146,8 @@
       
     
     
-    <img src="../../_static/brainglobe.png" class="logo__image only-light" alt=""/>
-    <script>document.write(`<img src="../../_static/brainglobe.png" class="logo__image only-dark" alt=""/>`);</script>
+    <img src="../_static/brainglobe.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/brainglobe.png" class="logo__image only-dark" alt=""/>`);</script>
   
   
     <p class="title logo__title">BrainGlobe</p>
@@ -167,35 +165,35 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../about.html">
+  <a class="nav-link nav-internal" href="../about.html">
     About
   </a>
 </li>
 
 
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../index.html">
+  <a class="nav-link nav-internal" href="index.html">
     Tutorials
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../documentation/index.html">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
     Documentation
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../community/index.html">
+  <a class="nav-link nav-internal" href="../community/index.html">
     Community
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../blog/index.html">
+  <a class="nav-link nav-internal" href="../blog/index.html">
     Blog
   </a>
 </li>
@@ -331,10 +329,6 @@ document.write(`
   
 
   
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
-      <span class="fa-solid fa-outdent"></span>
-    </button>
-  
 </div>
 
     </header>
@@ -361,35 +355,35 @@ document.write(`
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../about.html">
+  <a class="nav-link nav-internal" href="../about.html">
     About
   </a>
 </li>
 
 
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../index.html">
+  <a class="nav-link nav-internal" href="index.html">
     Tutorials
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../documentation/index.html">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
     Documentation
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../community/index.html">
+  <a class="nav-link nav-internal" href="../community/index.html">
     Community
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../blog/index.html">
+  <a class="nav-link nav-internal" href="../blog/index.html">
     Blog
   </a>
 </li>
@@ -503,21 +497,21 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Index</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../visualise-atlas-napari.html">Visualise an atlas in napari</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manage-atlases-in-GUI.html">Download an atlas through napari</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial-whole-brain-registration.html">Registering a whole-brain image to an atlas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../segmenting-1d-tracks.html">Segmenting a 1D track</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cellfinder-detection.html">Detecting cells in 3D with cellfinder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cellfinder-retraining.html">Retraining the cellfinder classification network</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../silicon-probe-tracking.html">Silicon probe tracking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tracing-tracking.html">Analyze and visualize bulk fluorescence tracing data</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command line tool</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="setting-up.html">Setting up</a></li>
-<li class="toctree-l2"><a class="reference internal" href="running-brainmapper.html">Running <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualising-the-results.html">Visualising the results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exploring-the-numerical-results.html">Exploring the numerical results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualising-your-data-in-brainrender.html">Visualising your data in brainrender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualise-atlas-napari.html">Visualise an atlas in napari</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Download an atlas through napari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial-whole-brain-registration.html">Registering a whole-brain image to an atlas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="segmenting-1d-tracks.html">Segmenting a 1D track</a></li>
+<li class="toctree-l1"><a class="reference internal" href="segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cellfinder-detection.html">Detecting cells in 3D with cellfinder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cellfinder-retraining.html">Retraining the cellfinder classification network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="silicon-probe-tracking.html">Silicon probe tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracing-tracking.html">Analyze and visualize bulk fluorescence tracing data</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="brainmapper/index.html">Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command line tool</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="brainmapper/setting-up.html">Setting up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brainmapper/running-brainmapper.html">Running <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="brainmapper/visualising-the-results.html">Visualising the results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brainmapper/exploring-the-numerical-results.html">Exploring the numerical results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brainmapper/visualising-your-data-in-brainrender.html">Visualising your data in brainrender</a></li>
 </ul>
 </details></li>
 </ul>
@@ -553,14 +547,14 @@ document.write(`
   <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
-      <a href="../../index.html" class="nav-link" aria-label="Home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Tutorials</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Whole brain...</li>
+    <li class="breadcrumb-item active" aria-current="page">Download an...</li>
   </ul>
 </nav>
 </div>
@@ -577,41 +571,30 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-<section class="tex2jax_ignore mathjax_ignore" id="whole-brain-cell-detection-and-registration-with-the-brainmapper-command-line-tool">
-<h1>Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command line tool<a class="headerlink" href="#whole-brain-cell-detection-and-registration-with-the-brainmapper-command-line-tool" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="download-an-atlas-through-napari">
+<h1>Download an atlas through napari<a class="headerlink" href="#download-an-atlas-through-napari" title="Link to this heading">#</a></h1>
+<p>In this tutorial, you will use <code class="docutils literal notranslate"><span class="pre">brainrender-napari</span></code>’s Atlas Manager widget to download a BrainGlobe atlas through a series of simple clicks. The <a class="reference external" href="https://doi.org/10.1016/j.neuron.2019.04.034"><code class="docutils literal notranslate"><span class="pre">mpin_zfish_1um</span></code> zebrafish brain atlas</a> will serve as an example.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> was previously called the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> command-line interface tool.</p>
-<p>This command-line tool was renamed with the release of <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> version <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code>.
-You can read about these changes <a class="reference internal" href="../../blog/version1/cellfinder_migration_live.html"><span class="doc std std-doc">on our blog</span></a>.</p>
-<p>If you have previously been using the cellfinder command-line interface in your work, you’ll most likely want to follow the links in the blog post to:</p>
-<ul class="simple">
-<li><p>Upgrade your version of the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> package,</p></li>
-<li><p>Install <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code> to get <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code>, the same command-line tool but under it’s new name.</p></li>
-</ul>
+<p>You will need <code class="docutils literal notranslate"><span class="pre">napari</span></code> installed on your computer - please follow <a class="reference external" href="https://napari.org/stable/tutorials/fundamentals/installation.html"><code class="docutils literal notranslate"><span class="pre">napari</span></code>’s installation instructions to do so</a>.</p>
 </div>
-<p>Although the <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command line tool is designed to be easy to install and use, if you’re coming to it with fresh eyes, it’s not always clear where to start.
-We provide an example brain to get you started, and also to illustrate how to play with the parameters to better suit your data.</p>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p><strong>The test dataset is large</strong> <span class="math notranslate nohighlight">\(\approx 250\)</span>GB.
-It is recommended that you try this tutorial out on the fastest machine you have, with the fastest hard drive possible (ideally SSD) and an NVIDIA GPU.</p>
+<ol class="arabic simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">napari</span></code>.</p></li>
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">brainrender-napari</span></code> by selecting <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">Install/Uninstall</span> <span class="pre">plugins</span></code> and searching for <code class="docutils literal notranslate"><span class="pre">brainrender-napari</span></code> in the searchbox. Then click on the <code class="docutils literal notranslate"><span class="pre">Install</span></code> button.</p></li>
+<li><p>Open the Atlas Manager widget by selecting <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">Brainrender</span> <span class="pre">&gt;</span> <span class="pre">Manage</span> <span class="pre">atlas</span> <span class="pre">versions</span></code> in the napari menu bar near the top left of the window.
+<img alt="brainrender widget" src="../_images/open-manager-widget.png" /></p></li>
+</ol>
+<p><strong>The Atlas Manager widget appears on the right hand side of the window.</strong></p>
+<ol class="arabic simple">
+<li><p>In the widget’s <code class="docutils literal notranslate"><span class="pre">Atlas</span> <span class="pre">Manager</span></code> section, double-click the row which contains the <code class="docutils literal notranslate"><span class="pre">mpin_zfish_1um</span></code> atlas (you may have to scroll down slightly). The plugin will prompt you to download it (click yes). It may take a long time
+(depending on your internet speed) so please be patient.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We are working on providing a progress indicator in <code class="docutils literal notranslate"><span class="pre">napari</span></code> - in the meantime, you can see download progress in the terminal from which you launched napari.</p>
 </div>
-<section id="tutorial">
-<h2>Tutorial<a class="headerlink" href="#tutorial" title="Link to this heading">#</a></h2>
-<p>The tutorial is quite long, and is split into a number of sections.
-Please be aware that downloading the data and running <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> may take a long time (e.g., overnight x2) if you don’t have access to a particularly high-powered computer, or fast network connection.</p>
-<p>Please go through the following sections in order:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="setting-up.html">Setting up</a></li>
-<li class="toctree-l1"><a class="reference internal" href="running-brainmapper.html">Running <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualising-the-results.html">Visualising the results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exploring-the-numerical-results.html">Exploring the numerical results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualising-your-data-in-brainrender.html">Visualising your data in brainrender</a></li>
-</ul>
-</div>
-</section>
+<p><img alt="atlas manager dialog" src="../_images/atlas-download-progress-in-terminal.png" /></p>
+<p><strong>You have downloaded the zebrafish atlas - you can visualise it in napari by following our <a class="reference internal" href="visualise-atlas-napari.html"><span class="doc std std-doc">atlas visualisation tutorial</span></a>.</strong></p>
 </section>
 
 <div class="section ablog__blog_comments">
@@ -629,20 +612,20 @@ Please be aware that downloading the data and running <code class="docutils lite
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../tracing-tracking.html"
+       href="visualise-atlas-napari.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Analyze and visualize bulk fluorescence tracing data</p>
+        <p class="prev-next-title">Visualise an atlas in napari</p>
       </div>
     </a>
     <a class="right-next"
-       href="setting-up.html"
+       href="tutorial-whole-brain-registration.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Setting up</p>
+        <p class="prev-next-title">Registering a whole-brain image to an atlas</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -652,23 +635,6 @@ Please be aware that downloading the data and running <code class="docutils lite
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-<div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial">Tutorial</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
@@ -681,8 +647,8 @@ Please be aware that downloading the data and running <code class="docutils lite
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
