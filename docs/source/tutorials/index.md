@@ -9,7 +9,7 @@
 :img-bottom: images/atlas-versions.png
 :link: manage-atlases-in-GUI
 :link-type: doc
-Download an atlas through napari
+Download an atlas with napari
 :::
 
 :::{grid-item-card} {fas}`brain;sd-text-primary` Atlas visualisation

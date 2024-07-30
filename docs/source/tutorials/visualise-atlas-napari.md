@@ -36,13 +36,14 @@ If you've not used BrainGlobe atlases before, you will need to download those yo
 ![brainrender widget with region mesh](./images/brainrender-napari/add-region-brainrender-napari.png)
 
  **You have now added a 3D atlas region mesh layer, which appears as a mesh in the viewer and as a new layer in the layers list.**
+
 7. Back in the "Atlas Viewer" section, right-click on the `mpin_zfish_1um` row. In the menu that appears, select `GAD1b`.
 
 ![brainrender widget with additional reference](./images/brainrender-napari/additional-reference-brainrender-napari.png)
 
 **You have now added an additional reference image, which appears as a grey scale image in the viewer and as a new layer in the layers list.**
 
-You have now added all possible kinds of BrainGlobe atlas components (annotations image, reference image, 3D atlas region mesh, additional reference) to napari - well done! You can now add any of the other atlases listed in the `Atlas Viewer` section if you like (note that not all atlases have additional references!). 
+You have now added all possible kinds of BrainGlobe atlas components (annotations image, reference image, 3D atlas region mesh, additional reference) to napari! You can now add any of the other atlases listed in the `Atlas Viewer` section if you like (note that not all atlases have additional references!). 
 
 :::{note}
 Hover over any of the elements in the `brainrender` widget to get additional hints about how to use them!
