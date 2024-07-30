@@ -33,6 +33,14 @@ Manually segmenting a 1d track.
 Manually segmenting a 3d structure
 :::
 
+:::{grid-item-card} {fas}`brain;sd-text-primary` Analysing cell distributions
+:img-bottom: images/brainglobe-segmentation-3d-icon.png
+:link: transform-cells-atlas
+:link-type: doc
+Analysing cell distributions in the brain with napari
+:::
+
+
 :::{grid-item-card} {fas}`brain;sd-text-primary` 3D cell detection
 :img-bottom: images/cellfinder-detection-icon.png
 :link: cellfinder-detection
@@ -92,6 +100,7 @@ manage-atlases-in-GUI
 tutorial-whole-brain-registration
 segmenting-1d-tracks
 segmenting-3d-structures
+transform-cells-atlas
 cellfinder-detection
 cellfinder-retraining
 silicon-probe-tracking
