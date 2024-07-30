@@ -59,6 +59,6 @@ It can also be installed from the
 by searching for "brainglobe-utils".
 
 ## How do I use it?
-Please see the [documentation](http://localhost:63342/brainglobe.github.io/docs/build/documentation/brainglobe-utils/transform-widget.html) and the
+Please see the [documentation](/documentation/brainglobe-utils/transform-widget) and the
 [analysing brainwide distribution of cells tutorial](/tutorials/transform-cells-atlas).
 
