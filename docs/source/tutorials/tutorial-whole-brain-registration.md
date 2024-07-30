@@ -11,8 +11,8 @@ You will need `napari` installed on your computer - please follow [`napari`'s in
 :::
 
 1. Open `napari`.
-2. Install `brainreg-napari` by selecting `Plugins > Install/Uninstall plugins` and searching for `brainreg-napari` in the searchbox. Then click on the `Install` button.
-3. Open the `brainreg` widget by selecting `Plugins > Atlas registration (brainreg-napari)` in the napari menu bar near the top left of the window.
+2. Install `brainreg` by selecting `Plugins > Install/Uninstall plugins` and searching for `brainreg` in the searchbox. Then click on the `Install` button.
+3. Open the `brainreg` widget by selecting `Plugins > Atlas registration (brainreg)` in the napari menu bar near the top left of the window.
 ![brainreg widget](./images/brainreg-napari/plugin-menu-brainreg-napari.png)
 
 **The brainreg widget appears on the right-hand side of the window.**
