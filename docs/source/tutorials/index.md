@@ -5,13 +5,6 @@
 ::::{grid} 1 2 2 3
 :gutter: 3
 
-:::{grid-item-card} {fas}`brain;sd-text-primary` Atlas download
-:img-bottom: images/atlas-versions.png
-:link: manage-atlases-in-GUI
-:link-type: doc
-Download an atlas with napari
-:::
-
 :::{grid-item-card} {fas}`brain;sd-text-primary` Atlas visualisation
 :img-bottom: images/visualise-atlas-napari.png
 :link: visualise-atlas-napari
@@ -52,6 +45,13 @@ Detecting cells in 3D with cellfinder in napari
 :link: cellfinder-retraining
 :link-type: doc
 Retraining the cellfinder cell classification network in napari
+:::
+
+:::{grid-item-card} {fas}`brain;sd-text-primary` Atlas download
+:img-bottom: images/atlas-versions.png
+:link: manage-atlases-in-GUI
+:link-type: doc
+Download an atlas with napari
 :::
 ::::
 
