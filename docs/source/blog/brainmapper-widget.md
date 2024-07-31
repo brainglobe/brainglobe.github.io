@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: July 30, 2024
+date: July 31, 2024
 author: Adam Tyson
 location: London, England
 category: brainglobe

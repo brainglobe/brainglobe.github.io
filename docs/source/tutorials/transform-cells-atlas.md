@@ -18,7 +18,7 @@ steps, please ensure you have followed the
 
 1. Open `napari`.
 2. Install `brainglobe-utils` by selecting `Plugins > Install/Uninstall plugins` and searching for `brainglobe-utils` in the searchbox. Then click on the `Install` button.
-3. Open the `brainmapper` widget by selecting `Plugins > brainmapper (brainreg)` in the napari menu bar near the top left of the window.
+3. Open the `brainmapper` widget by selecting `Plugins > brainmapper (BrainGlobe)` in the napari menu bar near the top left of the window.
    ![brainmapper widget](./images/brainmapper-widget/brainmapper-widget.png)
 
 **The brainmapper widget appears on the right-hand side of the window.**
