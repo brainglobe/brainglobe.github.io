@@ -10,7 +10,7 @@ You can read about these changes [on our blog](/blog/version1/cellfinder_migrati
 If you have previously been using the cellfinder command-line interface in your work, you'll most likely want to follow the links in the blog post to:
 
 - Upgrade your version of the `cellfinder` package,
-- Install `brainglobe-workflows` to get `brainmapper`, the same command-line tool but under it's new name.
+- Install `brainglobe-workflows` to get `brainmapper`, the same command-line tool but under its new name.
 
 :::
 
