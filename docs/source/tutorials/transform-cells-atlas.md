@@ -1,11 +1,11 @@
 # Analysing brainwide distribution of cells
 
 In this tutorial you will use the [`brainmapper` napari widget](/documentation/brainglobe-utils/transform-widget) 
-to analyse the position of some points in an atlas. 
+to analyse the position of some points in the context of a BrainGlobe atlas. 
 
 The aim of this tutorial is to illustrate how to use the widget on a small dataset. After completing this tutorial, 
 you could try using the widget with the outputs of the 
-[whole brain cell detection tutorial](/tutorials/brainmapper/index), or even analysing the data from start to finish 
+[whole brain cell detection tutorial](/tutorials/brainmapper/index), or even analyse the data from start to finish 
 using [`cellfinder`](/documentation/cellfinder/index), [`brainreg`](/documentation/brainreg/index) and then this 
 `brainmapper` widget.
 
@@ -24,11 +24,11 @@ steps, please ensure you have followed the
 **The brainmapper widget appears on the right-hand side of the window.**
 
 
-4. Open the same sample image from the [whole brain cell detection tutorial](/tutorials/brainmapper/index) by 
+4. Open the same sample image from the [registering a whole-brain image to an atlas tutorial](/tutorials/tutorial-whole-brain-registration) by 
 selecting `File > Open Sample > Low resolution brain (brainreg)`.
 5. Make the image easier to see by adjusting the `contrast limits` in the top left section of the napari window. Moving
    the right-hand slider to the left will make the image appear brighter.
-6. Create a new points layer by clicking the `New points layer" button (on the left, just above the list of napari layers).
+6. Create a new points layer by clicking the `New points layer` button (on the left, just above the list of napari layers).
 7. Select the `Add points` button from the top left of the napari window (you can also press `2` or `p` on your 
 keyboard to activate this mode).
 8. Create a few (10-20) points by clicking on various parts of the brain image. You can navigate in 3D 
@@ -36,12 +36,12 @@ by using the slider at the bottom of the napari window.
 
 :::{hint}
 In this tutorial we are creating some points manually. In real usage, these could be any point feature in your image, 
-detected manually or automatically (e.g. [with cellfinder](/tutorials/cellfinder-detection))
+detected manually or automatically (e.g. [with cellfinder](/tutorials/cellfinder-detection)).
 :::
 
 9. In the `brainmapper` widget, select your new points layer (named `Points` by default) from the dropdown next to `Points layer`. 
 10. Select your image layer (named `Sample brain` by default) from the dropdown next to `Raw data layer`.
-11. Click `Transform points` and when prompted, select the brainreg output directory saved during the [whole brain cell detection tutorial](/tutorials/brainmapper/index).
+11. Click `Transform points` and when prompted, select the brainreg output directory saved during the [registering a whole-brain image to an atlas tutorial](/tutorials/tutorial-whole-brain-registration).
 12. A new table will then appear in the widget, listing the number of cells in each atlas region, for each hemisphere. 
 Two new points layers will also be created.
 

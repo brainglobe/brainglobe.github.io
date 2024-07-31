@@ -19,18 +19,19 @@ command line tool, which runs brainreg, then cellfinder and then analyses the di
 the brain. This tool is excellent for automated analyses, but using a command-line tool isn't very intuitive for many 
 users, and it is difficult to optimise parameters for a new application.
 
-`brainreg` and `cellfinder` both have napari plugins. This allows use within a graphical user interface, and to 
-make it easier to iteratively optimise parameters. However, to assign cells to a brain region, users had to use the 
+`brainreg` and `cellfinder` both have napari plugins. This allows use within a graphical user interface, and makes 
+it easier to iteratively optimise parameters. However, to assign cells to a brain region, users had to use the 
 `brainmapper` command line tool. 
 
-To fix this **we have released a new `brainmapper` napari widget**. This allows users to combine the results of 
+To fix this **we have released a new [`brainmapper` napari widget](/documentation/brainglobe-utils/transform-widget)**. 
+This allows users to combine the results of 
 `brainreg` and `cellfinder` to analyse the distribution of cells across the brain.
 
 ## What does it do?
 
 The plugin takes as input cell coordinates (from `cellfinder` or another tool) and a `brainreg` output directory. It 
 then transforms cells to the atlas space. A summary of the cellular distribution (i.e. cells per brain region) is 
-then displayed.
+then displayed:
 
 | structure\_name | left\_cell\_count | right\_cell\_count |
 | :--- | :--- | :--- |
@@ -56,7 +57,7 @@ pip install brainglobe --upgrade
 
 It can also be installed from the 
 [napari plugin manager](https://napari.org/stable/plugins/start_using_plugins/finding_and_installing_plugins.html#find-and-install-plugins) 
-by searching for "brainglobe-utils".
+by searching for `brainglobe-utils`.
 
 ## How do I use it?
 Please see the [documentation](/documentation/brainglobe-utils/transform-widget) and the
