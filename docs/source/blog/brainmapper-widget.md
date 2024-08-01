@@ -23,7 +23,7 @@ users, and it is difficult to optimise parameters for a new application.
 it easier to iteratively optimise parameters. However, to assign cells to a brain region, users had to use the 
 `brainmapper` command line tool. 
 
-To fix this **we have released a new [`brainmapper` napari widget](/documentation/brainglobe-utils/transform-widget)**. 
+To improve this **we have released a new [`brainmapper` napari widget](/documentation/brainglobe-utils/transform-widget)**. 
 This allows users to combine the results of 
 `brainreg` and `cellfinder` to analyse the distribution of cells across the brain.
 
