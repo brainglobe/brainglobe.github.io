@@ -6,8 +6,9 @@ also be used directly. For more details, please see the specific pages:
 ## User guide
 ```{toctree}
 :maxdepth: 1
-citation-module
+transform-widget
 image_io
+citation-module
 ```
 :::{note}  The majority of the `brainglobe-utils` package is not yet documented here.
 :::

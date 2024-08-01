@@ -40,6 +40,13 @@ Manually segmenting a 3d structure
 Detecting cells in 3D with cellfinder in napari
 :::
 
+:::{grid-item-card} {fas}`brain;sd-text-primary` Analysing cell distributions
+:img-bottom: images/brainmapper-widget/cell-counts.png
+:link: transform-cells-atlas
+:link-type: doc
+Analysing cell distributions in the brain with napari
+:::
+
 :::{grid-item-card} {fas}`brain;sd-text-primary` Retraining cellfinder
 :img-bottom: images/cellfinder-retraining-icon.png
 :link: cellfinder-retraining
@@ -92,6 +99,7 @@ manage-atlases-in-GUI
 tutorial-whole-brain-registration
 segmenting-1d-tracks
 segmenting-3d-structures
+transform-cells-atlas
 cellfinder-detection
 cellfinder-retraining
 silicon-probe-tracking
