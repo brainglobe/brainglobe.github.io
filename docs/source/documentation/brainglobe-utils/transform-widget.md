@@ -29,7 +29,7 @@ pip install brainglobe
 :::{admonition} Installing on its own via PyPI
 :class: dropdown
 ```
-pip install brainglobe-utils
+pip install brainglobe-utils[napari]
 ```
 :::
 
