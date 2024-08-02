@@ -458,6 +458,11 @@ In no particular order:
 :link: https://github.com/abisi
 :::
 
+:::{grid-item-card} Jung Woo Kim
+:img-bottom: https://avatars.githubusercontent.com/u/147165781?v=4
+:link: https://github.com/kjungwoo5
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
