@@ -55,6 +55,8 @@ containing a more detailed version of the table.
     containing the coordinates (in image and atlas space) and atlas region for every point for use in other analyses.
 15. Select the `Points in atlas space` layer. This is the same as the `Points` layer, but each point has been moved to 
 its position within the atlas (in voxel space). This can be saved to disk using any compatible plugin.
+15. Click on `Export to brainrender`, choose a directory, and call the file `points.npy`. This will save a file
+    that can be visualised [using brainrender](/tutorials/brainmapper/visualising-your-data-in-brainrender).
 
  :::{hint}
 Saving points layers with an `.xml` file extension will save the points layer to the BrainGlobe format, and these can 
