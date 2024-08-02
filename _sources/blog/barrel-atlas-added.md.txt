@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: July 22, 2024
+date: August 02, 2024
 author: Adam Tyson, Axel Bisi
 location: London, U.K.; Lausanne, Switzerland
 category: brainglobe
