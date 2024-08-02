@@ -46,7 +46,8 @@ Before you use this widget you need three things:
 3. Some points defined in the raw data space, e.g. cells detected by [cellfinder](/documentation/cellfinder/index). 
 
 ```{hint}
-This widget will support any points that can be loaded into napari. Many file formats (e.g. the BrainGlobe xml format) 
+This widget will support any points that can be loaded into napari. Many file formats (e.g. the BrainGlobe xml format, 
+or a [csv from BiaPy](https://biapy.readthedocs.io/en/latest/tutorials/detection/brain_cell_detection.html)) 
 can be loaded by dragging and dropping them onto the napari window. 
 ```
 
