@@ -87,7 +87,20 @@ Analyze and visualize bulk fluorescence tracing data
 :link-type: doc
 Whole brain cell detection and registration
 :::
+::::
 
+## Related tutorials
+These are tutorials hosted elsewhere that may be useful to BrainGlobe users.
+
+::::{grid} 1 2 2 3
+:gutter: 3
+
+:::{grid-item-card} {fas}`brain;sd-text-primary` Cell detection with BiaPy
+:img-bottom: images/biapy.png
+:link: https://biapy.readthedocs.io/en/latest/tutorials/detection/brain_cell_detection.html
+:link-type: url
+Whole-brain microscopy analysis with BrainGlobe and BiaPy
+:::
 ::::
 
 ```{toctree}
@@ -105,4 +118,5 @@ cellfinder-retraining
 silicon-probe-tracking
 tracing-tracking
 brainmapper/index
+
 ```
