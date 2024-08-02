@@ -453,6 +453,11 @@ In no particular order:
 :link: https://github.com/RobertoDF
 :::
 
+:::{grid-item-card} Axel Bisi
+:img-bottom: https://avatars.githubusercontent.com/u/22441447?v=4
+:link: https://github.com/abisi
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
