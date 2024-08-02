@@ -58,6 +58,7 @@ can be loaded by dragging and dropping them onto the napari window.
 4. Select the `Points layer` and `Raw data layer`
 5. Click `Transform points` and when prompted, select your brainreg output directory
 
+
 ## Results
 
 ### Transformed points
@@ -68,11 +69,14 @@ realigned to match the atlas. This is saved for completeness, but likely is not 
 - `Points in atlas space` - this is the points layer, but each point is transformed to the atlas space. 
 Importantly, this is defined at the resolution of the atlas. These points may need to be scaled up to micron space 
 (i.e. by multiplying the coordinates by the resolution) to visualise in tools such as 
-[brainrender](/documentation/brainrender/index).
+[brainrender](/documentation/brainrender/index) (see below).
 
 These layers can be saved to disk with any appropriate napari plugin, such as 
 [brainglobe-napari-io](https://www.napari-hub.org/plugins/brainglobe-napari-io).
 
+To export your transformed points for visualisation in [brainrender](/documentation/brainrender/index), click the 
+`Export to brainrender` button, and choose a filename (ending in `.npy`). This file can be visualised in `brainrender` 
+by following the [visualising your data in brainrender tutorial](/tutorials/brainmapper/visualising-your-data-in-brainrender).
 
 ### Numerical results
 #### Points summary
