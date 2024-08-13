@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>A mouse brain atlas with barrel field annotations has been added to BrainGlobe &#8212; BrainGlobe</title>
+    <title>An Atlas for the regenerative Ambystoma mexicanum (axolotl) has been added to BrainGlobe &#8212; BrainGlobe</title>
   
   
   
@@ -52,8 +52,8 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/barrel-atlas-added';</script>
-    <link rel="canonical" href="https://brainglobe.info/blog/barrel-atlas-added.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/axolotl-atlas-added';</script>
+    <link rel="canonical" href="https://brainglobe.info/blog/axolotl-atlas-added.html" />
     <link rel="icon" href="../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -522,7 +522,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">A mouse...</li>
+    <li class="breadcrumb-item active" aria-current="page">An Atlas...</li>
   </ul>
 </nav>
 </div>
@@ -538,32 +538,28 @@ document.write(`
                 
 <div id="searchbox"></div>
                 <article class="bd-article">
-                   <section class="tex2jax_ignore mathjax_ignore" id="a-mouse-brain-atlas-with-barrel-field-annotations-has-been-added-to-brainglobe">
-<h1>A mouse brain atlas with barrel field annotations has been added to BrainGlobe<a class="headerlink" href="#a-mouse-brain-atlas-with-barrel-field-annotations-has-been-added-to-brainglobe" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://doi.org/10.1162/imag_a_00209">Bolaños-Puchet et al., 2024</a> recently published annotations of 33 barrels and barrel columns of the mouse isocortex in the
-<a class="reference external" href="https://doi.org/10.1016/j.cell.2020.04.007">Allen Mouse Brain Common Coordinate Framework</a>.
-The Allen Mouse Brain Atlas (and particularly its Common Coordinate Framework) has been key to advances in computational neuroanatomy in the adult mouse.
-However, this atlas does not contain detailed annotations of the <a class="reference external" href="https://en.wikipedia.org/wiki/Barrel_cortex">barrel cortex</a>, which is the dominant topographically represented whisker-related area of the primary somatosensory cortex. The barrel cortex is a highly relevant system to study as mice are nocturnal, tunnel-dwelling animals that largely rely on their whiskers to survive.
-These annotations allow researchers to much more precisely localise features of interest within specific barrel columns vs. other barrels, within barrels vs. septa, for example, rather than the barrel field as a whole.</p>
-<a class="reference internal image-reference" href="../_images/barrel_annotations.png"><img alt="barrel annotations" src="../_images/barrel_annotations.png" style="width: 700px;" />
-</a>
-<p><strong>Figure 1. Surface view of the barrel annotations.</strong></p>
-<p>EPFL PhD student Axel Bisi and the BrainGlobe team have now worked together to make the atlas available within the BrainGlobe ecosystem.
-Two versions of the atlas are available, at 10μm (<code class="docutils literal notranslate"><span class="pre">allen_mouse_bluebrain_barrels_10um</span></code>) and 25μm resolution (<code class="docutils literal notranslate"><span class="pre">allen_mouse_bluebrain_barrels_25um</span></code>).</p>
+                   <section class="tex2jax_ignore mathjax_ignore" id="an-atlas-for-the-regenerative-ambystoma-mexicanum-axolotl-has-been-added-to-brainglobe">
+<h1>An Atlas for the regenerative <em>Ambystoma mexicanum</em> (axolotl) has been added to BrainGlobe<a class="headerlink" href="#an-atlas-for-the-regenerative-ambystoma-mexicanum-axolotl-has-been-added-to-brainglobe" title="Link to this heading">#</a></h1>
+<p>Amphibians have long captivated human’s interest. An unusual amphibian amongst these is the Axolotl (<em>Ambystoma mexicanum</em>), which is sometimes used as a model organism for regeneration. In 2021, <a class="reference external" href="https://www.nature.com/articles/s41598-021-89357-3">Lazcano et al.</a> created a magnetic resonance imaging (MRI) atlas of the juvenile axolotl brain. The axolotl atlas enables researchers to gain better insights into the processes underlying central nervous system (CNS) regeneration.</p>
+<p><img alt="axolotl brain atlas annotations" src="../_images/axolotl_annotations.png" /></p>
+<p><strong>Figure 1. Lateral view of the axolotl brain atlas annotations and reference image.</strong></p>
+<p>The BrainGlobe team re-packaged the data generated and made public by the original study, making it now possible to use the axolotl atlas within the BrainGlobe ecosystem. The atlas name is <code class="docutils literal notranslate"><span class="pre">unam_axolotl_40um</span></code>.</p>
+<p>Note that the reference image (as seen in Figure 1.) contains more than just the brain, so it may not be a good registration target for <code class="docutils literal notranslate"><span class="pre">brainreg</span></code>!</p>
 <section id="how-do-i-use-the-new-atlas">
 <h2>How do I use the new atlas?<a class="headerlink" href="#how-do-i-use-the-new-atlas" title="Link to this heading">#</a></h2>
-<p>You can use the atlas like all other BrainGlobe atlases. To visualise the atlas in napari:</p>
+<p>You can use the axolotl atlas for visualisation like other BrainGlobe atlases. If you’re interested in what a axolotl brain looks like, you could follow the steps below</p>
 <ul class="simple">
 <li><p>Install BrainGlobe (<a class="reference internal" href="../documentation/index.html"><span class="doc std std-doc">instructions</span></a>)</p></li>
-<li><p>Download the 25μm version of the atlas by running <code class="docutils literal notranslate"><span class="pre">brainglobe</span> <span class="pre">install</span> <span class="pre">-a</span> <span class="pre">allen_mouse_bluebrain_barrels_25um</span></code> in the terminal (make sure to activate your conda environment first)</p></li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">napari</span> <span class="pre">-w</span> <span class="pre">brainrender-napari</span></code> and visualise the different parts of the atlas as described in our <a class="reference internal" href="../tutorials/visualise-atlas-napari.html"><span class="doc std std-doc">visualisation tutorial</span></a></p></li>
+<li><p>Open napari and follow the steps in our <a class="reference internal" href="../tutorials/manage-atlases-in-GUI.html"><span class="std std-doc">download tutorial</span></a> for the axolotl atlas</p></li>
+<li><p>Visualise the different parts of the atlas as described in our <a class="reference internal" href="../tutorials/visualise-atlas-napari.html"><span class="doc std std-doc">visualisation tutorial</span></a></p></li>
 </ul>
+<p>The end result will look something like Figure 2.</p>
+<p><img alt="axolotl atlas visualised in napari" src="../_images/axolotl_napari.png" /></p>
+<p><strong>Figure 2: The axolotl atlas visualised with <code class="docutils literal notranslate"><span class="pre">brainrender-napari</span></code>: with mesh overlays for the brain (grey), the tectum (red, right hemisphere) and the olfactory bulb (blue).</strong></p>
 </section>
 <section id="why-are-we-adding-new-atlases">
 <h2>Why are we adding new atlases?<a class="headerlink" href="#why-are-we-adding-new-atlases" title="Link to this heading">#</a></h2>
-<p>A key goal of BrainGlobe is to ensure that computational neuroanatomy software doesn’t need to be rewritten for new
-applications requiring novel atlases. We look forward to adding more atlases to BrainGlobe in the near future.
-If you’d like to get involved with a similar project, please <a class="reference internal" href="../contact.html"><span class="doc std std-doc">get in touch</span></a>.</p>
+<p>A fundamental aim of the BrainGlobe project is to make various brain atlases easily accessible by users across the globe. The axolotl atlas is the first amphibian brain atlas available through BrainGlobe. If you would like to get involved with a similar project, please <a class="reference internal" href="../contact.html"><span class="doc std std-doc">get in touch</span></a>.</p>
 </section>
 </section>
 
@@ -572,23 +568,16 @@ If you’d like to get involved with a similar project, please <a class="referen
 <div class="section ablog__prev-next">
   <span class="ablog__prev">
      
-    <a href="brainmapper-widget.html">
+    <a href="barrel-atlas-added.html">
       
       <i class="fa fa-arrow-circle-left"></i>
       
-      <span>New brainmapper napari widget released</span>
+      <span>A mouse brain atlas with barrel field annotations has been added to BrainGlobe</span>
     </a>
     
   </span>
   <span class="ablog__spacer">&nbsp;</span>
   <span class="ablog__next">
-     
-    <a href="axolotl-atlas-added.html">
-      <span>An Atlas for the regenerative Ambystoma mexicanum (axolotl) has been added to BrainGlobe</span>
-      
-      <i class="fa fa-arrow-circle-right"></i>
-      
-    </a>
     
   </span>
 </div>
