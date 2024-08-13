@@ -17,7 +17,7 @@ Amphibians have long captivated human's interest. An unusual amphibian amongst t
 
 The BrainGlobe team re-packaged the data generated and made public by the original study, making it now possible to use the axolotl atlas within the BrainGlobe ecosystem. The atlas name is `unam_axolotl_40um`.
 
-Note that the reference image (as seen in Figure 1.) contains more than just the brain, so it will not be a good registration target for `brainreg`!
+Note that the reference image (as seen in Figure 1.) contains more than just the brain, so it may not be a good registration target for `brainreg`!
 
 ## How do I use the new atlas?
 
