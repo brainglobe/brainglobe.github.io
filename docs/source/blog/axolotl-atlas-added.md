@@ -21,7 +21,7 @@ Note that the reference image (as seen in Figure 1.) contains more than just the
 
 ## How do I use the new atlas?
 
-You can use the axolotl atlas for visualisation (but not registration) like other BrainGlobe atlases. If you're interested in what a axolotl brain looks like, you could follow the steps below
+You can use the axolotl atlas for visualisation like other BrainGlobe atlases. If you're interested in what a axolotl brain looks like, you could follow the steps below
 
 * Install BrainGlobe ([instructions](/documentation/index))
 * Open napari and follow the steps in our [download tutorial](/tutorials/manage-atlases-in-GUI.md) for the axolotl atlas
