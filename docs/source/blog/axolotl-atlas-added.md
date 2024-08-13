@@ -13,13 +13,15 @@ Amphibians have long captivated human's interest. An unusual amphibian amongst t
 
 ![axolotl brain atlas annotations](./images/axolotl_annotations.png)
 
-**Figure 1. Lateral view of the axolotl brain atlas annotations.**
+**Figure 1. Lateral view of the axolotl brain atlas annotations and reference image.**
 
 The BrainGlobe team re-packaged the data generated and made public by the original study, making it now possible to use the axolotl atlas within the BrainGlobe ecosystem. The atlas name is `unam_axolotl_40um`.
 
+Note that the reference image (as seen in Figure 1.) contains more than just the brain, so it will not be a good registration target for `brainreg`!
+
 ## How do I use the new atlas?
 
-You can use the axolotl atlas like all other BrainGlobe atlases. If you're interested in what a axolotl brain looks like, you could follow the steps below
+You can use the axolotl atlas for visualisation (but not registration) like other BrainGlobe atlases. If you're interested in what a axolotl brain looks like, you could follow the steps below
 
 * Install BrainGlobe ([instructions](/documentation/index))
 * Open napari and follow the steps in our [download tutorial](/tutorials/manage-atlases-in-GUI.md) for the axolotl atlas
@@ -27,7 +29,7 @@ You can use the axolotl atlas like all other BrainGlobe atlases. If you're inter
 
 The end result will look something like Figure 2.
 
-![cavefish atlas visualised in napari](./images/axolotl_napari.png)
+![axolotl atlas visualised in napari](./images/axolotl_napari.png)
 
 **Figure 2: The axolotl atlas visualised with `brainrender-napari`: with mesh overlays for the brain (grey), the tectum (red, right hemisphere) and the olfactory bulb (blue).**
 
