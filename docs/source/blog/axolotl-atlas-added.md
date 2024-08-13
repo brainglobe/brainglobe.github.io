@@ -9,13 +9,13 @@ language: English
 
 # An Atlas for the regenerative _Ambystoma mexicanum_ (axolotl) has been added to BrainGlobe
 
-Amphibians have long captivated human's interest. An unusual amphibian amongst these is the Axolotl (_Ambystoma mexicanum_), which is sometimes used as a model organism for regeneration. In 2021, [Lazcano et al.](https://www.nature.com/articles/s41598-021-89357-3), explored the axolotl's neuroanatomy via magnetic reasonance imaging (MRI) atlas of the juvenile axolotl brain. The axolotl atlas enables researchers to gain better insights into the processes underlying central nervous system (CNS) regeneration.
+Amphibians have long captivated human's interest. An unusual amphibian amongst these is the Axolotl (_Ambystoma mexicanum_), which is sometimes used as a model organism for regeneration. In 2021, [Lazcano et al.](https://www.nature.com/articles/s41598-021-89357-3) created a magnetic resonance imaging (MRI) atlas of the juvenile axolotl brain. The axolotl atlas enables researchers to gain better insights into the processes underlying central nervous system (CNS) regeneration.
 
 ![axolotl brain atlas annotations](./images/axolotl_annotations.png)
 
 **Figure 1. Lateral view of the axolotl brain atlas annotations.**
 
-The Brainglobe Team re-packaged the data generated and made public by the original study, making it now possible to use the axolotl atlas within the BrainGlove ecosystem. The atlas name is `unam_axolotl_40um`.
+The BrainGlobe team re-packaged the data generated and made public by the original study, making it now possible to use the axolotl atlas within the BrainGlobe ecosystem. The atlas name is `unam_axolotl_40um`.
 
 ## How do I use the new atlas?
 
