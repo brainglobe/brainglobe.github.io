@@ -468,6 +468,11 @@ In no particular order:
 :link: https://github.com/saimaabdus19
 :::
 
+:::{grid-item-card} Saarah Hussain
+:img-bottom: https://avatars.githubusercontent.com/u/63860766?v=4
+:link: https://github.com/saarah815/
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
