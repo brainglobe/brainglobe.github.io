@@ -1,6 +1,6 @@
 # Projects
 
 ```{toctree}
-:maxdepth: 2
-blackcap
+:maxdepth: 1
+blackcap/index
 ```
