@@ -49,4 +49,5 @@ tutorials/index
 documentation/index
 community/index
 blog/index
+projects/index
 ```
