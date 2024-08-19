@@ -8,7 +8,7 @@ Details of BrainGlobe training courses:
 
 materials/whole-brain-analysis/index
 ```
-## Scheduled courses
+## Previous courses
 ```{toctree}
 :maxdepth: 1
 
