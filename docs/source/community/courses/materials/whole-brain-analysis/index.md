@@ -19,3 +19,8 @@ course, and can be used for self-paced learning.
 ### Visualisation of data in atlas space with brainrender and brainrender-napari (30 mins)
 
 ### Tour of other BrainGlobe tools and wrap-up (30 mins)
+
+
+## Materials
+* [Slides](https://brainglobe.info/course-whole-brain-microscopy-analysis)
+* [GitHub repository](https://github.com/brainglobe/course-whole-brain-microscopy-analysis)
