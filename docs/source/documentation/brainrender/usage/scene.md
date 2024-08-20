@@ -64,10 +64,10 @@ The **parameters** used to specify a camera include:
 
 * `pos`: a set of 3D coordinate specifying the position of the camera
 * `viewup`: a 3d vector indicating the direction of "up" in your scene \(should always be `0, -1, 0`\).
-* `clippingRange`: a set of a short and long distance, anything outside this range will not be rendered
+* `clipping_range`: a set of a short and long distance, anything outside this range will not be rendered
 
 Additional parameters (not generally needed):
 
-* `focalPoint` specifies the 'focal point' of the camera
+* `focal_point` specifies the 'focal point' of the camera
 * `distance` the camera's distance.
 
