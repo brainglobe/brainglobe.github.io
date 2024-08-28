@@ -20,9 +20,7 @@ Students should bring their own laptop with Python installed. If you require any
 
 ## Materials
 
-:::warning
-Materials will be added here soon
-:::
+Course materials will be added here soon.
 
 ## Location
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.566218885506!2d-0.1403092842295246!3d51.521173779637365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b290cd61e55%3A0xff71d53b61728860!2sSainsbury%20Wellcome%20Centre!5e0!3m2!1sen!2suk!4v1674043323427!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
