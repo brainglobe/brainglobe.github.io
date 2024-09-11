@@ -101,6 +101,15 @@ Available versions:
 * `kim_dev_mouse_mri_mtr_10um` - MRI MTR (magnetic transfer ratio) template at 10μm resolution
 * `kim_dev_mouse_mri_t2_10um` - MRI T2 template at 10μm resolution
 
+### [BlueBrain Barrel Cortex Atlas](https://doi.org/10.1162/imag_a_00209)
+This atlas from [Bolaños-Puchet et al. (2024)](https://doi.org/10.1162/imag_a_00209) is a version of the Allen
+Adult Mouse Brain Atlas with the addition of annotations of 33 barrels and barrel columns. For more details, 
+please see [the blogpost](/blog/barrel-atlas-added).
+
+Available versions:
+* `allen_mouse_bluebrain_barrels_10um` - 10μm resolution
+* `allen_mouse_bluebrain_barrels_25um` - 25μm resolution
+
 ### [3D version of the Allen mouse spinal cord atlas](https://doi.org/10.1101/2021.05.06.443008)
 This atlas from [Fiederling et al. (2021)](https://doi.org/10.1101/2021.05.06.443008) is a 3D reconstruction of the 
 [Allen Spinal Cord Atlas](https://mousespinal.brain-map.org/).
@@ -119,9 +128,9 @@ Available versions:
 * `osten_mouse_100um` - 100μm resolution
 
 ## Rat
-### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)) at 39 micron resolution
+### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
 This atlas is only available at 39μm resolution:
-* `whs_sd_rat_39um` - 39μm resolution
+* `whs_sd_rat_39um`
 
 ## Fish
 ### [Max Planck Zebrafish Brain Atlas](http://fishatlas.neuro.mpg.de)
@@ -133,9 +142,22 @@ This atlas is only available at 4μm resolution:
 * `azba_zfish_4um`
 
 ### [Blind Mexican cavefish Brain Atlas](https://elifesciences.org/articles/80777)
+This is a brain atlas of the blind Mexican cavefish (Astyanax mexicanus) from 
+[Kozol et al. (2023)](https://elifesciences.org/articles/80777). For more details please
+see [the blogpost](/blog/cavefish-atlas-added).
+
 This atlas is only available at 2μm resolution:
 * `sju_cavefish_2um`
-  
+
+## Amphibian
+### [UNAM Axolotl Brain Atlas](https://doi.org/10.1038/s41598-021-89357-3)
+This is a magnetic resonance imaging based atlas of the Axolotl (Ambystoma mexicanum) from 
+[Lazcano et al. (2021)](https://doi.org/10.1038/s41598-021-89357-3). For more details please 
+see [the blogpost](/blog/axolotl-atlas-added).
+
+This atlas is only available at 40μm resolution:
+* `unam_axolotl_40um`
+
 ## Human
 ### [Allen Human Brain Atlas](https://www.brain-map.org)
 This atlas is included mostly for visualisation and comparison to the other atlases. 
