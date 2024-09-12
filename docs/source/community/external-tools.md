@@ -47,6 +47,10 @@ ClearFinder is a graphical user interface that allows users without programming 
 - [GitHub repository](https://github.com/stegiopast/ClearFinder)
 - [Preprint](https://www.biorxiv.org/content/10.1101/2024.06.21.599877v1)
 
+## vvasp
+vvasp (pronounced wasp) is a python library for 3D viewing of spatially defined neuroscience data (histology, probe trajectories, neuron locations, etc.).  It uses the default PyVista plotter and is fully interoperable with PyVista functionality.
+- [GitHub repository](https://github.com/spkware/vvasp)
+
 :::{hint}
 if you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. 
 :::
