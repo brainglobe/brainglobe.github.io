@@ -4,12 +4,12 @@
 This tutorial uses `brainglobe-template-builder` which is still in early development. This means features are missing and things may change a lot. Use at your own risk!
 :::
 
-Brain templates are an average of many brain images. To compute this average, it is highly beneficial to roughly pre-align individual brain images. This makes the averaging a lot faster and more reliable.
+To avoid biasing results towards distinctive individual features of an individual brain, it is possible to use the average of many brains. To compute this average, it is highly beneficial to roughly pre-align individual brain images. This makes the averaging a lot faster and more reliable.
 
-The `brainglobe-template-builder` tool provides a Graphical User Interface to pre-align sample images to be used for template building later. It's an early work-in-progress tool, so you will have to install it from 
-Githubm via the command `pip install git+https://github.com/brainglobe/brainglobe-template-builder`. We recommend doing this in a separate conda environment.
+The [`brainglobe-template-builder` tool](https://github.com/brainglobe/brainglobe-template-builder) provides a Graphical User Interface to pre-align sample images to be used for template building later. It's an early work-in-progress tool, so you will have to install it from 
+Github via the command `pip install git+https://github.com/brainglobe/brainglobe-template-builder`. We recommend doing this in a separate conda environment.
 
-This manual work needs to be done only once per sample, on a low-resolution image. We recommend downsampling samples for template building to images < 100MB initially for preprocessing and initial template building. The results can be automatically reused later to create higher-resolution atlases. 
+This manual work needs to be done only once per sample, on a low-resolution image. We recommend downsampling images for template building to images < 100MB for preprocessing and initial template building. The results can be automatically reused later to create higher-resolution atlases. 
 
 1. Open `napari`.
 2. Open the `Preprocess` widget by selecting `Plugins > Preprocess (brainglobe-template-builder)` in the menu bar near the top left of the window. 
@@ -17,24 +17,40 @@ This manual work needs to be done only once per sample, on a low-resolution imag
 
 **The Preprocess widget appears on the right hand side of the window, listing four steps**
 
-3. Open the lowest resolution version of your sample - either drag and drop it onto the `napari` canvas, or do `File > Open`. We use a tadpole brain downsampled to 12um isotropic resolution here - and we take note that the orientation of this sample is PLS [in BrainGlobe convention](/documentation/brainglobe-space/index).
+3. Open the lowest resolution version of your sample - either drag and drop it onto the `napari` canvas, or do `File > Open`. We use a tadpole brain downsampled to 12um isotropic resolution here - and we take note that the orientation of this sample is "PLS" (axis 0 is **P**osterior-anterior, axis 1 is **L**eft-right and axis 2 is **S**uperior-inferior) [in BrainGlobe convention](/documentation/brainglobe-space/index).
+
+:::{admonition} Determining sample orientation
+:class: dropdown
+When opening a three dimensional image in `napari` and hovering over it with your mouse, you will see the coordinates along each axis just below the dimension slider.
+
+![Napari with an open tadpole brain layer](./images/brainglobe-template-builder/top-left-pixel.png)
+**The tadpole brain in napari near the pixel (0,0,0) showing the coordinates of the cursor below the canvas.**
+
+You can now move along each image axis and determine which anatomical axes this approximately corresponds to.
+
+In our case, moving upwards along the dimension slider (axis 0) goes from posterior to anterior, so the first letter of orientation is P.
+
+If we move the mouse from top to bottom in the image (axis 1) we go from anatomical left to right (approximately, because the anatomical axes are obliquely tilted relative to the image axes!), so the second letter is L.
+
+If we go from left to right in the image, we go (again approximatly) from superior to inferior, so the third letter is S.
+:::
 
 ![Napari with an open tadpole brain layer](./images/brainglobe-template-builder/open-sample.png)
 **The tadpole brain is opened in napari.**
 
-4. Set the source origin to the orientation of your sample, in BrainGlobe convention (PLS for our example tadpole). Double-check the target origin is ASR. Then press the "Reorient selected layers" button.
+1. Set the source origin to the orientation of your sample, in BrainGlobe convention (PLS for our example tadpole). Double-check the target origin is ASR. Then press the "Reorient selected layers" button.
  
 ![Napari with the tadpole brain reoriented to ASR](./images/brainglobe-template-builder/reorient-sample.png)
 
-**The tadpole brain is now re-oriented. Note that the orientation may not perfect (it isn't in the example case) because this step only includes reorientation in steps of 90 degrees, and the sample is tilted with respect to its anatomical axes.**
+**The tadpole brain is now re-oriented. Note that the orientation may not be perfect (it isn't in the example case) because this step only includes reorientation in multiples of 90 degrees, and the image is tilted with respect to its anatomical axes.**
 
-5. Expand the next step: "Create Mask", and click the "Create Mask" button. Explore the mask in 3D by toggling the 2D/3D icon (little square/cube) on the lower left.
+1. Expand the next step: "Create Mask", and click the "Create Mask" button. Explore the mask in 3D by toggling the 2D/3D icon (little square/cube) on the lower left.
 
 ![Napari with the tadpole brain masked](./images/brainglobe-template-builder/masked.png)
 
- **The mask is a Labels layer that should distinguish brain from non-brain as best possible. Prefer having background in the brain rather than brain in the background. You can play with the parameters in this step to improve the mask. Delete and recreate the mask layer to do so.**
+ **The mask is a Labels layer that should distinguish brain from non-brain as best possible. Err on the side of the mask being larger than the brain; a bit of margin is absolutely fine. You can play with the parameters in this step to improve the mask. Delete and recreate the mask layer to do so.**
 
-6. Manually remove any regions that should not be included in the brain from the mask. You can do this by selecting the mask layer from the layer list (it will be highlighted in blue) and then using the eraser and paint brush icons from the layer controls in the top left. 
+1. Manually remove any regions that should not be included in the brain from the mask. This could be damaged areas or non-brain tissues that are visible in the image. You can do this by selecting the mask layer from the layer list (it will be highlighted in blue) and then using the eraser and paint brush icons from the layer controls in the top left. See [this introductory tutorial](https://healthbioscienceideas.github.io/microscopy-novice/instructor/quality-control-and-manual-segmentation.html#manual-segmentation-in-napari) for more details around how to erase and paint in a Labels layers.
 
 :::{note}
 The `n edit dim` parameter allows you to switch between editing the mask in 2 and 3 dimensions.
@@ -62,7 +78,7 @@ The `n edit dim` parameter allows you to switch between editing the mask in 2 an
 
 **Napari will add three new layers: the aligned sample, the aligned mask, and a labels layer dividing the aligned brain into two hemispheres.**
 
-10. If you are happy with the result, click "Save transform" so you can reproduce this in the future. If you would like to improve, delete the three aligned images and repeat steps 7-9.
+10. If you are happy with the result, we strongly recommend you click "Save transform" so you can reproduce this in the future. Save it in a folder named after the sample, in our case `najva8`. If you would like to improve, delete the three aligned images and repeat steps 7-9.
 
 11. Expand the next step: "Save files"
 

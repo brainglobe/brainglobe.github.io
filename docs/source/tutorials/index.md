@@ -92,7 +92,7 @@ Whole brain cell detection and registration
 :img-bottom: images/cellfinder.png
 :link: template-builder-pre-align
 :link-type: doc
-Aligning samples to use in a template building
+Aligning samples to use for template building
 :::
 
 ::::
