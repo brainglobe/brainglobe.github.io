@@ -32,25 +32,25 @@ In our case, moving upwards along the dimension slider (axis 0) goes from poster
 
 If we move the mouse from top to bottom in the image (axis 1) we go from anatomical left to right (approximately, because the anatomical axes are obliquely tilted relative to the image axes!), so the second letter is L.
 
-If we go from left to right in the image, we go (again approximatly) from superior to inferior, so the third letter is S.
+If we go from left to right in the image (axis 2), we go (again approximatly) from superior to inferior, so the third letter is S.
 :::
 
 ![Napari with an open tadpole brain layer](./images/brainglobe-template-builder/open-sample.png)
 **The tadpole brain is opened in napari.**
 
-1. Set the source origin to the orientation of your sample, in BrainGlobe convention (PLS for our example tadpole). Double-check the target origin is ASR. Then press the "Reorient selected layers" button.
+4. Set the source origin to the orientation of your sample, in BrainGlobe convention (PLS for our example tadpole). Double-check the target origin is ASR. Then press the "Reorient selected layers" button.
  
 ![Napari with the tadpole brain reoriented to ASR](./images/brainglobe-template-builder/reorient-sample.png)
 
 **The tadpole brain is now re-oriented. Note that the orientation may not be perfect (it isn't in the example case) because this step only includes reorientation in multiples of 90 degrees, and the image is tilted with respect to its anatomical axes.**
 
-1. Expand the next step: "Create Mask", and click the "Create Mask" button. Explore the mask in 3D by toggling the 2D/3D icon (little square/cube) on the lower left.
+5. Expand the next step: "Create Mask", and click the "Create Mask" button. Explore the mask in 3D by toggling the 2D/3D icon (little square/cube) on the lower left.
 
 ![Napari with the tadpole brain masked](./images/brainglobe-template-builder/masked.png)
 
  **The mask is a Labels layer that should distinguish brain from non-brain as best possible. Err on the side of the mask being larger than the brain; a bit of margin is absolutely fine. You can play with the parameters in this step to improve the mask. Delete and recreate the mask layer to do so.**
 
-1. Manually remove any regions that should not be included in the brain from the mask. This could be damaged areas or non-brain tissues that are visible in the image. You can do this by selecting the mask layer from the layer list (it will be highlighted in blue) and then using the eraser and paint brush icons from the layer controls in the top left. See [this introductory tutorial](https://healthbioscienceideas.github.io/microscopy-novice/instructor/quality-control-and-manual-segmentation.html#manual-segmentation-in-napari) for more details around how to erase and paint in a Labels layers.
+6. Manually remove any regions that should not be included in the brain from the mask. This could be damaged areas or non-brain tissues that are visible in the image. You can do this by selecting the mask layer from the layer list (it will be highlighted in blue) and then using the eraser and paint brush icons from the layer controls in the top left. See [this introductory tutorial](https://healthbioscienceideas.github.io/microscopy-novice/instructor/quality-control-and-manual-segmentation.html#manual-segmentation-in-napari) for more details around how to erase and paint in a Labels layers.
 
 :::{note}
 The `n edit dim` parameter allows you to switch between editing the mask in 2 and 3 dimensions.
@@ -78,13 +78,13 @@ The `n edit dim` parameter allows you to switch between editing the mask in 2 an
 
 **Napari will add three new layers: the aligned sample, the aligned mask, and a labels layer dividing the aligned brain into two hemispheres.**
 
-10. If you are happy with the result, we strongly recommend you click "Save transform" so you can reproduce this in the future. Save it in a folder named after the sample, in our case `najva8`. If you would like to improve, delete the three aligned images and repeat steps 7-9.
+10.  If you are happy with the result, we strongly recommend you click "Save transform" so you can reproduce this in the future. It is a good idea to save it (and other outputs from this tutorial) in an output folder named after the sample: in our case the sample is called `najva8`, so we name the output folder `sub-najva8`. If you would like to improve the aligment, delete the three aligned images and repeat steps 7-9.
 
-11. Expand the next step: "Save files"
+11.  Expand the next step: "Save files"
 
-12. Input the voxel size of the sample in millimeters, and browse to the output folder. It is a good idea to name this folder after the sample: in our case the sample is called `najva8`, so we name the output folder `sub-najva8`.
+12.  Input the voxel size of the sample in millimeters, and browse to the output folder.
 
-13. Select the three topmost layers in the layerlist by `Shift+Left Mouse` clicking on the first and the third. Click "Save selected layers".
+13.  Select the three topmost layers in the layerlist by `Shift+Left Mouse` clicking on the first and the third. Click "Save selected layers".
 
 ![Napari showing the process of saving the aligned layers](./images/brainglobe-template-builder/save-layers.png)
 
