@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Detecting cells in 3D with cellfinder &#8212; BrainGlobe</title>
+    <title>Aligning samples for template building &#8212; BrainGlobe</title>
   
   
   
@@ -52,14 +52,14 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/cellfinder-detection';</script>
-    <link rel="canonical" href="https://brainglobe.info/tutorials/cellfinder-detection.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/template-builder-pre-align';</script>
+    <link rel="canonical" href="https://brainglobe.info/tutorials/template-builder-pre-align.html" />
     <link rel="icon" href="../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Retraining the cellfinder classification network" href="cellfinder-retraining.html" />
-    <link rel="prev" title="Analysing brainwide distribution of cells" href="transform-cells-atlas.html" /> 
+    <link rel="next" title="Documentation" href="../documentation/index.html" />
+    <link rel="prev" title="Visualising your data in brainrender" href="brainmapper/visualising-your-data-in-brainrender.html" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>   
   </head>
@@ -499,7 +499,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="segmenting-1d-tracks.html">Segmenting a 1D track</a></li>
 <li class="toctree-l1"><a class="reference internal" href="segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transform-cells-atlas.html">Analysing brainwide distribution of cells</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Detecting cells in 3D with cellfinder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cellfinder-detection.html">Detecting cells in 3D with cellfinder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cellfinder-retraining.html">Retraining the cellfinder classification network</a></li>
 <li class="toctree-l1"><a class="reference internal" href="silicon-probe-tracking.html">Silicon probe tracking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tracing-tracking.html">Analyze and visualize bulk fluorescence tracing data</a></li>
@@ -511,7 +511,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="brainmapper/visualising-your-data-in-brainrender.html">Visualising your data in brainrender</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="template-builder-pre-align.html">Aligning samples for template building</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Aligning samples for template building</a></li>
 </ul>
 </div>
 </nav></div>
@@ -552,7 +552,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Detecting...</li>
+    <li class="breadcrumb-item active" aria-current="page">Aligning...</li>
   </ul>
 </nav>
 </div>
@@ -568,52 +568,83 @@ document.write(`
                 
 <div id="searchbox"></div>
                 <article class="bd-article">
-                   <section class="tex2jax_ignore mathjax_ignore" id="detecting-cells-in-3d-with-cellfinder">
-<h1>Detecting cells in 3D with cellfinder<a class="headerlink" href="#detecting-cells-in-3d-with-cellfinder" title="Link to this heading">#</a></h1>
-<p>In this tutorial, you will use the <a class="reference internal" href="../documentation/cellfinder/index.html"><span class="doc std std-doc">cellfinder</span></a> plugin for <a class="reference external" href="https://napari.org">napari</a> to detect cells in a 3D image.</p>
-<p>The aim of this tutorial is to get cell detection up and running. The image we use here is very small and has some
-artefacts. The results are not very good, but it should be enough to see the plugin working! When using cellfinder on
-your own data, there are many parameters that can be
-adjusted, and cellfinder will need to be retrained for optimal performance. For more information, please see the full
-<a class="reference internal" href="../documentation/cellfinder/index.html"><span class="doc std std-doc">cellfinder documentation</span></a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You will need <code class="docutils literal notranslate"><span class="pre">napari</span></code> installed on your computer - please follow
-<a class="reference external" href="https://napari.org/stable/tutorials/fundamentals/installation.html"><code class="docutils literal notranslate"><span class="pre">napari</span></code>’s installation instructions</a> to do so
-(including their recommendation to use a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment).</p>
-</div>
-<ol class="arabic simple">
-<li><p>Open <code class="docutils literal notranslate"><span class="pre">napari</span></code>.</p></li>
-<li><p>Install <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> by selecting <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">Install/Uninstall</span> <span class="pre">plugins</span></code> and searching for <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> in the searchbox. If it is not installed yet, click on the <code class="docutils literal notranslate"><span class="pre">Install</span></code> button.</p></li>
-</ol>
+                   <section class="tex2jax_ignore mathjax_ignore" id="aligning-samples-for-template-building">
+<h1>Aligning samples for template building<a class="headerlink" href="#aligning-samples-for-template-building" title="Link to this heading">#</a></h1>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>This may take a while due to the various dependencies being installed.</p>
-<p>On Silicon Macs you may have to run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">hdf5</span></code> on the command line (in your conda environment) first for the installation to be successful.</p>
+<p>This tutorial uses <code class="docutils literal notranslate"><span class="pre">brainglobe-template-builder</span></code> which is still in early development. This means features are missing and things may change a lot. Use at your own risk!</p>
 </div>
+<p>To avoid biasing results towards distinctive individual features of an individual brain, it is possible to use the average of many brains. To compute this average, it is highly beneficial to roughly pre-align individual brain images. This makes the averaging a lot faster and more reliable.</p>
+<p>The <a class="reference external" href="https://github.com/brainglobe/brainglobe-template-builder"><code class="docutils literal notranslate"><span class="pre">brainglobe-template-builder</span></code> tool</a> provides a Graphical User Interface to pre-align sample images to be used for template building later. It’s an early work-in-progress tool, so you will have to install it from
+Github via the command <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">git+https://github.com/brainglobe/brainglobe-template-builder</span></code>. We recommend doing this in a separate conda environment.</p>
+<p>This manual work needs to be done only once per sample, on a low-resolution image. We recommend downsampling images for template building to images &lt; 100MB for preprocessing and initial template building. The results can be automatically reused later to create higher-resolution atlases.</p>
+<ol class="arabic simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">napari</span></code>.</p></li>
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">Preprocess</span></code> widget by selecting <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">Preprocess</span> <span class="pre">(brainglobe-template-builder)</span></code> in the menu bar near the top left of the window.
+<img alt="Preprocess widget" src="../_images/open-plugin.png" /></p></li>
+</ol>
+<p><strong>The Preprocess widget appears on the right hand side of the window, listing four steps</strong></p>
 <ol class="arabic simple" start="3">
-<li><p>Open the cell detection widget by selecting <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">cellfinder</span> <span class="pre">&gt;</span> <span class="pre">Cell</span> <span class="pre">detection</span></code> in the napari menu bar near the top left of the window.
-<img alt="cellfinder detection widget" src="../_images/cellfinder-napari-detection.png" /></p></li>
+<li><p>Open the lowest resolution version of your sample - either drag and drop it onto the <code class="docutils literal notranslate"><span class="pre">napari</span></code> canvas, or do <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open</span></code>. We use a tadpole brain downsampled to 12um isotropic resolution here - and we take note that the orientation of this sample is “PLS” (axis 0 is <strong>P</strong>osterior-anterior, axis 1 is <strong>L</strong>eft-right and axis 2 is <strong>S</strong>uperior-inferior) <a class="reference internal" href="../documentation/brainglobe-space/index.html"><span class="doc std std-doc">in BrainGlobe convention</span></a>.</p></li>
 </ol>
-<p><strong>The cell detection widget appears on the right-hand side of the window.</strong></p>
+<div class="dropdown admonition">
+<p class="admonition-title">Determining sample orientation</p>
+<p>When opening a three dimensional image in <code class="docutils literal notranslate"><span class="pre">napari</span></code> and hovering over it with your mouse, you will see the coordinates along each axis just below the dimension slider.</p>
+<p><img alt="Napari with an open tadpole brain layer" src="../_images/top-left-pixel.png" />
+<strong>The tadpole brain in napari near the pixel (0,0,0) showing the coordinates of the cursor below the canvas.</strong></p>
+<p>You can now move along each image axis and determine which anatomical axes this approximately corresponds to.</p>
+<p>In our case, moving upwards along the dimension slider (axis 0) goes from posterior to anterior, so the first letter of orientation is P.</p>
+<p>If we move the mouse from top to bottom in the image (axis 1) we go from anatomical left to right (approximately, because the anatomical axes are obliquely tilted relative to the image axes!), so the second letter is L.</p>
+<p>If we go from left to right in the image (axis 2), we go (again approximately) from superior to inferior, so the third letter is S.</p>
+</div>
+<p><img alt="Napari with an open tadpole brain layer" src="../_images/open-sample.png" />
+<strong>The tadpole brain is opened in napari.</strong></p>
 <ol class="arabic simple" start="4">
-<li><p>Load some sample data <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open</span> <span class="pre">sample</span> <span class="pre">&gt;</span> <span class="pre">Sample</span> <span class="pre">data</span> <span class="pre">(cellfinder)</span></code>. This will open a small two-channel 3D image.</p></li>
-<li><p>Set the <code class="docutils literal notranslate"><span class="pre">signal</span> <span class="pre">image</span></code> to <code class="docutils literal notranslate"><span class="pre">Signal</span></code></p></li>
-<li><p>Set the <code class="docutils literal notranslate"><span class="pre">background</span> <span class="pre">image</span></code> to <code class="docutils literal notranslate"><span class="pre">Background</span></code></p></li>
-<li><p>Ensure that <code class="docutils literal notranslate"><span class="pre">Voxel</span> <span class="pre">size</span> <span class="pre">(z)</span></code> is set to <code class="docutils literal notranslate"><span class="pre">5.00</span></code>, <code class="docutils literal notranslate"><span class="pre">Voxel</span> <span class="pre">size</span> <span class="pre">(y)</span></code> is set to <code class="docutils literal notranslate"><span class="pre">2.00</span></code>, and <code class="docutils literal notranslate"><span class="pre">Voxel</span> <span class="pre">size</span> <span class="pre">(x)</span></code> is set to <code class="docutils literal notranslate"><span class="pre">2.00</span></code>.</p></li>
-<li><p>Click <code class="docutils literal notranslate"><span class="pre">Run</span></code> (you may need to scroll down)</p></li>
+<li><p>Set the source origin to the orientation of your sample, in BrainGlobe convention (PLS for our example tadpole). Double-check the target origin is ASR. Then press the “Reorient selected layers” button.</p></li>
 </ol>
-<p><img alt="Detected cells" src="../_images/cellfinder-napari-detected-cells.png" />
-<strong>Detected cells are highlighted by yellow circles.</strong></p>
+<p><img alt="Napari with the tadpole brain reoriented to ASR" src="../_images/reorient-sample.png" /></p>
+<p><strong>The tadpole brain is now re-oriented. Note that the orientation may not be perfect (it isn’t in the example case) because this step only includes reorientation in multiples of 90 degrees, and the image is tilted with respect to its anatomical axes.</strong></p>
+<ol class="arabic simple" start="5">
+<li><p>Expand the next step: “Create Mask”, and click the “Create Mask” button. Explore the mask in 3D by toggling the 2D/3D icon (little square/cube) on the lower left.</p></li>
+</ol>
+<p><img alt="Napari with the tadpole brain masked" src="../_images/masked.png" /></p>
+<p><strong>The mask is a Labels layer that should distinguish brain from non-brain as best possible. Err on the side of the mask being larger than the brain; a bit of margin is absolutely fine. You can play with the parameters in this step to improve the mask. Delete and recreate the mask layer to do so.</strong></p>
+<ol class="arabic simple" start="6">
+<li><p>Manually remove any regions that should not be included in the brain from the mask. This could be damaged areas or non-brain tissues that are visible in the image. You can do this by selecting the mask layer from the layer list (it will be highlighted in blue) and then using the eraser and paint brush icons from the layer controls in the top left. See <a class="reference external" href="https://healthbioscienceideas.github.io/microscopy-novice/instructor/quality-control-and-manual-segmentation.html#manual-segmentation-in-napari">this introductory tutorial</a> for more details around how to erase and paint in a Labels layers.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">edit</span> <span class="pre">dim</span></code> parameter allows you to switch between editing the mask in 2 and 3 dimensions.</p>
+</div>
+<p><img alt="Napari with the tadpole brain mask edited" src="../_images/masked-edited.png" /></p>
+<p><strong>In our case, we have manually removed the tadpole’s spinal cord from the mask.</strong></p>
+<ol class="arabic simple" start="7">
+<li><p>Switch back to a 2D view and expand the next step: “Align midplane”. Click “Estimate points”.</p></li>
+</ol>
+<p><img alt="Napari with the tadpole brain mask edited" src="../_images/align-midplane.png" /></p>
+<p><strong>A new Points layer appears in the layer list, containing 9 points arranged in a 3x3 grid across planes in the sample.</strong></p>
+<ol class="arabic simple" start="8">
+<li><p>Move the points so they lie along the sagittal midplane of your sample. You can do so by selecting the points layer (click on it, and it will be highlighted in blue) and using the layer controls on the top left.</p></li>
+</ol>
+<p><img alt="Napari with two points along the tadpole's midplane" src="../_images/aligned-points.png" /></p>
+<p><strong>An example of two points moved to the tadpoles sagittal midplane.</strong></p>
 <ol class="arabic simple" start="9">
-<li><p>Ensure that the <code class="docutils literal notranslate"><span class="pre">Detected</span></code> layer is highlighted</p></li>
-<li><p>Save the detected cells by clicking <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">selected</span> <span class="pre">layer(s)</span></code>, choosing a directory and a filename ending
-in <code class="docutils literal notranslate"><span class="pre">.xml</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">cells.xml</span></code>).</p></li>
+<li><p>Click “Align image”.</p></li>
 </ol>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>For more information about how to use the detection plugin to detect cells in your own data, please see
-<a class="reference internal" href="../documentation/cellfinder/user-guide/napari-plugin/cell-detection.html"><span class="doc std std-doc">the full cell detection guide</span></a>.</p>
+<p><img alt="Napari with the tadpole brain aligned to ASR" src="../_images/aligned-image.png" /></p>
+<p><strong>Napari will add three new layers: the aligned sample, the aligned mask, and a labels layer dividing the aligned brain into two hemispheres.</strong></p>
+<ol class="arabic simple" start="10">
+<li><p>If you are happy with the result, we strongly recommend you click “Save transform” so you can reproduce this in the future. It is a good idea to save it (and other outputs from this tutorial) in an output folder named after the sample: in our case the sample is called <code class="docutils literal notranslate"><span class="pre">najva8</span></code>, so we name the output folder <code class="docutils literal notranslate"><span class="pre">sub-najva8</span></code>. If you would like to improve the alignment, delete the three aligned images and repeat steps 7-9.</p></li>
+<li><p>Expand the next step: “Save files”</p></li>
+<li><p>Input the voxel size of the sample in millimeters, and browse to the output folder.</p></li>
+<li><p>Select the three topmost layers in the layerlist by <code class="docutils literal notranslate"><span class="pre">Shift+Left</span> <span class="pre">Mouse</span></code> clicking on the first and the third. Click “Save selected layers”.</p></li>
+</ol>
+<p><img alt="Napari showing the process of saving the aligned layers" src="../_images/save-layers.png" /></p>
+<p><strong>Napari just before saving the three aligned layers.</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Double-check that this has worked by navigating to the output folder - it should contain 6 new image files: 3 <code class="docutils literal notranslate"><span class="pre">.nii.gz</span></code> and 3 <code class="docutils literal notranslate"><span class="pre">.tif</span></code>. The names of these files will start with the original sample name and end with one of <code class="docutils literal notranslate"><span class="pre">asr_aligned</span></code>, <code class="docutils literal notranslate"><span class="pre">asr_label-brain_aligned</span></code> or <code class="docutils literal notranslate"><span class="pre">asr_label-halves_aligned</span></code>.</p>
+<p><img alt="A screenshot of the output folder with the expected saved files" src="../_images/example-output-folder.png" /></p>
 </div>
 </section>
 
@@ -631,20 +662,20 @@ in <code class="docutils literal notranslate"><span class="pre">.xml</span></cod
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="transform-cells-atlas.html"
+       href="brainmapper/visualising-your-data-in-brainrender.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Analysing brainwide distribution of cells</p>
+        <p class="prev-next-title">Visualising your data in brainrender</p>
       </div>
     </a>
     <a class="right-next"
-       href="cellfinder-retraining.html"
+       href="../documentation/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Retraining the cellfinder classification network</p>
+        <p class="prev-next-title">Documentation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
