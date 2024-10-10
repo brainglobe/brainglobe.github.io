@@ -78,7 +78,7 @@ The `n edit dim` parameter allows you to switch between editing the mask in 2 an
 
 **Napari will add three new layers: the aligned sample, the aligned mask, and a labels layer dividing the aligned brain into two hemispheres.**
 
-10.  If you are happy with the result, we strongly recommend you click "Save transform" so you can reproduce this in the future. It is a good idea to save it (and other outputs from this tutorial) in an output folder named after the sample: in our case the sample is called `najva8`, so we name the output folder `sub-najva8`. If you would like to improve the aligment, delete the three aligned images and repeat steps 7-9.
+10.  If you are happy with the result, we strongly recommend you click "Save transform" so you can reproduce this in the future. It is a good idea to save it (and other outputs from this tutorial) in an output folder named after the sample: in our case the sample is called `najva8`, so we name the output folder `sub-najva8`. If you would like to improve the alignment, delete the three aligned images and repeat steps 7-9.
 
 11.  Expand the next step: "Save files"
 
