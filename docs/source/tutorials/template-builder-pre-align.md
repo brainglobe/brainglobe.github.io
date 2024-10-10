@@ -32,7 +32,7 @@ In our case, moving upwards along the dimension slider (axis 0) goes from poster
 
 If we move the mouse from top to bottom in the image (axis 1) we go from anatomical left to right (approximately, because the anatomical axes are obliquely tilted relative to the image axes!), so the second letter is L.
 
-If we go from left to right in the image (axis 2), we go (again approximatly) from superior to inferior, so the third letter is S.
+If we go from left to right in the image (axis 2), we go (again approximately) from superior to inferior, so the third letter is S.
 :::
 
 ![Napari with an open tadpole brain layer](./images/brainglobe-template-builder/open-sample.png)

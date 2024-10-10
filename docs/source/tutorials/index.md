@@ -88,11 +88,11 @@ Analyze and visualize bulk fluorescence tracing data
 Whole brain cell detection and registration
 :::
 
-:::{grid-item-card} {fas}`brain;sd-text-primary` Aligning samples with brainglobe-template-builder
-:img-bottom: images/cellfinder.png
+:::{grid-item-card} {fas}`brain;sd-text-primary` Aligning samples
+:img-bottom: images/brainglobe-template-builder/template-builder-header.png
 :link: template-builder-pre-align
 :link-type: doc
-Aligning samples to use for template building
+Aligning samples to image axes for template building (experimental!)
 :::
 
 ::::
