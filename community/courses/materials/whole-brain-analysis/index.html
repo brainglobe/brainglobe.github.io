@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="en" data-content_root="../../../../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Releases &#8212; BrainGlobe</title>
+    <title>Whole brain microscopy analysis with BrainGlobe and napari &#8212; BrainGlobe</title>
   
   
   
@@ -18,48 +18,48 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=1227d6e8" />
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=1227d6e8" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=d45e8c67"></script>
-    <script src="../../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
-    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'community/releases/index';</script>
-    <link rel="canonical" href="https://brainglobe.info/community/releases/index.html" />
-    <link rel="icon" href="../../_static/brainglobe.png"/>
-    <link rel="author" title="About these documents" href="../../about.html" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="BrainGlobe version 1 overview" href="v1/index.html" />
-    <link rel="prev" title="November 2023" href="../roadmaps/november-2023.html" /> 
+    <script>DOCUMENTATION_OPTIONS.pagename = 'community/courses/materials/whole-brain-analysis/index';</script>
+    <link rel="canonical" href="https://brainglobe.info/community/courses/materials/whole-brain-analysis/index.html" />
+    <link rel="icon" href="../../../../_static/brainglobe.png"/>
+    <link rel="author" title="About these documents" href="../../../../about.html" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="October 7th-8th 2024" href="../../scheduled/oct-2024/index.html" />
+    <link rel="prev" title="Courses" href="../../index.html" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>   
   </head>
@@ -91,7 +91,7 @@
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="../../search.html"
+      action="../../../../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -131,7 +131,7 @@
     
   
 
-<a class="navbar-brand logo" href="../../index.html">
+<a class="navbar-brand logo" href="../../../../index.html">
   
   
   
@@ -142,8 +142,8 @@
       
     
     
-    <img src="../../_static/brainglobe.png" class="logo__image only-light" alt=""/>
-    <script>document.write(`<img src="../../_static/brainglobe.png" class="logo__image only-dark" alt=""/>`);</script>
+    <img src="../../../../_static/brainglobe.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../../../_static/brainglobe.png" class="logo__image only-dark" alt=""/>`);</script>
   
   
     <p class="title logo__title">BrainGlobe</p>
@@ -161,35 +161,35 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../about.html">
+  <a class="nav-link nav-internal" href="../../../../about.html">
     About
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+  <a class="nav-link nav-internal" href="../../../../tutorials/index.html">
     Tutorials
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../documentation/index.html">
+  <a class="nav-link nav-internal" href="../../../../documentation/index.html">
     Documentation
   </a>
 </li>
 
 
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../index.html">
+  <a class="nav-link nav-internal" href="../../../index.html">
     Community
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../blog/index.html">
+  <a class="nav-link nav-internal" href="../../../../blog/index.html">
     Blog
   </a>
 </li>
@@ -355,35 +355,35 @@ document.write(`
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../about.html">
+  <a class="nav-link nav-internal" href="../../../../about.html">
     About
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+  <a class="nav-link nav-internal" href="../../../../tutorials/index.html">
     Tutorials
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../documentation/index.html">
+  <a class="nav-link nav-internal" href="../../../../documentation/index.html">
     Documentation
   </a>
 </li>
 
 
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../index.html">
+  <a class="nav-link nav-internal" href="../../../index.html">
     Community
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../blog/index.html">
+  <a class="nav-link nav-internal" href="../../../../blog/index.html">
     Blog
   </a>
 </li>
@@ -496,43 +496,43 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../developers/index.html">Developer’s guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../developers/intro_to_codebase.html">Introduction to the BrainGlobe codebase for developers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../developers/tooling.html">Tooling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../developers/conventions.html">Conventions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../developers/testing.html">Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../developers/new_releases.html">Publishing new releases</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../developers/specific_repos.html">Specific Repository Developer Documentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../developers/repositories/brainglobe-meta/index.html">brainglobe-meta</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../developers/repositories/brainglobe-utils/index.html">brainglobe-utils</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../developers/repositories/brainglobe-workflows/index.html">brainglobe-workflows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../developers/repositories/cellfinder-core/index.html">cellfinder.core</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../developers/index.html">Developer’s guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers/intro_to_codebase.html">Introduction to the BrainGlobe codebase for developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers/tooling.html">Tooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers/conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers/testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers/new_releases.html">Publishing new releases</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../developers/specific_repos.html">Specific Repository Developer Documentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../developers/repositories/brainglobe-meta/index.html">brainglobe-meta</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../developers/repositories/brainglobe-utils/index.html">brainglobe-utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../developers/repositories/brainglobe-workflows/index.html">brainglobe-workflows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../developers/repositories/cellfinder-core/index.html">cellfinder.core</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference external" href="https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../roadmaps/index.html">Roadmaps</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../roadmaps/may-2024.html">May 2024</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../roadmaps/november-2023.html">November 2023</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../roadmaps/index.html">Roadmaps</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../roadmaps/may-2024.html">May 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../roadmaps/november-2023.html">November 2023</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Releases</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="v1/index.html">BrainGlobe version 1 overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="v1/brainreg.html">Version 1: changes to registration and segmentation tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="v1/cellfinder-migration.html">Version 1: Cellfinder migration and <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="v1/cellfinder-core-and-plugin-merge.html">Version 1: changes to the cellfinder backend and plugin</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../releases/index.html">Releases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../releases/v1/index.html">BrainGlobe version 1 overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../releases/v1/brainreg.html">Version 1: changes to registration and segmentation tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../releases/v1/cellfinder-migration.html">Version 1: Cellfinder migration and <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../releases/v1/cellfinder-core-and-plugin-merge.html">Version 1: changes to the cellfinder backend and plugin</a></li>
 </ul>
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../courses/index.html">Courses</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../courses/materials/whole-brain-analysis/index.html">Whole brain microscopy analysis with BrainGlobe and napari</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../courses/scheduled/oct-2024/index.html">October 7th-8th 2024</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../courses/scheduled/dec-2023/index.html">December 6th 2023</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html">Courses</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Whole brain microscopy analysis with BrainGlobe and napari</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../scheduled/oct-2024/index.html">October 7th-8th 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../scheduled/dec-2023/index.html">December 6th 2023</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../external-tools.html">Software built by the community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../external-tools.html">Software built by the community</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://gin.g-node.org/BrainGlobe">Sample datasets</a></li>
 </ul>
 </div>
@@ -567,14 +567,17 @@ document.write(`
   <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
-      <a href="../../index.html" class="nav-link" aria-label="Home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Community</a></li>
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Community</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Releases</li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Courses</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Whole brain...</li>
   </ul>
 </nav>
 </div>
@@ -590,21 +593,59 @@ document.write(`
                 
 <div id="searchbox"></div>
                 <article class="bd-article">
-                   <section class="tex2jax_ignore mathjax_ignore" id="releases">
-<h1>Releases<a class="headerlink" href="#releases" title="Link to this heading">#</a></h1>
-<p>Changelogs and release notes for all BrainGlobe tools, all in one place.</p>
-<section id="brainglobe-restructuring-version-1-release-notes">
-<h2>BrainGlobe restructuring (version 1) release notes<a class="headerlink" href="#brainglobe-restructuring-version-1-release-notes" title="Link to this heading">#</a></h2>
-<div class="toctree-wrapper compound">
+                   <section class="tex2jax_ignore mathjax_ignore" id="whole-brain-microscopy-analysis-with-brainglobe-and-napari">
+<h1>Whole brain microscopy analysis with BrainGlobe and napari<a class="headerlink" href="#whole-brain-microscopy-analysis-with-brainglobe-and-napari" title="Link to this heading">#</a></h1>
+<p>This is designed as an in-person one-day course. However, our aim is that the materials can be referred to after the
+course, and can be used for self-paced learning.</p>
+<section id="suggested-schedule">
+<h2>Suggested schedule<a class="headerlink" href="#suggested-schedule" title="Link to this heading">#</a></h2>
+<section id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Installing BrainGlobe (30 mins)</p></li>
+<li><p>Introduction to Image analysis with napari (45 mins)</p></li>
+<li><p>Introduction to BrainGlobe (30 mins)</p></li>
+</ul>
+</section>
+<section id="tutorials">
+<h3>Tutorials<a class="headerlink" href="#tutorials" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../../tutorials/tutorial-whole-brain-registration.html"><span class="doc std std-doc">Registering whole brain microscopy images with brainreg</span></a> (30 mins)</p></li>
+<li><p>Segmenting structures in whole brain microscopy images with brainglobe-segmentation (30 mins)</p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="v1/index.html">BrainGlobe version 1 overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="v1/index.html#updating-to-version-1">Updating to version 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="v1/index.html#changes-at-a-glance">Changes at-a-glance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="v1/index.html#full-changelog">Full Changelog</a></li>
+<li><p><a class="reference internal" href="../../../../tutorials/segmenting-1d-tracks.html"><span class="doc std std-doc">1D structures</span></a></p></li>
+<li><p><a class="reference internal" href="../../../../tutorials/segmenting-3d-structures.html"><span class="doc std std-doc">2D/3D structures</span></a></p></li>
+</ul>
+</li>
+<li><p>Detecting cells in large 3D images with cellfinder (90 mins)</p>
+<ul>
+<li><p><a class="reference internal" href="../../../../tutorials/cellfinder-detection.html"><span class="doc std std-doc">running cell detection</span></a></p></li>
+<li><p><a class="reference internal" href="../../../../tutorials/cellfinder-retraining.html"><span class="doc std std-doc">retraining your model</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="../../../../tutorials/transform-cells-atlas.html"><span class="doc std std-doc">Analysing cell positions in atlas space</span></a> (30 mins)</p></li>
+<li><p>Visualisation of data in atlas space (30 mins)</p>
+<ul>
+<li><p><a class="reference internal" href="../../../../tutorials/visualise-atlas-napari.html"><span class="doc std std-doc">with brainrender-napari</span></a></p></li>
+<li><p><a class="reference external" href="https://github.com/brainglobe/brainrender/tree/main/examples">with brainrender</a></p></li>
 </ul>
 </li>
 </ul>
-</div>
+</section>
+<section id="wrap-up">
+<h3>Wrap-up<a class="headerlink" href="#wrap-up" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Tour of other BrainGlobe tools (15 mins)</p></li>
+<li><p>Feedback (5 mins)</p></li>
+</ul>
+</section>
+</section>
+<section id="materials">
+<h2>Materials<a class="headerlink" href="#materials" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://brainglobe.info/course-whole-brain-microscopy-analysis">Slides</a></p></li>
+<li><p><a class="reference external" href="https://github.com/brainglobe/course-whole-brain-microscopy-analysis">GitHub repository</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -622,20 +663,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../roadmaps/november-2023.html"
+       href="../../index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">November 2023</p>
+        <p class="prev-next-title">Courses</p>
       </div>
     </a>
     <a class="right-next"
-       href="v1/index.html"
+       href="../../scheduled/oct-2024/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">BrainGlobe version 1 overview</p>
+        <p class="prev-next-title">October 7th-8th 2024</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -657,7 +698,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe-restructuring-version-1-release-notes">BrainGlobe restructuring (version 1) release notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suggested-schedule">Suggested schedule</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorials">Tutorials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wrap-up">Wrap-up</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
 </ul>
   </nav></div>
 
@@ -674,8 +721,8 @@ document.write(`
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
