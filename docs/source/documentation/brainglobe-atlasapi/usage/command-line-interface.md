@@ -16,5 +16,9 @@ To update an atlas to a newer version, use `brainglobe update`, e.g.:
 brainglobe update -a allen_mouse_25um
 ```
 
-Further instructions can be found by running `brainglobe --help`
+Further instructions can be found by running `brainglobe --help`.
+
+:::{hint}
+We also provide a [graphical user interface](/tutorials/manage-atlases-in-GUI) to download and update atlases, as part of the `brainrender-napari` package.
+:::
 

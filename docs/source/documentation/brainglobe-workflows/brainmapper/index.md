@@ -8,6 +8,12 @@
 - Calculate the volume of each brain area, and the number of labelled cells within it
 - Transform everything into standard space for analysis and visualisation
 
+:::{note}
+It is possible to detect cells in a whole brain image and register this data to an atlas entirely within a graphical 
+user interface. If you have not used `brainmapper` before, we recommend you take a look at the 
+[analysing brainwide distribution of cells tutorial](/tutorials/transform-cells-atlas).
+:::
+
 ## User Guide
 
 ```{toctree}

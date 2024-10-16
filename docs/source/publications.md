@@ -16,11 +16,9 @@ BrainGlobe Atlas API:
 # Publications citing BrainGlobe
 **This list is automatically generated from Google Scholar**
 
-[//]: # (To generate this, export a list from google scholar as bibtex, then convert to html)
-
-[//]: # (&#40;https://asouqi.github.io/bibtex-converter/&#41; then md &#40;https://codebeautify.org/html-to-markdown&#41&#41;. This is a low-tech &#41;)
-
-[//]: # (&#40;way of doing it, but it's much simpler than via the CLIs I found.&#41;)
+[//]: # "(To generate this, export a list from google scholar as bibtex, then convert to html)
+(&#40;https://asouqi.github.io/bibtex-converter/&#41; then md &#40;https://codebeautify.org/html-to-markdown&#41&#41;. This is a low-tech &#41;)
+(&#40;way of doing it, but it's much simpler than via the CLIs I found.&#41;)"
 
 AlSubaie, R., Wee, R. W., Ritoux, A., Mishchanchuk, K., Passlack, J., Regester, D., & MacAskill, A. F. (2021). Control of parallel hippocampal output pathways by amygdalar long-range inhibition. _Elife_, _10_, e74758.
 

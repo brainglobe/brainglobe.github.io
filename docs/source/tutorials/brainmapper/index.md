@@ -10,7 +10,7 @@ You can read about these changes [on our blog](/blog/version1/cellfinder_migrati
 If you have previously been using the cellfinder command-line interface in your work, you'll most likely want to follow the links in the blog post to:
 
 - Upgrade your version of the `cellfinder` package,
-- Install `brainglobe-workflows` to get `brainmapper`, the same command-line tool but under it's new name.
+- Install `brainglobe-workflows` to get `brainmapper`, the same command-line tool but under its new name.
 
 :::
 
@@ -26,6 +26,12 @@ It is recommended that you try this tutorial out on the fastest machine you have
 
 The tutorial is quite long, and is split into a number of sections.
 Please be aware that downloading the data and running `brainmapper` may take a long time (e.g., overnight x2) if you don't have access to a particularly high-powered computer, or fast network connection.
+
+:::{note}
+It is possible to detect cells in a whole brain image and register this data to an atlas entirely within a graphical
+user interface. If you have not used `brainmapper` before, we recommend you take a look at the
+[analysing brainwide distribution of cells tutorial](/tutorials/transform-cells-atlas).
+:::
 
 Please go through the following sections in order:
 

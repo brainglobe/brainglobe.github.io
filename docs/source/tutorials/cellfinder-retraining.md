@@ -18,8 +18,8 @@ You will need `napari` installed on your computer - please follow
 :::
 
 1. Open `napari`.
-2. Open the curation widget by selecting `Plugins > cellfinder-napari > Curation` in the napari menu bar near the top left of the window.
-3. Load some sample data `File > Open sample > Sample data (cellfinder-napari)`. This will open the same small two-channel 3D image from the detection tutorial.
+2. Open the curation widget by selecting `Plugins > cellfinder > Curation` in the napari menu bar near the top left of the window.
+3. Load some sample data `File > Open sample > Sample data (cellfinder)`. This will open the same small two-channel 3D image from the detection tutorial.
 4. Click `Files > Open File(s)` and select the `cells.xml` from the detection tutorial. If napari prompts you to choose a plugin, choose `brainglobe-napari-io`.
 5. Set the `signal image` to `Signal`
 6. Set the `background image` to `Background`
@@ -35,7 +35,7 @@ widget, or pressing the `3` key on your keyboard.
 11. Click `Save training data`
 12. Create and then select a new directory on your computer (e.g. `cellfinder-retraining`) and click `Choose`.
 13. Close the curation widget by clicking the `x` at the top left of the widget.
-14. Open the retraining widget by selecting `Plugins > cellfinder-napari > Train network` in the napari menu bar near the top left of the window.
+14. Open the retraining widget by selecting `Plugins > cellfinder > Train network` in the napari menu bar near the top left of the window.
 15. Select the data for retraining by clicking `Select files` next to `YAML files` and choose the `training.yml` file 
 is inside the `cellfinder-retraining` directory created earlier
 16. Choose a directory to save the training output, e.g., create a `trained_network` directory

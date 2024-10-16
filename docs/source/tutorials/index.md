@@ -40,11 +40,25 @@ Manually segmenting a 3d structure
 Detecting cells in 3D with cellfinder in napari
 :::
 
+:::{grid-item-card} {fas}`brain;sd-text-primary` Analysing cell distributions
+:img-bottom: images/brainmapper-widget/cell-counts.png
+:link: transform-cells-atlas
+:link-type: doc
+Analysing cell distributions in the brain with napari
+:::
+
 :::{grid-item-card} {fas}`brain;sd-text-primary` Retraining cellfinder
 :img-bottom: images/cellfinder-retraining-icon.png
 :link: cellfinder-retraining
 :link-type: doc
 Retraining the cellfinder cell classification network in napari
+:::
+
+:::{grid-item-card} {fas}`brain;sd-text-primary` Atlas download
+:img-bottom: images/atlas-versions.png
+:link: manage-atlases-in-GUI
+:link-type: doc
+Download an atlas with napari
 :::
 ::::
 
@@ -74,6 +88,27 @@ Analyze and visualize bulk fluorescence tracing data
 Whole brain cell detection and registration
 :::
 
+:::{grid-item-card} {fas}`brain;sd-text-primary` Aligning samples
+:img-bottom: images/brainglobe-template-builder/template-builder-header.png
+:link: template-builder-pre-align
+:link-type: doc
+Aligning samples to image axes for template building (experimental!)
+:::
+
+::::
+
+## Related tutorials
+These are tutorials hosted elsewhere that may be useful to BrainGlobe users.
+
+::::{grid} 1 2 2 3
+:gutter: 3
+
+:::{grid-item-card} {fas}`brain;sd-text-primary` Cell detection with BiaPy
+:img-bottom: images/biapy.png
+:link: https://biapy.readthedocs.io/en/latest/tutorials/detection/brain_cell_detection.html
+:link-type: url
+Whole-brain microscopy analysis with BrainGlobe and BiaPy
+:::
 ::::
 
 ```{toctree}
@@ -81,12 +116,16 @@ Whole brain cell detection and registration
 :caption: Index
 :hidden:
 visualise-atlas-napari
+manage-atlases-in-GUI
 tutorial-whole-brain-registration
 segmenting-1d-tracks
 segmenting-3d-structures
+transform-cells-atlas
 cellfinder-detection
 cellfinder-retraining
 silicon-probe-tracking
 tracing-tracking
 brainmapper/index
+template-builder-pre-align
+
 ```

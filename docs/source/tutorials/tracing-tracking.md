@@ -72,7 +72,7 @@ to find a mask that covers the axonal projections.
 Before we can proceed to register the axonal tracks in the imaged brain we need to install additional Napari plugins. 
 In this tutorial we will use the 
 [`napari-simpleitk-image-processing`](https://www.napari-hub.org/plugins/napari-simpleitk-image-processing) plugin. This 
-plugin can either be installed via the [napari plugin menu](https://napari.org/stable/plugins/find_and_install_plugin.html) 
+plugin can either be installed via the [napari plugin menu](https://napari.org/stable/plugins/start_using_plugins/finding_and_installing_plugins.html) 
 or directly from PyPI on the command-line:
 ```
 pip install napari-simpleitk-image-processing

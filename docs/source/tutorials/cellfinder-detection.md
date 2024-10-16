@@ -16,7 +16,7 @@ You will need `napari` installed on your computer - please follow
 :::
 
 1. Open `napari`.
-2. Install `cellfinder` by selecting `Plugins > Install/Uninstall plugins` and searching for `cellfinder-napari` in the searchbox. If it is not installed yet, click on the `Install` button.
+2. Install `cellfinder` by selecting `Plugins > Install/Uninstall plugins` and searching for `cellfinder` in the searchbox. If it is not installed yet, click on the `Install` button.
 
 :::{caution}
 This may take a while due to the various dependencies being installed.
@@ -24,12 +24,12 @@ This may take a while due to the various dependencies being installed.
 On Silicon Macs you may have to run `conda install hdf5` on the command line (in your conda environment) first for the installation to be successful.
 :::
 
-3. Open the cell detection widget by selecting `Plugins > cellfinder-napari > Cell detection` in the napari menu bar near the top left of the window.
+3. Open the cell detection widget by selecting `Plugins > cellfinder > Cell detection` in the napari menu bar near the top left of the window.
    ![cellfinder detection widget](./images/cellfinder-napari/cellfinder-napari-detection.png)
 
 **The cell detection widget appears on the right-hand side of the window.**
 
-4. Load some sample data `File > Open sample > Sample data (cellfinder-napari)`. This will open a small two-channel 3D image.
+4. Load some sample data `File > Open sample > Sample data (cellfinder)`. This will open a small two-channel 3D image.
 5. Set the `signal image` to `Signal`
 6. Set the `background image` to `Background`
 7. Ensure that `Voxel size (z)` is set to `5.00`, `Voxel size (y)` is set to `2.00`, and `Voxel size (x)` is set to `2.00`.
