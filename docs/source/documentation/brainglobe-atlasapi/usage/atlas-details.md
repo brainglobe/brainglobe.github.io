@@ -47,8 +47,6 @@ Available versions:
 * `kim_mouse_50um` - 50μm resolution
 * `kim_mouse_100um` - 100μm resolution
 
-
-
 ### [Gubra's LSFM mouse brain atlas](https://doi.org/10.1007/s12021-020-09490-8)
 This atlas from [Perens et al. (2020)](https://doi.org/10.1007/s12021-020-09490-8) provides a version of the Allen
 Adult Mouse Brain Atlas, based on solvent-cleared brains imaged with LSFM. This atlas may be a 
@@ -132,22 +130,31 @@ Available versions:
 This atlas is only available at 39μm resolution:
 * `whs_sd_rat_39um`
 
+## Other rodent
+### [Prairie vole brain atlas](https://doi.org/10.7554/eLife.87029.3.sa0)
+This is a brain atlas of the Prairie vole (Microtus ochrogaster) from
+[Gustison et al. (2024)](https://doi.org/10.7554/eLife.87029.3.sa0).
+This atlas is only available at 25μm resolution:
+* `sju_cavefish_2um`
+
 ## Fish
-### [Max Planck Zebrafish Brain Atlas](http://fishatlas.neuro.mpg.de)
+### [Max Planck zebrafish brain atlas](http://fishatlas.neuro.mpg.de)
 This atlas is only available at 1μm resolution:
 * `mpin_zfish_1um`
 
-### [AZBA: A 3D Adult Zebrafish Brain Atlas](https://doi.org/10.1101/2021.05.04.442625)
+### [AZBA: A 3D Adult zebrafish brain atlas](https://doi.org/10.1101/2021.05.04.442625)
 This atlas is only available at 4μm resolution:
 * `azba_zfish_4um`
 
-### [Blind Mexican cavefish Brain Atlas](https://elifesciences.org/articles/80777)
+### [Blind Mexican cavefish brain atlas](https://elifesciences.org/articles/80777)
 This is a brain atlas of the blind Mexican cavefish (Astyanax mexicanus) from 
 [Kozol et al. (2023)](https://elifesciences.org/articles/80777). For more details please
 see [the blogpost](/blog/cavefish-atlas-added).
-
 This atlas is only available at 2μm resolution:
 * `sju_cavefish_2um`
+
+
+
 
 ## Amphibian
 ### [UNAM Axolotl Brain Atlas](https://doi.org/10.1038/s41598-021-89357-3)
