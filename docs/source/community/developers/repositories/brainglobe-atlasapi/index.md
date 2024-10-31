@@ -5,7 +5,7 @@ The details regarding packaging a new atlas can be found at
 [adding a new atlas](/documentation/brainglobe-atlasapi/adding-a-new-atlas). Here we outline the steps that follow once 
 the new atlas pull request has been merged:
 
-1. Run the atlas script to generate the new atlas.
+1. Run the atlas script to generate the new atlas, and double-check it passes our validation.
 2. Upload the `tar.gz` archive to the [GIN atlas repository](https://gin.g-node.org/BrainGlobe/atlases).
 3. Update the [`latest_versions.conf`](https://gin.g-node.org/BrainGlobe/atlases/src/master/last_versions.conf) file.
 4. Add the atlas to the [atlas details](/documentation/brainglobe-atlasapi/usage/atlas-details) page of the website.
