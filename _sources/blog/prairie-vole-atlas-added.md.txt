@@ -35,6 +35,11 @@ You can use the prairie vole atlas for visualisation like other BrainGlobe atlas
 To use the atlas with other software such as [brainreg](/documentation/brainreg/index), please follow the instructions 
 for those tools, and simply choose this atlas from the user interface.
 
+:::{note}
+To use this atlas, you will need the latest version of the BrainGlobe Atlas API. If you have an older version, 
+please update to at least version `2.0.10` with `pip install -U brainglobe-atlasapi`.
+:::
+
 ## Why are we adding new atlases?
 
 A fundamental aim of the BrainGlobe project is to make various brain atlases easily accessible by users across the globe. If you would like to get involved with a similar project, please [get in touch](/contact).
