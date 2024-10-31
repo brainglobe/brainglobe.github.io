@@ -135,7 +135,7 @@ This atlas is only available at 39μm resolution:
 This is a brain atlas of the Prairie vole (Microtus ochrogaster) from
 [Gustison et al. (2024)](https://doi.org/10.7554/eLife.87029.3.sa0).
 This atlas is only available at 25μm resolution:
-* `sju_cavefish_2um`
+* `prairie_vole_25um`
 
 ## Fish
 ### [Max Planck zebrafish brain atlas](http://fishatlas.neuro.mpg.de)
