@@ -1,9 +1,11 @@
 # About
 
 ## Introduction
-The BrainGlobe Initiative (BGI) was established by researchers at the
+The BrainGlobe Initiative (BGI) was originally established by researchers at the
 [Sainsbury Wellcome Centre](https://www.sainsburywellcome.org/web/) and the 
 [Technical University of Munich](https://www.tum.de/en/). 
+
+We collaborate with the [EBRAINS](https://www.ebrains.eu/) national node at the [University of Oslo](https://www.uio.no/english/) to establish and implement standards for atlases and their metadata.
 
 The core goal of BrainGlobe is to develop a suite of Python-based software tools for computational neuroanatomy. 
 We have developed several software packages to access, analyze and visualize anatomical data. By ensuring the 
