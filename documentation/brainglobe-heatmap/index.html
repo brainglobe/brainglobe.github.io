@@ -653,14 +653,14 @@
 <h2>User guide<a class="headerlink" href="#user-guide" title="Link to this heading">#</a></h2>
 <p>The starting point for a heatmap visualization is a <code class="docutils literal notranslate"><span class="pre">dict</span></code> assigning scalar values to a set of brain regions (identified by their acronym).
 For example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">regions</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>  <span class="c1"># scalar values for each region</span>
-        <span class="n">TH</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">RSP</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
-        <span class="n">AI</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
-        <span class="n">SS</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span>
-        <span class="n">MO</span><span class="o">=</span><span class="mf">2.6</span><span class="p">,</span>
-        <span class="o">...</span>
-    <span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>  <span class="c1"># scalar values for each region</span>
+    <span class="n">TH</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">RSP</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">AI</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
+    <span class="n">SS</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">MO</span><span class="o">=</span><span class="mf">2.6</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> creates a brainrender 3D <code class="docutils literal notranslate"><span class="pre">Scene</span></code> with the given regions colored according the values in the dictionary.
@@ -680,9 +680,8 @@ To keep a section of the 3D brain, two planes with normal vectors facing in oppo
 In <code class="docutils literal notranslate"><span class="pre">examples/plan.py</span></code> there’s an example showing how to use the <code class="docutils literal notranslate"><span class="pre">planner</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">brainglobe_heatmap</span> <span class="k">as</span> <span class="nn">bgh</span>
 
-
 <span class="n">planner</span> <span class="o">=</span> <span class="n">bgh</span><span class="o">.</span><span class="n">plan</span><span class="p">(</span>
-    <span class="n">regions</span><span class="p">,</span>
+    <span class="n">values</span><span class="p">,</span>
     <span class="n">position</span><span class="o">=</span><span class="p">(</span>
         <span class="mi">8000</span><span class="p">,</span>
         <span class="mi">5000</span><span class="p">,</span>
@@ -695,7 +694,7 @@ In <code class="docutils literal notranslate"><span class="pre">examples/plan.py
 </div>
 <p>The position of the center of the plane is given by a set of <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code> coordinates. The orientation can be specified by a string (<code class="docutils literal notranslate"><span class="pre">frontal</span></code>, <code class="docutils literal notranslate"><span class="pre">sagittal</span></code>, <code class="docutils literal notranslate"><span class="pre">horizontal</span></code>) which will result in a standard orthogonal slice, or by a vector <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code> with the orientation along the 3 axes.</p>
 <p>When using one of the named orientations, you don’t need to pass a whole set of <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code> coordinates for the plane center. A single value is sufficient as the other two won’t affect the plane position:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">bgh</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">bgh</span><span class="o">.</span><span class="n">Heatmap</span><span class="p">(</span>
     <span class="n">values</span><span class="p">,</span>
     <span class="n">position</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
     <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;sagittal&quot;</span><span class="p">,</span>  <span class="c1"># &#39;frontal&#39; or &#39;sagittal&#39;, or &#39;horizontal&#39; or a tuple (x,y,z)</span>
@@ -707,7 +706,7 @@ In <code class="docutils literal notranslate"><span class="pre">examples/plan.py
 </pre></div>
 </div>
 <p>Also, you can create a slice with a plane centered in the brain by passing <code class="docutils literal notranslate"><span class="pre">position=None</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">bgh</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">bgh</span><span class="o">.</span><span class="n">Heatmap</span><span class="p">(</span>
     <span class="n">values</span><span class="p">,</span>
     <span class="n">position</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;sagittal&quot;</span><span class="p">,</span>  <span class="c1"># &#39;frontal&#39; or &#39;sagittal&#39;, or &#39;horizontal&#39; or a tuple (x,y,z)</span>
@@ -722,8 +721,7 @@ In <code class="docutils literal notranslate"><span class="pre">examples/plan.py
 <section id="visualization">
 <h3>Visualization<a class="headerlink" href="#visualization" title="Link to this heading">#</a></h3>
 <p>Once happy with the position of the slicing planes, creating a visualization is as simple as:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="n">bgh</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bgh</span><span class="o">.</span><span class="n">Heatmap</span><span class="p">(</span>
     <span class="n">values</span><span class="p">,</span>
     <span class="n">position</span><span class="o">=</span><span class="p">(</span>
         <span class="mi">8000</span><span class="p">,</span>
@@ -734,7 +732,7 @@ In <code class="docutils literal notranslate"><span class="pre">examples/plan.py
     <span class="n">title</span><span class="o">=</span><span class="s2">&quot;horizontal view&quot;</span><span class="p">,</span>
     <span class="n">vmin</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span>
     <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Red&#39;</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">,</span>
     <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;2D&quot;</span><span class="p">,</span>
 <span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -744,11 +742,9 @@ In <code class="docutils literal notranslate"><span class="pre">examples/plan.py
 <section id="regions-coordinates">
 <h3>Regions coordinates<a class="headerlink" href="#regions-coordinates" title="Link to this heading">#</a></h3>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> to get the coordinates of the 2D ‘slices’ (in the 2D plane’s coordinates system):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="n">regions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;TH&#39;</span><span class="p">,</span> <span class="s1">&#39;RSP&#39;</span><span class="p">,</span> <span class="s1">&#39;AI&#39;</span><span class="p">,</span> <span class="s1">&#39;SS&#39;</span><span class="p">,</span> <span class="s1">&#39;MO&#39;</span><span class="p">,</span> <span class="s1">&#39;PVZ&#39;</span><span class="p">,</span> <span class="s1">&#39;LZ&#39;</span><span class="p">,</span> <span class="s1">&#39;VIS&#39;</span><span class="p">,</span> <span class="s1">&#39;AUD&#39;</span><span class="p">,</span> <span class="s1">&#39;RHP&#39;</span><span class="p">,</span> <span class="s1">&#39;STR&#39;</span><span class="p">,</span> <span class="s1">&#39;CB&#39;</span><span class="p">,</span> <span class="s1">&#39;FRP&#39;</span><span class="p">,</span> <span class="s1">&#39;HIP&#39;</span><span class="p">,</span> <span class="s1">&#39;PA&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">regions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;TH&#39;</span><span class="p">,</span> <span class="s1">&#39;RSP&#39;</span><span class="p">,</span> <span class="s1">&#39;AI&#39;</span><span class="p">,</span> <span class="s1">&#39;SS&#39;</span><span class="p">,</span> <span class="s1">&#39;MO&#39;</span><span class="p">,</span> <span class="s1">&#39;PVZ&#39;</span><span class="p">,</span> <span class="s1">&#39;LZ&#39;</span><span class="p">,</span> <span class="s1">&#39;VIS&#39;</span><span class="p">,</span> <span class="s1">&#39;AUD&#39;</span><span class="p">,</span> <span class="s1">&#39;RHP&#39;</span><span class="p">,</span> <span class="s1">&#39;STR&#39;</span><span class="p">,</span> <span class="s1">&#39;CB&#39;</span><span class="p">,</span> <span class="s1">&#39;FRP&#39;</span><span class="p">,</span> <span class="s1">&#39;HIP&#39;</span><span class="p">,</span> <span class="s1">&#39;PA&#39;</span><span class="p">]</span>
 
-
-<span class="n">coordinates</span> <span class="o">=</span> <span class="n">bgh</span><span class="o">.</span><span class="n">get_plane_coordinates</span><span class="p">(</span>
+<span class="n">coordinates</span> <span class="o">=</span> <span class="n">bgh</span><span class="o">.</span><span class="n">get_structures_slice_coords</span><span class="p">(</span>
     <span class="n">regions</span><span class="p">,</span>
     <span class="n">position</span><span class="o">=</span><span class="p">(</span>
         <span class="mi">8000</span><span class="p">,</span>
@@ -763,7 +759,7 @@ In <code class="docutils literal notranslate"><span class="pre">examples/plan.py
 </section>
 <section id="using-brainglobe-heatmap-with-other-atlases">
 <h2>Using <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> with other atlases<a class="headerlink" href="#using-brainglobe-heatmap-with-other-atlases" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> uses <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> which, in turn, uses brainglobe’s <code class="docutils literal notranslate"><span class="pre">Atlas</span> <span class="pre">API</span></code> under the hood. That means that all of <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code>’s functionality is compatible with any of the atlases supported by the atlas API. <code class="docutils literal notranslate"><span class="pre">bgh.heatmap</span></code>, <code class="docutils literal notranslate"><span class="pre">bgh.planner</span></code> and <code class="docutils literal notranslate"><span class="pre">bgh.get_plane_coordinates</span></code> all accept a <code class="docutils literal notranslate"><span class="pre">atlas_name</span></code> argument, pass the name of the atlas name you’d like to use!
+<p><code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> uses <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> which, in turn, uses brainglobe’s <code class="docutils literal notranslate"><span class="pre">Atlas</span> <span class="pre">API</span></code> under the hood. That means that all of <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code>’s functionality is compatible with any of the atlases supported by the atlas API. <code class="docutils literal notranslate"><span class="pre">bgh.Heatmap</span></code>, <code class="docutils literal notranslate"><span class="pre">bgh.planner</span></code> and <code class="docutils literal notranslate"><span class="pre">bgh.get_structures_slice_coords</span></code> all accept a <code class="docutils literal notranslate"><span class="pre">atlas_name</span></code> argument, pass the name of the atlas name you’d like to use!
 For more information see the API’s <a class="reference internal" href="../brainglobe-atlasapi/index.html"><span class="std std-doc">documentation</span></a>.</p>
 </section>
 <section id="contributing">
@@ -773,10 +769,27 @@ For more information see the API’s <a class="reference internal" href="../brai
 <section id="citing-brainglobe-heatmap">
 <h2>Citing <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code><a class="headerlink" href="#citing-brainglobe-heatmap" title="Link to this heading">#</a></h2>
 <p>If you use <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> in your work, please cite it as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Federico</span> <span class="n">Claudi</span><span class="p">,</span> <span class="o">&amp;</span> <span class="n">Luigi</span> <span class="n">Petrucco</span><span class="o">.</span> <span class="p">(</span><span class="mi">2022</span><span class="p">)</span><span class="o">.</span> <span class="n">brainglobe</span><span class="o">/</span><span class="n">bg</span><span class="o">-</span><span class="n">heatmaps</span><span class="p">:</span> <span class="p">(</span><span class="n">V0</span><span class="mf">.2</span><span class="p">)</span><span class="o">.</span> <span class="n">Zenodo</span><span class="o">.</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.5891814</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Federico</span> <span class="n">Claudi</span><span class="p">,</span> <span class="n">Adam</span> <span class="n">Tyson</span><span class="p">,</span> <span class="n">Luigi</span> <span class="n">Petrucco</span><span class="p">,</span> <span class="n">Mathieu</span> <span class="n">Bourdenx</span><span class="p">,</span> <span class="n">carlocastoldi</span><span class="p">,</span> <span class="n">Rami</span> <span class="n">Hamati</span><span class="p">,</span> <span class="o">&amp;</span> <span class="n">Alessandro</span> <span class="n">Felder</span><span class="o">.</span> <span class="p">(</span><span class="mi">2024</span><span class="p">)</span><span class="o">.</span> <span class="n">brainglobe</span><span class="o">/</span><span class="n">brainglobe</span><span class="o">-</span><span class="n">heatmap</span><span class="o">.</span> <span class="n">Zenodo</span><span class="o">.</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.10375287</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> was originally developed by Federico Claudi and Luigi Petrucco, with the help of Marco Musy (the developer of <a class="reference external" href="https://github.com/marcomusy/vedo"><code class="docutils literal notranslate"><span class="pre">vedo</span></code></a>)</p>
+<p>If you use <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> via <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> (i.e. for 3D visualisation), please also cite it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Claudi</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="p">,</span> <span class="n">Tyson</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span> <span class="n">L</span><span class="o">.</span><span class="p">,</span> <span class="n">Petrucco</span><span class="p">,</span> <span class="n">L</span><span class="o">.</span><span class="p">,</span> <span class="n">Margrie</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">W</span><span class="o">.</span><span class="p">,</span> <span class="n">Portugues</span><span class="p">,</span> <span class="n">R</span><span class="o">.</span><span class="p">,</span>  <span class="n">Branco</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span> <span class="p">(</span><span class="mi">2021</span><span class="p">)</span> <span class="s2">&quot;Visualizing anatomically registered data with Brainrender&amp;quot; &lt;i&gt;eLife&lt;/i&gt; 2021;10:e65751 [doi.org/10.7554/eLife.65751](https://doi.org/10.7554/eLife.65751)</span>
+</pre></div>
+</div>
+<p>BibTeX:</p>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">Claudi2021</span><span class="p">,</span>
+<span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Claudi, Federico and Tyson, Adam L. and Petrucco, Luigi and Margrie, Troy W. and Portugues, Ruben and Branco, Tiago}</span><span class="p">,</span>
+<span class="na">doi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{10.7554/eLife.65751}</span><span class="p">,</span>
+<span class="na">issn</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2050084X}</span><span class="p">,</span>
+<span class="na">journal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{eLife}</span><span class="p">,</span>
+<span class="na">pages</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{1--16}</span><span class="p">,</span>
+<span class="na">pmid</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{33739286}</span><span class="p">,</span>
+<span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{{Visualizing anatomically registered data with brainrender}}</span><span class="p">,</span>
+<span class="na">volume</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{10}</span><span class="p">,</span>
+<span class="na">year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2021}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </section>
 </section>
 
