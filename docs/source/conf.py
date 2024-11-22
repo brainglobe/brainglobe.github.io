@@ -133,7 +133,7 @@ html_theme_options = {
         },
         {
             "name": "Bluesky",
-            "url": "https://bsky.app/profile/brainglobe.bsky.social",
+            "url": "https://bsky.app/profile/brainglobe.info",
             "icon": "fa-solid fa-square",
         },
         {
