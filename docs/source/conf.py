@@ -134,7 +134,7 @@ html_theme_options = {
         {
             "name": "Bluesky",
             "url": "https://bsky.app/profile/brainglobe.info",
-            "icon": "fa-solid fa-square",
+            "icon": "fa-solid fa-bluesky",
         },
         {
             # Label for this link
