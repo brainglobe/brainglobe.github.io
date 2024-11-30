@@ -171,10 +171,6 @@ html_theme_options = {
 html_show_sourcelink = False
 
 notfound_context = {
-    "body": "<h1>This page has likely moved.</h1> <p>We have recently restructured the BrainGlobe website, and some links have broken. Try using the search box or go to the homepage. If you can'</p>",
-}
-
-notfound_context = {
     "title": "Page Not Found",
     "body": """
     <h1>Page Not Found</h1>
