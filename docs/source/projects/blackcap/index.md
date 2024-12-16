@@ -38,8 +38,9 @@ improved to allow others to create their own atlases.
 **Atlas generation process**
 
 ## Results
-We have initially generated a template reference image at 25 micron isotropic resolution and annotated 19 brain regions. 
+We have initially generated a template reference image at 25 micron isotropic resolution and annotated 23 brain regions. 
 This atlas is available within BrainGlobe as `oldenburg_blackcap_25um` and is compatible with all BrainGlobe tools.
+
 
 To view BrainGlobe atlases in [napari](https://napari.org), please follow the 
 [atlas visualisation tutorial](/tutorials/visualise-atlas-napari). 
