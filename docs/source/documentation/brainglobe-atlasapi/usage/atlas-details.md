@@ -84,10 +84,63 @@ Available versions:
 * `admba_3d_p56_mouse_25um` - P56 at 25μm resolution
 
 
-### [Kim Lab Developmental CCF (P56)](https://data.mendeley.com/datasets/2svx788ddf/1) 
-This atlas is part of a new developmental atlas following Luis Puelles' Developmental Vertebrate Ontology. BrainGlobe 
+### [Kim Lab Developmental CCF v1.0](https://doi.org/10.6084/m9.figshare.26377171.v1) 
+A multi-modal atlas of the developing mouse brain. Reference images from LSFM and MRI (adc, dwi, fa, T2) are available at all developmental stages of the atlas (E11.5, E13.5, E15.5, E18.5, P4, P14, P56). Developmental stages E15.5, P04 and P14 additionally also have versions with a MTR MRI reference image.
+
+
+Available versions:
+* at E11.5
+  *  `kim_dev_mouse_E11-5_LSFM_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_E11-5_MRI-adc_31.5um` - MRI adc template at 31.5 μm resolution
+  *  `kim_dev_mouse_E11-5_MRI-dwi_31.5um` - MRI dwi template at 31.5 μm resolution 
+  *  `kim_dev_mouse_E11-5_MRI-fa_31.5um` - MRI fa template at 31.5 μm resolution
+  *  `kim_dev_mouse_E11-5_MRI-T2_31.5um` - MRI T2 template at 31.5 μm resolution
+* at E13.5
+  *  `kim_dev_mouse_E13-5_LSFM_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_E13-5_MRI-adc_34um` - MRI adc template at 34 μm resolution
+  *  `kim_dev_mouse_E13-5_MRI-dwi_34um` - MRI dwi template at 34 μm resolution 
+  *  `kim_dev_mouse_E13-5_MRI-fa_34um` - MRI fa template at 34 μm resolution
+  *  `kim_dev_mouse_E13-5_MRI-T2_34um` - MRI T2 template at 34 μm resolution 
+* at E15.5
+  *  `kim_dev_mouse_E15-5_LSFM_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_E15-5_MRI-adc_37.5um` - MRI adc template at 37.5 μm resolution
+  *  `kim_dev_mouse_E15-5_MRI-dwi_37.5um` - MRI dwi template at 37.5 μm resolution 
+  *  `kim_dev_mouse_E15-5_MRI-fa_37.5um` - MRI fa template at 37.5 μm resolution
+  *  `kim_dev_mouse_E15-5_MRI-T2_37.5um` - MRI T2 template at 37.5 μm resolution 
+  *  `kim_dev_mouse_E15-5_MRI-MTR_37.5um` - MRI MTR template at 37.5 μm resolution 
+* at E18.5
+  *  `kim_dev_mouse_E18-5_LSFM_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_E18-5_MRI-adc_40um` - MRI adc template at 40 μm resolution
+  *  `kim_dev_mouse_E18-5_MRI-dwi_40um` - MRI dwi template at 40 μm resolution 
+  *  `kim_dev_mouse_E18-5_MRI-fa_40um` - MRI fa template at 40 μm resolution
+  *  `kim_dev_mouse_E18-5_MRI-T2_40um` - MRI T2 template at 40 μm resolution 
+* at P04
+  *  `kim_dev_mouse_P04_LSFM_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_P04_MRI-adc_50um` - MRI adc template at 50 μm resolution
+  *  `kim_dev_mouse_P04_MRI-dwi_50um` - MRI dwi template at 50 μm resolution 
+  *  `kim_dev_mouse_P04_MRI-fa_50um` - MRI fa template at 50 μm resolution
+  *  `kim_dev_mouse_P04_MRI-T2_50um` - MRI T2 template at 50 μm resolution 
+  *  `kim_dev_mouse_P04_MRI-MTR_50um` - MRI MTR template at 50 μm resolution 
+* at P14
+  *  `kim_dev_mouse_P14_LSFM_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_P14_MRI-adc_50um` - MRI adc template at 50 μm resolution
+  *  `kim_dev_mouse_P14_MRI-dwi_50um` - MRI dwi template at 50 μm resolution 
+  *  `kim_dev_mouse_P14_MRI-fa_50um` - MRI fa template at 50 μm resolution
+  *  `kim_dev_mouse_P14_MRI-T2_50um` - MRI T2 template at 50 μm resolution 
+  *  `kim_dev_mouse_P14_MRI-MTR_50um` - MRI MTR template at 50 μm resolution 
+* at P56
+  *  `kim_dev_mouse_P56_LSFM_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_P56_MRI-adc_50um` - MRI adc template at 50 μm resolution
+  *  `kim_dev_mouse_P56_MRI-dwi_50um` - MRI dwi template at 50 μm resolution 
+  *  `kim_dev_mouse_P56_MRI-fa_50um` - MRI fa template at 50 μm resolution
+  *  `kim_dev_mouse_P56_MRI-T2_50um` - MRI T2 template at 50 μm resolution 
+  *  `kim_dev_mouse_P56_MRI-MTR_50um` - MRI MTR template at 50 μm resolution 
+
+
+### [Kim Lab Developmental CCF v0.0.1 (P56)](https://data.mendeley.com/datasets/2svx788ddf/1) 
+This atlas is part of a developmental atlas following Luis Puelles' Developmental Vertebrate Ontology. BrainGlobe 
 currently hosts the P56 version of this atlas at 10μm resolution with eight versions, each with a different reference 
-image - STP, LSFM (iDISCO) and MRI (a0, adc, dwo, fa, MTR, T2).
+image - STP, LSFM (iDISCO) and MRI (a0, adc, dwo, fa, MTR, T2). This atlas is now superceded by its 1.0.0 version but continues to be available for reproducibility and archive reasons.
 
 Available versions:
 * `kim_dev_mouse_stp_10um` - "normal" CCF serial 2p template at 10μm resolution
