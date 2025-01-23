@@ -90,51 +90,51 @@ A multi-modal atlas of the developing mouse brain. Reference images from LSFM an
 
 Available versions:
 * at E11.5
-  *  `kim_dev_mouse_E11-5_LSFM_20um` - LSFM template at 20 μm resolution
-  *  `kim_dev_mouse_E11-5_MRI-adc_31.5um` - MRI adc template at 31.5 μm resolution
-  *  `kim_dev_mouse_E11-5_MRI-dwi_31.5um` - MRI dwi template at 31.5 μm resolution 
-  *  `kim_dev_mouse_E11-5_MRI-fa_31.5um` - MRI fa template at 31.5 μm resolution
-  *  `kim_dev_mouse_E11-5_MRI-T2_31.5um` - MRI T2 template at 31.5 μm resolution
+  *  `kim_dev_mouse_e11-5_lsfm_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_e11-5_mri-adc_31.5um` - MRI adc template at 31.5 μm resolution
+  *  `kim_dev_mouse_e11-5_mri-dwi_31.5um` - MRI dwi template at 31.5 μm resolution 
+  *  `kim_dev_mouse_e11-5_mri-fa_31.5um` - MRI fa template at 31.5 μm resolution
+  *  `kim_dev_mouse_e11-5_mri-T2_31.5um` - MRI T2 template at 31.5 μm resolution
 * at E13.5
-  *  `kim_dev_mouse_E13-5_LSFM_20um` - LSFM template at 20 μm resolution
-  *  `kim_dev_mouse_E13-5_MRI-adc_34um` - MRI adc template at 34 μm resolution
-  *  `kim_dev_mouse_E13-5_MRI-dwi_34um` - MRI dwi template at 34 μm resolution 
-  *  `kim_dev_mouse_E13-5_MRI-fa_34um` - MRI fa template at 34 μm resolution
-  *  `kim_dev_mouse_E13-5_MRI-T2_34um` - MRI T2 template at 34 μm resolution 
+  *  `kim_dev_mouse_e13-5_lsfm_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_e13-5_mri-adc_34um` - MRI adc template at 34 μm resolution
+  *  `kim_dev_mouse_e13-5_mri-dwi_34um` - MRI dwi template at 34 μm resolution 
+  *  `kim_dev_mouse_e13-5_mri-fa_34um` - MRI fa template at 34 μm resolution
+  *  `kim_dev_mouse_e13-5_mri-t2_34um` - MRI T2 template at 34 μm resolution 
 * at E15.5
-  *  `kim_dev_mouse_E15-5_LSFM_20um` - LSFM template at 20 μm resolution
-  *  `kim_dev_mouse_E15-5_MRI-adc_37.5um` - MRI adc template at 37.5 μm resolution
-  *  `kim_dev_mouse_E15-5_MRI-dwi_37.5um` - MRI dwi template at 37.5 μm resolution 
-  *  `kim_dev_mouse_E15-5_MRI-fa_37.5um` - MRI fa template at 37.5 μm resolution
-  *  `kim_dev_mouse_E15-5_MRI-T2_37.5um` - MRI T2 template at 37.5 μm resolution 
-  *  `kim_dev_mouse_E15-5_MRI-MTR_37.5um` - MRI MTR template at 37.5 μm resolution 
+  *  `kim_dev_mouse_e15-5_lsfm_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_e15-5_mri-adc_37.5um` - MRI adc template at 37.5 μm resolution
+  *  `kim_dev_mouse_e15-5_mri-dwi_37.5um` - MRI dwi template at 37.5 μm resolution 
+  *  `kim_dev_mouse_e15-5_mri-fa_37.5um` - MRI fa template at 37.5 μm resolution
+  *  `kim_dev_mouse_e15-5_mri-t2_37.5um` - MRI T2 template at 37.5 μm resolution 
+  *  `kim_dev_mouse_e15-5_mri-mtr_37.5um` - MRI MTR template at 37.5 μm resolution 
 * at E18.5
-  *  `kim_dev_mouse_E18-5_LSFM_20um` - LSFM template at 20 μm resolution
-  *  `kim_dev_mouse_E18-5_MRI-adc_40um` - MRI adc template at 40 μm resolution
-  *  `kim_dev_mouse_E18-5_MRI-dwi_40um` - MRI dwi template at 40 μm resolution 
-  *  `kim_dev_mouse_E18-5_MRI-fa_40um` - MRI fa template at 40 μm resolution
-  *  `kim_dev_mouse_E18-5_MRI-T2_40um` - MRI T2 template at 40 μm resolution 
+  *  `kim_dev_mouse_e18-5_lsfm_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_e18-5_mri-adc_40um` - MRI adc template at 40 μm resolution
+  *  `kim_dev_mouse_e18-5_mri-dwi_40um` - MRI dwi template at 40 μm resolution 
+  *  `kim_dev_mouse_e18-5_mri-fa_40um` - MRI fa template at 40 μm resolution
+  *  `kim_dev_mouse_e18-5_mri-t2_40um` - MRI T2 template at 40 μm resolution 
 * at P04
-  *  `kim_dev_mouse_P04_LSFM_20um` - LSFM template at 20 μm resolution
-  *  `kim_dev_mouse_P04_MRI-adc_50um` - MRI adc template at 50 μm resolution
-  *  `kim_dev_mouse_P04_MRI-dwi_50um` - MRI dwi template at 50 μm resolution 
-  *  `kim_dev_mouse_P04_MRI-fa_50um` - MRI fa template at 50 μm resolution
-  *  `kim_dev_mouse_P04_MRI-T2_50um` - MRI T2 template at 50 μm resolution 
-  *  `kim_dev_mouse_P04_MRI-MTR_50um` - MRI MTR template at 50 μm resolution 
+  *  `kim_dev_mouse_p04_lsfm_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_p04_mri-adc_50um` - MRI adc template at 50 μm resolution
+  *  `kim_dev_mouse_p04_mri-dwi_50um` - MRI dwi template at 50 μm resolution 
+  *  `kim_dev_mouse_p04_mri-fa_50um` - MRI fa template at 50 μm resolution
+  *  `kim_dev_mouse_p04_mri-t2_50um` - MRI T2 template at 50 μm resolution 
+  *  `kim_dev_mouse_p04_mri-mtr_50um` - MRI MTR template at 50 μm resolution 
 * at P14
-  *  `kim_dev_mouse_P14_LSFM_20um` - LSFM template at 20 μm resolution
-  *  `kim_dev_mouse_P14_MRI-adc_50um` - MRI adc template at 50 μm resolution
-  *  `kim_dev_mouse_P14_MRI-dwi_50um` - MRI dwi template at 50 μm resolution 
-  *  `kim_dev_mouse_P14_MRI-fa_50um` - MRI fa template at 50 μm resolution
-  *  `kim_dev_mouse_P14_MRI-T2_50um` - MRI T2 template at 50 μm resolution 
-  *  `kim_dev_mouse_P14_MRI-MTR_50um` - MRI MTR template at 50 μm resolution 
+  *  `kim_dev_mouse_p14_lsfm_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_p14_mri-adc_50um` - MRI adc template at 50 μm resolution
+  *  `kim_dev_mouse_p14_mri-dwi_50um` - MRI dwi template at 50 μm resolution 
+  *  `kim_dev_mouse_p14_mri-fa_50um` - MRI fa template at 50 μm resolution
+  *  `kim_dev_mouse_p14_mri-t2_50um` - MRI T2 template at 50 μm resolution 
+  *  `kim_dev_mouse_p14_mri-mtr_50um` - MRI MTR template at 50 μm resolution 
 * at P56
-  *  `kim_dev_mouse_P56_LSFM_20um` - LSFM template at 20 μm resolution
-  *  `kim_dev_mouse_P56_MRI-adc_50um` - MRI adc template at 50 μm resolution
-  *  `kim_dev_mouse_P56_MRI-dwi_50um` - MRI dwi template at 50 μm resolution 
-  *  `kim_dev_mouse_P56_MRI-fa_50um` - MRI fa template at 50 μm resolution
-  *  `kim_dev_mouse_P56_MRI-T2_50um` - MRI T2 template at 50 μm resolution 
-  *  `kim_dev_mouse_P56_MRI-MTR_50um` - MRI MTR template at 50 μm resolution 
+  *  `kim_dev_mouse_p56_lsfm_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_p56_mri-adc_50um` - MRI adc template at 50 μm resolution
+  *  `kim_dev_mouse_p56_mri-dwi_50um` - MRI dwi template at 50 μm resolution 
+  *  `kim_dev_mouse_p56_mri-fa_50um` - MRI fa template at 50 μm resolution
+  *  `kim_dev_mouse_p56_mri-t2_50um` - MRI T2 template at 50 μm resolution 
+  *  `kim_dev_mouse_p56_mri-mtr_50um` - MRI MTR template at 50 μm resolution 
 
 
 ### [Kim Lab Developmental CCF v0.0.1 (P56)](https://data.mendeley.com/datasets/2svx788ddf/1) 
