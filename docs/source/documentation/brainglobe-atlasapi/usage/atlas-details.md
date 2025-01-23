@@ -140,7 +140,7 @@ Available versions:
 ### [Kim Lab Developmental CCF v0.0.1 (P56)](https://data.mendeley.com/datasets/2svx788ddf/1) 
 This atlas is part of a developmental atlas following Luis Puelles' Developmental Vertebrate Ontology. BrainGlobe 
 currently hosts the P56 version of this atlas at 10μm resolution with eight versions, each with a different reference 
-image - STP, LSFM (iDISCO) and MRI (a0, adc, dwo, fa, MTR, T2). This atlas is now superceded by its 1.0.0 version but continues to be available for reproducibility and archive reasons.
+image - STP, LSFM (iDISCO) and MRI (a0, adc, dwo, fa, MTR, T2). This atlas is now superseded by its 1.0.0 version but continues to be available for reproducibility and archive reasons.
 
 Available versions:
 * `kim_dev_mouse_stp_10um` - "normal" CCF serial 2p template at 10μm resolution
