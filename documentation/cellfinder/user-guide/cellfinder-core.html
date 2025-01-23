@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -27,20 +27,20 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=1227d6e8" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
@@ -591,9 +591,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -647,8 +652,8 @@
 For an idea of what the parameters do, see the <a class="reference internal" href="napari-plugin/index.html"><span class="doc std std-doc">documentation for the napari plugin</span></a>.</p>
 <section id="to-run-the-full-pipeline-cell-candidate-detection-and-classification">
 <h2>To run the full pipeline (cell candidate detection and classification)<a class="headerlink" href="#to-run-the-full-pipeline-cell-candidate-detection-and-classification" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cellfinder.core.main</span> <span class="kn">import</span> <span class="n">main</span> <span class="k">as</span> <span class="n">cellfinder_run</span>
-<span class="kn">import</span> <span class="nn">tifffile</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">cellfinder.core.main</span><span class="w"> </span><span class="kn">import</span> <span class="n">main</span> <span class="k">as</span> <span class="n">cellfinder_run</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tifffile</span>
 
 <span class="n">signal_array</span> <span class="o">=</span> <span class="n">tifffile</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;/path/to/signal_image.tif&quot;</span><span class="p">)</span>
 <span class="n">background_array</span> <span class="o">=</span> <span class="n">tifffile</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;/path/to/background_image.tif&quot;</span><span class="p">)</span>
@@ -664,7 +669,7 @@ Each <code class="docutils literal notranslate"><span class="pre">Cell</span></c
 </pre></div>
 </div>
 <p>Cell type 2 is a “real” cell, and Cell type 1 is a “rejected” object (i.e., not classified as a cell):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brainglobe_utils.cells.cells</span> <span class="kn">import</span> <span class="n">Cell</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_utils.cells.cells</span><span class="w"> </span><span class="kn">import</span> <span class="n">Cell</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Cell</span><span class="o">.</span><span class="n">CELL</span><span class="p">)</span>
 <span class="c1"># 2</span>
 
@@ -676,12 +681,12 @@ Each <code class="docutils literal notranslate"><span class="pre">Cell</span></c
 <section id="saving-the-results">
 <h2>Saving the results<a class="headerlink" href="#saving-the-results" title="Link to this heading">#</a></h2>
 <p>If you want to save the detected cells for use in other BrainGlobe software (e.g. the napari plugin), you can save in the cellfinder XML standard:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brainglobe_utils.IO.cells</span> <span class="kn">import</span> <span class="n">save_cells</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_utils.IO.cells</span><span class="w"> </span><span class="kn">import</span> <span class="n">save_cells</span>
 <span class="n">save_cells</span><span class="p">(</span><span class="n">detected_cells</span><span class="p">,</span> <span class="s2">&quot;/path/to/cells.xml&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You can load these back with:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brainglobe_utils.IO.cells</span> <span class="kn">import</span> <span class="n">get_cells</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_utils.IO.cells</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_cells</span>
 <span class="n">cells</span> <span class="o">=</span> <span class="n">get_cells</span><span class="p">(</span><span class="s2">&quot;/path/to/cells.xml&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -692,8 +697,8 @@ Each <code class="docutils literal notranslate"><span class="pre">Cell</span></c
 Using <a class="reference external" href="https://docs.dask.org/en/latest/array.html">Dask arrays</a> allows for lazy loading of data, allowing large (e.g. TB) datasets to be processed.
 <code class="docutils literal notranslate"><span class="pre">cellfinder.core</span></code> comes with a function (based on <a class="reference external" href="https://github.com/tlambert03/napari-ndtiffs">napari-ndtiffs</a>) to load a series of image files (e.g. a directory of 2D tiff files) as a Dask array.
 <code class="docutils literal notranslate"><span class="pre">cellfinder.core</span></code> can then be used in the same way as with a numpy array.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cellfinder.core.main</span> <span class="kn">import</span> <span class="n">main</span> <span class="k">as</span> <span class="n">cellfinder_run</span>
-<span class="kn">from</span> <span class="nn">brainglobe_utils.IO.image.load</span> <span class="kn">import</span> <span class="n">read_with_dask</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">cellfinder.core.main</span><span class="w"> </span><span class="kn">import</span> <span class="n">main</span> <span class="k">as</span> <span class="n">cellfinder_run</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_utils.IO.image.load</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_with_dask</span>
 
 <span class="n">signal_array</span> <span class="o">=</span> <span class="n">read_with_dask</span><span class="p">(</span><span class="s2">&quot;/path/to/signal_image_directory&quot;</span><span class="p">)</span>
 <span class="n">background_array</span> <span class="o">=</span> <span class="n">read_with_dask</span><span class="p">(</span><span class="s2">&quot;/path/to/background_image_directory&quot;</span><span class="p">)</span>
@@ -705,12 +710,12 @@ Using <a class="reference external" href="https://docs.dask.org/en/latest/array.
 </section>
 <section id="running-the-cell-candidate-detection-and-classification-separately">
 <h2>Running the cell candidate detection and classification separately<a class="headerlink" href="#running-the-cell-candidate-detection-and-classification-separately" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tifffile</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tifffile</span>
 
-<span class="kn">from</span> <span class="nn">cellfinder.core.detect</span> <span class="kn">import</span> <span class="n">detect</span>
-<span class="kn">from</span> <span class="nn">cellfinder.core.classify</span> <span class="kn">import</span> <span class="n">classify</span>
-<span class="kn">from</span> <span class="nn">cellfinder.core.tools.prep</span> <span class="kn">import</span> <span class="n">prep_models</span>
-<span class="kn">from</span> <span class="nn">cellfinder.core.download.download</span> <span class="kn">import</span> <span class="n">DEFAULT_DOWNLOAD_DIRECTORY</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cellfinder.core.detect</span><span class="w"> </span><span class="kn">import</span> <span class="n">detect</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cellfinder.core.classify</span><span class="w"> </span><span class="kn">import</span> <span class="n">classify</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cellfinder.core.tools.prep</span><span class="w"> </span><span class="kn">import</span> <span class="n">prep_models</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cellfinder.core.download.download</span><span class="w"> </span><span class="kn">import</span> <span class="n">DEFAULT_DOWNLOAD_DIRECTORY</span>
 
 <span class="n">signal_array</span> <span class="o">=</span> <span class="n">tifffile</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;/path/to/signal_image.tif&quot;</span><span class="p">)</span>
 <span class="n">background_array</span> <span class="o">=</span> <span class="n">tifffile</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;/path/to/background_image.tif&quot;</span><span class="p">)</span>
@@ -784,8 +789,8 @@ Using <a class="reference external" href="https://docs.dask.org/en/latest/array.
 These can be generated however you like, but we recommend the <a class="reference internal" href="napari-plugin/training-data-generation.html"><span class="doc std std-doc">napari plugin</span></a>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">cellfinder.core</span></code> comes with a 50-layer ResNet trained on ~100,000 data points from serial two-photon microscopy images of mouse brains (available <a class="reference external" href="https://gin.g-node.org/cellfinder/training_data">here</a>).</p>
 <p>Training the network is likely simpler using the <a class="reference internal" href="napari-plugin/training-the-network.html"><span class="doc std std-doc">napari plugin</span></a>, but it is possible through the Python API.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">from</span> <span class="nn">cellfinder.core.train.train_yml</span> <span class="kn">import</span> <span class="n">run</span> <span class="k">as</span> <span class="n">run_training</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cellfinder.core.train.train_yml</span><span class="w"> </span><span class="kn">import</span> <span class="n">run</span> <span class="k">as</span> <span class="n">run_training</span>
 
 <span class="c1"># list of training yml files</span>
 <span class="n">yaml_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/path/to/training_yml.yml)]</span>
@@ -879,8 +884,8 @@ These can be generated however you like, but we recommend the <a class="referenc
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -894,7 +899,7 @@ Created using <a href="https://sphinx-doc.org/">Sphinx</a> 8.1.3.
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.16.0.
+0.16.1.
 </p></div>
       
     </div>
