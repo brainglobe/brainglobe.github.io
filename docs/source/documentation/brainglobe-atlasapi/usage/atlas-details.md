@@ -56,6 +56,15 @@ space to the original Allen atlas (CCFv3).
 This atlas is only available at 20μm resolution:
 * `perens_lsfm_mouse_20um`
 
+### [Gubra's MRI mouse brain atlas](https://doi.org/10.1007/s12021-023-09623-9)
+This atlas is an addition to its LSFM version and provides a version of the Allen
+Adult Mouse Brain Atlas, based on T2-weighted MRI. This atlas may be a 
+good choice for registering other similar images. However, please note that this atlas is in a different coordinate 
+space to the original Allen atlas (CCFv3).
+
+This atlas is only available at 25μm resolution:
+* `perens_stereotaxic_mouse_mri_25um`
+
 ### [Princeton Mouse Brain Atlas](https://brainmaps.princeton.edu/2020/09/princeton-mouse-brain-atlas-links)
 This atlas from [Pisano et al. (2021)](https://doi.org/10.1016/j.celrep.2021.109721) is a version of the Allen
 Adult Mouse Brain Atlas with two main differences. Unlike the Allen Adult Mouse Brain Atlas it includes a full 
@@ -218,7 +227,7 @@ see [the blogpost](/blog/axolotl-atlas-added).
 This atlas is only available at 40μm resolution:
 * `unam_axolotl_40um`
 
-## Human
+## Human and non-human primates
 ### [Allen Human Brain Atlas](https://www.brain-map.org)
 This atlas is included mostly for visualisation and comparison to the other atlases. 
 Note that it is also only a single hemisphere. There are many better atlases
@@ -226,6 +235,13 @@ Note that it is also only a single hemisphere. There are many better atlases
 
 This atlas is only available at 500μm resolution:
 * `allen_human_500um`
+
+### [MRI mouse lemur brain atlas](https://doi.org/10.1016/j.dib.2018.10.067) 
+This is a MRI atlas of the grey mouse lemur (Microcebus murinus) from 
+[Nadkarni et al. (2018)](https://doi.org/10.1016/j.dib.2018.10.067).
+
+This atlas is only available at 91um resolution
+* `nadkarni_mri_mouselemur_91um`
 
 
 
