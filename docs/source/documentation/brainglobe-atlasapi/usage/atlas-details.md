@@ -227,7 +227,7 @@ see [the blogpost](/blog/axolotl-atlas-added).
 This atlas is only available at 40μm resolution:
 * `unam_axolotl_40um`
 
-## Human and non-human primates
+## Human and non-human primate
 ### [Allen Human Brain Atlas](https://www.brain-map.org)
 This atlas is included mostly for visualisation and comparison to the other atlases. 
 Note that it is also only a single hemisphere. There are many better atlases
