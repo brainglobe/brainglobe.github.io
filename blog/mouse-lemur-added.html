@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>An atlas for the prairie vole Microtus ochrogaster has been added to BrainGlobe &#8212; BrainGlobe</title>
+    <title>An Atlas for the non-human primate Microcebus murinus (grey mouse lemur) has been added to BrainGlobe &#8212; BrainGlobe</title>
   
   
   
@@ -55,8 +55,8 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/prairie-vole-atlas-added';</script>
-    <link rel="canonical" href="https://brainglobe.info/blog/prairie-vole-atlas-added.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/mouse-lemur-added';</script>
+    <link rel="canonical" href="https://brainglobe.info/blog/mouse-lemur-added.html" />
     <link rel="icon" href="../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -502,7 +502,7 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">An atlas for the prairie vole <em>Microtus ochrogaster</em> has been added to BrainGlobe</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">An Atlas for the non-human primate <em>Microcebus murinus</em> (grey mouse lemur) has been added to BrainGlobe</span></li>
   </ul>
 </nav>
 </div>
@@ -518,37 +518,24 @@
                 
 <div id="searchbox"></div>
                 <article class="bd-article">
-                   <section class="tex2jax_ignore mathjax_ignore" id="an-atlas-for-the-prairie-vole-microtus-ochrogaster-has-been-added-to-brainglobe">
-<h1>An atlas for the prairie vole <em>Microtus ochrogaster</em> has been added to BrainGlobe<a class="headerlink" href="#an-atlas-for-the-prairie-vole-microtus-ochrogaster-has-been-added-to-brainglobe" title="Link to this heading">#</a></h1>
-<p>Prairie voles are a valuable model species for studying social interaction due to their characteristic pair-bonding behavior.
-The brain of this species is structured similarly to the mouse and is only 30% larger, meaning it is particularly well suited to methods to map
-brain anatomy and function using light microscopy, such as light-sheet fluorescence microscopy and serial section two-photon microscopy.</p>
-<p>To fully adopt these brain mapping techniques, a brain atlas is required (to use with tools such as
-<a class="reference internal" href="../documentation/brainreg/index.html"><span class="doc std std-doc">brainreg</span></a>). Such an atlas was created by
-<a class="reference external" href="https://doi.org/10.7554/eLife.87029.3">Gustison et al. (2024)</a>, and has been packaged into the BrainGlobe format by
-Sacha Hadaway-Andreae in collaboration with the BrainGlobe team.</p>
-<p><img alt="prairie vole brain atlas annotations" src="../_images/prairie_vole_annotations.png" /></p>
-<p><strong>Figure 1. Coronal view of the prairie vole brain atlas annotations.</strong></p>
-<p>This atlas can now be used within the BrainGlobe ecosystem, with the atlas name: <code class="docutils literal notranslate"><span class="pre">prairie_vole_25um</span></code>.</p>
+                   <section class="tex2jax_ignore mathjax_ignore" id="an-atlas-for-the-non-human-primate-microcebus-murinus-grey-mouse-lemur-has-been-added-to-brainglobe">
+<h1>An Atlas for the non-human primate <em>Microcebus murinus</em> (grey mouse lemur) has been added to BrainGlobe<a class="headerlink" href="#an-atlas-for-the-non-human-primate-microcebus-murinus-grey-mouse-lemur-has-been-added-to-brainglobe" title="Link to this heading">#</a></h1>
+<p>Thanks to its small size and its close phylogenetic relation to humans (compared to other model organisms), the grey mouse lemur is a practical choice to study brain evolution and disease. <a class="reference external" href="https://doi.org/10.1016/j.dib.2018.10.067">Nadkarni et al.</a> made the first publicly available mouse lemur atlas in 2018. They imaged mouse lemur brains with MRI at 91μm resolution.  Thanks to <a class="reference external" href="https://github.com/PolarBean">Harry Carey (University of Oslo)</a> it is now accessible from BrainGlobe. In reference to its original authors, the atlas is named <code class="docutils literal notranslate"><span class="pre">nadkarni_mri_mouselemur_91um</span></code> in the BrainGlobe ecosystem.</p>
+<p><img alt="axolotl brain atlas annotations" src="../_images/mouse_lemur_3d.png" /></p>
+<p><strong>Figure 1. Three-dimensional view of the Nadkarni mouse lemur MRI atlas using <code class="docutils literal notranslate"><span class="pre">brainrender-napari</span></code>, with the template image overlaid with just the right hemisphere of the annotations.</strong></p>
+<p>Note that the reference image (as seen in Figure 1.) contains more than just the brain, so it may not be a good registration target for <code class="docutils literal notranslate"><span class="pre">brainreg</span></code>!</p>
 <section id="how-do-i-use-the-new-atlas">
 <h2>How do I use the new atlas?<a class="headerlink" href="#how-do-i-use-the-new-atlas" title="Link to this heading">#</a></h2>
-<p>You can use the prairie vole atlas for visualisation like other BrainGlobe atlases. To visualise the atlas, you could follow the steps below:</p>
+<p>You can use the mouse lemur atlas for visualisation like other BrainGlobe atlases. To visualise the atlas, you could follow the steps below:</p>
 <ul class="simple">
 <li><p>Install BrainGlobe (<a class="reference internal" href="../documentation/index.html"><span class="doc std std-doc">instructions</span></a>)</p></li>
-<li><p>Open napari and follow the steps in our <a class="reference internal" href="../tutorials/manage-atlases-in-GUI.html"><span class="std std-doc">download tutorial</span></a> for the prairie vole atlas</p></li>
+<li><p>Open napari and follow the steps in our <a class="reference internal" href="../tutorials/manage-atlases-in-GUI.html"><span class="std std-doc">download tutorial</span></a> for the mouse lemur atlas</p></li>
 <li><p>Visualise the different parts of the atlas as described in our <a class="reference internal" href="../tutorials/visualise-atlas-napari.html"><span class="doc std std-doc">visualisation tutorial</span></a></p></li>
 </ul>
-<p>To use the atlas with other software such as <a class="reference internal" href="../documentation/brainreg/index.html"><span class="doc std std-doc">brainreg</span></a>, please follow the instructions
-for those tools, and simply choose this atlas from the user interface.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To use this atlas, you will need the latest version of the BrainGlobe Atlas API. If you have an older version,
-please update to at least version <code class="docutils literal notranslate"><span class="pre">2.0.10</span></code> with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">brainglobe-atlasapi</span></code>.</p>
-</div>
 </section>
 <section id="why-are-we-adding-new-atlases">
 <h2>Why are we adding new atlases?<a class="headerlink" href="#why-are-we-adding-new-atlases" title="Link to this heading">#</a></h2>
-<p>A fundamental aim of the BrainGlobe project is to make various brain atlases easily accessible by users across the globe. If you would like to get involved with a similar project, please <a class="reference internal" href="../contact.html"><span class="doc std std-doc">get in touch</span></a>.</p>
+<p>A fundamental aim of the BrainGlobe project is to make various brain atlases easily accessible by users across the globe. The mouse lemur atlas is the first non-human primate brain atlas available through BrainGlobe. If you would like to get involved with a similar project, please <a class="reference internal" href="../contact.html"><span class="doc std std-doc">get in touch</span></a>.</p>
 </section>
 </section>
 
@@ -557,23 +544,16 @@ please update to at least version <code class="docutils literal notranslate"><sp
 <div class="section ablog__prev-next">
   <span class="ablog__prev">
      
-    <a href="axolotl-atlas-added.html">
+    <a href="prairie-vole-atlas-added.html">
       
       <i class="fa fa-arrow-circle-left"></i>
       
-      <span>An Atlas for the regenerative Ambystoma mexicanum (axolotl) has been added to BrainGlobe</span>
+      <span>An atlas for the prairie vole Microtus ochrogaster has been added to BrainGlobe</span>
     </a>
     
   </span>
   <span class="ablog__spacer">&nbsp;</span>
   <span class="ablog__next">
-     
-    <a href="mouse-lemur-added.html">
-      <span>An Atlas for the non-human primate Microcebus murinus (grey mouse lemur) has been added to BrainGlobe</span>
-      
-      <i class="fa fa-arrow-circle-right"></i>
-      
-    </a>
     
   </span>
 </div>
