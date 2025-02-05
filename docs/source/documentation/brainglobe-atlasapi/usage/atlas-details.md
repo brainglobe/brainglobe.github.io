@@ -92,7 +92,6 @@ Available versions:
 * `admba_3d_p28_mouse_16.752um` - P28 at 16.752μm resolution
 * `admba_3d_p56_mouse_25um` - P56 at 25μm resolution
 
-
 ### [Kim Lab Developmental CCF v1.0](https://doi.org/10.6084/m9.figshare.26377171.v1) 
 A multi-modal atlas of the developing mouse brain. Reference images from LSFM and MRI (adc, dwi, fa, T2) are available at all developmental stages of the atlas (E11.5, E13.5, E15.5, E18.5, P4, P14, P56). Developmental stages E15.5, P04 and P14 additionally also have versions with a MTR MRI reference image.
 
@@ -179,14 +178,24 @@ This atlas is only available at a single (20 x 10 x 10μm) resolution:
 
 ### [Smoothed version of the Kim et al. mouse reference atlas](https://doi.org/10.1016/j.celrep.2014.12.014)
 This atlas is part of the API to support some existing projects. We do not recommend it for any new projects
-(use the Allen Adult Mouse Brain Atlas instead).
+(use the Allen Adult Mouse Brain Atlas instead). Many of the regions were identified by Charles Watson who is 
+the co-author  
 
 Available versions:
 * `osten_mouse_10um` - 10μm resolution
 * `osten_mouse_25um` - 25μm resolution
 * `osten_mouse_50um` - 50μm resolution
 * `osten_mouse_100um` - 100μm resolution
-
+### [Australian Mouse Brain Atlas](https://imaging.org.au/AMBMC/)
+This atlas has an incredibly high resolution (15μm!) MRI template. It covers the Hippocampus, Cerebellum, Cortex, 
+Basal Ganglia, and Diencephalon. It is quite consistent with the parcellation scheme of the Paxinos and Franklin
+mouse brain atlas. Most of the regions and anatomical features were identified by Charles Watson who has co-authored
+many well known atlases. In the case of the basal ganglia and diencephalon the anatomical features were identified by 
+Charles Watson and George Paxinos. Given that these authors have created the most influential two-dimensional atlases
+this three-dimensional atlas is sure to be a valuable resource. At present a drawback of this atlas is that the 
+segmentations do not cover the entire brain and is limited to the regions previously mentioned. 
+Available versions:
+* `australian_mouse_15um`
 ## Rat
 ### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
 This atlas is only available at 39μm resolution:
