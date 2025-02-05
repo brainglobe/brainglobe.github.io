@@ -187,7 +187,7 @@ Available versions:
 * `osten_mouse_50um` - 50μm resolution
 * `osten_mouse_100um` - 100μm resolution
 ### [Australian Mouse Brain Atlas](https://imaging.org.au/AMBMC/)
-This atlas has an incredibly high resolution (15μm!) MRI template. It covers the Hippocampus, Cerebellum, Cortex, 
+This atlas has an very high resolution (15μm) MRI template. It covers the Hippocampus, Cerebellum, Cortex, 
 Basal Ganglia, and Diencephalon. It is quite consistent with the parcellation scheme of the Paxinos and Franklin
 mouse brain atlas. At present a drawback of this atlas is that the 
 segmentations do not cover the entire brain and is limited to the regions previously mentioned. 
