@@ -60,7 +60,8 @@ This atlas is only available at 20μm resolution:
 This atlas is an addition to its LSFM version and provides a version of the Allen
 Adult Mouse Brain Atlas, based on T2-weighted MRI. This atlas may be a 
 good choice for registering other similar images. However, please note that this atlas is in a different coordinate 
-space to the original Allen atlas (CCFv3).
+space to the original Allen atlas (CCFv3). In addition this atlas is in flat skull position and so it can be used to 
+plan stereotaxic surgeries.
 
 This atlas is only available at 25μm resolution:
 * `perens_stereotaxic_mouse_mri_25um`
@@ -189,6 +190,9 @@ Available versions:
 
 ## Rat
 ### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
+The Waxholm Space rat brain atlas features annotations of 222 structures, alongside a 39μm MRI template. It provides detailed delineations 
+of the cerebral cortex, hippocampus, striatopallidal areas, midbrain, thalamus, auditory system and fiber tracts.
+It is comprehensive, covering the entire rat brain. 
 This atlas is only available at 39μm resolution:
 * `whs_sd_rat_39um`
 
