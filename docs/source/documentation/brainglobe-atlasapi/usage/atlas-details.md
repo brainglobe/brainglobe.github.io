@@ -178,8 +178,7 @@ This atlas is only available at a single (20 x 10 x 10μm) resolution:
 
 ### [Smoothed version of the Kim et al. mouse reference atlas](https://doi.org/10.1016/j.celrep.2014.12.014)
 This atlas is part of the API to support some existing projects. We do not recommend it for any new projects
-(use the Allen Adult Mouse Brain Atlas instead). Many of the regions were identified by Charles Watson who is 
-the co-author  
+(use the Allen Adult Mouse Brain Atlas instead).
 
 Available versions:
 * `osten_mouse_10um` - 10μm resolution
