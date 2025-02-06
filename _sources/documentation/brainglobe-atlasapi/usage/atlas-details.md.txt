@@ -191,8 +191,9 @@ This atlas has a very high resolution (15μm) MRI template. It covers the Hippoc
 Basal Ganglia, and Diencephalon. It is quite consistent with the parcellation scheme of the Paxinos and Franklin
 mouse brain atlas. At present a drawback of this atlas is that the 
 segmentations do not cover the entire brain and is limited to the regions previously mentioned. 
-Available versions:
+This atlas is only available at 15μm resolution:
 * `australian_mouse_15um`
+
 ## Rat
 ### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
 The Waxholm Space rat brain atlas features annotations of 222 structures, alongside a 39μm MRI template. It provides detailed delineations 
