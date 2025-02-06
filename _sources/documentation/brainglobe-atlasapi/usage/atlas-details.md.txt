@@ -93,7 +93,6 @@ Available versions:
 * `admba_3d_p28_mouse_16.752um` - P28 at 16.752μm resolution
 * `admba_3d_p56_mouse_25um` - P56 at 25μm resolution
 
-
 ### [Kim Lab Developmental CCF v1.0](https://doi.org/10.6084/m9.figshare.26377171.v1) 
 A multi-modal atlas of the developing mouse brain. Reference images from LSFM and MRI (adc, dwi, fa, T2) are available at all developmental stages of the atlas (E11.5, E13.5, E15.5, E18.5, P4, P14, P56). Developmental stages E15.5, P04 and P14 additionally also have versions with a MTR MRI reference image.
 
@@ -187,7 +186,13 @@ Available versions:
 * `osten_mouse_25um` - 25μm resolution
 * `osten_mouse_50um` - 50μm resolution
 * `osten_mouse_100um` - 100μm resolution
-
+### [Australian Mouse Brain Atlas](https://imaging.org.au/AMBMC/)
+This atlas has a very high resolution (15μm) MRI template. It covers the Hippocampus, Cerebellum, Cortex, 
+Basal Ganglia, and Diencephalon. It is quite consistent with the parcellation scheme of the Paxinos and Franklin
+mouse brain atlas. At present a drawback of this atlas is that the 
+segmentations do not cover the entire brain and is limited to the regions previously mentioned. 
+Available versions:
+* `australian_mouse_15um`
 ## Rat
 ### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
 The Waxholm Space rat brain atlas features annotations of 222 structures, alongside a 39μm MRI template. It provides detailed delineations 
