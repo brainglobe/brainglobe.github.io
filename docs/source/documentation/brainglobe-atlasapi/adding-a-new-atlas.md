@@ -140,15 +140,6 @@ For the metadata, you can just open the json file and inspect it.
 To inspect the reference.tiff file and the annotation.tiff file, you can just drag and drop them in napari (to install napari, see [here](https://napari.org/stable/tutorials/fundamentals/installation)), and they will open as an image layer, and a label layer, respectively.
 You know the orientation is correct if you are looking at upright (dorsal top, ventral bottom) frontal sections, and when you scroll the slider to inspect sections with a higher index, you are moving from anterior to posterior.
 
-To inspect the meshes, BrainGlobe provides a simple tool
-load and visualize a set of .obj files for quick inspection, e.g.:
-
-```python
-from brainglobe_atlasapi.atlas_generation.mesh_utils import inspect_meshes_folder
-
-inspect_meshes_folder("~/.brainglobe/temp/allen_mouse_10um_v1.0/meshes")
-```
-
 Once an atlas is created with BrainGlobe’s atlas generation tools, it can be used with most software from the BrainGlobe software suite.
 These include [brainrender](/documentation/brainrender/index) and [brainrender-napari](/tutorials/visualise-atlas-napari) which provide a convenient way to visually inspect the generated atlas meshes.
 
