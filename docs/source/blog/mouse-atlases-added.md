@@ -26,7 +26,11 @@ This is an update to an earlier version of the same lab (v001 - only at P56, and
 
 ## Gubra's Multimodal 3D mouse brain atlas
 
-![Templates and annotations of the Gubra multimodal brain atlas](./images/gubra_multimodal.png)
+```{image} ./images/gubra_multimodal.png
+:alt: Templates and annotations of the Gubra multimodal brain atlas
+:width: 100%
+```
+
 
 **Figure 3. A visualisation of both the LSFM (top row) and MRI (bottom row) templates and their annotations contained in Gubra's multimodal mouse brain atlas. Note that both modes are available at 25um, but the LSFM is slightly smaller due to shrinkage effects of sample preparation for LSFM.**
 
