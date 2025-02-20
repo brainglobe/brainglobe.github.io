@@ -16,7 +16,7 @@ The [Kim developmental mouse brain atlas](https://doi.org/10.1038/s41467-024-532
 
 ![Kim DevCCF embryonic LSFM templates](./images/kim_dev_embryonic_lsfm.png)
 
-**Figure 1. LSFM templates for embryonic developmental stages (f.l.t.r. E11.5, E13.5, E15.5, E18.5) available in the Kim DevCCF.**
+**Figure 1. LSFM templates for embryonic developmental stages (from left to right: E11.5, E13.5, E15.5, E18.5) available in the Kim DevCCF.**
 
 ![Coronal sections for all templates for Kim DevCCF template at E18.5](./images/kim_dev_embryonic_18_all_modalities_2d.png)
 
