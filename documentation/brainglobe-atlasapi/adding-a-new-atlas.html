@@ -778,13 +778,6 @@ you can just go to the folder with the atlas content
 <p>For the metadata, you can just open the json file and inspect it.</p>
 <p>To inspect the reference.tiff file and the annotation.tiff file, you can just drag and drop them in napari (to install napari, see <a class="reference external" href="https://napari.org/stable/tutorials/fundamentals/installation">here</a>), and they will open as an image layer, and a label layer, respectively.
 You know the orientation is correct if you are looking at upright (dorsal top, ventral bottom) frontal sections, and when you scroll the slider to inspect sections with a higher index, you are moving from anterior to posterior.</p>
-<p>To inspect the meshes, BrainGlobe provides a simple tool
-load and visualize a set of .obj files for quick inspection, e.g.:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.atlas_generation.mesh_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">inspect_meshes_folder</span>
-
-<span class="n">inspect_meshes_folder</span><span class="p">(</span><span class="s2">&quot;~/.brainglobe/temp/allen_mouse_10um_v1.0/meshes&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
 <p>Once an atlas is created with BrainGlobe’s atlas generation tools, it can be used with most software from the BrainGlobe software suite.
 These include <a class="reference internal" href="../brainrender/index.html"><span class="doc std std-doc">brainrender</span></a> and <a class="reference internal" href="../../tutorials/visualise-atlas-napari.html"><span class="doc std std-doc">brainrender-napari</span></a> which provide a convenient way to visually inspect the generated atlas meshes.</p>
 <p>For example, you can visualise various parts of the Max Planck Zebrafish Brain Atlas next to each other by running the script below. You can do the same with your own newly-packaged atlas (or any other BrainGlobe atlas) by replacing the atlas name, the name of the additional reference, and the acronym of the structure you’re interested in, as explained in the comments below:</p>
