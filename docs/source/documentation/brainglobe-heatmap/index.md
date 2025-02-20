@@ -1,13 +1,11 @@
 # brainglobe-heatmap
+`brainglobe-heatmap` allows you to create heatmaps, mapping scalar values for each brain region (e.g., number of labelled cells in each region) to a color and creating visualizations in 2D (using [matplotlib](https://matplotlib.org/) or 3D (using [brainrender](https://brainglobe.info/documentation/brainrender/index.html)).
 
-`brainglobe-heatmap` allows you to create heatmaps, mapping scalar values for each brain region (e.g., number of labelled cells in each region) to a color and creating beautiful visualizations in 2D (using [matplotlib](https://matplotlib.org/) or 3D (using [brainrender](https://brainglobe.info/documentation/brainrender/index.html)).
 
-![2D heatmap generated using matplotlib](https://raw.githubusercontent.com/brainglobe/brainglobe-heatmap/main/images/hm_2d.png)
+![2D heatmap](images/Hansen_2025_Fig1.png)
+**2D heatmap generated using matplotlib - adapted from Fig 1. from [Hansen et al (2025)](https://doi.org/10.1101/2025.01.24.634803)**
 
-**2D heatmap generated using matplotlib**
-
-![3D heatmap generated using brainrender](https://raw.githubusercontent.com/brainglobe/brainglobe-heatmap/main/images/hm_3d.png)
-
+![3D heatmap](images/heatmap_3d.png)
 **3D heatmap generated using brainrender**
 
 ## Installation
@@ -35,16 +33,16 @@ Next, to create visualizations like the ones shown above, the three dimensional 
 the relevant parts.
 This is done by specifying the position and orientation of a `Plane` which cuts through the scene.
 
-![](https://raw.githubusercontent.com/brainglobe/brainglobe-heatmap/main/images/planning_1.png)
+![](images/planning_1.png)
 
 The orientation is set by the direction of a *normal vector* specified by the user.
 
-![](https://raw.githubusercontent.com/brainglobe/brainglobe-heatmap/main/images/planning_2.png)
+![](images/planning_2.png)
 
 Everything that is on the side opposite where the normal vector will be cut and discarded.
 To keep a section of the 3D brain, two planes with normal vectors facing in opposite directions are used:
 
-![](https://raw.githubusercontent.com/brainglobe/brainglobe-heatmap/main/images/planning_3.png)
+![](images/planning_3.png)
 
 and everything in-between the two planes is kept as a slice.
 
