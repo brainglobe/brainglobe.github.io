@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: February 5, 2025
+date: February 20, 2025
 author: Harry Carey, Carlo Castoldi, Alessandro Felder
 location: Oslo, Norway; Paris, France; London, England
 category: brainglobe
@@ -28,7 +28,14 @@ This is an update to an earlier version of the same lab (v001 - only at P56, and
 TODO
 
 ## Australian mouse brain atlas
-High resolution and paxinos annotations.
+
+![A coronal section of the Australian mouse brain](./images/australian_mouse_coronal.png)
+
+**Figure 4. A coronal section of the Australian mouse brain, showing annotations in the right hemisphere.**
+
+At 15um pixel size, the [Australian mouse brain atlas](https://imaging.org.au/AMBMC/) is the highest-resolution MRI-based mouse brain atlas currently available, and comes with annotations based on a widely used histological atlas [^Paxinos]. It may therefore be most useful in cases where one would like to compare regions from histology to corresponding MRI data.
+
+[^Paxinos]: Paxinos and Franklin, The Mouse Brain in Stereotaxic Coordinates, [ISBN 0123694604](https://books.google.co.uk/books/about/The_Mouse_Brain_in_Stereotaxic_Coordinat.html)
 
 ## How do I use the new atlas?
 You can use these atlases for visualisation and analysis, like other BrainGlobe atlases. To visualise the atlas, you could follow the steps below:
