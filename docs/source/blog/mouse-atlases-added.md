@@ -6,7 +6,7 @@ location: Oslo, Norway; Paris, France; London, England
 category: brainglobe
 language: English
 ---
-# What mouse atlas should I use?
+# An overview of recently added mouse atlases
 
 Eagle-eyed BrainGlobe enthusiasts will have spotted several new atlases appearing in the BrainGlobe Atlas API in recent weeks. In 2025, we've made three new mouse brain atlases newly available through BrainGlobe: The Kim developmental mouse brain atlas (version 1), the Gubra multimodal mouse brain atlas and the Australian mouse brain atlas. Mice are widely used in neuroscience, so it's no surprise there are many mouse brain atlases. In this blogpost, we describe the newly added atlases in more detail, and suggest potential use cases. This blog covers the new murine atlases only - we have also added the [first non-human primate brain atlas to BrainGlobe](/blog/mouse-lemur-added) (and brain atlases for a cat and a cuttlefish are underway)!
 
@@ -26,13 +26,10 @@ This is an update to an earlier version of the same lab (v001 - only at P56, and
 
 ## Gubra's Multimodal 3D mouse brain atlas
 
-```{image} ./images/gubra_multimodal.png
-:alt: Templates and annotations of the Gubra multimodal brain atlas
-:width: 100%
-```
+![Templates and annotations of the Gubra multimodal brain atlas](images/gubra_multimodal.png)
 
+**Figure 3. A visualisation of both the MRI (left) and LSFM (right) templates and their (right-hemisphere) annotations contained in Gubra's multimodal mouse brain atlas. Note that both modes are available at 25um, but the LSFM is slightly smaller due to shrinkage effects of sample preparation for LSFM.**
 
-**Figure 3. A visualisation of both the LSFM (top row) and MRI (bottom row) templates and their annotations contained in Gubra's multimodal mouse brain atlas. Note that both modes are available at 25um, but the LSFM is slightly smaller due to shrinkage effects of sample preparation for LSFM.**
 
 [Perens et al.](https://doi.org/10.1007/s12021-023-09623-9) created a multimodal atlas of the mouse brain containing both an MRI and an LSFM template at 25 micrometer resolution (`perens_stereotaxic_mri_mouse_25um` and `perens_multimodal_lsfm_25um`, respectively), with annotations based on the Allen Mouse Brain atlas. 
 
