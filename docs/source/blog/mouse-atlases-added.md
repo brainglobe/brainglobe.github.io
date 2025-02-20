@@ -24,8 +24,13 @@ The [Kim developmental mouse brain atlas](https://doi.org/10.1038/s41467-024-532
 
 This is an update to an earlier version of the same lab (v001 - only at P56, and notably in a different coordinate space!). It is an improvement compared to the Allen Developing Mouse Brain atlas (ADMBA), the other developmental mouse brain atlas available through BrainGlobe, because it represents an average of several individuals and is based on fully three-dimensional imaging methods rather than a series of histological sections.
 
-## Gubra's MRI + LSFM atlases
-TODO
+## Gubra's Multimodal 3D mouse brain atlas
+
+![Templates and annotations of the Gubra multimodal brain atlas](./images/gubra_multimodal.png)
+
+**Figure 3. A visualisation of both the LSFM (top row) and MRI (bottom row) templates and their annotations contained in Gubra's multimodal mouse brain atlas. Note that both modes are available at 25um, but the LSFM is slightly smaller due to shrinkage effects of sample preparation for LSFM.**
+
+[Perens et al](https://doi.org/10.1007/s12021-023-09623-9) created a multimodal atlas of the mouse brain, in collaboration with Gubra, a Danish Biotech company. It contains both a MRI and a LSFM template at 25 micrometer resolution (`perens_stereotaxic_mri_mouse_25um` and `perens_multimodal_lsfm_25um`, respectively), with annotations based on the Allen Mouse Brain atlas. This atlas enables the linking of in-vivo (MRI) data with ex-vivo (LSFM) data in atlas space.
 
 ## Australian mouse brain atlas
 
@@ -33,7 +38,7 @@ TODO
 
 **Figure 4. A coronal section of the Australian mouse brain, showing annotations in the right hemisphere.**
 
-At 15um pixel size, the [Australian mouse brain atlas](https://imaging.org.au/AMBMC/) is the highest-resolution MRI-based mouse brain atlas currently available, and comes with annotations based on a widely used histological atlas [^Paxinos]. It may therefore be most useful in cases where one would like to compare regions from histology to corresponding MRI data.
+At 15um pixel size, the [Australian mouse brain atlas](https://imaging.org.au/AMBMC/) (Figure 4.) is the highest-resolution MRI-based mouse brain atlas currently available, and comes with annotations based on a widely used histological atlas [^Paxinos]. It may therefore be most useful in cases where one would like to compare regions from histology to corresponding MRI data in fine detail, and is available in BrainGlobe as `australian_mouse_15um`.
 
 [^Paxinos]: Paxinos and Franklin, The Mouse Brain in Stereotaxic Coordinates, [ISBN 0123694604](https://books.google.co.uk/books/about/The_Mouse_Brain_in_Stereotaxic_Coordinat.html)
 
