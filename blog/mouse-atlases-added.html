@@ -6,8 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Locations &#8212; BrainGlobe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>An overview of recently added mouse atlases &#8212; BrainGlobe</title>
   
   
   
@@ -54,8 +55,8 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/location';</script>
-    <link rel="canonical" href="https://brainglobe.info/blog/location.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/mouse-atlases-added';</script>
+    <link rel="canonical" href="https://brainglobe.info/blog/mouse-atlases-added.html" />
     <link rel="icon" href="../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -302,6 +303,10 @@
   
 
   
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
 
     </header>
@@ -497,7 +502,7 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Locations</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">An overview of recently added mouse atlases</span></li>
   </ul>
 </nav>
 </div>
@@ -513,496 +518,74 @@
                 
 <div id="searchbox"></div>
                 <article class="bd-article">
-                    
-<div class="section ablog__catalog_header">
-  <h2>
-    <span
-      >Posts from
-      <a href="location/england.html">England</a>
-    </span>
-  </h2>
-  
-  <div class="section ablog__catalog_post">
-    <p>
+                   <section class="tex2jax_ignore mathjax_ignore" id="an-overview-of-recently-added-mouse-atlases">
+<h1>An overview of recently added mouse atlases<a class="headerlink" href="#an-overview-of-recently-added-mouse-atlases" title="Link to this heading">#</a></h1>
+<p>Eagle-eyed BrainGlobe enthusiasts will have spotted several new atlases appearing in the BrainGlobe Atlas API in recent weeks. In 2025, we’ve made three new mouse brain atlases newly available through BrainGlobe: The Kim developmental mouse brain atlas (version 1), the Gubra multimodal mouse brain atlas and the Australian mouse brain atlas. Mice are widely used in neuroscience, so it’s no surprise there are many mouse brain atlases. In this blogpost, we describe the newly added atlases in more detail, and suggest potential use cases. This blog covers the new murine atlases only - we have also added the <a class="reference internal" href="mouse-lemur-added.html"><span class="doc std std-doc">first non-human primate brain atlas to BrainGlobe</span></a> (and brain atlases for a cat and a cuttlefish are underway)!</p>
+<section id="kim-developmental-mouse-brain-atlas-v1-kim-devccf">
+<h2>Kim developmental mouse brain atlas v1 (Kim DevCCF)<a class="headerlink" href="#kim-developmental-mouse-brain-atlas-v1-kim-devccf" title="Link to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://doi.org/10.1038/s41467-024-53254-w">Kim developmental mouse brain atlas</a> is a multimodal atlas available at 4 embryonic and 3 postnatal timepoints. At each timepoint, the atlas combines a 20um resolution LSFM template with a number of different MRI templates with varying resolution. We illustrate these here by showing the embryonic subset of the LSFM templates (Figure 1.) and all templates for the single E18.5 stage (Figure 2.), but you can find all the available templates in <a class="reference internal" href="../documentation/brainglobe-atlasapi/usage/atlas-details.html"><span class="doc std std-doc">the detailed documentation</span></a>.</p>
+<p><img alt="Kim DevCCF embryonic LSFM templates" src="../_images/kim_dev_embryonic_lsfm.png" /></p>
+<p><strong>Figure 1. LSFM templates for embryonic developmental stages (from left to right: E11.5, E13.5, E15.5, E18.5) available in the Kim DevCCF.</strong></p>
+<p><img alt="Coronal sections for all templates for Kim DevCCF template at E18.5" src="../_images/kim_dev_embryonic_18_all_modalities_2d.png" /></p>
+<p><strong>Figure 2. Annotations (top left), LSFM template (bottom left) and various MRI templates (T2, FA, ADC, DWI - clockwise from top centre) for KimDevCCF embryonic stage E18.5.</strong></p>
+<p>This is an update to an earlier version of the same lab (v001 - only at P56, and notably in a different coordinate space!). It is an improvement compared to the Allen Developing Mouse Brain atlas (ADMBA), the other developmental mouse brain atlas available through BrainGlobe, because it represents an average of several individuals and is based on fully three-dimensional imaging methods rather than a series of histological sections.</p>
+</section>
+<section id="gubras-multimodal-3d-mouse-brain-atlas">
+<h2>Gubra’s Multimodal 3D mouse brain atlas<a class="headerlink" href="#gubras-multimodal-3d-mouse-brain-atlas" title="Link to this heading">#</a></h2>
+<p><img alt="Templates and annotations of the Gubra multimodal brain atlas" src="../_images/gubra_multimodal.png" /></p>
+<p><strong>Figure 3. A visualisation of both the MRI (left) and LSFM (right) templates and their (right-hemisphere) annotations contained in Gubra’s multimodal mouse brain atlas. Note that both modes are available at 25um, but the LSFM is slightly smaller due to shrinkage effects of sample preparation for LSFM.</strong></p>
+<p><a class="reference external" href="https://doi.org/10.1007/s12021-023-09623-9">Perens et al.</a> created a multimodal atlas of the mouse brain containing both an MRI and an LSFM template at 25 micrometer resolution (<code class="docutils literal notranslate"><span class="pre">perens_stereotaxic_mri_mouse_25um</span></code> and <code class="docutils literal notranslate"><span class="pre">perens_multimodal_lsfm_25um</span></code>, respectively), with annotations based on the Allen Mouse Brain atlas. The MRI template is in flat skull position, and is therefore useful for planning stereotaxic surgeries.</p>
+</section>
+<section id="australian-mouse-brain-atlas">
+<h2>Australian mouse brain atlas<a class="headerlink" href="#australian-mouse-brain-atlas" title="Link to this heading">#</a></h2>
+<p><img alt="A coronal section of the Australian mouse brain" src="../_images/australian_mouse_coronal.png" /></p>
+<p><strong>Figure 4. A coronal section of the Australian mouse brain, showing annotations in the right hemisphere.</strong></p>
+<p>At 15um pixel size, the <a class="reference external" href="https://imaging.org.au/AMBMC/">Australian mouse brain atlas</a> (Figure 4.) is the highest-resolution MRI-based mouse brain atlas currently available, and comes with annotations based on a widely used histological atlas, the Paxinos and Franklin mouse brain in stereotaxic coordinates<a class="footnote-reference brackets" href="#paxinos" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. It may therefore be most useful in cases where one would like to compare regions from histology to corresponding MRI data in fine detail, and is available in BrainGlobe as <code class="docutils literal notranslate"><span class="pre">australian_mouse_15um</span></code>.</p>
+</section>
+<section id="how-do-i-use-the-new-atlases">
+<h2>How do I use the new atlases?<a class="headerlink" href="#how-do-i-use-the-new-atlases" title="Link to this heading">#</a></h2>
+<p>You can use these atlases for visualisation and analysis, like other BrainGlobe atlases. To visualise an atlas, follow the steps below:</p>
+<ul class="simple">
+<li><p>Install BrainGlobe (<a class="reference internal" href="../documentation/index.html"><span class="doc std std-doc">instructions</span></a>)</p></li>
+<li><p>Open napari and follow the steps in our <a class="reference internal" href="../tutorials/manage-atlases-in-GUI.html"><span class="std std-doc">download tutorial</span></a> for your atlas of choice</p></li>
+<li><p>Visualise the different parts of the atlas as described in our <a class="reference internal" href="../tutorials/visualise-atlas-napari.html"><span class="doc std std-doc">visualisation tutorial</span></a></p></li>
+</ul>
+<p>To use the atlas with other software such as <a class="reference internal" href="../documentation/brainreg/index.html"><span class="doc std std-doc">brainreg</span></a>, please follow the instructions for those tools, and simply choose this atlas from the user interface. Note that some MRI atlases might not be good registration targets, because they include tissue outside the brain. And remember to cite the original publication as well as any BrainGlobe tools you used!</p>
+</section>
+<section id="why-are-we-adding-new-atlases">
+<h2>Why are we adding new atlases?<a class="headerlink" href="#why-are-we-adding-new-atlases" title="Link to this heading">#</a></h2>
+<p>A fundamental aim of the BrainGlobe project is to make various brain atlases easily accessible by users across the globe. If you would like to get involved with a similar project, please <a class="reference internal" href="../contact.html"><span class="doc std std-doc">get in touch</span></a>.</p>
+</section>
+</section>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="paxinos" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Paxinos and Franklin, The Mouse Brain in Stereotaxic Coordinates, <a class="reference external" href="https://books.google.co.uk/books/about/The_Mouse_Brain_in_Stereotaxic_Coordinat.html">ISBN 0123694604</a></p>
+</aside>
+</aside>
+
+<div class="section ablog__blog_comments">
+     
+<div class="section ablog__prev-next">
+  <span class="ablog__prev">
+     
+    <a href="mouse-lemur-added.html">
       
-      <span>20 February 2025</span>
-       -
-      <a href="mouse-atlases-added.html">An overview of recently added mouse atlases</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
+      <i class="fa fa-arrow-circle-left"></i>
       
-      <span>30 October 2024</span>
-       -
-      <a href="prairie-vole-atlas-added.html">An atlas for the prairie vole Microtus ochrogaster has been added to BrainGlobe</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>09 August 2024</span>
-       -
-      <a href="axolotl-atlas-added.html">An Atlas for the regenerative Ambystoma mexicanum (axolotl) has been added to BrainGlobe</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>31 July 2024</span>
-       -
-      <a href="brainmapper-widget.html">New brainmapper napari widget released</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>03 June 2024</span>
-       -
-      <a href="cellfinder-v1_3.html">Cellfinder version 1.3.0 is released!</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>16 May 2024</span>
-       -
-      <a href="brainglobe-v1_1.html">BrainGlobe version 1.1.0 is released!</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>14 February 2024</span>
-       -
-      <a href="atlasapi-atlasgen-merge.html">bg-atlasapi and bg-atlasgen have merged under a new name</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>08 February 2024</span>
-       -
-      <a href="imio-retirement.html">imio will be merging into brainglobe-utils</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>24 January 2024</span>
-       -
-      <a href="bg-space-rename.html">bg-space has been renamed</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>08 January 2024</span>
-       -
-      <a href="version1/version_1_released.html">BrainGlobe version 1 is here!</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>02 January 2024</span>
-       -
-      <a href="version1/core_and_napari_merge.html">cellfinder-core and cellfinder-napari have merged</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>01 November 2023</span>
-       -
-      <a href="version1/cellfinder_migration_live.html">cellfinder has moved: version 1 of brainglobe-workflows released</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>01 November 2023</span>
-       -
-      <a href="version1/brainreg_update_live.html">Version 1 of brainreg and brainglobe-segmentation released</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>30 October 2023</span>
-       -
-      <a href="version1/version_1_announcement.html">BrainGlobe is being restructured, version 1 is on it’s way!</a>
-    </p>
-  </div>
-  
+      <span>An Atlas for the non-human primate Microcebus murinus (grey mouse lemur) has been added to BrainGlobe</span>
+    </a>
+    
+  </span>
+  <span class="ablog__spacer">&nbsp;</span>
+  <span class="ablog__next">
+    
+  </span>
 </div>
   
-<div class="section ablog__catalog_header">
-  <h2>
-    <span
-      >Posts from
-      <a href="location/england-new-york.html">England; New York</a>
-    </span>
-  </h2>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>21 June 2024</span>
-       -
-      <a href="cavefish-atlas-added.html">An atlas for the Blind Mexican Cavefish has been added to BrainGlobe</a>
-    </p>
-  </div>
-  
 </div>
-  
-<div class="section ablog__catalog_header">
-  <h2>
-    <span
-      >Posts from
-      <a href="location/england-oslo.html">England; Oslo</a>
-    </span>
-  </h2>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>28 January 2025</span>
-       -
-      <a href="mouse-lemur-added.html">An Atlas for the non-human primate Microcebus murinus (grey mouse lemur) has been added to BrainGlobe</a>
-    </p>
-  </div>
-  
-</div>
-  
-<div class="section ablog__catalog_header">
-  <h2>
-    <span
-      >Posts from
-      <a href="location/france-london.html">France; London</a>
-    </span>
-  </h2>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>20 February 2025</span>
-       -
-      <a href="mouse-atlases-added.html">An overview of recently added mouse atlases</a>
-    </p>
-  </div>
-  
-</div>
-  
-<div class="section ablog__catalog_header">
-  <h2>
-    <span
-      >Posts from
-      <a href="location/london.html">London</a>
-    </span>
-  </h2>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>28 January 2025</span>
-       -
-      <a href="mouse-lemur-added.html">An Atlas for the non-human primate Microcebus murinus (grey mouse lemur) has been added to BrainGlobe</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>30 October 2024</span>
-       -
-      <a href="prairie-vole-atlas-added.html">An atlas for the prairie vole Microtus ochrogaster has been added to BrainGlobe</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>09 August 2024</span>
-       -
-      <a href="axolotl-atlas-added.html">An Atlas for the regenerative Ambystoma mexicanum (axolotl) has been added to BrainGlobe</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>02 August 2024</span>
-       -
-      <a href="barrel-atlas-added.html">A mouse brain atlas with barrel field annotations has been added to BrainGlobe</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>31 July 2024</span>
-       -
-      <a href="brainmapper-widget.html">New brainmapper napari widget released</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>21 June 2024</span>
-       -
-      <a href="cavefish-atlas-added.html">An atlas for the Blind Mexican Cavefish has been added to BrainGlobe</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>03 June 2024</span>
-       -
-      <a href="cellfinder-v1_3.html">Cellfinder version 1.3.0 is released!</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>16 May 2024</span>
-       -
-      <a href="brainglobe-v1_1.html">BrainGlobe version 1.1.0 is released!</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>14 February 2024</span>
-       -
-      <a href="atlasapi-atlasgen-merge.html">bg-atlasapi and bg-atlasgen have merged under a new name</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>08 February 2024</span>
-       -
-      <a href="imio-retirement.html">imio will be merging into brainglobe-utils</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>24 January 2024</span>
-       -
-      <a href="bg-space-rename.html">bg-space has been renamed</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>08 January 2024</span>
-       -
-      <a href="version1/version_1_released.html">BrainGlobe version 1 is here!</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>02 January 2024</span>
-       -
-      <a href="version1/core_and_napari_merge.html">cellfinder-core and cellfinder-napari have merged</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>01 November 2023</span>
-       -
-      <a href="version1/cellfinder_migration_live.html">cellfinder has moved: version 1 of brainglobe-workflows released</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>01 November 2023</span>
-       -
-      <a href="version1/brainreg_update_live.html">Version 1 of brainreg and brainglobe-segmentation released</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>30 October 2023</span>
-       -
-      <a href="version1/version_1_announcement.html">BrainGlobe is being restructured, version 1 is on it’s way!</a>
-    </p>
-  </div>
-  
-</div>
-  
-<div class="section ablog__catalog_header">
-  <h2>
-    <span
-      >Posts from
-      <a href="location/norway.html">Norway</a>
-    </span>
-  </h2>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>28 January 2025</span>
-       -
-      <a href="mouse-lemur-added.html">An Atlas for the non-human primate Microcebus murinus (grey mouse lemur) has been added to BrainGlobe</a>
-    </p>
-  </div>
-  
-</div>
-  
-<div class="section ablog__catalog_header">
-  <h2>
-    <span
-      >Posts from
-      <a href="location/norway-paris.html">Norway; Paris</a>
-    </span>
-  </h2>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>20 February 2025</span>
-       -
-      <a href="mouse-atlases-added.html">An overview of recently added mouse atlases</a>
-    </p>
-  </div>
-  
-</div>
-  
-<div class="section ablog__catalog_header">
-  <h2>
-    <span
-      >Posts from
-      <a href="location/oslo.html">Oslo</a>
-    </span>
-  </h2>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>20 February 2025</span>
-       -
-      <a href="mouse-atlases-added.html">An overview of recently added mouse atlases</a>
-    </p>
-  </div>
-  
-</div>
-  
-<div class="section ablog__catalog_header">
-  <h2>
-    <span
-      >Posts from
-      <a href="location/switzerland.html">Switzerland</a>
-    </span>
-  </h2>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>02 August 2024</span>
-       -
-      <a href="barrel-atlas-added.html">A mouse brain atlas with barrel field annotations has been added to BrainGlobe</a>
-    </p>
-  </div>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>18 December 2023</span>
-       -
-      <a href="brainrender-megafix.html">Plans for brainrender</a>
-    </p>
-  </div>
-  
-</div>
-  
-<div class="section ablog__catalog_header">
-  <h2>
-    <span
-      >Posts from
-      <a href="location/uk-lausanne.html">U.K.; Lausanne</a>
-    </span>
-  </h2>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>02 August 2024</span>
-       -
-      <a href="barrel-atlas-added.html">A mouse brain atlas with barrel field annotations has been added to BrainGlobe</a>
-    </p>
-  </div>
-  
-</div>
-  
-<div class="section ablog__catalog_header">
-  <h2>
-    <span
-      >Posts from
-      <a href="location/usa.html">USA</a>
-    </span>
-  </h2>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>21 June 2024</span>
-       -
-      <a href="cavefish-atlas-added.html">An atlas for the Blind Mexican Cavefish has been added to BrainGlobe</a>
-    </p>
-  </div>
-  
-</div>
-  
-<div class="section ablog__catalog_header">
-  <h2>
-    <span
-      >Posts from
-      <a href="location/zurich.html">Zurich</a>
-    </span>
-  </h2>
-  
-  <div class="section ablog__catalog_post">
-    <p>
-      
-      <span>18 December 2023</span>
-       -
-      <a href="brainrender-megafix.html">Plans for brainrender</a>
-    </p>
-  </div>
-  
-</div>
-  
+
                 </article>
               
               
@@ -1018,6 +601,28 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kim-developmental-mouse-brain-atlas-v1-kim-devccf">Kim developmental mouse brain atlas v1 (Kim DevCCF)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gubras-multimodal-3d-mouse-brain-atlas">Gubra’s Multimodal 3D mouse brain atlas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#australian-mouse-brain-atlas">Australian mouse brain atlas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-use-the-new-atlases">How do I use the new atlases?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-we-adding-new-atlases">Why are we adding new atlases?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
