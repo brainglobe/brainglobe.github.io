@@ -31,7 +31,7 @@ This is an update to an earlier version of the same lab (v001 - only at P56, and
 **Figure 3. A visualisation of both the MRI (left) and LSFM (right) templates and their (right-hemisphere) annotations contained in Gubra's multimodal mouse brain atlas. Note that both modes are available at 25um, but the LSFM is slightly smaller due to shrinkage effects of sample preparation for LSFM.**
 
 
-[Perens et al.](https://doi.org/10.1007/s12021-023-09623-9) created a multimodal atlas of the mouse brain containing both an MRI and an LSFM template at 25 micrometer resolution (`perens_stereotaxic_mri_mouse_25um` and `perens_multimodal_lsfm_25um`, respectively), with annotations based on the Allen Mouse Brain atlas. 
+[Perens et al.](https://doi.org/10.1007/s12021-023-09623-9) created a multimodal atlas of the mouse brain containing both an MRI and an LSFM template at 25 micrometer resolution (`perens_stereotaxic_mri_mouse_25um` and `perens_multimodal_lsfm_25um`, respectively), with annotations based on the Allen Mouse Brain atlas. The MRI template is in flat skull position, and is therefore useful for planning stereotaxic surgeries.
 
 ## Australian mouse brain atlas
 
