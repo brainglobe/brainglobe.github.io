@@ -51,6 +51,16 @@ ClearFinder is a graphical user interface that allows users without programming 
 vvasp (pronounced wasp) is a python library for 3D viewing of spatially defined neuroscience data (histology, probe trajectories, neuron locations, etc.).  It uses the default PyVista plotter and is fully interoperable with PyVista functionality.
 - [GitHub repository](https://github.com/spkware/vvasp)
 
+## cuisto
+cuisto is a Python package for histological quantification of objects in reference atlas regions.
+cuisto uses data exported from QuPath used with ABBA to pool data and derive, average and display metrics.
+- [GitHub repository](https://github.com/TeamNCMC/cuisto)
+- [Documentation](https://teamncmc.github.io/cuisto)
+
+## BlenderBrain
+BlenderBrain allows the user to visualise atlas data from the BrainGlobe Atlas API in Blender
+- [GitHub repository](https://github.com/ArtemKirsanov/BlenderBrain)
+
 :::{hint}
 if you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. 
 :::
