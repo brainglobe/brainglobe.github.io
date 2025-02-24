@@ -61,6 +61,10 @@ cuisto uses data exported from QuPath used with ABBA to pool data and derive, av
 BlenderBrain allows the user to visualise atlas data from the BrainGlobe Atlas API in Blender
 - [GitHub repository](https://github.com/ArtemKirsanov/BlenderBrain)
 
+## DMC-BrainMap
+DMC-BrainMap is a napari-based tool for the analysis of 2D brain sections, including feature segmentation and atlas registration. 
+- [GitHub repository](https://github.com/hejDMC/napari-dmc-brainmap)
+
 :::{hint}
 if you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. 
 :::
