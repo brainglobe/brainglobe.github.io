@@ -161,7 +161,7 @@ Available versions:
 * `kim_dev_mouse_mri_t2_10um` - MRI T2 template at 10μm resolution
 
 ### [BlueBrain Barrel Cortex Atlas](https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00209/121852/Enhancement-of-brain-atlases-with-laminar)
-This atlas from [Bolaños-Puchet et al. (2024)](https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00209/121852/Enhancement-of-brain-atlases-with-laminar) 
+This atlas from [Bolaños-Puchet et al. (2024)](https://doi.org/10.1162/imag_a_00209) 
 is a version of the Allen Adult Mouse Brain Atlas with the addition of annotations of 33 barrels and barrel columns. 
 For more details, please see [the blogpost](/blog/barrel-atlas-added).
 
