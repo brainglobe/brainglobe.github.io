@@ -57,7 +57,7 @@ facilitate common tasks (including replacing the `cellfinder` CLI)
 ([`brainglobe-registration`](https://github.com/brainglobe/brainglobe-registration))
 * Atlas generation tool (from raw data to BrainGlobe atlas), including 
 [`brainglobe-template-builder`](https://github.com/brainglobe/brainglobe-template-builder)
-* More flexible BrainGlobe atlas API V2 ([bg-atlasapi/141](https://github.com/brainglobe/bg-atlasapi/issues/141))
+* More flexible BrainGlobe atlas API V2 ([bg-atlasapi/141](https://github.com/brainglobe/brainglobe-atlasapi/issues/141))
 * New atlases
     * Update Allen adult mouse brain atlas ([bg-atlasgen/46](https://github.com/brainglobe/bg-atlasgen/issues/46))
     * 3D Multimodal Developmental Mouse Brain atlases ([bg-atlasgen/71](https://github.com/brainglobe/bg-atlasgen/issues/71))

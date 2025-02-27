@@ -37,7 +37,7 @@ order to avoid tissue damage.
 :::
 
 The brain is then thoroughly washed with 100mM PBS and imaged (e.g. by 
-[Serial Section 2-Photon Tomography](https://sainsburywellcomecentre.github.io/OpenSerialSection/acquisition/)). Image channels 
+[Serial Section 2-Photon Tomography](https://swcmicroscopy.com/ss_acquisition)). Image channels 
 as needed according to number of tracing compounds (and extra channel is acquired as the background fluorescence only).
 
 
