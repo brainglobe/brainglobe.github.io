@@ -47,8 +47,6 @@ Available versions:
 * `kim_mouse_50um` - 50μm resolution
 * `kim_mouse_100um` - 100μm resolution
 
-
-
 ### [Gubra's LSFM mouse brain atlas](https://doi.org/10.1007/s12021-020-09490-8)
 This atlas from [Perens et al. (2020)](https://doi.org/10.1007/s12021-020-09490-8) provides a version of the Allen
 Adult Mouse Brain Atlas, based on solvent-cleared brains imaged with LSFM. This atlas may be a 
@@ -57,6 +55,16 @@ space to the original Allen atlas (CCFv3).
 
 This atlas is only available at 20μm resolution:
 * `perens_lsfm_mouse_20um`
+
+### [Gubra's MRI mouse brain atlas](https://doi.org/10.1007/s12021-023-09623-9)
+This atlas is an addition to its LSFM version and provides a version of the Allen
+Adult Mouse Brain Atlas, based on T2-weighted MRI. This atlas may be a 
+good choice for registering other similar images. However, please note that this atlas is in a different coordinate 
+space to the original Allen atlas (CCFv3). In addition this atlas is in flat skull position and so it can be used to 
+plan stereotaxic surgeries.
+
+This atlas is only available at 25μm resolution:
+* `perens_stereotaxic_mouse_mri_25um`
 
 ### [Princeton Mouse Brain Atlas](https://brainmaps.princeton.edu/2020/09/princeton-mouse-brain-atlas-links)
 This atlas from [Pisano et al. (2021)](https://doi.org/10.1016/j.celrep.2021.109721) is a version of the Allen
@@ -85,11 +93,62 @@ Available versions:
 * `admba_3d_p28_mouse_16.752um` - P28 at 16.752μm resolution
 * `admba_3d_p56_mouse_25um` - P56 at 25μm resolution
 
+### [Kim Lab Developmental CCF v1.0](https://doi.org/10.6084/m9.figshare.26377171.v1) 
+A multi-modal atlas of the developing mouse brain. Reference images from LSFM and MRI (adc, dwi, fa, T2) are available at all developmental stages of the atlas (E11.5, E13.5, E15.5, E18.5, P4, P14, P56). Developmental stages E15.5, P04 and P14 additionally also have versions with a MTR MRI reference image.
 
-### [Kim Lab Developmental CCF (P56)](https://data.mendeley.com/datasets/2svx788ddf/1) 
-This atlas is part of a new developmental atlas following Luis Puelles' Developmental Vertebrate Ontology. BrainGlobe 
-currently hosts the P56 version of this atlas at 10μm resolution with eight versions, each with a different reference 
-image - STP, LSFM (iDISCO) and MRI (a0, adc, dwo, fa, MTR, T2).
+
+Available versions:
+* at E11.5
+  *  `kim_dev_mouse_e11-5_lsfm_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_e11-5_mri-adc_31.5um` - MRI adc template at 31.5 μm resolution
+  *  `kim_dev_mouse_e11-5_mri-dwi_31.5um` - MRI dwi template at 31.5 μm resolution 
+  *  `kim_dev_mouse_e11-5_mri-fa_31.5um` - MRI fa template at 31.5 μm resolution
+  *  `kim_dev_mouse_e11-5_mri-T2_31.5um` - MRI T2 template at 31.5 μm resolution
+* at E13.5
+  *  `kim_dev_mouse_e13-5_lsfm_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_e13-5_mri-adc_34um` - MRI adc template at 34 μm resolution
+  *  `kim_dev_mouse_e13-5_mri-dwi_34um` - MRI dwi template at 34 μm resolution 
+  *  `kim_dev_mouse_e13-5_mri-fa_34um` - MRI fa template at 34 μm resolution
+  *  `kim_dev_mouse_e13-5_mri-t2_34um` - MRI T2 template at 34 μm resolution 
+* at E15.5
+  *  `kim_dev_mouse_e15-5_lsfm_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_e15-5_mri-adc_37.5um` - MRI adc template at 37.5 μm resolution
+  *  `kim_dev_mouse_e15-5_mri-dwi_37.5um` - MRI dwi template at 37.5 μm resolution 
+  *  `kim_dev_mouse_e15-5_mri-fa_37.5um` - MRI fa template at 37.5 μm resolution
+  *  `kim_dev_mouse_e15-5_mri-t2_37.5um` - MRI T2 template at 37.5 μm resolution 
+  *  `kim_dev_mouse_e15-5_mri-mtr_37.5um` - MRI MTR template at 37.5 μm resolution 
+* at E18.5
+  *  `kim_dev_mouse_e18-5_lsfm_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_e18-5_mri-adc_40um` - MRI adc template at 40 μm resolution
+  *  `kim_dev_mouse_e18-5_mri-dwi_40um` - MRI dwi template at 40 μm resolution 
+  *  `kim_dev_mouse_e18-5_mri-fa_40um` - MRI fa template at 40 μm resolution
+  *  `kim_dev_mouse_e18-5_mri-t2_40um` - MRI T2 template at 40 μm resolution 
+* at P04
+  *  `kim_dev_mouse_p04_lsfm_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_p04_mri-adc_50um` - MRI adc template at 50 μm resolution
+  *  `kim_dev_mouse_p04_mri-dwi_50um` - MRI dwi template at 50 μm resolution 
+  *  `kim_dev_mouse_p04_mri-fa_50um` - MRI fa template at 50 μm resolution
+  *  `kim_dev_mouse_p04_mri-t2_50um` - MRI T2 template at 50 μm resolution 
+  *  `kim_dev_mouse_p04_mri-mtr_50um` - MRI MTR template at 50 μm resolution 
+* at P14
+  *  `kim_dev_mouse_p14_lsfm_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_p14_mri-adc_50um` - MRI adc template at 50 μm resolution
+  *  `kim_dev_mouse_p14_mri-dwi_50um` - MRI dwi template at 50 μm resolution 
+  *  `kim_dev_mouse_p14_mri-fa_50um` - MRI fa template at 50 μm resolution
+  *  `kim_dev_mouse_p14_mri-t2_50um` - MRI T2 template at 50 μm resolution 
+  *  `kim_dev_mouse_p14_mri-mtr_50um` - MRI MTR template at 50 μm resolution 
+* at P56
+  *  `kim_dev_mouse_p56_lsfm_20um` - LSFM template at 20 μm resolution
+  *  `kim_dev_mouse_p56_mri-adc_50um` - MRI adc template at 50 μm resolution
+  *  `kim_dev_mouse_p56_mri-dwi_50um` - MRI dwi template at 50 μm resolution 
+  *  `kim_dev_mouse_p56_mri-fa_50um` - MRI fa template at 50 μm resolution
+  *  `kim_dev_mouse_p56_mri-t2_50um` - MRI T2 template at 50 μm resolution 
+  *  `kim_dev_mouse_p56_mri-mtr_50um` - MRI MTR template at 50 μm resolution 
+
+
+### [Kim Lab Developmental CCF v001 (P56)](https://data.mendeley.com/datasets/2svx788ddf/1) 
+This atlas is part of a developmental atlas following Luis Puelles' Developmental Vertebrate Ontology. BrainGlobe hosts the original P56 version of this atlas at 10μm resolution with eight different reference 
+images - STP, LSFM (iDISCO) and MRI (a0, adc, dwo, fa, MTR, T2). This atlas is now superseded by its 1.0.0 version but continues to be available for reproducibility and archive reasons.
 
 Available versions:
 * `kim_dev_mouse_stp_10um` - "normal" CCF serial 2p template at 10μm resolution
@@ -100,6 +159,15 @@ Available versions:
 * `kim_dev_mouse_mri_fa_10um` - MRI FA (fractional anisotropy) template at 10μm resolution
 * `kim_dev_mouse_mri_mtr_10um` - MRI MTR (magnetic transfer ratio) template at 10μm resolution
 * `kim_dev_mouse_mri_t2_10um` - MRI T2 template at 10μm resolution
+
+### [BlueBrain Barrel Cortex Atlas](https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00209/121852/Enhancement-of-brain-atlases-with-laminar)
+This atlas from [Bolaños-Puchet et al. (2024)](https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00209/121852/Enhancement-of-brain-atlases-with-laminar) 
+is a version of the Allen Adult Mouse Brain Atlas with the addition of annotations of 33 barrels and barrel columns. 
+For more details, please see [the blogpost](/blog/barrel-atlas-added).
+
+Available versions:
+* `allen_mouse_bluebrain_barrels_10um` - 10μm resolution
+* `allen_mouse_bluebrain_barrels_25um` - 25μm resolution
 
 ### [3D version of the Allen mouse spinal cord atlas](https://doi.org/10.1101/2021.05.06.443008)
 This atlas from [Fiederling et al. (2021)](https://doi.org/10.1101/2021.05.06.443008) is a 3D reconstruction of the 
@@ -117,26 +185,58 @@ Available versions:
 * `osten_mouse_25um` - 25μm resolution
 * `osten_mouse_50um` - 50μm resolution
 * `osten_mouse_100um` - 100μm resolution
+### [Australian Mouse Brain Atlas](https://imaging.org.au/AMBMC/)
+This atlas has a very high resolution (15μm) MRI template. It covers the Hippocampus, Cerebellum, Cortex, 
+Basal Ganglia, and Diencephalon. It is quite consistent with the parcellation scheme of the Paxinos and Franklin
+mouse brain atlas. At present a drawback of this atlas is that the 
+segmentations do not cover the entire brain and is limited to the regions previously mentioned. 
+This atlas is only available at 15μm resolution:
+* `australian_mouse_15um`
 
 ## Rat
-### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)) at 39 micron resolution
+### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
+The Waxholm Space rat brain atlas features annotations of 222 structures, alongside a 39μm MRI template. It provides detailed delineations 
+of the cerebral cortex, hippocampus, striatopallidal areas, midbrain, thalamus, auditory system and fiber tracts.
+It is comprehensive, covering the entire rat brain. 
 This atlas is only available at 39μm resolution:
-* `whs_sd_rat_39um` - 39μm resolution
+* `whs_sd_rat_39um`
+
+## Other rodent
+### [Prairie vole brain atlas](https://doi.org/10.7554/eLife.87029.3.sa0)
+This is a brain atlas of the Prairie vole (Microtus ochrogaster) from
+[Gustison et al. (2024)](https://doi.org/10.7554/eLife.87029.3.sa0).
+This atlas is only available at 25μm resolution:
+* `prairie_vole_25um`
 
 ## Fish
-### [Max Planck Zebrafish Brain Atlas](http://fishatlas.neuro.mpg.de)
+### [Max Planck zebrafish brain atlas](http://fishatlas.neuro.mpg.de)
 This atlas is only available at 1μm resolution:
 * `mpin_zfish_1um`
 
-### [AZBA: A 3D Adult Zebrafish Brain Atlas](https://doi.org/10.1101/2021.05.04.442625)
+### [AZBA: A 3D Adult zebrafish brain atlas](https://doi.org/10.1101/2021.05.04.442625)
 This atlas is only available at 4μm resolution:
 * `azba_zfish_4um`
 
-### [Blind Mexican cavefish Brain Atlas](https://elifesciences.org/articles/80777)
+### [Blind Mexican cavefish brain atlas](https://elifesciences.org/articles/80777)
+This is a brain atlas of the blind Mexican cavefish (Astyanax mexicanus) from 
+[Kozol et al. (2023)](https://elifesciences.org/articles/80777). For more details please
+see [the blogpost](/blog/cavefish-atlas-added).
 This atlas is only available at 2μm resolution:
 * `sju_cavefish_2um`
-  
-## Human
+
+
+
+
+## Amphibian
+### [UNAM Axolotl Brain Atlas](https://doi.org/10.1038/s41598-021-89357-3)
+This is a magnetic resonance imaging based atlas of the Axolotl (Ambystoma mexicanum) from 
+[Lazcano et al. (2021)](https://doi.org/10.1038/s41598-021-89357-3). For more details please 
+see [the blogpost](/blog/axolotl-atlas-added).
+
+This atlas is only available at 40μm resolution:
+* `unam_axolotl_40um`
+
+## Human and non-human primate
 ### [Allen Human Brain Atlas](https://www.brain-map.org)
 This atlas is included mostly for visualisation and comparison to the other atlases. 
 Note that it is also only a single hemisphere. There are many better atlases
@@ -144,6 +244,13 @@ Note that it is also only a single hemisphere. There are many better atlases
 
 This atlas is only available at 500μm resolution:
 * `allen_human_500um`
+
+### [MRI mouse lemur brain atlas](https://doi.org/10.1016/j.dib.2018.10.067) 
+This is a MRI atlas of the grey mouse lemur (Microcebus murinus) from 
+[Nadkarni et al. (2018)](https://doi.org/10.1016/j.dib.2018.10.067).
+
+This atlas is only available at 91um resolution
+* `nadkarni_mri_mouselemur_91um`
 
 
 

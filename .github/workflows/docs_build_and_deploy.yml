@@ -27,7 +27,7 @@ jobs:
     name: Build Sphinx Docs
     runs-on: ubuntu-latest
     steps:
-      - uses: neuroinformatics-unit/actions/build_sphinx_docs@main
+      - uses: neuroinformatics-unit/actions/build_sphinx_docs@v2
         with:
           check-links: false
 

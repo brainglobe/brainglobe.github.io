@@ -108,7 +108,6 @@ html_favicon = "_static/brainglobe.png"
 
 ## Cutomize the theme
 html_theme_options = {
-    "announcement": "BrainGlobe version 1 is here! Head over to  <a href='https://brainglobe.info/blog/version1/version_1_released.html'>the blog</a> to find out more",
     "icon_links": [
         {
             # Label for this link
@@ -133,8 +132,8 @@ html_theme_options = {
         },
         {
             "name": "Bluesky",
-            "url": "https://bsky.app/profile/brainglobe.bsky.social",
-            "icon": "fa-solid fa-square",
+            "url": "https://bsky.app/profile/brainglobe.info",
+            "icon": "fa-brands fa-bluesky",
         },
         {
             # Label for this link
@@ -169,10 +168,6 @@ html_theme_options = {
 
 
 html_show_sourcelink = False
-
-notfound_context = {
-    "body": "<h1>This page has likely moved.</h1> <p>We have recently restructured the BrainGlobe website, and some links have broken. Try using the search box or go to the homepage. If you can'</p>",
-}
 
 notfound_context = {
     "title": "Page Not Found",

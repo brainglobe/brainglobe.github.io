@@ -468,6 +468,21 @@ In no particular order:
 :link: https://github.com/saimaabdus19
 :::
 
+:::{grid-item-card} Saarah Hussain
+:img-bottom: https://avatars.githubusercontent.com/u/63860766?v=4
+:link: https://github.com/saarah815/
+:::
+
+:::{grid-item-card} Sacha Hadaway-Andreae
+:img-bottom: https://avatars.githubusercontent.com/u/175262363?v=4
+:link: https://github.com/sacha091
+:::
+
+:::{grid-item-card} Presa
+:img-bottom: https://avatars.githubusercontent.com/u/124523559?v=4
+:link: https://github.com/zenWai
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
