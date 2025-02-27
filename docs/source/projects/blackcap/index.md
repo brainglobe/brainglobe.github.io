@@ -20,7 +20,7 @@ of the blackcap brain.
 ## Process
 Full details of the atlas generation process are available in the [preprint](), however it is briefly as follows:
 1. Acquire high-resolution whole-brain images using the
-[Sainsbury Wellcome Centre serial section two-photon platform](https://swc-advanced-microscopy.github.io/facility_webpage/)
+[Sainsbury Wellcome Centre serial section two-photon platform](https://swcmicroscopy.com)
 2. Crop images to generate individual hemisphere images without damage (we used 18 hemispheres from 10 birds)
 3. Iteratively generate a high signal-to-noise average template image from all the individual images using 
 [ANTs](http://stnava.github.io/ANTs/) via an [optimised script](https://github.com/CoBrALab/optimized_antsMultivariateTemplateConstruction) 
