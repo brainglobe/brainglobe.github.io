@@ -483,6 +483,11 @@ In no particular order:
 :link: https://github.com/zenWai
 :::
 
+:::{grid-item-card} Henry Crosswell
+:img-bottom: https://avatars.githubusercontent.com/u/52281444?v=4
+:link: https://github.com/HenryCrosswell
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
