@@ -257,7 +257,7 @@ This atlas is only available at 91um resolution
 
 This is an MRI atlas of a cat (Felis catus) from [Stolzberg et al. (2017)](https://doi.org/10.1002/cne.24271)
 
-It is available at 500um resolution:
+This atlas is only available at 500um resolution:
 * `csl_cat_500um`
 
 
