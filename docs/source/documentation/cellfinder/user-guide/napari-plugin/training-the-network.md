@@ -11,7 +11,7 @@ See [Setting up your GPU](/documentation/setting-up/gpu).
 
 ### Mandatory
 
-- **YAML files** - choose at least one YAML file containing paths to training data
+- **YML files** - choose at least one YML file containing paths to training data
 - **Output directory** - Choose (or create new) directory to save the trained models to
 
 ### Optional
