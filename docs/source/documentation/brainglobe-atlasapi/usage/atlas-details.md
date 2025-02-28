@@ -252,7 +252,14 @@ This is a MRI atlas of the grey mouse lemur (Microcebus murinus) from
 This atlas is only available at 91um resolution
 * `nadkarni_mri_mouselemur_91um`
 
+## Other mammal
 
+### [Cat brain atlas](https://doi.org/10.1002/cne.24271)
+
+This is an MRI atlas of a cat (Felis catus) from [Stolzberg et al. (2017)](https://doi.org/10.1002/cne.24271)
+
+It is available at 500um resolution
+* `csl_cat_500um`
 
 
 
