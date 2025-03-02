@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import pyalex
 import os
 from datetime import datetime
@@ -10,7 +9,7 @@ BRAINGLOBE_CORE_WORKS = [
     "https://openalex.org/W3092644694",
 ]
 
-pyalex.config.email = "niko.sirbiladze@gmail.com"
+pyalex.config.email = "brainglobe@gmail.com"
 
 def fetch_citations():
     """Fetch works citing BrainGlobe's core publications with pagination"""
@@ -190,3 +189,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
