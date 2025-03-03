@@ -7,6 +7,10 @@ BRAINGLOBE_CORE_WORKS = [
     "https://openalex.org/W3007765542",
     "https://openalex.org/W3165457844",
     "https://openalex.org/W3092644694",
+    "https://openalex.org/W4206584351"
+    "https://openalex.org/W3209832784"
+    "https://openalex.org/W3165052512"
+    "https://openalex.org/W3205056304"
 ]
 
 pyalex.config.email = "hello@brainglobe.info"
