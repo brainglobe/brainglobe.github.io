@@ -18,7 +18,7 @@ For this reason, we collaborated with [Simon Weiler](https://sites.google.com/vi
 of the blackcap brain.
 
 ## Process
-Full details of the atlas generation process are available in the [preprint](), however it is briefly as follows:
+Full details of the atlas generation process are available in the preprint, however it is briefly as follows:
 1. Acquire high-resolution whole-brain images using the
 [Sainsbury Wellcome Centre serial section two-photon platform](https://swcmicroscopy.com)
 2. Crop images to generate individual hemisphere images without damage (we used 18 hemispheres from 10 birds)
