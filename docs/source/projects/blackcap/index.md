@@ -34,7 +34,7 @@ The template generation process is simplified by
 improved to allow others to create their own atlases.
 :::
 
-![Atlas generation process](./images/atlas-generation.png)
+![Atlas generation process](./images/atlas-generation.jpg)
 **Atlas generation process**
 
 ## Results
