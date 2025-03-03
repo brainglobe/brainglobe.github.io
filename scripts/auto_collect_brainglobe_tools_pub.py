@@ -9,7 +9,7 @@ BRAINGLOBE_CORE_WORKS = [
     "https://openalex.org/W3092644694",
 ]
 
-pyalex.config.email = "brainglobe@gmail.com"
+pyalex.config.email = "hello@brainglobe.info"
 
 def fetch_citations():
     """Fetch works citing BrainGlobe's core publications with pagination"""
