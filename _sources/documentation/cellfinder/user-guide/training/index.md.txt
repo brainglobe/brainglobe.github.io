@@ -80,7 +80,7 @@ please see [Using supplied training data](using-supplied-data)
 :::
 
 ```bash
-cellfinder_train -y yaml_1.yml  yaml_2.yml -o /path/to/output/directory/
+cellfinder_train -y yaml_1.yaml  yaml_2.yaml -o /path/to/output/directory/
 ```
 
 ### Arguments

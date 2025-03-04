@@ -699,7 +699,7 @@ will likely need to retrain the network for your own data, we make the data avai
 To retrain the network using just this data, download the data, extract the tar archive, and then follow these steps:</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>If you’re using Windows, you will need to edit <code class="docutils literal notranslate"><span class="pre">training.yml</span></code> so that the paths (in each <code class="docutils literal notranslate"><span class="pre">cube_dir</span></code> and <code class="docutils literal notranslate"><span class="pre">cell_def</span></code>
+<p>If you’re using Windows, you will need to edit <code class="docutils literal notranslate"><span class="pre">training.yaml</span></code> so that the paths (in each <code class="docutils literal notranslate"><span class="pre">cube_dir</span></code> and <code class="docutils literal notranslate"><span class="pre">cell_def</span></code>
 entry) match windows paths (i.e. backslashes)</p>
 </div>
 <ul class="simple">
@@ -717,7 +717,7 @@ entry) match windows paths (i.e. backslashes)</p>
 <ul class="simple">
 <li><p>Start training</p></li>
 </ul>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cellfinder_train -y training.yml -o training_output
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cellfinder_train -y training.yaml -o training_output
 </pre></div>
 </div>
 <p>The training will likely take a few minutes to get going; once the network starts, you should see something like this:</p>
