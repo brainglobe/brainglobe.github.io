@@ -6,7 +6,7 @@ are tested, including both unit and integration tests. We aim for 100% coverage 
   projects and integrates with GitHub actions.
 
 ## Continuous integration
-A GitHub actions workflow (`.github/workflows/test_and_deploy.yaml`) has been set up to run (on each commit/PR):
+A GitHub actions workflow (`.github/workflows/test_and_deploy.yml`) has been set up to run (on each commit/PR):
 * Linting checks (pre-commit).
 * Testing (only if linting checks pass)
 * Release to PyPI (only if a git tag is present and if tests pass). Requires `TWINE_API_KEY` 

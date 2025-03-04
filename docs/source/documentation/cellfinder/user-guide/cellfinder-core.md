@@ -157,7 +157,7 @@ Training the network is likely simpler using the [napari plugin](napari-plugin/t
 from pathlib import Path
 from cellfinder.core.train.train_yaml import run as run_training
 
-# list of training yaml files
+# list of training YAML files
 yaml_files = [Path("/path/to/training_yaml.yaml)]
 
 # where to save the output
