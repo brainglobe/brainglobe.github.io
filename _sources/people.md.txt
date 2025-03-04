@@ -493,6 +493,11 @@ In no particular order:
 :link: https://github.com/nischitkumar
 :::
 
+:::{grid-item-card} Kirato Yoshihara
+:img-bottom: https://avatars.githubusercontent.com/u/36755839?v=4
+:link: https://github.com/kira1228
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
