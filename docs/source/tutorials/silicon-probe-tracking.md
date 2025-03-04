@@ -39,7 +39,7 @@ order to avoid tissue damage.
 :::
 
 The brain is then thoroughly washed with 100mM PBS and imaged (e.g. by 
-[Serial 2-Photon Tomography](https://sainsburywellcomecentre.github.io/OpenSerialSection/acquisition/); **Fig. 1**, 
+[Serial 2-Photon Tomography](https://swcmicroscopy.com/ss_acquisition/); **Fig. 1**, 
 right). We imaged 2 channels (one where DiI signal is detected and one with background fluorescence only) at a 
 resolution of x = 5μm, y = 5μm, z = 20μm.
 
