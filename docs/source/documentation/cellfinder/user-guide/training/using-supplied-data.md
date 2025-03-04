@@ -14,7 +14,7 @@ The data is available [here](https://gin.g-node.org/cellfinder/training_data/raw
 To retrain the network using just this data, download the data, extract the tar archive, and then follow these steps:
 
 :::{hint}
-If you're using Windows, you will need to edit `training.yml` so that the paths (in each `cube_dir` and `cell_def` 
+If you're using Windows, you will need to edit `training.yaml` so that the paths (in each `cube_dir` and `cell_def` 
 entry) match windows paths (i.e. backslashes)
 :::
 
@@ -33,7 +33,7 @@ cd serial2p
 * Start training
 
 ```text
-cellfinder_train -y training.yml -o training_output
+cellfinder_train -y training.yaml -o training_output
 ```
 
 The training will likely take a few minutes to get going; once the network starts, you should see something like this:
