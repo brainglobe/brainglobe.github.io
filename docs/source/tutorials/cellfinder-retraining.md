@@ -36,7 +36,7 @@ widget, or pressing the `3` key on your keyboard.
 12. Create and then select a new directory on your computer (e.g. `cellfinder-retraining`) and click `Choose`.
 13. Close the curation widget by clicking the `x` at the top left of the widget.
 14. Open the retraining widget by selecting `Plugins > cellfinder > Train network` in the napari menu bar near the top left of the window.
-15. Select the data for retraining by clicking `Select files` next to `YAML files` and choose the `training.yml` file 
+15. Select the data for retraining by clicking `Select files` next to `YAML files` and choose the `training.yaml` file 
 is inside the `cellfinder-retraining` directory created earlier
 16. Choose a directory to save the training output, e.g., create a `trained_network` directory
 17. Set `Epochs` 2
