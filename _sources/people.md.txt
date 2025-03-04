@@ -488,6 +488,11 @@ In no particular order:
 :link: https://github.com/HenryCrosswell
 :::
 
+:::{grid-item-card} Nischit Kumar
+:img-bottom: https://avatars.githubusercontent.com/u/76816410?v=4
+:link: https://github.com/nischitkumar
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
