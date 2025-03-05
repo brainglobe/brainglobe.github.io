@@ -1,17 +1,24 @@
 # BrainGlobe publications
 
-Brainreg & brainglobe-segmentation (formerly brainreg-segment):
-> Tyson, A. L., V&eacute;lez-Fort, M.,  Rousseau, C. V., Cossell, L., Tsitoura, C., Lenzi, S. C., Obenhaus, H. A., Claudi, F., Branco, T., Margrie, T. W. (2022) “Accurate determination of marker location within whole-brain microscopy images" Scientific Reports, [doi.org/10.1038/s41598-021-04676-9](https://doi.org/10.1038/s41598-021-04676-9)
+- **Brainreg & brainglobe-segmentation (formerly brainreg-segment):**  
 
-3D cell detection:
-> Tyson, A. L., Rousseau, C. V., Niedworok, C. J., Keshavarzi, S., Tsitoura, C., Cossell, L., Strom, M., Margrie, T. W. (2021) “A deep learning algorithm for 3D cell detection in whole mouse brain image datasets" <i>PLOS Computational Biology</i> 17(5): e1009074. [doi.org/10.1371/journal.pcbi.1009074](https://doi.org/10.1371/journal.pcbi.1009074)
-
-Brainrender:
->Claudi, F., Tyson, A. L., Petrucco, L., Margrie, T.W., Portugues, R.,  Branco, T. (2021) "Visualizing anatomically registered data with Brainrender&quot; <i>eLife</i> 2021;10:e65751 [doi.org/10.7554/eLife.65751](https://doi.org/10.7554/eLife.65751)
+  > Tyson, A. L., Vélez-Fort, M., Rousseau, C. V., Cossell, L., Tsitoura, C., Lenzi, S. C., Obenhaus, H. A., Claudi, F., Branco, T., Margrie, T. W. (2022) "Accurate determination of marker location within whole-brain microscopy images" *Scientific Reports*, [doi.org/10.1038/s41598-021-04676-9](https://doi.org/10.1038/s41598-021-04676-9)
 
 
-BrainGlobe Atlas API:
-> Claudi, F., Petrucco, L., Tyson, A. L., Branco, T., Margrie, T. W., Portugues, R. (2020) &quot;BrainGlobe Atlas API: a common interface for neuroanatomical atlases&quot; <i>Journal of Open Source Software</i>, 5(54), 2668 [doi.org/10.21105/joss.02668](https://doi.org/10.21105/joss.02668)
+- **3D cell detection:**  
+
+  > Tyson, A. L., Rousseau, C. V., Niedworok, C. J., Keshavarzi, S., Tsitoura, C., Cossell, L., Strom, M., Margrie, T. W. (2021) "A deep learning algorithm for 3D cell detection in whole mouse brain image datasets" *PLOS Computational Biology* 17(5): e1009074. [doi.org/10.1371/journal.pcbi.1009074](https://doi.org/10.1371/journal.pcbi.1009074)
+
+
+- **Brainrender:**  
+
+  > Claudi, F., Tyson, A. L., Petrucco, L., Margrie, T.W., Portugues, R., Branco, T. (2021) "Visualizing anatomically registered data with Brainrender" *eLife* 2021;10:e65751 [doi.org/10.7554/eLife.65751](https://doi.org/10.7554/eLife.65751)
+
+
+- **BrainGlobe Atlas API:**  
+
+  > Claudi, F., Petrucco, L., Tyson, A. L., Branco, T., Margrie, T. W., Portugues, R. (2020) "BrainGlobe Atlas API: a common interface for neuroanatomical atlases" *Journal of Open Source Software* 5(54), 2668 [doi.org/10.21105/joss.02668](https://doi.org/10.21105/joss.02668)
+
 
 
 # Publications citing BrainGlobe
@@ -29,11 +36,6 @@ Farid Aboharb, Pasha A. Davoudian, Ling-Xiao Shao et al. (2025)
 *Nature Communications*  
 [DOI](https://doi.org/https://doi.org/10.1038/s41467-025-56850-6)
 
-C. Spencer Garborg, Beatrice Ghitti, Qingguang Zhang et al. (2025)  
-**Gut-Brain Hydraulics: Brain motion and CSF circulation is driven by mechanical coupling with the abdomen**  
-*bioRxiv*  
-[DOI](https://doi.org/https://doi.org/10.1101/2025.01.30.635779)
-
 Alec L. R. Soronow, Matthew W. Jacobs, Richard G. Dickson et al. (2025)  
 **Bell Jar: A Semiautomated Registration and Cell Counting Tool for Mouse Neurohistology Analysis**  
 *eNeuro*  
@@ -48,6 +50,11 @@ Shriya Palchaudhuri, Bei-Xuan Lin, Denys Osypenko et al. (2025)
 **A posterior insula to lateral amygdala pathway transmits US-offset information with a limited role in fear learning**  
 *Cell Reports*  
 [DOI](https://doi.org/https://doi.org/10.1016/j.celrep.2025.115320)
+
+C. Spencer Garborg, Beatrice Ghitti, Qingguang Zhang et al. (2025)  
+**Gut-Brain Hydraulics: Brain motion and CSF circulation is driven by mechanical coupling with the abdomen**  
+*bioRxiv*  
+[DOI](https://doi.org/https://doi.org/10.1101/2025.01.30.635779)
 
 Mateo Vélez‐Fort, Lee Cossell, Laura Porta et al. (2025)  
 **Motor and vestibular signals in the visual cortex permit the separation of self versus externally generated visual motion**  
