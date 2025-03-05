@@ -498,6 +498,12 @@ In no particular order:
 :link: https://github.com/kira1228
 :::
 
+:::{grid-item-card} Stella Prins
+:img-bottom: https://avatars.githubusercontent.com/u/30465823?v=4
+:link: https://github.com/stellaprins
+:::
+
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
