@@ -528,6 +528,10 @@ In no particular order:
 :link: https://orcid.org/0000-0001-7082-4839
 :::
 
+:::{grid-item-card} Simon Weiler
+:img-bottom: https://avatars.githubusercontent.com/u/15692611?v=4
+:link: https://github.com/simonweiler
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
