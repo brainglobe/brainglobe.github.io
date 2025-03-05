@@ -1,3 +1,7 @@
+# This script fetches the citations of BrainGlobe's core publications using OpenAlex and
+#  generates a Markdown file with the list of publications citing BrainGlobe's core publications. 
+# The script is intended to be run periodically to keep the list of citations up-to-date. 
+# The script outputs the generated Markdown file to the `docs/source/publications.md` file of the repository.
 import pyalex
 import os
 from datetime import datetime
@@ -7,9 +11,9 @@ BRAINGLOBE_CORE_WORKS = [
     "https://openalex.org/W3007765542",
     "https://openalex.org/W3165457844",
     "https://openalex.org/W3092644694",
-    "https://openalex.org/W4206584351"
-    "https://openalex.org/W3209832784"
-    "https://openalex.org/W3165052512"
+    "https://openalex.org/W4206584351",
+    "https://openalex.org/W3209832784",
+    "https://openalex.org/W3165052512",
     "https://openalex.org/W3205056304"
 ]
 
@@ -28,20 +32,17 @@ def fetch_citations():
     return citing_works
 
 def process_work(work):
-    """Process work with comprehensive error tracking"""
+    """Process work while gracefully handling missing data"""
     entry = {
-        "authors": "Authors not available",
+        "authors": "",
         "year": "",
-        "title": "Untitled Work",
-        "venue": "Unknown Source",
+        "title": "",
+        "venue": "",
         "doi": "",
-        "date": "",
-        "errors": [],
-        "status": "invalid"
+        "date": ""
     }
     
     if not work or not isinstance(work, dict):
-        entry["errors"].append("Invalid work format")
         return entry
 
     try:
@@ -49,115 +50,105 @@ def process_work(work):
         if work.get("is_authors_truncated"):
             try:
                 work = pyalex.Works()[work["id"]]
-            except Exception as e:
-                entry["errors"].append(f"Author fetch error: {str(e)}")
+            except Exception:
+                pass
 
         # Process authors
-        try:
-            authors = []
-            for authorship in work.get("authorships", []):
-                author = authorship.get("author", {})
-                if author and isinstance(author, dict):
-                    authors.append(author.get("display_name", "Unknown Author"))
-            
-            if authors:
-                author_str = ", ".join(authors[:3])
-                if len(authors) > 3:
-                    author_str += " et al."
-                entry["authors"] = author_str
-            else:
-                entry["errors"].append("Missing authors")
-        except Exception as e:
-            entry["errors"].append(f"Author processing error: {str(e)}")
+        authors = []
+        for authorship in work.get("authorships", []):
+            author = authorship.get("author", {})
+            if author and isinstance(author, dict):
+                authors.append(author.get("display_name", ""))
+        
+        if authors:
+            author_str = ", ".join(authors[:3])
+            if len(authors) > 3:
+                author_str += " et al."
+            entry["authors"] = author_str
 
         # Process title
-        try:
-            entry["title"] = work.get("title", "Untitled Work").strip()
-            if not entry["title"]:
-                entry["errors"].append("Missing title")
-        except Exception as e:
-            entry["errors"].append(f"Title error: {str(e)}")
+        entry["title"] = work.get("title", "").strip()
 
         # Process venue
-        try:
-            source = work.get("primary_location", {}).get("source", {})
-            venue = source.get("display_name", "Preprint").split("(")[0].strip()
-            entry["venue"] = venue
-        except Exception as e:
-            entry["errors"].append(f"Venue error: {str(e)}")
+        source = work.get("primary_location", {}).get("source", {})
+        entry["venue"] = source.get("display_name", "").split("(")[0].strip()
 
         # Process dates
-        try:
-            pub_date = work.get("publication_date", "")
-            if pub_date:
-                entry["date"] = pub_date
+        pub_date = work.get("publication_date", "")
+        if pub_date:
+            entry["date"] = pub_date
+            try:
                 entry["year"] = datetime.strptime(pub_date, "%Y-%m-%d").year
-            else:
-                entry["errors"].append("Missing publication date")
-        except Exception as e:
-            entry["errors"].append(f"Date error: {str(e)}")
+            except ValueError:
+                pass
 
         # Process DOI
-        try:
-            entry["doi"] = work.get("doi", "")
-        except Exception as e:
-            entry["errors"].append(f"DOI error: {str(e)}")
+        entry["doi"] = work.get("doi", "")
 
-        # Validate entry
-        if not entry["errors"]:
-            entry["status"] = "valid"
-
-    except Exception as e:
-        entry["errors"].append(f"General processing error: {str(e)}")
+    except Exception:
+        pass
 
     return entry
 
 def generate_markdown(works):
-    """Generate Markdown output with separate sections"""
+    """Generate clean Markdown output without error indications"""
     md = [
+        "# BrainGlobe publications",
+
+        "- **Brainreg & brainglobe-segmentation (formerly brainreg-segment):**  ",
+        "  > Tyson, A. L., Vélez-Fort, M., Rousseau, C. V., Cossell, L., Tsitoura, C., Lenzi, S. C., "
+        "Obenhaus, H. A., Claudi, F., Branco, T., Margrie, T. W. (2022) "
+        "\"Accurate determination of marker location within whole-brain microscopy images\" "
+        "*Scientific Reports*, [doi.org/10.1038/s41598-021-04676-9](https://doi.org/10.1038/s41598-021-04676-9)\n",
+        
+        "- **3D cell detection:**  ",
+        "  > Tyson, A. L., Rousseau, C. V., Niedworok, C. J., Keshavarzi, S., Tsitoura, C., Cossell, L., "
+        "Strom, M., Margrie, T. W. (2021) "
+        "\"A deep learning algorithm for 3D cell detection in whole mouse brain image datasets\" "
+        "*PLOS Computational Biology* 17(5): e1009074. [doi.org/10.1371/journal.pcbi.1009074](https://doi.org/10.1371/journal.pcbi.1009074)\n",
+        
+        "- **Brainrender:**  ",
+        "  > Claudi, F., Tyson, A. L., Petrucco, L., Margrie, T.W., Portugues, R., Branco, T. (2021) "
+        "\"Visualizing anatomically registered data with Brainrender\" "
+        "*eLife* 2021;10:e65751 [doi.org/10.7554/eLife.65751](https://doi.org/10.7554/eLife.65751)\n",
+        
+        "- **BrainGlobe Atlas API:**  ",
+        "  > Claudi, F., Petrucco, L., Tyson, A. L., Branco, T., Margrie, T. W., Portugues, R. (2020) "
+        "\"BrainGlobe Atlas API: a common interface for neuroanatomical atlases\" "
+        "*Journal of Open Source Software* 5(54), 2668 [doi.org/10.21105/joss.02668](https://doi.org/10.21105/joss.02668)"
+        "\n\n",
         "# Publications citing BrainGlobe",
-        "**This list is automatically generated from OpenAlex**\n",
-        "## Complete Publications\n"
+        "**This list is automatically generated from OpenAlex**\n"
     ]
+
+    # Sort works by date (newest first), with undated at end
+    works.sort(key=lambda x: x["date"] if x["date"] else "0000-00-00", reverse=True)
     
-    # Split works into complete and incomplete
-    complete = [w for w in works if w["status"] == "valid"]
-    incomplete = [w for w in works if w["status"] != "valid"]
-    
-    # Sort complete works by date (newest first)
-    complete.sort(key=lambda x: x["date"], reverse=True)
-    
-    # Sort incomplete works by title
-    incomplete.sort(key=lambda x: x["title"].lower())
-    
-    # Add complete works
-    for work in complete:
-        md.append(format_entry(work))
-    
-    # Add incomplete section if needed
-    if incomplete:
-        md.extend([
-            "\n## Publications with Incomplete Metadata",
-            "*The following entries may be missing some citation details:*\n"
-        ])
-        for work in incomplete:
-            entry = format_entry(work)
-            if work["errors"]:
-                entry += f"\n*Missing data: {', '.join(work['errors'])}*"
-            md.append(entry)
+    for work in works:
+        entry = []
+        # Add authors/year if available
+        if work["authors"]:
+            line = work["authors"]
+            if work["year"]:
+                line += f" ({work['year']})"
+            entry.append(line)
+        
+        # Add title if available
+        if work["title"]:
+            entry.append(f"**{work['title']}**")
+        
+        # Add venue if available
+        if work["venue"]:
+            entry.append(f"*{work['venue']}*")
+        
+        # Add DOI link if available
+        if work["doi"]:
+            entry.append(f"[DOI](https://doi.org/{work['doi']})")
+        
+        if entry:
+            md.append("  \n".join(entry))
     
     return "\n\n".join(md)
-
-def format_entry(work):
-    """Format individual work entry"""
-    entry = f"{work['authors']}"
-    if work["year"]:
-        entry += f" ({work['year']})"
-    entry += f". **{work['title']}**  \n"
-    entry += f"*{work['venue']}*  \n"
-    if work["doi"]:
-        entry += f"[DOI](https://doi.org/{work['doi']})  \n"
-    return entry
 
 def main():
     print("Starting citation update...")
@@ -175,22 +166,16 @@ def main():
     unique = []
     for w in processed:
         key = (w["title"].lower().strip(), w["year"])
-        if key not in seen:
+        if key not in seen and w["title"]:
             seen.add(key)
             unique.append(w)
     
     # Generate and save output
-    output_path = os.path.join(output_dir, "pub_citations.md")
+    output_path = os.path.join(output_dir, "publications.md")
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(generate_markdown(unique))
     
-    # Print summary
-    complete_count = len([w for w in unique if w["status"] == "valid"])
-    incomplete_count = len(unique) - complete_count
-    print(f"Success! Updated {output_path} with:")
-    print(f"- {complete_count} complete citations")
-    print(f"- {incomplete_count} incomplete citations")
+    print(f"Success! Updated {output_path} with {len(unique)} citations")
 
 if __name__ == "__main__":
     main()
-    
