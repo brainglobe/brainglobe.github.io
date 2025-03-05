@@ -499,32 +499,32 @@ In no particular order:
 :::
 
 :::{grid-item-card} Leonard Schwigon
-:img-bottom: https://uol.de/f/5/_processed_/4/8/csm_ibu-logo-transparent-_716c9efc42.png
+:img-bottom: /_static/ibu-logo.png
 :link: https://orcid.org/0009-0004-1453-2638
 :::
 
 :::{grid-item-card} Dinora Abdulazhanova
-:img-bottom: https://uol.de/f/5/_processed_/4/8/csm_ibu-logo-transparent-_716c9efc42.png
+:img-bottom: /_static/ibu-logo.png
 :link: https://uol.de/ibu/neurosensorik/team/dinora-abdulazhanova
 :::
 
 :::{grid-item-card} Katrin Haase
-:img-bottom: https://uol.de/f/5/_processed_/4/8/csm_ibu-logo-transparent-_716c9efc42.png
+:img-bottom: /_static/ibu-logo.png
 :link: https://orcid.org/0000-0002-1365-2548
 :::
 
 :::{grid-item-card} Dominik Heyers
-:img-bottom: https://uol.de/f/5/_processed_/4/8/csm_ibu-logo-transparent-_716c9efc42.png
+:img-bottom: /_static/ibu-logo.png
 :link: https://orcid.org/0000-0002-2831-6985
 :::
 
 :::{grid-item-card} Isabelle Museliak
-:img-bottom: https://uol.de/f/5/_processed_/4/8/csm_ibu-logo-transparent-_716c9efc42.png
+:img-bottom: /_static/ibu-logo.png
 :link: https://orcid.org/0000-0001-7242-3123
 :::
 
 :::{grid-item-card} Henrik Mouritsen
-:img-bottom: https://uol.de/f/5/_processed_/4/8/csm_ibu-logo-transparent-_716c9efc42.png
+:img-bottom: /_static/ibu-logo.png
 :link: https://orcid.org/0000-0001-7082-4839
 :::
 
