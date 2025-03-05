@@ -498,6 +498,40 @@ In no particular order:
 :link: https://github.com/kira1228
 :::
 
+:::{grid-item-card} Leonard Schwigon
+:img-bottom: /_static/ibu-logo.png
+:link: https://orcid.org/0009-0004-1453-2638
+:::
+
+:::{grid-item-card} Dinora Abdulazhanova
+:img-bottom: /_static/ibu-logo.png
+:link: https://uol.de/ibu/neurosensorik/team/dinora-abdulazhanova
+:::
+
+:::{grid-item-card} Katrin Haase
+:img-bottom: /_static/ibu-logo.png
+:link: https://orcid.org/0000-0002-1365-2548
+:::
+
+:::{grid-item-card} Dominik Heyers
+:img-bottom: /_static/ibu-logo.png
+:link: https://orcid.org/0000-0002-2831-6985
+:::
+
+:::{grid-item-card} Isabelle Museliak
+:img-bottom: /_static/ibu-logo.png
+:link: https://orcid.org/0000-0001-7242-3123
+:::
+
+:::{grid-item-card} Henrik Mouritsen
+:img-bottom: /_static/ibu-logo.png
+:link: https://orcid.org/0000-0001-7082-4839
+:::
+
+:::{grid-item-card} Simon Weiler
+:img-bottom: https://avatars.githubusercontent.com/u/15692611?v=4
+:link: https://github.com/simonweiler
+
 :::{grid-item-card} Stella Prins
 :img-bottom: https://avatars.githubusercontent.com/u/30465823?v=4
 :link: https://github.com/stellaprins
