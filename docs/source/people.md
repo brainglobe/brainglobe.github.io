@@ -531,6 +531,7 @@ In no particular order:
 :::{grid-item-card} Simon Weiler
 :img-bottom: https://avatars.githubusercontent.com/u/15692611?v=4
 :link: https://github.com/simonweiler
+:::
 
 :::{grid-item-card} Stella Prins
 :img-bottom: https://avatars.githubusercontent.com/u/30465823?v=4
