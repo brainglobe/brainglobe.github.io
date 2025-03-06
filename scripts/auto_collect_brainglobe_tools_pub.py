@@ -3,8 +3,8 @@
 # The script is intended to be run periodically to keep the list of citations up-to-date. 
 # The script outputs the generated Markdown file to the `docs/source/publications.md` file of the repository.
 import pyalex
-import os
 from datetime import datetime
+from pathlib import Path
 
 BRAINGLOBE_CORE_WORKS = [
     "https://openalex.org/W3138257762",
@@ -34,6 +34,7 @@ def fetch_citations():
 def process_work(work):
     """Process work while gracefully handling missing data"""
     entry = {
+        "id": "", 
         "authors": "",
         "year": "",
         "title": "",
@@ -46,6 +47,9 @@ def process_work(work):
         return entry
 
     try:
+        # Capturing work ID 
+        entry["id"] = work.get("id", "")
+
         # Handle truncated authorships
         if work.get("is_authors_truncated"):
             try:
@@ -118,7 +122,7 @@ def generate_markdown(works):
         "*Journal of Open Source Software* 5(54), 2668 [doi.org/10.21105/joss.02668](https://doi.org/10.21105/joss.02668)"
         "\n\n",
         "# Publications citing BrainGlobe",
-        "**This list is automatically generated from OpenAlex**\n"
+        "**This list is automatically generated from [OpenAlex](https://openalex.org)**\n"
     ]
 
     # Sort works by date (newest first), with undated at end
@@ -153,29 +157,40 @@ def generate_markdown(works):
 def main():
     print("Starting citation update...")
     
-    # Create output directory structure
-    output_dir = os.path.join("../docs", "source")
-    os.makedirs(output_dir, exist_ok=True)
+    # Create output directory structure using Path
+    output_dir = Path("../docs") / "source"
+    output_dir.mkdir(parents=True, exist_ok=True)
     
     # Fetch and process citations
     works = fetch_citations()
     processed = [process_work(w) for w in works if w]
     
-    # Deduplicate based on title/year
+    # deduplication with core works exclusion
     seen = set()
     unique = []
     for w in processed:
         key = (w["title"].lower().strip(), w["year"])
-        if key not in seen and w["title"]:
+        if (key not in seen 
+            and w["title"]
+            and w["id"] not in BRAINGLOBE_CORE_WORKS):  # Core works exclusion
             seen.add(key)
             unique.append(w)
     
+    # citation counting
+    complete_count = sum(1 for w in unique if w["doi"])
+    total_publications = len(unique)
+    
     # Generate and save output
-    output_path = os.path.join(output_dir, "publications.md")
+    output_path = output_dir / "publications.md"
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(generate_markdown(unique))
     
-    print(f"Success! Updated {output_path} with {len(unique)} citations")
+    # Status reporting
+    print(f"Success! Updated {output_path} with {total_publications} publications:")
+    print(f"- {complete_count} complete citations (with DOI)")
+    print(f"- {total_publications - complete_count} incomplete citations (missing DOI)")
+    print("Done!")
 
 if __name__ == "__main__":
     main()
+    

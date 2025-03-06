@@ -23,7 +23,7 @@
 
 # Publications citing BrainGlobe
 
-**This list is automatically generated from OpenAlex**
+**This list is automatically generated from [OpenAlex](https://openalex.org)**
 
 
 Adam S. Lowet, Zheng Qiao, Melissa Meng et al. (2025)  
@@ -726,11 +726,6 @@ Valeria Bonapersona, Heike Schuler, Ruth Damsteegt et al. (2022)
 *Proceedings of the National Academy of Sciences*  
 [DOI](https://doi.org/https://doi.org/10.1073/pnas.2114002119)
 
-Adam L. Tyson, Mateo Vélez‐Fort, Charly V. Rousseau et al. (2022)  
-**Accurate determination of marker location within whole-brain microscopy images**  
-*Scientific Reports*  
-[DOI](https://doi.org/https://doi.org/10.1038/s41598-021-04676-9)
-
 Nils Nyberg, Éléonore Duvelle, Caswell Barry et al. (2022)  
 **Spatial goal coding in the hippocampal formation**  
 *Neuron*  
@@ -841,20 +836,10 @@ Zimei Wang, Adam Romanski, Vatsal Mehra et al. (2021)
 *bioRxiv*  
 [DOI](https://doi.org/https://doi.org/10.1101/2021.06.10.447885)
 
-Adam L. Tyson, Charly V. Rousseau, Christian J. Niedworok et al. (2021)  
-**A deep learning algorithm for 3D cell detection in whole mouse brain image datasets**  
-*PLoS Computational Biology*  
-[DOI](https://doi.org/https://doi.org/10.1371/journal.pcbi.1009074)
-
 K. Hagihara, Olena Bukalo, Martin Zeller et al. (2021)  
 **Intercalated amygdala clusters orchestrate a switch in fear state**  
 *Nature*  
 [DOI](https://doi.org/https://doi.org/10.1038/s41586-021-03593-1)
-
-Adam L. Tyson, Mateo Vélez‐Fort, Charly V. Rousseau et al. (2021)  
-**Tools for accurate post hoc determination of marker location within whole-brain microscopy images**  
-*bioRxiv*  
-[DOI](https://doi.org/https://doi.org/10.1101/2021.05.21.445133)
 
 Logan A. Walker, Jennifer S. Williams, Ye Li et al. (2021)  
 **<i>nGauge</i>: Integrated and extensible neuron morphology analysis in Python**  
@@ -881,11 +866,6 @@ Cameron Arshadi, Ulrik Günther, Mark Eddison et al. (2021)
 *Nature Methods*  
 [DOI](https://doi.org/https://doi.org/10.1038/s41592-021-01105-7)
 
-Federico Claudi, Adam L. Tyson, Luigi Petrucco et al. (2021)  
-**Visualizing anatomically registered data with brainrender**  
-*eLife*  
-[DOI](https://doi.org/https://doi.org/10.7554/elife.65751)
-
 Sau Yee Tsoi, Merve Öncül, Ella Svahn et al. (2021)  
 **Telencephalic outputs from the medial entorhinal cortex are copied directly to the hippocampus**  
 *bioRxiv*  
@@ -910,11 +890,6 @@ Adam L. Tyson, Charly V. Rousseau, Christian J. Niedworok et al. (2020)
 *bioRxiv*  
 [DOI](https://doi.org/https://doi.org/10.1101/2020.10.21.348771)
 
-Federico Claudi, Luigi Petrucco, Adam L. Tyson et al. (2020)  
-**BrainGlobe Atlas API: a common interface for neuroanatomical atlases**  
-*The Journal of Open Source Software*  
-[DOI](https://doi.org/https://doi.org/10.21105/joss.02668)
-
 Antonin Blot, Morgane Roth, Ioana T. Gasler et al. (2020)  
 **Visual intracortical and transthalamic pathways carry distinct information to cortical areas**  
 *bioRxiv*  
@@ -924,11 +899,6 @@ Dario Campagner, Ruben Vale, Yu Lin Tan et al. (2020)
 **A cortico-collicular circuit for accurate orientation to shelter during escape**  
 *bioRxiv*  
 [DOI](https://doi.org/https://doi.org/10.1101/2020.05.26.117598)
-
-Federico Claudi, Adam L. Tyson, Luigi Petrucco et al. (2020)  
-**<i>Brainrender</i>: a python-based software for visualizing anatomically registered data**  
-*bioRxiv*  
-[DOI](https://doi.org/https://doi.org/10.1101/2020.02.23.961748)
 
 Mathew D. Edwards, Ziwei Yin, Risa Sueda et al.  
 **Combined transcriptomic, connectivity, and activity profiling of the medial amygdala using highly amplified multiplexed in situ hybridization (hamFISH)**
