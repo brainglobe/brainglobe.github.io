@@ -1,8 +1,17 @@
 name: Update Citations
+
 on:
+  # Only run on pushes to main, or when version tags are pushed
+  push:
+    branches:
+      - "main"
+  # Run on all pull-requests
+  pull_request:
   schedule:
-    - cron: '0 0 * * 1'  # Weekly on Mondays
-  workflow_dispatch:  
+    # Runs at 6:10am UTC on Monday
+    - cron: '10 6 * * 1'
+  # Allow workflow dispatch from GitHub
+  workflow_dispatch:
 jobs:
   update:
     runs-on: ubuntu-latest
