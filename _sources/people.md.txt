@@ -538,6 +538,10 @@ In no particular order:
 :link: https://github.com/stellaprins
 :::
 
+:::{grid-item-card}  Richard Dushime
+:img-bottom: https://avatars.githubusercontent.com/u/45734838?v=4
+:link: https://github.com/richarddushime
+:::
 
 ::::
 
