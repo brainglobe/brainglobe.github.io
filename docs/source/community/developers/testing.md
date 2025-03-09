@@ -5,6 +5,28 @@ are tested, including both unit and integration tests. We aim for 100% coverage 
 * We use [codecov](https://about.codecov.io/) as the coverage reporting tool. This is free for open-source
   projects and integrates with GitHub actions.
 
+## Local testing with pytest and coverage
+### pytest
+We recommend to start unit testing locally through your project's terminal with the activated environment. 
+You can also use VS Code or PyCharm for unit testing.
+```bash
+#activate python environment
+pytest -vs tests/
+```
+
+Sometimes, you may need to run a single test or specific modules. You can do so using the following examples.
+Make sure to check the paths, filenames, and test names.
+```
+pytest -vs tests/atlasapi/test_cli.py
+pytest -vs tests/atlasapi/test_cli.py::test_config_cli
+```
+### coverage
+Example to run coverage for a single file and test
+```
+coverage run --include=brainglobe_atlasapi/bg_atlas.py -m pytest tests/atlasapi/test_bg_atlas.py::test_local_full_name_none
+coverage report -m
+```
+
 ## Continuous integration
 A GitHub actions workflow (`.github/workflows/test_and_deploy.yml`) has been set up to run (on each commit/PR):
 * Linting checks (pre-commit).
