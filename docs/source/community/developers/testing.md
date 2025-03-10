@@ -12,12 +12,13 @@ You can also use VS Code or PyCharm for unit testing.
 To run pytest from the repository directory
 ```bash
 pytest
+```
 
 Sometimes, you may need to run a single test or specific modules. You can do so using the following examples.
 Make sure to check the paths, filenames, and test names.
 ```
-pytest -vs tests/atlasapi/test_cli.py
-pytest -vs tests/atlasapi/test_cli.py::test_config_cli
+pytest tests/atlasapi/test_cli.py
+pytest tests/atlasapi/test_cli.py::test_config_cli
 ```
 
 ## Continuous integration
