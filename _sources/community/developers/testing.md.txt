@@ -5,6 +5,22 @@ are tested, including both unit and integration tests. We aim for 100% coverage 
 * We use [codecov](https://about.codecov.io/) as the coverage reporting tool. This is free for open-source
   projects and integrates with GitHub actions.
 
+## Local testing with pytest and coverage
+### pytest
+We recommend to start unit testing locally through your project's terminal with the activated environment. 
+You can also use VS Code or PyCharm for unit testing.
+To run pytest from the repository directory
+```bash
+pytest
+```
+
+Sometimes, you may need to run a single test or specific modules. You can do so using the following examples.
+Make sure to check the paths, filenames, and test names.
+```
+pytest tests/atlasapi/test_cli.py
+pytest tests/atlasapi/test_cli.py::test_config_cli
+```
+
 ## Continuous integration
 A GitHub actions workflow (`.github/workflows/test_and_deploy.yml`) has been set up to run (on each commit/PR):
 * Linting checks (pre-commit).

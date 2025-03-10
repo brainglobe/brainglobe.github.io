@@ -636,11 +636,26 @@ contributions as soon as we can, but it can sometimes take a few weeks. We will 
 <p>The core development team will support you in contributing code, irrespective of your experience.
 To ensure BrainGlobe remains easy-to-maintain, they will help ensure all code contributions meet
 a high standard.</p>
+<section id="setting-up-github-repository-locally">
+<h3>Setting up GitHub repository locally.<a class="headerlink" href="#setting-up-github-repository-locally" title="Link to this heading">#</a></h3>
+<p>It is recommended to clone the relevant repositories and setting up keys and verification to contribute to projects. The same steps apply when working with a forked repository.</p>
+<ol class="arabic simple">
+<li><p>Generate your SSH keys as suggested <a class="reference external" href="https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">here</a></p></li>
+<li><p>Setup your commit signature verification as shown <a class="reference external" href="https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification#ssh-commit-signature-verification">here</a></p></li>
+<li><p>Clone the repository:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:brainglobe/${REPOSITORY_NAME}.git
+</pre></div>
+</div>
+</section>
 <section id="creating-a-development-environment">
 <h3>Creating a development environment<a class="headerlink" href="#creating-a-development-environment" title="Link to this heading">#</a></h3>
 <p>It is recommended to use a recent version of <code class="docutils literal notranslate"><span class="pre">conda</span></code> to install a development environment for
 BrainGlobe projects (<a class="reference external" href="https://conda.org/blog/2023-11-06-conda-23-10-0-release/"><code class="docutils literal notranslate"><span class="pre">conda</span></code> versions &gt;=23.10.0</a>
-will significantly speed up installation time). Once you have <code class="docutils literal notranslate"><span class="pre">conda</span></code> installed, the following commands
+will significantly speed up installation time).
+Other Python package managers, such as <a class="reference external" href="https://github.com/astral-sh/uv">uv</a>, might work,
+but we recommend using conda to maintain consistency across packages.
+Once you have <code class="docutils literal notranslate"><span class="pre">conda</span></code> installed, the following commands
 will create and activate a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment with the requirements needed
 for a development environment:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>brainglobe-dev<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12<span class="w"> </span>napari
@@ -771,6 +786,7 @@ structure mostly mirrors the rendered website. To edit a page, please:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-contribute-a-new-atlas">To contribute a new atlas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-contribute-code">To contribute code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-github-repository-locally">Setting up GitHub repository locally.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-development-environment">Creating a development environment</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-requests">Pull requests</a></li>
 </ul>

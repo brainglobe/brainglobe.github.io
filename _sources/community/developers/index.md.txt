@@ -34,12 +34,24 @@ The core development team will support you in contributing code, irrespective of
 To ensure BrainGlobe remains easy-to-maintain, they will help ensure all code contributions meet 
 a high standard.
 
+### Setting up GitHub repository locally.
+
+It is recommended to clone the relevant repositories and setting up keys and verification to contribute to projects. The same steps apply when working with a forked repository.
+1. Generate your SSH keys as suggested [here](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+2. Setup your commit signature verification as shown [here](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification#ssh-commit-signature-verification)
+3. Clone the repository:
+```
+git clone git@github.com:brainglobe/${REPOSITORY_NAME}.git
+```
 
 ### Creating a development environment
 
 It is recommended to use a recent version of `conda` to install a development environment for
 BrainGlobe projects ([`conda` versions >=23.10.0](https://conda.org/blog/2023-11-06-conda-23-10-0-release/) 
-will significantly speed up installation time). Once you have `conda` installed, the following commands
+will significantly speed up installation time).
+Other Python package managers, such as [uv](https://github.com/astral-sh/uv), might work,
+but we recommend using conda to maintain consistency across packages.
+Once you have `conda` installed, the following commands
 will create and activate a `conda` environment with the requirements needed
 for a development environment:
 
