@@ -39,7 +39,7 @@ a high standard.
 It is recommended to clone the relevant repositories and setting up keys and verification to contribute to projects. The same steps apply when working with a forked repository.
 1. Generate your SSH keys as suggested [here](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 2. Setup your commit signature verification as shown [here](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification#ssh-commit-signature-verification)
-3. Clone the repository by typing (or copying) the following lines in a terminal with specific `REPOSITORY_NAME` 
+3. Clone the repository :
 ```
 git clone git@github.com:brainglobe/${REPOSITORY_NAME}.git
 ```
