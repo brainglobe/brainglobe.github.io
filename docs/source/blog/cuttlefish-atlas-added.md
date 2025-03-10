@@ -13,7 +13,7 @@ Cephalopods are fascinating model organisms for neuroscience research. The dwarf
 
 ![cuttlefish brain atlas annotations](./images/cuttlefish_annotations.png)
 
-**Figure 1. Anterior view of the cuttlefish brain atlas annotations and reference image.**
+**Figure 1. Coronal section of the cuttlefish brain atlas annotations (only right hemisphere shown) and reference image.**
 
 The BrainGlobe team re-packaged the data generated and made public by the original study, making it now possible to use the cuttlefish atlas within the BrainGlobe ecosystem. The atlas name is `columbia_cuttlefish_50um`, after the institution of its original authors.
 
@@ -29,7 +29,7 @@ The end result will look something like Figure 2.
 
 ![cuttlefish atlas visualised in napari](./images/cuttlefish_napari.png)
 
-**Figure 2: The cuttlefish atlas visualised with `brainrender-napari`: with mesh overlays for the brain (grey), the optic lobes (yellow, right hemisphere; green, left hemisphere) and the brachial lobe (blue).**
+**Figure 2: The cuttlefish atlas visualised with `brainrender-napari`: with mesh overlays for the brain (grey), the optic lobes (green, left hemisphere) and the brachial lobe (light blue).**
 
 ## Why are we adding new atlases?
 
