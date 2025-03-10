@@ -20,12 +20,6 @@ Make sure to check the paths, filenames, and test names.
 pytest -vs tests/atlasapi/test_cli.py
 pytest -vs tests/atlasapi/test_cli.py::test_config_cli
 ```
-### coverage
-Example to run coverage for a single file and test
-```
-coverage run --include=brainglobe_atlasapi/bg_atlas.py -m pytest tests/atlasapi/test_bg_atlas.py::test_local_full_name_none
-coverage report -m
-```
 
 ## Continuous integration
 A GitHub actions workflow (`.github/workflows/test_and_deploy.yml`) has been set up to run (on each commit/PR):
