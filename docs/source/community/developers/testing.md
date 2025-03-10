@@ -9,10 +9,9 @@ are tested, including both unit and integration tests. We aim for 100% coverage 
 ### pytest
 We recommend to start unit testing locally through your project's terminal with the activated environment. 
 You can also use VS Code or PyCharm for unit testing.
+To run pytest from the repository directory
 ```bash
-#activate python environment
-pytest -vs tests/
-```
+pytest
 
 Sometimes, you may need to run a single test or specific modules. You can do so using the following examples.
 Make sure to check the paths, filenames, and test names.
