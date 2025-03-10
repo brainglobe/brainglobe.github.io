@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: January 31, 2025
+date: Mar 10, 2025
 author: Jung Woo Kim, Alessandro Felder
 location: London, England
 category: brainglobe
