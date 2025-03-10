@@ -15,7 +15,7 @@ Cephalopods are fascinating model organisms for neuroscience research. The dwarf
 
 **Figure 1. Anterior view of the cuttlefish brain atlas annotations and reference image.**
 
-The BrainGlobe team re-packaged the data generated and made public by the original study, making it now possible to use the cuttlefish atlas within the BrainGlobe ecosystem. The atlas name is `columbia_cuttlefish_50um`.
+The BrainGlobe team re-packaged the data generated and made public by the original study, making it now possible to use the cuttlefish atlas within the BrainGlobe ecosystem. The atlas name is `columbia_cuttlefish_50um`, after the institution of its original authors.
 
 ## How do I use the new atlas?
 
