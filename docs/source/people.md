@@ -543,6 +543,11 @@ In no particular order:
 :link: https://github.com/richarddushime
 :::
 
+:::{grid-item-card}  Miguel Xochicale
+:img-bottom: https://avatars.githubusercontent.com/u/11370681?v=4
+:link: https://github.com/mxochicale
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
