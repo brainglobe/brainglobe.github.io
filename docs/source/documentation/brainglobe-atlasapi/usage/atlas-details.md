@@ -224,9 +224,6 @@ see [the blogpost](/blog/cavefish-atlas-added).
 This atlas is only available at 2μm resolution:
 * `sju_cavefish_2um`
 
-
-
-
 ## Amphibian
 ### [UNAM Axolotl Brain Atlas](https://doi.org/10.1038/s41598-021-89357-3)
 This is a magnetic resonance imaging based atlas of the Axolotl (Ambystoma mexicanum) from 
@@ -260,6 +257,14 @@ This is an MRI atlas of a cat (Felis catus) from [Stolzberg et al. (2017)](https
 This atlas is only available at 500um resolution:
 * `csl_cat_500um`
 
+## Bird
+### [Eurasian blackcap atlas](https://doi.org/10.1101/2025.03.04.641293)
+This is a serial section two-photon atlas of the Eurasian blackcap (Sylvia atricapilla) 
+built by the BrainGlobe team ([Sirmpilatze et al. (2025)](https://doi.org/10.1101/2025.03.04.641293)). 
+For more details please see [the project page](/projects/blackcap/index).
+
+This atlas is only available at 25μm resolution:
+* `eurasian_blackcap_25um`
 
 
 
