@@ -23,10 +23,13 @@ To paraphrase a [famous quote](https://en.wikipedia.org/wiki/Nothing_in_Biology_
 
 > Nothing in BrainGlobe makes sense except in the light of atlases.
 
-```{image} ../_static/atlases.png
+```{figure} ../_static/atlases.png
 :alt: BrainGlobe Atlases
 :width: 65%
 :align: center
+:name: fig-bg-atlases
+
+Figure 1. The BrainGlobe ecosystem provides a common interface for a wide range of neuroanatomical atlases across species.
 ```
 
 Atlases help individual researchers plan experiments and interpret their results, but their biggest impact is on the field as a whole.
@@ -57,6 +60,16 @@ Simon collaborates with [Henrik Mouritsen's lab](https://uol.de/en/ibu/animal-na
 As part of this collaboration, Simon obtained whole-brain samples from Oldenburg and imaged them at SWC using its state-of-the-art [serial-section two-photon platform](https://swcmicroscopy.com/).
 
 **_The results were outstanding_**—exceptionally high-resolution 3D images of whole brains, far surpassing what was available for most bird species. Recognising their value, Simon reached out to us about creating a blackcap brain atlas. This would not only help him analyse his data but also provide a valuable resource for the wider research community.
+
+
+```{figure} images/blackcap_10_brains.png
+:alt: Coronal slices from 10 Eurasian blackcap brains.
+:width: 100%
+:align: center
+:name: fig-input-brains
+
+Figure 2. Coronal slices from 10 Eurasian blackcap brains, imaged using serial-section two-photon microscopy.
+```
 
 ## How we built the blackcap atlas
 
