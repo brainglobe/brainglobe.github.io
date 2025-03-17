@@ -87,7 +87,7 @@ We used **_symmetric group-wise normalisation (SyGN)_**, an algorithm widely use
 :align: center
 :name: fig-SyGN-iters
 
-Figure 3. The template is refined in both intensity and shape through succesive SyGN iterations.
+Figure 3. The template is refined in both intensity and shape through successive SyGN iterations.
 The average image becomes progressively sharper as more accurate registrations are applied (rigid, similarity, affine, and non-linear).
 ```
 
