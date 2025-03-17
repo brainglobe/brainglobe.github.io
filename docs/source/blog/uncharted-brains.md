@@ -35,8 +35,8 @@ Figure 1. The BrainGlobe ecosystem provides a common interface for a wide range 
 Atlases help individual researchers plan experiments and interpret their results, but their biggest impact is on the field as a whole.
 By providing a common coordinate system and standardised terminology, they make data easier to share, compare, and integrate with other sources.
 
-While excellent atlases exist for common model organisms, such as the [Allen Mouse Brain Atlas](https://doi.org/10.1016/j.cell.2020.04.007) and the [Adult Zebrafish Brain Atlas](https://doi.org/10.7554/eLife.69988), they are scarce for less popular species.
-Neuroscience is experiencing a welcome [non-model organism renaissance](https://doi.org/10.53053/GMHL7976), but the lack of atlases limits progress.
+While excellent atlases exist for common model organisms, such as the [Allen Mouse Brain Atlas](https://doi.org/10.1016/j.cell.2020.04.007)[^Allen-Mouse] and the [Adult Zebrafish Brain Atlas](https://doi.org/10.7554/eLife.69988)[^AZBA], they are scarce for less popular species.
+Neuroscience is experiencing a welcome [non-model organism renaissance](https://doi.org/10.53053/GMHL7976)[^non-model], but the lack of atlases limits progress.
 Without a reliable brain map, it is difficult to apply modern neuroscience to emerging models.
 
 This challenge has driven our recent support for species like the {ref}`axolotl <axolotl-atlas-added>`, the {ref}`prairie vole <prairie-vole-atlas-added>` and the {ref}`dwarf cuttlefish <cuttlefish-atlas-added>`, with more on the way.
@@ -79,7 +79,7 @@ In BrainGlobe, an atlas consists of at least two 3D images:
 
 Our first task was to create a high-quality template image. We could have simply chosen one of the 10 imaged brains (see {ref}`Figure 2 <fig-input-brains>`), but a single brain may not be representative due to individual anatomical variations. Instead, we opted for a **_population template_**, which averages multiple brains to better capture anatomical variability.  
 
-We used **_symmetric group-wise normalisation (SyGN)_**, an algorithm widely used in MRI research to generate unbiased, high-resolution templates for both human and animal brains. SyGN starts with an initial template (e.g., one of the imaged brains) and iteratively refines it by aligning and averaging all input images. This approach minimises bias towards any particular brain, enhances signal-to-noise ratio, and preserves fine anatomical details without the blurring common in simple averaging methods (see {ref}`Figure 3 <fig-SyGN-iters>`).  
+We used **_symmetric group-wise normalisation (SyGN)_**, an algorithm widely used in MRI research to generate unbiased, high-resolution templates for both human and animal brains[^SyGN]. SyGN starts with an initial template (e.g., one of the imaged brains) and iteratively refines it by aligning and averaging all input images. This approach minimises bias towards any particular brain, enhances signal-to-noise ratio, and preserves fine anatomical details without the blurring common in simple averaging methods (see {ref}`Figure 3 <fig-SyGN-iters>`).  
 
 ```{figure} images/template_building_progress_fps-4.gif
 :alt: The average template is refined through SyGN iterations.
@@ -107,8 +107,8 @@ Running SyGN algorithm on images consisting of tens of million of voxels was com
 
 The result was a high-contrast, artefact-free population template with sharp anatomical detail and clearly discernible structures—an ideal basis for annotation.  
 
-We shared the final template with our collaborators at the University of Oldenburg, experts in avian neuroanatomy. They manually delineated brain structures using the free software [ITK-SNAP](http://www.itksnap.org/pmwiki/pmwiki.php). Using anatomical landmarks and referencing 2D sections from the zebra finch atlas (a phylogenetically related species), 
-they annotated **_six principal brain compartments_**, subdivided into **_13 anatomical regions_**. Additionally, they also labelled **_five functionally defined areas involved in magnetoreception_**, based on prior studies.  
+We shared the final template with our collaborators at the University of Oldenburg, experts in avian neuroanatomy. They manually delineated brain structures using the free software [ITK-SNAP](http://www.itksnap.org/pmwiki/pmwiki.php). Relying on anatomical landmarks and referencing 2D sections from the zebra finch atlas (a phylogenetically related species), 
+they annotated **_six principal brain compartments_**, further subdivided into **_13 anatomical regions_**. Additionally, they also labelled **_five functionally defined areas involved in magnetoreception_**, based on prior studies.  
 
 ```{figure} images/eurasian_blackcap_v1.2_every-3rd-slice.gif
 :alt: An animation going through coronal slices of the Eurasian blackcap brain atlas.
@@ -119,15 +119,32 @@ they annotated **_six principal brain compartments_**, subdivided into **_13 ana
 Figure 4. Annotated brain structures overlaid on one hemisphere of the average brain template.
 ```
 
+:::{note}
+Find more details on how we built the blackcap brain atlas in
+[our preprint](https://doi.org/10.1101/2025.03.04.641293)[^preprint].
+:::
+
 ## More atlases to come!
 
 We learnt a lot from creating the blackcap atlas, and we're eager to apply these insights to future projects. We are already building several new atlases, while streamlining our workflow to make it more efficient and accessible. Some key improvements in progress:
 
-- **_Exporing data requirements for template-building_**. We adapted SyGN for serial-section two-photon microscopy, but we also aim to support additional 3D imaging techniques, such as light-sheet microscopy. Our goal is to develop a detailed guide on acquiring and quality-controlling images for template construction.
+- **_Exploring data requirements for template-building_**. We adapted SyGN for serial-section two-photon microscopy, but we also aim to support additional 3D imaging techniques, such as light-sheet microscopy. Our goal is to develop a detailed guide on acquiring and quality-controlling images for template construction.
 - **_Improving [brainglobe-template-builder](https://github.com/brainglobe/brainglobe-template-builder)_**. We're gradually making this Python package more modular, flexible, and user-friendly so others can use it to prepare their data for template building.
 - **_Further optimising SyGN for HPC clusters_**. We want to iterate faster and build templates at even higher resolutions, while also sharing these enhancements with the community.
 - **_A step-by-step guide for manual annotation_**. To help groups with anatomical expertise contribute to atlas building, we're developing a guide on annotation best practices, supplemented with automated quality-control checks to ensure consistency.
 
 Our long-term goal is to scale up atlas creation and empower researchers to map uncharted brains. By expanding the BrainGlobe ecosystem with new atlases, we can help make neuroscience more accessible for emerging model organisms and ultimately accelerate discoveries in the field.
 
-If are passionate about a species and want to contribute to mapping its brain, please [get in touch](/contact). We'd love to hear from you!
+If you are passionate about a species and want to contribute to mapping its brain, please [get in touch](/contact). We'd love to hear from you!
+
+## References
+
+[^Allen-Mouse]: Wang Q, Ding SL, Li Y, et al. The Allen Mouse Brain Common Coordinate Framework: A 3D Reference Atlas. Cell. 2020 May;181(4):936-953.e20. DOI: 10.1016/j.cell.2020.04.007. PMID: 32386544; PMCID: PMC8152789.
+
+[^AZBA]: Kenney JW, Steadman PE, Young O, et al. A 3D adult zebrafish brain atlas (AZBA) for the digital age. Elife. 2021 Nov;10:e69988. DOI: 10.7554/elife.69988. PMID: 34806976; PMCID: PMC8639146.
+
+[^non-model]: McMurray C, Voyles Askham A, López Lloreda C, Montanari S. The non-model organism "renaissance" has arrived. The Transmitter. 2024. DOI: 10.53053/GMHL7976.
+
+[^SyGN]: Avants BB, Yushkevich P, Pluta J, et al. The optimal template effect in hippocampus studies of diseased populations. Neuroimage. 2010 Feb;49(3):2457-2466. DOI: 10.1016/j.neuroimage.2009.09.062. PMID: 19818860; PMCID: PMC2818274.
+
+[^preprint]: Sirmpilatze N, Felder A, Abdulazhanova D, et al. Mapping the magnetoreceptive brain: A 3D digital atlas of the migratory bird Eurasian blackcap (<i>Sylvia atricapilla</i>). bioRxiv; 2025. DOI: 10.1101/2025.03.04.641293.
