@@ -7,7 +7,7 @@ category: brainglobe
 language: English
 ---
 
-# Into uncharted brains: expanding beyond existing atlases
+# Uncharted brains: expanding beyond existing atlases
 
 We've just released a [new digital 3D atlas for the Eurasian blackcap](target-blackcap).
 This marks a key shift for us: beyond providing a common interface for existing neuroanatomical atlases, we are now also building new ones.
@@ -121,4 +121,13 @@ Figure 4. Annotated brain structures overlaid on one hemisphere of the average b
 
 ## More atlases to come!
 
-TBD.
+We learnt a lot from creating the blackcap atlas, and we're eager to apply these insights to future projects. We are already building several new atlases, while streamlining our workflow to make it more efficient and accessible. Some key improvements in progress:
+
+- **_Exporing data requirements for template-building_**. We adapted SyGN for serial-section two-photon microscopy, but we also aim to support additional 3D imaging techniques, such as light-sheet microscopy. Our goal is to develop a detailed guide on acquiring and quality-controlling images for template construction.
+- **_Improving [brainglobe-template-builder](https://github.com/brainglobe/brainglobe-template-builder)_**. We're gradually making this Python package more modular, flexible, and user-friendly so others can use it to prepare their data for template building.
+- **_Further optimising SyGN for HPC clusters_**. We want to iterate faster and build templates at even higher resolutions, while also sharing these enhancements with the community.
+- **_A step-by-step guide for manual annotation_**. To help groups with anatomical expertise contribute to atlas building, we're developing a guide on annotation best practices, supplemented with automated quality-control checks to ensure consistency.
+
+Our long-term goal is to scale up atlas creation and empower researchers to map uncharted brains. By expanding the BrainGlobe ecosystem with new atlases, we can help make neuroscience more accessible for emerging model organisms and ultimately accelerate discoveries in the field.
+
+If are passionate about a species and want to contribute to mapping its brain, please [get in touch](/contact). We'd love to hear from you!
