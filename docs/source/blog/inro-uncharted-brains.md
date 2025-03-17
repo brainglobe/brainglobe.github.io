@@ -71,9 +71,53 @@ As part of this collaboration, Simon obtained whole-brain samples from Oldenburg
 Figure 2. Coronal slices from 10 Eurasian blackcap brains, imaged using serial-section two-photon microscopy.
 ```
 
-## How we built the blackcap atlas
+## How we built the blackcap atlas  
 
+In BrainGlobe, an atlas consists of at least two 3D images:  
+- A **_template (or reference image)_** that defines a standard coordinate system for brain anatomy and serves as a registration target.  
+- An **_annotation image_** that labels brain structures by assigning integer values to each voxel. This is paired with metadata that maps values to structure names and organises them into a structure hierarchy.
 
+Our first task was to create a high-quality template image. We could have simply chosen one of the 10 imaged brains (see {ref}`Figure 2 <fig-input-brains>`), but a single brain may not be representative due to individual anatomical variations. Instead, we opted for a **_population template_**, which averages multiple brains to better capture anatomical variability.  
+
+We used **_symmetric group-wise normalisation (SyGN)_**, an algorithm widely used in MRI research to generate unbiased, high-resolution templates for both human and animal brains. SyGN starts with an initial template (e.g., one of the imaged brains) and iteratively refines it by aligning and averaging all input images. This approach minimises bias towards any particular brain, enhances signal-to-noise ratio, and preserves fine anatomical details without the blurring common in simple averaging methods (see {ref}`Figure 3 <fig-SyGN-iters>`).  
+
+```{figure} images/template_building_progress_fps-4.gif
+:alt: The average template is refined through SyGN iterations.
+:width: 65%
+:align: center
+:name: fig-SyGN-iters
+
+Figure 3. The template is refined in both intensity and shape through succesive SyGN iterations.
+The average image becomes progressively sharper as more accurate registrations are applied (rigid, similarity, affine, and non-linear).
+```
+
+:::{dropdown} Overcoming technical challenges
+:color: secondary
+
+Although SyGN is implemented in the [ANTs software](http://stnava.github.io/ANTs/), we faced several challenges in applying it to our microscopy images:  
+- **_Different formats and resolutions:_** SyGN was designed for MRI images, which come in a different file format and typically have lower resolution and smaller file sizes.  
+- **_Limited sample size:_** we only had 10 brains due to the difficulty of obtaining blackcap samples (they do not breed in captivity). Two of these had partial damage from sample preparation (see {ref}`Figure 2 <fig-input-brains>`).  
+
+To address these challenges, we developed a **_pre-processing pipeline_** to prepare the data for SyGN. Among other tasks, this pipeline: downsamples the images; rotates them to a standard orientation; converts them to an appropriate file format; masks out the background; removes damaged regions; splits the brains down the midline; and mirrors the two halves to produce symmetric images that guarantee the symmetry of the final template.
+We implemented this workflow in a Python package, [brainglobe-template-builder](https://github.com/brainglobe/brainglobe-template-builder), which we are working to generalise for broader use.  
+
+Running SyGN algorithm on images consisting of tens of million of voxels was computationally intensive. The non-linear registration steps alone required multiple hours per image, meaning a full run could take weeks. Fortunately, we had access to the **_High Performance Computing (HPC) cluster_** at SWC as well as an [enhanced version of SyGN](https://github.com/CoBrALab/optimized_antsMultivariateTemplateConstruction) developed by the [Computational Brain Anatomy Laboratory](https://www.cobralab.ca/) at McGill University. Crucially for us, their version includes the ability to **_parallelise the computation_** across multiple HPC nodes and to resume interrupted computations. By configuring this software for our cluster, we reduced the total computation time from weeks to just a few days.  
+
+:::
+
+The result was a high-contrast, artefact-free population template with sharp anatomical detail and clearly discernible structures—an ideal basis for annotation.  
+
+We shared the final template with our collaborators at the University of Oldenburg, experts in avian neuroanatomy. They manually delineated brain structures using the free software [ITK-SNAP](http://www.itksnap.org/pmwiki/pmwiki.php). Using anatomical landmarks and referencing 2D sections from the zebra finch atlas (a phylogenetically related species), 
+they annotated **_six principal brain compartments_**, subdivided into **_13 anatomical regions_**. Additionally, they also labelled **_five functionally defined areas involved in magnetoreception_**, based on prior studies.  
+
+```{figure} images/eurasian_blackcap_v1.2_every-3rd-slice.gif
+:alt: An animation going through coronal slices of the Eurasian blackcap brain atlas.
+:width: 65%
+:align: center
+:name: fig-blackcap-atlas-animation
+
+Figure 4. Annotated brain structures overlaid on one hemisphere of the average brain template.
+```
 
 ## More atlases to come!
 
