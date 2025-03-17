@@ -1,0 +1,795 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Uncharted brains: expanding beyond existing atlases &#8212; BrainGlobe</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=1227d6e8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/uncharted-brains';</script>
+    <link rel="canonical" href="https://brainglobe.info/blog/uncharted-brains.html" />
+    <link rel="icon" href="../_static/brainglobe.png"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />   
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/brainglobe.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/brainglobe.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BrainGlobe</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../community/index.html">
+    Community
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index.html">
+    Blog
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../projects/index.html">
+    Projects
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../blackcap.html">
+    <no title>
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://mastodon.online/@brainglobe" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/brainglobe.info" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://brainglobe.zulipchat.com" title="Zulip (Developer chat)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Zulip (Developer chat)</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://forum.image.sc/tag/brainglobe" title="image.sc (Help forum)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-question fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">image.sc (Help forum)</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../community/index.html">
+    Community
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index.html">
+    Blog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../projects/index.html">
+    Projects
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../blackcap.html">
+    <no title>
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://mastodon.online/@brainglobe" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/brainglobe.info" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://brainglobe.zulipchat.com" title="Zulip (Developer chat)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Zulip (Developer chat)</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://forum.image.sc/tag/brainglobe" title="image.sc (Help forum)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-question fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">image.sc (Help forum)</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Uncharted brains: expanding beyond existing atlases</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                   <section class="tex2jax_ignore mathjax_ignore" id="uncharted-brains-expanding-beyond-existing-atlases">
+<h1>Uncharted brains: expanding beyond existing atlases<a class="headerlink" href="#uncharted-brains-expanding-beyond-existing-atlases" title="Link to this heading">#</a></h1>
+<p>We’ve just released a <a class="reference internal" href="../projects/blackcap/index.html#target-blackcap"><span class="std std-ref">new digital 3D atlas for the Eurasian blackcap</span></a>.
+This marks a key shift for us: beyond providing a common interface for existing neuroanatomical atlases, we are now also building new ones.</p>
+<p>This post explains why we’re taking this step, how we’re approaching it, and what’s next.</p>
+<section id="atlases-are-essential-and-we-need-more-of-them">
+<h2>Atlases are essential, and we need more of them<a class="headerlink" href="#atlases-are-essential-and-we-need-more-of-them" title="Link to this heading">#</a></h2>
+<p>The rise of high-quality digital 3D brain atlases over the past decade has transformed neuroscience.
+BrainGlobe has both contributed to and benefited from this shift.
+At the core of our ecosystem is the <a class="reference internal" href="../documentation/brainglobe-atlasapi/index.html#target-brainglobe-atlasapi"><span class="std std-ref">BrainGlobe Atlas API</span></a>, a unified interface for accessing atlases across species, supporting most of our workflows.
+To paraphrase a <a class="reference external" href="https://en.wikipedia.org/wiki/Nothing_in_Biology_Makes_Sense_Except_in_the_Light_of_Evolution">famous quote</a>:</p>
+<blockquote>
+<div><p>Nothing in BrainGlobe makes sense except in the light of atlases.</p>
+</div></blockquote>
+<figure class="align-center" id="fig-bg-atlases">
+<a class="reference internal image-reference" href="../_images/atlases.png"><img alt="BrainGlobe Atlases" src="../_images/atlases.png" style="width: 65%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Figure 1. The BrainGlobe ecosystem provides a common interface for a wide range of neuroanatomical atlases across species.</span><a class="headerlink" href="#fig-bg-atlases" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Atlases help individual researchers plan experiments and interpret their results, but their biggest impact is on the field as a whole.
+By providing a common coordinate system and standardised terminology, they make data easier to share, compare, and integrate with other sources.</p>
+<p>While excellent atlases exist for common model organisms, such as the <a class="reference external" href="https://doi.org/10.1016/j.cell.2020.04.007">Allen Mouse Brain Atlas</a><a class="footnote-reference brackets" href="#allen-mouse" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> and the <a class="reference external" href="https://doi.org/10.7554/eLife.69988">Adult Zebrafish Brain Atlas</a><a class="footnote-reference brackets" href="#azba" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>, they are scarce for less popular species.
+Neuroscience is experiencing a welcome <a class="reference external" href="https://doi.org/10.53053/GMHL7976">non-model organism renaissance</a><a class="footnote-reference brackets" href="#non-model" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>, but the lack of atlases limits progress.
+Without a reliable brain map, it is difficult to apply modern neuroscience to emerging models.</p>
+<p>This challenge has driven our recent support for species like the <a class="reference internal" href="axolotl-atlas-added.html#axolotl-atlas-added"><span class="std std-ref">axolotl</span></a>, the <a class="reference internal" href="prairie-vole-atlas-added.html#prairie-vole-atlas-added"><span class="std std-ref">prairie vole</span></a> and the <a class="reference internal" href="cuttlefish-atlas-added.html#cuttlefish-atlas-added"><span class="std std-ref">dwarf cuttlefish</span></a>, with more on the way.
+However, for most species, atlases either do not exist or lack the resolution and digital precision required for modern brain mapping.</p>
+<p>To support neuroscience in uncharted brains, we need more high-quality atlases.
+But creating them is resource-intensive, requiring advanced imaging, computational power, and neuroanatomical expertise.
+Given our experience developing BrainGlobe and our access to these resources, we are well-positioned to contribute.
+The atlas for the Eurasian blackcap marks our first step in this new direction.</p>
+</section>
+<section id="why-start-with-the-blackcap">
+<h2>Why start with the blackcap?<a class="headerlink" href="#why-start-with-the-blackcap" title="Link to this heading">#</a></h2>
+<p>A mix of <strong><em>need</em></strong> and <strong><em>opportunity</em></strong> led us to this choice.</p>
+<p><strong><em>The need.</em></strong> Birds possess remarkable traits, one of the most intriguing being their ability to navigate using the Earth’s magnetic field.
+Migratory birds are key models for studying this phenomenon, yet we lack a high-quality brain atlas for them.
+Such an atlas is essential to uncover the neural correlates of magnetoreception and magnetic field-guided navigation.</p>
+<p><strong><em>The opportunity</em></strong> arose through <a class="reference external" href="https://sites.google.com/view/neuroweiler">Simon Weiler</a>, a postdoc at the <a class="reference external" href="https://www.sainsburywellcome.org/">Sainsbury Wellcome Centre (SWC)</a>, where the core BrainGlobe team is based.
+Simon collaborates with <a class="reference external" href="https://uol.de/en/ibu/animal-navigation">Henrik Mouritsen’s lab</a> at the <a class="reference external" href="https://uol.de/en">University of Oldenburg</a>, a group specialising in the magnetic senses of migratory birds.
+As part of this collaboration, Simon obtained whole-brain samples from Oldenburg and imaged them at SWC using its state-of-the-art <a class="reference external" href="https://swcmicroscopy.com/">serial-section two-photon platform</a>.</p>
+<p><strong><em>The results were outstanding</em></strong>—exceptionally high-resolution 3D images of whole brains, far surpassing what was available for most bird species. Recognising their value, Simon reached out to us about creating a blackcap brain atlas. This would not only help him analyse his data but also provide a valuable resource for the wider research community.</p>
+<figure class="align-center" id="fig-input-brains">
+<a class="reference internal image-reference" href="../_images/blackcap_10_brains.png"><img alt="Coronal slices from 10 Eurasian blackcap brains." src="../_images/blackcap_10_brains.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Figure 2. Coronal slices from 10 Eurasian blackcap brains, imaged using serial-section two-photon microscopy.</span><a class="headerlink" href="#fig-input-brains" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="how-we-built-the-blackcap-atlas">
+<h2>How we built the blackcap atlas<a class="headerlink" href="#how-we-built-the-blackcap-atlas" title="Link to this heading">#</a></h2>
+<p>In BrainGlobe, an atlas consists of at least two 3D images:</p>
+<ul class="simple">
+<li><p>A <strong><em>template (or reference image)</em></strong> that defines a standard coordinate system for brain anatomy and serves as a registration target.</p></li>
+<li><p>An <strong><em>annotation image</em></strong> that labels brain structures by assigning integer values to each voxel. This is paired with metadata that maps values to structure names and organises them into a structure hierarchy.</p></li>
+</ul>
+<p>Our first task was to create a high-quality template image. We could have simply chosen one of the 10 imaged brains (see <a class="reference internal" href="#fig-input-brains"><span class="std std-ref">Figure 2</span></a>), but a single brain may not be representative due to individual anatomical variations. Instead, we opted for a <strong><em>population template</em></strong>, which averages multiple brains to better capture anatomical variability.</p>
+<p>We used <strong><em>symmetric group-wise normalisation (SyGN)</em></strong>, an algorithm widely used in MRI research to generate unbiased, high-resolution templates for both human and animal brains<a class="footnote-reference brackets" href="#sygn" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>. SyGN starts with an initial template (e.g., one of the imaged brains) and iteratively refines it by aligning and averaging all input images. This approach minimises bias towards any particular brain, enhances signal-to-noise ratio, and preserves fine anatomical details without the blurring common in simple averaging methods (see <a class="reference internal" href="#fig-sygn-iters"><span class="std std-ref">Figure 3</span></a>).</p>
+<figure class="align-center" id="fig-sygn-iters">
+<a class="reference internal image-reference" href="../_images/template_building_progress_fps-4.gif"><img alt="The average template is refined through SyGN iterations." src="../_images/template_building_progress_fps-4.gif" style="width: 65%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Figure 3. The template is refined in both intensity and shape through successive SyGN iterations.
+The average image becomes progressively sharper as more accurate registrations are applied (rigid, similarity, affine, and non-linear).</span><a class="headerlink" href="#fig-sygn-iters" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-secondary sd-bg-text-secondary">
+<span class="sd-summary-text">Overcoming technical challenges</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Although SyGN is implemented in the <a class="reference external" href="http://stnava.github.io/ANTs/">ANTs software</a>, we faced several challenges in applying it to our microscopy images:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><strong><em>Different formats and resolutions:</em></strong> SyGN was designed for MRI images, which come in a different file format and typically have lower resolution and smaller file sizes.</p></li>
+<li><p class="sd-card-text"><strong><em>Limited sample size:</em></strong> we only had 10 brains due to the difficulty of obtaining blackcap samples (they do not breed in captivity). Two of these had partial damage from sample preparation (see <a class="reference internal" href="#fig-input-brains"><span class="std std-ref">Figure 2</span></a>).</p></li>
+</ul>
+<p class="sd-card-text">To address these challenges, we developed a <strong><em>pre-processing pipeline</em></strong> to prepare the data for SyGN. Among other tasks, this pipeline: downsamples the images; rotates them to a standard orientation; converts them to an appropriate file format; masks out the background; removes damaged regions; splits the brains down the midline; and mirrors the two halves to produce symmetric images that guarantee the symmetry of the final template.
+We implemented this workflow in a Python package, <a class="reference external" href="https://github.com/brainglobe/brainglobe-template-builder">brainglobe-template-builder</a>, which we are working to generalise for broader use.</p>
+<p class="sd-card-text">Running SyGN algorithm on images consisting of tens of million of voxels was computationally intensive. The non-linear registration steps alone required multiple hours per image, meaning a full run could take weeks. Fortunately, we had access to the <strong><em>High Performance Computing (HPC) cluster</em></strong> at SWC as well as an <a class="reference external" href="https://github.com/CoBrALab/optimized_antsMultivariateTemplateConstruction">enhanced version of SyGN</a> developed by the <a class="reference external" href="https://www.cobralab.ca/">Computational Brain Anatomy Laboratory</a> at McGill University. Crucially for us, their version includes the ability to <strong><em>parallelise the computation</em></strong> across multiple HPC nodes and to resume interrupted computations. By configuring this software for our cluster, we reduced the total computation time from weeks to just a few days.</p>
+</div>
+</details><p>The result was a high-contrast, artefact-free population template with sharp anatomical detail and clearly discernible structures—an ideal basis for annotation.</p>
+<p>We shared the final template with our collaborators at the University of Oldenburg, experts in avian neuroanatomy. They manually delineated brain structures using the free software <a class="reference external" href="http://www.itksnap.org/pmwiki/pmwiki.php">ITK-SNAP</a>. Relying on anatomical landmarks and referencing 2D sections from the zebra finch atlas (a phylogenetically related species),
+they annotated <strong><em>six principal brain compartments</em></strong>, further subdivided into <strong><em>13 anatomical regions</em></strong>. Additionally, they also labelled <strong><em>five functionally defined areas involved in magnetoreception</em></strong>, based on prior studies.</p>
+<figure class="align-center" id="fig-blackcap-atlas-animation">
+<a class="reference internal image-reference" href="../_images/eurasian_blackcap_v1.2_every-3rd-slice.gif"><img alt="An animation going through coronal slices of the Eurasian blackcap brain atlas." src="../_images/eurasian_blackcap_v1.2_every-3rd-slice.gif" style="width: 65%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Figure 4. Annotated brain structures overlaid on one hemisphere of the average brain template.</span><a class="headerlink" href="#fig-blackcap-atlas-animation" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Find more details on how we built the blackcap brain atlas in
+<a class="reference external" href="https://doi.org/10.1101/2025.03.04.641293">our preprint</a><a class="footnote-reference brackets" href="#preprint" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>.</p>
+</div>
+</section>
+<section id="more-atlases-to-come">
+<h2>More atlases to come!<a class="headerlink" href="#more-atlases-to-come" title="Link to this heading">#</a></h2>
+<p>We learnt a lot from creating the blackcap atlas, and we’re eager to apply these insights to future projects. We are already building several new atlases, while streamlining our workflow to make it more efficient and accessible. Some key improvements in progress:</p>
+<ul class="simple">
+<li><p><strong><em>Exploring data requirements for template-building</em></strong>. We adapted SyGN for serial-section two-photon microscopy, but we also aim to support additional 3D imaging techniques, such as light-sheet microscopy. Our goal is to develop a detailed guide on acquiring and quality-controlling images for template construction.</p></li>
+<li><p><strong><em>Improving <a class="reference external" href="https://github.com/brainglobe/brainglobe-template-builder">brainglobe-template-builder</a></em></strong>. We’re gradually making this Python package more modular, flexible, and user-friendly so others can use it to prepare their data for template building.</p></li>
+<li><p><strong><em>Further optimising SyGN for HPC clusters</em></strong>. We want to iterate faster and build templates at even higher resolutions, while also sharing these enhancements with the community.</p></li>
+<li><p><strong><em>A step-by-step guide for manual annotation</em></strong>. To help groups with anatomical expertise contribute to atlas building, we’re developing a guide on annotation best practices, supplemented with automated quality-control checks to ensure consistency.</p></li>
+</ul>
+<p>Our long-term goal is to scale up atlas creation and empower researchers to map uncharted brains. By expanding the BrainGlobe ecosystem with new atlases, we can help make neuroscience more accessible for emerging model organisms and ultimately accelerate discoveries in the field.</p>
+<p>If you are passionate about a species and want to contribute to mapping its brain, please <a class="reference internal" href="../contact.html"><span class="doc std std-doc">get in touch</span></a>. We’d love to hear from you!</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+</section>
+</section>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="allen-mouse" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Wang Q, Ding SL, Li Y, et al. The Allen Mouse Brain Common Coordinate Framework: A 3D Reference Atlas. Cell. 2020 May;181(4):936-953.e20. DOI: 10.1016/j.cell.2020.04.007. PMID: 32386544; PMCID: PMC8152789.</p>
+</aside>
+<aside class="footnote brackets" id="azba" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Kenney JW, Steadman PE, Young O, et al. A 3D adult zebrafish brain atlas (AZBA) for the digital age. Elife. 2021 Nov;10:e69988. DOI: 10.7554/elife.69988. PMID: 34806976; PMCID: PMC8639146.</p>
+</aside>
+<aside class="footnote brackets" id="non-model" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>McMurray C, Voyles Askham A, López Lloreda C, Montanari S. The non-model organism “renaissance” has arrived. The Transmitter. 2024. DOI: 10.53053/GMHL7976.</p>
+</aside>
+<aside class="footnote brackets" id="sygn" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>Avants BB, Yushkevich P, Pluta J, et al. The optimal template effect in hippocampus studies of diseased populations. Neuroimage. 2010 Feb;49(3):2457-2466. DOI: 10.1016/j.neuroimage.2009.09.062. PMID: 19818860; PMCID: PMC2818274.</p>
+</aside>
+<aside class="footnote brackets" id="preprint" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p>Sirmpilatze N, Felder A, Abdulazhanova D, et al. Mapping the magnetoreceptive brain: A 3D digital atlas of the migratory bird Eurasian blackcap (<i>Sylvia atricapilla</i>). bioRxiv; 2025. DOI: 10.1101/2025.03.04.641293.</p>
+</aside>
+</aside>
+
+<div class="section ablog__blog_comments">
+     
+<div class="section ablog__prev-next">
+  <span class="ablog__prev">
+     
+    <a href="cuttlefish-atlas-added.html">
+      
+      <i class="fa fa-arrow-circle-left"></i>
+      
+      <span>An Atlas for the dwarf cuttlefish, Sepia bandensis has been added to BrainGlobe</span>
+    </a>
+    
+  </span>
+  <span class="ablog__spacer">&nbsp;</span>
+  <span class="ablog__next">
+    
+  </span>
+</div>
+  
+</div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atlases-are-essential-and-we-need-more-of-them">Atlases are essential, and we need more of them</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-start-with-the-blackcap">Why start with the blackcap?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-we-built-the-blackcap-atlas">How we built the blackcap atlas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-atlases-to-come">More atlases to come!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p class="sphinx-version">
+Created using <a href="https://sphinx-doc.org/">Sphinx</a> 8.1.3.
+<br/>
+</p>
+<p class="theme-version">
+Built with the
+<a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
+0.16.1.
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><div class="things-in-a-row">
+</div></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
