@@ -1,3 +1,4 @@
+(target-brainglobe-atlasapi)=
 # BrainGlobe Atlas API (brainglobe-atlasapi)
 
 Many excellent brain atlases exist for different species. Some of them have an API (application programming interface)
