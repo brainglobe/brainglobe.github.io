@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: March 4, 2025
+date: March 17, 2025
 author: Niko Sirmpilatze
 location: London, England
 category: brainglobe
@@ -39,7 +39,7 @@ While excellent atlases exist for common model organisms, such as the [Allen Mou
 Neuroscience is experiencing a welcome [non-model organism renaissance](https://doi.org/10.53053/GMHL7976), but the lack of atlases limits progress.
 Without a reliable brain map, it is difficult to apply modern neuroscience to emerging models.
 
-This challenge has driven our recent support for species like the {ref}`axolotl <axolotl-atlas-added>` and the {ref}`prairie vole <prairie-vole-atlas-added>`, with more on the way.
+This challenge has driven our recent support for species like the {ref}`axolotl <axolotl-atlas-added>`, the {ref}`prairie vole <prairie-vole-atlas-added>` and the {ref}`dwarf cuttlefish <cuttlefish-atlas-added>`, with more on the way.
 However, for most species, atlases either do not exist or lack the resolution and digital precision required for modern brain mapping.
 
 To support neuroscience in uncharted brains, we need more high-quality atlases.
@@ -73,7 +73,7 @@ Figure 2. Coronal slices from 10 Eurasian blackcap brains, imaged using serial-s
 
 ## How we built the blackcap atlas
 
-TBD.
+
 
 ## More atlases to come!
 
