@@ -553,6 +553,12 @@ In no particular order:
 :link: https://github.com/msp99000
 :::
 
+:::{grid-item-card}  Abdul Samad
+:img-bottom: https://avatars.githubusercontent.com/u/94792103?v=4
+:link: https://github.com/samadpls
+:::
+
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
