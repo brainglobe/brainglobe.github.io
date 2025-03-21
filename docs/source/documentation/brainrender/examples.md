@@ -5,7 +5,7 @@ Below is a gallery of examples using `brainrender`.
 ## Example List
 
 [![Add Cells Example](images/add_cells_thumbnail.png "Generate and visualize random labeled cells in a brain region")](examples/add_cells.md)
-Add Cell 
+
 
 
 
