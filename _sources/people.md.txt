@@ -558,6 +558,10 @@ In no particular order:
 :link: https://github.com/samadpls
 :::
 
+:::{grid-item-card}  Prisha Sharma
+:img-bottom: https://avatars.githubusercontent.com/u/140067623?v=4
+:link: https://github.com/parharti
+:::
 
 ::::
 
