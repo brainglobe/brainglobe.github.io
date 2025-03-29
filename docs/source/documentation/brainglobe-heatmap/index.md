@@ -108,16 +108,23 @@ bgh.Heatmap(
         5000,
         5000,
     ),
-    orientation="horizontal",  # 'frontal' or 'sagittal', or 'horizontal' or a tuple (x,y,z)
-    title="horizontal view",
+    # 'frontal' or 'sagittal', or 'horizontal' or a tuple (x,y,z)
+    orientation="frontal",
+    title="frontal view",
     vmin=-5,
     vmax=3,
     cmap='Reds',
+    annotate_regions=True,
     format="2D",
 ).show()
 ```
 
-Here, `format` specifies if a 2D plot should be made (using `matplotlib`) or a 3D rendering instead (using `brainrender`). The `cmap` parameter specifies the colormap used and `vmin, vmax` the color range.
+* `vmin, vmax`: Define the minimum and maximum values for the cmap color range.
+* `cmap`: Specifies the colormap used for visualization, Standard matplotlib colormaps like 'Reds', 'Blues', 'viridis', or 'Purples' can be used. See more [here](https://matplotlib.org/stable/users/explain/colors/colormaps.html#sequential).
+* `annotate_regions`: Automatically annotates regions on the visualization. Can also annotate regions with custom text `{"VIS": "Visual Cortex"}` or only specified regions `["VIS", "HIP"]`.
+* `format`: Specifies if a 2D plot should be made (using `matplotlib`) or a 3D rendering instead (using `brainrender`).
+
+![](images/heatmap_2d.png)
 
 ### Regions coordinates
 
