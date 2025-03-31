@@ -563,6 +563,11 @@ In no particular order:
 :link: https://github.com/parharti
 :::
 
+:::{grid-item-card}  Anshu Saini
+:img-bottom: https://avatars.githubusercontent.com/u/132600558?v=4
+:link: https://github.com/0Anshu1
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
