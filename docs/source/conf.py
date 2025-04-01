@@ -10,16 +10,18 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
+import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+os.environ['PATH'] += os.pathsep + 'C:\Program Files\Pandoc'
 
 # -- Project information -----------------------------------------------------
 
 project = "BrainGlobe"
-copyright = "2023, BrainGlobe"
+copyright = "2025, BrainGlobe"
 author = "BrainGlobe contributors"
+
 
 # The full version, including alpha/beta/rc tags
 release = "0.0.1"
@@ -32,6 +34,7 @@ release = "0.0.1"
 # ones.
 extensions = [
     "ablog",
+    "sphinx_gallery.gen_gallery",
     "sphinx.ext.githubpages",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
@@ -46,6 +49,7 @@ extensions = [
     "nbsphinx",
     "notfound.extension",
     "sphinx_copybutton",
+
 ]
 
 # Configure the myst parser to enable cool markdown features
@@ -78,7 +82,11 @@ exclude_patterns = [
     # to ensure that include files (partial pages) aren't built, exclude them
     # https://github.com/sphinx-doc/sphinx/issues/1965#issuecomment-124732907
     "**/includes/**",
+    'documentation/brainrender/examples/auto_examples/*.codeobj.json',
+    'documentation/brainrender/examples/auto_examples/*.ipynb',
+    'documentation/brainrender/examples/auto_examples/*.zip',
 ]
+
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -184,7 +192,7 @@ notfound_context = {
 
 # needed for GH pages (vs readthedocs)
 notfound_urls_prefix = None
-
+nbsphinx_allow_errors = True
 
 linkcheck_ignore = [
     "https://neuromorpho.org/",
@@ -194,3 +202,7 @@ linkcheck_ignore = [
     "https://brainglobe.info",
     "https://doi.org/10.1162/imag_a_00209"
     ]
+sphinx_gallery_conf = {
+    'examples_dirs': 'documentation/brainrender/examples/examples_Python',  # Path to your example scripts
+    'gallery_dirs': 'documentation/brainrender/examples/auto_examples',  # Path to save generated gallery output
+}
