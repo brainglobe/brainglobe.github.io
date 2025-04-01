@@ -1,0 +1,74 @@
+{
+ "Path": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pathlib",
+   "module_short": "pathlib",
+   "name": "Path"
+  }
+ ],
+ "Points": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "brainrender.actors",
+   "module_short": "brainrender.actors",
+   "name": "Points"
+  }
+ ],
+ "Scene": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "brainrender",
+   "module_short": "brainrender",
+   "name": "Scene"
+  }
+ ],
+ "np.random.randint": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy.random",
+   "module_short": "numpy.random",
+   "name": "randint"
+  }
+ ],
+ "np.vstack": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "vstack"
+  }
+ ],
+ "orange": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "myterial",
+   "module_short": "myterial",
+   "name": "orange"
+  }
+ ],
+ "print": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rich",
+   "module_short": "rich",
+   "name": "print"
+  }
+ ],
+ "random.choices": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "random",
+   "module_short": "random",
+   "name": "choices"
+  }
+ ]
+}
