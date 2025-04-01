@@ -768,16 +768,24 @@ In <code class="docutils literal notranslate"><span class="pre">examples/plan.py
         <span class="mi">5000</span><span class="p">,</span>
         <span class="mi">5000</span><span class="p">,</span>
     <span class="p">),</span>
-    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">,</span>  <span class="c1"># &#39;frontal&#39; or &#39;sagittal&#39;, or &#39;horizontal&#39; or a tuple (x,y,z)</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;horizontal view&quot;</span><span class="p">,</span>
+    <span class="c1"># &#39;frontal&#39; or &#39;sagittal&#39;, or &#39;horizontal&#39; or a tuple (x,y,z)</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;frontal&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;frontal view&quot;</span><span class="p">,</span>
     <span class="n">vmin</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span>
     <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
     <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">,</span>
+    <span class="n">annotate_regions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;2D&quot;</span><span class="p">,</span>
 <span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Here, <code class="docutils literal notranslate"><span class="pre">format</span></code> specifies if a 2D plot should be made (using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>) or a 3D rendering instead (using <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>). The <code class="docutils literal notranslate"><span class="pre">cmap</span></code> parameter specifies the colormap used and <code class="docutils literal notranslate"><span class="pre">vmin,</span> <span class="pre">vmax</span></code> the color range.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vmin,</span> <span class="pre">vmax</span></code>: Define the minimum and maximum values for the cmap color range.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cmap</span></code>: Specifies the colormap used for visualization, Standard matplotlib colormaps like ‘Reds’, ‘Blues’, ‘viridis’, or ‘Purples’ can be used. See more <a class="reference external" href="https://matplotlib.org/stable/users/explain/colors/colormaps.html#sequential">here</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">annotate_regions</span></code>: Automatically annotates regions on the visualization. Can also annotate regions with custom text <code class="docutils literal notranslate"><span class="pre">{&quot;VIS&quot;:</span> <span class="pre">&quot;Visual</span> <span class="pre">Cortex&quot;}</span></code> or only specified regions <code class="docutils literal notranslate"><span class="pre">[&quot;VIS&quot;,</span> <span class="pre">&quot;HIP&quot;]</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">format</span></code>: Specifies if a 2D plot should be made (using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>) or a 3D rendering instead (using <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>).</p></li>
+</ul>
+<p><img alt="" src="../../_images/heatmap_2d.png" /></p>
 </section>
 <section id="regions-coordinates">
 <h3>Regions coordinates<a class="headerlink" href="#regions-coordinates" title="Link to this heading">#</a></h3>
