@@ -563,11 +563,6 @@ In no particular order:
 :link: https://github.com/parharti
 :::
 
-:::{grid-item-card}  Kirato Yoshihara
-:img-bottom: https://avatars.githubusercontent.com/u/36755839?v=4
-:link: https://github.com/kira1228
-:::
-
 :::{grid-item-card}  Farida Yusuf
 :img-bottom: https://avatars.githubusercontent.com/u/45299159?v=4
 :link: https://github.com/frdysf
