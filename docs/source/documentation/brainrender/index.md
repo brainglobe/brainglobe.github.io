@@ -38,6 +38,7 @@ Find more details [here](usage/using-notebooks.md).
 :maxdepth: 2
 installation
 usage/index
+examples
 ```
 
 
