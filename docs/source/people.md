@@ -578,6 +578,11 @@ In no particular order:
 :link: https://github.com/Menna1812
 :::
 
+:::{grid-item-card}  ayush2281
+:img-bottom: https://avatars.githubusercontent.com/u/134182912?v=4
+:link: https://github.com/ayush2281
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
