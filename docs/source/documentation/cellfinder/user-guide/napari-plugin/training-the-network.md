@@ -28,14 +28,12 @@ When training your network, you can either train the network from scratch (not r
 - If you are training a new network from scratch (i.e. **Continue training** is not selected), then you only need to select a **Model depth**.
 - If you are continuing training from a default, pretrained model, only **Pretrained model** needs to be chosen.
 - If you are continuing training from your own model, then only **Trained model** needs to be set.
-- If you are continuing training from your own model weights (i.e. not the full model, saved when **Save weights** is checked).
 
 #### Training
 
 - **Continue Training** - Continue training from an existing trained model. If no model or model weights are specified, this will continue from the included model.
 - **Augment** - Use data augmentation to synthetically increase the amount of training data
 - **Tensorboard** - Log to `output_directory/tensorboard`. Use `tensorboard --logdir outputdirectory/tensorboard` to view.
-- **Save weights** - Only store the model weights, and not the full model. Useful to save storage space.
 - **Save checkpoints** - Save the model after each training epoch. Each model file can be large, and if you don't have much training data, they can be generated quickly. Deselect if you are training for many epochs, and you are happy to wait for the chosen number of epochs to complete.
 - **Save progress** - Save training progress to a .csv file (`output_directory/training.csv`)
 - **Epochs** - How many times to use each sample for training. **Default: 100**
