@@ -716,7 +716,6 @@ See <a class="reference internal" href="../../../setting-up/gpu.html"><span clas
 <li><p>If you are training a new network from scratch (i.e. <strong>Continue training</strong> is not selected), then you only need to select a <strong>Model depth</strong>.</p></li>
 <li><p>If you are continuing training from a default, pretrained model, only <strong>Pretrained model</strong> needs to be chosen.</p></li>
 <li><p>If you are continuing training from your own model, then only <strong>Trained model</strong> needs to be set.</p></li>
-<li><p>If you are continuing training from your own model weights (i.e. not the full model, saved when <strong>Save weights</strong> is checked).</p></li>
 </ul>
 </section>
 <section id="training">
@@ -725,7 +724,6 @@ See <a class="reference internal" href="../../../setting-up/gpu.html"><span clas
 <li><p><strong>Continue Training</strong> - Continue training from an existing trained model. If no model or model weights are specified, this will continue from the included model.</p></li>
 <li><p><strong>Augment</strong> - Use data augmentation to synthetically increase the amount of training data</p></li>
 <li><p><strong>Tensorboard</strong> - Log to <code class="docutils literal notranslate"><span class="pre">output_directory/tensorboard</span></code>. Use <code class="docutils literal notranslate"><span class="pre">tensorboard</span> <span class="pre">--logdir</span> <span class="pre">outputdirectory/tensorboard</span></code> to view.</p></li>
-<li><p><strong>Save weights</strong> - Only store the model weights, and not the full model. Useful to save storage space.</p></li>
 <li><p><strong>Save checkpoints</strong> - Save the model after each training epoch. Each model file can be large, and if you don’t have much training data, they can be generated quickly. Deselect if you are training for many epochs, and you are happy to wait for the chosen number of epochs to complete.</p></li>
 <li><p><strong>Save progress</strong> - Save training progress to a .csv file (<code class="docutils literal notranslate"><span class="pre">output_directory/training.csv</span></code>)</p></li>
 <li><p><strong>Epochs</strong> - How many times to use each sample for training. <strong>Default: 100</strong></p></li>
