@@ -583,6 +583,11 @@ In no particular order:
 :link: https://github.com/ayush2281
 :::
 
+:::{grid-item-card}  BethCr
+:img-bottom: https://avatars.githubusercontent.com/u/175619938?v=4
+:link: https://github.com/BethCr
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
