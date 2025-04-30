@@ -588,6 +588,11 @@ In no particular order:
 :link: https://github.com/BethCr
 :::
 
+:::{grid-item-card}   Swapnaneel Patra
+:img-bottom: https://avatars.githubusercontent.com/u/53182793?v=4
+:link: https://github.com/thisisrick25
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
