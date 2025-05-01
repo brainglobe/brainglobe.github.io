@@ -593,6 +593,26 @@ In no particular order:
 :link: https://github.com/thisisrick25
 :::
 
+:::{grid-item-card}   Xiaoyu Deng
+:img-bottom: https://avatars.githubusercontent.com/u/179657121?v=4
+:link: https://github.com/X-Deng
+:::
+
+:::{grid-item-card}    DwarvesEatRocks
+:img-bottom: https://avatars.githubusercontent.com/u/159663737?v=4
+:link: https://github.com/DwarvesEatRocks
+:::
+
+:::{grid-item-card}    DPWebster
+:img-bottom: https://avatars.githubusercontent.com/u/185731034?v=4
+:link: https://github.com/DPWebster
+:::
+
+:::{grid-item-card}    Conrad
+:img-bottom: https://avatars.githubusercontent.com/u/26015206?v=4
+:link: https://github.com/conradRz
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
