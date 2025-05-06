@@ -1,7 +1,7 @@
 # brainglobe-atlasapi API
 
 ```{automodule} brainglobe_atlasapi
-:members:
+:members: BrainGlobeAtlas, show_atlases
 :undoc-members:
 :show-inheritance:
 ```
