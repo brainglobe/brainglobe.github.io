@@ -10,9 +10,14 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+sys.path.insert(0, os.path.abspath('../../external/brainglobe-atlasapi'))
+# sys.path.insert(0, os.path.abspath('../../external/brainglobe-space'))
+# sys.path.insert(0, os.path.abspath('../../external/brainglobe-utils'))
+# sys.path.insert(0, os.path.abspath('../../external/brainreg'))
+# sys.path.insert(0, os.path.abspath('../../external/cellfinder'))
+# # Add more as needed
 
 
 # -- Project information -----------------------------------------------------
@@ -32,6 +37,7 @@ release = "0.0.1"
 # ones.
 extensions = [
     "ablog",
+    "sphinx.ext.coverage",
     "sphinx.ext.githubpages",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
