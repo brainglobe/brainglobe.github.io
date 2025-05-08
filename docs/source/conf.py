@@ -10,14 +10,9 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os
-import sys
-sys.path.insert(0, os.path.abspath('../../external/brainglobe-atlasapi'))
-# sys.path.insert(0, os.path.abspath('../../external/brainglobe-space'))
-# sys.path.insert(0, os.path.abspath('../../external/brainglobe-utils'))
-# sys.path.insert(0, os.path.abspath('../../external/brainreg'))
-# sys.path.insert(0, os.path.abspath('../../external/cellfinder'))
-# # Add more as needed
+# import os
+# import sys
+# sys.path.insert(0, os.path.abspath('.'))
 
 
 # -- Project information -----------------------------------------------------
