@@ -616,11 +616,6 @@ In no particular order:
 :::{grid-item-card}    pranav33317
 :img-bottom: https://avatars.githubusercontent.com/u/113530194?v=4
 :link: https://github.com/pranav33317
-::: 
-
-:::{grid-item-card}    Biswanath Saha
-:img-bottom: https://avatars.githubusercontent.com/u/29883365?v=4
-:link: https://github.com/Elsword016
 :::
 
 ::::
