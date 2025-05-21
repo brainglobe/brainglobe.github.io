@@ -623,6 +623,16 @@ In no particular order:
 :link: https://github.com/Elsword016
 :::
 
+:::{grid-item-card}    Federico F.
+:img-bottom: https://avatars.githubusercontent.com/u/202606666?v=4
+:link: https://github.com/Fede2717 
+:::
+
+:::{grid-item-card}    Tim Monko
+:img-bottom: https://avatars.githubusercontent.com/u/47310455?v=4
+:link: https://github.com/TimMonko
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
