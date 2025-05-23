@@ -32,6 +32,7 @@ release = "0.0.1"
 # ones.
 extensions = [
     "ablog",
+    "sphinx.ext.coverage",
     "sphinx.ext.githubpages",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",

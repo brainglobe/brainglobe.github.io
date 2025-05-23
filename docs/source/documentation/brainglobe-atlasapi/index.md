@@ -65,6 +65,14 @@ usage/using-the-files-directly
 
 ```
 
+## brainglobe-atlasapi API
+
+```{toctree}
+:maxdepth: 2
+
+../../api/brainglobe_atlasapi
+```
+
 ## More details
 
 ```{toctree}
