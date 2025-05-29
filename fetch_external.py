@@ -7,18 +7,20 @@ import os
 import subprocess
 
 REPOS = [
-    ("https://github.com/brainglobe/brainglobe-atlasapi.git", "external/brainglobe-atlasapi"),
-    # ("https://github.com/brainglobe/brainglobe-space.git", "external/brainglobe-space"),
-    # ("https://github.com/brainglobe/brainglobe-utils.git", "external/brainglobe-utils"),
-    # ("https://github.com/brainglobe/brainreg.git", "external/brainreg"),
-    # ("https://github.com/brainglobe/cellfinder.git", "external/cellfinder"),
-    # Add more (url, path) pairs as needed
+    ("https://github.com/brainglobe/brainglobe-atlasapi.git", "downloads/brainglobe-atlasapi", "main"),
+    ("https://github.com/brainglobe/brainglobe-space.git", "downloads/brainglobe-space", "main"),
+    ("https://github.com/brainglobe/brainglobe-utils.git", "downloads/brainglobe-utils", "main"),
+    ("https://github.com/brainglobe/brainreg.git", "downloads/brainreg", "main"),
+    ("https://github.com/brainglobe/cellfinder.git", "downloads/cellfinder", "main"),
+    # Add more (url, path, branch) pairs as needed
 ]
 
-for url, path in REPOS:
+for url, path, branch in REPOS:
     if not os.path.exists(path):
-        subprocess.run(["git", "clone", url, path])
+        subprocess.run(["git", "clone", "--branch", branch, url, path], check=True)
     else:
-        subprocess.run(["git", "-C", path, "pull"])
+        subprocess.run(["git", "-C", path, "fetch"], check=True)
+        subprocess.run(["git", "-C", path, "checkout", branch], check=True)
+        subprocess.run(["git", "-C", path, "pull", "origin", branch], check=True)
         
     subprocess.run(["pip", "install", "-e", path])
