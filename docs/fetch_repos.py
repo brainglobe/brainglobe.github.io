@@ -28,4 +28,4 @@ for url, path, branch in REPOS:
         subprocess.run(["git", "-C", path, "checkout", branch], check=True)
         subprocess.run(["git", "-C", path, "pull", "origin", branch], check=True)
         
-    subprocess.run(["pip", "install", "-e", path])
+print("Repositories fetched successfully.")
