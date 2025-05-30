@@ -633,6 +633,17 @@ In no particular order:
 :link: https://github.com/TimMonko
 :::
 
+:::{grid-item-card}    Kaixiang Shuai
+:img-bottom: https://avatars.githubusercontent.com/u/108368488?v=4
+:link: https://github.com/Skxsmy
+:::
+
+:::{grid-item-card}    Giulia Paci
+:img-bottom: https://avatars.githubusercontent.com/u/33309117?v=4
+:link: https://github.com/giuliapaci
+:::
+
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
