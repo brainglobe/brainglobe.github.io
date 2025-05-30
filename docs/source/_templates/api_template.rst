@@ -1,7 +1,7 @@
 ..
     This file is auto-generated.
 
-.. _target-api:
+.. _package_label:
 
 API reference
 =============

@@ -1,6 +1,5 @@
 """Generate the API index page for every ``brainglobe`` package."""
 
-import os
 from pathlib import Path
 
 def path_to_module_name(py_file: Path, package_dir: Path, package_name: str) -> str:
@@ -23,20 +22,21 @@ def generate_api_index():
                 if py_file.name == "__init__.py":
                     continue
                 module_names.append(path_to_module_name(py_file, package_dir, package_name))
-            doctree = "\n    ".join(module_names)
+            modules_rst = "\n    ".join(module_names)
 
             # Read the template file
             with open(template_path, 'r') as template_file:
                 template_content = template_file.read()
             
+            # Replace the label with a unique one for each package
+            unique_label = f"target_api_{package_name}"
+            template_content = template_content.replace("package_label", unique_label)
+            
             # Write the API index file
             api_file_path = api_dir / f"{package_name}.rst"
             with open(api_file_path, 'w') as api_file:
-                api_file.write(template_content)
-                api_file.write(doctree)
-
-            
-
+                api_file.write(template_content+f"\n\n    ")
+                api_file.write(modules_rst)
 
 if __name__ == "__main__":
     generate_api_index()
