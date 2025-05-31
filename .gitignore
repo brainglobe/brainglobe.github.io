@@ -59,6 +59,7 @@ instance/
 # Sphinx documentation
 docs/build/
 docs/source/api/
+docs/source/documentation/**/api-reference.md
 
 # MkDocs documentation
 /site/
