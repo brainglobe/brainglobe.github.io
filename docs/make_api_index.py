@@ -1,6 +1,10 @@
 """Generate the API index page for every ``brainglobe`` package."""
 
+import os
 from pathlib import Path
+
+script_dir = Path(__file__).resolve().parent
+os.chdir(script_dir)
 
 def path_to_module_name(py_file: Path, package_dir: Path, package_name: str) -> str:
     rel_path = py_file.relative_to(package_dir)
@@ -8,10 +12,12 @@ def path_to_module_name(py_file: Path, package_dir: Path, package_name: str) -> 
     return f"{module_name}" if module_name else package_name
 
 def generate_api_index():
-    template_path = Path(__file__).resolve().parent / "source" / "_templates" / "api_template.rst"
-    downloads_dir = Path(__file__).resolve().parent.parent / "downloads"
-    api_dir = Path(__file__).resolve().parent / "source" / "api"
+    template_path = Path("source/_templates/api_template.rst")
+    downloads_dir = Path("../downloads")
+    api_dir = Path("source/api")
     api_dir.mkdir(parents=True, exist_ok=True)
+
+    excluded_folders = ["tests", "examples", "benchmarks"]
 
     for package_dir in downloads_dir.iterdir():
         if package_dir.is_dir():
@@ -20,6 +26,8 @@ def generate_api_index():
             module_names = []
             for py_file in package_dir.rglob("*.py"):
                 if py_file.name == "__init__.py":
+                    continue
+                if any(part in excluded_folders for part in py_file.parts):
                     continue
                 module_names.append(path_to_module_name(py_file, package_dir, package_name))
             modules_rst = "\n    ".join(module_names)
@@ -35,7 +43,7 @@ def generate_api_index():
             # Write the API index file
             api_file_path = api_dir / f"{package_name}.rst"
             with open(api_file_path, 'w') as api_file:
-                api_file.write(template_content+f"\n\n    ")
+                api_file.write(template_content + "\n\n    ")
                 api_file.write(modules_rst)
 
 if __name__ == "__main__":
