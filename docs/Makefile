@@ -42,19 +42,19 @@ clean:
 # Fetch repositories
 fetch_repos:
 	@echo "Fetching repositories..."
-	python fetch_repos.py
+	@python fetch_repos.py
 	@sleep $(TIMEOUT)
 
 # Generate the API index file
 make_api_index:
 	@echo "Generating API index..."
-	python make_api_index.py
+	@python make_api_index.py
 	@sleep $(TIMEOUT)
 
 # Generate the API toctrees
 generate_api_toctrees:
 	@echo "Generating API toctrees..."
-	python generate_api_toctrees.py
+	@python generate_api_toctrees.py
 	@sleep $(TIMEOUT)
 
 # Default target to build the documentation
