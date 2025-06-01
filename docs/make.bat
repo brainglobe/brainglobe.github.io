@@ -37,6 +37,8 @@ if "%1" == "clean" (
     for /R %SOURCEDIR%\documentation %%f in (api-reference.md) do (
         if exist "%%f" del "%%f" 
     )
+    echo Removing API Reference toctree sections...
+    python remove_api_toctrees.py
 ) else if "%1" == "help" (
     goto help
 ) else (
