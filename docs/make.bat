@@ -38,7 +38,7 @@ if "%1" == "clean" (
         rmdir /S /Q %SOURCEDIR%\api
         timeout /t 3 > NUL
     )
-    if exist ..\downloads (
+    if exist downloads (
         echo Removing downloads directory...
         rmdir /S /Q downloads
         timeout /t 3 > NUL
