@@ -33,4 +33,7 @@ for url, path, branch in REPOS:
         subprocess.run(["git", "-C", path, "pull", "origin", branch], check=True)
         print(f"Updated {path} to latest {branch} branch.")
 
+    # pip install
+    subprocess.run(["pip", "install", "-e", path], check=True)
+
 print("Repositories fetched successfully.")
