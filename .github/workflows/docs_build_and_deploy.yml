@@ -26,20 +26,13 @@ jobs:
     needs: linting
     name: Build Sphinx Docs
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Fetch and install external packages
-        run: python fetch_external.py
-
       - uses: neuroinformatics-unit/actions/build_sphinx_docs@v2
         with:
+          python-version: 3.12
           check-links: false
+          use-make: true
 
   deploy_sphinx_docs:
     name: Deploy Sphinx Docs
