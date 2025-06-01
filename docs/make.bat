@@ -31,17 +31,21 @@ if "%1" == "clean" (
     if exist %BUILDDIR% (
         echo Removing %BUILDDIR% directory...
         rmdir /S /Q %BUILDDIR%
+        timeout /t 3 > NUL
     )
     if exist %SOURCEDIR%\api (
         echo Removing %SOURCEDIR%\api directory...
         rmdir /S /Q %SOURCEDIR%\api
+        timeout /t 3 > NUL
     )
     if exist ..\downloads (
         echo Removing downloads directory...
         rmdir /S /Q ..\downloads
+        timeout /t 3 > NUL
     )
     echo Removing API Reference toctree sections...
     python remove_api_toctrees.py
+    timeout /t 3 > NUL
 ) else if "%1" == "help" (
     goto help
 ) else (
