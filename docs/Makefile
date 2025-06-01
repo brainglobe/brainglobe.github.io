@@ -9,7 +9,7 @@ SOURCEDIR     = source
 BUILDDIR      = build
 
 # Define a timeout value
-TIMEOUT       = 3
+TIMEOUT       = 2
 
 # Put it first so that "make" without argument is like "make help".
 help:
