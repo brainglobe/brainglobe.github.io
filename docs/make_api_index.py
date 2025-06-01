@@ -13,7 +13,7 @@ def path_to_module_name(py_file: Path, package_dir: Path, package_name: str) -> 
 
 def generate_api_index():
     template_path = Path("source/_templates/api_template.rst")
-    downloads_dir = Path("../downloads")
+    downloads_dir = Path("downloads")
     api_dir = Path("source/api")
     api_dir.mkdir(parents=True, exist_ok=True)
 
