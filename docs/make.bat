@@ -40,7 +40,7 @@ if "%1" == "clean" (
     )
     if exist ..\downloads (
         echo Removing downloads directory...
-        rmdir /S /Q ..\downloads
+        rmdir /S /Q downloads
         timeout /t 3 > NUL
     )
     echo Removing API Reference toctree sections...
