@@ -21,11 +21,16 @@ REPOS = [
 ]
 
 for url, path, branch in REPOS:
+    print(f"Processing repository: {url} -> {path} (branch: {branch})")
     if not os.path.exists(path):
+        print(f"Cloning into {path}...")
         subprocess.run(["git", "clone", "--branch", branch, url, path], check=True)
+        print(f"Cloned {url} into {path}.")
     else:
+        print(f"Fetching updates for {path}...")
         subprocess.run(["git", "-C", path, "fetch"], check=True)
         subprocess.run(["git", "-C", path, "checkout", branch], check=True)
         subprocess.run(["git", "-C", path, "pull", "origin", branch], check=True)
-        
+        print(f"Updated {path} to latest {branch} branch.")
+
 print("Repositories fetched successfully.")
