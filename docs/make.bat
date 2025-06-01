@@ -29,13 +29,16 @@ if "%1" == "" goto help
 if "%1" == "clean" (
     echo Removing auto-generated files...
     if exist %BUILDDIR% (
+        echo Removing %BUILDDIR% directory...
         rmdir /S /Q %BUILDDIR%
     )
     if exist %SOURCEDIR%\api (
+        echo Removing %SOURCEDIR%\api directory...
         rmdir /S /Q %SOURCEDIR%\api
     )
-    for /R %SOURCEDIR%\documentation %%f in (api-reference.md) do (
-        if exist "%%f" del "%%f" 
+    if exist ..\downloads (
+        echo Removing downloads directory...
+        rmdir /S /Q ..\downloads
     )
     echo Removing API Reference toctree sections...
     python remove_api_toctrees.py
@@ -43,6 +46,10 @@ if "%1" == "clean" (
     goto help
 ) else (
 	REM Build the documentation
+    echo Fetching repositories...
+    python fetch_repos.py
+    timeout /t 3 > NUL
+
     echo Generating API index...
     python make_api_index.py
     timeout /t 3 > NUL
