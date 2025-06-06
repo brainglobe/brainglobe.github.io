@@ -108,12 +108,6 @@ html_favicon = "_static/brainglobe.png"
 
 ## Cutomize the theme
 html_theme_options = {
-    "announcement": (
-        "Get some hands-on training with BrainGlobe and other open-source tools "
-        "for image processing at the Neuroinformatics Unit "
-        "<a href='https://neuroinformatics.dev/open-software-week/index.html'>Open Software Week</a> "
-        ", 11th-15th August 2025 in London! "
-    ),
     "icon_links": [
         {
             # Label for this link
