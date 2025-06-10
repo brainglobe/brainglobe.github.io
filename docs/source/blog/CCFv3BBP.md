@@ -13,7 +13,7 @@ language: English
 Building on this new data, a population-based average Nissl template was constructed from 86,901 coronal Nissl-stained slices, derived from 734 postnatal day 56 C57BL/6J mouse brains from the [AIBS in situ hybridization data portal](https://www.nature.com/articles/nature05453).
 
 
-![cuttlefish brain atlas annotations](./images/ccfv3a.png)
+![Lateral views of CCFv2, CCFv3, and CCFv3a annotations](./images/ccfv3a.png)
 **Figure 1: Different versions of the Common Coordinate Framework: CCFv2 and CCFv3 from the AIBS, as well as the extended and improved CCFv3a-BBP from the Blue Brain Project.**
 
 
