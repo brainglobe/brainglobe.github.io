@@ -276,6 +276,10 @@ For more details please see [the project page](/projects/blackcap/index).
 This atlas is only available at 25μm resolution:
 * `eurasian_blackcap_25um`
 
+## Invertebrate
+### [Kocher Bumblebee Brain Atlas](https://doi.org/10.1016/j.cub.2022.04.066)
+This is a confocal microscopy [atlas of the adult bumblebee](https://doi.org/10.1016/j.cub.2022.04.066), made by the Kocher lab.
 
-
+This atlas has anisotropic resolution (2.542μm in axial direction - along antero-posterior axis - and 1.2407μm in-plane) resolution
+* `kocher_bumblebee_2.542um`
 
