@@ -72,9 +72,9 @@ matrix (e.g., to reconstruct the full transformations sequence of a registration
 
 ```python
 target_space = bg.AnatomicalSpace("ipr", stack.shape)
-transformation_matrix = AnatomicalSpace.transformation_matrix_to(target_space)
+transformation_matrix = source_space.transformation_matrix_to(target_space)
 # equivalent to:
-transformation_matrix = AnatomicalSpace.transformation_matrix_to("ipr", stack.shape)
+transformation_matrix = source_space.transformation_matrix_to("ipr", stack.shape)
 ```
 
 The target get always be defined as a `bg.AnatomicalSpace` object, or a valid origin specification plus a shape 
@@ -99,7 +99,7 @@ with the correct padding/cropping simply by specifying a target offset:
 ```python
 source_space = bgs.AnatomicalSpace("asl", resolution=(2, 1, 2), offset=(1, 0, 0))
 target_space = bgs.AnatomicalSpace("asl", resolution=(1, 1, 1), shape=(5, 4, 2))  # we need a target shape
-source_space.transformation_matrix_to(target_space, stack, to_target_shape=True)
+source_space.transformation_matrix_to(target_space)
 ```
 
 ### Easy iteration over projections
