@@ -7,9 +7,8 @@ by [Adam Tyson](https://github.com/adamltyson), [Federico Claudi](https://github
 [Luigi Petrucco](https://github.com/vigji). 
 
 Development is now led by the [Neuroinformatics Unit](https://neuroinformatics.dev/) at the 
-[Sainsbury Wellcome Centre](https://www.sainsburywellcome.org/web/) by [Adam Tyson](https://github.com/adamltyson) and 
-[Alessandro Felder](https://github.com/alessandrofelder). The current active core development team can be 
-found [here](https://github.com/orgs/brainglobe/teams/active-devs).
+[Sainsbury Wellcome Centre](https://www.sainsburywellcome.org/web/) by [Adam Tyson](https://github.com/adamltyson), 
+[Alessandro Felder](https://github.com/alessandrofelder) and [Igor Tatarnikov](https://github.com/IgorTatarnikov).
 
 ## Contributors
 The BrainGlobe Initiative is a community effort and is only possible due to the hard work of many, many people. 
