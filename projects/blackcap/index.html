@@ -593,8 +593,8 @@ however it is briefly as follows:</p>
 <ol class="arabic simple">
 <li><p>Acquire high-resolution whole-brain images using the
 <a class="reference external" href="https://swcmicroscopy.com">Sainsbury Wellcome Centre serial section two-photon platform</a></p></li>
-<li><p>Crop images to generate individual hemisphere images without damage (we used 18 hemispheres from 10 birds)</p></li>
-<li><p>Iteratively generate a high signal-to-noise average template image from all the individual images using
+<li><p>Crop images to generate individual hemisphere images without damage (we used 15 hemispheres from 8 male birds)</p></li>
+<li><p>Iteratively generate a crisp average template image from all the individual images using
 <a class="reference external" href="http://stnava.github.io/ANTs/">ANTs</a> via an <a class="reference external" href="https://github.com/CoBrALab/optimized_antsMultivariateTemplateConstruction">optimised script</a>
 from the <a class="reference external" href="https://www.cobralab.ca/">CoBra lab</a></p></li>
 <li><p>Manually annotate brain regions using <a class="reference external" href="http://www.itksnap.org/pmwiki/pmwiki.php">ITK-SNAP</a></p></li>
@@ -612,7 +612,8 @@ improved to allow others to create their own atlases.</p>
 <section id="results">
 <h2>Results<a class="headerlink" href="#results" title="Link to this heading">#</a></h2>
 <p>We have initially generated a template reference image at 25 micron isotropic resolution and annotated 23 brain regions.
-This atlas is available within BrainGlobe as <code class="docutils literal notranslate"><span class="pre">eurasian_blackcap_25um</span></code> and is compatible with all BrainGlobe tools.</p>
+This atlas is available within BrainGlobe as <code class="docutils literal notranslate"><span class="pre">eurasian_blackcap_25um</span></code> and is compatible with all BrainGlobe tools.
+The raw data used to generate the template reference (downsampled to 25um) is also <a class="reference external" href="https://gin.g-node.org/BrainGlobe/blackcap_materials/src/master/raw_data_males_25um">available online</a>.</p>
 <p>To view BrainGlobe atlases in <a class="reference external" href="https://napari.org">napari</a>, please follow the
 <a class="reference internal" href="../../tutorials/visualise-atlas-napari.html"><span class="doc std std-doc">atlas visualisation tutorial</span></a>.</p>
 <p><img alt="Blackcap atlas viewed coronally" src="../../_images/animation.gif" />
