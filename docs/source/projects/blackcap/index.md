@@ -23,8 +23,8 @@ Full details of the atlas generation process are available in the [preprint](htt
 however it is briefly as follows:
 1. Acquire high-resolution whole-brain images using the
 [Sainsbury Wellcome Centre serial section two-photon platform](https://swcmicroscopy.com)
-2. Crop images to generate individual hemisphere images without damage (we used 18 hemispheres from 10 birds)
-3. Iteratively generate a high signal-to-noise average template image from all the individual images using 
+2. Crop images to generate individual hemisphere images without damage (we used 15 hemispheres from 8 male birds)
+3. Iteratively generate a crisp average template image from all the individual images using 
 [ANTs](http://stnava.github.io/ANTs/) via an [optimised script](https://github.com/CoBrALab/optimized_antsMultivariateTemplateConstruction) 
 from the [CoBra lab](https://www.cobralab.ca/)
 4. Manually annotate brain regions using [ITK-SNAP](http://www.itksnap.org/pmwiki/pmwiki.php)
@@ -42,7 +42,7 @@ improved to allow others to create their own atlases.
 ## Results
 We have initially generated a template reference image at 25 micron isotropic resolution and annotated 23 brain regions. 
 This atlas is available within BrainGlobe as `eurasian_blackcap_25um` and is compatible with all BrainGlobe tools.
-
+The raw data used to generate the template reference (downsampled to 25um) is also [available online](https://gin.g-node.org/BrainGlobe/blackcap_materials/src/master/raw_data_males_25um).
 
 To view BrainGlobe atlases in [napari](https://napari.org), please follow the 
 [atlas visualisation tutorial](/tutorials/visualise-atlas-napari). 
