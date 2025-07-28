@@ -12,6 +12,7 @@ language: English
 
 
 ![3D view of the bumble bee brain atlas](./images/bee_atlas_3d.png)
+
 **Figure 1: A three-dimensional view of the Kocher lab's bumblebee brain atlas visualised with `brainrender-napari`.**
 
 
