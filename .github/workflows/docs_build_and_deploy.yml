@@ -45,3 +45,4 @@ jobs:
       - uses: neuroinformatics-unit/actions/deploy_sphinx_docs@v2
         with:
           secret_input: ${{ secrets.GITHUB_TOKEN }}
+          use-make: true
