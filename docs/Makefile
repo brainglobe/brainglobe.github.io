@@ -25,6 +25,9 @@ clean:
 		rm -rf "$(BUILDDIR)"; \
 		sleep $(TIMEOUT); \
 	fi
+	@echo "Removing API Reference toctree sections..."
+	@python remove_api_toctrees.py
+	@sleep $(TIMEOUT)
 	@if [ -d "$(SOURCEDIR)/api" ]; then \
 		echo "Removing $(SOURCEDIR)/api directory..."; \
 		rm -rf "$(SOURCEDIR)/api"; \
@@ -35,9 +38,6 @@ clean:
 		rm -rf "downloads"; \
 		sleep $(TIMEOUT); \
 	fi
-	@echo "Removing API Reference toctree sections..."
-	@python remove_api_toctrees.py
-	@sleep $(TIMEOUT)
 
 # Fetch repositories
 fetch_repos:

@@ -35,6 +35,9 @@ if "%1" == "clean" (
         rmdir /S /Q %BUILDDIR%
         timeout /t %TIMEOUT% > NUL
     )
+    echo Removing API Reference toctree sections...
+    python remove_api_toctrees.py
+    timeout /t %TIMEOUT% > NUL
     if exist %SOURCEDIR%\api (
         echo Removing %SOURCEDIR%\api directory...
         rmdir /S /Q %SOURCEDIR%\api
@@ -45,9 +48,6 @@ if "%1" == "clean" (
         rmdir /S /Q downloads
         timeout /t %TIMEOUT% > NUL
     )
-    echo Removing API Reference toctree sections...
-    python remove_api_toctrees.py
-    timeout /t %TIMEOUT% > NUL
 ) else if "%1" == "help" (
     goto help
 ) else (
