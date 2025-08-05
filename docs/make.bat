@@ -50,7 +50,7 @@ if "%1" == "clean" (
     )
 ) else if "%1" == "help" (
     goto help
-) else (
+) else if "%1" == "html" (
 	REM Build the documentation
     echo Fetching repositories...
     python fetch_repos.py
@@ -64,6 +64,8 @@ if "%1" == "clean" (
 	python generate_api_toctrees.py
     timeout /t %TIMEOUT% > NUL
 
+    %SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
+) else (
     %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 )
 
