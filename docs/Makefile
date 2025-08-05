@@ -58,10 +58,10 @@ generate_api_toctrees:
 	@sleep $(TIMEOUT)
 
 # Default target to build the documentation
-all: fetch_repos make_api_index generate_api_toctrees
+html: fetch_repos make_api_index generate_api_toctrees
 	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: all
+%: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
