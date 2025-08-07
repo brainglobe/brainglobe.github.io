@@ -703,17 +703,17 @@ between spaces.</p>
 </pre></div>
 </div>
 <p>A stack can be then easily transformed from the source to the target space:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">brainglobe_space</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">bg</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">brainglobe_space</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">bgs</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">stack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 
-<span class="n">mapped_stack</span> <span class="o">=</span> <span class="n">bg</span><span class="o">.</span><span class="n">map_stack_to</span><span class="p">(</span><span class="n">source_origin</span><span class="p">,</span> <span class="n">target_origin</span><span class="p">,</span> <span class="n">stack</span><span class="p">)</span>
+<span class="n">mapped_stack</span> <span class="o">=</span> <span class="n">bgs</span><span class="o">.</span><span class="n">map_stack_to</span><span class="p">(</span><span class="n">source_origin</span><span class="p">,</span> <span class="n">target_origin</span><span class="p">,</span> <span class="n">stack</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The transformation is handled only with numpy index operations; i.e., no complex image affine transformations are
 applied. This is often useful as the preparatory step for starting any kind of image registration.</p>
 <p>A shortened syntax can be used to define a space using initials of the origin directions:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mapped_stack</span> <span class="o">=</span> <span class="n">bg</span><span class="o">.</span><span class="n">map_stack_to</span><span class="p">(</span><span class="s2">&quot;lsa&quot;</span><span class="p">,</span> <span class="s2">&quot;ipr&quot;</span><span class="p">,</span> <span class="n">stack</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mapped_stack</span> <span class="o">=</span> <span class="n">bgs</span><span class="o">.</span><span class="n">map_stack_to</span><span class="p">(</span><span class="s2">&quot;lsa&quot;</span><span class="p">,</span> <span class="s2">&quot;ipr&quot;</span><span class="p">,</span> <span class="n">stack</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -731,7 +731,7 @@ change of the origin offset.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">stack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>  <span class="c1"># a stack in source space</span>
 <span class="n">annotations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>  <span class="c1"># related point annotations</span>
 
-<span class="n">source_space</span> <span class="o">=</span> <span class="n">bg</span><span class="o">.</span><span class="n">AnatomicalSpace</span><span class="p">(</span><span class="n">source_origin</span><span class="p">,</span> <span class="n">stack</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">source_space</span> <span class="o">=</span> <span class="n">bgs</span><span class="o">.</span><span class="n">AnatomicalSpace</span><span class="p">(</span><span class="n">source_origin</span><span class="p">,</span> <span class="n">stack</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
 <span class="n">mapped_stack</span> <span class="o">=</span> <span class="n">source_space</span><span class="o">.</span><span class="n">map_stack_to</span><span class="p">(</span><span class="s2">&quot;ipr&quot;</span><span class="p">,</span> <span class="n">stack</span><span class="p">)</span>  <span class="c1"># transform the stack</span>
 <span class="n">mapped_annotations</span> <span class="o">=</span> <span class="n">source_space</span><span class="o">.</span><span class="n">map_points_to</span><span class="p">(</span><span class="s2">&quot;ipr&quot;</span><span class="p">,</span> <span class="n">annotations</span><span class="p">)</span>  <span class="c1"># transform the points</span>
@@ -739,13 +739,13 @@ change of the origin offset.</p>
 </div>
 <p>The points are transformed through the generation of a transformation matrix. Finally, if we want to log this
 matrix (e.g., to reconstruct the full transformations sequence of a registration), we can get it:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">target_space</span> <span class="o">=</span> <span class="n">bg</span><span class="o">.</span><span class="n">AnatomicalSpace</span><span class="p">(</span><span class="s2">&quot;ipr&quot;</span><span class="p">,</span> <span class="n">stack</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">target_space</span> <span class="o">=</span> <span class="n">bgs</span><span class="o">.</span><span class="n">AnatomicalSpace</span><span class="p">(</span><span class="s2">&quot;ipr&quot;</span><span class="p">,</span> <span class="n">stack</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">transformation_matrix</span> <span class="o">=</span> <span class="n">source_space</span><span class="o">.</span><span class="n">transformation_matrix_to</span><span class="p">(</span><span class="n">target_space</span><span class="p">)</span>
 <span class="c1"># equivalent to:</span>
 <span class="n">transformation_matrix</span> <span class="o">=</span> <span class="n">source_space</span><span class="o">.</span><span class="n">transformation_matrix_to</span><span class="p">(</span><span class="s2">&quot;ipr&quot;</span><span class="p">,</span> <span class="n">stack</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The target get always be defined as a <code class="docutils literal notranslate"><span class="pre">bg.AnatomicalSpace</span></code> object, or a valid origin specification plus a shape
+<p>The target get always be defined as a <code class="docutils literal notranslate"><span class="pre">bgs.AnatomicalSpace</span></code> object, or a valid origin specification plus a shape
 (the shape is required only if axes flips are required).</p>
 </section>
 <section id="matching-space-resolutions-and-offsets">
@@ -771,7 +771,7 @@ with the correct padding/cropping simply by specifying a target offset:</p>
 <h3>Easy iteration over projections<a class="headerlink" href="#easy-iteration-over-projections" title="Link to this heading">#</a></h3>
 <p>Finally, another convenient feature of brainglobe-space is the possibility of iterating easily through the projections of
 the stack and generate section names and axes labels:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sc</span> <span class="o">=</span> <span class="n">bg</span><span class="o">.</span><span class="n">AnatomicalSpace</span><span class="p">(</span><span class="s2">&quot;asl&quot;</span><span class="p">)</span>  <span class="c1"># origin for the stack to be plotted</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sc</span> <span class="o">=</span> <span class="n">bgs</span><span class="o">.</span><span class="n">AnatomicalSpace</span><span class="p">(</span><span class="s2">&quot;asl&quot;</span><span class="p">)</span>  <span class="c1"># origin for the stack to be plotted</span>
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">plane</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">sections</span><span class="p">,</span> <span class="n">sc</span><span class="o">.</span><span class="n">axis_labels</span><span class="p">)):</span>
     <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">stack</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
