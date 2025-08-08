@@ -6,17 +6,12 @@ from pathlib import Path
 script_dir = Path(__file__).resolve().parent
 os.chdir(script_dir)
 
-# Paths to the API and documentation directories
-api_dir = Path("source/api")
+# Path to the documentation directory
 doc_dir = Path("source/documentation")
 
-print(f"Contents of api_dir: {list(api_dir.glob('*'))}")  # Debugging line
-
-# For each API .rst file, find the corresponding documentation subdir and update its index.md
-for api_file in api_dir.glob("*.rst"):
-    tool_name = api_file.stem  # e.g., 'brainglobe_atlasapi'
-    # e.g., 'brainglobe-atlasapi'
-    tool_doc_dir = doc_dir / tool_name.replace("_", "-")
+# For each api.rst file, find the corresponding documentation subdir and update its index.md
+for api_file in doc_dir.glob("*/api.rst"):
+    tool_doc_dir = api_file.parent
 
     # Update the subdirectory's index.md to include the API Reference toctree with heading
     index_md = tool_doc_dir / "index.md"
@@ -26,10 +21,10 @@ for api_file in api_dir.glob("*.rst"):
             "\n\n## API Reference\n\n"
             "```{toctree}\n"
             ":maxdepth: 1\n"
-            f"../../api/{tool_name}\n"
+            "api\n"
             "```\n"
         )
-        if f"../../api/{tool_name}" not in index_content:
+        if "## API Reference" not in index_content:
             # Add the API Reference toctree section at the end
             index_content += api_section
             index_md.write_text(index_content, encoding="utf-8")
