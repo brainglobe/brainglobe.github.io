@@ -14,14 +14,17 @@ def path_to_module_name(py_file: Path, package_dir: Path, package_name: str) -> 
 def generate_api_index():
     template_path = Path("source/_templates/api_template.rst")
     downloads_dir = Path("downloads")
-    api_dir = Path("source/api")
-    api_dir.mkdir(parents=True, exist_ok=True)
+    doc_dir = Path("source/documentation")
 
     excluded_folders = ["tests", "examples", "benchmarks"]
 
     for package_dir in downloads_dir.iterdir():
         if package_dir.is_dir():
-            package_name = package_dir.name.replace("-", "_")
+            package_name = package_dir.name
+
+            # Define the output directory for the package's API file
+            api_output_dir = doc_dir / package_name
+
             # Find all modules in the package
             module_names = []
             for py_file in package_dir.rglob("*.py"):
@@ -41,7 +44,7 @@ def generate_api_index():
             template_content = template_content.replace("package_label", unique_label)
             
             # Write the API index file
-            api_file_path = api_dir / f"{package_name}.rst"
+            api_file_path = api_output_dir / "api.rst"
             with open(api_file_path, 'w') as api_file:
                 api_file.write(template_content + "\n\n    ")
                 api_file.write(modules_rst)
