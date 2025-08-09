@@ -18,6 +18,7 @@ def generate_api_index():
 
     excluded_folders = ["tests", "examples", "benchmarks"]
 
+    # Iterate over all packages in the downloads directory
     for package_dir in downloads_dir.iterdir():
         if package_dir.is_dir():
             package_name = package_dir.name
@@ -32,7 +33,9 @@ def generate_api_index():
                     continue
                 if any(part in excluded_folders for part in py_file.parts):
                     continue
+                # Convert the file path to a module name and add it to the list
                 module_names.append(path_to_module_name(py_file, package_dir, package_name))
+            # Join the module names into a single string
             modules_rst = "\n    ".join(module_names)
 
             # Read the template file
