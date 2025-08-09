@@ -3,14 +3,19 @@
 import os
 from pathlib import Path
 
+print("Starting to generate API toctree sections...")
+
 script_dir = Path(__file__).resolve().parent
 os.chdir(script_dir)
 
 # Path to the documentation directory
 doc_dir = Path("source/documentation")
 
+api_files = list(doc_dir.glob("*/api.rst"))
+print(f"Found {len(api_files)} api.rst files to process.")
+
 # For each api.rst file, find the corresponding documentation subdir and update its index.md
-for api_file in doc_dir.glob("*/api.rst"):
+for api_file in api_files:
     # Get the parent directory of the api.rst file (e.g., source/documentation/brainglobe-atlasapi)
     tool_doc_dir = api_file.parent
 
@@ -37,4 +42,4 @@ for api_file in doc_dir.glob("*/api.rst"):
     else:
         print(f"{index_md} does not exist, skipping update.")
 
-print("API Reference toctree sections added successfully.")
+print("Finished generating API toctree sections.")

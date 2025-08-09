@@ -9,6 +9,8 @@ If they do exist, it pulls the latest changes from the remote repository.
 import os
 import subprocess
 
+print("Starting to fetch repositories...")
+
 # This list explicitly includes repositories whose docstrings have been vetted
 # for public consumption in the API documentation.
 # Format: (repository_url, local_download_path, branch)
@@ -26,6 +28,8 @@ REPOS = [
     # Add more (url, path, branch) pairs as needed
 ]
 
+print(f"Found {len(REPOS)} repositories to process.")
+
 for url, path, branch in REPOS:
     print(f"Processing repository: {url} -> {path} (branch: {branch})")
     # If the repository does not exist locally, clone it
@@ -42,6 +46,8 @@ for url, path, branch in REPOS:
         print(f"Updated {path} to latest {branch} branch.")
 
     # Install the repository in editable mode
+    print(f"Installing {path} in editable mode...")
     subprocess.run(["pip", "install", "-e", path], check=True)
+    print(f"Successfully installed {path}.")
 
-print("Repositories fetched successfully.")
+print("All repositories fetched and installed successfully.")
