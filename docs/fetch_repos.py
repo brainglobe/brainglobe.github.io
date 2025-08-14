@@ -16,15 +16,6 @@ print("Starting to fetch repositories...")
 # Format: (repository_url, local_download_path, branch)
 REPOS = [
     ("https://github.com/brainglobe/brainglobe-atlasapi.git", "downloads/brainglobe-atlasapi", "main"),
-    ("https://github.com/brainglobe/brainglobe-space.git", "downloads/brainglobe-space", "main"),
-    ("https://github.com/brainglobe/brainglobe-utils.git", "downloads/brainglobe-utils", "main"),
-    ("https://github.com/brainglobe/brainreg.git", "downloads/brainreg", "main"),
-    ("https://github.com/brainglobe/brainglobe-segmentation.git", "downloads/brainglobe-segmentation", "main"),
-    ("https://github.com/brainglobe/brainglobe-workflows.git", "downloads/brainglobe-workflows", "main"),
-    ("https://github.com/brainglobe/brainrender.git", "downloads/brainrender", "main"),
-    ("https://github.com/brainglobe/brainglobe-heatmap.git", "downloads/brainglobe-heatmap", "main"),
-    ("https://github.com/brainglobe/cellfinder.git", "downloads/cellfinder", "main"),
-    ("https://github.com/brainglobe/morphapi.git", "downloads/morphapi", "main"),
     # Add more (url, path, branch) pairs as needed
 ]
 
