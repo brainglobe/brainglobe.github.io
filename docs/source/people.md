@@ -7,9 +7,8 @@ by [Adam Tyson](https://github.com/adamltyson), [Federico Claudi](https://github
 [Luigi Petrucco](https://github.com/vigji). 
 
 Development is now led by the [Neuroinformatics Unit](https://neuroinformatics.dev/) at the 
-[Sainsbury Wellcome Centre](https://www.sainsburywellcome.org/web/) by [Adam Tyson](https://github.com/adamltyson) and 
-[Alessandro Felder](https://github.com/alessandrofelder). The current active core development team can be 
-found [here](https://github.com/orgs/brainglobe/teams/active-devs).
+[Sainsbury Wellcome Centre](https://www.sainsburywellcome.org/web/) by [Adam Tyson](https://github.com/adamltyson), 
+[Alessandro Felder](https://github.com/alessandrofelder) and [Igor Tatarnikov](https://github.com/IgorTatarnikov).
 
 ## Contributors
 The BrainGlobe Initiative is a community effort and is only possible due to the hard work of many, many people. 
@@ -616,7 +615,33 @@ In no particular order:
 :::{grid-item-card}    pranav33317
 :img-bottom: https://avatars.githubusercontent.com/u/113530194?v=4
 :link: https://github.com/pranav33317
-::: 
+:::
+
+:::{grid-item-card}    Biswanath Saha
+:img-bottom: https://avatars.githubusercontent.com/u/29883365?v=4
+:link: https://github.com/Elsword016
+:::
+
+:::{grid-item-card}    Federico F.
+:img-bottom: https://avatars.githubusercontent.com/u/202606666?v=4
+:link: https://github.com/Fede2717 
+:::
+
+:::{grid-item-card}    Tim Monko
+:img-bottom: https://avatars.githubusercontent.com/u/47310455?v=4
+:link: https://github.com/TimMonko
+:::
+
+:::{grid-item-card}    Kaixiang Shuai
+:img-bottom: https://avatars.githubusercontent.com/u/108368488?v=4
+:link: https://github.com/Skxsmy
+:::
+
+:::{grid-item-card}    Giulia Paci
+:img-bottom: https://avatars.githubusercontent.com/u/33309117?v=4
+:link: https://github.com/giuliapaci
+:::
+
 
 ::::
 
