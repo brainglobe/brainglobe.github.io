@@ -19,7 +19,7 @@ and upload them. This process will be run every time a new atlas is added or an 
 generated in a separate script, so if you want to contribute with a new atlas:
 
 * Fork [github.com/brainglobe/brainglobe-atlasapi](https://github.com/brainglobe/brainglobe-atlasapi)
-* Create an atlas generation script in the `atlas_generation/atlas_scripts` directory (see below)
+* Create an atlas generation script in the `atlas_scripts` directory (see below)
 * Submit a pull request back to the original repository.
 
 If you are new to GitHub, or you have any questions about writing your script, feel free to reach out via a
