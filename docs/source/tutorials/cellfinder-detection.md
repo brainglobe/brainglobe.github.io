@@ -25,9 +25,9 @@ On Silicon Macs you may have to run `conda install hdf5` on the command line (in
 :::
 
 3. Open the cell detection widget by selecting `Plugins > cellfinder > Cell detection` in the napari menu bar near the top left of the window.
-   ![cellfinder detection widget](./images/cellfinder-napari/cellfinder-napari-detection.png)
+   ![cellfinder detection widget](./images/cellfinder-napari/cellfinder-detection-1.png)
 
-**The cell detection widget appears on the right-hand side of the window.**
+   **The cell detection widget appears on the right-hand side of the window.**
 
 4. Load some sample data `File > Open sample > Sample data (cellfinder)`. This will open a small two-channel 3D image.
 5. Set the `signal image` to `Signal`
@@ -35,8 +35,9 @@ On Silicon Macs you may have to run `conda install hdf5` on the command line (in
 7. Ensure that `Voxel size (z)` is set to `5.00`, `Voxel size (y)` is set to `2.00`, and `Voxel size (x)` is set to `2.00`.
 8. Click `Run` (you may need to scroll down)
 
-![Detected cells](./images/cellfinder-napari/cellfinder-napari-detected-cells.png)
-**Detected cells are highlighted by yellow circles.**
+   ![Detected cells](./images/cellfinder-napari/cellfinder-detected-cells-2.png)
+   
+   **Detected cells are highlighted by yellow circles.**
 
 9. Ensure that the `Detected` layer is highlighted
 8. Save the detected cells by clicking `File > Save selected layer(s)`, choosing a directory and a filename ending 
