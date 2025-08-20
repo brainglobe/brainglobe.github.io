@@ -13,16 +13,16 @@ You will need `napari` installed on your computer - please follow [`napari`'s in
 1. Open `napari`.
 2. Install `brainreg` by selecting `Plugins > Install/Uninstall plugins` and searching for `brainreg` in the searchbox. Then click on the `Install` button.
 3. Open the `brainreg` widget by selecting `Plugins > Atlas registration (brainreg)` in the napari menu bar near the top left of the window.
-![brainreg widget](./images/brainreg-napari/plugin-menu-brainreg-napari.png)
+    ![brainreg widget](./images/brainreg-napari/plugin-menu-brainreg-1.png)
 
-**The brainreg widget appears on the right-hand side of the window.**
+    **The brainreg widget appears on the right-hand side of the window.**
 
-4. Open the sample image by selecting `File > Open Sample > Low resolution brain (brainreg-napari)`. 
+4. Open the sample image by selecting `File > Open Sample > Low resolution brain (brainreg)`. 
 5. Make the image easier to see by adjusting the `contrast limits` in the top left section of the napari window. Moving
 the right-hand slider to the left will make the image appear brighter. 
-![loaded image](./images/brainreg-napari/image-loaded-brainreg-napari.png)
+    ![loaded image](./images/brainreg-napari/image-loaded-brainreg-2.png)
 
-**A whole mouse brain image loaded into napari.**
+    **A whole mouse brain image loaded into napari.**
 
 
 6. In the plugin widget, set all the necessary parameters:
@@ -40,9 +40,9 @@ the right-hand slider to the left will make the image appear brighter.
 registration results. These can be explored by zooming in/out, scrolling through the 3D data and adjusting the 
 visibility and contrast of the loaded data. 
 
-![loaded image](./images/brainreg-napari/results-brainreg-napari.png)
+    ![loaded image](./images/brainreg-napari/results-brainreg-3.png)
 
-**Registration results overlaid onto raw data.**
+    **Registration results overlaid onto raw data.**
 
 9. At this point, registration is complete. A number of 
 [files are created in the output directory](../documentation/brainreg/user-guide/output-files.md) that can be used for 
