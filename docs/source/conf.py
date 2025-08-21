@@ -43,7 +43,6 @@ extensions = [
     "sphinx_togglebutton",
     "sphinx_sitemap",
     "myst_parser",
-    "numpydoc",
     "nbsphinx",
     "notfound.extension",
     "sphinx_copybutton",
