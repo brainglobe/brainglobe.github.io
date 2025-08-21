@@ -19,7 +19,7 @@ def generate_api_index():
     downloads_dir = Path("downloads")
     doc_dir = Path("source/documentation")
 
-    excluded_folders = ["tests", "examples", "benchmarks"]
+    excluded_folders = ["tests", "examples", "benchmarks", "atlas_scripts"]
 
     packages = [p for p in downloads_dir.iterdir() if p.is_dir()]
     print(f"Found {len(packages)} packages to process.")
