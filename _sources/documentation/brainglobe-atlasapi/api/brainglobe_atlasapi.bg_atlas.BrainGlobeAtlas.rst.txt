@@ -1,0 +1,203 @@
+BrainGlobeAtlas
+===============
+
+.. currentmodule:: brainglobe_atlasapi.bg_atlas
+
+.. autoclass:: BrainGlobeAtlas
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~BrainGlobeAtlas.check_latest_version
+   
+   
+      ~BrainGlobeAtlas.download_extract_file
+   
+   
+      ~BrainGlobeAtlas.get_structure_ancestors
+   
+   
+      ~BrainGlobeAtlas.get_structure_descendants
+   
+   
+      ~BrainGlobeAtlas.get_structure_mask
+   
+   
+      ~BrainGlobeAtlas.hemisphere_from_coords
+   
+   
+      ~BrainGlobeAtlas.mesh_from_structure
+   
+   
+      ~BrainGlobeAtlas.meshfile_from_structure
+   
+   
+      ~BrainGlobeAtlas.root_mesh
+   
+   
+      ~BrainGlobeAtlas.root_meshfile
+   
+   
+      ~BrainGlobeAtlas.structure_from_coords
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~BrainGlobeAtlas.annotation
+   
+   
+      ~BrainGlobeAtlas.atlas_name
+   
+   
+      ~BrainGlobeAtlas.hemispheres
+   
+   
+      ~BrainGlobeAtlas.hierarchy
+   
+   
+      ~BrainGlobeAtlas.left_hemisphere_value
+   
+   
+      ~BrainGlobeAtlas.local_full_name
+   
+   
+      ~BrainGlobeAtlas.local_version
+   
+   
+      ~BrainGlobeAtlas.lookup_df
+   
+   
+      ~BrainGlobeAtlas.orientation
+   
+   
+      ~BrainGlobeAtlas.reference
+   
+   
+      ~BrainGlobeAtlas.remote_url
+   
+   
+      ~BrainGlobeAtlas.remote_version
+   
+   
+      ~BrainGlobeAtlas.resolution
+   
+   
+      ~BrainGlobeAtlas.right_hemisphere_value
+   
+   
+      ~BrainGlobeAtlas.shape
+   
+   
+      ~BrainGlobeAtlas.shape_um
+   
+   
+   

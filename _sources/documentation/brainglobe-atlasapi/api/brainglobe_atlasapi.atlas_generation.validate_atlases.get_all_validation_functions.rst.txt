@@ -1,0 +1,6 @@
+get\_all\_validation\_functions
+===============================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.validate_atlases
+
+.. autofunction:: get_all_validation_functions

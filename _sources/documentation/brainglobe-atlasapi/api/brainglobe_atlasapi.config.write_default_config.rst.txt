@@ -1,0 +1,6 @@
+write\_default\_config
+======================
+
+.. currentmodule:: brainglobe_atlasapi.config
+
+.. autofunction:: write_default_config

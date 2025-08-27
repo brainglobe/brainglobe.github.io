@@ -1,0 +1,27 @@
+﻿brainglobe\_atlasapi.atlas\_generation.metadata\_utils
+======================================================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.atlas_generation.metadata_utils
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.metadata_utils
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    create_metadata_files
+    
+    create_readme
+    
+    create_structures_csv
+    
+    generate_metadata_dict
+    
+

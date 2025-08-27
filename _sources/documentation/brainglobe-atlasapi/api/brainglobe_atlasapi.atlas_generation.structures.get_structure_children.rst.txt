@@ -1,0 +1,6 @@
+get\_structure\_children
+========================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.structures
+
+.. autofunction:: get_structure_children

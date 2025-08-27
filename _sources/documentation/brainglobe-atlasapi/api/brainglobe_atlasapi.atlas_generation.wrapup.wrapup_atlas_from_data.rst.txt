@@ -1,0 +1,6 @@
+wrapup\_atlas\_from\_data
+=========================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.wrapup
+
+.. autofunction:: wrapup_atlas_from_data

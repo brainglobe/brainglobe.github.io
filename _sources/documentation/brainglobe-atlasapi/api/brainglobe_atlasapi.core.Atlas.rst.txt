@@ -1,0 +1,161 @@
+Atlas
+=====
+
+.. currentmodule:: brainglobe_atlasapi.core
+
+.. autoclass:: Atlas
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~Atlas.get_structure_ancestors
+   
+   
+      ~Atlas.get_structure_descendants
+   
+   
+      ~Atlas.get_structure_mask
+   
+   
+      ~Atlas.hemisphere_from_coords
+   
+   
+      ~Atlas.mesh_from_structure
+   
+   
+      ~Atlas.meshfile_from_structure
+   
+   
+      ~Atlas.root_mesh
+   
+   
+      ~Atlas.root_meshfile
+   
+   
+      ~Atlas.structure_from_coords
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~Atlas.annotation
+   
+   
+      ~Atlas.hemispheres
+   
+   
+      ~Atlas.hierarchy
+   
+   
+      ~Atlas.left_hemisphere_value
+   
+   
+      ~Atlas.lookup_df
+   
+   
+      ~Atlas.orientation
+   
+   
+      ~Atlas.reference
+   
+   
+      ~Atlas.resolution
+   
+   
+      ~Atlas.right_hemisphere_value
+   
+   
+      ~Atlas.shape
+   
+   
+      ~Atlas.shape_um
+   
+   
+   

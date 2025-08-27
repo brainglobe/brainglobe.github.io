@@ -1,0 +1,36 @@
+..
+    This file is auto-generated.
+
+.. _target_api_brainglobe-atlasapi:
+
+API reference
+=============
+
+Information on specific functions, classes, and methods.
+
+.. rubric:: Modules
+
+.. autosummary::
+    :toctree: api
+    :recursive:
+    :nosignatures:
+
+    brainglobe_atlasapi.structure_class
+    brainglobe_atlasapi.update_atlases
+    brainglobe_atlasapi.descriptors
+    brainglobe_atlasapi.cli
+    brainglobe_atlasapi.list_atlases
+    brainglobe_atlasapi.bg_atlas
+    brainglobe_atlasapi.utils
+    brainglobe_atlasapi.core
+    brainglobe_atlasapi.structure_tree_util
+    brainglobe_atlasapi.config
+    brainglobe_atlasapi.atlas_generation.validate_atlases
+    brainglobe_atlasapi.atlas_generation.annotation_utils
+    brainglobe_atlasapi.atlas_generation.structure_json_to_csv
+    brainglobe_atlasapi.atlas_generation.volume_utils
+    brainglobe_atlasapi.atlas_generation.mesh_utils
+    brainglobe_atlasapi.atlas_generation.metadata_utils
+    brainglobe_atlasapi.atlas_generation.wrapup
+    brainglobe_atlasapi.atlas_generation.structures
+    brainglobe_atlasapi.atlas_generation.stacks

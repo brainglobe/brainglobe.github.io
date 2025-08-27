@@ -1,0 +1,6 @@
+get\_all\_atlases\_lastversions
+===============================
+
+.. currentmodule:: brainglobe_atlasapi.list_atlases
+
+.. autofunction:: get_all_atlases_lastversions

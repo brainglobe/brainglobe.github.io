@@ -1,0 +1,6 @@
+create\_metadata\_files
+=======================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.metadata_utils
+
+.. autofunction:: create_metadata_files

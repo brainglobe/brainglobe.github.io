@@ -1,0 +1,6 @@
+create\_structures\_csv
+=======================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.metadata_utils
+
+.. autofunction:: create_structures_csv

@@ -1,0 +1,6 @@
+get\_local\_atlas\_version
+==========================
+
+.. currentmodule:: brainglobe_atlasapi.list_atlases
+
+.. autofunction:: get_local_atlas_version

@@ -1,0 +1,1283 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brainglobe_atlasapi.atlas_generation.validate_atlases &#8212; BrainGlobe</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=1227d6e8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/brainglobe_atlasapi/atlas_generation/validate_atlases';</script>
+    <link rel="canonical" href="https://brainglobe.info/_modules/brainglobe_atlasapi/atlas_generation/validate_atlases.html" />
+    <link rel="icon" href="../../../_static/brainglobe.png"/>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />   
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/brainglobe.png" class="logo__image only-light" alt=""/>
+    <img src="../../../_static/brainglobe.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BrainGlobe</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../about.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../community/index.html">
+    Community
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../blog/index.html">
+    Blog
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../projects/index.html">
+    Projects
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../blackcap.html">
+    <no title>
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://mastodon.online/@brainglobe" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/brainglobe.info" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://brainglobe.zulipchat.com" title="Zulip (Developer chat)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Zulip (Developer chat)</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://forum.image.sc/tag/brainglobe" title="image.sc (Help forum)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-question fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">image.sc (Help forum)</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../about.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../community/index.html">
+    Community
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../blog/index.html">
+    Blog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../projects/index.html">
+    Projects
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../blackcap.html">
+    <no title>
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://mastodon.online/@brainglobe" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/brainglobe.info" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://brainglobe.zulipchat.com" title="Zulip (Developer chat)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Zulip (Developer chat)</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://forum.image.sc/tag/brainglobe" title="image.sc (Help forum)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-question fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">image.sc (Help forum)</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainglobe_atlasapi.atlas_generation.validate_atlases</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                   <h1>Source code for brainglobe_atlasapi.atlas_generation.validate_atlases</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Script to validate atlases.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">BrainGlobeAtlas</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_brainglobe_dir</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.descriptors</span><span class="w"> </span><span class="kn">import</span> <span class="n">METADATA_TEMPLATE</span><span class="p">,</span> <span class="n">REFERENCE_DTYPE</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.list_atlases</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">get_all_atlases_lastversions</span><span class="p">,</span>
+    <span class="n">get_atlases_lastversions</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.update_atlases</span><span class="w"> </span><span class="kn">import</span> <span class="n">update_atlas</span>
+
+
+<div class="viewcode-block" id="validate_atlas_files">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.validate_atlases.validate_atlas_files.html#brainglobe_atlasapi.atlas_generation.validate_atlases.validate_atlas_files">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">validate_atlas_files</span><span class="p">(</span><span class="n">atlas</span><span class="p">:</span> <span class="n">BrainGlobeAtlas</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if essential files exist in the atlas folder.</span>
+
+<span class="sd">    This function verifies the presence of core files such as</span>
+<span class="sd">    &#39;annotation.tiff&#39;, &#39;reference.tiff&#39;, &#39;metadata.json&#39;, &#39;structures.json&#39;,</span>
+<span class="sd">    and the &#39;meshes&#39; directory within the atlas&#39;s root directory.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atlas : BrainGlobeAtlas</span>
+<span class="sd">        The BrainGlobeAtlas object to validate.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if all expected files and directories are found.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    AssertionError</span>
+<span class="sd">        If any expected file or directory is missing.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">atlas_path</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">root_dir</span>
+
+    <span class="k">assert</span> <span class="n">atlas_path</span><span class="o">.</span><span class="n">is_dir</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">&quot;Atlas path </span><span class="si">{</span><span class="n">atlas_path</span><span class="si">}</span><span class="s2"> not found&quot;</span>
+    <span class="n">expected_files</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;annotation.tiff&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;reference.tiff&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;metadata.json&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;structures.json&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="k">for</span> <span class="n">expected_file_name</span> <span class="ow">in</span> <span class="n">expected_files</span><span class="p">:</span>
+        <span class="n">expected_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">atlas_path</span> <span class="o">/</span> <span class="n">expected_file_name</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="p">(</span>
+            <span class="n">expected_path</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span>
+        <span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Expected file not found at </span><span class="si">{</span><span class="n">expected_path</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="n">meshes_path</span> <span class="o">=</span> <span class="n">atlas_path</span> <span class="o">/</span> <span class="s2">&quot;meshes&quot;</span>
+    <span class="k">assert</span> <span class="n">meshes_path</span><span class="o">.</span><span class="n">is_dir</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">&quot;Meshes path </span><span class="si">{</span><span class="n">meshes_path</span><span class="si">}</span><span class="s2"> not found&quot;</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_assert_close</span><span class="p">(</span><span class="n">mesh_coord</span><span class="p">,</span> <span class="n">annotation_coord</span><span class="p">,</span> <span class="n">pixel_size</span><span class="p">,</span> <span class="n">diff_tolerance</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if mesh and annotation coordinates are sufficiently close.</span>
+
+<span class="sd">    Compares a mesh coordinate to an annotation coordinate, considering</span>
+<span class="sd">    the pixel size and an arbitrary tolerance.</span>
+
+<span class="sd">    The default tolerance value is 10.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mesh_coord : float</span>
+<span class="sd">        The coordinate from the mesh.</span>
+<span class="sd">    annotation_coord : float</span>
+<span class="sd">        The coordinate from the annotation image, scaled by pixel size.</span>
+<span class="sd">    pixel_size : float</span>
+<span class="sd">        The size of a pixel in the dimension being checked.</span>
+<span class="sd">    diff_tolerance : int, optional</span>
+<span class="sd">        The maximum allowed difference between coordinates as a multiple</span>
+<span class="sd">        of pixel size. By default, 10.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if the coordinates are within the specified tolerance.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    AssertionError</span>
+<span class="sd">        If the absolute difference between `mesh_coord` and</span>
+<span class="sd">        `annotation_coord` exceeds `diff_tolerance * pixel_size`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="nb">abs</span><span class="p">(</span><span class="n">mesh_coord</span> <span class="o">-</span> <span class="n">annotation_coord</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">diff_tolerance</span> <span class="o">*</span> <span class="n">pixel_size</span><span class="p">,</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Mesh coordinate </span><span class="si">{</span><span class="n">mesh_coord</span><span class="si">}</span><span class="s2"> and &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;annotation coordinate </span><span class="si">{</span><span class="n">annotation_coord</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;differ by more than </span><span class="si">{</span><span class="n">diff_tolerance</span><span class="si">}</span><span class="s2"> times pixel size </span><span class="si">{</span><span class="n">pixel_size</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+
+<div class="viewcode-block" id="validate_mesh_matches_image_extents">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.validate_atlases.validate_mesh_matches_image_extents.html#brainglobe_atlasapi.atlas_generation.validate_atlases.validate_mesh_matches_image_extents">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">validate_mesh_matches_image_extents</span><span class="p">(</span><span class="n">atlas</span><span class="p">:</span> <span class="n">BrainGlobeAtlas</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check if the mesh and the image extents are similar.</span>
+
+<span class="sd">    Validates that the spatial extents of the `root` mesh align with the</span>
+<span class="sd">    extents of the non-zero voxels in the annotation image, considering</span>
+<span class="sd">    the atlas resolution.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atlas : BrainGlobeAtlas</span>
+<span class="sd">        The BrainGlobeAtlas object to validate.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if the mesh and image extents are sufficiently similar.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    AssertionError</span>
+<span class="sd">        If the extents differ by more than the allowed tolerance</span>
+<span class="sd">        (default 10 times pixel size).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">root_mesh</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">mesh_from_structure</span><span class="p">(</span><span class="s2">&quot;root&quot;</span><span class="p">)</span>
+    <span class="n">annotation_image</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">annotation</span>
+    <span class="n">resolution</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">resolution</span>
+
+    <span class="c1"># minimum and maximum values of the annotation image (z, y, x)</span>
+    <span class="n">z_range</span><span class="p">,</span> <span class="n">y_range</span><span class="p">,</span> <span class="n">x_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">annotation_image</span><span class="p">)</span>
+    <span class="n">z_min</span><span class="p">,</span> <span class="n">z_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">z_range</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">z_range</span><span class="p">)</span>
+    <span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">y_range</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">y_range</span><span class="p">)</span>
+    <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x_range</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x_range</span><span class="p">)</span>
+
+    <span class="c1"># minimum and maximum values of the annotation image</span>
+    <span class="c1"># scaled by the atlas resolution</span>
+    <span class="n">z_min_scaled</span><span class="p">,</span> <span class="n">z_max_scaled</span> <span class="o">=</span> <span class="n">z_min</span> <span class="o">*</span> <span class="n">resolution</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">z_max</span> <span class="o">*</span> <span class="n">resolution</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">y_min_scaled</span><span class="p">,</span> <span class="n">y_max_scaled</span> <span class="o">=</span> <span class="n">y_min</span> <span class="o">*</span> <span class="n">resolution</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">y_max</span> <span class="o">*</span> <span class="n">resolution</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">x_min_scaled</span><span class="p">,</span> <span class="n">x_max_scaled</span> <span class="o">=</span> <span class="n">x_min</span> <span class="o">*</span> <span class="n">resolution</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">x_max</span> <span class="o">*</span> <span class="n">resolution</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="c1"># z, y and x coordinates of the root mesh (extent of the whole object)</span>
+    <span class="n">mesh_points</span> <span class="o">=</span> <span class="n">root_mesh</span><span class="o">.</span><span class="n">points</span>
+    <span class="n">z_coords</span><span class="p">,</span> <span class="n">y_coords</span><span class="p">,</span> <span class="n">x_coords</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">mesh_points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="n">mesh_points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="n">mesh_points</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="c1"># minimum and maximum coordinates of the root mesh</span>
+    <span class="n">z_min_mesh</span><span class="p">,</span> <span class="n">z_max_mesh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">z_coords</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">z_coords</span><span class="p">)</span>
+    <span class="n">y_min_mesh</span><span class="p">,</span> <span class="n">y_max_mesh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">y_coords</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">y_coords</span><span class="p">)</span>
+    <span class="n">x_min_mesh</span><span class="p">,</span> <span class="n">x_max_mesh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x_coords</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x_coords</span><span class="p">)</span>
+
+    <span class="c1"># checking if root mesh and image are on the same scale</span>
+    <span class="n">_assert_close</span><span class="p">(</span><span class="n">z_min_mesh</span><span class="p">,</span> <span class="n">z_min_scaled</span><span class="p">,</span> <span class="n">resolution</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">_assert_close</span><span class="p">(</span><span class="n">z_max_mesh</span><span class="p">,</span> <span class="n">z_max_scaled</span><span class="p">,</span> <span class="n">resolution</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">_assert_close</span><span class="p">(</span><span class="n">y_min_mesh</span><span class="p">,</span> <span class="n">y_min_scaled</span><span class="p">,</span> <span class="n">resolution</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">_assert_close</span><span class="p">(</span><span class="n">y_max_mesh</span><span class="p">,</span> <span class="n">y_max_scaled</span><span class="p">,</span> <span class="n">resolution</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">_assert_close</span><span class="p">(</span><span class="n">x_min_mesh</span><span class="p">,</span> <span class="n">x_min_scaled</span><span class="p">,</span> <span class="n">resolution</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">_assert_close</span><span class="p">(</span><span class="n">x_max_mesh</span><span class="p">,</span> <span class="n">x_max_scaled</span><span class="p">,</span> <span class="n">resolution</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="open_for_visual_check">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.validate_atlases.open_for_visual_check.html#brainglobe_atlasapi.atlas_generation.validate_atlases.open_for_visual_check">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">open_for_visual_check</span><span class="p">(</span><span class="n">atlas</span><span class="p">:</span> <span class="n">BrainGlobeAtlas</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Open the atlas for visual inspection (not implemented).</span>
+
+<span class="sd">    This function is a placeholder for future visual validation routines.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atlas : BrainGlobeAtlas</span>
+<span class="sd">        The atlas to be visually checked.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        Always True, as visual checks are not yet implemented.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># implement visual checks later</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="validate_checksum">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.validate_atlases.validate_checksum.html#brainglobe_atlasapi.atlas_generation.validate_atlases.validate_checksum">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">validate_checksum</span><span class="p">(</span><span class="n">atlas</span><span class="p">:</span> <span class="n">BrainGlobeAtlas</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Validate the atlas checksum (not implemented).</span>
+
+<span class="sd">    This function is a placeholder for future checksum validation routines.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atlas : BrainGlobeAtlas</span>
+<span class="sd">        The atlas to be validated.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        Always True, as checksum validation is not yet implemented.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># implement later</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="validate_image_dimensions">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.validate_atlases.validate_image_dimensions.html#brainglobe_atlasapi.atlas_generation.validate_atlases.validate_image_dimensions">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">validate_image_dimensions</span><span class="p">(</span><span class="n">atlas</span><span class="p">:</span> <span class="n">BrainGlobeAtlas</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check that annotation and reference images have identical dimensions.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atlas : BrainGlobeAtlas</span>
+<span class="sd">        The BrainGlobeAtlas object to validate.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if the dimensions match.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    AssertionError</span>
+<span class="sd">        If the `annotation` and `reference` image arrays have different shapes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">atlas</span><span class="o">.</span><span class="n">annotation</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="n">atlas</span><span class="o">.</span><span class="n">reference</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="p">(</span>
+        <span class="s2">&quot;Annotation and reference image have different dimensions. </span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;Annotation image has dimension: </span><span class="si">{</span><span class="n">atlas</span><span class="o">.</span><span class="n">annotation</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">, &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;while reference image has dimension </span><span class="si">{</span><span class="n">atlas</span><span class="o">.</span><span class="n">reference</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">.&quot;</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="validate_additional_references">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.validate_atlases.validate_additional_references.html#brainglobe_atlasapi.atlas_generation.validate_atlases.validate_additional_references">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">validate_additional_references</span><span class="p">(</span><span class="n">atlas</span><span class="p">:</span> <span class="n">BrainGlobeAtlas</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check that additional references have expected properties.</span>
+
+<span class="sd">    Verifies that all additional reference images:</span>
+<span class="sd">    1. Have the same dimensions as the main reference image.</span>
+<span class="sd">    2. Are not identical to the main reference image (i.e., contain different</span>
+<span class="sd">    data).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atlas : BrainGlobeAtlas</span>
+<span class="sd">        The BrainGlobeAtlas object to validate.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if all additional references pass the validation checks.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    AssertionError</span>
+<span class="sd">        If an additional reference has unexpected dimensions or is identical</span>
+<span class="sd">        to the main reference.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="p">(</span>
+        <span class="n">additional_reference_name</span>
+    <span class="p">)</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">additional_references</span><span class="o">.</span><span class="n">references_list</span><span class="p">:</span>
+        <span class="n">additional_reference</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">additional_references</span><span class="p">[</span>
+            <span class="n">additional_reference_name</span>
+        <span class="p">]</span>
+        <span class="k">assert</span> <span class="n">additional_reference</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="n">atlas</span><span class="o">.</span><span class="n">reference</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Additional reference </span><span class="si">{</span><span class="n">additional_reference</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="s2">&quot;has unexpected dimension.&quot;</span>
+        <span class="p">)</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span>
+            <span class="n">additional_reference</span> <span class="o">==</span> <span class="n">atlas</span><span class="o">.</span><span class="n">reference</span>
+        <span class="p">),</span> <span class="s2">&quot;Additional reference is not different to main reference.&quot;</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="catch_missing_mesh_files">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.validate_atlases.catch_missing_mesh_files.html#brainglobe_atlasapi.atlas_generation.validate_atlases.catch_missing_mesh_files">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">catch_missing_mesh_files</span><span class="p">(</span><span class="n">atlas</span><span class="p">:</span> <span class="n">BrainGlobeAtlas</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check if all structures in the atlas have a corresponding mesh file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atlas : BrainGlobeAtlas</span>
+<span class="sd">        The BrainGlobeAtlas object to validate.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if all structures listed in the atlas have a</span>
+<span class="sd">        corresponding mesh file.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    AssertionError</span>
+<span class="sd">        If any structure ID found in `atlas.structures` does not have a</span>
+<span class="sd">        matching `.obj` file in the atlas&#39;s `meshes` directory.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ids_from_bg_atlas_api</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">structures</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+    <span class="n">atlas_path</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">root_dir</span>
+
+    <span class="n">obj_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">atlas_path</span> <span class="o">/</span> <span class="s2">&quot;meshes&quot;</span><span class="p">)</span>
+
+    <span class="n">ids_from_mesh_files</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="nb">int</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">stem</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">obj_path</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.obj&quot;</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="n">in_bg_not_mesh</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">ids_from_bg_atlas_api</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ids_from_mesh_files</span><span class="p">:</span>
+            <span class="n">in_bg_not_mesh</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">in_bg_not_mesh</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Structures with IDs </span><span class="si">{</span><span class="n">in_bg_not_mesh</span><span class="si">}</span><span class="s2"> are in the atlas, &quot;</span>
+            <span class="s2">&quot;but don&#39;t have a corresponding mesh file.&quot;</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="catch_missing_structures">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.validate_atlases.catch_missing_structures.html#brainglobe_atlasapi.atlas_generation.validate_atlases.catch_missing_structures">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">catch_missing_structures</span><span class="p">(</span><span class="n">atlas</span><span class="p">:</span> <span class="n">BrainGlobeAtlas</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check if all mesh files in the atlas folder are listed as a structure.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atlas : BrainGlobeAtlas</span>
+<span class="sd">        The BrainGlobeAtlas object to validate.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if all mesh files have a corresponding entry in the atlas&#39;s</span>
+<span class="sd">        structures.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    AssertionError</span>
+<span class="sd">        If any .obj file found in the atlas&#39;s &#39;meshes&#39; directory does not</span>
+<span class="sd">        have a corresponding structure ID in `atlas.structures`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ids_from_bg_atlas_api</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">structures</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+    <span class="n">atlas_path</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">root_dir</span>
+
+    <span class="n">obj_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">atlas_path</span> <span class="o">/</span> <span class="s2">&quot;meshes&quot;</span><span class="p">)</span>
+
+    <span class="n">ids_from_mesh_files</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="nb">int</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">stem</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">obj_path</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.obj&quot;</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="n">in_mesh_not_bg</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">ids_from_mesh_files</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ids_from_bg_atlas_api</span><span class="p">:</span>
+            <span class="n">in_mesh_not_bg</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">in_mesh_not_bg</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Structures with IDs </span><span class="si">{</span><span class="n">in_mesh_not_bg</span><span class="si">}</span><span class="s2"> have a mesh file, &quot;</span>
+            <span class="s2">&quot;but are not accessible through the atlas.&quot;</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="validate_reference_image_pixels">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.validate_atlases.validate_reference_image_pixels.html#brainglobe_atlasapi.atlas_generation.validate_atlases.validate_reference_image_pixels">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">validate_reference_image_pixels</span><span class="p">(</span><span class="n">atlas</span><span class="p">:</span> <span class="n">BrainGlobeAtlas</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Validate that the reference image was correctly rescaled.</span>
+
+<span class="sd">    This check aims to catch issues where a float64 reference image (e.g., from</span>
+<span class="sd">    MRI) might have been incorrectly rescaled or cast to the target integer</span>
+<span class="sd">    data type (e.g., `REFERENCE_DTYPE`), resulting in pixel values that are</span>
+<span class="sd">    too low. It asserts that not all pixel values are below 128</span>
+<span class="sd">    (assuming 8-bit range).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atlas : BrainGlobeAtlas</span>
+<span class="sd">        The BrainGlobeAtlas object to validate.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if the reference image&#39;s pixel values appear to be</span>
+<span class="sd">        correctly scaled.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    AssertionError</span>
+<span class="sd">        If all pixel values in the reference image are less than 128,</span>
+<span class="sd">        suggesting incorrect scaling.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span>
+        <span class="n">atlas</span><span class="o">.</span><span class="n">reference</span> <span class="o">&lt;</span> <span class="mi">128</span>
+    <span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Reference image is likely wrongly rescaled to </span><span class="si">{</span><span class="n">REFERENCE_DTYPE</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="validate_annotation_symmetry">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.validate_atlases.validate_annotation_symmetry.html#brainglobe_atlasapi.atlas_generation.validate_atlases.validate_annotation_symmetry">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">validate_annotation_symmetry</span><span class="p">(</span><span class="n">atlas</span><span class="p">:</span> <span class="n">BrainGlobeAtlas</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Validate that equivalent regions in left and right hemispheres have the</span>
+<span class="sd">    same annotation value.</span>
+
+<span class="sd">    This is done by comparing annotation values at two pixels equidistant</span>
+<span class="sd">    from the mid-sagittal plane along the central horizontal axis, near the</span>
+<span class="sd">    center of the image.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atlas : BrainGlobeAtlas</span>
+<span class="sd">        The BrainGlobeAtlas object to validate.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if the selected annotation labels across the mid-sagittal plane</span>
+<span class="sd">        are symmetric.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    AssertionError</span>
+<span class="sd">        If the annotation labels at the chosen symmetric points are different.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">annotation</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">annotation</span>
+    <span class="n">centre</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">annotation</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">central_leftright_axis_annotations</span> <span class="o">=</span> <span class="n">annotation</span><span class="p">[</span><span class="n">centre</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">centre</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">:]</span>
+    <span class="n">label_5_left_of_centre</span> <span class="o">=</span> <span class="n">central_leftright_axis_annotations</span><span class="p">[</span><span class="n">centre</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="mi">5</span><span class="p">]</span>
+    <span class="n">label_5_right_of_centre</span> <span class="o">=</span> <span class="n">central_leftright_axis_annotations</span><span class="p">[</span><span class="n">centre</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">5</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="p">(</span>
+        <span class="n">label_5_left_of_centre</span> <span class="o">==</span> <span class="n">label_5_right_of_centre</span>
+    <span class="p">),</span> <span class="s2">&quot;Annotation labels are asymmetric.&quot;</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="validate_atlas_name">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.validate_atlases.validate_atlas_name.html#brainglobe_atlasapi.atlas_generation.validate_atlases.validate_atlas_name">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">validate_atlas_name</span><span class="p">(</span><span class="n">atlas</span><span class="p">:</span> <span class="n">BrainGlobeAtlas</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Validate the naming convention of the atlas.</span>
+
+<span class="sd">    Checks if the atlas name adheres to specific rules:</span>
+<span class="sd">    - Must be entirely lowercase.</span>
+<span class="sd">    - Can only contain lowercase letters, digits, underscores, hyphens,</span>
+<span class="sd">    and periods.</span>
+<span class="sd">    - Must end with a resolution string (e.g., &quot;5um&quot;, &quot;37.5um&quot;, &quot;1mm&quot;).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atlas : BrainGlobeAtlas</span>
+<span class="sd">        The BrainGlobeAtlas object to validate.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if the atlas name follows the specified conventions.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    AssertionError</span>
+<span class="sd">        If the atlas name contains capital letters, invalid characters, or</span>
+<span class="sd">        does not end with a valid resolution string.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">atlas_name</span>
+    <span class="n">allowed_chars</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;^[a-z0-9_.-]+$&quot;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+    <span class="k">assert</span> <span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">&quot;Atlas name </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> cannot contain capitals.&quot;</span>
+
+    <span class="k">assert</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span>
+        <span class="n">allowed_chars</span><span class="p">,</span> <span class="n">name</span>
+    <span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Atlas name </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> contains invalid characters.&quot;</span>
+
+    <span class="n">resolution_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;\d+(\.\d+)?(nm|um|mm)$&quot;</span>
+    <span class="k">assert</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">resolution_pattern</span><span class="p">,</span> <span class="n">res</span><span class="p">),</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Atlas name </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> should end with a valid resolution &quot;</span>
+        <span class="s2">&quot;(e.g., 5um, 1.5mm).&quot;</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="validate_metadata">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.validate_atlases.validate_metadata.html#brainglobe_atlasapi.atlas_generation.validate_atlases.validate_metadata">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">validate_metadata</span><span class="p">(</span><span class="n">atlas</span><span class="p">:</span> <span class="n">BrainGlobeAtlas</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Validate the atlas metadata.</span>
+
+<span class="sd">    Checks that the metadata of the given atlas has the correct format.</span>
+<span class="sd">    Specifically, it ensures that all required keys from `METADATA_TEMPLATE`</span>
+<span class="sd">    are present and that the types of the values match the types specified</span>
+<span class="sd">    in `METADATA_TEMPLATE`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atlas : BrainGlobeAtlas</span>
+<span class="sd">        The BrainGlobeAtlas object whose metadata is to be validated.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if the metadata adheres to the expected format and types.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    AssertionError</span>
+<span class="sd">        If a required key is missing from the metadata or if the type of</span>
+<span class="sd">        a metadata value does not match the expected type.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">METADATA_TEMPLATE</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">assert</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Missing key: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)),</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> should be of type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;but got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="n">key</span><span class="p">])</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">.&quot;</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="get_all_validation_functions">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.validate_atlases.get_all_validation_functions.html#brainglobe_atlasapi.atlas_generation.validate_atlases.get_all_validation_functions">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_all_validation_functions</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return all individual validation functions as a list.</span>
+
+<span class="sd">    All functions returned by this method are expected to accept</span>
+<span class="sd">    a single argument: a `BrainGlobeAtlas` instance.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list of callable</span>
+<span class="sd">        A list of functions that can be used to validate a BrainGlobe atlas.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">validate_atlas_files</span><span class="p">,</span>
+        <span class="n">validate_mesh_matches_image_extents</span><span class="p">,</span>
+        <span class="n">open_for_visual_check</span><span class="p">,</span>
+        <span class="n">validate_checksum</span><span class="p">,</span>
+        <span class="n">validate_image_dimensions</span><span class="p">,</span>
+        <span class="n">validate_additional_references</span><span class="p">,</span>
+        <span class="n">catch_missing_mesh_files</span><span class="p">,</span>
+        <span class="n">catch_missing_structures</span><span class="p">,</span>
+        <span class="n">validate_reference_image_pixels</span><span class="p">,</span>
+        <span class="n">validate_annotation_symmetry</span><span class="p">,</span>
+        <span class="n">validate_atlas_name</span><span class="p">,</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="validate_atlas">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.validate_atlases.validate_atlas.html#brainglobe_atlasapi.atlas_generation.validate_atlases.validate_atlas">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">validate_atlas</span><span class="p">(</span><span class="n">atlas_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">validation_functions</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Validate the latest version of a given atlas.</span>
+
+<span class="sd">    This function attempts to load the specified atlas, updates it if</span>
+<span class="sd">    necessary, and then runs a suite of provided validation functions</span>
+<span class="sd">    against it. It collects and reports the results of each validation check.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atlas_name : str</span>
+<span class="sd">        The name of the atlas to validate.</span>
+<span class="sd">    version : str</span>
+<span class="sd">        The version of the atlas to validate. (Currently not directly used</span>
+<span class="sd">        for loading, but passed from `get_all_atlases_lastversions`).</span>
+<span class="sd">    validation_functions : list of callable</span>
+<span class="sd">        A list of functions, each expecting a `BrainGlobeAtlas` object</span>
+<span class="sd">        as input and designed to perform a specific validation check.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        A dictionary containing the validation results for the specified atlas.</span>
+<span class="sd">        The format is `{atlas_name: [(function_name, error_message, status)]}`.</span>
+<span class="sd">        `error_message` is None if the check passes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">atlas_name</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
+    <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="n">atlas_name</span><span class="p">)</span>
+    <span class="n">updated</span> <span class="o">=</span> <span class="n">get_atlases_lastversions</span><span class="p">()[</span><span class="n">atlas_name</span><span class="p">][</span><span class="s2">&quot;updated&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">updated</span><span class="p">:</span>
+        <span class="n">update_atlas</span><span class="p">(</span><span class="n">atlas_name</span><span class="p">)</span>
+
+    <span class="n">validation_results</span> <span class="o">=</span> <span class="p">{</span><span class="n">atlas_name</span><span class="p">:</span> <span class="p">[]}</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">validation_function</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">validation_functions</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">validation_function</span><span class="p">(</span><span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="n">atlas_name</span><span class="p">))</span>
+            <span class="n">validation_results</span><span class="p">[</span><span class="n">atlas_name</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">validation_function</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;Pass&quot;</span><span class="p">))</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AssertionError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="n">validation_results</span><span class="p">[</span><span class="n">atlas_name</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">validation_function</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;Fail&quot;</span><span class="p">))</span>
+            <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">validation_results</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Main execution block for running atlas validations.&quot;&quot;&quot;</span>
+    <span class="c1"># list to store the validation functions</span>
+    <span class="n">all_validation_functions</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">validate_atlas_files</span><span class="p">,</span>
+        <span class="n">validate_mesh_matches_image_extents</span><span class="p">,</span>
+        <span class="n">open_for_visual_check</span><span class="p">,</span>
+        <span class="n">validate_checksum</span><span class="p">,</span>
+        <span class="n">validate_image_dimensions</span><span class="p">,</span>
+        <span class="n">validate_additional_references</span><span class="p">,</span>
+        <span class="n">catch_missing_mesh_files</span><span class="p">,</span>
+        <span class="n">catch_missing_structures</span><span class="p">,</span>
+        <span class="n">validate_reference_image_pixels</span><span class="p">,</span>
+        <span class="n">validate_annotation_symmetry</span><span class="p">,</span>
+        <span class="n">validate_atlas_name</span><span class="p">,</span>
+    <span class="p">]</span>
+
+    <span class="n">valid_atlases</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">invalid_atlases</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">validation_results</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">atlas_name</span><span class="p">,</span> <span class="n">version</span> <span class="ow">in</span> <span class="n">get_all_atlases_lastversions</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">temp_validation_results</span> <span class="o">=</span> <span class="n">validate_atlas</span><span class="p">(</span>
+            <span class="n">atlas_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">all_validation_functions</span>
+        <span class="p">)</span>
+        <span class="n">validation_results</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">temp_validation_results</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Validation has been completed&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Find validation_results.json in ~/.brainglobe/atlases/validation/&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Get the directory path</span>
+    <span class="n">output_dir_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">get_brainglobe_dir</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;atlases/validation&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Create the directory if it doesn&#39;t exist</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_dir_path</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_dir_path</span><span class="p">)</span>
+
+    <span class="c1"># Open a file for writing (will overwrite any files from previous runs!)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
+        <span class="nb">str</span><span class="p">(</span>
+            <span class="n">get_brainglobe_dir</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;atlases/validation/validation_results.json&quot;</span>
+        <span class="p">),</span>
+        <span class="s2">&quot;w&quot;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">validation_results</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+</pre></div>
+<div class="section ablog__blog_comments">
+   
+</div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p class="sphinx-version">
+Created using <a href="https://sphinx-doc.org/">Sphinx</a> 8.1.3.
+<br/>
+</p>
+<p class="theme-version">
+Built with the
+<a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
+0.16.1.
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><div class="things-in-a-row">
+</div></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

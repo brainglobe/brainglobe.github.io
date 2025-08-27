@@ -1,0 +1,25 @@
+﻿brainglobe\_atlasapi.atlas\_generation.annotation\_utils
+========================================================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.atlas_generation.annotation_utils
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.annotation_utils
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    read_itk_labels
+    
+    split_label_text
+    
+    write_itk_labels
+    
+

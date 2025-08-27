@@ -1,0 +1,100 @@
+AdditionalRefDict
+=================
+
+.. currentmodule:: brainglobe_atlasapi.core
+
+.. autoclass:: AdditionalRefDict
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~AdditionalRefDict.clear
+   
+   
+      ~AdditionalRefDict.copy
+   
+   
+      ~AdditionalRefDict.fromkeys
+   
+   
+      ~AdditionalRefDict.get
+   
+   
+      ~AdditionalRefDict.items
+   
+   
+      ~AdditionalRefDict.keys
+   
+   
+      ~AdditionalRefDict.pop
+   
+   
+      ~AdditionalRefDict.popitem
+   
+   
+      ~AdditionalRefDict.setdefault
+   
+   
+      ~AdditionalRefDict.update
+   
+   
+      ~AdditionalRefDict.values
+   
+   
+   
+
+   
+   
+
+   
+
+   
+   

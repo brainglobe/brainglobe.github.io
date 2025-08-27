@@ -1,0 +1,21 @@
+﻿brainglobe\_atlasapi.bg\_atlas
+==============================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.bg_atlas
+
+.. currentmodule:: brainglobe_atlasapi.bg_atlas
+
+
+.. rubric:: Classes
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    BrainGlobeAtlas
+    
+
+
+

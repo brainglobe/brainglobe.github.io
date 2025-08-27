@@ -1,0 +1,23 @@
+﻿brainglobe\_atlasapi.update\_atlases
+====================================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.update_atlases
+
+.. currentmodule:: brainglobe_atlasapi.update_atlases
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    install_atlas
+    
+    update_atlas
+    
+

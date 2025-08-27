@@ -1,0 +1,100 @@
+StructuresDict
+==============
+
+.. currentmodule:: brainglobe_atlasapi.structure_class
+
+.. autoclass:: StructuresDict
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~StructuresDict.clear
+   
+   
+      ~StructuresDict.copy
+   
+   
+      ~StructuresDict.fromkeys
+   
+   
+      ~StructuresDict.get
+   
+   
+      ~StructuresDict.items
+   
+   
+      ~StructuresDict.keys
+   
+   
+      ~StructuresDict.pop
+   
+   
+      ~StructuresDict.popitem
+   
+   
+      ~StructuresDict.setdefault
+   
+   
+      ~StructuresDict.update
+   
+   
+      ~StructuresDict.values
+   
+   
+   
+
+   
+   
+
+   
+
+   
+   

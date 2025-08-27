@@ -1,0 +1,6 @@
+retrieve\_over\_http
+====================
+
+.. currentmodule:: brainglobe_atlasapi.utils
+
+.. autofunction:: retrieve_over_http

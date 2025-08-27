@@ -1,0 +1,6 @@
+get\_parent\_id
+===============
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.structure_json_to_csv
+
+.. autofunction:: get_parent_id

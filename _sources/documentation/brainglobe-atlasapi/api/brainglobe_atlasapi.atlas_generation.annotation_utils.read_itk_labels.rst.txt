@@ -1,0 +1,6 @@
+read\_itk\_labels
+=================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.annotation_utils
+
+.. autofunction:: read_itk_labels

@@ -1,0 +1,100 @@
+Structure
+=========
+
+.. currentmodule:: brainglobe_atlasapi.structure_class
+
+.. autoclass:: Structure
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~Structure.clear
+   
+   
+      ~Structure.copy
+   
+   
+      ~Structure.fromkeys
+   
+   
+      ~Structure.get
+   
+   
+      ~Structure.items
+   
+   
+      ~Structure.keys
+   
+   
+      ~Structure.pop
+   
+   
+      ~Structure.popitem
+   
+   
+      ~Structure.setdefault
+   
+   
+      ~Structure.update
+   
+   
+      ~Structure.values
+   
+   
+   
+
+   
+   
+
+   
+
+   
+   

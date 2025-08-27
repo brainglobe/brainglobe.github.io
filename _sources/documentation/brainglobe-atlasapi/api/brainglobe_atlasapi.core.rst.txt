@@ -1,0 +1,23 @@
+﻿brainglobe\_atlasapi.core
+=========================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.core
+
+.. currentmodule:: brainglobe_atlasapi.core
+
+
+.. rubric:: Classes
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    AdditionalRefDict
+    
+    Atlas
+    
+
+
+

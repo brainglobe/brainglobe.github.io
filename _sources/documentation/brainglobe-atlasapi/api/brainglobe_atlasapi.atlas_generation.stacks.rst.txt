@@ -1,0 +1,29 @@
+﻿brainglobe\_atlasapi.atlas\_generation.stacks
+=============================================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.atlas_generation.stacks
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.stacks
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    save_annotation
+    
+    save_hemispheres
+    
+    save_reference
+    
+    save_secondary_reference
+    
+    write_stack
+    
+

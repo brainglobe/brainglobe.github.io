@@ -1,0 +1,23 @@
+﻿brainglobe\_atlasapi.atlas\_generation.wrapup
+=============================================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.atlas_generation.wrapup
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.wrapup
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    filter_structures_not_present_in_annotation
+    
+    wrapup_atlas_from_data
+    
+

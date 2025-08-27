@@ -1,0 +1,25 @@
+﻿brainglobe\_atlasapi.atlas\_generation.structure\_json\_to\_csv
+===============================================================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.atlas_generation.structure_json_to_csv
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.structure_json_to_csv
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    convert_structure_json_to_csv
+    
+    get_parent_id
+    
+    structure_id_path_to_string
+    
+

@@ -1,0 +1,23 @@
+﻿brainglobe\_atlasapi.structure\_tree\_util
+==========================================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.structure_tree_util
+
+.. currentmodule:: brainglobe_atlasapi.structure_tree_util
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    child_ids
+    
+    get_structures_tree
+    
+

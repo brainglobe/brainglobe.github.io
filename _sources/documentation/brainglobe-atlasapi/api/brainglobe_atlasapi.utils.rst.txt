@@ -1,0 +1,39 @@
+﻿brainglobe\_atlasapi.utils
+==========================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.utils
+
+.. currentmodule:: brainglobe_atlasapi.utils
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    atlas_name_from_repr
+    
+    atlas_repr_from_name
+    
+    check_gin_status
+    
+    check_internet_connection
+    
+    conf_from_file
+    
+    conf_from_url
+    
+    get_download_size
+    
+    read_json
+    
+    read_tiff
+    
+    retrieve_over_http
+    
+

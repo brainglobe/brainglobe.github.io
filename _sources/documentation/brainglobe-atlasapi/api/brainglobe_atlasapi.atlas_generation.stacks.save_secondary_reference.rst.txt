@@ -1,0 +1,6 @@
+save\_secondary\_reference
+==========================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.stacks
+
+.. autofunction:: save_secondary_reference

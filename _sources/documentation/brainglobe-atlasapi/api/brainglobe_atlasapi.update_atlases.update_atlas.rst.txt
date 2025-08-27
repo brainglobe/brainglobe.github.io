@@ -1,0 +1,6 @@
+update\_atlas
+=============
+
+.. currentmodule:: brainglobe_atlasapi.update_atlases
+
+.. autofunction:: update_atlas

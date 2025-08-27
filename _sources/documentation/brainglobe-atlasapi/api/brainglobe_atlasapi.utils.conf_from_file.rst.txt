@@ -1,0 +1,6 @@
+conf\_from\_file
+================
+
+.. currentmodule:: brainglobe_atlasapi.utils
+
+.. autofunction:: conf_from_file

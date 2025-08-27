@@ -1,0 +1,6 @@
+get\_brainglobe\_dir
+====================
+
+.. currentmodule:: brainglobe_atlasapi.config
+
+.. autofunction:: get_brainglobe_dir

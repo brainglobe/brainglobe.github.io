@@ -1,0 +1,6 @@
+validate\_mesh\_matches\_image\_extents
+=======================================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.validate_atlases
+
+.. autofunction:: validate_mesh_matches_image_extents
