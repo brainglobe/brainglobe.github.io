@@ -38,4 +38,4 @@ Simply select the appropriate submenu, and then select the brainreg output folde
 It's important to note that choosing `Sample Space, Sample Resolution` will not open the original high-resolution images, as these can be very large. The user is expected to manually load these images into Napari.
 :::
 
-These described submenus will simply load, orient and scale different images from the brainreg output folder to reflect the corresponding space and resolution. For further information on the output files, see the [brainreg output files page](/documentation/brainreg/user-guide/output-files.md).
+These submenus will simply load, orient and scale different images from the brainreg output folder to reflect the corresponding space and resolution. For further information on the output files, see the [brainreg output files page](/documentation/brainreg/user-guide/output-files.md).
