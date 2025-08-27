@@ -101,10 +101,10 @@ increases with stronger dependency.
 
 • **NCC (Normalised Cross-Correlation):**
 
-:::{math}
+$$
 NCC(A,B) = \frac{\sum_i (A_i - \bar{A})(B_i - \bar{B})}
 {\sqrt{\sum_i (A_i - \bar{A})^2 \; \sum_i (B_i - \bar{B})^2}}
-:::
+$$
 
 Captures similarity in intensity patterns, invariant to linear rescaling 
 of intensities.
