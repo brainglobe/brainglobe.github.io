@@ -803,8 +803,8 @@
 <h1>Visualising brainreg output<a class="headerlink" href="#visualising-brainreg-output" title="Link to this heading">#</a></h1>
 <p>If you have used the brainreg command-line interface, or simply want to view results at a later time,
 brainreg comes with a plugin for napari to allow you to easily view registration results.</p>
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
+<section id="basic-usage">
+<h2>Basic usage<a class="headerlink" href="#basic-usage" title="Link to this heading">#</a></h2>
 <p>To begin, open napari and drag your brainreg output directory (the one with the log file) onto the napari window.</p>
 <p>Various images should then open, including:</p>
 <ul class="simple">
@@ -819,6 +819,23 @@ brainreg comes with a plugin for napari to allow you to easily view registration
 <p>N.B. If you use a high-resolution atlas (such as <code class="docutils literal notranslate"><span class="pre">allen_mouse_10um</span></code>), then the files can take a little while to load.</p>
 </div>
 <p><img alt="Visualisation in sample space" src="../../../_images/sample_space.gif" /></p>
+</section>
+<section id="choosing-a-different-space-or-resolution">
+<h2>Choosing a different space or resolution<a class="headerlink" href="#choosing-a-different-space-or-resolution" title="Link to this heading">#</a></h2>
+<p>By default, dragging the output folder into napari (as described <a class="reference internal" href="#basic-usage"><span class="std std-ref">above</span></a>) will load the results in sample space, at the <strong>downsampled</strong> resolution used for registration.</p>
+<p>However, it might be useful to load the registration results in atlas space, or at a different resolution. For this we have implemented a series of submenus in the <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">IO</span> <span class="pre">Utilities</span></code> menu.</p>
+<p><img alt="Load Brainreg Results via Napari IO Utilities" src="../../../_images/load_brainreg_result_napari.png" /></p>
+<p>Simply select the appropriate submenu, and then select the brainreg output folder. The options are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Sample</span> <span class="pre">Space,</span> <span class="pre">Atlas</span> <span class="pre">Resolution</span></code> - this is the default behaviour described <a class="reference internal" href="#basic-usage"><span class="std std-ref">above</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Atlas</span> <span class="pre">Space,</span> <span class="pre">Atlas</span> <span class="pre">Resolution</span></code> - opens the registered image and atlas at the atlas (<strong>downsampled</strong>) resolution and orientation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sample</span> <span class="pre">Space,</span> <span class="pre">Sample</span> <span class="pre">Resolution</span></code> - opens the registered atlas, boundaries and hemispheres scaled and oriented to the <strong>original sample resolution</strong>. Original high-resolution images are not opened.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It’s important to note that choosing <code class="docutils literal notranslate"><span class="pre">Sample</span> <span class="pre">Space,</span> <span class="pre">Sample</span> <span class="pre">Resolution</span></code> will not open the original high-resolution images, as these can be very large. The user is expected to manually load these images into Napari.</p>
+</div>
+<p>These submenus will simply load, orient and scale different images from the brainreg output folder to reflect the corresponding space and resolution. For further information on the output files, see the <a class="reference internal" href="output-files.html"><span class="std std-doc">brainreg output files page</span></a>.</p>
 </section>
 </section>
 
@@ -872,7 +889,8 @@ brainreg comes with a plugin for napari to allow you to easily view registration
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-usage">Basic usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-a-different-space-or-resolution">Choosing a different space or resolution</a></li>
 </ul>
   </nav></div>
 
