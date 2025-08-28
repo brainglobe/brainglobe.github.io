@@ -101,7 +101,7 @@ specified, this will continue from the included model.
 
     at the expense of a larger model, and longer training time. **Default: 50**
 * `--batch-size` Batch size for training (how many cell candidates to process at once). Default: 16
-* `--epochs` How many times to use each sample for training. **Default: 1000**
+* `--epochs` How many times to use each sample for training. **Default: 100**
 * `--test-fraction` What fraction of data to keep for validation. **Default: 0.1**
 * `--learning-rate` Learning rate for training the model
 * `--no-augment` Do not use data augmentation
