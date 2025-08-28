@@ -642,6 +642,10 @@ In no particular order:
 :link: https://github.com/giuliapaci
 :::
 
+:::{grid-item-card}    Marco Dalla Vecchia
+:img-bottom: https://avatars.githubusercontent.com/u/31376583?v=4
+:link: https://github.com/marcodallavecchia
+:::
 
 ::::
 
