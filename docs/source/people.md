@@ -647,6 +647,11 @@ In no particular order:
 :link: https://github.com/marcodallavecchia
 :::
 
+:::{grid-item-card}    Pavel Vychyk
+:img-bottom: https://avatars.githubusercontent.com/u/8183316?v=4
+:link: https://github.com/p-vychik
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
