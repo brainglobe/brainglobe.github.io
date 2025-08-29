@@ -65,7 +65,7 @@ space to the original Allen atlas (CCFv3). In addition this atlas is in flat sku
 plan stereotaxic surgeries.
 
 This atlas is only available at 25μm resolution:
-* `perens_stereotaxic_mouse_mri_25um`
+* `perens_stereotaxic_mri_mouse_25um`
 
 ### [Gubra's LSFM mouse brain atlas v2](https://doi.org/10.1007/s12021-023-09623-9)
 This atlas is an addition to its MRI version and provides a version of the Allen Adult Mouse Brain Atlas, based on LSFM. 
