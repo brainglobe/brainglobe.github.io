@@ -51,7 +51,8 @@ Available versions:
 This atlas from [Perens et al. (2020)](https://doi.org/10.1007/s12021-020-09490-8) provides a version of the Allen
 Adult Mouse Brain Atlas, based on solvent-cleared brains imaged with LSFM. This atlas may be a 
 good choice for registering other similar images. However, please note that this atlas is in a different coordinate 
-space to the original Allen atlas (CCFv3).
+space to the original Allen atlas (CCFv3). We recommend instead using the second version of this atlas, [Gubra's LSFM 
+mouse brain atlas v2](https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html#gubras-lsfm-mouse-brain-atlas-v2).
 
 This atlas is only available at 20μm resolution:
 * `perens_lsfm_mouse_20um`
@@ -65,6 +66,17 @@ plan stereotaxic surgeries.
 
 This atlas is only available at 25μm resolution:
 * `perens_stereotaxic_mouse_mri_25um`
+
+### [Gubra's LSFM mouse brain atlas v2](https://doi.org/10.1007/s12021-023-09623-9)
+This atlas is an addition to its MRI version and provides a version of the Allen Adult Mouse Brain Atlas, based on LSFM. 
+This atlas may be a good choice for registering other similar images. This atlas is the second version of 
+[perens et al. (2020)](https://doi.org/10.1007/s12021-020-09490-8) and was published in 
+[perens et al. (2023)](https://doi.org/10.1007/s12021-023-09623-9).  Please note that this atlas is in a different coordinate
+space to the original Allen atlas (CCFv3) and to Perens 2020. 
+
+
+This atlas is only available at 25μm resolution:
+* `perens_multimodal_lsfm_25um`
 
 ### [Princeton Mouse Brain Atlas](https://brainmaps.princeton.edu/2020/09/princeton-mouse-brain-atlas-links)
 This atlas from [Pisano et al. (2021)](https://doi.org/10.1016/j.celrep.2021.109721) is a version of the Allen
