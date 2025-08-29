@@ -593,21 +593,19 @@ Optimising brainreg for specific applications will be covered separately.</p>
 <p class="admonition-title">Note</p>
 <p>You will need <code class="docutils literal notranslate"><span class="pre">napari</span></code> installed on your computer - please follow <a class="reference external" href="https://napari.org/stable/tutorials/fundamentals/installation.html"><code class="docutils literal notranslate"><span class="pre">napari</span></code>’s installation instructions to do so</a>.</p>
 </div>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">napari</span></code>.</p></li>
 <li><p>Install <code class="docutils literal notranslate"><span class="pre">brainreg</span></code> by selecting <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">Install/Uninstall</span> <span class="pre">plugins</span></code> and searching for <code class="docutils literal notranslate"><span class="pre">brainreg</span></code> in the searchbox. Then click on the <code class="docutils literal notranslate"><span class="pre">Install</span></code> button.</p></li>
 <li><p>Open the <code class="docutils literal notranslate"><span class="pre">brainreg</span></code> widget by selecting <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">Atlas</span> <span class="pre">registration</span> <span class="pre">(brainreg)</span></code> in the napari menu bar near the top left of the window.
-<img alt="brainreg widget" src="../_images/plugin-menu-brainreg-napari.png" /></p></li>
-</ol>
+<img alt="brainreg widget" src="../_images/plugin-menu-brainreg-1.png" /></p>
 <p><strong>The brainreg widget appears on the right-hand side of the window.</strong></p>
-<ol class="arabic simple" start="4">
-<li><p>Open the sample image by selecting <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open</span> <span class="pre">Sample</span> <span class="pre">&gt;</span> <span class="pre">Low</span> <span class="pre">resolution</span> <span class="pre">brain</span> <span class="pre">(brainreg-napari)</span></code>.</p></li>
+</li>
+<li><p>Open the sample image by selecting <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open</span> <span class="pre">Sample</span> <span class="pre">&gt;</span> <span class="pre">Low</span> <span class="pre">resolution</span> <span class="pre">brain</span> <span class="pre">(brainreg)</span></code>.</p></li>
 <li><p>Make the image easier to see by adjusting the <code class="docutils literal notranslate"><span class="pre">contrast</span> <span class="pre">limits</span></code> in the top left section of the napari window. Moving
 the right-hand slider to the left will make the image appear brighter.
-<img alt="loaded image" src="../_images/image-loaded-brainreg-napari.png" /></p></li>
-</ol>
+<img alt="loaded image" src="../_images/image-loaded-brainreg-2.png" /></p>
 <p><strong>A whole mouse brain image loaded into napari.</strong></p>
-<ol class="arabic simple" start="6">
+</li>
 <li><p>In the plugin widget, set all the necessary parameters:</p></li>
 </ol>
 <ul class="simple">
@@ -619,15 +617,14 @@ the right-hand slider to the left will make the image appear brighter.
 <li><p><code class="docutils literal notranslate"><span class="pre">Voxel</span> <span class="pre">size</span> <span class="pre">(y)</span></code> - Set to 40</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Output</span> <span class="pre">directory</span></code> - Click <code class="docutils literal notranslate"><span class="pre">Choose</span> <span class="pre">directory</span></code>, and create a new directory on your machine</p></li>
 </ul>
-<ol class="arabic simple" start="7">
+<ol class="arabic" start="7">
 <li><p>Click <code class="docutils literal notranslate"><span class="pre">Run</span></code>. After 30-60 seconds, two new napari layers will be loaded, <code class="docutils literal notranslate"><span class="pre">Boundaries</span></code> and <code class="docutils literal notranslate"><span class="pre">allen_mouse_50um</span></code>.</p></li>
 <li><p>Toggle the visibility of these two layers (using the eye icon on the left of the layer name) to overlay the
 registration results. These can be explored by zooming in/out, scrolling through the 3D data and adjusting the
-visibility and contrast of the loaded data.</p></li>
-</ol>
-<p><img alt="loaded image" src="../_images/results-brainreg-napari.png" /></p>
+visibility and contrast of the loaded data.</p>
+<p><img alt="loaded image" src="../_images/results-brainreg-3.png" /></p>
 <p><strong>Registration results overlaid onto raw data.</strong></p>
-<ol class="arabic simple" start="9">
+</li>
 <li><p>At this point, registration is complete. A number of
 <a class="reference internal" href="../documentation/brainreg/user-guide/output-files.html"><span class="std std-doc">files are created in the output directory</span></a> that can be used for
 downstream analysis.</p></li>

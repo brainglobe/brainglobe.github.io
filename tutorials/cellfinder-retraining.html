@@ -598,18 +598,17 @@ use the command line tool instead of using napari. For more information, please 
 <a class="reference external" href="https://napari.org/stable/tutorials/fundamentals/installation.html"><code class="docutils literal notranslate"><span class="pre">napari</span></code>’s installation instructions</a> to do so
 (including their recommendation to use a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment).</p>
 </div>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">napari</span></code>.</p></li>
 <li><p>Open the curation widget by selecting <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">cellfinder</span> <span class="pre">&gt;</span> <span class="pre">Curation</span></code> in the napari menu bar near the top left of the window.</p></li>
 <li><p>Load some sample data <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open</span> <span class="pre">sample</span> <span class="pre">&gt;</span> <span class="pre">Sample</span> <span class="pre">data</span> <span class="pre">(cellfinder)</span></code>. This will open the same small two-channel 3D image from the detection tutorial.</p></li>
 <li><p>Click <code class="docutils literal notranslate"><span class="pre">Files</span> <span class="pre">&gt;</span> <span class="pre">Open</span> <span class="pre">File(s)</span></code> and select the <code class="docutils literal notranslate"><span class="pre">cells.xml</span></code> from the detection tutorial. If napari prompts you to choose a plugin, choose <code class="docutils literal notranslate"><span class="pre">brainglobe-napari-io</span></code>.</p></li>
 <li><p>Set the <code class="docutils literal notranslate"><span class="pre">signal</span> <span class="pre">image</span></code> to <code class="docutils literal notranslate"><span class="pre">Signal</span></code></p></li>
 <li><p>Set the <code class="docutils literal notranslate"><span class="pre">background</span> <span class="pre">image</span></code> to <code class="docutils literal notranslate"><span class="pre">Background</span></code></p></li>
-<li><p>Click <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">training</span> <span class="pre">data</span> <span class="pre">layers</span></code></p></li>
-</ol>
-<p><img alt="cellfinder curation widget" src="../_images/cellfinder-napari-curation.png" />
-<strong>The curation widget appears on the right-hand side of the window alongside the raw data with detected cells overlaid</strong></p>
-<ol class="arabic simple" start="8">
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">training</span> <span class="pre">data</span> <span class="pre">layers</span></code></p>
+<p><img alt="cellfinder curation widget" src="../_images/cellfinder-curation-1.png" /></p>
+<p><strong>The curation widget appears on the right-hand side of the window alongside the raw data with detected cells overlaid</strong></p>
+</li>
 <li><p>Highlight the <code class="docutils literal notranslate"><span class="pre">Cells</span></code> layer and then choose the <code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">Points</span></code> tool by clicking the arrow in the layer controls
 widget, or pressing the <code class="docutils literal notranslate"><span class="pre">3</span></code> key on your keyboard.</p></li>
 <li><p>Select some cells in the image by drawing a box and click <code class="docutils literal notranslate"><span class="pre">Mark</span> <span class="pre">as</span> <span class="pre">cell(s)</span></code></p></li>
@@ -621,11 +620,10 @@ widget, or pressing the <code class="docutils literal notranslate"><span class="
 <li><p>Select the data for retraining by clicking <code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">files</span></code> next to <code class="docutils literal notranslate"><span class="pre">YAML</span> <span class="pre">files</span></code> and choose the <code class="docutils literal notranslate"><span class="pre">training.yaml</span></code> file
 is inside the <code class="docutils literal notranslate"><span class="pre">cellfinder-retraining</span></code> directory created earlier</p></li>
 <li><p>Choose a directory to save the training output, e.g., create a <code class="docutils literal notranslate"><span class="pre">trained_network</span></code> directory</p></li>
-<li><p>Set <code class="docutils literal notranslate"><span class="pre">Epochs</span></code> 2</p></li>
-</ol>
-<p><img alt="cellfinder training widget" src="../_images/cellfinder-napari-training.png" />
-<strong>The training widget appears on the right-hand side of the window.</strong></p>
-<ol class="arabic simple" start="18">
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">Epochs</span></code> to 100</p>
+<p><img alt="cellfinder training widget" src="../_images/cellfinder-training-2.png" /></p>
+<p><strong>The training widget appears on the right-hand side of the window.</strong></p>
+</li>
 <li><p>Click <code class="docutils literal notranslate"><span class="pre">run</span></code></p></li>
 <li><p>The training will then run, watch the terminal for updates. Once complete, there will be trained models
 (files ending in <code class="docutils literal notranslate"><span class="pre">.keras</span></code>) in the <code class="docutils literal notranslate"><span class="pre">trained_network</span></code> directory that can be used for cell detection.</p></li>
