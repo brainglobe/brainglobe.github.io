@@ -647,7 +647,7 @@ In no particular order:
 :link: https://github.com/marcodallavecchia
 :::
 
-:::{grid-item-card}    Pavel Vychik
+:::{grid-item-card}    Pavel Vychyk
 :img-bottom: https://avatars.githubusercontent.com/u/8183316?v=4
 :link: https://github.com/p-vychik
 :::
