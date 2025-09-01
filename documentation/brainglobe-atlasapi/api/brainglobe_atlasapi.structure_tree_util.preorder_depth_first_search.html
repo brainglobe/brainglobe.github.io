@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>brainglobe_atlasapi.atlas_generation.volume_utils &#8212; BrainGlobe</title>
+    <title>preorder_depth_first_search &#8212; BrainGlobe</title>
   
   
   
@@ -55,14 +55,14 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.volume_utils';</script>
-    <link rel="canonical" href="https://brainglobe.info/documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.volume_utils.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.structure_tree_util.preorder_depth_first_search';</script>
+    <link rel="canonical" href="https://brainglobe.info/documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.structure_tree_util.preorder_depth_first_search.html" />
     <link rel="icon" href="../../../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="create_masked_array" href="brainglobe_atlasapi.atlas_generation.volume_utils.create_masked_array.html" />
-    <link rel="prev" title="BrainGlobeAtlas" href="brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html" /> 
+    <link rel="next" title="brainglobe_atlasapi.update_atlases" href="brainglobe_atlasapi.update_atlases.html" />
+    <link rel="prev" title="get_structures_tree" href="brainglobe_atlasapi.structure_tree_util.get_structures_tree.html" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />   
@@ -326,6 +326,10 @@
   
 
   
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
 
     </header>
@@ -545,9 +549,10 @@
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.list_atlases.show_atlases.html">show_atlases</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.structure_tree_util.html">brainglobe_atlasapi.structure_tree_util</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="brainglobe_atlasapi.structure_tree_util.html">brainglobe_atlasapi.structure_tree_util</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.structure_tree_util.child_ids.html">child_ids</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.structure_tree_util.get_structures_tree.html">get_structures_tree</a></li>
+<li class="toctree-l4 current active"><a class="current reference internal" href="#">preorder_depth_first_search</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.update_atlases.html">brainglobe_atlasapi.update_atlases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -572,10 +577,6 @@
 <li class="toctree-l3"><a class="reference internal" href="brainglobe_atlasapi.cli.html">brainglobe_atlasapi.cli</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.bg_atlas.html">brainglobe_atlasapi.bg_atlas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html">BrainGlobeAtlas</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 current active has-children"><a class="current reference internal" href="#">brainglobe_atlasapi.atlas_generation.volume_utils</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.volume_utils.create_masked_array.html">create_masked_array</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.metadata_utils.html">brainglobe_atlasapi.atlas_generation.metadata_utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -782,7 +783,10 @@
     
     <li class="breadcrumb-item"><a href="../api.html" class="nav-link">API reference</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainglobe_atlasapi.atlas_generation.volume_utils</span></li>
+    
+    <li class="breadcrumb-item"><a href="brainglobe_atlasapi.structure_tree_util.html" class="nav-link">brainglobe_atlasapi.structure_tree_util</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">preorder_depth_first_search</span></li>
   </ul>
 </nav>
 </div>
@@ -798,21 +802,14 @@
                 
 <div id="searchbox"></div>
                 <article class="bd-article">
-                   <section id="brainglobe-atlasapi-atlas-generation-volume-utils">
-<h1>brainglobe_atlasapi.atlas_generation.volume_utils<a class="headerlink" href="#brainglobe-atlasapi-atlas-generation-volume-utils" title="Link to this heading">#</a></h1>
-<p class="rubric">Description</p>
-<p id="module-brainglobe_atlasapi.atlas_generation.volume_utils">Code useful for dealing with volumetric data
-(e.g. allen annotation volume for the mouse atlas)
-extracting surfaces from volumetric data ….</p>
-<p class="rubric">Functions</p>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.volume_utils.create_masked_array.html#brainglobe_atlasapi.atlas_generation.volume_utils.create_masked_array" title="brainglobe_atlasapi.atlas_generation.volume_utils.create_masked_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_masked_array</span></code></a></p></td>
-<td><p>Create a binary masked array from a volumetric dataset.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+                   <section id="preorder-depth-first-search">
+<h1>preorder_depth_first_search<a class="headerlink" href="#preorder-depth-first-search" title="Link to this heading">#</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="brainglobe_atlasapi.structure_tree_util.preorder_depth_first_search">
+<span class="sig-prename descclassname"><span class="pre">brainglobe_atlasapi.structure_tree_util.</span></span><span class="sig-name descname"><span class="pre">preorder_depth_first_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/brainglobe_atlasapi/structure_tree_util.html#preorder_depth_first_search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainglobe_atlasapi.structure_tree_util.preorder_depth_first_search" title="Link to this definition">#</a></dt>
+<dd><p>Yield nodes in a pre-order depth first traversal of the tree.</p>
+</dd></dl>
+
 </section>
 
 <div class="section ablog__blog_comments">
@@ -829,20 +826,20 @@ extracting surfaces from volumetric data ….</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html"
+       href="brainglobe_atlasapi.structure_tree_util.get_structures_tree.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">BrainGlobeAtlas</p>
+        <p class="prev-next-title">get_structures_tree</p>
       </div>
     </a>
     <a class="right-next"
-       href="brainglobe_atlasapi.atlas_generation.volume_utils.create_masked_array.html"
+       href="brainglobe_atlasapi.update_atlases.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">create_masked_array</p>
+        <p class="prev-next-title">brainglobe_atlasapi.update_atlases</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -852,6 +849,24 @@ extracting surfaces from volumetric data ….</p>
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.structure_tree_util.preorder_depth_first_search"><code class="docutils literal notranslate"><span class="pre">preorder_depth_first_search()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

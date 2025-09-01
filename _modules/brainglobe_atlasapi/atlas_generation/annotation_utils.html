@@ -559,25 +559,31 @@
 
 <div class="viewcode-block" id="split_label_text">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.annotation_utils.split_label_text.html#brainglobe_atlasapi.atlas_generation.annotation_utils.split_label_text">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">split_label_text</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">split_label_text</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">acronym_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Split label text into name + acronym.</span>
 
 <span class="sd">    If the label text ends with &#39;)&#39;, extract the acronym inside parentheses.</span>
-<span class="sd">    Otherwise, use the first letter as the acronym.</span>
+<span class="sd">    Otherwise, you can specify  how many first letters</span>
+<span class="sd">    you would like to use as acronym</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;)&quot;</span><span class="p">):</span>
         <span class="n">name</span><span class="p">,</span> <span class="n">acronym</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;(&quot;</span><span class="p">)</span>
         <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># ignore trailing space</span>
         <span class="n">acronym</span> <span class="o">=</span> <span class="n">acronym</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># ignore trailing )</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">acronym</span> <span class="o">=</span> <span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">acronym_length</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Acronym length cannot be longer than the name itself.&quot;</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">acronym</span> <span class="o">=</span> <span class="n">name</span><span class="p">[:</span><span class="n">acronym_length</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">name</span><span class="p">,</span> <span class="n">acronym</span></div>
 
 
 
 <div class="viewcode-block" id="read_itk_labels">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.annotation_utils.read_itk_labels.html#brainglobe_atlasapi.atlas_generation.annotation_utils.read_itk_labels">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">read_itk_labels</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_itk_labels</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">acronym_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Turn ITK label data from a file into a list of dictionaries.&quot;&quot;&quot;</span>
     <span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">labels_file</span><span class="p">:</span>
@@ -590,7 +596,9 @@
                     <span class="n">raw_values</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="n">raw_values</span><span class="p">[</span><span class="mi">7</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
                 <span class="n">label_text</span> <span class="o">=</span> <span class="n">raw_values</span><span class="p">[</span><span class="mi">7</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
                 <span class="k">if</span> <span class="n">label_text</span> <span class="o">!=</span> <span class="s2">&quot;Clear Label&quot;</span><span class="p">:</span>
-                    <span class="n">name</span><span class="p">,</span> <span class="n">acronym</span> <span class="o">=</span> <span class="n">split_label_text</span><span class="p">(</span><span class="n">label_text</span><span class="p">)</span>
+                    <span class="n">name</span><span class="p">,</span> <span class="n">acronym</span> <span class="o">=</span> <span class="n">split_label_text</span><span class="p">(</span>
+                        <span class="n">label_text</span><span class="p">,</span> <span class="n">acronym_length</span>
+                    <span class="p">)</span>
                     <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
                         <span class="p">{</span>
                             <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="nb">id</span><span class="p">,</span>

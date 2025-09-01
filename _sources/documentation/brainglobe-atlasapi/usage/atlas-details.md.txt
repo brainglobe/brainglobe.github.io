@@ -294,4 +294,10 @@ This is a confocal microscopy [atlas of the adult bumblebee](https://doi.org/10.
 
 This atlas has anisotropic resolution (2.542μm in axial direction - along antero-posterior axis - and 1.2407μm in-plane) resolution
 * `kocher_bumblebee_2.542um`
+### Drosophila wing disc instar3 atlas.
+This is a confocal microscopy atlas of the fruit fly larva's imaginal wing disc, at the 3rd instar developmental stage. It was built by Kaixiang Shuai as part of his MSc thesis, supervised by [Giulia Paci (Mao Lab at UCL)](https://www.tissuemechanicslab.com/gulia) and Alessandro Felder (BrainGlobe team).
+This atlas has 2um isotropic resolution. 
+* `drosophila_wingdisc_instar3_2um`
+
+
 

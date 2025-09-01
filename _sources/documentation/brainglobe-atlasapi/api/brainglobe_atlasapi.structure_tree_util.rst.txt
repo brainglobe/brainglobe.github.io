@@ -20,4 +20,6 @@
     
     get_structures_tree
     
+    preorder_depth_first_search
+    
 

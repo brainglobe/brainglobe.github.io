@@ -552,6 +552,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.structure_tree_util.html">brainglobe_atlasapi.structure_tree_util</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.structure_tree_util.child_ids.html">child_ids</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.structure_tree_util.get_structures_tree.html">get_structures_tree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.structure_tree_util.preorder_depth_first_search.html">preorder_depth_first_search</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.update_atlases.html">brainglobe_atlasapi.update_atlases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -576,10 +577,6 @@
 <li class="toctree-l3"><a class="reference internal" href="brainglobe_atlasapi.cli.html">brainglobe_atlasapi.cli</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.bg_atlas.html">brainglobe_atlasapi.bg_atlas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html">BrainGlobeAtlas</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.volume_utils.html">brainglobe_atlasapi.atlas_generation.volume_utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.volume_utils.create_masked_array.html">create_masked_array</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.metadata_utils.html">brainglobe_atlasapi.atlas_generation.metadata_utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -809,10 +806,11 @@
 <h1>split_label_text<a class="headerlink" href="#split-label-text" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.annotation_utils.split_label_text">
-<span class="sig-prename descclassname"><span class="pre">brainglobe_atlasapi.atlas_generation.annotation_utils.</span></span><span class="sig-name descname"><span class="pre">split_label_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../../../_modules/brainglobe_atlasapi/atlas_generation/annotation_utils.html#split_label_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.annotation_utils.split_label_text" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">brainglobe_atlasapi.atlas_generation.annotation_utils.</span></span><span class="sig-name descname"><span class="pre">split_label_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acronym_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../../../_modules/brainglobe_atlasapi/atlas_generation/annotation_utils.html#split_label_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.annotation_utils.split_label_text" title="Link to this definition">#</a></dt>
 <dd><p>Split label text into name + acronym.</p>
 <p>If the label text ends with ‘)’, extract the acronym inside parentheses.
-Otherwise, use the first letter as the acronym.</p>
+Otherwise, you can specify  how many first letters
+you would like to use as acronym</p>
 </dd></dl>
 
 </section>
