@@ -38,7 +38,7 @@ for url, path, branch in REPOS:
 
     # Install the repository in editable mode
     print(f"Installing {path} in editable mode...")
-    subprocess.run(["pip", "install", "-e", path], check=True)
+    subprocess.run(["pip", "install", "-e", f"{path}[dev]"], check=True)
     print(f"Successfully installed {path}.")
 
 print("All repositories fetched and installed successfully.")
