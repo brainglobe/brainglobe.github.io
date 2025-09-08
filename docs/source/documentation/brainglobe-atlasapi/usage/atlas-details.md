@@ -47,6 +47,21 @@ Available versions:
 * `kim_mouse_50um` - 50μm resolution
 * `kim_mouse_100um` - 100μm resolution
 
+### [Enhanced and Unified Mouse Brain Atlas v2](https://figshare.com/articles/dataset/Unified_mouse_brain_atlas_v2/25750983) 
+The updated version of the Unified Mouse Brain Atlas builds upon 
+the work of [Chon et al. (2019)](https://doi.org/10.1038/s41467-019-13057-w), 
+which introduced a highly segmented adult mouse brain atlas with unified anatomical labeling 
+based on the Allen Common Coordinate Framework (CCF). The original atlas integrated the Franklin-Paxinos (FP) 
+labels into the CCF space, providing consistent and detailed segmentation across brain regions.
+
+Version 2 (2024) contains several key improvements:
+Corrected anatomical labels and updated ontology file to resolve inconsistencies in the original release.
+20 µm isotropic label volume generated via shape interpolation for high-resolution anatomical accuracy.
+Maintains full compatibility with the original framework.
+
+This atlas is only available at 20μm resolution:
+* `kim_mouse_isotropic_20um`
+
 ### [Gubra's LSFM mouse brain atlas](https://doi.org/10.1007/s12021-020-09490-8)
 This atlas from [Perens et al. (2020)](https://doi.org/10.1007/s12021-020-09490-8) provides a version of the Allen
 Adult Mouse Brain Atlas, based on solvent-cleared brains imaged with LSFM. This atlas may be a 
