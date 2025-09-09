@@ -11,6 +11,7 @@ Aligning Big Brains & Atlases (ABBA) is a FIJI plugin for the registration of 2D
 the [Python version](https://github.com/BIOP/abba_python) allows users to register their data to any BrainGlobe Atlas. 
 - [Website](https://biop.github.io/ijp-imagetoatlas/registration.html)
 - [GitHub repository](https://github.com/BIOP/ijp-imagetoatlas)
+- [Paper](https://doi.org/10.1016/j.celrep.2025.115876)
 - [ABBA Python](https://github.com/BIOP/abba_python)
 
 ## Brainways
@@ -69,6 +70,12 @@ DMC-BrainMap is a napari-based tool for the analysis of 2D brain sections, inclu
 CoperniFUS is a flexible GUI for stereotaxic Focused UltraSound (FUS) experiment planning.
 - [GitHub repository](https://github.com/Tomaubier/CoperniFUS)
 - [Documentation](https://copernifus.readthedocs.io/en/latest/index.html)
+
+## BraiAn
+BraiAn is a Python library for easy navigation, visualisation, and analysis of whole-brain quantification data
+- [Codeberg repository](https://codeberg.org/SilvaLab/BraiAn)
+- [Documentation](https://silvalab.codeberg.page/BraiAn)
+- [Paper](https://doi.org/10.1016/j.celrep.2025.115876)
 
 :::{hint}
 if you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. 
