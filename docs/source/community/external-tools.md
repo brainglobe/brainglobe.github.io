@@ -92,6 +92,11 @@ Brain Loop Search is a tool for screening significant loop structures in a graph
 - [GitHub repository](https://github.com/SEU-ALLEN-codebase/brain-loop-search)
 - [Documentation](https://seu-allen-codebase.github.io/brain-loop-search/brain_loop_search.html)
 
+## brainreg3D
+brainreg3D is a pipeline for manual pixelwise registration of brain regions using 3D projections onto an experimentally obtained 2D image. 
+- [GitHub repository](https://github.com/JoeRicotta/brainreg3D)
+- [Documentation](https://github.com/JoeRicotta/brainreg3D/blob/6947b843d6359762520487ff8c51220e50992f47/description.md)
+
 
 :::{hint}
 if you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. 
