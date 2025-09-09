@@ -104,5 +104,9 @@ brain-locations-visualizer uses point locations, in 3D coordinates of the Allen 
 
 
 :::{hint}
-if you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. 
+If you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. Typically we include tools which:
+
+- Use a BrainGlobe package in some way
+- Are general purpose, i.e. not just replicating figures from a paper
+- Are installable, i.e. not just a collection of scripts
 :::
