@@ -87,6 +87,12 @@ NeuroCarto is a neural probe channel map editor for the Neuropixels probe family
 - [Documentation](https://neurocarto.readthedocs.io/en/latest/)
 - [Paper](https://doi.org/10.1007/s12021-024-09705-2)
 
+## Brain Loop Search
+Brain Loop Search is a tool for screening significant loop structures in a graph, typically a brain structure graph with physiological or anatomical edge data.
+- [GitHub repository](https://github.com/SEU-ALLEN-codebase/brain-loop-search)
+- [Documentation](https://seu-allen-codebase.github.io/brain-loop-search/brain_loop_search.html)
+
+
 :::{hint}
 if you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. 
 :::
