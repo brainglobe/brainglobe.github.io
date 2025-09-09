@@ -77,6 +77,16 @@ BraiAn is a Python library for easy navigation, visualisation, and analysis of w
 - [Documentation](https://silvalab.codeberg.page/BraiAn)
 - [Paper](https://doi.org/10.1016/j.celrep.2025.115876)
 
+## PyNutil
+PyNutil is a Python library for brain-wide quantification and spatial analysis of features in serial section images from mouse and rat brain
+- [GitHub repository](https://github.com/Neural-Systems-at-UIO/PyNutil)
+
+## NeuroCarto
+NeuroCarto is a neural probe channel map editor for the Neuropixels probe family. It allows user to create a blueprint for arranging electrodes in a desired density and generate a custom channel map.
+- [GitHub repository](https://github.com/AntonioST/NeuroCarto)
+- [Documentation](https://neurocarto.readthedocs.io/en/latest/)
+- [Paper](https://doi.org/10.1007/s12021-024-09705-2)
+
 :::{hint}
 if you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. 
 :::
