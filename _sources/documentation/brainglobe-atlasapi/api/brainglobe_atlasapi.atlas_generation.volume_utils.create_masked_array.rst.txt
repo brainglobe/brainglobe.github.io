@@ -1,0 +1,6 @@
+create\_masked\_array
+=====================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.volume_utils
+
+.. autofunction:: create_masked_array

@@ -1,0 +1,28 @@
+Region
+======
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.mesh_utils
+
+.. autoclass:: Region
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+
+   
+   
+
+   
+   
+
+   
+
+   
+   

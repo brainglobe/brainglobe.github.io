@@ -1,0 +1,6 @@
+extract\_mesh\_from\_mask
+=========================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.mesh_utils
+
+.. autofunction:: extract_mesh_from_mask
