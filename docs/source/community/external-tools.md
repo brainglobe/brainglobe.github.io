@@ -11,6 +11,7 @@ Aligning Big Brains & Atlases (ABBA) is a FIJI plugin for the registration of 2D
 the [Python version](https://github.com/BIOP/abba_python) allows users to register their data to any BrainGlobe Atlas. 
 - [Website](https://biop.github.io/ijp-imagetoatlas/registration.html)
 - [GitHub repository](https://github.com/BIOP/ijp-imagetoatlas)
+- [Paper](https://doi.org/10.1016/j.celrep.2025.115876)
 - [ABBA Python](https://github.com/BIOP/abba_python)
 
 ## Brainways
@@ -70,6 +71,42 @@ CoperniFUS is a flexible GUI for stereotaxic Focused UltraSound (FUS) experiment
 - [GitHub repository](https://github.com/Tomaubier/CoperniFUS)
 - [Documentation](https://copernifus.readthedocs.io/en/latest/index.html)
 
+## BraiAn
+BraiAn is a Python library for easy navigation, visualisation, and analysis of whole-brain quantification data
+- [Codeberg repository](https://codeberg.org/SilvaLab/BraiAn)
+- [Documentation](https://silvalab.codeberg.page/BraiAn)
+- [Paper](https://doi.org/10.1016/j.celrep.2025.115876)
+
+## PyNutil
+PyNutil is a Python library for brain-wide quantification and spatial analysis of features in serial section images from mouse and rat brain
+- [GitHub repository](https://github.com/Neural-Systems-at-UIO/PyNutil)
+
+## NeuroCarto
+NeuroCarto is a neural probe channel map editor for the Neuropixels probe family. It allows user to create a blueprint for arranging electrodes in a desired density and generate a custom channel map.
+- [GitHub repository](https://github.com/AntonioST/NeuroCarto)
+- [Documentation](https://neurocarto.readthedocs.io/en/latest/)
+- [Paper](https://doi.org/10.1007/s12021-024-09705-2)
+
+## Brain Loop Search
+Brain Loop Search is a tool for screening significant loop structures in a graph, typically a brain structure graph with physiological or anatomical edge data.
+- [GitHub repository](https://github.com/SEU-ALLEN-codebase/brain-loop-search)
+- [Documentation](https://seu-allen-codebase.github.io/brain-loop-search/brain_loop_search.html)
+
+## brainreg3D
+brainreg3D is a pipeline for manual pixelwise registration of brain regions using 3D projections onto an experimentally obtained 2D image. 
+- [GitHub repository](https://github.com/JoeRicotta/brainreg3D)
+- [Documentation](https://github.com/JoeRicotta/brainreg3D/blob/6947b843d6359762520487ff8c51220e50992f47/description.md)
+
+## brain-locations-visualizer
+brain-locations-visualizer uses point locations, in 3D coordinates of the Allen Brain Atlas, to create different visualisations for these locations
+- [GitHub repository](https://github.com/HernandoMV/brain-locations-visualizer)
+- [Documentation](https://hernandomv.github.io/brain-locations-visualizer)
+
+
 :::{hint}
-if you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. 
+If you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. Typically we include tools which:
+
+- Use a BrainGlobe package in some way
+- Are general purpose, i.e. not just replicating figures from a paper
+- Are installable, i.e. not just a collection of scripts
 :::
