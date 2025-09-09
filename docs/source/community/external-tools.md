@@ -97,6 +97,11 @@ brainreg3D is a pipeline for manual pixelwise registration of brain regions usin
 - [GitHub repository](https://github.com/JoeRicotta/brainreg3D)
 - [Documentation](https://github.com/JoeRicotta/brainreg3D/blob/6947b843d6359762520487ff8c51220e50992f47/description.md)
 
+## brain-locations-visualizer
+brain-locations-visualizer uses point locations, in 3D coordinates of the Allen Brain Atlas, to create different visualisations for these locations
+- [GitHub repository](https://github.com/HernandoMV/brain-locations-visualizer)
+- [Documentation](https://hernandomv.github.io/brain-locations-visualizer)
+
 
 :::{hint}
 if you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. 
