@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: February 20, 2025
+date: September 08, 2025
 author: Pavel Vychyk
 location: Frankfurt am Main, Germany
 category: brainglobe
@@ -9,7 +9,7 @@ language: English
 
 ## Enhanced and Unified Mouse Brain Atlas v2
 
-[Chon et al. (2019)](https://doi.org/10.1038/s41467-019-13057-w) introduced a unified and highly segmented anatomical labeling 
+[Chon et al. (2019)](https://doi.org/10.1038/s41467-019-13057-w) introduced a unified and more finely segmented anatomical labeling 
 for the adult mouse brain based on the Allen Common Coordinate Framework (CCF). 
 This atlas integrates the widely used Franklin-Paxinos (FP) labels into the Allen CCF space, providing consistent and detailed segmentation, 
 including refinements in the dorsal striatum using cortico-striatal connectivity data.

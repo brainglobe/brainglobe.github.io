@@ -50,7 +50,7 @@ Available versions:
 ### [Enhanced and Unified Mouse Brain Atlas v2](https://figshare.com/articles/dataset/Unified_mouse_brain_atlas_v2/25750983) 
 The updated version of the Unified Mouse Brain Atlas builds upon 
 the work of [Chon et al. (2019)](https://doi.org/10.1038/s41467-019-13057-w), 
-which introduced a highly segmented adult mouse brain atlas with unified anatomical labeling 
+which introduced a more finely segmented adult mouse brain atlas with unified anatomical labeling 
 based on the Allen Common Coordinate Framework (CCF). The original atlas integrated the Franklin-Paxinos (FP) 
 labels into the CCF space, providing consistent and detailed segmentation across brain regions.
 
