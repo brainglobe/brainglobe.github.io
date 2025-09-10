@@ -25,8 +25,9 @@ You will need `napari` installed on your computer - please follow
 6. Set the `background image` to `Background`
 7. Click `Add training data layers`
 
-![cellfinder curation widget](./images/cellfinder-napari/cellfinder-napari-curation.png)
-**The curation widget appears on the right-hand side of the window alongside the raw data with detected cells overlaid**
+    ![cellfinder curation widget](./images/cellfinder-napari/cellfinder-curation-1.png)
+
+    **The curation widget appears on the right-hand side of the window alongside the raw data with detected cells overlaid**
 
 8. Highlight the `Cells` layer and then choose the `Select Points` tool by clicking the arrow in the layer controls 
 widget, or pressing the `3` key on your keyboard.
@@ -36,13 +37,14 @@ widget, or pressing the `3` key on your keyboard.
 12. Create and then select a new directory on your computer (e.g. `cellfinder-retraining`) and click `Choose`.
 13. Close the curation widget by clicking the `x` at the top left of the widget.
 14. Open the retraining widget by selecting `Plugins > cellfinder > Train network` in the napari menu bar near the top left of the window.
-15. Select the data for retraining by clicking `Select files` next to `YAML files` and choose the `training.yml` file 
+15. Select the data for retraining by clicking `Select files` next to `YAML files` and choose the `training.yaml` file 
 is inside the `cellfinder-retraining` directory created earlier
 16. Choose a directory to save the training output, e.g., create a `trained_network` directory
-17. Set `Epochs` 2
+17. Set `Epochs` to 100
 
-![cellfinder training widget](./images/cellfinder-napari/cellfinder-napari-training.png)
-**The training widget appears on the right-hand side of the window.**
+    ![cellfinder training widget](./images/cellfinder-napari/cellfinder-training-2.png)
+    
+    **The training widget appears on the right-hand side of the window.**
 
 18. Click `run`
 19. The training will then run, watch the terminal for updates. Once complete, there will be trained models

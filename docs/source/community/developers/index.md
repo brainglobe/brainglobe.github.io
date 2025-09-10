@@ -5,20 +5,37 @@
 **Contributors to BrainGlobe are absolutely encouraged**, whether to fix a bug, develop a new feature, or add a new atlas.
 
 There are many BrainGlobe repositories, so it may not be obvious where a new contribution should go.
-If you're unsure about any part of the contributing process, please [get in touch](../../contact.md). 
+If you're unsure about any part of the contributing process, please [get in touch](../../contact.md).
 
-The best place for questions about contributing is probably
-the [BrainGlobe Zulip chat](https://brainglobe.zulipchat.com/).
-You are furthermore welcome to join the bi-weekly developer meetings and contribute items to the agenda - check out the [developer-meeting stream on Zulip](https://brainglobe.zulipchat.com/#narrow/stream/414089-developer-meeting) (requires sign-up) for more information.
+## Before you start
 
-If for any reason, you'd rather not reach out in public, feel free to send a direct message on Zulip 
-to [Adam Tyson](https://github.com/adamltyson), one of the core developers.
+Before starting work on a contribution, please check the repository issue tracker to see if there's already an issue describing what you have in mind.
+
+- If there is, add a comment to let others know you're willing to work on it.
+- If there isn't, please create a new issue to describe your idea.
+
+We strongly encourage discussing your plans before you start coding—either in the issue itself or on our [Zulip chat](https://brainglobe.zulipchat.com/).
+You are also welcome to join the bi-weekly developer meetings and contribute items to the agenda - check out the [developer-meeting stream on Zulip](https://brainglobe.zulipchat.com/#narrow/stream/414089-developer-meeting) (requires sign-up) for more information.
+This helps avoid duplicated effort and ensures your work aligns with the project's scope and roadmap.
+
+Keep in mind that we often use issues liberally to track development.
+Some may be vague or aspirational, serving as reminders for future work rather than tasks ready to be tackled.
+There are a few reasons an issue might not be actionable yet:
+
+- It depends on other issues being resolved first.
+- It hasn't been clearly scoped. In such cases, helping to clarify the scope or breaking the issue into smaller parts can be a valuable contribution. Maintainers typically lead this process, but you're welcome to participate in the discussion.
+- It doesn't currently fit into the roadmap or the maintainers' priorities, meaning we may be unable to commit to timely guidance and prompt code reviews.
+
+If you're unsure whether an issue is ready to work on, just ask!
+
+Some issues may be labelled as `good first issue`.
+These are especially suitable if you're new to the project, and we recommend starting there.
 
 Some of our tools have additional information about how data files are organised, where user caches are placed, and similar.
 You can view these repositories and the relevant information by heading to the [specific repository developer docs page](./specific_repos.md).
 
 :::{note}
-Reviewing code can take a long time, and the BrainGlobe team are usually pretty busy. We'll try to review your 
+Reviewing code can take a long time, and the BrainGlobe team are usually pretty busy. We'll try to review your
 contributions as soon as we can, but it can sometimes take a few weeks. We will always get back to you though!
 :::
 
@@ -34,12 +51,24 @@ The core development team will support you in contributing code, irrespective of
 To ensure BrainGlobe remains easy-to-maintain, they will help ensure all code contributions meet 
 a high standard.
 
+### Setting up GitHub repository locally.
+
+It is recommended to clone the relevant repositories and setting up keys and verification to contribute to projects. The same steps apply when working with a forked repository.
+1. Generate your SSH keys as suggested [here](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+2. Setup your commit signature verification as shown [here](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification#ssh-commit-signature-verification)
+3. Clone the repository:
+```
+git clone git@github.com:brainglobe/${REPOSITORY_NAME}.git
+```
 
 ### Creating a development environment
 
 It is recommended to use a recent version of `conda` to install a development environment for
 BrainGlobe projects ([`conda` versions >=23.10.0](https://conda.org/blog/2023-11-06-conda-23-10-0-release/) 
-will significantly speed up installation time). Once you have `conda` installed, the following commands
+will significantly speed up installation time).
+Other Python package managers, such as [uv](https://github.com/astral-sh/uv), might work,
+but we recommend using conda to maintain consistency across packages.
+Once you have `conda` installed, the following commands
 will create and activate a `conda` environment with the requirements needed
 for a development environment:
 

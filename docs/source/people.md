@@ -7,9 +7,8 @@ by [Adam Tyson](https://github.com/adamltyson), [Federico Claudi](https://github
 [Luigi Petrucco](https://github.com/vigji). 
 
 Development is now led by the [Neuroinformatics Unit](https://neuroinformatics.dev/) at the 
-[Sainsbury Wellcome Centre](https://www.sainsburywellcome.org/web/) by [Adam Tyson](https://github.com/adamltyson) and 
-[Alessandro Felder](https://github.com/alessandrofelder). The current active core development team can be 
-found [here](https://github.com/orgs/brainglobe/teams/active-devs).
+[Sainsbury Wellcome Centre](https://www.sainsburywellcome.org/web/) by [Adam Tyson](https://github.com/adamltyson), 
+[Alessandro Felder](https://github.com/alessandrofelder) and [Igor Tatarnikov](https://github.com/IgorTatarnikov).
 
 ## Contributors
 The BrainGlobe Initiative is a community effort and is only possible due to the hard work of many, many people. 
@@ -476,6 +475,181 @@ In no particular order:
 :::{grid-item-card} Sacha Hadaway-Andreae
 :img-bottom: https://avatars.githubusercontent.com/u/175262363?v=4
 :link: https://github.com/sacha091
+:::
+
+:::{grid-item-card} Presa
+:img-bottom: https://avatars.githubusercontent.com/u/124523559?v=4
+:link: https://github.com/zenWai
+:::
+
+:::{grid-item-card} Henry Crosswell
+:img-bottom: https://avatars.githubusercontent.com/u/52281444?v=4
+:link: https://github.com/HenryCrosswell
+:::
+
+:::{grid-item-card} Nischit Kumar
+:img-bottom: https://avatars.githubusercontent.com/u/76816410?v=4
+:link: https://github.com/nischitkumar
+:::
+
+:::{grid-item-card} Kirato Yoshihara
+:img-bottom: https://avatars.githubusercontent.com/u/36755839?v=4
+:link: https://github.com/kira1228
+:::
+
+:::{grid-item-card} Leonard Schwigon
+:img-bottom: /_static/ibu-logo.png
+:link: https://orcid.org/0009-0004-1453-2638
+:::
+
+:::{grid-item-card} Dinora Abdulazhanova
+:img-bottom: /_static/ibu-logo.png
+:link: https://uol.de/ibu/neurosensorik/team/dinora-abdulazhanova
+:::
+
+:::{grid-item-card} Katrin Haase
+:img-bottom: /_static/ibu-logo.png
+:link: https://orcid.org/0000-0002-1365-2548
+:::
+
+:::{grid-item-card} Dominik Heyers
+:img-bottom: /_static/ibu-logo.png
+:link: https://orcid.org/0000-0002-2831-6985
+:::
+
+:::{grid-item-card} Isabelle Museliak
+:img-bottom: /_static/ibu-logo.png
+:link: https://orcid.org/0000-0001-7242-3123
+:::
+
+:::{grid-item-card} Henrik Mouritsen
+:img-bottom: /_static/ibu-logo.png
+:link: https://orcid.org/0000-0001-7082-4839
+:::
+
+:::{grid-item-card} Simon Weiler
+:img-bottom: https://avatars.githubusercontent.com/u/15692611?v=4
+:link: https://github.com/simonweiler
+:::
+
+:::{grid-item-card} Stella Prins
+:img-bottom: https://avatars.githubusercontent.com/u/30465823?v=4
+:link: https://github.com/stellaprins
+:::
+
+:::{grid-item-card}  Richard Dushime
+:img-bottom: https://avatars.githubusercontent.com/u/45734838?v=4
+:link: https://github.com/richarddushime
+:::
+
+:::{grid-item-card}  Miguel Xochicale
+:img-bottom: https://avatars.githubusercontent.com/u/11370681?v=4
+:link: https://github.com/mxochicale
+:::
+
+:::{grid-item-card}  M S P
+:img-bottom: https://avatars.githubusercontent.com/u/48390544?v=4
+:link: https://github.com/msp99000
+:::
+
+:::{grid-item-card}  Abdul Samad
+:img-bottom: https://avatars.githubusercontent.com/u/94792103?v=4
+:link: https://github.com/samadpls
+:::
+
+:::{grid-item-card}  Prisha Sharma
+:img-bottom: https://avatars.githubusercontent.com/u/140067623?v=4
+:link: https://github.com/parharti
+:::
+
+:::{grid-item-card}  Farida Yusuf
+:img-bottom: https://avatars.githubusercontent.com/u/45299159?v=4
+:link: https://github.com/frdysf
+:::
+
+:::{grid-item-card}  Anshu Saini
+:img-bottom: https://avatars.githubusercontent.com/u/132600558?v=4
+:link: https://github.com/0Anshu1
+:::
+
+:::{grid-item-card}  Menna1812
+:img-bottom: https://avatars.githubusercontent.com/u/148006470?v=4
+:link: https://github.com/Menna1812
+:::
+
+:::{grid-item-card}  ayush2281
+:img-bottom: https://avatars.githubusercontent.com/u/134182912?v=4
+:link: https://github.com/ayush2281
+:::
+
+:::{grid-item-card}  BethCr
+:img-bottom: https://avatars.githubusercontent.com/u/175619938?v=4
+:link: https://github.com/BethCr
+:::
+
+:::{grid-item-card}   Swapnaneel Patra
+:img-bottom: https://avatars.githubusercontent.com/u/53182793?v=4
+:link: https://github.com/thisisrick25
+:::
+
+:::{grid-item-card}   Xiaoyu Deng
+:img-bottom: https://avatars.githubusercontent.com/u/179657121?v=4
+:link: https://github.com/X-Deng
+:::
+
+:::{grid-item-card}    DwarvesEatRocks
+:img-bottom: https://avatars.githubusercontent.com/u/159663737?v=4
+:link: https://github.com/DwarvesEatRocks
+:::
+
+:::{grid-item-card}    DPWebster
+:img-bottom: https://avatars.githubusercontent.com/u/185731034?v=4
+:link: https://github.com/DPWebster
+:::
+
+:::{grid-item-card}    Conrad
+:img-bottom: https://avatars.githubusercontent.com/u/26015206?v=4
+:link: https://github.com/conradRz
+:::
+
+:::{grid-item-card}    pranav33317
+:img-bottom: https://avatars.githubusercontent.com/u/113530194?v=4
+:link: https://github.com/pranav33317
+:::
+
+:::{grid-item-card}    Biswanath Saha
+:img-bottom: https://avatars.githubusercontent.com/u/29883365?v=4
+:link: https://github.com/Elsword016
+:::
+
+:::{grid-item-card}    Federico F.
+:img-bottom: https://avatars.githubusercontent.com/u/202606666?v=4
+:link: https://github.com/Fede2717 
+:::
+
+:::{grid-item-card}    Tim Monko
+:img-bottom: https://avatars.githubusercontent.com/u/47310455?v=4
+:link: https://github.com/TimMonko
+:::
+
+:::{grid-item-card}    Kaixiang Shuai
+:img-bottom: https://avatars.githubusercontent.com/u/108368488?v=4
+:link: https://github.com/Skxsmy
+:::
+
+:::{grid-item-card}    Giulia Paci
+:img-bottom: https://avatars.githubusercontent.com/u/33309117?v=4
+:link: https://github.com/giuliapaci
+:::
+
+:::{grid-item-card}    Marco Dalla Vecchia
+:img-bottom: https://avatars.githubusercontent.com/u/31376583?v=4
+:link: https://github.com/marcodallavecchia
+:::
+
+:::{grid-item-card}    Pavel Vychyk
+:img-bottom: https://avatars.githubusercontent.com/u/8183316?v=4
+:link: https://github.com/p-vychik
 :::
 
 ::::

@@ -32,6 +32,7 @@ release = "0.0.1"
 # ones.
 extensions = [
     "ablog",
+    "sphinx.ext.coverage",
     "sphinx.ext.githubpages",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
@@ -42,7 +43,6 @@ extensions = [
     "sphinx_togglebutton",
     "sphinx_sitemap",
     "myst_parser",
-    "numpydoc",
     "nbsphinx",
     "notfound.extension",
     "sphinx_copybutton",
@@ -108,7 +108,6 @@ html_favicon = "_static/brainglobe.png"
 
 ## Cutomize the theme
 html_theme_options = {
-    "announcement": "BrainGlobe version 1 is here! Head over to  <a href='https://brainglobe.info/blog/version1/version_1_released.html'>the blog</a> to find out more",
     "icon_links": [
         {
             # Label for this link
@@ -192,5 +191,6 @@ linkcheck_ignore = [
     "https://brainglobe.zulipchat.com/#narrow/stream/414089-developer-meeting",
     "https://easyengine.io",
     "https://www.scientifica.uk.com",
-    "https://brainglobe.info"
+    "https://brainglobe.info",
+    "https://doi.org/10.1162/imag_a_00209"
     ]

@@ -51,7 +51,8 @@ Available versions:
 This atlas from [Perens et al. (2020)](https://doi.org/10.1007/s12021-020-09490-8) provides a version of the Allen
 Adult Mouse Brain Atlas, based on solvent-cleared brains imaged with LSFM. This atlas may be a 
 good choice for registering other similar images. However, please note that this atlas is in a different coordinate 
-space to the original Allen atlas (CCFv3).
+space to the original Allen atlas (CCFv3). We recommend instead using the second version of this atlas, [Gubra's LSFM 
+mouse brain atlas v2](https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html#gubras-lsfm-mouse-brain-atlas-v2).
 
 This atlas is only available at 20μm resolution:
 * `perens_lsfm_mouse_20um`
@@ -64,7 +65,18 @@ space to the original Allen atlas (CCFv3). In addition this atlas is in flat sku
 plan stereotaxic surgeries.
 
 This atlas is only available at 25μm resolution:
-* `perens_stereotaxic_mouse_mri_25um`
+* `perens_stereotaxic_mri_mouse_25um`
+
+### [Gubra's LSFM mouse brain atlas v2](https://doi.org/10.1007/s12021-023-09623-9)
+This atlas is an addition to its MRI version and provides a version of the Allen Adult Mouse Brain Atlas, based on LSFM. 
+This atlas may be a good choice for registering other similar images. This atlas is the second version of 
+[perens et al. (2020)](https://doi.org/10.1007/s12021-020-09490-8) and was published in 
+[perens et al. (2023)](https://doi.org/10.1007/s12021-023-09623-9).  Please note that this atlas is in a different coordinate
+space to the original Allen atlas (CCFv3) and to Perens 2020. 
+
+
+This atlas is only available at 25μm resolution:
+* `perens_multimodal_lsfm_25um`
 
 ### [Princeton Mouse Brain Atlas](https://brainmaps.princeton.edu/2020/09/princeton-mouse-brain-atlas-links)
 This atlas from [Pisano et al. (2021)](https://doi.org/10.1016/j.celrep.2021.109721) is a version of the Allen
@@ -146,10 +158,9 @@ Available versions:
   *  `kim_dev_mouse_p56_mri-mtr_50um` - MRI MTR template at 50 μm resolution 
 
 
-### [Kim Lab Developmental CCF v0.0.1 (P56)](https://data.mendeley.com/datasets/2svx788ddf/1) 
-This atlas is part of a developmental atlas following Luis Puelles' Developmental Vertebrate Ontology. BrainGlobe 
-currently hosts the P56 version of this atlas at 10μm resolution with eight versions, each with a different reference 
-image - STP, LSFM (iDISCO) and MRI (a0, adc, dwo, fa, MTR, T2). This atlas is now superseded by its 1.0.0 version but continues to be available for reproducibility and archive reasons.
+### [Kim Lab Developmental CCF v001 (P56)](https://data.mendeley.com/datasets/2svx788ddf/1) 
+This atlas is part of a developmental atlas following Luis Puelles' Developmental Vertebrate Ontology. BrainGlobe hosts the original P56 version of this atlas at 10μm resolution with eight different reference 
+images - STP, LSFM (iDISCO) and MRI (a0, adc, dwo, fa, MTR, T2). This atlas is now superseded by its 1.0.0 version but continues to be available for reproducibility and archive reasons.
 
 Available versions:
 * `kim_dev_mouse_stp_10um` - "normal" CCF serial 2p template at 10μm resolution
@@ -161,8 +172,8 @@ Available versions:
 * `kim_dev_mouse_mri_mtr_10um` - MRI MTR (magnetic transfer ratio) template at 10μm resolution
 * `kim_dev_mouse_mri_t2_10um` - MRI T2 template at 10μm resolution
 
-### [BlueBrain Barrel Cortex Atlas](https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00209/121852/Enhancement-of-brain-atlases-with-laminar)
-This atlas from [Bolaños-Puchet et al. (2024)](https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00209/121852/Enhancement-of-brain-atlases-with-laminar) 
+### [BlueBrain Barrel Cortex Atlas](https://doi.org/10.1162/imag_a_00209)
+This atlas from [Bolaños-Puchet et al. (2024)](https://doi.org/10.1162/imag_a_00209) 
 is a version of the Allen Adult Mouse Brain Atlas with the addition of annotations of 33 barrels and barrel columns. 
 For more details, please see [the blogpost](/blog/barrel-atlas-added).
 
@@ -193,6 +204,13 @@ mouse brain atlas. At present a drawback of this atlas is that the
 segmentations do not cover the entire brain and is limited to the regions previously mentioned. 
 This atlas is only available at 15μm resolution:
 * `australian_mouse_15um`
+### [CCFv3 augmented mouse atlas](https://doi.org/10.1162/imag_a_00565)
+This atlas is an extended version of the CCFv3, designed to cover the rostral and caudal tips of the mouse brain. 
+This atlas is particularly useful for users who require the whole brain to be represented including the posterior 
+third of the cerebellum, the brainstem, and the anterior olfactory bulb. It includes two Nissl reference templates, 
+one which is a population average from hundreds of mice and one based on three animals. The Nissl template included
+in the CCFv3 is slightly misaligned, here the Nissl template has been more precisely registered into the CCFv3 space.
+The CCFv3 Augmented also includes new delineations of the granular layer of the cerebellum.
 
 ### [DeMBA Developmental Mouse Brain Atlas](https://doi.org/10.1101/2024.06.14.598876)
 This atlas contains 53 days of development including every day from postnatal day 4 to postnatal day 56. It includes 
@@ -516,6 +534,9 @@ Available versions:
   * `demba_p56_lsfm_25um` - LSFM template at 25 μm resolution
   * `demba_p56_mri_25um` - MRI template at 25 μm resolution
   * `demba_p56_allen_stpt_10um` - Allen STPT template at 10 μm resolution
+Available versions:
+* `ccfv3augmented_mouse_10um` - 10μm resolution
+* `ccfv3augmented_mouse_25um` - 25μm resolution
 ## Rat
 ### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
 The Waxholm Space rat brain atlas features annotations of 222 structures, alongside a 39μm MRI template. It provides detailed delineations 
@@ -547,9 +568,6 @@ see [the blogpost](/blog/cavefish-atlas-added).
 This atlas is only available at 2μm resolution:
 * `sju_cavefish_2um`
 
-
-
-
 ## Amphibian
 ### [UNAM Axolotl Brain Atlas](https://doi.org/10.1038/s41598-021-89357-3)
 This is a magnetic resonance imaging based atlas of the Axolotl (Ambystoma mexicanum) from 
@@ -569,15 +587,39 @@ This atlas is only available at 500μm resolution:
 * `allen_human_500um`
 
 ### [MRI mouse lemur brain atlas](https://doi.org/10.1016/j.dib.2018.10.067) 
-This is a MRI atlas of the grey mouse lemur (Microcebus murinus) from 
+This is an MRI atlas of the grey mouse lemur (Microcebus murinus) from 
 [Nadkarni et al. (2018)](https://doi.org/10.1016/j.dib.2018.10.067).
 
 This atlas is only available at 91um resolution
 * `nadkarni_mri_mouselemur_91um`
 
+## Other mammal
+### [Cat brain atlas](https://doi.org/10.1002/cne.24271)
 
+This is an MRI atlas of a cat (Felis catus) from [Stolzberg et al. (2017)](https://doi.org/10.1002/cne.24271)
 
+This atlas is only available at 500um resolution:
+* `csl_cat_500um`
 
+## Bird
+### [Eurasian blackcap atlas](https://doi.org/10.1101/2025.03.04.641293)
+This is a serial section two-photon atlas of the Eurasian blackcap (Sylvia atricapilla) 
+built by the BrainGlobe team ([Sirmpilatze et al. (2025)](https://doi.org/10.1101/2025.03.04.641293)). 
+For more details please see [the project page](/projects/blackcap/index).
+
+This atlas is only available at 25μm resolution:
+* `eurasian_blackcap_25um`
+
+## Invertebrate
+### [Kocher Bumblebee Brain Atlas](https://doi.org/10.1016/j.cub.2022.04.066)
+This is a confocal microscopy [atlas of the adult bumblebee](https://doi.org/10.1016/j.cub.2022.04.066), made by the Kocher lab.
+
+This atlas has anisotropic resolution (2.542μm in axial direction - along antero-posterior axis - and 1.2407μm in-plane) resolution
+* `kocher_bumblebee_2.542um`
+### Drosophila wing disc instar3 atlas.
+This is a confocal microscopy atlas of the fruit fly larva's imaginal wing disc, at the 3rd instar developmental stage. It was built by Kaixiang Shuai as part of his MSc thesis, supervised by [Giulia Paci (Mao Lab at UCL)](https://www.tissuemechanicslab.com/gulia) and Alessandro Felder (BrainGlobe team).
+This atlas has 2um isotropic resolution. 
+* `drosophila_wingdisc_instar3_2um`
 
 
 

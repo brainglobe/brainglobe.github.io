@@ -10,3 +10,6 @@ sphinx-notfound-page
 sphinx-sitemap
 sphinx-copybutton
 ablog>=0.11.8
+pyalex
+pre-commit
+pyyaml
