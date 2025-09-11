@@ -223,7 +223,6 @@ Available versions:
 * at P4
   * `demba_allen_seg_dev_mouse_p4_20um` - contains STPT at 20 μm resolution
   * `demba_allen_seg_dev_mouse_p4_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
-
 * at P5
   * `demba_allen_seg_dev_mouse_p5_20um` - contains STPT at 20 μm resolution
   * `demba_allen_seg_dev_mouse_p5_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
