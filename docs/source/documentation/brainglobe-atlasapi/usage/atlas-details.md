@@ -222,165 +222,165 @@ multiple modalities, MRI, Light Sheet Fluoresence Microscopy, and STPT in 20, an
 STPT templates are from developmental stages (P4, P7, P14, P21, P28, and P56) with the days in between interpolated. 
 Available versions:
 * at P4
-  * `demba_allen_seg_dev_mouse_p4_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p4_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p4_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p4_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 
 * at P5
-  * `demba_allen_seg_dev_mouse_p5_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p5_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p5_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p5_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P6
-  * `demba_allen_seg_dev_mouse_p6_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p6_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p6_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p6_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P7
-  * `demba_allen_seg_dev_mouse_p7_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p7_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p7_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p7_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P8
-  * `demba_allen_seg_dev_mouse_p8_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p8_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p8_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p8_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P9
-  * `demba_allen_seg_dev_mouse_p9_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p9_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p9_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p9_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P10
-  * `demba_allen_seg_dev_mouse_p10_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p10_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p10_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p10_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P11
-  * `demba_allen_seg_dev_mouse_p11_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p11_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p11_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p11_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P12
-  * `demba_allen_seg_dev_mouse_p12_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p12_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p12_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p12_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P13
-  * `demba_allen_seg_dev_mouse_p13_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p13_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p13_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p13_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P14
-  * `demba_allen_seg_dev_mouse_p14_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p14_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p14_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p14_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P15
-  * `demba_allen_seg_dev_mouse_p15_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p15_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p15_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p15_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P16
-  * `demba_allen_seg_dev_mouse_p16_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p16_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p16_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p16_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P17
-  * `demba_allen_seg_dev_mouse_p17_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p17_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p17_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p17_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P18
-  * `demba_allen_seg_dev_mouse_p18_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p18_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p18_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p18_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P19
-  * `demba_allen_seg_dev_mouse_p19_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p19_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p19_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p19_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P20
-  * `demba_allen_seg_dev_mouse_p20_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p20_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p20_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p20_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P21
-  * `demba_allen_seg_dev_mouse_p21_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p21_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p21_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p21_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P22
-  * `demba_allen_seg_dev_mouse_p22_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p22_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p22_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p22_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P23
-  * `demba_allen_seg_dev_mouse_p23_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p23_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p23_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p23_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P24
-  * `demba_allen_seg_dev_mouse_p24_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p24_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p24_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p24_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P25
-  * `demba_allen_seg_dev_mouse_p25_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p25_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p25_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p25_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P26
-  * `demba_allen_seg_dev_mouse_p26_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p26_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p26_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p26_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P27
-  * `demba_allen_seg_dev_mouse_p27_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p27_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p27_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p27_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P28
-  * `demba_allen_seg_dev_mouse_p28_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p28_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p28_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p28_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P29
-  * `demba_allen_seg_dev_mouse_p29_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p29_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p29_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p29_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P30
-  * `demba_allen_seg_dev_mouse_p30_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p30_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p30_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p30_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P31
-  * `demba_allen_seg_dev_mouse_p31_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p31_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p31_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p31_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P32
-  * `demba_allen_seg_dev_mouse_p32_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p32_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p32_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p32_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P33
-  * `demba_allen_seg_dev_mouse_p33_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p33_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p33_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p33_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P34
-  * `demba_allen_seg_dev_mouse_p34_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p34_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p34_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p34_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P35
-  * `demba_allen_seg_dev_mouse_p35_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p35_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p35_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p35_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P36
-  * `demba_allen_seg_dev_mouse_p36_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p36_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p36_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p36_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P37
-  * `demba_allen_seg_dev_mouse_p37_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p37_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p37_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p37_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P38
-  * `demba_allen_seg_dev_mouse_p38_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p38_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p38_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p38_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P39
-  * `demba_allen_seg_dev_mouse_p39_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p39_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p39_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p39_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P40
-  * `demba_allen_seg_dev_mouse_p40_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p40_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p40_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p40_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P41
-  * `demba_allen_seg_dev_mouse_p41_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p41_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p41_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p41_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P42
-  * `demba_allen_seg_dev_mouse_p42_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p42_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p42_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p42_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P43
-  * `demba_allen_seg_dev_mouse_p43_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p43_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p43_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p43_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P44
-  * `demba_allen_seg_dev_mouse_p44_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p44_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p44_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p44_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P45
-  * `demba_allen_seg_dev_mouse_p45_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p45_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p45_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p45_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P46
-  * `demba_allen_seg_dev_mouse_p46_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p46_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p46_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p46_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P47
-  * `demba_allen_seg_dev_mouse_p47_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p47_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p47_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p47_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P48
-  * `demba_allen_seg_dev_mouse_p48_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p48_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p48_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p48_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P49
-  * `demba_allen_seg_dev_mouse_p49_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p49_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p49_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p49_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P50
-  * `demba_allen_seg_dev_mouse_p50_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p50_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p50_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p50_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P51
-  * `demba_allen_seg_dev_mouse_p51_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p51_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p51_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p51_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P52
-  * `demba_allen_seg_dev_mouse_p52_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p52_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p52_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p52_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P53
-  * `demba_allen_seg_dev_mouse_p53_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p53_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p53_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p53_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P54
-  * `demba_allen_seg_dev_mouse_p54_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p54_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p54_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p54_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P55
-  * `demba_allen_seg_dev_mouse_p55_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p55_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p55_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p55_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 * at P56
-  * `demba_allen_seg_dev_mouse_p56_20um` - contains STPT, and the Allen STPT at 20 μm resolution
-  * `demba_allen_seg_dev_mouse_p56_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
+  * `demba_allen_seg_dev_mouse_p56_20um` - contains STPT at 20 μm resolution
+  * `demba_allen_seg_dev_mouse_p56_25um` - contains STPT, a MRI template, and a LSFM template at 25 μm resolution
 
 
 ## Rat
