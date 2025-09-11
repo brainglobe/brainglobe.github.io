@@ -16,7 +16,7 @@ including refinements in the dorsal striatum using cortico-striatal connectivity
 
 ![Mouse brain coronal and lateral views in napari](./images/kim_enhanced_unified_mouse_brain_atlas_v2.png)
 
-**Figure 1. Coronal and lateral views of the mouse brain, visualized using the napari viewer (left to right).**
+**Figure 1. Coronal and lateral views of the mouse brain, visualized using the napari viewer**
 
 The latest update (Version 2, 2024) addresses inconsistencies in the original anatomical labels and ontology file and provides 20 µm isotropic labels generated through shape interpolation.
 
