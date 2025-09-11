@@ -20,6 +20,8 @@ including refinements in the dorsal striatum using cortico-striatal connectivity
 
 The latest update (Version 2, 2024) addresses inconsistencies in the original anatomical labels and ontology file and provides 20 µm isotropic labels generated through shape interpolation.
 
+The atlas is now also available through BrainGlobe under the name `kim_mouse_isotropic_20um`.
+
 ## How do I use the new atlases?
 You can use these atlases for visualisation and analysis, like other BrainGlobe atlases. To visualise an atlas, follow the steps below:
 * Install BrainGlobe ([instructions](/documentation/index))
