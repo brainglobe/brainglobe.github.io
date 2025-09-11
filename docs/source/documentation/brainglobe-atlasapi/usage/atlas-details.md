@@ -55,7 +55,7 @@ based on the Allen Common Coordinate Framework (CCF). The original atlas integra
 labels into the CCF space, providing consistent and detailed segmentation across brain regions.
 
 Version 2 (2024) contains several key improvements:
-Corrected anatomical labels and updated ontology file to resolve inconsistencies in the original release.
+* Corrected anatomical labels and updated ontology file to resolve inconsistencies in the original release.
 20 µm isotropic label volume generated via shape interpolation for high-resolution anatomical accuracy.
 Maintains full compatibility with the original framework.
 
