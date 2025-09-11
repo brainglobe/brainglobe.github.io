@@ -26,7 +26,7 @@ You can use these atlases for visualisation and analysis, like other BrainGlobe 
 * Open napari and follow the steps in our [download tutorial](/tutorials/manage-atlases-in-GUI.md) for your atlas of choice
 * Visualise the different parts of the atlas as described in our [visualisation tutorial](/tutorials/visualise-atlas-napari)
 
-To use the atlas with other software such as [brainreg](/documentation/brainreg/index), please follow the instructions for those tools, and simply choose this atlas from the user interface. Note that some MRI atlases might not be good registration targets, because they include tissue outside the brain. And remember to cite the original publication as well as any BrainGlobe tools you used!
+To use the atlas with other software such as [brainreg](/documentation/brainreg/index), please follow the instructions for those tools, and simply choose this atlas from the user interface. And remember to cite the original publication as well as any BrainGlobe tools you used!
 
 ## Why are we adding new atlases?
 A fundamental aim of the BrainGlobe project is to make various brain atlases easily accessible by users across the globe. If you would like to get involved with a similar project, please [get in touch](/contact).
