@@ -102,6 +102,10 @@ brain-locations-visualizer uses point locations, in 3D coordinates of the Allen 
 - [GitHub repository](https://github.com/HernandoMV/brain-locations-visualizer)
 - [Documentation](https://hernandomv.github.io/brain-locations-visualizer)
 
+## neuralib
+neuralib is a utility toolkit for rodent systems neuroscience research. It provides wrappers, parsers, and tools for efficient data handling, analysis, and reproducibility in open-source neuroscience workflows.
+- [GitHub repository](https://github.com/ytsimon2004/neuralib)
+- [Documentation](https://neuralib.readthedocs.io)
 
 :::{hint}
 If you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. Typically we include tools which:
