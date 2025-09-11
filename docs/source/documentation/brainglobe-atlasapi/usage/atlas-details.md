@@ -219,6 +219,7 @@ Available versions:
 This atlas contains 53 days of development including every day from postnatal day 4 to postnatal day 56. Each time point 
 has two atlases, a 20um version with the STPT, and Allen STPT template and a 25um version with the STPT, the Allen STPT, 
 an MRI, and an LSFM template. 
+
 Available versions:
 * at P4
   * `demba_allen_seg_dev_mouse_p4_20um` - contains STPT at 20 μm resolution
