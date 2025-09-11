@@ -212,6 +212,9 @@ one which is a population average from hundreds of mice and one based on three a
 in the CCFv3 is slightly misaligned, here the Nissl template has been more precisely registered into the CCFv3 space.
 The CCFv3 Augmented also includes new delineations of the granular layer of the cerebellum.
 
+Available versions:
+* `ccfv3augmented_mouse_10um` - 10μm resolution
+* `ccfv3augmented_mouse_25um` - 25μm resolution
 ### [DeMBA Developmental Mouse Brain Atlas](https://doi.org/10.1101/2024.06.14.598876)
 This atlas contains 53 days of development including every day from postnatal day 4 to postnatal day 56. It includes 
 multiple modalities, MRI, Light Sheet Fluoresence Microscopy, and STPT in 20, and 25 micron variants. It uses the allen CCFv3 
@@ -380,9 +383,6 @@ Available versions:
   * `demba_allen_seg_dev_mouse_p56_25um` - contains STPT, the Allen STPT, a MRI template, and a LSFM template at 25 μm resolution
 
 
-Available versions:
-* `ccfv3augmented_mouse_10um` - 10μm resolution
-* `ccfv3augmented_mouse_25um` - 25μm resolution
 ## Rat
 ### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
 The Waxholm Space rat brain atlas features annotations of 222 structures, alongside a 39μm MRI template. It provides detailed delineations 
