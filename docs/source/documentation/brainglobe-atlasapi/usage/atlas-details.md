@@ -56,7 +56,7 @@ labels into the CCF space, providing consistent and detailed segmentation across
 
 Version 2 (2024) contains several key improvements:
 * Corrected anatomical labels and updated ontology file to resolve inconsistencies in the original release.
-20 µm isotropic label volume generated via shape interpolation for high-resolution anatomical accuracy.
+* 20 µm isotropic label volume generated via shape interpolation for high-resolution anatomical accuracy.
 * Maintains full compatibility with the original framework.
 
 This atlas is only available at 20μm resolution:
