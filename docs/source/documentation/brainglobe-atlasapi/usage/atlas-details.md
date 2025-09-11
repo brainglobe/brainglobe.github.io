@@ -218,8 +218,7 @@ Available versions:
 ### [DeMBA Developmental Mouse Brain Atlas](https://doi.org/10.1101/2024.06.14.598876)
 This atlas contains 53 days of development including every day from postnatal day 4 to postnatal day 56. It includes 
 multiple modalities, MRI, Light Sheet Fluoresence Microscopy, and STPT in 20, and 25 micron variants. It uses the allen CCFv3 
-2022 delineations warped down to each template. The MRI, LSFM, and Allen STPT templates are warped from the allen whereas the 
-STPT templates are from developmental stages (P4, P7, P14, P21, P28, and P56) with the days in between interpolated. 
+2022 delineations warped down to each template.
 Available versions:
 * at P4
   * `demba_allen_seg_dev_mouse_p4_20um` - contains STPT at 20 μm resolution
