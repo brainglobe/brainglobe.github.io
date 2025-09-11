@@ -218,7 +218,8 @@ Available versions:
 ### [DeMBA Developmental Mouse Brain Atlas](https://doi.org/10.1038/s41467-025-63177-9)
 This atlas contains 53 days of development including every day from postnatal day 4 to postnatal day 56. Each time point 
 has two atlases, a 20um version with the STPT, and Allen STPT template and a 25um version with the STPT, the Allen STPT, 
-an MRI, and an LSFM template. 
+an MRI, and an LSFM template. The Allen STPT template is a transformed version of the default template provided with the
+Allen CCFv3, it is useful for comparison with the adult CCFv3.  
 
 Available versions:
 * at P4
