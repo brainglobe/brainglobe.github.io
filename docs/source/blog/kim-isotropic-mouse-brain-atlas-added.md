@@ -7,7 +7,7 @@ category: brainglobe
 language: English
 ---
 
-## Enhanced and Unified Mouse Brain Atlas v2
+# Enhanced and Unified Mouse Brain Atlas v2 has been added to BrainGlobe
 
 [Chon et al. (2019)](https://doi.org/10.1038/s41467-019-13057-w) introduced a unified and more finely segmented anatomical labeling 
 for the adult mouse brain based on the Allen Common Coordinate Framework (CCF). 
