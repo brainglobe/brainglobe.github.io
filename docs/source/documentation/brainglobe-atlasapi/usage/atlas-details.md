@@ -304,11 +304,19 @@ This atlas is only available at 25μm resolution:
 * `eurasian_blackcap_25um`
 
 ## Invertebrate
+
+### [Columbia cuttlefish atlas](https://doi.org/10.1016/j.cub.2023.06.007)
+This is an MRI atlas of the dwarf cuttlefish (Sepia bandensis) from [Montague et al. (2023)](https://doi.org/10.1016/j.cub.2023.06.007)
+
+This atlas is only available at 50μm resolution:
+* `columbia_cuttlefish_50um`
+
 ### [Kocher Bumblebee Brain Atlas](https://doi.org/10.1016/j.cub.2022.04.066)
 This is a confocal microscopy [atlas of the adult bumblebee](https://doi.org/10.1016/j.cub.2022.04.066), made by the Kocher lab.
 
 This atlas has anisotropic resolution (2.542μm in axial direction - along antero-posterior axis - and 1.2407μm in-plane) resolution
 * `kocher_bumblebee_2.542um`
+
 ### Drosophila wing disc instar3 atlas.
 This is a confocal microscopy atlas of the fruit fly larva's imaginal wing disc, at the 3rd instar developmental stage. It was built by Kaixiang Shuai as part of his MSc thesis, supervised by [Giulia Paci (Mao Lab at UCL)](https://www.tissuemechanicslab.com/gulia) and Alessandro Felder (BrainGlobe team).
 This atlas has 2um isotropic resolution. 
