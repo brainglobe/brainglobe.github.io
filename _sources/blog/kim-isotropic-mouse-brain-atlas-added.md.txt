@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: September 08, 2025
+date: September 12, 2025
 author: Pavel Vychyk
 location: Frankfurt am Main, Germany
 category: brainglobe
