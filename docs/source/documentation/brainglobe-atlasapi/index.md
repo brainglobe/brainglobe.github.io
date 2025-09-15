@@ -18,7 +18,9 @@ Each atlas consists of data files in a common format:
 
 ## Atlases available
 
+
 A number of atlases are in development, but those available currently are:
+
 | Atlas Name | Resolution | Ages | Reference Images | Name in API & More Info |
 | --- |  --- | --- | --- | --- |
 | [Allen Mouse Brain Atlas](https://doi.org/10.1016/j.cell.2020.04.007) | 10, 25, 50, and 100 micron | P56 | STPT  | [![More info](https://img.shields.io/badge/More%20info-Click%20here-blue)](https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html#allen-adult-mouse-brain-atlas) |
@@ -49,6 +51,7 @@ A number of atlases are in development, but those available currently are:
 | [Columbia cuttlefish atlas](https://doi.org/10.1016/j.cub.2023.06.007) | 50 micron | 6-7 months | MRI | [![More info](https://img.shields.io/badge/More%20info-Click%20here-blue)](https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html#columbia-cuttlefish-atlas) |
 | [Kocher Bumblebee Brain Atlas](https://doi.org/10.1016/j.cub.2022.04.066) | 2.542 x 1.2407 x 1.2407 micron | Adult Worker | Confocal | [![More info](https://img.shields.io/badge/More%20info-Click%20here-blue)](https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html#kocher-bumblebee-brain-atlas) |
 | Drosophila wing disc instar3 atlas| 2 micron | 3rd Instar Larvae | Confocal | [![More info](https://img.shields.io/badge/More%20info-Click%20here-blue)](https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html#Drosophila-wing-disc-instar3-atlas) |
+| [DeMBA Developmental Mouse Brain Atlas](https://doi.org/10.1101/2024.06.14.598876) | 10, 20, and 25 micron | every day from P04 to P56  | MRI, STPT, LSFM | [![More info](https://img.shields.io/badge/More%20info-Click%20here-blue)](https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html#demba-developmental-mouse-brain-atlas) |
 
 
 **Acronyms:**
