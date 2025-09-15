@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: September 11, 2025
+date: September 15, 2025
 author: Harry Carey, Heidi Kleven, Ingvild Bjerke
 location: Oslo, Norway
 category: brainglobe
