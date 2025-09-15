@@ -8,7 +8,7 @@ language: English
 ---
 # DeMBA, A 4D atlas representing mouse brain development from adolescence to adulthood 
 
-[Carey & Kleven et al., 2025](https://doi.org/10.1038/s41467-025-63177-9) recently published an atlas of postnatal mouse brain development called DeMBA (Developmental Mouse Brain Atlas). This atlas covers the mouse brain development, from day 4 after birth through to adulthood at day 56 (three months).  DeMBA provides the Allen Mouse Brain CCF v3 brain region segmentations. One of the key features of DeMBA is that a researchers can choose day-specific templates corresponding to the developmental age they are studying. Another key feature is that DeMBA is integrated into the [BrainGlobe CCF Translator](https://github.com/brainglobe/brainglobe-ccf-translator), which allows data to be transformed to any age of the atlas (a total of 53 ages).
+[Carey & Kleven et al., 2025](https://doi.org/10.1038/s41467-025-63177-9) recently published an atlas of postnatal mouse brain development called DeMBA (Developmental Mouse Brain Atlas). This atlas covers the mouse brain in development, from day 4 after birth through to adulthood at day 56 (three months).  DeMBA provides the Allen Mouse Brain CCF v3 brain region segmentations. One of the key features of DeMBA is that a researchers can choose day-specific templates corresponding to the developmental age they are studying. Another key feature is that DeMBA is integrated into the [BrainGlobe CCF Translator](https://github.com/brainglobe/brainglobe-ccf-translator), which allows data to be transformed to any age of the atlas (a total of 53 ages).
 
 
 ![Coronal views of the demba atlas at different timepoints](./images/demba.png)
