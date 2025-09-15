@@ -12,7 +12,7 @@ language: English
 
 
 ![Coronal views of the demba atlas at different timepoints](./images/demba.png)
-**Figure 1: DeMBA cut in coronal sections from anterior to posterior at 5 ages. Each section shows the STPT template on the left side and the transformed Allen Mouse Brain CCFv3 segmentations on the right side.**
+**Figure 1: Coronal sections of the DeMBA from anterior to posterior at five ages. Each section shows the STPT template on the left side and the transformed Allen Mouse Brain CCFv3 segmentations on the right side.**
 
 DeMBA was created based on Serial Two-Photon Tomography (STPT) templates from five ages, with intermediate ages interpolated using CCF Translator. The STPT templates of the atlas are available at 20µm and 25µm resolution. Using the CCF Translator, Magnetic Resonance Imaging (MRI) and Light Sheet Fluorescence Microscopy (LSFM) templates from the adult were transformed into the spaces of all DeMBA ages. These are provided as alternative modalities at 20µm resolution. All ages of the atlas, from 4 to 56, are available through the BrainGlobeAPI. For instance, the 20 µm P4 atlas can be accessed through BrainGlobe as ```demba_allen_seg_dev_mouse_p4_20um```. For more information see the [atlas documentation](https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html#demba-developmental-mouse-brain-atlas).
 
