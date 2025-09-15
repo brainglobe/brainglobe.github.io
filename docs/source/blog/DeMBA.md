@@ -21,7 +21,7 @@ DeMBA was created based on Serial Two-Photon Tomography (STPT) templates from fi
 You can use the DeMBA for visualisation like other BrainGlobe atlases. To visualise the atlas, you could follow the steps below:
 
 * Install BrainGlobe ([instructions](/documentation/index))
-* Open napari and follow the steps in our [download tutorial](/tutorials/manage-atlases-in-GUI.md) for the extended and improved CCF atlas.
+* Open napari and follow the steps in our [download tutorial](/tutorials/manage-atlases-in-GUI.md) for this atlas.
 * Visualise the different parts of the atlas as described in our [visualisation tutorial](/tutorials/visualise-atlas-napari)
 
 ## Why are we adding new atlases?
