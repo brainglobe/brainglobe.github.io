@@ -43,10 +43,20 @@ extensions = [
     "sphinx_togglebutton",
     "sphinx_sitemap",
     "myst_parser",
-    "nbsphinx",
     "notfound.extension",
     "sphinx_copybutton",
+    "sphinx_gallery.gen_gallery",
 ]
+
+
+sphinx_gallery_conf = {
+    "examples_dirs": ["examples"],
+    "gallery_dirs": ["examples_build"],  # output directory
+    "run_stale_examples": True,  # re-run examples on each build
+    "filename_pattern": "/*.py",  # which files to execute before inclusion
+    }
+
+
 
 # Configure the myst parser to enable cool markdown features
 myst_enable_extensions = [

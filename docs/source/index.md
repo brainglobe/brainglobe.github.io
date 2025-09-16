@@ -50,5 +50,6 @@ documentation/index
 community/index
 blog/index
 projects/index
+examples_build/index
 blackcap
 ```

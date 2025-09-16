@@ -9,7 +9,10 @@ sphinx-togglebutton
 sphinx-notfound-page
 sphinx-sitemap
 sphinx-copybutton
+sphinx-gallery
 ablog>=0.11.8
 pyalex
 pre-commit
 pyyaml
+brainglobe-atlasapi
+matplotlib

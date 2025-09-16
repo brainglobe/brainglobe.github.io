@@ -84,3 +84,5 @@ venv/
 # written by setuptools_scm
 **/_version.py
 
+docs/source/examples_build/
+docs/source/sg_execution_times.rst
