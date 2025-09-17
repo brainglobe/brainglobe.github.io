@@ -1,7 +1,27 @@
 """
-Python API
+BrainGlobe Atlas API
 ==========
+Using the BrainGlobe Atlas API to fetch and inspect an atlas
 """
+
+
+# %%
+# Import the Atlas API and find an atlas
+# -----
+
+# %%
+# Import the API and some other tools
+
+from brainglobe_atlasapi import BrainGlobeAtlas
+from pprint import pprint # to format printed data nicely
+from matplotlib import pyplot as plt
+
+# %%
+# To know what atlases are available through BrainGlobe, we can use the `show_atlases` function
+# (requires an internet connection):
+
+from brainglobe_atlasapi import show_atlases
+show_atlases()
 
 # %%
 # Creating a `BrainGlobeAtlas` object
@@ -10,18 +30,18 @@ Python API
 # version of this atlas files will be downloaded from the `remote GIN repository <http://gin.g-node.org/brainglobe/atlases>`_
 # and stored on your local machine (by default, in `~/.brainglobe`):
 
-from brainglobe_atlasapi import BrainGlobeAtlas
-from pprint import pprint # to format printed data nicely
-from matplotlib import pyplot as plt
-
 atlas = BrainGlobeAtlas("allen_mouse_100um", check_latest=False)
 
 # %%
-# To know what atlases are available through BrainGlobe, we can use the `show_atlases` function
-# (requires an internet connection):
+# .. admonition:: Atlas quality
+#   :class: note
+#
+#   Usually BrainGlobe only packages existing atlases. The quality of the underlying images and atlas ontology
+#   relies on the original atlas data, and this can vary considerably. In this example, we choose the "allen_mouse_100um"
+#   atlas, as it is relatively small, but high quality.
 
-from brainglobe_atlasapi import show_atlases
-show_atlases()
+
+
 
 # %%
 # Using the atlas
@@ -48,7 +68,7 @@ pprint(metadata)
 # ----
 
 # %%
-# Anatomical reference:
+# Anatomical reference (or template) image:
 
 reference = atlas.reference
 
@@ -96,41 +116,40 @@ atlas.get_structure_descendants("VISC")
 # %%
 atlas.get_structure_ancestors("VISC6a")
 
-# %%
-# **NOTE**: the levels of the hierarchy depend on the underlying atlas, so we cannot ensure the goodness and consistency of their hierarchy three.
-#
-# There is a higher level description of the structures hierarchy that is built using the
-# [treelib](https://treelib.readthedocs.io/en/latest/) package, and is available as:
-
-atlas.structures.tree
 
 # %%
-# For most applications, though, the methods described above and the list path of each region should be enough to query
-# the hierarchy without additional layers of complication.
-
-# %%
-# ### Region masks
+# Region masks
+# ----
 #
 # Sometimes, we might want to have the mask for a region that is not labelled in the annotation stack as all its voxels
 # have the number of some lower level parcellation in the hierarchy (concretely, if the brain is divided in hindbrain,
 # midbrain, and forebrain, `annotation == root_id` will be all False).
 #
-# To get the mask for a region, simply type:
+# To get the mask for a region, use
 
-stack = atlas.get_structure_mask(997)
-
-# %%
-# ### Regions meshes
-#
-# If we need to access the structure meshes, we can either query for the file (e.g., if we need to load the file
-# through some library like `vedo`):
-
-atlas.meshfile_from_structure("CH")
+mask = atlas.get_structure_mask(997)
+plt.imshow(mask[middle_section,:,:], cmap="gray")
 
 # %%
-# Or directly obtain the mesh, as a mesh object of the `meshio` library:
+# Region meshes
+# ---
 
-atlas.mesh_from_structure("CH")
+# %%
+# To access the 3D structure mesh for visualisation, this can be queried using the region ID or abbreviation. A `meshio.Mesh` object is returned.
+
+print(atlas.mesh_from_structure("CH"))
+
+# %%
+# A list of regions can also be queried:
+
+pprint(atlas.mesh_from_structure(["CH", "VISp"]))
+
+# %%
+# The path can also be queried directly, if it's needed to be used within antoher library
+
+print(atlas.meshfile_from_structure("CH"))
+
+
 
 # %%
 # ## Query the atlas
