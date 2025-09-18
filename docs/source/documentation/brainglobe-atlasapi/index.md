@@ -76,7 +76,6 @@ pip install brainglobe-atlasapi
 ```{toctree}
 :maxdepth: 2
 usage/atlas-details
-usage/python-api
 usage/command-line-interface
 usage/using-the-files-directly
 

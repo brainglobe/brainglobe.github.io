@@ -1,13 +1,13 @@
 """
 BrainGlobe Atlas API
-==========
+====================
 Using the BrainGlobe Atlas API to fetch and inspect an atlas
 """
 
 
 # %%
 # Import the Atlas API and find an atlas
-# -----
+# --------------------------------------
 
 # %%
 # Import the API and some other tools
@@ -25,7 +25,7 @@ show_atlases()
 
 # %%
 # Creating a `BrainGlobeAtlas` object
-# -----
+# -----------------------------------
 # To instantiate a `BrainGlobeAtlas` object, we need to instantiate it with the atlas name. The first time we use it, a
 # version of this atlas files will be downloaded from the `remote GIN repository <http://gin.g-node.org/brainglobe/atlases>`_
 # and stored on your local machine (by default, in `~/.brainglobe`):
@@ -45,7 +45,7 @@ atlas = BrainGlobeAtlas("allen_mouse_100um", check_latest=False)
 
 # %%
 # Using the atlas
-# ----
+# ---------------
 # A BrainGlobe atlas is a convenient API for interacting with an anatomical atlas. BrainGlobe atlases contain:
 #
 # * Metadata
@@ -57,7 +57,7 @@ atlas = BrainGlobeAtlas("allen_mouse_100um", check_latest=False)
 
 # %%
 # Metadata
-# -----
+# --------
 # All atlases have a standard set of metatata describing their source, species, resolution, etc:
 
 metadata = atlas.metadata
@@ -65,7 +65,7 @@ pprint(metadata)
 
 # %%
 # Anatomical, annotation and hemispheres stacks
-# ----
+# ---------------------------------------------
 
 # %%
 # Anatomical reference (or template) image:
@@ -91,7 +91,7 @@ plt.imshow(hemispheres[middle_section,:,:])
 
 # %%
 # Regions hierarchy
-# ----
+# -----------------
 
 # %%
 # The atlas comes with the description of a hierarchy of brain structures. To see an overview:
@@ -119,7 +119,7 @@ atlas.get_structure_ancestors("VISC6a")
 
 # %%
 # Region masks
-# ----
+# ------------
 #
 # Sometimes, we might want to have the mask for a region that is not labelled in the annotation stack as all its voxels
 # have the number of some lower level parcellation in the hierarchy (concretely, if the brain is divided in hindbrain,
@@ -132,7 +132,7 @@ plt.imshow(mask[middle_section,:,:], cmap="gray")
 
 # %%
 # Region meshes
-# ---
+# -------------
 
 # %%
 # To access the 3D structure mesh for visualisation, this can be queried using the region ID or abbreviation. A `meshio.Mesh` object is returned.

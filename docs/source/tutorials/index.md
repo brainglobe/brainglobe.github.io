@@ -102,16 +102,16 @@ Aligning samples to image axes for template building (experimental!)
 :gutter: 3
 
 :::{grid-item-card} {fas}`brain;sd-text-primary` BrainGlobe Atlas API
-:img-bottom: ../examples_build/images/thumb/sphx_glr_brainglobe_atlasapi_thumb.png
-:link: ../examples_build/brainglobe_atlasapi.html
+:img-bottom: ../api_examples/images/thumb/sphx_glr_brainglobe_atlasapi_thumb.png
+:link: ../api_examples/brainglobe_atlasapi.html
 :link-type: url
 Using the BrainGlobe Atlas API to fetch and inspect an atlas
 :::
 ::::
 
 ## Downloads
-- [⬇️ Download all examples in Python source code (.zip)](/examples_build/examples_build_python.zip)
-- [⬇️ Download all examples in Jupyter notebooks (.zip)](/examples_build/examples_build_jupyter.zip)
+- [⬇️ Download all examples in Python source code (.zip)](/api_examples/api_examples_python.zip)
+- [⬇️ Download all examples in Jupyter notebooks (.zip)](/api_examples/api_examples_jupyter.zip)
 
 
 
