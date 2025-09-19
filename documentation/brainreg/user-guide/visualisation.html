@@ -34,6 +34,10 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -53,7 +57,6 @@
     <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/brainreg/user-guide/visualisation';</script>
     <link rel="canonical" href="https://brainglobe.info/documentation/brainreg/user-guide/visualisation.html" />
@@ -517,7 +520,6 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../brainglobe-atlasapi/index.html">BrainGlobe Atlas API (brainglobe-atlasapi)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../brainglobe-atlasapi/usage/atlas-details.html">Atlas details</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../../brainglobe-atlasapi/usage/python-api.html">Python API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../brainglobe-atlasapi/usage/command-line-interface.html">Command line interface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../brainglobe-atlasapi/usage/using-the-files-directly.html">Using the files directly</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../brainglobe-atlasapi/adding-a-new-atlas.html">Adding a new atlas</a></li>
@@ -830,12 +832,12 @@ brainreg comes with a plugin for napari to allow you to easily view registration
 </section>
 <section id="choosing-a-different-space-or-resolution">
 <h2>Choosing a different space or resolution<a class="headerlink" href="#choosing-a-different-space-or-resolution" title="Link to this heading">#</a></h2>
-<p>By default, dragging the output folder into napari (as described <a class="reference internal" href="#basic-usage"><span class="std std-ref">above</span></a>) will load the results in sample space, at the <strong>downsampled</strong> resolution used for registration.</p>
+<p>By default, dragging the output folder into napari (as described <a class="reference internal" href="#basic-usage">above</a>) will load the results in sample space, at the <strong>downsampled</strong> resolution used for registration.</p>
 <p>However, it might be useful to load the registration results in atlas space, or at a different resolution. For this we have implemented a series of submenus in the <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">IO</span> <span class="pre">Utilities</span></code> menu.</p>
 <p><img alt="Load Brainreg Results via Napari IO Utilities" src="../../../_images/load_brainreg_result_napari.png" /></p>
 <p>Simply select the appropriate submenu, and then select the brainreg output folder. The options are:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Sample</span> <span class="pre">Space,</span> <span class="pre">Atlas</span> <span class="pre">Resolution</span></code> - this is the default behaviour described <a class="reference internal" href="#basic-usage"><span class="std std-ref">above</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sample</span> <span class="pre">Space,</span> <span class="pre">Atlas</span> <span class="pre">Resolution</span></code> - this is the default behaviour described <a class="reference internal" href="#basic-usage">above</a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Atlas</span> <span class="pre">Space,</span> <span class="pre">Atlas</span> <span class="pre">Resolution</span></code> - opens the registered image and atlas at the atlas (<strong>downsampled</strong>) resolution and orientation.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Sample</span> <span class="pre">Space,</span> <span class="pre">Sample</span> <span class="pre">Resolution</span></code> - opens the registered atlas, boundaries and hemispheres scaled and oriented to the <strong>original sample resolution</strong>. Original high-resolution images are not opened.</p></li>
 </ul>

@@ -1,0 +1,2027 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>BrainGlobe Atlas API &#8212; BrainGlobe</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=1227d6e8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api_examples/brainglobe_atlasapi';</script>
+    <link rel="canonical" href="https://brainglobe.info/api_examples/brainglobe_atlasapi.html" />
+    <link rel="icon" href="../_static/brainglobe.png"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Documentation" href="../documentation/index.html" />
+    <link rel="prev" title="Aligning samples for template building" href="../tutorials/template-builder-pre-align.html" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />   
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/brainglobe.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/brainglobe.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BrainGlobe</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../community/index.html">
+    Community
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../blog/index.html">
+    Blog
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../projects/index.html">
+    Projects
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../blackcap.html">
+    <no title>
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://mastodon.online/@brainglobe" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/brainglobe.info" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://brainglobe.zulipchat.com" title="Zulip (Developer chat)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Zulip (Developer chat)</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://forum.image.sc/tag/brainglobe" title="image.sc (Help forum)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-question fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">image.sc (Help forum)</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../community/index.html">
+    Community
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../blog/index.html">
+    Blog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../projects/index.html">
+    Projects
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../blackcap.html">
+    <no title>
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://mastodon.online/@brainglobe" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/brainglobe.info" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://brainglobe.zulipchat.com" title="Zulip (Developer chat)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Zulip (Developer chat)</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://forum.image.sc/tag/brainglobe" title="image.sc (Help forum)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-question fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">image.sc (Help forum)</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Index</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/visualise-atlas-napari.html">Visualise an atlas in napari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/manage-atlases-in-GUI.html">Download an atlas through napari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial-whole-brain-registration.html">Registering a whole-brain image to an atlas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/segmenting-1d-tracks.html">Segmenting a 1D track</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/transform-cells-atlas.html">Analysing brainwide distribution of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/cellfinder-detection.html">Detecting cells in 3D with cellfinder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/cellfinder-retraining.html">Retraining the cellfinder classification network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/silicon-probe-tracking.html">Silicon probe tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tracing-tracking.html">Analyze and visualize bulk fluorescence tracing data</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/brainmapper/index.html">Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command line tool</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/brainmapper/setting-up.html">Setting up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/brainmapper/running-brainmapper.html">Running <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/brainmapper/visualising-the-results.html">Visualising the results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/brainmapper/exploring-the-numerical-results.html">Exploring the numerical results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/brainmapper/visualising-your-data-in-brainrender.html">Visualising your data in brainrender</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/template-builder-pre-align.html">Aligning samples for template building</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">BrainGlobe Atlas API</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../tutorials/index.html" class="nav-link">Tutorials</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">BrainGlobe Atlas API</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                   <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-api-examples-brainglobe-atlasapi-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="brainglobe-atlas-api">
+<span id="sphx-glr-api-examples-brainglobe-atlasapi-py"></span><h1>BrainGlobe Atlas API<a class="headerlink" href="#brainglobe-atlas-api" title="Link to this heading">#</a></h1>
+<p>Using the BrainGlobe Atlas API to fetch and inspect an atlas</p>
+<section id="import-the-atlas-api-and-find-an-atlas">
+<h2>Import the Atlas API and find an atlas<a class="headerlink" href="#import-the-atlas-api-and-find-an-atlas" title="Link to this heading">#</a></h2>
+<p>Import the API and some other tools</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">BrainGlobeAtlas</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span> <span class="c1"># to format printed data nicely</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">colormaps</span> <span class="k">as</span> <span class="n">cm</span>
+</pre></div>
+</div>
+<p>To know what atlases are available through BrainGlobe, we can use the <cite>show_atlases</cite> function
+(requires an internet connection):</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">show_atlases</span>
+<span class="n">show_atlases</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>╭───────────────────────────── Brainglobe Atlases ─────────────────────────────╮
+│                                                          Local     Latest    │
+│  Name                              Download…  Updated   version    version   │
+│  admba_3d_e11_5_mouse_16um                                           1.1     │
+│  admba_3d_e13_5_mouse_16um                                           1.1     │
+│  admba_3d_e15_5_mouse_16um                                           1.1     │
+│  admba_3d_e18_5_mouse_16um                                           1.1     │
+│  admba_3d_p14_mouse_16.752um                                         1.1     │
+│  admba_3d_p28_mouse_16.752um                                         1.1     │
+│  admba_3d_p4_mouse_16.752um                                          1.1     │
+│  admba_3d_p56_mouse_25um                                             1.1     │
+│  allen_cord_20um                                                     1.1     │
+│  allen_human_500um                                                   1.0     │
+│  allen_mouse_100um                                                   1.2     │
+│  allen_mouse_10um                                                    1.2     │
+│  allen_mouse_25um                                                    1.2     │
+│  allen_mouse_50um                                                    1.2     │
+│  allen_mouse_bluebrain_barrels_1…                                    1.0     │
+│  allen_mouse_bluebrain_barrels_2…                                    1.0     │
+│  australian_mouse_15um                                               1.0     │
+│  azba_zfish_4um                                                      1.2     │
+│  ccfv3augmented_mouse_10um                                           1.0     │
+│  ccfv3augmented_mouse_25um                                           1.0     │
+│  columbia_cuttlefish_50um                                            1.0     │
+│  csl_cat_500um                                                       1.0     │
+│  demba_allen_seg_dev_mouse_p10_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p10_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p11_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p11_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p12_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p12_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p13_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p13_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p14_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p14_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p15_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p15_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p16_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p16_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p17_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p17_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p18_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p18_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p19_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p19_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p20_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p20_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p21_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p21_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p22_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p22_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p23_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p23_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p24_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p24_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p25_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p25_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p26_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p26_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p27_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p27_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p28_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p28_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p29_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p29_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p30_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p30_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p31_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p31_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p32_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p32_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p33_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p33_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p34_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p34_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p35_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p35_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p36_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p36_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p37_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p37_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p38_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p38_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p39_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p39_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p40_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p40_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p41_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p41_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p42_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p42_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p43_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p43_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p44_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p44_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p45_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p45_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p46_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p46_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p47_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p47_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p48_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p48_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p49_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p49_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p4_20…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p4_25…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p50_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p50_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p51_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p51_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p52_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p52_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p53_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p53_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p54_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p54_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p55_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p55_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p56_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p56_2…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p5_20…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p5_25…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p6_20…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p6_25…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p7_20…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p7_25…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p8_20…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p8_25…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p9_20…                                    1.0     │
+│  demba_allen_seg_dev_mouse_p9_25…                                    1.0     │
+│  drosophila_wingdisc_instar3_2um                                     1.0     │
+│  eurasian_blackcap_25um                                              1.4     │
+│  example_mouse_100um                                                 1.2     │
+│  kim_dev_mouse_e11-5_lsfm_20um                                       1.3     │
+│  kim_dev_mouse_e11-5_mri-adc_31.…                                    1.3     │
+│  kim_dev_mouse_e11-5_mri-dwi_31.…                                    1.3     │
+│  kim_dev_mouse_e11-5_mri-fa_31.5…                                    1.3     │
+│  kim_dev_mouse_e11-5_mri-t2_31.5…                                    1.3     │
+│  kim_dev_mouse_e13-5_lsfm_20um                                       1.3     │
+│  kim_dev_mouse_e13-5_mri-adc_34um                                    1.3     │
+│  kim_dev_mouse_e13-5_mri-dwi_34um                                    1.3     │
+│  kim_dev_mouse_e13-5_mri-fa_34um                                     1.3     │
+│  kim_dev_mouse_e13-5_mri-t2_34um                                     1.3     │
+│  kim_dev_mouse_e15-5_lsfm_20um                                       1.3     │
+│  kim_dev_mouse_e15-5_mri-adc_37.…                                    1.3     │
+│  kim_dev_mouse_e15-5_mri-dwi_37.…                                    1.3     │
+│  kim_dev_mouse_e15-5_mri-fa_37.5…                                    1.3     │
+│  kim_dev_mouse_e15-5_mri-mtr_37.…                                    1.3     │
+│  kim_dev_mouse_e15-5_mri-t2_37.5…                                    1.3     │
+│  kim_dev_mouse_e18-5_lsfm_20um                                       1.3     │
+│  kim_dev_mouse_e18-5_mri-adc_40um                                    1.3     │
+│  kim_dev_mouse_e18-5_mri-dwi_40um                                    1.3     │
+│  kim_dev_mouse_e18-5_mri-fa_40um                                     1.3     │
+│  kim_dev_mouse_e18-5_mri-t2_40um                                     1.3     │
+│  kim_dev_mouse_idisco_10um                                           1.2     │
+│  kim_dev_mouse_mri_a0_10um                                           1.2     │
+│  kim_dev_mouse_mri_adc_10um                                          1.2     │
+│  kim_dev_mouse_mri_dwi_10um                                          1.2     │
+│  kim_dev_mouse_mri_fa_10um                                           1.2     │
+│  kim_dev_mouse_mri_mtr_10um                                          1.2     │
+│  kim_dev_mouse_mri_t2_10um                                           1.2     │
+│  kim_dev_mouse_p04_lsfm_20um                                         1.3     │
+│  kim_dev_mouse_p04_mri-adc_50um                                      1.3     │
+│  kim_dev_mouse_p04_mri-dwi_50um                                      1.3     │
+│  kim_dev_mouse_p04_mri-fa_50um                                       1.3     │
+│  kim_dev_mouse_p04_mri-mtr_50um                                      1.3     │
+│  kim_dev_mouse_p04_mri-t2_50um                                       1.3     │
+│  kim_dev_mouse_p14_lsfm_20um                                         1.3     │
+│  kim_dev_mouse_p14_mri-adc_50um                                      1.3     │
+│  kim_dev_mouse_p14_mri-dwi_50um                                      1.3     │
+│  kim_dev_mouse_p14_mri-fa_50um                                       1.3     │
+│  kim_dev_mouse_p14_mri-mtr_50um                                      1.3     │
+│  kim_dev_mouse_p14_mri-t2_50um                                       1.3     │
+│  kim_dev_mouse_p56_lsfm_20um                                         1.3     │
+│  kim_dev_mouse_p56_mri-adc_50um                                      1.3     │
+│  kim_dev_mouse_p56_mri-dwi_50um                                      1.3     │
+│  kim_dev_mouse_p56_mri-fa_50um                                       1.3     │
+│  kim_dev_mouse_p56_mri-t2_50um                                       1.3     │
+│  kim_dev_mouse_stp_10um                                              1.2     │
+│  kim_mouse_100um                                                     1.1     │
+│  kim_mouse_10um                                                      1.1     │
+│  kim_mouse_25um                                                      1.1     │
+│  kim_mouse_50um                                                      1.1     │
+│  kim_mouse_isotropic_20um                                            1.0     │
+│  kocher_bumblebee_2.542um                                            1.0     │
+│  mpin_zfish_1um                                                      1.0     │
+│  nadkarni_mri_mouselemur_91um                                        1.1     │
+│  osten_mouse_100um                                                   1.1     │
+│  osten_mouse_10um                                                    1.1     │
+│  osten_mouse_25um                                                    1.1     │
+│  osten_mouse_50um                                                    1.1     │
+│  perens_lsfm_mouse_20um                                              1.2     │
+│  perens_multimodal_lsfm_25um                                         1.0     │
+│  perens_stereotaxic_mri_mouse_25…                                    1.0     │
+│  prairie_vole_25um                                                   1.0     │
+│  princeton_mouse_20um                                                1.1     │
+│  sju_cavefish_2um                                                    1.0     │
+│  unam_axolotl_40um                                                   1.1     │
+│  whs_sd_rat_39um                                                     1.2     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+</pre></div>
+</div>
+</section>
+<section id="creating-a-brainglobeatlas-object">
+<h2>Creating a <cite>BrainGlobeAtlas</cite> object<a class="headerlink" href="#creating-a-brainglobeatlas-object" title="Link to this heading">#</a></h2>
+<p>To instantiate a <cite>BrainGlobeAtlas</cite> object, we call it with the atlas name. The first time we use it, the
+latest version of the atlas files will be downloaded from the <a class="reference external" href="http://gin.g-node.org/brainglobe/atlases">remote GIN repository</a>
+and stored on your local machine (by default, in <cite>~/.brainglobe</cite>):</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">atlas</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s2">&quot;allen_mouse_100um&quot;</span><span class="p">,</span> <span class="n">check_latest</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Downloading... ━━━━━━━━━━ 100.0% • 61.0/61.0  • speed: 354.4 kB/s • ETA: 0:00:00
+                                   MB
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Atlas quality</p>
+<p>Usually BrainGlobe only packages existing atlases. The quality of the underlying images and atlas ontology
+relies on the original atlas data, and this can vary considerably. In this example, we choose the “allen_mouse_100um”
+atlas, as it is relatively small, but high quality.</p>
+</div>
+</section>
+<section id="using-the-atlas">
+<h2>Using the atlas<a class="headerlink" href="#using-the-atlas" title="Link to this heading">#</a></h2>
+<p>A BrainGlobe atlas is a convenient API for interacting with an anatomical atlas. BrainGlobe atlases contain:</p>
+<ul class="simple">
+<li><p>Metadata</p></li>
+<li><p>Reference anatomical stack</p></li>
+<li><p>Region annotation stack</p></li>
+<li><p>Hemisphere annotation stack</p></li>
+<li><p>Description of the region hierarchy</p></li>
+<li><p>Meshes for the regions</p></li>
+</ul>
+</section>
+<section id="metadata">
+<h2>Metadata<a class="headerlink" href="#metadata" title="Link to this heading">#</a></h2>
+<p>All atlases have a standard set of metatata describing their source, species, resolution, etc:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">metadata</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">metadata</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;additional_references&#39;: [],
+ &#39;atlas_link&#39;: &#39;http://www.brain-map.org&#39;,
+ &#39;citation&#39;: &#39;Wang et al 2020, https://doi.org/10.1016/j.cell.2020.04.007&#39;,
+ &#39;name&#39;: &#39;allen_mouse&#39;,
+ &#39;orientation&#39;: &#39;asr&#39;,
+ &#39;resolution&#39;: [100.0, 100.0, 100.0],
+ &#39;shape&#39;: [132, 80, 114],
+ &#39;species&#39;: &#39;Mus musculus&#39;,
+ &#39;symmetric&#39;: True,
+ &#39;trasform_to_bg&#39;: [[1.0, 0.0, 0.0, 0.0],
+                    [0.0, 1.0, 0.0, 0.0],
+                    [0.0, 0.0, 1.0, 0.0],
+                    [0.0, 0.0, 0.0, 1.0]],
+ &#39;version&#39;: &#39;1.2&#39;}
+</pre></div>
+</div>
+</section>
+<section id="anatomical-annotation-and-hemispheres-stacks">
+<h2>Anatomical, annotation and hemispheres stacks<a class="headerlink" href="#anatomical-annotation-and-hemispheres-stacks" title="Link to this heading">#</a></h2>
+<p>Anatomical reference (or template) image:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">reference</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">reference</span>
+
+<span class="c1"># Get the middle section and plot</span>
+<span class="n">middle_section</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reference</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_brainglobe_atlasapi_001.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_001.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f0f594e8680&gt;
+</pre></div>
+</div>
+<p>Annotations stack</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">annotation</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">annotation</span>
+
+<span class="c1"># Create a cyclic colormap due to the high values in the Allen atlas</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">512</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;tab20&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">resampled</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">lut</span> <span class="o">=</span> <span class="n">colors</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+
+<span class="c1"># Map label image to lookup table and plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lut</span><span class="p">[</span><span class="n">annotation</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:]</span> <span class="o">%</span> <span class="n">N</span><span class="p">])</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_brainglobe_atlasapi_002.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_002.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f0f594ebd10&gt;
+</pre></div>
+</div>
+<p>Hemisheres stack:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">hemispheres</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">hemispheres</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">hemispheres</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:])</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_brainglobe_atlasapi_003.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_003.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f0f591f7bf0&gt;
+</pre></div>
+</div>
+</section>
+<section id="regions-hierarchy">
+<h2>Regions hierarchy<a class="headerlink" href="#regions-hierarchy" title="Link to this heading">#</a></h2>
+<p>The atlas comes with the description of a hierarchy of brain structures. To see an overview:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">structures</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>root (997)
+├── VS (73)
+│   ├── AQ (140)
+│   ├── V3 (129)
+│   ├── V4 (145)
+│   │   └── V4r (153)
+│   ├── VL (81)
+│   │   ├── SEZ (98)
+│   │   └── chpl (108)
+│   └── c (164)
+├── fiber tracts (1009)
+│   ├── cbf (960)
+│   │   ├── arb (728)
+│   │   ├── cbc (744)
+│   │   └── cbp (752)
+│   │       ├── icp (1123)
+│   │       │   └── sctd (553)
+│   │       ├── mcp (78)
+│   │       └── scp (326)
+│   │           ├── dscp (812)
+│   │           ├── sctv (866)
+│   │           └── uf (850)
+│   ├── cm (967)
+│   │   ├── IIIn (832)
+│   │   │   ├── mlf (62)
+│   │   │   └── pc (158)
+│   │   ├── IIn (848)
+│   │   │   ├── bsc (916)
+│   │   │   ├── csc (336)
+│   │   │   ├── och (117)
+│   │   │   └── opt (125)
+│   │   ├── IVn (911)
+│   │   ├── In (840)
+│   │   │   ├── aco (900)
+│   │   │   ├── lotg (21)
+│   │   │   │   ├── lot (665)
+│   │   │   │   └── lotd (538)
+│   │   │   └── onl (1016)
+│   │   ├── VIIIn (933)
+│   │   │   ├── cVIIIn (948)
+│   │   │   │   ├── bic (482)
+│   │   │   │   ├── cic (633)
+│   │   │   │   ├── das (506)
+│   │   │   │   ├── ll (658)
+│   │   │   │   └── tb (841)
+│   │   │   └── vVIIIn (413)
+│   │   ├── VIIn (798)
+│   │   │   └── gVIIn (1116)
+│   │   ├── Vn (901)
+│   │   │   ├── moV (93)
+│   │   │   └── sV (229)
+│   │   │       └── sptV (794)
+│   │   ├── Xn (917)
+│   │   │   └── ts (237)
+│   │   ├── drt (792)
+│   │   │   └── cett (932)
+│   │   │       ├── dc (514)
+│   │   │       │   └── cuf (380)
+│   │   │       └── ml (697)
+│   │   └── von (949)
+│   ├── eps (1000)
+│   │   ├── epsc (760)
+│   │   │   └── nst (102)
+│   │   ├── rust (863)
+│   │   │   └── vtd (397)
+│   │   └── tsp (877)
+│   │       ├── dtd (1060)
+│   │       ├── tspc (1043)
+│   │       └── tspd (1051)
+│   ├── lfbs (983)
+│   │   ├── cc (776)
+│   │   │   ├── ccb (484682516)
+│   │   │   ├── ccg (1108)
+│   │   │   ├── ccs (986)
+│   │   │   ├── ee (964)
+│   │   │   ├── fa (956)
+│   │   │   │   └── ec (579)
+│   │   │   └── fp (971)
+│   │   ├── cst (784)
+│   │   │   ├── cpd (924)
+│   │   │   ├── int (6)
+│   │   │   ├── py (190)
+│   │   │   └── pyd (198)
+│   │   └── lfbst (896)
+│   │       ├── ar (484682524)
+│   │       ├── em (1092)
+│   │       └── or (484682520)
+│   ├── mfbs (991)
+│   │   ├── mfbc (768)
+│   │   │   ├── act (908)
+│   │   │   ├── amc (884)
+│   │   │   ├── cing (940)
+│   │   │   ├── fxs (1099)
+│   │   │   │   ├── alv (466)
+│   │   │   │   ├── df (530)
+│   │   │   │   ├── fi (603)
+│   │   │   │   ├── fxpo (737)
+│   │   │   │   │   ├── fx (436)
+│   │   │   │   │   └── mct (428)
+│   │   │   │   └── hc (618)
+│   │   │   │       ├── dhc (443)
+│   │   │   │       └── vhc (449)
+│   │   │   └── st (301)
+│   │   │       └── stc (484682528)
+│   │   └── mfsbshy (824)
+│   │       ├── mfb (54)
+│   │       ├── mfbse (1083)
+│   │       │   ├── fr (595)
+│   │       │   ├── hbc (611)
+│   │       │   └── sm (802)
+│   │       ├── mfbsma (46)
+│   │       │   ├── mp (673)
+│   │       │   ├── mtg (681)
+│   │       │   ├── mtt (690)
+│   │       │   └── pm (753)
+│   │       └── sup (349)
+│   └── scwm (484682512)
+└── grey (8)
+    ├── BS (343)
+    │   ├── HB (1065)
+    │   │   ├── MY (354)
+    │   │   │   ├── MY-mot (370)
+    │   │   │   │   ├── ACVII (576)
+    │   │   │   │   ├── AMB (135)
+    │   │   │   │   │   ├── AMBd (939)
+    │   │   │   │   │   └── AMBv (143)
+    │   │   │   │   ├── DMX (839)
+    │   │   │   │   ├── GRN (1048)
+    │   │   │   │   ├── ICB (372)
+    │   │   │   │   ├── IO (83)
+    │   │   │   │   ├── IRN (136)
+    │   │   │   │   ├── ISN (106)
+    │   │   │   │   ├── LIN (203)
+    │   │   │   │   ├── LRN (235)
+    │   │   │   │   │   ├── LRNm (955)
+    │   │   │   │   │   └── LRNp (963)
+    │   │   │   │   ├── MARN (307)
+    │   │   │   │   ├── MDRN (395)
+    │   │   │   │   │   ├── MDRNd (1098)
+    │   │   │   │   │   └── MDRNv (1107)
+    │   │   │   │   ├── PARN (852)
+    │   │   │   │   ├── PAS (859)
+    │   │   │   │   ├── PGRN (938)
+    │   │   │   │   │   ├── PGRNd (970)
+    │   │   │   │   │   └── PGRNl (978)
+    │   │   │   │   ├── PHY (154)
+    │   │   │   │   │   ├── NR (177)
+    │   │   │   │   │   └── PRP (169)
+    │   │   │   │   ├── PPY (1069)
+    │   │   │   │   ├── VI (653)
+    │   │   │   │   ├── VII (661)
+    │   │   │   │   ├── VNC (701)
+    │   │   │   │   │   ├── LAV (209)
+    │   │   │   │   │   ├── MV (202)
+    │   │   │   │   │   ├── SPIV (225)
+    │   │   │   │   │   └── SUV (217)
+    │   │   │   │   ├── XII (773)
+    │   │   │   │   ├── x (765)
+    │   │   │   │   └── y (781)
+    │   │   │   ├── MY-sat (379)
+    │   │   │   │   ├── RM (206)
+    │   │   │   │   ├── RO (222)
+    │   │   │   │   └── RPA (230)
+    │   │   │   └── MY-sen (386)
+    │   │   │       ├── AP (207)
+    │   │   │       ├── CN (607)
+    │   │   │       │   ├── DCO (96)
+    │   │   │       │   └── VCO (101)
+    │   │   │       ├── DCN (720)
+    │   │   │       │   ├── CU (711)
+    │   │   │       │   └── GR (1039)
+    │   │   │       ├── ECU (903)
+    │   │   │       ├── NTB (642)
+    │   │   │       ├── NTS (651)
+    │   │   │       ├── Pa5 (589508451)
+    │   │   │       ├── SPVC (429)
+    │   │   │       ├── SPVI (437)
+    │   │   │       └── SPVO (445)
+    │   │   └── P (771)
+    │   │       ├── P-mot (987)
+    │   │       │   ├── Acs5 (549009219)
+    │   │       │   ├── B (280)
+    │   │       │   ├── DTN (880)
+    │   │       │   ├── I5 (549009227)
+    │   │       │   ├── P5 (549009215)
+    │   │       │   ├── PC5 (549009223)
+    │   │       │   ├── PCG (898)
+    │   │       │   ├── PDTg (599626927)
+    │   │       │   ├── PG (931)
+    │   │       │   ├── PRNc (1093)
+    │   │       │   ├── SG (318)
+    │   │       │   ├── SUT (534)
+    │   │       │   ├── TRN (574)
+    │   │       │   └── V (621)
+    │   │       ├── P-sat (1117)
+    │   │       │   ├── CS (679)
+    │   │       │   ├── LC (147)
+    │   │       │   ├── LDT (162)
+    │   │       │   ├── NI (604)
+    │   │       │   ├── PRNr (146)
+    │   │       │   ├── RPO (238)
+    │   │       │   ├── SLC (350)
+    │   │       │   └── SLD (358)
+    │   │       └── P-sen (1132)
+    │   │           ├── NLL (612)
+    │   │           ├── PB (867)
+    │   │           │   └── KF (123)
+    │   │           ├── PSV (7)
+    │   │           └── SOC (398)
+    │   │               ├── POR (122)
+    │   │               ├── SOCl (114)
+    │   │               └── SOCm (105)
+    │   ├── IB (1129)
+    │   │   ├── HY (1097)
+    │   │   │   ├── LZ (290)
+    │   │   │   │   ├── LHA (194)
+    │   │   │   │   ├── LPO (226)
+    │   │   │   │   ├── PST (356)
+    │   │   │   │   ├── PSTN (364)
+    │   │   │   │   ├── PeF (576073704)
+    │   │   │   │   ├── RCH (173)
+    │   │   │   │   ├── STN (470)
+    │   │   │   │   ├── TU (614)
+    │   │   │   │   └── ZI (797)
+    │   │   │   │       └── FF (804)
+    │   │   │   ├── ME (10671)
+    │   │   │   ├── MEZ (467)
+    │   │   │   │   ├── AHN (88)
+    │   │   │   │   ├── MBO (331)
+    │   │   │   │   │   ├── LM (210)
+    │   │   │   │   │   ├── MM (491)
+    │   │   │   │   │   │   ├── MMd (606826659)
+    │   │   │   │   │   │   ├── MMl (606826647)
+    │   │   │   │   │   │   ├── MMm (606826651)
+    │   │   │   │   │   │   ├── MMme (732)
+    │   │   │   │   │   │   └── MMp (606826655)
+    │   │   │   │   │   ├── SUM (525)
+    │   │   │   │   │   └── TM (557)
+    │   │   │   │   │       ├── TMd (1126)
+    │   │   │   │   │       └── TMv (1)
+    │   │   │   │   ├── MPN (515)
+    │   │   │   │   ├── PH (946)
+    │   │   │   │   ├── PMd (980)
+    │   │   │   │   ├── PMv (1004)
+    │   │   │   │   ├── PVHd (63)
+    │   │   │   │   └── VMH (693)
+    │   │   │   ├── PVR (141)
+    │   │   │   │   ├── ADP (72)
+    │   │   │   │   ├── AVP (263)
+    │   │   │   │   ├── AVPV (272)
+    │   │   │   │   ├── DMH (830)
+    │   │   │   │   ├── MEPO (452)
+    │   │   │   │   ├── MPO (523)
+    │   │   │   │   ├── OV (763)
+    │   │   │   │   ├── PD (914)
+    │   │   │   │   ├── PS (1109)
+    │   │   │   │   ├── PVp (126)
+    │   │   │   │   ├── PVpo (133)
+    │   │   │   │   ├── SBPV (347)
+    │   │   │   │   ├── SCH (286)
+    │   │   │   │   ├── SFO (338)
+    │   │   │   │   ├── VLPO (689)
+    │   │   │   │   └── VMPO (576073699)
+    │   │   │   └── PVZ (157)
+    │   │   │       ├── ARH (223)
+    │   │   │       ├── ASO (332)
+    │   │   │       ├── PVH (38)
+    │   │   │       ├── PVa (30)
+    │   │   │       ├── PVi (118)
+    │   │   │       └── SO (390)
+    │   │   └── TH (549)
+    │   │       ├── DORpm (856)
+    │   │       │   ├── ATN (239)
+    │   │       │   │   ├── AD (64)
+    │   │       │   │   ├── AM (127)
+    │   │       │   │   │   ├── AMd (1096)
+    │   │       │   │   │   └── AMv (1104)
+    │   │       │   │   ├── AV (255)
+    │   │       │   │   ├── IAD (1113)
+    │   │       │   │   ├── IAM (1120)
+    │   │       │   │   └── LD (155)
+    │   │       │   ├── EPI (958)
+    │   │       │   │   ├── LH (186)
+    │   │       │   │   └── MH (483)
+    │   │       │   ├── GENv (1014)
+    │   │       │   │   ├── IGL (27)
+    │   │       │   │   ├── IntG (563807439)
+    │   │       │   │   ├── LGv (178)
+    │   │       │   │   └── SubG (321)
+    │   │       │   ├── ILM (51)
+    │   │       │   │   ├── CL (575)
+    │   │       │   │   ├── CM (599)
+    │   │       │   │   ├── PCN (907)
+    │   │       │   │   ├── PF (930)
+    │   │       │   │   ├── PIL (560581563)
+    │   │       │   │   └── RH (189)
+    │   │       │   ├── LAT (138)
+    │   │       │   │   ├── Eth (560581551)
+    │   │       │   │   ├── LP (218)
+    │   │       │   │   ├── PO (1020)
+    │   │       │   │   ├── POL (1029)
+    │   │       │   │   └── SGN (325)
+    │   │       │   ├── MED (444)
+    │   │       │   │   ├── IMD (59)
+    │   │       │   │   ├── MD (362)
+    │   │       │   │   ├── PR (1077)
+    │   │       │   │   └── SMT (366)
+    │   │       │   ├── MTN (571)
+    │   │       │   │   ├── PT (15)
+    │   │       │   │   ├── PVT (149)
+    │   │       │   │   ├── RE (181)
+    │   │       │   │   └── Xi (560581559)
+    │   │       │   └── RT (262)
+    │   │       └── DORsm (864)
+    │   │           ├── GENd (1008)
+    │   │           │   ├── LGd (170)
+    │   │           │   │   ├── LGd-co (496345668)
+    │   │           │   │   ├── LGd-ip (496345672)
+    │   │           │   │   └── LGd-sh (496345664)
+    │   │           │   └── MG (475)
+    │   │           │       ├── MGd (1072)
+    │   │           │       ├── MGm (1088)
+    │   │           │       └── MGv (1079)
+    │   │           ├── PP (1044)
+    │   │           ├── SPA (609)
+    │   │           ├── SPF (406)
+    │   │           │   ├── SPFm (414)
+    │   │           │   └── SPFp (422)
+    │   │           └── VENT (637)
+    │   │               ├── PoT (563807435)
+    │   │               ├── VAL (629)
+    │   │               ├── VM (685)
+    │   │               └── VP (709)
+    │   │                   ├── VPL (718)
+    │   │                   ├── VPLpc (725)
+    │   │                   ├── VPM (733)
+    │   │                   └── VPMpc (741)
+    │   └── MB (313)
+    │       ├── MBmot (323)
+    │       │   ├── AT (231)
+    │       │   ├── CUN (616)
+    │       │   ├── DT (75)
+    │       │   ├── EW (975)
+    │       │   ├── III (35)
+    │       │   ├── IV (115)
+    │       │   ├── LT (66)
+    │       │   ├── MA3 (549009211)
+    │       │   ├── MRN (128)
+    │       │   ├── MT (58)
+    │       │   ├── PAG (795)
+    │       │   │   ├── INC (67)
+    │       │   │   ├── ND (587)
+    │       │   │   ├── PRC (50)
+    │       │   │   └── Su3 (614454277)
+    │       │   ├── PN (607344830)
+    │       │   ├── PRT (1100)
+    │       │   │   ├── APN (215)
+    │       │   │   ├── MPT (531)
+    │       │   │   ├── NOT (628)
+    │       │   │   ├── NPC (634)
+    │       │   │   ├── OP (706)
+    │       │   │   ├── PPT (1061)
+    │       │   │   └── RPF (549009203)
+    │       │   ├── Pa4 (606826663)
+    │       │   ├── RN (214)
+    │       │   ├── RR (246)
+    │       │   ├── SCm (294)
+    │       │   │   ├── SCdg (26)
+    │       │   │   ├── SCdw (42)
+    │       │   │   ├── SCig (10)
+    │       │   │   └── SCiw (17)
+    │       │   ├── SNr (381)
+    │       │   ├── VTA (749)
+    │       │   └── VTN (757)
+    │       ├── MBsen (339)
+    │       │   ├── IC (4)
+    │       │   │   ├── ICc (811)
+    │       │   │   ├── ICd (820)
+    │       │   │   └── ICe (828)
+    │       │   ├── MEV (460)
+    │       │   ├── NB (580)
+    │       │   ├── PBG (874)
+    │       │   ├── SAG (271)
+    │       │   ├── SCO (599626923)
+    │       │   └── SCs (302)
+    │       │       ├── SCop (851)
+    │       │       ├── SCsg (842)
+    │       │       └── SCzo (834)
+    │       └── MBsta (348)
+    │           ├── PPN (1052)
+    │           ├── RAmb (165)
+    │           │   ├── CLI (591)
+    │           │   ├── DR (872)
+    │           │   ├── IF (12)
+    │           │   ├── IPN (100)
+    │           │   │   ├── IPA (607344842)
+    │           │   │   ├── IPC (607344838)
+    │           │   │   ├── IPDL (607344858)
+    │           │   │   ├── IPDM (607344854)
+    │           │   │   ├── IPI (607344850)
+    │           │   │   ├── IPL (607344846)
+    │           │   │   ├── IPR (607344834)
+    │           │   │   └── IPRL (607344862)
+    │           │   └── RL (197)
+    │           └── SNc (374)
+    ├── CB (512)
+    │   ├── CBN (519)
+    │   │   ├── DN (846)
+    │   │   ├── FN (989)
+    │   │   ├── IP (91)
+    │   │   └── VeCB (589508455)
+    │   └── CBX (528)
+    │       ├── HEM (1073)
+    │       │   ├── AN (1017)
+    │       │   │   ├── ANcr1 (1056)
+    │       │   │   └── ANcr2 (1064)
+    │       │   ├── COPY (1033)
+    │       │   ├── FL (1049)
+    │       │   ├── PFL (1041)
+    │       │   ├── PRM (1025)
+    │       │   └── SIM (1007)
+    │       └── VERM (645)
+    │           ├── CENT (920)
+    │           │   ├── CENT2 (976)
+    │           │   └── CENT3 (984)
+    │           ├── CUL (928)
+    │           │   └── CUL4, 5 (1091)
+    │           ├── DEC (936)
+    │           ├── FOTU (944)
+    │           ├── LING (912)
+    │           ├── NOD (968)
+    │           ├── PYR (951)
+    │           └── UVU (957)
+    └── CH (567)
+        ├── CNU (623)
+        │   ├── PAL (803)
+        │   │   ├── PALc (809)
+        │   │   │   ├── BAC (287)
+        │   │   │   └── BST (351)
+        │   │   ├── PALd (818)
+        │   │   │   ├── GPe (1022)
+        │   │   │   └── GPi (1031)
+        │   │   ├── PALm (826)
+        │   │   │   ├── MSC (904)
+        │   │   │   │   ├── MS (564)
+        │   │   │   │   └── NDB (596)
+        │   │   │   └── TRS (581)
+        │   │   └── PALv (835)
+        │   │       ├── MA (298)
+        │   │       └── SI (342)
+        │   └── STR (477)
+        │       ├── LSX (275)
+        │       │   ├── LS (242)
+        │       │   │   ├── LSc (250)
+        │       │   │   ├── LSr (258)
+        │       │   │   └── LSv (266)
+        │       │   ├── SF (310)
+        │       │   └── SH (333)
+        │       ├── STRd (485)
+        │       │   └── CP (672)
+        │       ├── STRv (493)
+        │       │   ├── ACB (56)
+        │       │   ├── FS (998)
+        │       │   └── OT (754)
+        │       └── sAMY (278)
+        │           ├── AAA (23)
+        │           ├── BA (292)
+        │           ├── CEA (536)
+        │           │   ├── CEAc (544)
+        │           │   ├── CEAl (551)
+        │           │   └── CEAm (559)
+        │           ├── IA (1105)
+        │           └── MEA (403)
+        └── CTX (688)
+            ├── CTXpl (695)
+            │   ├── HPF (1089)
+            │   │   ├── HIP (1080)
+            │   │   │   ├── CA (375)
+            │   │   │   │   ├── CA1 (382)
+            │   │   │   │   ├── CA2 (423)
+            │   │   │   │   └── CA3 (463)
+            │   │   │   ├── DG (726)
+            │   │   │   │   ├── DG-mo (10703)
+            │   │   │   │   ├── DG-po (10704)
+            │   │   │   │   └── DG-sg (632)
+            │   │   │   ├── FC (982)
+            │   │   │   └── IG (19)
+            │   │   └── RHP (822)
+            │   │       ├── APr (484682508)
+            │   │       ├── ENT (909)
+            │   │       │   ├── ENTl (918)
+            │   │       │   │   ├── ENTl1 (1121)
+            │   │       │   │   ├── ENTl2 (20)
+            │   │       │   │   ├── ENTl3 (52)
+            │   │       │   │   ├── ENTl5 (139)
+            │   │       │   │   └── ENTl6a (28)
+            │   │       │   └── ENTm (926)
+            │   │       │       ├── ENTm1 (526)
+            │   │       │       ├── ENTm2 (543)
+            │   │       │       ├── ENTm3 (664)
+            │   │       │       ├── ENTm5 (727)
+            │   │       │       └── ENTm6 (743)
+            │   │       ├── HATA (589508447)
+            │   │       ├── PAR (843)
+            │   │       ├── POST (1037)
+            │   │       ├── PRE (1084)
+            │   │       ├── ProS (484682470)
+            │   │       └── SUB (502)
+            │   ├── Isocortex (315)
+            │   │   ├── ACA (31)
+            │   │   │   ├── ACAd (39)
+            │   │   │   │   ├── ACAd1 (935)
+            │   │   │   │   ├── ACAd2/3 (211)
+            │   │   │   │   ├── ACAd5 (1015)
+            │   │   │   │   ├── ACAd6a (919)
+            │   │   │   │   └── ACAd6b (927)
+            │   │   │   └── ACAv (48)
+            │   │   │       ├── ACAv1 (588)
+            │   │   │       ├── ACAv2/3 (296)
+            │   │   │       ├── ACAv5 (772)
+            │   │   │       ├── ACAv6a (810)
+            │   │   │       └── ACAv6b (819)
+            │   │   ├── AI (95)
+            │   │   │   ├── AId (104)
+            │   │   │   │   ├── AId1 (996)
+            │   │   │   │   ├── AId2/3 (328)
+            │   │   │   │   ├── AId5 (1101)
+            │   │   │   │   ├── AId6a (783)
+            │   │   │   │   └── AId6b (831)
+            │   │   │   ├── AIp (111)
+            │   │   │   │   ├── AIp1 (120)
+            │   │   │   │   ├── AIp2/3 (163)
+            │   │   │   │   ├── AIp5 (344)
+            │   │   │   │   ├── AIp6a (314)
+            │   │   │   │   └── AIp6b (355)
+            │   │   │   └── AIv (119)
+            │   │   │       ├── AIv1 (704)
+            │   │   │       ├── AIv2/3 (694)
+            │   │   │       ├── AIv5 (800)
+            │   │   │       ├── AIv6a (675)
+            │   │   │       └── AIv6b (699)
+            │   │   ├── AUD (247)
+            │   │   │   ├── AUDd (1011)
+            │   │   │   │   ├── AUDd1 (527)
+            │   │   │   │   ├── AUDd2/3 (600)
+            │   │   │   │   ├── AUDd4 (678)
+            │   │   │   │   ├── AUDd5 (252)
+            │   │   │   │   ├── AUDd6a (156)
+            │   │   │   │   └── AUDd6b (243)
+            │   │   │   ├── AUDp (1002)
+            │   │   │   │   ├── AUDp1 (735)
+            │   │   │   │   ├── AUDp2/3 (251)
+            │   │   │   │   ├── AUDp4 (816)
+            │   │   │   │   ├── AUDp5 (847)
+            │   │   │   │   ├── AUDp6a (954)
+            │   │   │   │   └── AUDp6b (1005)
+            │   │   │   ├── AUDpo (1027)
+            │   │   │   │   ├── AUDpo1 (696)
+            │   │   │   │   ├── AUDpo2/3 (643)
+            │   │   │   │   ├── AUDpo4 (759)
+            │   │   │   │   ├── AUDpo5 (791)
+            │   │   │   │   ├── AUDpo6a (249)
+            │   │   │   │   └── AUDpo6b (456)
+            │   │   │   └── AUDv (1018)
+            │   │   │       ├── AUDv1 (959)
+            │   │   │       ├── AUDv2/3 (755)
+            │   │   │       ├── AUDv4 (990)
+            │   │   │       ├── AUDv5 (1023)
+            │   │   │       ├── AUDv6a (520)
+            │   │   │       └── AUDv6b (598)
+            │   │   ├── ECT (895)
+            │   │   │   ├── ECT1 (836)
+            │   │   │   ├── ECT2/3 (427)
+            │   │   │   ├── ECT5 (988)
+            │   │   │   ├── ECT6a (977)
+            │   │   │   └── ECT6b (1045)
+            │   │   ├── FRP (184)
+            │   │   │   ├── FRP1 (68)
+            │   │   │   ├── FRP2/3 (667)
+            │   │   │   ├── FRP5 (526157192)
+            │   │   │   ├── FRP6a (526157196)
+            │   │   │   └── FRP6b (526322264)
+            │   │   ├── GU (1057)
+            │   │   │   ├── GU1 (36)
+            │   │   │   ├── GU2/3 (180)
+            │   │   │   ├── GU4 (148)
+            │   │   │   ├── GU5 (187)
+            │   │   │   ├── GU6a (638)
+            │   │   │   └── GU6b (662)
+            │   │   ├── ILA (44)
+            │   │   │   ├── ILA1 (707)
+            │   │   │   ├── ILA2/3 (556)
+            │   │   │   ├── ILA5 (827)
+            │   │   │   ├── ILA6a (1054)
+            │   │   │   └── ILA6b (1081)
+            │   │   ├── MO (500)
+            │   │   │   ├── MOp (985)
+            │   │   │   │   ├── MOp1 (320)
+            │   │   │   │   ├── MOp2/3 (943)
+            │   │   │   │   ├── MOp5 (648)
+            │   │   │   │   ├── MOp6a (844)
+            │   │   │   │   └── MOp6b (882)
+            │   │   │   └── MOs (993)
+            │   │   │       ├── MOs1 (656)
+            │   │   │       ├── MOs2/3 (962)
+            │   │   │       ├── MOs5 (767)
+            │   │   │       ├── MOs6a (1021)
+            │   │   │       └── MOs6b (1085)
+            │   │   ├── ORB (714)
+            │   │   │   ├── ORBl (723)
+            │   │   │   │   ├── ORBl1 (448)
+            │   │   │   │   ├── ORBl2/3 (412)
+            │   │   │   │   ├── ORBl5 (630)
+            │   │   │   │   ├── ORBl6a (440)
+            │   │   │   │   └── ORBl6b (488)
+            │   │   │   ├── ORBm (731)
+            │   │   │   │   ├── ORBm1 (484)
+            │   │   │   │   ├── ORBm2/3 (582)
+            │   │   │   │   ├── ORBm5 (620)
+            │   │   │   │   ├── ORBm6a (910)
+            │   │   │   │   └── ORBm6b (527696977)
+            │   │   │   └── ORBvl (746)
+            │   │   │       ├── ORBvl1 (969)
+            │   │   │       ├── ORBvl2/3 (288)
+            │   │   │       ├── ORBvl5 (1125)
+            │   │   │       ├── ORBvl6a (608)
+            │   │   │       └── ORBvl6b (680)
+            │   │   ├── PERI (922)
+            │   │   │   ├── PERI1 (540)
+            │   │   │   ├── PERI2/3 (888)
+            │   │   │   ├── PERI5 (692)
+            │   │   │   ├── PERI6a (335)
+            │   │   │   └── PERI6b (368)
+            │   │   ├── PL (972)
+            │   │   │   ├── PL1 (171)
+            │   │   │   ├── PL2/3 (304)
+            │   │   │   ├── PL5 (363)
+            │   │   │   ├── PL6a (84)
+            │   │   │   └── PL6b (132)
+            │   │   ├── PTLp (22)
+            │   │   │   ├── VISa (312782546)
+            │   │   │   │   ├── VISa1 (312782550)
+            │   │   │   │   ├── VISa2/3 (312782554)
+            │   │   │   │   ├── VISa4 (312782558)
+            │   │   │   │   ├── VISa5 (312782562)
+            │   │   │   │   ├── VISa6a (312782566)
+            │   │   │   │   └── VISa6b (312782570)
+            │   │   │   └── VISrl (417)
+            │   │   │       ├── VISrl1 (312782604)
+            │   │   │       ├── VISrl2/3 (312782608)
+            │   │   │       ├── VISrl4 (312782612)
+            │   │   │       ├── VISrl5 (312782616)
+            │   │   │       ├── VISrl6a (312782620)
+            │   │   │       └── VISrl6b (312782624)
+            │   │   ├── RSP (254)
+            │   │   │   ├── RSPagl (894)
+            │   │   │   │   ├── RSPagl1 (671)
+            │   │   │   │   ├── RSPagl2/3 (965)
+            │   │   │   │   ├── RSPagl5 (774)
+            │   │   │   │   ├── RSPagl6a (906)
+            │   │   │   │   └── RSPagl6b (279)
+            │   │   │   ├── RSPd (879)
+            │   │   │   │   ├── RSPd1 (442)
+            │   │   │   │   ├── RSPd2/3 (434)
+            │   │   │   │   ├── RSPd4 (545)
+            │   │   │   │   ├── RSPd5 (610)
+            │   │   │   │   ├── RSPd6a (274)
+            │   │   │   │   └── RSPd6b (330)
+            │   │   │   └── RSPv (886)
+            │   │   │       ├── RSPv1 (542)
+            │   │   │       ├── RSPv2/3 (430)
+            │   │   │       ├── RSPv5 (687)
+            │   │   │       ├── RSPv6a (590)
+            │   │   │       └── RSPv6b (622)
+            │   │   ├── SS (453)
+            │   │   │   ├── SSp (322)
+            │   │   │   │   ├── SSp-bfd (329)
+            │   │   │   │   │   ├── SSp-bfd1 (981)
+            │   │   │   │   │   ├── SSp-bfd2/3 (201)
+            │   │   │   │   │   ├── SSp-bfd4 (1047)
+            │   │   │   │   │   ├── SSp-bfd5 (1070)
+            │   │   │   │   │   ├── SSp-bfd6a (1038)
+            │   │   │   │   │   └── SSp-bfd6b (1062)
+            │   │   │   │   ├── SSp-ll (337)
+            │   │   │   │   │   ├── SSp-ll1 (1030)
+            │   │   │   │   │   ├── SSp-ll2/3 (113)
+            │   │   │   │   │   ├── SSp-ll4 (1094)
+            │   │   │   │   │   ├── SSp-ll5 (1128)
+            │   │   │   │   │   ├── SSp-ll6a (478)
+            │   │   │   │   │   └── SSp-ll6b (510)
+            │   │   │   │   ├── SSp-m (345)
+            │   │   │   │   │   ├── SSp-m1 (878)
+            │   │   │   │   │   ├── SSp-m2/3 (657)
+            │   │   │   │   │   ├── SSp-m4 (950)
+            │   │   │   │   │   ├── SSp-m5 (974)
+            │   │   │   │   │   ├── SSp-m6a (1102)
+            │   │   │   │   │   └── SSp-m6b (2)
+            │   │   │   │   ├── SSp-n (353)
+            │   │   │   │   │   ├── SSp-n1 (558)
+            │   │   │   │   │   ├── SSp-n2/3 (838)
+            │   │   │   │   │   ├── SSp-n4 (654)
+            │   │   │   │   │   ├── SSp-n5 (702)
+            │   │   │   │   │   ├── SSp-n6a (889)
+            │   │   │   │   │   └── SSp-n6b (929)
+            │   │   │   │   ├── SSp-tr (361)
+            │   │   │   │   │   ├── SSp-tr1 (1006)
+            │   │   │   │   │   ├── SSp-tr2/3 (670)
+            │   │   │   │   │   ├── SSp-tr4 (1086)
+            │   │   │   │   │   ├── SSp-tr5 (1111)
+            │   │   │   │   │   ├── SSp-tr6a (9)
+            │   │   │   │   │   └── SSp-tr6b (461)
+            │   │   │   │   ├── SSp-ul (369)
+            │   │   │   │   │   ├── SSp-ul1 (450)
+            │   │   │   │   │   ├── SSp-ul2/3 (854)
+            │   │   │   │   │   ├── SSp-ul4 (577)
+            │   │   │   │   │   ├── SSp-ul5 (625)
+            │   │   │   │   │   ├── SSp-ul6a (945)
+            │   │   │   │   │   └── SSp-ul6b (1026)
+            │   │   │   │   └── SSp-un (182305689)
+            │   │   │   │       ├── SSp-un1 (182305693)
+            │   │   │   │       ├── SSp-un2/3 (182305697)
+            │   │   │   │       ├── SSp-un4 (182305701)
+            │   │   │   │       ├── SSp-un5 (182305705)
+            │   │   │   │       ├── SSp-un6a (182305709)
+            │   │   │   │       └── SSp-un6b (182305713)
+            │   │   │   └── SSs (378)
+            │   │   │       ├── SSs1 (873)
+            │   │   │       ├── SSs2/3 (806)
+            │   │   │       ├── SSs4 (1035)
+            │   │   │       ├── SSs5 (1090)
+            │   │   │       ├── SSs6a (862)
+            │   │   │       └── SSs6b (893)
+            │   │   ├── TEa (541)
+            │   │   │   ├── TEa1 (97)
+            │   │   │   ├── TEa2/3 (1127)
+            │   │   │   ├── TEa4 (234)
+            │   │   │   ├── TEa5 (289)
+            │   │   │   ├── TEa6a (729)
+            │   │   │   └── TEa6b (786)
+            │   │   ├── VIS (669)
+            │   │   │   ├── VISal (402)
+            │   │   │   │   ├── VISal1 (1074)
+            │   │   │   │   ├── VISal2/3 (905)
+            │   │   │   │   ├── VISal4 (1114)
+            │   │   │   │   ├── VISal5 (233)
+            │   │   │   │   ├── VISal6a (601)
+            │   │   │   │   └── VISal6b (649)
+            │   │   │   ├── VISam (394)
+            │   │   │   │   ├── VISam1 (281)
+            │   │   │   │   ├── VISam2/3 (1066)
+            │   │   │   │   ├── VISam4 (401)
+            │   │   │   │   ├── VISam5 (433)
+            │   │   │   │   ├── VISam6a (1046)
+            │   │   │   │   └── VISam6b (441)
+            │   │   │   ├── VISl (409)
+            │   │   │   │   ├── VISl1 (421)
+            │   │   │   │   ├── VISl2/3 (973)
+            │   │   │   │   ├── VISl4 (573)
+            │   │   │   │   ├── VISl5 (613)
+            │   │   │   │   ├── VISl6a (74)
+            │   │   │   │   └── VISl6b (121)
+            │   │   │   ├── VISli (312782574)
+            │   │   │   │   ├── VISli1 (312782578)
+            │   │   │   │   ├── VISli2/3 (312782582)
+            │   │   │   │   ├── VISli4 (312782586)
+            │   │   │   │   ├── VISli5 (312782590)
+            │   │   │   │   ├── VISli6a (312782594)
+            │   │   │   │   └── VISli6b (312782598)
+            │   │   │   ├── VISp (385)
+            │   │   │   │   ├── VISp1 (593)
+            │   │   │   │   ├── VISp2/3 (821)
+            │   │   │   │   ├── VISp4 (721)
+            │   │   │   │   ├── VISp5 (778)
+            │   │   │   │   ├── VISp6a (33)
+            │   │   │   │   └── VISp6b (305)
+            │   │   │   ├── VISpl (425)
+            │   │   │   │   ├── VISpl1 (750)
+            │   │   │   │   ├── VISpl2/3 (269)
+            │   │   │   │   ├── VISpl4 (869)
+            │   │   │   │   ├── VISpl5 (902)
+            │   │   │   │   ├── VISpl6a (377)
+            │   │   │   │   └── VISpl6b (393)
+            │   │   │   ├── VISpm (533)
+            │   │   │   │   ├── VISpm1 (805)
+            │   │   │   │   ├── VISpm2/3 (41)
+            │   │   │   │   ├── VISpm4 (501)
+            │   │   │   │   ├── VISpm5 (565)
+            │   │   │   │   ├── VISpm6a (257)
+            │   │   │   │   └── VISpm6b (469)
+            │   │   │   └── VISpor (312782628)
+            │   │   │       ├── VISpor1 (312782632)
+            │   │   │       ├── VISpor2/3 (312782636)
+            │   │   │       ├── VISpor4 (312782640)
+            │   │   │       ├── VISpor5 (312782644)
+            │   │   │       ├── VISpor6a (312782648)
+            │   │   │       └── VISpor6b (312782652)
+            │   │   └── VISC (677)
+            │   │       ├── VISC1 (897)
+            │   │       ├── VISC2/3 (1106)
+            │   │       ├── VISC4 (1010)
+            │   │       ├── VISC5 (1058)
+            │   │       ├── VISC6a (857)
+            │   │       └── VISC6b (849)
+            │   └── OLF (698)
+            │       ├── AOB (151)
+            │       │   ├── AOBgl (188)
+            │       │   ├── AOBgr (196)
+            │       │   └── AOBmi (204)
+            │       ├── AON (159)
+            │       ├── COA (631)
+            │       │   ├── COAa (639)
+            │       │   └── COAp (647)
+            │       │       ├── COApl (655)
+            │       │       └── COApm (663)
+            │       ├── DP (814)
+            │       ├── MOB (507)
+            │       ├── NLOT (619)
+            │       │   ├── NLOT1 (260)
+            │       │   ├── NLOT2 (268)
+            │       │   └── NLOT3 (1139)
+            │       ├── PAA (788)
+            │       ├── PIR (961)
+            │       ├── TR (566)
+            │       └── TT (589)
+            │           ├── TTd (597)
+            │           └── TTv (605)
+            └── CTXsp (703)
+                ├── BLA (295)
+                │   ├── BLAa (303)
+                │   ├── BLAp (311)
+                │   └── BLAv (451)
+                ├── BMA (319)
+                │   ├── BMAa (327)
+                │   └── BMAp (334)
+                ├── CLA (583)
+                ├── EP (942)
+                │   ├── EPd (952)
+                │   └── EPv (966)
+                ├── LA (131)
+                └── PA (780)
+</pre></div>
+</div>
+<p>The structures attribute is a custom dictionary that can be queried by region number or acronym, and contains all the information for a given structure:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">structures</span><span class="p">[</span><span class="s2">&quot;root&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;acronym&#39;: &#39;root&#39;,
+ &#39;id&#39;: 997,
+ &#39;mesh&#39;: None,
+ &#39;mesh_filename&#39;: PosixPath(&#39;/home/runner/.brainglobe/allen_mouse_100um_v1.2/meshes/997.obj&#39;),
+ &#39;name&#39;: &#39;root&#39;,
+ &#39;rgb_triplet&#39;: [255, 255, 255],
+ &#39;structure_id_path&#39;: [997]}
+</pre></div>
+</div>
+<p>In particular, the <cite>structure_id_path</cite> key contains a list description of the path in the hierarchy up to a particular region, and can be used for queries on the hierarchy.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">structures</span><span class="p">[</span><span class="s2">&quot;CH&quot;</span><span class="p">][</span><span class="s2">&quot;structure_id_path&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[997, 8, 567]
+</pre></div>
+</div>
+<p>We can use the <cite>atlas.get_structure_descendants</cite> and <cite>atlas.get_structure_ancestors</cite> methods to explore the hierarchy:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">atlas</span><span class="o">.</span><span class="n">get_structure_descendants</span><span class="p">(</span><span class="s2">&quot;VISC&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;VISC1&#39;, &#39;VISC2/3&#39;, &#39;VISC4&#39;, &#39;VISC5&#39;, &#39;VISC6a&#39;, &#39;VISC6b&#39;]
+</pre></div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">atlas</span><span class="o">.</span><span class="n">get_structure_ancestors</span><span class="p">(</span><span class="s2">&quot;VISC6a&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;root&#39;, &#39;grey&#39;, &#39;CH&#39;, &#39;CTX&#39;, &#39;CTXpl&#39;, &#39;Isocortex&#39;, &#39;VISC&#39;]
+</pre></div>
+</div>
+</section>
+<section id="region-masks">
+<h2>Region masks<a class="headerlink" href="#region-masks" title="Link to this heading">#</a></h2>
+<p>Sometimes, we might want to have the mask for a region that is not labelled in the annotation stack as all its voxels
+have the number of some lower level parcellation in the hierarchy (concretely, if the brain is divided in hindbrain,
+midbrain, and forebrain, <cite>annotation == root_id</cite> will be all False).</p>
+<p>To get the mask for a region, use</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">get_structure_mask</span><span class="p">(</span><span class="mi">997</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mask</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_brainglobe_atlasapi_004.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_004.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f0f5934e960&gt;
+</pre></div>
+</div>
+</section>
+<section id="region-meshes">
+<h2>Region meshes<a class="headerlink" href="#region-meshes" title="Link to this heading">#</a></h2>
+<p>To access the 3D structure mesh for visualisation, this can be queried using the region ID or abbreviation. A <cite>meshio.Mesh</cite> object is returned.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">mesh_from_structure</span><span class="p">(</span><span class="s2">&quot;CH&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;meshio mesh object&gt;
+  Number of points: 56703
+  Number of cells:
+    triangle: 112948
+  Point data: obj:vn
+  Cell data: obj:group_ids
+</pre></div>
+</div>
+<p>A list of regions can also be queried:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">mesh_from_structure</span><span class="p">([</span><span class="s2">&quot;CH&quot;</span><span class="p">,</span> <span class="s2">&quot;VISp&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;meshio mesh object&gt;
+  Number of points: 56703
+  Number of cells:
+    triangle: 112948
+  Point data: obj:vn
+  Cell data: obj:group_ids,
+ &lt;meshio mesh object&gt;
+  Number of points: 3532
+  Number of cells:
+    triangle: 7056
+  Point data: obj:vn
+  Cell data: obj:group_ids]
+</pre></div>
+</div>
+<p>The path can also be queried directly, if it’s needed to be used within another library</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">meshfile_from_structure</span><span class="p">(</span><span class="s2">&quot;CH&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/runner/.brainglobe/allen_mouse_100um_v1.2/meshes/567.obj
+</pre></div>
+</div>
+</section>
+<section id="querying-the-atlas">
+<h2>Querying the atlas<a class="headerlink" href="#querying-the-atlas" title="Link to this heading">#</a></h2>
+<p>A convenient feature of the <cite>BrainGlobeAtlas</cite> is being able to querying the identity of the
+structure at a given location, either from stack indexes or atlas coordinates.</p>
+<p>Ask for identity of some indexes in the stack:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">structure_from_coords</span><span class="p">((</span><span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">30</span><span class="p">)))</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>672
+</pre></div>
+</div>
+<p>Now with coordinates in microns (and also returning the region acryonym):</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">structure_from_coords</span><span class="p">((</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">),</span> <span class="n">microns</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">as_acronym</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>CP
+</pre></div>
+</div>
+<p>Query at a specific level of the hierarchy:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">structure_from_coords</span><span class="p">((</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">),</span> <span class="n">microns</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="n">hierarchy_lev</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">as_acronym</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>CH
+</pre></div>
+</div>
+</section>
+<section id="querying-the-hemisphere">
+<h2>Querying the hemisphere<a class="headerlink" href="#querying-the-hemisphere" title="Link to this heading">#</a></h2>
+<p>A very similar method can be used for hemispheres. 0 correspond to outside the brain, and 1 and 2 to left and right
+hemispheres, but we can ask for the hemisphere name instead of the number:</p>
+<p>Ask for the hemisphere of some indexes in the stack:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">hemisphere_from_coords</span><span class="p">((</span><span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">30</span><span class="p">)))</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+<p>Now give coordinates in microns</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">hemisphere_from_coords</span><span class="p">((</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">),</span> <span class="n">microns</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+<p>Now print hemisphere string</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">hemisphere_from_coords</span><span class="p">((</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">),</span> <span class="n">microns</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">as_string</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>right
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (4 minutes 35.055 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-api-examples-brainglobe-atlasapi-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/2e0fdc7133fc99c7b6e3378f40c7675f/brainglobe_atlasapi.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">brainglobe_atlasapi.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/f27ef6a46d80c83680cc716d3e3910a5/brainglobe_atlasapi.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">brainglobe_atlasapi.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/4a010d55909ef1c6f641aa73065cf477/brainglobe_atlasapi.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">brainglobe_atlasapi.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+<div class="section ablog__blog_comments">
+   
+</div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../tutorials/template-builder-pre-align.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Aligning samples for template building</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../documentation/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Documentation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-atlas-api-and-find-an-atlas">Import the Atlas API and find an atlas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-brainglobeatlas-object">Creating a <cite>BrainGlobeAtlas</cite> object</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-atlas">Using the atlas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata">Metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomical-annotation-and-hemispheres-stacks">Anatomical, annotation and hemispheres stacks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regions-hierarchy">Regions hierarchy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#region-masks">Region masks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#region-meshes">Region meshes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-the-atlas">Querying the atlas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-the-hemisphere">Querying the hemisphere</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p class="sphinx-version">
+Created using <a href="https://sphinx-doc.org/">Sphinx</a> 8.1.3.
+<br/>
+</p>
+<p class="theme-version">
+Built with the
+<a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
+0.16.1.
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><div class="things-in-a-row">
+</div></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

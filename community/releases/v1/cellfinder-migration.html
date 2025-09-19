@@ -34,6 +34,10 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -53,7 +57,6 @@
     <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'community/releases/v1/cellfinder-migration';</script>
     <link rel="canonical" href="https://brainglobe.info/community/releases/v1/cellfinder-migration.html" />
@@ -636,7 +639,7 @@ Whilst the workflow should still run on Python 3.8 in the immediate future, the 
 <h2>cellfinder (package)<a class="headerlink" href="#cellfinder-package" title="Link to this heading">#</a></h2>
 <p>This package should now be considered deprecated to users.
 Consequently, the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> (CLI) tool provided by this package will no longer receive updates.
-If you want to keep the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> (CLI) up to date, you will need to <a class="reference internal" href="#updating-to-the-new-cellfinder-cli-tool"><span class="std std-ref">install brainglobe-workflows</span></a> and use the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> (CLI) provided there.</p>
+If you want to keep the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> (CLI) up to date, you will need to <a class="reference internal" href="#updating-to-the-new-cellfinder-cli-tool">install <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code></a> and use the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> (CLI) provided there.</p>
 <section id="future-warning">
 <h3>Future-warning<a class="headerlink" href="#future-warning" title="Link to this heading">#</a></h3>
 <p>For development purposes, cellfinder (package) <strong>will later become</strong> the new name for the combined <code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code> and <code class="docutils literal notranslate"><span class="pre">cellfinder-napari</span></code> package.
@@ -658,7 +661,7 @@ We recommend that you install <code class="docutils literal notranslate"><span c
 <section id="brainglobe-workflows">
 <h2>brainglobe-workflows<a class="headerlink" href="#brainglobe-workflows" title="Link to this heading">#</a></h2>
 <p>This package now provides the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> (CLI) tool, and is the recommended way to run the analysis pipeline.
-It can be installed via pip - <a class="reference internal" href="#updating-to-the-new-cellfinder-cli-tool"><span class="std std-ref">see the instructions below</span></a>.</p>
+It can be installed via pip - <a class="reference internal" href="#updating-to-the-new-cellfinder-cli-tool">see the instructions below</a>.</p>
 <p>This package will continue to grow to include additional analysis pipelines and workflows for data analysis in neuroscience.</p>
 </section>
 <section id="updating-to-the-new-cellfinder-cli-tool">
@@ -679,7 +682,7 @@ It’s name isn’t changing right now, but keep an eye on this space.</p>
 <p>We <strong>strongly recommend</strong> you move to using <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code> if you wish to continue using the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> (CLI) tool.</p>
 <p>If you really want to keep using the old cellfinder (package), you will need to prevent further updates to it.
 The <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> (CLI) provided by cellfinder (package) will continue to work so long as you do not update, however you should consider any versions of <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> (CLI) provided by cellfinder (package) unmaintained.
-You will eventually run into the <a class="reference internal" href="#cellfinder-repository"><span class="std std-ref">name conflicts</span></a> listed above, as BrainGlobe version 1 starts to roll out.</p>
+You will eventually run into the <a class="reference internal" href="#cellfinder-repository">name conflicts</a> listed above, as BrainGlobe version 1 starts to roll out.</p>
 </section>
 </section>
 </section>

@@ -34,6 +34,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -53,7 +57,6 @@
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'blog/version1/version_1_announcement';</script>
     <link rel="canonical" href="https://brainglobe.info/blog/version1/version_1_announcement.html" />
@@ -585,7 +588,7 @@ There should be no ill affects from updating the tools as they are released, how
 <h2>Under the hood?<a class="headerlink" href="#under-the-hood" title="Link to this heading">#</a></h2>
 <p>Under-the-hood, we are taking this opportunity to create a stable version of each of our tools, as well as perform some much needed housekeeping on how we organise the tools themselves.
 This includes merging napari plugins with their corresponding “backend” tool; so to use <code class="docutils literal notranslate"><span class="pre">brainreg</span></code> with napari, users won’t need to install <code class="docutils literal notranslate"><span class="pre">brainreg</span></code> and then also install <code class="docutils literal notranslate"><span class="pre">brainreg-napari</span></code>, for example.
-It also includes a renaming of a few tools that have since grown out of their original purpose; <a class="reference internal" href="#appendix-a-note-on-cellfinder"><span class="std std-ref">the cellfinder tool in particular will cease to exist</span></a>, but the functionality will be preserved somewhere else in BrainGlobe.
+It also includes a renaming of a few tools that have since grown out of their original purpose; <a class="reference internal" href="#appendix-a-note-on-cellfinder">the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> tool in particular will cease to exist</a>, but the functionality will be preserved somewhere else in BrainGlobe.
 Finally, this will also simplify the number of inter-dependencies that we need to manage between our tools, and prevents issues surrounding modular installations from affecting users.
 We are not <em>removing</em> the option of manual installation of individual tools from the users that want to do this, however at the same time we are taking away this concern from users who want to jump right into using BrainGlobe’s features without worrying if they have the right tool installed or setup correctly.</p>
 </section>
@@ -601,7 +604,7 @@ The functionality (and workflow) that this tool provides will be preserved and m
 This change allows us to better distinguish between the workflow that the tool provides, and the “backend” Python code that the workflow depends on.
 Making this change also allows the the packages <code class="docutils literal notranslate"><span class="pre">cellfinder-core</span></code> and <code class="docutils literal notranslate"><span class="pre">cellfinder-napari</span></code> (which contain the aforementioned Python code that <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> depended on and takes its name from) to take up the name <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code>, which is helpful organisationally for us as developers.
 Beyond the change in name, users will not have to worry about the internal changes that are occurring to the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> package, as one of the features of “BrainGlobe version 1” will be to provide a one-line install that takes care of this for them.</p>
-<p>As <a class="reference internal" href="#how-can-i-stay-updated"><span class="std std-ref">mentioned previously</span></a>, a complete list of changes and a reference for finding tools that have moved will be published as tools are updated.</p>
+<p>As <a class="reference internal" href="#how-can-i-stay-updated">mentioned previously</a>, a complete list of changes and a reference for finding tools that have moved will be published as tools are updated.</p>
 </section>
 </section>
 

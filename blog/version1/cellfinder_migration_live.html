@@ -34,6 +34,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -53,7 +57,6 @@
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'blog/version1/cellfinder_migration_live';</script>
     <link rel="canonical" href="https://brainglobe.info/blog/version1/cellfinder_migration_live.html" />
@@ -556,7 +559,7 @@
                    <section class="tex2jax_ignore mathjax_ignore" id="cellfinder-has-moved-version-1-of-brainglobe-workflows-released">
 <h1><code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> has moved: version 1 of <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code> released<a class="headerlink" href="#cellfinder-has-moved-version-1-of-brainglobe-workflows-released" title="Link to this heading">#</a></h1>
 <p>Continuing the <a class="reference internal" href="version_1_announcement.html"><span class="std std-doc">restructuring of BrainGlobe</span></a>, the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> command-line tool has moved to a new home, <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code>.
-Please note that we will no longer be providing Docker images for <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code>’s command-line functionality either - if you were previously using the Docker image, please see the advice in the <a class="reference internal" href="#full-changelog"><span class="std std-ref">full changelog</span></a>.</p>
+Please note that we will no longer be providing Docker images for <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code>’s command-line functionality either - if you were previously using the Docker image, please see the advice in the <a class="reference internal" href="#full-changelog">full changelog</a>.</p>
 <p>Our vision for this new <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code> package is to provide one package that bundles together several data-analysis pipelines that are run frequently in neuroscience.
 By providing a package which knits together the relevant BrainGlobe tools into a single command or Python function, we can reduce the amount of manual work that users have to do to setup and run their own analyses.
 No longer will it be necessary to manually install or import 3 different BrainGlobe tools to do your analysis - if it’s provided by the <code class="docutils literal notranslate"><span class="pre">workflows</span></code> package, we will take care of this setup behind the scenes so you can focus on obtaining the results.</p>
@@ -569,7 +572,7 @@ Migrating the <code class="docutils literal notranslate"><span class="pre">cellf
 <h2>What do I need to do?<a class="headerlink" href="#what-do-i-need-to-do" title="Link to this heading">#</a></h2>
 <p>If you were previously using the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> command-line tool; you don’t need to do anything right now if you want to wait for the full release of BrainGlobe version 1, which will take care of these dependencies for you.
 Be aware however, that the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> tool that you have installed will no longer be receiving updates.</p>
-<p>If you would like to update to the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> command-line tool provided by <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code>, we recommend you take a look at the instructions in the <a class="reference internal" href="#full-changelog"><span class="std std-ref">full changelog</span></a>.</p>
+<p>If you would like to update to the <code class="docutils literal notranslate"><span class="pre">cellfinder</span></code> command-line tool provided by <code class="docutils literal notranslate"><span class="pre">brainglobe-workflows</span></code>, we recommend you take a look at the instructions in the <a class="reference internal" href="#full-changelog">full changelog</a>.</p>
 </section>
 <section id="full-changelog">
 <h2>Full changelog<a class="headerlink" href="#full-changelog" title="Link to this heading">#</a></h2>

@@ -34,6 +34,10 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -53,7 +57,6 @@
     <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'community/developers/repositories/brainglobe-meta/index';</script>
     <link rel="canonical" href="https://brainglobe.info/community/developers/repositories/brainglobe-meta/index.html" />
@@ -681,7 +684,7 @@ As such, all BrainGlobe dependencies in the meta-package <code class="docutils l
 These tools are all interlinked and interdependent, but the meta-package allows us to abstract this complexity away from the user.</p>
 <p>To ensure we retain explicit control over what <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> provides to users, it is important that the meta-package explicitly depends on all BrainGlobe tools that it wants to provide, including “redundant dependencies”.
 For example, if the meta-package is providing <code class="docutils literal notranslate"><span class="pre">brainglobe-tool-A</span></code>, which itself depends on <code class="docutils literal notranslate"><span class="pre">brainglobe-tool-B</span></code>, then the dependency list of the meta-package should include <strong>both</strong> <code class="docutils literal notranslate"><span class="pre">brainglobe-tool-A</span></code> and <code class="docutils literal notranslate"><span class="pre">brainglobe-tool-B</span></code>.
-Both packages should also have minimum versions pinned as per the <a class="reference internal" href="#dependency-pinning"><span class="std std-ref">dependency pinning guidelines</span></a> above.</p>
+Both packages should also have minimum versions pinned as per the <a class="reference internal" href="#dependency-pinning">dependency pinning guidelines</a> above.</p>
 <p>The dependency tree of BrainGlobe tools provided by the meta-package is provided below, and should be updated periodically as new tools are added, or new versions of <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> are released.
 Whilst it is not necessary for developers to remember the dependency structure, it is a useful reference guide for discerning how updates to one BrainGlobe tool might have knock-on effects on others.
 The dependency tree reads top-to-bottom; that is, arrows are drawn <strong>out</strong> of dependencies <strong>into</strong> the tools that depend on them.

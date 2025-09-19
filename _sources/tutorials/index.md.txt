@@ -97,6 +97,24 @@ Aligning samples to image axes for template building (experimental!)
 
 ::::
 
+## API tutorials
+::::{grid} 1 2 2 3
+:gutter: 3
+
+:::{grid-item-card} {fas}`brain;sd-text-primary` BrainGlobe Atlas API
+:img-bottom: ../api_examples/images/thumb/sphx_glr_brainglobe_atlasapi_thumb.png
+:link: ../api_examples/brainglobe_atlasapi.html
+:link-type: url
+Using the BrainGlobe Atlas API to fetch and inspect an atlas
+:::
+::::
+
+## Downloads
+- [⬇️ Download all examples in Python source code (.zip)](/api_examples/api_examples_python.zip)
+- [⬇️ Download all examples in Jupyter notebooks (.zip)](/api_examples/api_examples_jupyter.zip)
+
+
+
 ## Related tutorials
 These are tutorials hosted elsewhere that may be useful to BrainGlobe users.
 
@@ -127,5 +145,5 @@ silicon-probe-tracking
 tracing-tracking
 brainmapper/index
 template-builder-pre-align
-
+../api_examples/brainglobe_atlasapi
 ```
