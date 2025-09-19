@@ -16,3 +16,4 @@ pre-commit
 pyyaml
 brainglobe-atlasapi
 matplotlib
+numpy
