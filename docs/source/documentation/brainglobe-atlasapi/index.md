@@ -72,6 +72,9 @@ pip install brainglobe-atlasapi
 ```
 
 ## Usage
+:::{note}
+For a tutorial on how to use the basic features of the API, please see the [BrainGlobe Atlas API tutorial](../../api_examples/brainglobe_atlasapi).
+:::
 
 ```{toctree}
 :maxdepth: 2
