@@ -181,7 +181,7 @@ print(atlas.structure_from_coords((5000, 4000, 3000), microns=True,  hierarchy_l
 
 # %%
 # Querying the hemisphere
-# ------------------
+# -----------------------
 # A very similar method can be used for hemispheres. 0 correspond to outside the brain, and 1 and 2 to left and right
 # hemispheres, but we can ask for the hemisphere name instead of the number:
 
