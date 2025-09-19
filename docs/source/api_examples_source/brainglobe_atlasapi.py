@@ -85,7 +85,7 @@ annotation = atlas.annotation
 
 # Create a cyclic colormap due to the high values in the Allen atlas
 N = 512
-colors = cm.get_cmap('tab20', N)
+colors = cm.get_cmap('tab20').resample(N)
 lut = colors(np.arange(N))
 
 # Map label image to lookup table and plot
