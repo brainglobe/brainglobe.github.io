@@ -43,10 +43,20 @@ extensions = [
     "sphinx_togglebutton",
     "sphinx_sitemap",
     "myst_parser",
-    "nbsphinx",
     "notfound.extension",
     "sphinx_copybutton",
+    "sphinx_gallery.gen_gallery",
 ]
+
+
+sphinx_gallery_conf = {
+    "examples_dirs": ["api_examples_source"],
+    "gallery_dirs": ["api_examples"],  # output directory
+    "run_stale_examples": True,  # re-run examples on each build
+    "filename_pattern": "/*.py",  # which files to execute before inclusion
+    }
+
+
 
 # Configure the myst parser to enable cool markdown features
 myst_enable_extensions = [
@@ -194,3 +204,6 @@ linkcheck_ignore = [
     "https://brainglobe.info",
     "https://doi.org/10.1162/imag_a_00209"
     ]
+
+# To ignore warnings, as these files aren't used directly
+exclude_patterns = ['api_examples_source']
