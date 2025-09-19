@@ -14,7 +14,9 @@ Using the BrainGlobe Atlas API to fetch and inspect an atlas
 
 from brainglobe_atlasapi import BrainGlobeAtlas
 from pprint import pprint # to format printed data nicely
+import numpy as np
 from matplotlib import pyplot as plt
+from matplotlib import cm
 
 # %%
 # To know what atlases are available through BrainGlobe, we can use the `show_atlases` function
@@ -78,10 +80,17 @@ middle_section = reference.shape[0] // 2
 plt.imshow(reference[middle_section,:,:], cmap='gray')
 
 # %%
-# Annotations stack:
-
+# Annotations stack
 annotation = atlas.annotation
-plt.imshow(annotation[middle_section,:,:])
+
+# Create a cyclic colormap due to the high values in the Allen atlas
+N = 512
+colors = cm.get_cmap('tab20', N)
+lut = colors(np.arange(N))
+
+# Map label image to lookup table and plot
+plt.imshow(lut[annotation[middle_section,:,:] % N])
+
 
 # %%
 # Hemisheres stack:
