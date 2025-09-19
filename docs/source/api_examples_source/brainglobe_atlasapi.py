@@ -16,7 +16,7 @@ from brainglobe_atlasapi import BrainGlobeAtlas
 from pprint import pprint # to format printed data nicely
 import numpy as np
 from matplotlib import pyplot as plt
-from matplotlib import cm
+from matplotlib import colormaps as cm
 
 # %%
 # To know what atlases are available through BrainGlobe, we can use the `show_atlases` function
