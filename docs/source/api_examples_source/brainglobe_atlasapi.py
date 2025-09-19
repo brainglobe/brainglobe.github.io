@@ -145,47 +145,45 @@ print(atlas.mesh_from_structure("CH"))
 pprint(atlas.mesh_from_structure(["CH", "VISp"]))
 
 # %%
-# The path can also be queried directly, if it's needed to be used within antoher library
+# The path can also be queried directly, if it's needed to be used within another library
 
 print(atlas.meshfile_from_structure("CH"))
 
 
 
 # %%
-# ## Query the atlas
-#
-# ### Query for structures
-#
-# A very convenient feature of the `BrainGlobeAtlas` API is the simplicity of querying for the identity of the
-# structure or the hemisphere at a given location, either from stack indexes or space coordinates, and even cutting
-# the hierarchy at some higher level:
+# Querying the atlas
+# ------------------
+# A convenient feature of the `BrainGlobeAtlas` is being able to querying the identity of the
+# structure at a given location, either from stack indexes or atlas coordinates.
 
+# %%
 # Ask for identity of some indexes in the stack:
-atlas.structure_from_coords((50, 40, 30), as_acronym=True)
+print(atlas.structure_from_coords((50, 40, 30)))
 
 # %%
-# Now give coordinates in microns:
-atlas.structure_from_coords((5000, 4000, 3000), as_acronym=True,
-                               microns=True)
+# Now with coordinates in microns (and also returning the region acryonym):
+print(atlas.structure_from_coords((5000, 4000, 3000), microns=True, as_acronym=True))
 
 # %%
-# Now cut hierarchy at some level:
-atlas.structure_from_coords((5000, 4000, 3000), as_acronym=True,
-                               microns=True,  hierarchy_lev=2)
+# Query at a specific level of the hierarchy:
+print(atlas.structure_from_coords((5000, 4000, 3000), microns=True,  hierarchy_lev=2, as_acronym=True))
+
 
 # %%
-# ### Query for hemispheres
-#
+# Querying the hemisphere
+# ------------------
 # A very similar method can be used for hemispheres. 0 correspond to outside the brain, and 1 and 2 to left and right
-# hemispheres, but we can just ask for the side name instead of the number:
+# hemispheres, but we can ask for the hemisphere name instead of the number:
 
-# Ask for identity of some indexes in the stack:
-atlas.hemisphere_from_coords((50, 40, 30))
+# %%
+# Ask for the hemisphere of some indexes in the stack:
+print(atlas.hemisphere_from_coords((50, 40, 30)))
 
 # %%
 # Now give coordinates in microns
-atlas.hemisphere_from_coords((5000, 4000, 3000), microns=True)
+print(atlas.hemisphere_from_coords((5000, 4000, 3000), microns=True))
 
 # %%
-# Now print side string
-atlas.hemisphere_from_coords((5000, 4000, 3000), microns=True)
+# Now print hemisphere string
+print(atlas.hemisphere_from_coords((5000, 4000, 3000), microns=True, as_string=True))
