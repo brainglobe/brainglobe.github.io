@@ -3,7 +3,7 @@
 ## Basic usage
 
 ```bash
-brainreg /path/to/raw/data /path/to/output/directory -v 5 2 2 --orientation osl
+brainreg /path/to/raw/data /path/to/output/directory -v 5 2 2 --orientation psl
 ```
 
 :::{hint}
