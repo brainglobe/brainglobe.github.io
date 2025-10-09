@@ -50,8 +50,8 @@ extensions = [
 
 
 sphinx_gallery_conf = {
-    "examples_dirs": ["api_examples_source"],
-    "gallery_dirs": ["api_examples"],  # output directory
+    "examples_dirs": ["api_examples_source", "aws_examples_source"],
+    "gallery_dirs": ["api_examples", "aws_examples"],  # output directory
     "run_stale_examples": True,  # re-run examples on each build
     "filename_pattern": "/*.py",  # which files to execute before inclusion
     }

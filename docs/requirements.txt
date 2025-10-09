@@ -17,3 +17,5 @@ pyyaml
 brainglobe-atlasapi
 matplotlib
 numpy
+pooch
+zarr

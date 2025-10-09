@@ -95,6 +95,13 @@ Whole brain cell detection and registration
 Aligning samples to image axes for template building (experimental!)
 :::
 
+:::{grid-item-card} {fas}`brain;sd-text-primary` Exploring atlas data
+:img-bottom: images/brainglobe-template-builder/template-builder-header.png
+:link: exploring-atlas-data
+:link-type: doc
+Deeping understanding of atlas data and metadata (experimental!)
+:::
+
 ::::
 
 ## API tutorials
@@ -145,5 +152,7 @@ silicon-probe-tracking
 tracing-tracking
 brainmapper/index
 template-builder-pre-align
+exploring-atlas-data
 ../api_examples/brainglobe_atlasapi
+../aws_examples/explore_atlas
 ```
