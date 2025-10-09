@@ -846,6 +846,17 @@ as your orientation definition.</p>
 left part of the brain. If your plane spacing (i.e., the z-depth is 5 microns), and your in-plane resolution is 2x2
 microns, then the voxel sizes would be <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">2</span> <span class="pre">2</span></code>.</p>
 </section>
+<section id="napari-3d-orientation-for-brainrender">
+<h2>Napari 3D Orientation for brainrender<a class="headerlink" href="#napari-3d-orientation-for-brainrender" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">napari</span> <span class="pre">v0.6.0</span></code> and later use a <strong>right-handed 3D coordinate system</strong> by default, however <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> expects a <strong>left-handed system</strong>, so 3D visualisations may appear mirrored (left-right flipped).</p>
+<p>To change to a left-handed system</p>
+<ol class="arabic simple">
+<li><p>Right-click the <strong>Toggle 2D/3D view</strong> button in the bottom-left corner.</p></li>
+<li><p>Select the pre-0.6.0 default: <strong>away, down, right</strong>.</p></li>
+</ol>
+<p>This ensures <code class="docutils literal notranslate"><span class="pre">napari</span></code>’s visualisation matches <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>’s.<br />
+For more details on napari’s 3D axis directions and handedness, see the <a class="reference external" href="https://napari.org/stable/guides/handedness.html">napari documentation</a>.</p>
+</section>
 </section>
 
 <div class="section ablog__blog_comments">
@@ -907,6 +918,7 @@ microns, then the voxel sizes would be <code class="docutils literal notranslate
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voxel-sizes">Voxel sizes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#napari-3d-orientation-for-brainrender">Napari 3D Orientation for brainrender</a></li>
 </ul>
   </nav></div>
 
