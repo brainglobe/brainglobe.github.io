@@ -41,13 +41,13 @@ microns, then the voxel sizes would be `5 2 2`.
 
 ## Napari 3D Orientation for brainrender
 
-napari v0.6.0 and later use a **right-handed 3D coordinate system** by default, however brainrender expects a **left-handed system**, so 3D visualisations may appear mirrored (left-right flipped).  
+`napari v0.6.0` and later use a **right-handed 3D coordinate system** by default, however `brainrender` expects a **left-handed system**, so 3D visualisations may appear mirrored (left-right flipped).  
 
-To fix this:
+To change to a left-handed system
 
 1. Right-click the **Toggle 2D/3D view** button in the bottom-left corner.  
 2. Select the pre-0.6.0 default: **away, down, right**.  
 
-This ensures correct visualisation in brainrender.  
+This ensures `napari`'s visualisation matches `brainrender`'s.  
 For more details on napari’s 3D axis directions and handedness, see the [napari documentation](https://napari.org/stable/guides/handedness.html).
 
