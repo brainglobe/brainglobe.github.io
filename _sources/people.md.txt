@@ -652,6 +652,11 @@ In no particular order:
 :link: https://github.com/p-vychik
 :::
 
+:::{grid-item-card}    Ishrat Zaman
+:img-bottom: https://avatars.githubusercontent.com/u/129137723?v=4
+:link: https://github.com/ishratz25
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
