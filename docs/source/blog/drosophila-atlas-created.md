@@ -32,9 +32,9 @@ You can use the wing disc atlas like other BrainGlobe atlases. Its name is `dros
 ## Future plans
 
 As far as we are aware, this is the first population-based anatomical atlas for use in fundamental biological research beyond neuroscience. We believe that atlas-based image analysis could be very useful for the developmental biology community, in particular by providing an unbiased anatomical coordinate space where multimodal data from different samples (and studies!) can be integrated. We therefore plan to continue this exploratory work. Many things can still be improved, including
-* gaining a deeper understanding of applications where the wing disc atlas might be particularly useful
-* making templates for other developmental stages
-* improvements to the template resolution
-* improvements to the annotations, e.g. by registering genetically marked regions of significance into the atlas space.
+* Gaining a deeper understanding of applications where the wing disc atlas might be particularly useful
+* Making templates for other developmental stages
+* Improvements to the template resolution
+* Refining the annotations, e.g. by registering genetically marked regions of significance into the atlas space.
 
 If you would like to know more, or get involved with a similar project, please [get in touch](/contact).
