@@ -96,9 +96,9 @@ Aligning samples to image axes for template building (experimental!)
 :::
 
 :::{grid-item-card} {fas}`brain;sd-text-primary` Exploring atlas data
-:img-bottom: images/brainglobe-template-builder/template-builder-header.png
-:link: exploring-atlas-data
-:link-type: doc
+:img-bottom: ../aws_examples/images/thumb/sphx_glr_explore_atlas_thumb.png
+:link: ../aws_examples/explore_atlas.html
+:link-type: url
 Deeping understanding of atlas data and metadata (experimental!)
 :::
 
@@ -152,7 +152,6 @@ silicon-probe-tracking
 tracing-tracking
 brainmapper/index
 template-builder-pre-align
-exploring-atlas-data
 ../api_examples/brainglobe_atlasapi
 ../aws_examples/explore_atlas
 ```

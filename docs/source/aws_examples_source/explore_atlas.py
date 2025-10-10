@@ -1,6 +1,6 @@
 """
 Interacting with cloud atlas data through Python
-=====================
+================================================
 
 This example demonstrates how to calculate the volume of the retrosplenial area in the
 Allen mouse brain atlas at 25um resolution. It does so avoiding use of BrainGlobe tools,

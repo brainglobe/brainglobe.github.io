@@ -206,4 +206,4 @@ linkcheck_ignore = [
     ]
 
 # To ignore warnings, as these files aren't used directly
-exclude_patterns = ['api_examples_source']
+exclude_patterns = ['**_examples_source']
