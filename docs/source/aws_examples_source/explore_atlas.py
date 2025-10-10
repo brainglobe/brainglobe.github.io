@@ -1,5 +1,5 @@
 """
-Explore Atlas Example
+Interacting with cloud atlas data through Python
 =====================
 
 This example demonstrates how to calculate the volume of the retrosplenial area in the
