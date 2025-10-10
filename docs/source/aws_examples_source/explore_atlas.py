@@ -13,7 +13,7 @@ directly.
 # in the Allen Mouse Brain Atlas, programmatically - but without using BrainGlobe. To do this, we 
 # need some preliminary knowledge about how BrainGlobe atlases such as this are structured under the hood:
 #
-# - the annotation image is stored in a zipped [zarr](https://zarr.dev/) array.
+# - the annotation image is stored in a zipped `zarr <https://zarr.dev/>`_ array.
 # - the region metadata (e.g. each region's id, name, acronym and parent) are stored in a comma separated (csv) file
 # - these files (and other atlas files, like the template) are stored on AWS
 #
@@ -36,7 +36,7 @@ from pathlib import Path
 
 
 # %%
-# Next, we download the structures file using `pooch` (TODO download from AWS instead)
+# Next, we download the structures file using `pooch`
 
 atlas_url = "https://gin.g-node.org/BrainGlobe/atlases-v2/raw/master/annotations/allen_mouse_v1/"
 structures_file = "structures.csv"
@@ -76,7 +76,7 @@ with open(csv_path) as file:
 ZARR_ANNOTATIONS_FILENAME = "25um.zarr.zip"
 zarr_path = pooch.retrieve(
     url=atlas_url+"/"+ZARR_ANNOTATIONS_FILENAME,
-    known_hash=None,
+    known_hash="4a28ba2b3f25cea9c7d2c944ab42014c9f09aaef3bb32f14b9fcccc536a6140f",
     processor=pooch.Unzip(),
     path=pooch.os_cache("brainglobe_atlases")
 )
