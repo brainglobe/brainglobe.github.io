@@ -1,0 +1,819 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Interacting with cloud atlas data through Python &#8212; BrainGlobe</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=1227d6e8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'aws_examples/explore_atlas';</script>
+    <link rel="canonical" href="https://brainglobe.info/aws_examples/explore_atlas.html" />
+    <link rel="icon" href="../_static/brainglobe.png"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Documentation" href="../documentation/index.html" />
+    <link rel="prev" title="BrainGlobe Atlas API" href="../api_examples/brainglobe_atlasapi.html" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />   
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/brainglobe.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/brainglobe.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BrainGlobe</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../community/index.html">
+    Community
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../blog/index.html">
+    Blog
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../projects/index.html">
+    Projects
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../blackcap.html">
+    <no title>
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://mastodon.online/@brainglobe" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/brainglobe.info" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://brainglobe.zulipchat.com" title="Zulip (Developer chat)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Zulip (Developer chat)</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://forum.image.sc/tag/brainglobe" title="image.sc (Help forum)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-question fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">image.sc (Help forum)</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../community/index.html">
+    Community
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../blog/index.html">
+    Blog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../projects/index.html">
+    Projects
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../blackcap.html">
+    <no title>
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/brain_globe" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://mastodon.online/@brainglobe" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/brainglobe.info" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://brainglobe.zulipchat.com" title="Zulip (Developer chat)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Zulip (Developer chat)</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://forum.image.sc/tag/brainglobe" title="image.sc (Help forum)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-question fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">image.sc (Help forum)</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Index</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/visualise-atlas-napari.html">Visualise an atlas in napari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/manage-atlases-in-GUI.html">Download an atlas through napari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial-whole-brain-registration.html">Registering a whole-brain image to an atlas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/segmenting-1d-tracks.html">Segmenting a 1D track</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/transform-cells-atlas.html">Analysing brainwide distribution of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/cellfinder-detection.html">Detecting cells in 3D with cellfinder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/cellfinder-retraining.html">Retraining the cellfinder classification network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/silicon-probe-tracking.html">Silicon probe tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tracing-tracking.html">Analyze and visualize bulk fluorescence tracing data</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/brainmapper/index.html">Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command line tool</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/brainmapper/setting-up.html">Setting up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/brainmapper/running-brainmapper.html">Running <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/brainmapper/visualising-the-results.html">Visualising the results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/brainmapper/exploring-the-numerical-results.html">Exploring the numerical results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/brainmapper/visualising-your-data-in-brainrender.html">Visualising your data in brainrender</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/template-builder-pre-align.html">Aligning samples for template building</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_examples/brainglobe_atlasapi.html">BrainGlobe Atlas API</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Interacting with cloud atlas data through Python</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../tutorials/index.html" class="nav-link">Tutorials</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Interacting with cloud atlas data through Python</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                   <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-aws-examples-explore-atlas-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="interacting-with-cloud-atlas-data-through-python">
+<span id="sphx-glr-aws-examples-explore-atlas-py"></span><h1>Interacting with cloud atlas data through Python<a class="headerlink" href="#interacting-with-cloud-atlas-data-through-python" title="Link to this heading">#</a></h1>
+<p>This example demonstrates how to calculate the volume of the retrosplenial area in the
+Allen mouse brain atlas at 25um resolution. It does so avoiding use of BrainGlobe tools,
+and using minimal other dependencies. It is intended to showcase the use of atlas data
+directly.</p>
+<p>This tutorial will guide through the steps needed to extract the volume of the retrosplenial area (RSP)
+in the Allen Mouse Brain Atlas, programmatically - but without using BrainGlobe. To do this, we
+need some preliminary knowledge about how BrainGlobe atlases such as this are structured under the hood:</p>
+<ul class="simple">
+<li><p>the annotation image is stored in a zipped <a class="reference external" href="https://zarr.dev/">zarr</a> array.</p></li>
+<li><p>the region metadata (e.g. each region’s id, name, acronym and parent) are stored in a comma separated (csv) file</p></li>
+<li><p>these files (and other atlas files, like the template) are stored on AWS</p></li>
+</ul>
+<p>To compute the volume of RSP we will therefore</p>
+<ul class="simple">
+<li><p>download the structures file</p></li>
+<li><p>determine the id of the RSP region and all its children from the structures file</p></li>
+<li><p>download the annotation file</p></li>
+<li><p>count how many pixels in the annotation file correspond to any of the ids</p></li>
+<li><p>convert the pixels to cubic millimeters</p></li>
+</ul>
+<p>Now the conceptual part is covered, let’s dive into the code:</p>
+<p>We start by importing some Python libraries that we will need</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pooch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">zarr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+</pre></div>
+</div>
+<p>Next, we download the structures file using <cite>pooch</cite></p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">atlas_url</span> <span class="o">=</span> <span class="s2">&quot;https://gin.g-node.org/BrainGlobe/atlases-v2/raw/master/annotations/allen_mouse_v1/&quot;</span>
+<span class="n">structures_file</span> <span class="o">=</span> <span class="s2">&quot;structures.csv&quot;</span>
+
+<span class="n">csv_path</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="n">atlas_url</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="n">structures_file</span><span class="p">,</span>
+    <span class="n">known_hash</span><span class="o">=</span><span class="s2">&quot;a04e9f6656c98bcd6d9d4c0ba2bd0ef927cf5cb97658ded9cda8237ad4575ff2&quot;</span><span class="p">,</span>
+    <span class="n">path</span><span class="o">=</span><span class="n">pooch</span><span class="o">.</span><span class="n">os_cache</span><span class="p">(</span><span class="s2">&quot;brainglobe_atlases&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Downloading data from &#39;https://gin.g-node.org/BrainGlobe/atlases-v2/raw/master/annotations/allen_mouse_v1//structures.csv&#39; to file &#39;/home/runner/.cache/brainglobe_atlases/8bdfd39b6d25a0c1d1f84bfb5e051b9b-structures.csv&#39;.
+</pre></div>
+</div>
+<p>By printing the rows, we can observe that the structures file contains one row per region, with the first column (index 0) containing the region acronym, and the second column (index 1) containing the region ID:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>acronym,id,name,structure_id_path,parent_structure_id
+
+VI,653,Abducens nucleus,/997/8/343/1065/354/370/653/,370.0
+
+ACVII,576,Accessory facial motor nucleus,/997/8/343/1065/354/370/576/,370.0
+
+AOB,151,Accessory olfactory bulb,/997/8/567/688/695/698/151/,698.0
+
+AOBgl,188,&quot;Accessory olfactory bulb, glomerular layer&quot;,/997/8/567/688/695/698/151/188/,151.0
+
+AOBgr,196,&quot;Accessory olfactory bulb, granular layer&quot;,/997/8/567/688/695/698/151/196/,151.0
+
+AOBmi,204,&quot;Accessory olfactory bulb, mitral layer&quot;,/997/8/567/688/695/698/151/204/,151.0
+
+ASO,332,Accessory supraoptic group,/997/8/343/1129/1097/157/332/,157.0
+
+Acs5,549009219,Accessory trigeminal nucleus,/997/8/343/1065/771/987/549009219/,987.0
+
+AI,95,Agranular insular area,/997/8/567/688/695/315/95/,315.0
+</pre></div>
+</div>
+<p>We know that all child regions of RSP have a name starting with “RSP”, which we can use to identify our IDs of interest
+and store them in a list called <cite>rsp_ids</cite>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rsp_ids</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">entries</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">entries</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;RSP&quot;</span><span class="p">):</span>
+            <span class="n">rsp_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">entries</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>Equipped with this information, we can now download the annotations file for the atlas.
+Annotation files are stored in zipped zarr files in the cloud.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">ZARR_ANNOTATIONS_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;25um.zarr.zip&quot;</span>
+<span class="n">zarr_path</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="n">atlas_url</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="n">ZARR_ANNOTATIONS_FILENAME</span><span class="p">,</span>
+    <span class="n">known_hash</span><span class="o">=</span><span class="s2">&quot;4a28ba2b3f25cea9c7d2c944ab42014c9f09aaef3bb32f14b9fcccc536a6140f&quot;</span><span class="p">,</span>
+    <span class="n">processor</span><span class="o">=</span><span class="n">pooch</span><span class="o">.</span><span class="n">Unzip</span><span class="p">(),</span>
+    <span class="n">path</span><span class="o">=</span><span class="n">pooch</span><span class="o">.</span><span class="n">os_cache</span><span class="p">(</span><span class="s2">&quot;brainglobe_atlases&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">zarr_path</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Downloading data from &#39;https://gin.g-node.org/BrainGlobe/atlases-v2/raw/master/annotations/allen_mouse_v1//25um.zarr.zip&#39; to file &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip&#39;.
+Unzipping contents of &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip&#39; to &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip&#39;
+[&#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/zarr.json&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/1/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/1/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/6/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/6/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/3/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/3/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/3/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/3/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/4/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/4/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/4/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/4/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/2/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/2/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/2/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/2/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/5/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/5/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/5/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/5/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/1/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/1/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/1/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/1/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/6/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/6/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/6/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/6/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/7/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/7/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/0/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/0/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/3/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/3/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/3/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/3/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/4/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/4/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/4/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/4/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/2/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/2/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/2/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/2/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/5/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/5/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/5/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/5/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/1/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/1/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/1/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/1/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/6/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/6/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/6/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/6/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/7/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/7/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/0/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/0/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/3/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/3/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/3/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/3/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/4/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/4/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/4/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/4/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/2/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/2/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/2/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/2/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/5/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/5/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/5/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/5/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/6/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/6/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/3/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/3/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/4/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/4/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/2/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/2/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/5/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/5/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/1/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/1/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/1/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/1/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/6/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/6/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/6/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/6/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/7/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/7/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/7/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/7/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/0/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/0/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/0/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/0/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/3/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/3/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/3/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/3/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/4/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/4/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/4/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/4/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/2/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/2/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/2/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/2/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/5/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/5/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/5/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/5/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/1/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/1/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/1/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/1/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/6/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/6/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/6/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/6/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/7/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/7/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/7/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/7/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/0/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/0/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/0/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/0/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/3/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/3/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/3/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/3/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/4/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/4/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/4/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/4/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/2/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/2/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/2/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/2/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/5/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/5/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/5/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/5/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/1/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/1/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/1/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/1/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/6/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/6/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/6/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/6/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/7/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/7/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/0/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/0/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/3/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/3/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/3/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/3/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/4/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/4/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/4/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/4/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/2/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/2/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/2/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/2/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/5/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/5/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/5/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/5/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/1/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/1/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/1/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/1/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/6/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/6/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/6/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/6/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/7/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/7/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/7/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/7/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/0/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/0/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/0/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/0/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/3/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/3/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/3/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/3/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/4/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/4/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/4/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/4/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/2/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/2/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/2/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/2/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/5/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/5/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/5/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/5/2&#39;]
+</pre></div>
+</div>
+<p>After downloading and unzipping, we can open the zarr folder, which contains a single zarr array.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">zarr_array</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">zarr_path</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">zarr_array</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;Array file:///home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip shape=(528, 320, 456) dtype=uint32&gt;
+</pre></div>
+</div>
+<p>Combining the annotation data with our RSP IDs allows us to calculate the volume of the RSP,
+which we finally print. This reaches the goal of this tutorial.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">num_pixels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">zarr_array</span><span class="p">[:],</span> <span class="n">rsp_ids</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">pixel_volume</span> <span class="o">=</span> <span class="mi">25</span><span class="o">*</span><span class="mi">25</span><span class="o">*</span><span class="mi">25</span>
+<span class="n">cubic_microns_to_cubic_millimeters</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="mi">1000</span><span class="o">**</span><span class="mi">3</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RSP has volume of around </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">num_pixels</span><span class="o">*</span><span class="n">pixel_volume</span><span class="o">*</span><span class="n">cubic_microns_to_cubic_millimeters</span><span class="p">)</span><span class="si">}</span><span class="s2"> cubic millimeters&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>RSP has volume of around 11.0 cubic millimeters
+</pre></div>
+</div>
+<p>In conclusion, this tutorial shows how to programmatically access and process atlas data for
+the specific purpose of calculating a region volume. More generally, it also constitutes an example for
+BrainGlobe atlas data being used independently of the BrainGlobe software tools.</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 28.326 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-aws-examples-explore-atlas-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/fc12a6a5a016d084e9466efdf58f2d6e/explore_atlas.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">explore_atlas.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/6d57096aa4ae86fb41bf9865d77722fe/explore_atlas.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">explore_atlas.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/aea186b783699f0243d700bddbe4e8d2/explore_atlas.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">explore_atlas.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+
+<div class="section ablog__blog_comments">
+   
+</div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../api_examples/brainglobe_atlasapi.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">BrainGlobe Atlas API</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../documentation/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Documentation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p class="sphinx-version">
+Created using <a href="https://sphinx-doc.org/">Sphinx</a> 8.1.3.
+<br/>
+</p>
+<p class="theme-version">
+Built with the
+<a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
+0.16.1.
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><div class="things-in-a-row">
+</div></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
