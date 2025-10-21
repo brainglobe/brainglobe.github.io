@@ -33,6 +33,9 @@ import pooch
 import numpy as np
 import zarr
 from pathlib import Path
+from matplotlib import pyplot as plt
+from matplotlib import colormaps as cm
+
 
 
 # %%
@@ -89,6 +92,20 @@ print(zarr_path)
 zarr_array = zarr.open(Path(zarr_path[0]).parent, mode="r")
 
 print(zarr_array)
+
+# %%
+# By plotting a slice of the array contents, we can see the various regions encoded by integer values:
+
+# Get the middle section and plot
+middle_section = zarr_array.shape[0] // 2
+
+# Create a cyclic colormap due to the high values in the Allen atlas
+N = 512
+colors = cm.get_cmap('tab20').resampled(N)
+lut = colors(np.arange(N))
+
+# Map label image to lookup table and plot
+plt.imshow(lut[zarr_array[middle_section,:,:] % N])
 
 # %%
 # Combining the annotation data with our RSP IDs allows us to calculate the volume of the RSP,
