@@ -99,7 +99,7 @@ Aligning samples to image axes for template building (experimental!)
 :img-bottom: ../aws_examples/images/thumb/sphx_glr_explore_atlas_thumb.png
 :link: ../aws_examples/explore_atlas.html
 :link-type: url
-Deeping understanding of atlas data and metadata (experimental!)
+Deepening understanding of atlas data and metadata (experimental!)
 :::
 
 ::::
