@@ -1,5 +1,22 @@
 # Media
 BrainGlobe reported in press/online
+
+## [The Neuro – Irv and Helga Cooper Foundation Open Science Prizes: Meet the winners of an exceptional edition](https://www.mcgill.ca/neuro/article/neuro-irv-and-helga-cooper-foundation-open-science-prizes-meet-winners-exceptional-edition)
+
+_The Neuro (Montreal Neurological Institute-Hospital), October 2025_
+
+## [The BrainGlobe Initiative wins 2025 International Prize](https://www.sainsburywellcome.org/web/research-news/brainglobe-initiative-wins-2025-international-prize)
+
+_Sainsbury Wellcome Centre, October 2025_
+
+## [Mapping the migratory bird brain](https://www.sainsburywellcome.org/web/blog/mapping-migratory-bird-brain)
+
+_Sainsbury Wellcome Centre, March 2025_
+
+## [BrainGlobe Initiative celebrates open-source software award](https://www.sainsburywellcome.org/web/blog/brainglobe-initiative-celebrates-open-source-software-award)
+
+_Sainsbury Wellcome Centre, October 2024_
+
 ## [BrainGlobe; An Open-Source Platform for Neuroscientists](https://www.news-medical.net/news/20211215/BrainGlobe3b-An-Open-Source-Platform-for-Neuroscientists.aspx)
 
 _News-Medical, December 2021_
