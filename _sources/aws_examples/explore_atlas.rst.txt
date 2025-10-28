@@ -268,7 +268,7 @@ By plotting a slice of the array contents, we can see the various regions encode
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7faed862c530>
+    <matplotlib.image.AxesImage object at 0x7f62d219d880>
 
 
 
