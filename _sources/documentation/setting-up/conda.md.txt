@@ -66,7 +66,7 @@ The `(base)` is the bit that tells you that conda is set up
 Open a terminal (or Anaconda Prompt) and type:
 
 ```bash
-conda create --name ENV_NAME python=3.12
+conda create -c conda-forge --name ENV_NAME python=3.12
 ```
 
 This will:
