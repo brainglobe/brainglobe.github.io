@@ -10,11 +10,20 @@ pip install brainrender
 ```
 
 :::{caution}
-With newer versions of Python on Windows, you may need to run `conda install pyside2` before running `pip install`.
+With newer versions of Python on Windows, you may need to run:
+```bash
+conda install -c conda-forge ffmpeg
+conda install -c conda-forge pyside2
+```
+before running `pip install brainrender`.
 :::
 
 :::{caution}
-On Silicon Macs, you may need to run `conda install hdf5` before running `pip install`.
+On Silicon Macs, you may need to run:
+```bash
+conda install -c conda-forge hdf5
+```
+before running `pip install`.
 :::
 
 :::{caution}
