@@ -642,6 +642,20 @@ In no particular order:
 :link: https://github.com/giuliapaci
 :::
 
+:::{grid-item-card}    Marco Dalla Vecchia
+:img-bottom: https://avatars.githubusercontent.com/u/31376583?v=4
+:link: https://github.com/marcodallavecchia
+:::
+
+:::{grid-item-card}    Pavel Vychyk
+:img-bottom: https://avatars.githubusercontent.com/u/8183316?v=4
+:link: https://github.com/p-vychik
+:::
+
+:::{grid-item-card}    Ishrat Zaman
+:img-bottom: https://avatars.githubusercontent.com/u/129137723?v=4
+:link: https://github.com/ishratz25
+:::
 
 ::::
 

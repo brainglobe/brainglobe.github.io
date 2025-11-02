@@ -84,3 +84,6 @@ venv/
 # written by setuptools_scm
 **/_version.py
 
+docs/source/api_examples/
+docs/source/aws_examples/
+docs/source/sg_execution_times.rst
