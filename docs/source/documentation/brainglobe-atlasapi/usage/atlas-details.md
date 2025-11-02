@@ -203,6 +203,15 @@ The CCFv3 Augmented also includes new delineations of the granular layer of the 
 Available versions:
 * `ccfv3augmented_mouse_10um` - 10μm resolution
 * `ccfv3augmented_mouse_25um` - 25μm resolution
+### [Dorr MRI Mouse Atlas](https://doi.org/10.1016/j.neuroimage.2008.03.037)
+This atlas is a high-resolution, three-dimensional MRI-based atlas of the adult C57Bl/6J mouse brain, providing 
+comprehensive anatomical coverage of the cerebrum, cerebellum, and brainstem. The atlas was constructed from 
+within-skull, T2-weighted MR images acquired at 32 μm isotropic resolution from forty 12-week-old mice scanned on a 7 T
+scanner. Following normalisation, registration, and averaging of individual scans, 62 distinct brain structures were 
+manually delineated.
+
+Available versions:
+* `dorr_mouse_mri_32um`
 ## Rat
 ### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
 The Waxholm Space rat brain atlas features annotations of 222 structures, alongside a 39μm MRI template. It provides detailed delineations 
