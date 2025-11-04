@@ -47,11 +47,27 @@ Available versions:
 * `kim_mouse_50um` - 50μm resolution
 * `kim_mouse_100um` - 100μm resolution
 
+### [Enhanced and Unified Mouse Brain Atlas v2](https://figshare.com/articles/dataset/Unified_mouse_brain_atlas_v2/25750983) 
+The updated version of the Unified Mouse Brain Atlas builds upon 
+the work of [Chon et al. (2019)](https://doi.org/10.1038/s41467-019-13057-w), 
+which introduced a more finely segmented adult mouse brain atlas with unified anatomical labeling 
+based on the Allen Common Coordinate Framework (CCF). The original atlas integrated the Franklin-Paxinos (FP) 
+labels into the CCF space, providing consistent and detailed segmentation across brain regions.
+
+Version 2 (2024) contains several key improvements:
+* Corrected anatomical labels and updated ontology file to resolve inconsistencies in the original release.
+* 20 µm isotropic label volume generated via shape interpolation for high-resolution anatomical accuracy.
+* Maintains full compatibility with the original atlas (coordinate space and ontology).
+
+This atlas is only available at 20μm resolution:
+* `kim_mouse_isotropic_20um`
+
 ### [Gubra's LSFM mouse brain atlas](https://doi.org/10.1007/s12021-020-09490-8)
 This atlas from [Perens et al. (2020)](https://doi.org/10.1007/s12021-020-09490-8) provides a version of the Allen
 Adult Mouse Brain Atlas, based on solvent-cleared brains imaged with LSFM. This atlas may be a 
 good choice for registering other similar images. However, please note that this atlas is in a different coordinate 
-space to the original Allen atlas (CCFv3).
+space to the original Allen atlas (CCFv3). We recommend instead using the second version of this atlas, [Gubra's LSFM 
+mouse brain atlas v2](https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html#gubras-lsfm-mouse-brain-atlas-v2).
 
 This atlas is only available at 20μm resolution:
 * `perens_lsfm_mouse_20um`
@@ -64,7 +80,18 @@ space to the original Allen atlas (CCFv3). In addition this atlas is in flat sku
 plan stereotaxic surgeries.
 
 This atlas is only available at 25μm resolution:
-* `perens_stereotaxic_mouse_mri_25um`
+* `perens_stereotaxic_mri_mouse_25um`
+
+### [Gubra's LSFM mouse brain atlas v2](https://doi.org/10.1007/s12021-023-09623-9)
+This atlas is an addition to its MRI version and provides a version of the Allen Adult Mouse Brain Atlas, based on LSFM. 
+This atlas may be a good choice for registering other similar images. This atlas is the second version of 
+[perens et al. (2020)](https://doi.org/10.1007/s12021-020-09490-8) and was published in 
+[perens et al. (2023)](https://doi.org/10.1007/s12021-023-09623-9).  Please note that this atlas is in a different coordinate
+space to the original Allen atlas (CCFv3) and to Perens 2020. 
+
+
+This atlas is only available at 25μm resolution:
+* `perens_multimodal_lsfm_25um`
 
 ### [Princeton Mouse Brain Atlas](https://brainmaps.princeton.edu/2020/09/princeton-mouse-brain-atlas-links)
 This atlas from [Pisano et al. (2021)](https://doi.org/10.1016/j.celrep.2021.109721) is a version of the Allen
@@ -203,6 +230,169 @@ The CCFv3 Augmented also includes new delineations of the granular layer of the 
 Available versions:
 * `ccfv3augmented_mouse_10um` - 10μm resolution
 * `ccfv3augmented_mouse_25um` - 25μm resolution
+### [DeMBA Developmental Mouse Brain Atlas](https://doi.org/10.1038/s41467-025-63177-9)
+This atlas contains 53 days of development including every day from postnatal day 4 to postnatal day 56. Each time point has two atlases, a 20um version with the STPT, and Allen STPT template and a 25um version with the STPT, the Allen STPT, an MRI, and an LSFM template. The Allen STPT template is a transformed version of the default template provided with the Allen CCFv3, it is useful for comparison with the adult CCFv3.  
+
+Available versions:
+* at P4
+  * `demba_allen_seg_dev_mouse_p4_20um` 
+  * `demba_allen_seg_dev_mouse_p4_25um` 
+* at P5
+  * `demba_allen_seg_dev_mouse_p5_20um` 
+  * `demba_allen_seg_dev_mouse_p5_25um` 
+* at P6
+  * `demba_allen_seg_dev_mouse_p6_20um` 
+  * `demba_allen_seg_dev_mouse_p6_25um` 
+* at P7
+  * `demba_allen_seg_dev_mouse_p7_20um` 
+  * `demba_allen_seg_dev_mouse_p7_25um` 
+* at P8
+  * `demba_allen_seg_dev_mouse_p8_20um` 
+  * `demba_allen_seg_dev_mouse_p8_25um` 
+* at P9
+  * `demba_allen_seg_dev_mouse_p9_20um` 
+  * `demba_allen_seg_dev_mouse_p9_25um` 
+* at P10
+  * `demba_allen_seg_dev_mouse_p10_20um`
+  * `demba_allen_seg_dev_mouse_p10_25um`
+* at P11
+  * `demba_allen_seg_dev_mouse_p11_20um`
+  * `demba_allen_seg_dev_mouse_p11_25um`
+* at P12
+  * `demba_allen_seg_dev_mouse_p12_20um`
+  * `demba_allen_seg_dev_mouse_p12_25um`
+* at P13
+  * `demba_allen_seg_dev_mouse_p13_20um`
+  * `demba_allen_seg_dev_mouse_p13_25um`
+* at P14
+  * `demba_allen_seg_dev_mouse_p14_20um`
+  * `demba_allen_seg_dev_mouse_p14_25um`
+* at P15
+  * `demba_allen_seg_dev_mouse_p15_20um`
+  * `demba_allen_seg_dev_mouse_p15_25um`
+* at P16
+  * `demba_allen_seg_dev_mouse_p16_20um`
+  * `demba_allen_seg_dev_mouse_p16_25um`
+* at P17
+  * `demba_allen_seg_dev_mouse_p17_20um`
+  * `demba_allen_seg_dev_mouse_p17_25um`
+* at P18
+  * `demba_allen_seg_dev_mouse_p18_20um`
+  * `demba_allen_seg_dev_mouse_p18_25um`
+* at P19
+  * `demba_allen_seg_dev_mouse_p19_20um`
+  * `demba_allen_seg_dev_mouse_p19_25um`
+* at P20
+  * `demba_allen_seg_dev_mouse_p20_20um`
+  * `demba_allen_seg_dev_mouse_p20_25um`
+* at P21
+  * `demba_allen_seg_dev_mouse_p21_20um`
+  * `demba_allen_seg_dev_mouse_p21_25um`
+* at P22
+  * `demba_allen_seg_dev_mouse_p22_20um`
+  * `demba_allen_seg_dev_mouse_p22_25um`
+* at P23
+  * `demba_allen_seg_dev_mouse_p23_20um`
+  * `demba_allen_seg_dev_mouse_p23_25um`
+* at P24
+  * `demba_allen_seg_dev_mouse_p24_20um`
+  * `demba_allen_seg_dev_mouse_p24_25um`
+* at P25
+  * `demba_allen_seg_dev_mouse_p25_20um`
+  * `demba_allen_seg_dev_mouse_p25_25um`
+* at P26
+  * `demba_allen_seg_dev_mouse_p26_20um`
+  * `demba_allen_seg_dev_mouse_p26_25um`
+* at P27
+  * `demba_allen_seg_dev_mouse_p27_20um`
+  * `demba_allen_seg_dev_mouse_p27_25um`
+* at P28
+  * `demba_allen_seg_dev_mouse_p28_20um`
+  * `demba_allen_seg_dev_mouse_p28_25um`
+* at P29
+  * `demba_allen_seg_dev_mouse_p29_20um`
+  * `demba_allen_seg_dev_mouse_p29_25um`
+* at P30
+  * `demba_allen_seg_dev_mouse_p30_20um`
+  * `demba_allen_seg_dev_mouse_p30_25um`
+* at P31
+  * `demba_allen_seg_dev_mouse_p31_20um`
+  * `demba_allen_seg_dev_mouse_p31_25um`
+* at P32
+  * `demba_allen_seg_dev_mouse_p32_20um`
+  * `demba_allen_seg_dev_mouse_p32_25um`
+* at P33
+  * `demba_allen_seg_dev_mouse_p33_20um`
+  * `demba_allen_seg_dev_mouse_p33_25um`
+* at P34
+  * `demba_allen_seg_dev_mouse_p34_20um`
+  * `demba_allen_seg_dev_mouse_p34_25um`
+* at P35
+  * `demba_allen_seg_dev_mouse_p35_20um`
+  * `demba_allen_seg_dev_mouse_p35_25um`
+* at P36
+  * `demba_allen_seg_dev_mouse_p36_20um`
+  * `demba_allen_seg_dev_mouse_p36_25um`
+* at P37
+  * `demba_allen_seg_dev_mouse_p37_20um`
+  * `demba_allen_seg_dev_mouse_p37_25um`
+* at P38
+  * `demba_allen_seg_dev_mouse_p38_20um`
+  * `demba_allen_seg_dev_mouse_p38_25um`
+* at P39
+  * `demba_allen_seg_dev_mouse_p39_20um`
+  * `demba_allen_seg_dev_mouse_p39_25um`
+* at P40
+  * `demba_allen_seg_dev_mouse_p40_20um`
+  * `demba_allen_seg_dev_mouse_p40_25um`
+* at P41
+  * `demba_allen_seg_dev_mouse_p41_20um`
+  * `demba_allen_seg_dev_mouse_p41_25um`
+* at P42
+  * `demba_allen_seg_dev_mouse_p42_20um`
+  * `demba_allen_seg_dev_mouse_p42_25um`
+* at P43
+  * `demba_allen_seg_dev_mouse_p43_20um`
+  * `demba_allen_seg_dev_mouse_p43_25um`
+* at P44
+  * `demba_allen_seg_dev_mouse_p44_20um`
+  * `demba_allen_seg_dev_mouse_p44_25um`
+* at P45
+  * `demba_allen_seg_dev_mouse_p45_20um`
+  * `demba_allen_seg_dev_mouse_p45_25um`
+* at P46
+  * `demba_allen_seg_dev_mouse_p46_20um`
+  * `demba_allen_seg_dev_mouse_p46_25um`
+* at P47
+  * `demba_allen_seg_dev_mouse_p47_20um`
+  * `demba_allen_seg_dev_mouse_p47_25um`
+* at P48
+  * `demba_allen_seg_dev_mouse_p48_20um`
+  * `demba_allen_seg_dev_mouse_p48_25um`
+* at P49
+  * `demba_allen_seg_dev_mouse_p49_20um`
+  * `demba_allen_seg_dev_mouse_p49_25um`
+* at P50
+  * `demba_allen_seg_dev_mouse_p50_20um`
+  * `demba_allen_seg_dev_mouse_p50_25um`
+* at P51
+  * `demba_allen_seg_dev_mouse_p51_20um`
+  * `demba_allen_seg_dev_mouse_p51_25um`
+* at P52
+  * `demba_allen_seg_dev_mouse_p52_20um`
+  * `demba_allen_seg_dev_mouse_p52_25um`
+* at P53
+  * `demba_allen_seg_dev_mouse_p53_20um`
+  * `demba_allen_seg_dev_mouse_p53_25um`
+* at P54
+  * `demba_allen_seg_dev_mouse_p54_20um`
+  * `demba_allen_seg_dev_mouse_p54_25um`
+* at P55
+  * `demba_allen_seg_dev_mouse_p55_20um`
+  * `demba_allen_seg_dev_mouse_p55_25um`
+* at P56
+  * `demba_allen_seg_dev_mouse_p56_20um`
+  * `demba_allen_seg_dev_mouse_p56_25um`
 ### [Dorr MRI Mouse Atlas](https://doi.org/10.1016/j.neuroimage.2008.03.037)
 This atlas is a high-resolution, three-dimensional MRI-based atlas of the adult C57Bl/6J mouse brain, providing 
 comprehensive anatomical coverage of the cerebrum, cerebellum, and brainstem. The atlas was constructed from 
@@ -212,6 +402,7 @@ manually delineated.
 
 Available versions:
 * `dorr_mouse_mri_32um`
+
 ## Rat
 ### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
 The Waxholm Space rat brain atlas features annotations of 222 structures, alongside a 39μm MRI template. It provides detailed delineations 
@@ -286,9 +477,23 @@ This atlas is only available at 25μm resolution:
 * `eurasian_blackcap_25um`
 
 ## Invertebrate
+
+### [Columbia cuttlefish atlas](https://doi.org/10.1016/j.cub.2023.06.007)
+This is an MRI atlas of the dwarf cuttlefish (Sepia bandensis) from [Montague et al. (2023)](https://doi.org/10.1016/j.cub.2023.06.007)
+
+This atlas is only available at 50μm resolution:
+* `columbia_cuttlefish_50um`
+
 ### [Kocher Bumblebee Brain Atlas](https://doi.org/10.1016/j.cub.2022.04.066)
 This is a confocal microscopy [atlas of the adult bumblebee](https://doi.org/10.1016/j.cub.2022.04.066), made by the Kocher lab.
 
 This atlas has anisotropic resolution (2.542μm in axial direction - along antero-posterior axis - and 1.2407μm in-plane) resolution
 * `kocher_bumblebee_2.542um`
+
+### Drosophila wing disc instar3 atlas.
+This is a confocal microscopy atlas of the fruit fly larva's imaginal wing disc, at the 3rd instar developmental stage. It was built by Kaixiang Shuai as part of his MSc thesis, supervised by [Giulia Paci (Mao Lab at UCL)](https://www.tissuemechanicslab.com/gulia) and Alessandro Felder (BrainGlobe team).
+This atlas has 2um isotropic resolution. 
+* `drosophila_wingdisc_instar3_2um`
+
+
 
