@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**03:33.877** total execution time for 1 file **from api_examples**:
+**02:36.043** total execution time for 1 file **from api_examples**:
 
 .. container::
 
@@ -33,5 +33,5 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_api_examples_brainglobe_atlasapi.py` (``brainglobe_atlasapi.py``)
-     - 03:33.877
+     - 02:36.043
      - 0.0
