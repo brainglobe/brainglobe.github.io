@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: November 5, 2025
+date: November 6, 2025
 author: Saarah Hussain
 location: London, England
 category: brainglobe
