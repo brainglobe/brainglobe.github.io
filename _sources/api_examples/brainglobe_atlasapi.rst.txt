@@ -299,7 +299,7 @@ and stored on your local machine (by default, in `~/.brainglobe`):
 
  .. code-block:: none
 
-    Downloading... ━━━━━━━━━━ 100.0% • 61.0/61.0  • speed: 513.0 kB/s • ETA: 0:00:00
+    Downloading... ━━━━━━━━━━ 100.0% • 61.0/61.0  • speed: 259.4 kB/s • ETA: 0:00:00
                                        MB                                           
 
 
@@ -402,7 +402,7 @@ Anatomical reference (or template) image:
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f14ae3ab4d0>
+    <matplotlib.image.AxesImage object at 0x7fe795a80fe0>
 
 
 
@@ -439,7 +439,7 @@ Annotations stack
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f14da5c7dd0>
+    <matplotlib.image.AxesImage object at 0x7fe795735910>
 
 
 
@@ -469,7 +469,7 @@ Hemisheres stack:
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f14d9c82db0>
+    <matplotlib.image.AxesImage object at 0x7fe7c1591d90>
 
 
 
@@ -1473,7 +1473,7 @@ To get the mask for a region, use
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f14d9c9fdd0>
+    <matplotlib.image.AxesImage object at 0x7fe795741d30>
 
 
 
@@ -1727,7 +1727,7 @@ Now print hemisphere string
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (2 minutes 36.043 seconds)
+   **Total running time of the script:** (4 minutes 30.307 seconds)
 
 
 .. _sphx_glr_download_api_examples_brainglobe_atlasapi.py:

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>A three-dimensional digital atlas for the imaginal wing disc of the fruit fly Drosophila melanogaster &#8212; BrainGlobe</title>
+    <title>A new mouse MRI atlas been added to BrainGlobe &#8212; BrainGlobe</title>
   
   
   
@@ -58,8 +58,8 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/drosophila-atlas-created';</script>
-    <link rel="canonical" href="https://brainglobe.info/blog/drosophila-atlas-created.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/dorr-mouse-mri-atlas-added';</script>
+    <link rel="canonical" href="https://brainglobe.info/blog/dorr-mouse-mri-atlas-added.html" />
     <link rel="icon" href="../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -540,7 +540,7 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">A three-dimensional digital atlas for the imaginal wing disc of the fruit fly <em>Drosophila</em> <em>melanogaster</em></span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">A new mouse MRI atlas been added to BrainGlobe</span></li>
   </ul>
 </nav>
 </div>
@@ -556,33 +556,28 @@
                 
 <div id="searchbox"></div>
                 <article class="bd-article">
-                   <section class="tex2jax_ignore mathjax_ignore" id="a-three-dimensional-digital-atlas-for-the-imaginal-wing-disc-of-the-fruit-fly-drosophila-melanogaster">
-<h1>A three-dimensional digital atlas for the imaginal wing disc of the fruit fly <em>Drosophila</em> <em>melanogaster</em><a class="headerlink" href="#a-three-dimensional-digital-atlas-for-the-imaginal-wing-disc-of-the-fruit-fly-drosophila-melanogaster" title="Link to this heading">#</a></h1>
-<p>Building on the team’s experience making <a class="reference external" href="https://brainglobe.info/blog/uncharted-brains.html">neuroanatomical atlases from scratch</a>, BrainGlobe core developer Alessandro Felder teamed up with <a class="reference external" href="https://giuliapaci.github.io/research/">Dr Giulia Paci</a> from the <a class="reference external" href="https://www.tissuemechanicslab.com">UCL Tissue Mechanics Lab</a>, to explore the use of atlases (in the neuroanatomical sense) outside of neuroscience. Giulia is an expert in developmental mechanobiology of the fly. She uses the imaginal wing disc, a part of the fly larva that will later develop into the adult wing and notum, as a model organism for her research on how organisms develop robustly in noisy environments.</p>
-<p><img alt="wing discs" src="../_images/drosophila-samples.png" /></p>
-<p><strong>Figure 1. Example confocal images of the imaginal wing disc that were used to build the atlas, showcasing the variability between samples</strong></p>
-<p>Our collaboration took the form of co-supervising an MRes student, Kaixiang Shuai, whose aim it was to build an anatomical atlas of the fruit fly wing disc, at the 3rd instar developmental stage. Kaixiang learnt the required interdisciplinary skills - fly-handling, microscopy, Python and Github - very quickly. He proceeded to successfully dissect 16 wing discs, and image them with a confocal microscope. Then, he implemented a preprocessing pipeline that filtered these images, and set them up in a way that they could be run through <a class="reference external" href="https://github.com/brainglobe/brainglobe-template-builder">BrainGlobe’s template builder pipelines</a>. Finally, he annotated the resulting template and packaged the new atlas for BrainGlobe - this final, important step means it is now possible for developmental <em>Drosophila</em> researchers to use BrainGlobe to benefit from the advantages of the common coordinate space that an atlas provides.</p>
-<p><img alt="wing discs" src="../_images/drosophila-atlas.gif" /></p>
-<p><strong>Figure 2. An animation of the wing disc atlas, showing the template image and progressively appearing meshes for the pouch (red), the hinge (green) and the notum (blue).</strong></p>
+                   <section class="tex2jax_ignore mathjax_ignore" id="a-new-mouse-mri-atlas-been-added-to-brainglobe">
+<h1>A new mouse MRI atlas been added to BrainGlobe<a class="headerlink" href="#a-new-mouse-mri-atlas-been-added-to-brainglobe" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2008.03.037">Dorr et al. (2008)</a> created a high-resolution, three-dimensional MRI-based atlas of the adult C57Bl/6J mouse brain, providing  comprehensive anatomical coverage of the cerebrum, cerebellum, and brainstem.</p>
+<p>The atlas was constructed from within-skull, T2-weighted MR images acquired at 32 μm isotropic resolution from forty 12-week-old mice scanned at 7T. Following normalisation, registration, and averaging of individual scans, 62 distinct brain structures were manually delineated.</p>
+<p>This atlas is now available through BrainGlobe as <code class="docutils literal notranslate"><span class="pre">dorr_mouse_mri_32um</span></code>.</p>
+<p><img alt="Dorr atlas annotations" src="../_images/dorr_annotation_and_reference.png" /></p>
+<p><strong>Figure 1. Two-dimensional view of the Dorr mouse MRI brain atlas: annotations (left) and reference (right).</strong></p>
 <section id="how-do-i-use-the-new-atlas">
 <h2>How do I use the new atlas?<a class="headerlink" href="#how-do-i-use-the-new-atlas" title="Link to this heading">#</a></h2>
-<p>You can use the wing disc atlas like other BrainGlobe atlases. Its name is <code class="docutils literal notranslate"><span class="pre">drosophila_wingdisc_instar3_2um</span></code>. To visualise it, you can:</p>
+<p>You can use the Dorr mouse MRI atlas like all other BrainGlobe atlases. To visualise the atlas, you could follow the steps below:</p>
 <ul class="simple">
-<li><p>Install BrainGlobe (<a class="reference internal" href="../documentation/index.html"><span class="doc std std-doc">instructions</span></a>)</p></li>
-<li><p>Open napari and follow the steps in our <a class="reference internal" href="../tutorials/manage-atlases-in-GUI.html"><span class="std std-doc">download tutorial</span></a> for this atlas</p></li>
-<li><p>Visualise the different parts of the atlas as described in our <a class="reference internal" href="../tutorials/visualise-atlas-napari.html"><span class="doc std std-doc">visualisation tutorial</span></a></p></li>
+<li><p>Install BrainGlobe (<a class="reference internal" href="../documentation/index.html"><span class="doc std std-doc">instructions</span></a>).</p></li>
+<li><p>Open Napari and follow the steps in our <a class="reference internal" href="../tutorials/manage-atlases-in-GUI.html"><span class="std std-doc">download tutorial</span></a> for the <code class="docutils literal notranslate"><span class="pre">dorr_mouse_mri_32um</span></code> atlas.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">napari</span> <span class="pre">-w</span> <span class="pre">brainrender-napari</span></code> and visualise the different parts of the atlas as described in our <a class="reference internal" href="../tutorials/visualise-atlas-napari.html"><span class="doc std std-doc">visualisation tutorial</span></a>.</p></li>
 </ul>
+<p>The end result will look something like Figure 2.</p>
+<p><img alt="Dorr atlas visualised in napari" src="../_images/dorr_brainrender_visualisation.png" /></p>
+<p><strong>Figure 2: The Dorr mouse MRI atlas visualised with <code class="docutils literal notranslate"><span class="pre">brainrender-napari</span></code>.</strong></p>
 </section>
-<section id="future-plans">
-<h2>Future plans<a class="headerlink" href="#future-plans" title="Link to this heading">#</a></h2>
-<p>As far as we are aware, this is the first population-based anatomical atlas for use in fundamental biological research beyond neuroscience. We believe that atlas-based image analysis could be very useful for the developmental biology community, in particular by providing an unbiased anatomical coordinate space where multimodal data from different samples (and studies!) can be integrated. We therefore plan to continue this exploratory work. Many things can still be improved, including</p>
-<ul class="simple">
-<li><p>Gaining a deeper understanding of applications where the wing disc atlas might be particularly useful</p></li>
-<li><p>Making templates for other developmental stages</p></li>
-<li><p>Improvements to the template resolution</p></li>
-<li><p>Refining the annotations, e.g. by registering genetically marked regions of significance into the atlas space.</p></li>
-</ul>
-<p>If you would like to know more, or get involved with a similar project, please <a class="reference internal" href="../contact.html"><span class="doc std std-doc">get in touch</span></a>.</p>
+<section id="why-are-we-adding-new-atlases">
+<h2>Why are we adding new atlases?<a class="headerlink" href="#why-are-we-adding-new-atlases" title="Link to this heading">#</a></h2>
+<p>A fundamental aim of the BrainGlobe project is to make various brain atlases easily accessible by users across the globe. If you would like to get involved with a similar project, please <a class="reference internal" href="../contact.html"><span class="doc std std-doc">get in touch</span></a>.</p>
 </section>
 </section>
 
@@ -591,23 +586,16 @@
 <div class="section ablog__prev-next">
   <span class="ablog__prev">
      
-    <a href="DeMBA.html">
+    <a href="drosophila-atlas-created.html">
       
       <i class="fa fa-arrow-circle-left"></i>
       
-      <span>DeMBA, A 4D atlas representing mouse brain development from adolescence to adulthood</span>
+      <span>A three-dimensional digital atlas for the imaginal wing disc of the fruit fly Drosophila melanogaster</span>
     </a>
     
   </span>
   <span class="ablog__spacer">&nbsp;</span>
   <span class="ablog__next">
-     
-    <a href="dorr-mouse-mri-atlas-added.html">
-      <span>A new mouse MRI atlas been added to BrainGlobe</span>
-      
-      <i class="fa fa-arrow-circle-right"></i>
-      
-    </a>
     
   </span>
 </div>
@@ -643,7 +631,7 @@
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-use-the-new-atlas">How do I use the new atlas?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#future-plans">Future plans</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-we-adding-new-atlases">Why are we adding new atlases?</a></li>
 </ul>
   </nav></div>
 
