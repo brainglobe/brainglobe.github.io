@@ -10,7 +10,7 @@ language: English
 # A new mouse MRI atlas been added to BrainGlobe
 [Dorr et al. (2008)](https://doi.org/10.1016/j.neuroimage.2008.03.037) created a high-resolution, three-dimensional MRI-based atlas of the adult C57Bl/6J mouse brain, providing  comprehensive anatomical coverage of the cerebrum, cerebellum, and brainstem. 
 
-The atlas was constructed from within-skull, T2-weighted MR images acquired at 32 μm isotropic resolution from forty 12-week-old mice scanned on a 7 T scanner. Following normalisation, registration, and averaging of individual scans, 62 distinct brain structures were manually delineated.
+The atlas was constructed from within-skull, T2-weighted MR images acquired at 32 μm isotropic resolution from forty 12-week-old mice scanned at 7T. Following normalisation, registration, and averaging of individual scans, 62 distinct brain structures were manually delineated.
 
 This atlas is now available through BrainGlobe. We called it `dorr_mouse_mri_32um` and its annotations are closely aligned to the Allen Mouse Brain Atlas.
 
