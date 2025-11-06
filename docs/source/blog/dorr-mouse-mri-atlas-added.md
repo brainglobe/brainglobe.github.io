@@ -12,7 +12,7 @@ language: English
 
 The atlas was constructed from within-skull, T2-weighted MR images acquired at 32 μm isotropic resolution from forty 12-week-old mice scanned at 7T. Following normalisation, registration, and averaging of individual scans, 62 distinct brain structures were manually delineated.
 
-This atlas is now available through BrainGlobe. We called it `dorr_mouse_mri_32um` and its annotations are closely aligned to the Allen Mouse Brain Atlas.
+This atlas is now available through BrainGlobe as `dorr_mouse_mri_32um`.
 
 ![Dorr atlas ref and annotations](./images/dorr_annotation_and_reference.png)
 
