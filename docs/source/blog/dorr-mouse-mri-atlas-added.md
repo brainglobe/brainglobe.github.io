@@ -14,9 +14,9 @@ The atlas was constructed from within-skull, T2-weighted MR images acquired at 3
 
 This atlas is now available through BrainGlobe as `dorr_mouse_mri_32um`.
 
-![Dorr atlas annotations](images/dorr_annotation_2d.png)
+![Dorr atlas annotations](images/dorr_annotation_and_reference.png)
 
-**Figure 1. Two-dimensional view of the Dorr mouse MRI brain atlas annotations.**
+**Figure 1. Two-dimensional view of the Dorr mouse MRI brain atlas: annotations (left) and reference (right).**
 
 ## How do I use the new atlas?
 You can use the Dorr mouse MRI atlas like all other BrainGlobe atlases. To visualise the atlas, you could follow the steps below:
