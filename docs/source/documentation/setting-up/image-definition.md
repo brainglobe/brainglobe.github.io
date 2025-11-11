@@ -43,7 +43,7 @@ You may also need to specify the size of your voxels. These voxel sizes are in m
 as your orientation definition.
 
 As an example, we will assume, as above, the origin of your data (first, top left voxel) is the most anterior, superior, 
-left part of the brain. If your plane spacing (i.e., the slice depth) is 5 microns, and your in-plane resolution is 2x2 
+left part of the brain. If your plane spacing (i.e. the slice depth) is 5 microns, and your in-plane resolution is 2x2 
 microns, then the voxel sizes would be `5 2 2`.
 
 ## Napari 3D Orientation for brainrender
