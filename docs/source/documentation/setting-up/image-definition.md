@@ -21,7 +21,7 @@ The examples below assume default ordering of the axes, i.e. axis 0 (slice depth
 
 #### Coronal
 
-<img src="images/coronal.png" alt="coronal" width="250"/>
+<img src="images/coronal.png" alt="coronal" width="200"/>
 
 If the stack of images starts at the olfactory bulb, moving toward the cerebellum, the anatomical directions for each axis are:
 - Axis 0: anterior → posterior 
@@ -34,13 +34,13 @@ If the stack would start at the cerebellum and move towards the olfactory bulb, 
 
 #### Horizontal
 
-<img src="images/horizontal.png" alt="horizontal" width="250"/>
+<img src="images/horizontal.png" alt="horizontal" width="200"/>
 
 If the first image in the stack corresponds to the bottom of the brain, the origin voxel corresponds to the most inferior (`i`), anterior (`a`), left (`l`) part of the brain for axis 0, 1, and 2 respectively. In this case the origin string is `ial`.
 
 #### Sagittal
 
-<img src="images/sagittal.png" alt="sagittal" width="250"/>
+<img src="images/sagittal.png" alt="sagittal" height="143"/>
 
 If the stack is sliced from the left side of the brain toward the right, the origin corresponds to the most right (`r`), superior (`s`), posterior (`p`) part of the brain, so the origin string is `rsp`.
 
