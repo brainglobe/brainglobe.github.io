@@ -23,7 +23,7 @@ The examples below assume:
 
 #### Coronal
 If the stack of images starts at the olfactory bulb, moving toward the cerebellum, the anatomical directions for each axis are:
-- axis 0: anterior → posterior 
+- Axis 0: anterior → posterior 
 - axis 1: superior → inferior 
 - Axis 2: left → right
 
