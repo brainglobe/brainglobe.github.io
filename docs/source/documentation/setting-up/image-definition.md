@@ -25,7 +25,7 @@ The examples below assume:
 If the stack of images starts at the olfactory bulb, moving toward the cerebellum, the anatomical directions for each axis are:
 - axis 0: anterior → posterior 
 - axis 1: superior → inferior 
-- axis 2: left → right
+- Axis 2: left → right
 
 The origin voxel corresponds to the most anterior (`a`), superior (`s`), left (`l`) part of the brain, so the origin string is `asl`. 
 
