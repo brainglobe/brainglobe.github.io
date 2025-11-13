@@ -814,27 +814,43 @@
 <p>In some BrainGlobe tools, you need to specify the orientation and resolution of the data.</p>
 <section id="orientation">
 <h2>Orientation<a class="headerlink" href="#orientation" title="Link to this heading">#</a></h2>
-<p>When you need to specify the orientation of your data, you will usually need to enter a string in the
-<a class="reference external" href="https://github.com/brainglobe/brainglobe-space">brainglobe-space</a> “initials” form, to describe the origin voxel.</p>
-<p>When you work with a stack, the origin is the upper left corner when you show the first element <code class="docutils literal notranslate"><span class="pre">stack[0,</span> <span class="pre">:,</span> <span class="pre">:]</span></code> with
-matplotlib or when you open the stack with ImageJ. The first dimension is the one that you are slicing, the second is
-the height of the image, and the third is the width of the image.</p>
-<p>If the origin of your data (first, top left voxel) is the most anterior, superior, left part of the brain, then the
-orientation string would be “asl” (anterior, superior, left), and you would use <code class="docutils literal notranslate"><span class="pre">asr</span></code>.</p>
-<p>The order of the three initials must be the same as the axis order (sliced plane, height, width).</p>
-<p>For help with setting the orientation, the brainreg napari plugin comes with a tool to interactively check the orientation
-(<a class="reference internal" href="../brainreg/user-guide/checking-orientation.html"><span class="doc std std-doc">see documentation</span></a>).</p>
+<p>To describe the orientation of 3D brain imaging data in anatomical terms, <a class="reference external" href="https://github.com/brainglobe/brainglobe-space">brainglobe-space</a> uses a anatomical description of the relative location of <strong>the origin</strong>—the voxel at position [0, 0, 0], which when you open the stack with <a class="reference external" href="https://napari.org/">napari</a> by default corresponds with the pixel in the upper left corner of the first image in the stack.</p>
+<p>The origin can be described by a three letter string in which each letter corresponds to one of the following <strong>anatomical directions</strong>:</p>
+<ul class="simple">
+<li><p>posterior (<code class="docutils literal notranslate"><span class="pre">p</span></code>) ↔ anterior (<code class="docutils literal notranslate"><span class="pre">a</span></code>)</p></li>
+<li><p>superior (<code class="docutils literal notranslate"><span class="pre">s</span></code>) ↔ inferior (<code class="docutils literal notranslate"><span class="pre">i</span></code>)</p></li>
+<li><p>left (<code class="docutils literal notranslate"><span class="pre">l</span></code>) ↔ right (<code class="docutils literal notranslate"><span class="pre">r</span></code>)</p></li>
+</ul>
+<p>The string includes one letter from each opposing pair, specifying the direction towards the origin for axes 0, 1, and 2 respectively.</p>
+<p><img alt="allen mouse atlas 50μm" src="../../_images/anatomical_orientations.png" />
+<em>50 μm mouse brain atlas by <a class="reference external" href="https://doi.org/10.1016/j.cell.2020.04.007">Wang et al., 2020</a>, visualised in napari using the <a class="reference external" href="https://napari-hub.org/plugins/brainrender-napari.html">brainrender-napari plugin</a></em>.</p>
 <section id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
-<section id="coronal-section">
-<h4>Coronal section<a class="headerlink" href="#coronal-section" title="Link to this heading">#</a></h4>
-<p>If the first plane of this image was olfactory bulb, it would be <code class="docutils literal notranslate"><span class="pre">asr</span></code> (or <code class="docutils literal notranslate"><span class="pre">asl</span></code>). If the first plane was cerebellum, it would be <code class="docutils literal notranslate"><span class="pre">psr</span></code> or <code class="docutils literal notranslate"><span class="pre">psl</span></code>.
-<img alt="coronal-section" src="../../_images/orientation-asr.webp" /></p>
+<p>The examples below assume default ordering of the axes, i.e. axis 0 (slice depth), axis 1 (image height), axis 2 (image width).</p>
+<section id="coronal">
+<h4>Coronal<a class="headerlink" href="#coronal" title="Link to this heading">#</a></h4>
+<a class="reference internal image-reference" href="../../_images/coronal.png"><img alt="coronal" src="../../_images/coronal.png" style="width: 200px;" />
+</a>
+<p>If the stack of images starts at the olfactory bulb, moving toward the cerebellum, the anatomical directions for each axis are:</p>
+<ul class="simple">
+<li><p>Axis 0: anterior → posterior</p></li>
+<li><p>Axis 1: superior → inferior</p></li>
+<li><p>Axis 2: left → right</p></li>
+</ul>
+<p>The origin voxel corresponds to the most anterior (<code class="docutils literal notranslate"><span class="pre">a</span></code>), superior (<code class="docutils literal notranslate"><span class="pre">s</span></code>), left (<code class="docutils literal notranslate"><span class="pre">l</span></code>) part of the brain, so the origin string is <code class="docutils literal notranslate"><span class="pre">asl</span></code>.</p>
+<p>If the stack would start at the cerebellum and move towards the olfactory bulb, then axis 0 runs posterior → anterior, and the origin string would be <code class="docutils literal notranslate"><span class="pre">psl</span></code>.</p>
 </section>
-<section id="horizontal-section">
-<h4>Horizontal section<a class="headerlink" href="#horizontal-section" title="Link to this heading">#</a></h4>
-<p>If the first plane of this image was the top of the brain it would be <code class="docutils literal notranslate"><span class="pre">sal</span></code>/<code class="docutils literal notranslate"><span class="pre">sar</span></code>. If the first plane was the base it would be <code class="docutils literal notranslate"><span class="pre">ial</span></code>/<code class="docutils literal notranslate"><span class="pre">iar</span></code>.</p>
-<p><img alt="horizontal-section" src="../../_images/orientation-sal.webp" /></p>
+<section id="horizontal">
+<h4>Horizontal<a class="headerlink" href="#horizontal" title="Link to this heading">#</a></h4>
+<a class="reference internal image-reference" href="../../_images/horizontal.png"><img alt="horizontal" src="../../_images/horizontal.png" style="width: 200px;" />
+</a>
+<p>If the first image in the stack corresponds to the bottom of the brain, the origin voxel corresponds to the most inferior (<code class="docutils literal notranslate"><span class="pre">i</span></code>), anterior (<code class="docutils literal notranslate"><span class="pre">a</span></code>), left (<code class="docutils literal notranslate"><span class="pre">l</span></code>) part of the brain for axis 0, 1, and 2 respectively. In this case the origin string is <code class="docutils literal notranslate"><span class="pre">ial</span></code>.</p>
+</section>
+<section id="sagittal">
+<h4>Sagittal<a class="headerlink" href="#sagittal" title="Link to this heading">#</a></h4>
+<a class="reference internal image-reference" href="../../_images/sagittal.png"><img alt="sagittal" src="../../_images/sagittal.png" style="height: 143px;" />
+</a>
+<p>If the stack is sliced from the left side of the brain toward the right, the origin corresponds to the most right (<code class="docutils literal notranslate"><span class="pre">r</span></code>), superior (<code class="docutils literal notranslate"><span class="pre">s</span></code>), posterior (<code class="docutils literal notranslate"><span class="pre">p</span></code>) part of the brain, so the origin string is <code class="docutils literal notranslate"><span class="pre">rsp</span></code>.</p>
 </section>
 </section>
 </section>
@@ -843,7 +859,7 @@ orientation string would be “asl” (anterior, superior, left), and you would 
 <p>You may also need to specify the size of your voxels. These voxel sizes are in microns, and come in the same order
 as your orientation definition.</p>
 <p>As an example, we will assume, as above, the origin of your data (first, top left voxel) is the most anterior, superior,
-left part of the brain. If your plane spacing (i.e., the z-depth is 5 microns), and your in-plane resolution is 2x2
+left part of the brain. If your plane spacing (i.e. the slice depth) is 5 microns, and your in-plane resolution is 2x2
 microns, then the voxel sizes would be <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">2</span> <span class="pre">2</span></code>.</p>
 </section>
 <section id="napari-3d-orientation-for-brainrender">
@@ -911,8 +927,9 @@ For more details on napari’s 3D axis directions and handedness, see the <a cla
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orientation">Orientation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#coronal-section">Coronal section</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#horizontal-section">Horizontal section</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#coronal">Coronal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#horizontal">Horizontal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sagittal">Sagittal</a></li>
 </ul>
 </li>
 </ul>
