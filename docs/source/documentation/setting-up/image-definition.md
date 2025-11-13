@@ -14,7 +14,7 @@ The string includes one letter from each opposing pair, specifying the direction
 
 
 ![allen mouse atlas 50μm](images/anatomical_orientations.png)
-*50 μm mouse brain atlas by Wang et al., 2020 (https://doi.org/10.1016/j.cell.2020.04.007), visualised in napari using the [brainrender-napari plugin](https://napari-hub.org/plugins/brainrender-napari.html)*.
+*50 μm mouse brain atlas by [Wang et al., 2020](https://doi.org/10.1016/j.cell.2020.04.007), visualised in napari using the [brainrender-napari plugin](https://napari-hub.org/plugins/brainrender-napari.html)*.
 
 ### Examples
 The examples below assume:
