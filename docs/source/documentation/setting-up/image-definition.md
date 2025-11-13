@@ -17,11 +17,12 @@ The string includes one letter from each opposing pair, specifying the direction
 *50 μm mouse brain atlas by [Wang et al., 2020](https://doi.org/10.1016/j.cell.2020.04.007), visualised in napari using the [brainrender-napari plugin](https://napari-hub.org/plugins/brainrender-napari.html)*.
 
 ### Examples
-The examples below assume:
-- That the orientation matches that in the panels of the figure above
-- Default ordering of the axes, i.e. axis 0 (slice depth), axis 1 (image height), axis 2 (image width)
+The examples below assume default ordering of the axes, i.e. axis 0 (slice depth), axis 1 (image height), axis 2 (image width).
 
 #### Coronal
+
+<img src="images/coronal.png" alt="coronal" width="250"/>
+
 If the stack of images starts at the olfactory bulb, moving toward the cerebellum, the anatomical directions for each axis are:
 - Axis 0: anterior → posterior 
 - Axis 1: superior → inferior 
@@ -32,9 +33,15 @@ The origin voxel corresponds to the most anterior (`a`), superior (`s`), left (`
 If the stack would start at the cerebellum and move towards the olfactory bulb, then axis 0 runs posterior → anterior, and the origin string would be `psl`.
 
 #### Horizontal
+
+<img src="images/horizontal.png" alt="horizontal" width="250"/>
+
 If the first image in the stack corresponds to the bottom of the brain, the origin voxel corresponds to the most inferior (`i`), anterior (`a`), left (`l`) part of the brain for axis 0, 1, and 2 respectively. In this case the origin string is `ial`.
 
 #### Sagittal
+
+<img src="images/sagittal.png" alt="sagittal" width="250"/>
+
 If the stack is sliced from the left side of the brain toward the right, the origin corresponds to the most right (`r`), superior (`s`), posterior (`p`) part of the brain, so the origin string is `rsp`.
 
 ## Voxel sizes
