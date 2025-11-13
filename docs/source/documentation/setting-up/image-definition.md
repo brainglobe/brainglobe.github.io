@@ -18,7 +18,7 @@ The string includes one letter from each opposing pair, specifying the direction
 
 ### Examples
 The examples below assume:
-- that the orientation matches that in the panels of the figure above
+- That the orientation matches that in the panels of the figure above
 - Default ordering of the axes, i.e. axis 0 (slice depth), axis 1 (image height), axis 2 (image width)
 
 #### Coronal
