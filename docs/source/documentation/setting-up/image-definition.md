@@ -19,7 +19,7 @@ The string includes one letter from each opposing pair, specifying the direction
 ### Examples
 The examples below assume:
 - that the orientation matches that in the panels of the figure above
-- default ordering of the axes, i.e. axis 0 (slice depth), axis 1 (image height), axis 2 (image width)
+- Default ordering of the axes, i.e. axis 0 (slice depth), axis 1 (image height), axis 2 (image width)
 
 #### Coronal
 If the stack of images starts at the olfactory bulb, moving toward the cerebellum, the anatomical directions for each axis are:
