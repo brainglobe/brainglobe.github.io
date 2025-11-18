@@ -5,7 +5,7 @@ In some BrainGlobe tools, you need to specify the orientation and resolution of 
 ## Axes
 Misinterpreting axes can lead to incorrect atlas generation or analysis. So before you can specify the orientation and resolution of your data, it is a good idea to figure out which axis maps on to which dimension in the underlying data.
 
-When you open am image in napari or FIJI, the default ordering of the axes is:
+When you open an image in napari or FIJI, the default ordering of the axes is:
 - Axis 0: Slice depth 
 - Axis 1: Image height
 - Axis 2: Image width
@@ -38,7 +38,7 @@ So, in this case, the ordering of the axes is:
 - Axis 2: Slice depth
 
 ## Orientation
-To describe the orientation of 3D brain imaging data in anatomical terms, [brainglobe-space](https://github.com/brainglobe/brainglobe-space) uses a anatomical description of the relative location of **the origin**—the voxel at position [0, 0, 0], which when you open the stack with [napari](https://napari.org/) by default corresponds with the pixel in the upper left corner of the first image in the stack. 
+To describe the orientation of 3D brain imaging data in anatomical terms, [brainglobe-space](https://github.com/brainglobe/brainglobe-space) uses an anatomical description of the relative location of **the origin**—the voxel at position [0, 0, 0], which when you open the stack with [napari](https://napari.org/) by default corresponds with the pixel in the upper left corner of the first image in the stack. 
 
 The origin can be described by a three letter string in which each letter corresponds to one of the following **anatomical directions**:
 - posterior (`p`) ↔ anterior (`a`)
@@ -79,7 +79,7 @@ If the first image in the stack corresponds to the bottom of the brain, the orig
 
 <img src="images/sagittal.png" alt="sagittal" height="143"/>
 
-If the stack is sliced from the left side of the brain toward the right, the origin corresponds to the most right (`r`), superior (`s`), posterior (`p`) part of the brain, so the origin string is `rsp`.
+If the stack is sliced from the left side of the brain toward the right, the origin corresponds to the most left (`l`), superior (`s`), posterior (`p`) part of the brain, so the origin string is `lsp`.
 
 ## Voxel sizes
 
