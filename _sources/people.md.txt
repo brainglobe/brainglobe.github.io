@@ -662,6 +662,10 @@ In no particular order:
 :link: https://github.com/FatmaElsharkawy
 :::
 
+:::{grid-item-card}    Chang Huan Lo
+:img-bottom: https://avatars.githubusercontent.com/u/14955489?v=4
+:link: https://github.com/lochhh
+:::
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
