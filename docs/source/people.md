@@ -661,7 +661,6 @@ In no particular order:
 :img-bottom: https://avatars.githubusercontent.com/u/125503056?v=4
 :link: https://github.com/FatmaElsharkawy
 :::
-https://github.com/search?q=org%3Abrainglobe+lochhh&type=code
 
 :::{grid-item-card}    Chang Huan Lo
 :img-bottom: https://avatars.githubusercontent.com/u/14955489?v=4
