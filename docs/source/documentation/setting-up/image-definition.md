@@ -42,7 +42,7 @@ If the first image in the stack corresponds to the bottom of the brain, the orig
 
 <img src="images/sagittal.png" alt="sagittal" height="143"/>
 
-If the stack is sliced from the left side of the brain toward the right, the origin corresponds to the most right (`l`), superior (`s`), posterior (`a`) part of the brain, so the origin string is `lsa`.
+If the stack is sliced from the left side of the brain toward the right, the origin corresponds to the most right (`l`), superior (`s`), anterior (`a`) part of the brain, so the origin string is `lsa`.
 
 ## Voxel sizes
 
