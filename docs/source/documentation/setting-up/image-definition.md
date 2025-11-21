@@ -3,7 +3,7 @@
 In some BrainGlobe tools, you need to specify the orientation and resolution of the data.
 
 ## Axes
-Misinterpreting axes can lead to incorrect atlas generation or analysis. So before you can specify the orientation and resolution of your data, it is a good idea to figure out which axis maps on to which dimension in the underlying data.
+Misinterpreting axes can lead to mistakes when using BrainGlobe tools. So before you can specify the orientation and resolution of your data, it is a good idea to figure out which axis maps on to which dimension in the underlying data.
 
 When you open an image in napari or FIJI, the default ordering of the axes is:
 - Axis 0: Slice depth 
