@@ -2,8 +2,54 @@
 
 In some BrainGlobe tools, you need to specify the orientation and resolution of the data.
 
+## Axes
+Misinterpreting axes can lead to mistakes when using BrainGlobe tools. So before you can specify the orientation and resolution of your data, it is a good idea to figure out which axis maps on to which dimension in the underlying data.
+
+When you open an image in napari or FIJI, the default ordering of the axes is:
+- Axis 0: Slice depth 
+- Axis 1: Image height
+- Axis 2: Image width
+
+:::{note}
+BrainGlobe uses axis labels 0, 1, 2, instead of z, y, x. This is because the underlying data is stored as NumPy arrays, which use numeric indices for their dimensions. So the axis labels 0, 1, 2 refer directly to the structure of the underlying data and ensure our documentation matches how the data is represented. 
+:::
+
+
+## napari
+The order in which the dimensions are visualised in napari can be rearranged, for example by using the shortcut `Ctrl+E` or `Ctrl+T`. After rearranging the axis order, the visualisation of the data changes (this is only a display effect, the underlying data structure remains unchanged). Axis 0, for example, might now correspond to image height instead of slice depth.  
+
+The voxel coordinate shown in the status bar always reflects the structure of the underlying data. So the voxel coordinate can always be relied on to figure out which dimension maps to which axis.
+
+### Using the voxel coordinate to determine axis order
+After opening an image stack in napari, use `Ctrl+E` to reorder the axes.
+
+To determine the axis order, observe how the voxel coordinates change when you scroll through the slices and move the cursor over the image vertically or horizontally.
+
+| Action                       | Changing coordinate | 
+|:-------------------------------|:--------------------| 
+| Scrolling through slices       | [0 1 **2**]         | 
+| Moving the cursor vertically   | [**0** 1 2]         | 
+| Moving the cursor horizontally |[0 **1** 2]          | 
+
+So, in this case, the ordering of the axes is:
+
+- Axis 0: Image height
+- Axis 1: Image width
+- Axis 2: Slice depth
+
+### FIJI
+By default, FIJI opens image stacks so that the x-axis corresponds to axis 2, the y-axis corresponds to axis 1, and the z-axis corresponds axis 0.
+
+:::{note}
+FIJI displays x, y, z coordinates in the status bar when you hover over the image. Unlike napari, in FIJI these refer to the display, not the underlying data structure. This means FIJI’s axis labels do not necessarily match the numeric axes (0, 1, 2) used by BrainGlobe, and these coordinates cannot be used to determine which axis is which when the display of the axes has been rearranged.
+:::
+
 ## Orientation
-To describe the orientation of 3D brain imaging data in anatomical terms, [brainglobe-space](https://github.com/brainglobe/brainglobe-space) uses a anatomical description of the relative location of **the origin**—the voxel at position [0, 0, 0], which when you open the stack with [napari](https://napari.org/) by default corresponds with the pixel in the upper left corner of the first image in the stack. 
+To describe the orientation of 3D brain imaging data in anatomical terms, [brainglobe-space](https://github.com/brainglobe/brainglobe-space) uses an anatomical description of the relative location of **the origin**—the voxel at position [0, 0, 0], which when you open the stack with [napari](https://napari.org/) by default corresponds with the pixel in the upper left corner of the first image in the stack. 
+
+:::note
+The position of the origin voxel can be verified by opening the image stack in FIJI or napari, selecting the first slice, and hovering the cursor over the top-left region of that slice. Check the status bar. It should report the coordinates `[0 0 0]`.
+:::
 
 The origin can be described by a three letter string in which each letter corresponds to one of the following **anatomical directions**:
 - posterior (`p`) ↔ anterior (`a`)
@@ -15,6 +61,8 @@ The string includes one letter from each opposing pair, specifying the direction
 
 ![allen mouse atlas 50μm](images/anatomical_orientations.png)
 *50 μm mouse brain atlas by [Wang et al., 2020](https://doi.org/10.1016/j.cell.2020.04.007), visualised in napari using the [brainrender-napari plugin](https://napari-hub.org/plugins/brainrender-napari.html)*.
+
+
 
 ### Examples
 The examples below assume default ordering of the axes, i.e. axis 0 (slice depth), axis 1 (image height), axis 2 (image width).
@@ -42,7 +90,7 @@ If the first image in the stack corresponds to the bottom of the brain, the orig
 
 <img src="images/sagittal.png" alt="sagittal" height="143"/>
 
-If the stack is sliced from the left side of the brain toward the right, the origin corresponds to the most right (`r`), superior (`s`), posterior (`p`) part of the brain, so the origin string is `rsp`.
+If the stack is sliced from the left side of the brain toward the right, the origin corresponds to the most left (`l`), superior (`s`), posterior (`p`) part of the brain, so the origin string is `lsp`.
 
 ## Voxel sizes
 
