@@ -666,6 +666,38 @@ In no particular order:
 :img-bottom: https://avatars.githubusercontent.com/u/14955489?v=4
 :link: https://github.com/lochhh
 :::
+
+:::{grid-item-card} Pascal Malkemper
+:img-bottom: https://avatars.githubusercontent.com/u/89245298?v=4
+:link: https://github.com/Malkemperlab
+:::
+
+:::{grid-item-card} Alireza Saeedi
+:img-bottom: /_static/molerat.png
+:link: https://orcid.org/0000-0003-3728-5620  
+:::
+
+:::{grid-item-card} Nasibeh Amini
+:img-bottom: /_static/molerat.png
+:link: https://orcid.org/0009-0000-4417-9522
+:::
+
+:::{grid-item-card} Aref hossein Akhlaghi
+:img-bottom: /_static/molerat.png
+:link: https://orcid.org/0009-0002-7553-9601
+:::
+
+:::{grid-item-card} Li Zhang
+:img-bottom: /_static/molerat.png
+:link: https://orcid.org/0000-0003-1637-2522
+:::
+
+
+:::{grid-item-card} Leoni-Marie Webb
+:img-bottom: 
+:link: 
+:::
+
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
