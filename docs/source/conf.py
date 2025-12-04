@@ -131,11 +131,6 @@ html_theme_options = {
             "type": "fontawesome",
         },
         {
-            "name": "Twitter",
-            "url": "https://twitter.com/brain_globe",
-            "icon": "fa-brands fa-twitter",
-        },
-        {
             "name": "Mastodon",
             "url": "https://mastodon.online/@brainglobe",
             "icon": "fa-brands fa-mastodon",
