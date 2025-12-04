@@ -692,12 +692,15 @@ In no particular order:
 :link: https://orcid.org/0000-0003-1637-2522
 :::
 
-
 :::{grid-item-card} Leoni-Marie Webb
 :img-bottom: 
 :link: 
 :::
 
+:::{grid-item-card} Nishanth B
+:img-bottom: https://avatars.githubusercontent.com/u/150372232?v=4
+:link: https://github.com/nishanthcr7777
+:::
 ::::
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
