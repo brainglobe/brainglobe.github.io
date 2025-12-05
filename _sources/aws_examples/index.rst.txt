@@ -24,7 +24,7 @@ Below is a gallery of examples showcasing the use of publicly hosted BrainGlobe 
   .. image:: /aws_examples/images/thumb/sphx_glr_explore_atlas_thumb.png
     :alt:
 
-  :ref:`sphx_glr_aws_examples_explore_atlas.py`
+  :doc:`/aws_examples/explore_atlas`
 
 .. raw:: html
 

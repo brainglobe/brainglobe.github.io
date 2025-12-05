@@ -24,7 +24,7 @@ Below is a gallery of examples showcasing the use of BrainGlobe APIs.
   .. image:: /api_examples/images/thumb/sphx_glr_brainglobe_atlasapi_thumb.png
     :alt:
 
-  :ref:`sphx_glr_api_examples_brainglobe_atlasapi.py`
+  :doc:`/api_examples/brainglobe_atlasapi`
 
 .. raw:: html
 
