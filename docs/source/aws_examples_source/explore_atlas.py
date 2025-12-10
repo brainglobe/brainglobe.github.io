@@ -73,15 +73,16 @@ print(annotations.metadata)
 # We can see from the metadata that the zarr contains multiple resolution levels (a pyramid).
 # For this tutorial, we will use the highest resolution level (level 0).
 
-annotation_array = annotations.images[0].data
+pyramid_level = 0
+annotation_image = annotations.images[pyramid_level]
 
-print(annotation_array)
+print(annotation_image)
 
 # %%
 # By plotting a slice of the array contents, we can see the various regions encoded by integer values:
 
 # Get the middle section and plot
-middle_section = annotation_array.shape[0] // 2
+middle_section = annotation_image.data.shape[0] // 2
 
 # Create a cyclic colormap due to the high values in the Allen atlas
 N = 512
@@ -89,16 +90,16 @@ colors = cm.get_cmap('tab20').resampled(N)
 lut = colors(np.arange(N))
 
 # Map label image to lookup table and plot
-plt.imshow(lut[annotation_array[middle_section,:,:] % N])
+plt.imshow(lut[annotation_image.data[middle_section,:,:] % N])
 
 # %%
 # Combining the annotation data with our RSP IDs allows us to calculate the volume of the RSP,
 # which we finally print. This reaches the goal of this tutorial.
-print(annotations.images[0].scale)
-print(annotations.images[0].axes_units)
+print(annotation_image.scale)
+print(annotation_image.axes_units)
 
-num_pixels = da.isin(annotation_array[:], rsp_ids).sum().compute()
-pixel_size_list = annotations.images[0].scale.values()
+num_pixels = da.isin(annotation_image.data[:], rsp_ids).sum().compute()
+pixel_size_list = list(annotation_image.scale.values())
 pixel_volume = pixel_size_list[0] * pixel_size_list[1] * pixel_size_list[2]  # in cubic millimeters
 
 print(f"RSP has volume of around {np.round(num_pixels*pixel_volume)} cubic millimeters")
