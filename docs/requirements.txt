@@ -19,3 +19,4 @@ dask
 matplotlib
 ngff-zarr
 numpy
+s3fs
