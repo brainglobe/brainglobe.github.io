@@ -39,19 +39,18 @@ from matplotlib import colormaps as cm
 
 
 # %%
-# Next, we download the structures file using `pooch`
+# Next, we use pandas to access the terminologies files using its S3 URI.
 
 s3_bucket_stub = "s3://brainglobe/atlas/{}"
-annotation_url = s3_bucket_stub.format("annotation-sets/allen-adult-mouse-annotation/2017/annotation.ome.zarr")
-structures_file = s3_bucket_stub.format("terminologies/allen-adult-mouse-terminology/2017/terminology.csv")
+annotation_uri = s3_bucket_stub.format("annotation-sets/allen-adult-mouse-annotation/2017/annotation.ome.zarr")
+terminologies_uri = s3_bucket_stub.format("terminologies/allen-adult-mouse-terminology/2017/terminology.csv")
 
-terminologies_df = pd.read_csv(structures_file, storage_options={"anon": True})
+terminologies_df = pd.read_csv(terminologies_uri, storage_options={"anon": True})
 
 # %%
-# By printing the dataframe, we can observe that the structures file contains one row per region, with the first column (index 0) containing the region abbreviation, and the second column (index 1) containing the region ID:
+# By printing the dataframe, we can observe that the terminologies file contains one row per region, with the first column (index 0) containing the region abbreviation, and the second column (index 1) containing the region ID:
 
 terminologies_df.head()
-
 
 # %%
 # We know that all child regions of RSP have an abbreviation starting with "RSP", which we can use to identify our IDs of interest
@@ -65,7 +64,7 @@ rsp_ids = terminologies_filtered["annotation_value"].tolist()
 # Equipped with this information, we can now access the annotations file for the atlas.
 # Annotation files are stored in an OME-zarr file in the cloud.
 
-annotations = nz.from_ngff_zarr(annotation_url, storage_options={"anon": True})
+annotations = nz.from_ngff_zarr(annotation_uri, storage_options={"anon": True})
 
 print(annotations.metadata)
 
