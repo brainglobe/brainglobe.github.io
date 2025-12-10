@@ -19,5 +19,3 @@ dask
 matplotlib
 ngff-zarr
 numpy
-pooch
-zarr
