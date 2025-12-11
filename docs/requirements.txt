@@ -15,7 +15,8 @@ pyalex
 pre-commit
 pyyaml
 brainglobe-atlasapi
+dask
 matplotlib
+ngff-zarr
 numpy
-pooch
-zarr
+s3fs

@@ -13,15 +13,15 @@ directly.
 # in the Allen Mouse Brain Atlas, programmatically - but without using BrainGlobe. To do this, we 
 # need some preliminary knowledge about how BrainGlobe atlases such as this are structured under the hood:
 #
-# - the annotation image is stored in a zipped `zarr <https://zarr.dev/>`_ array.
+# - the annotation image is stored as an OME-Zarr <https://ngff.openmicroscopy.org/#next-generation-file-formats-ngff-ome-zarr>.
 # - the region metadata (e.g. each region's id, name, acronym and parent) are stored in a comma separated (csv) file
 # - these files (and other atlas files, like the template) are stored on AWS
 #
 # To compute the volume of RSP we will therefore
 #
-# - download the structures file
-# - determine the id of the RSP region and all its children from the structures file
-# - download the annotation file
+# - access the terminologies file
+# - determine the id of the RSP region and all its children from the terminologies file
+# - access the annotation file
 # - count how many pixels in the annotation file correspond to any of the ids
 # - convert the pixels to cubic millimeters
 #
@@ -29,75 +29,59 @@ directly.
 # 
 # We start by importing some Python libraries that we will need 
 
-import pooch
+import dask.array as da
+import ngff_zarr as nz
 import numpy as np
-import zarr
-from pathlib import Path
+import pandas as pd
 from matplotlib import pyplot as plt
 from matplotlib import colormaps as cm
 
 
 
 # %%
-# Next, we download the structures file using `pooch`
+# Next, we use pandas to access the terminologies files using its S3 URI.
 
-atlas_url = "https://gin.g-node.org/BrainGlobe/atlases-v2/raw/master/annotations/allen_mouse_v1/"
-structures_file = "structures.csv"
+s3_bucket_stub = "s3://brainglobe/atlas/{}"
+annotation_uri = s3_bucket_stub.format("annotation-sets/allen-adult-mouse-annotation/2017/annotation.ome.zarr")
+terminologies_uri = s3_bucket_stub.format("terminologies/allen-adult-mouse-terminology/2017/terminology.csv")
 
-csv_path = pooch.retrieve(
-    url=atlas_url+"/"+structures_file,
-    known_hash="a04e9f6656c98bcd6d9d4c0ba2bd0ef927cf5cb97658ded9cda8237ad4575ff2",
-    path=pooch.os_cache("brainglobe_atlases")
-)
+terminologies_df = pd.read_csv(terminologies_uri, storage_options={"anon": True})
 
 # %%
-# By printing the rows, we can observe that the structures file contains one row per region, with the first column (index 0) containing the region acronym, and the second column (index 1) containing the region ID:
+# By printing the dataframe, we can observe that the terminologies file contains one row per region, with the first column (index 0) containing the region abbreviation, and the second column (index 1) containing the region ID:
 
-with open(csv_path) as file:
-    for i, row in enumerate(file):
-        if i >= 10:
-            break
-        print(row)
-
+terminologies_df.head()
 
 # %%
-# We know that all child regions of RSP have a name starting with "RSP", which we can use to identify our IDs of interest
+# We know that all child regions of RSP have an abbreviation starting with "RSP", which we can use to identify our IDs of interest
 # and store them in a list called `rsp_ids`.
 
-rsp_ids = []
+terminologies_filtered = terminologies_df[terminologies_df["abbreviation"].str.startswith("RSP")]
 
-with open(csv_path) as file:
-    for row in file:
-        entries = row.split(",")
-        if entries[0].startswith("RSP"):
-            rsp_ids.append(int(entries[1]))
+rsp_ids = terminologies_filtered["annotation_value"].tolist()
 
 # %%
-# Equipped with this information, we can now download the annotations file for the atlas.
-# Annotation files are stored in zipped zarr files in the cloud.
+# Equipped with this information, we can now access the annotations file for the atlas.
+# Annotation files are stored in an OME-zarr file in the cloud.
 
-ZARR_ANNOTATIONS_FILENAME = "25um.zarr.zip"
-zarr_path = pooch.retrieve(
-    url=atlas_url+"/"+ZARR_ANNOTATIONS_FILENAME,
-    known_hash="4a28ba2b3f25cea9c7d2c944ab42014c9f09aaef3bb32f14b9fcccc536a6140f",
-    processor=pooch.Unzip(),
-    path=pooch.os_cache("brainglobe_atlases")
-)
+annotations = nz.from_ngff_zarr(annotation_uri, storage_options={"anon": True})
 
-print(zarr_path)
+print(annotations.metadata)
 
 # %% 
-# After downloading and unzipping, we can open the zarr folder, which contains a single zarr array.
+# We can see from the metadata that the zarr contains multiple resolution levels (a pyramid).
+# For this tutorial, we will use the highest resolution level (level 0).
 
-zarr_array = zarr.open(Path(zarr_path[0]).parent, mode="r")
+pyramid_level = 0
+annotation_image = annotations.images[pyramid_level]
 
-print(zarr_array)
+print(annotation_image)
 
 # %%
 # By plotting a slice of the array contents, we can see the various regions encoded by integer values:
 
 # Get the middle section and plot
-middle_section = zarr_array.shape[0] // 2
+middle_section = annotation_image.data.shape[0] // 2
 
 # Create a cyclic colormap due to the high values in the Allen atlas
 N = 512
@@ -105,16 +89,19 @@ colors = cm.get_cmap('tab20').resampled(N)
 lut = colors(np.arange(N))
 
 # Map label image to lookup table and plot
-plt.imshow(lut[zarr_array[middle_section,:,:] % N])
+plt.imshow(lut[annotation_image.data[middle_section,:,:] % N])
 
 # %%
 # Combining the annotation data with our RSP IDs allows us to calculate the volume of the RSP,
 # which we finally print. This reaches the goal of this tutorial.
-num_pixels = np.isin(zarr_array[:], rsp_ids).sum()
-pixel_volume = 25*25*25
-cubic_microns_to_cubic_millimeters = 1.0/1000**3
+print(annotation_image.scale)
+print(annotation_image.axes_units)
 
-print(f"RSP has volume of around {np.round(num_pixels*pixel_volume*cubic_microns_to_cubic_millimeters)} cubic millimeters")
+num_pixels = da.isin(annotation_image.data[:], rsp_ids).sum().compute()
+pixel_size_list = list(annotation_image.scale.values())
+pixel_volume = pixel_size_list[0] * pixel_size_list[1] * pixel_size_list[2]  # in cubic millimeters
+
+print(f"RSP has volume of around {np.round(num_pixels*pixel_volume)} cubic millimeters")
 
 # %%
 # In conclusion, this tutorial shows how to programmatically access and process atlas data for 
