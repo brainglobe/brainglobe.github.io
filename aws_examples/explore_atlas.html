@@ -581,112 +581,155 @@ directly.</p>
 in the Allen Mouse Brain Atlas, programmatically - but without using BrainGlobe. To do this, we
 need some preliminary knowledge about how BrainGlobe atlases such as this are structured under the hood:</p>
 <ul class="simple">
-<li><p>the annotation image is stored in a zipped <a class="reference external" href="https://zarr.dev/">zarr</a> array.</p></li>
+<li><p>the annotation image is stored as an OME-Zarr &lt;<a class="reference external" href="https://ngff.openmicroscopy.org/#next-generation-file-formats-ngff-ome-zarr">https://ngff.openmicroscopy.org/#next-generation-file-formats-ngff-ome-zarr</a>&gt;.</p></li>
 <li><p>the region metadata (e.g. each region’s id, name, acronym and parent) are stored in a comma separated (csv) file</p></li>
 <li><p>these files (and other atlas files, like the template) are stored on AWS</p></li>
 </ul>
 <p>To compute the volume of RSP we will therefore</p>
 <ul class="simple">
-<li><p>download the structures file</p></li>
-<li><p>determine the id of the RSP region and all its children from the structures file</p></li>
-<li><p>download the annotation file</p></li>
+<li><p>access the terminologies file</p></li>
+<li><p>determine the id of the RSP region and all its children from the terminologies file</p></li>
+<li><p>access the annotation file</p></li>
 <li><p>count how many pixels in the annotation file correspond to any of the ids</p></li>
 <li><p>convert the pixels to cubic millimeters</p></li>
 </ul>
 <p>Now the conceptual part is covered, let’s dive into the code:</p>
 <p>We start by importing some Python libraries that we will need</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pooch</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">dask.array</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">da</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ngff_zarr</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nz</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">zarr</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">colormaps</span> <span class="k">as</span> <span class="n">cm</span>
 </pre></div>
 </div>
-<p>Next, we download the structures file using <cite>pooch</cite></p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">atlas_url</span> <span class="o">=</span> <span class="s2">&quot;https://gin.g-node.org/BrainGlobe/atlases-v2/raw/master/annotations/allen_mouse_v1/&quot;</span>
-<span class="n">structures_file</span> <span class="o">=</span> <span class="s2">&quot;structures.csv&quot;</span>
+<p>Next, we use pandas to access the terminologies files using its S3 URI.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">s3_bucket_stub</span> <span class="o">=</span> <span class="s2">&quot;s3://brainglobe/atlas/</span><span class="si">{}</span><span class="s2">&quot;</span>
+<span class="n">annotation_uri</span> <span class="o">=</span> <span class="n">s3_bucket_stub</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;annotation-sets/allen-adult-mouse-annotation/2017/annotation.ome.zarr&quot;</span><span class="p">)</span>
+<span class="n">terminologies_uri</span> <span class="o">=</span> <span class="n">s3_bucket_stub</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;terminologies/allen-adult-mouse-terminology/2017/terminology.csv&quot;</span><span class="p">)</span>
 
-<span class="n">csv_path</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span>
-    <span class="n">url</span><span class="o">=</span><span class="n">atlas_url</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="n">structures_file</span><span class="p">,</span>
-    <span class="n">known_hash</span><span class="o">=</span><span class="s2">&quot;a04e9f6656c98bcd6d9d4c0ba2bd0ef927cf5cb97658ded9cda8237ad4575ff2&quot;</span><span class="p">,</span>
-    <span class="n">path</span><span class="o">=</span><span class="n">pooch</span><span class="o">.</span><span class="n">os_cache</span><span class="p">(</span><span class="s2">&quot;brainglobe_atlases&quot;</span><span class="p">)</span>
-<span class="p">)</span>
+<span class="n">terminologies_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">terminologies_uri</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;anon&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Downloading data from &#39;https://gin.g-node.org/BrainGlobe/atlases-v2/raw/master/annotations/allen_mouse_v1//structures.csv&#39; to file &#39;/home/runner/.cache/brainglobe_atlases/8bdfd39b6d25a0c1d1f84bfb5e051b9b-structures.csv&#39;.
+<p>By printing the dataframe, we can observe that the terminologies file contains one row per region, with the first column (index 0) containing the region abbreviation, and the second column (index 1) containing the region ID:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">terminologies_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>By printing the rows, we can observe that the structures file contains one row per region, with the first column (index 0) containing the region acronym, and the second column (index 1) containing the region ID:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
-            <span class="k">break</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
-</pre></div>
+<div class="output_subarea output_html rendered_html output_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>identifier</th>
+      <th>parent_identifier</th>
+      <th>annotation_value</th>
+      <th>name</th>
+      <th>abbreviation</th>
+      <th>color_hex_triplet</th>
+      <th>root_identifier_path</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>997</td>
+      <td>NaN</td>
+      <td>997</td>
+      <td>root</td>
+      <td>root</td>
+      <td>#FFFFFF</td>
+      <td>[997]</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>8</td>
+      <td>997.0</td>
+      <td>8</td>
+      <td>Basic cell groups and regions</td>
+      <td>grey</td>
+      <td>#BFDAE3</td>
+      <td>[997, 8]</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>567</td>
+      <td>8.0</td>
+      <td>567</td>
+      <td>Cerebrum</td>
+      <td>CH</td>
+      <td>#B0F0FF</td>
+      <td>[997, 8, 567]</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>688</td>
+      <td>567.0</td>
+      <td>688</td>
+      <td>Cerebral cortex</td>
+      <td>CTX</td>
+      <td>#B0FFB8</td>
+      <td>[997, 8, 567, 688]</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>695</td>
+      <td>688.0</td>
+      <td>695</td>
+      <td>Cortical plate</td>
+      <td>CTXpl</td>
+      <td>#70FF70</td>
+      <td>[997, 8, 567, 688, 695]</td>
+    </tr>
+  </tbody>
+</table>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>acronym,id,name,structure_id_path,parent_structure_id
-
-VI,653,Abducens nucleus,/997/8/343/1065/354/370/653/,370.0
-
-ACVII,576,Accessory facial motor nucleus,/997/8/343/1065/354/370/576/,370.0
-
-AOB,151,Accessory olfactory bulb,/997/8/567/688/695/698/151/,698.0
-
-AOBgl,188,&quot;Accessory olfactory bulb, glomerular layer&quot;,/997/8/567/688/695/698/151/188/,151.0
-
-AOBgr,196,&quot;Accessory olfactory bulb, granular layer&quot;,/997/8/567/688/695/698/151/196/,151.0
-
-AOBmi,204,&quot;Accessory olfactory bulb, mitral layer&quot;,/997/8/567/688/695/698/151/204/,151.0
-
-ASO,332,Accessory supraoptic group,/997/8/343/1129/1097/157/332/,157.0
-
-Acs5,549009219,Accessory trigeminal nucleus,/997/8/343/1065/771/987/549009219/,987.0
-
-AI,95,Agranular insular area,/997/8/567/688/695/315/95/,315.0
-</pre></div>
 </div>
-<p>We know that all child regions of RSP have a name starting with “RSP”, which we can use to identify our IDs of interest
+<br />
+<br /><p>We know that all child regions of RSP have an abbreviation starting with “RSP”, which we can use to identify our IDs of interest
 and store them in a list called <cite>rsp_ids</cite>.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rsp_ids</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">terminologies_filtered</span> <span class="o">=</span> <span class="n">terminologies_df</span><span class="p">[</span><span class="n">terminologies_df</span><span class="p">[</span><span class="s2">&quot;abbreviation&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;RSP&quot;</span><span class="p">)]</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
-        <span class="n">entries</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">entries</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;RSP&quot;</span><span class="p">):</span>
-            <span class="n">rsp_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">entries</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">rsp_ids</span> <span class="o">=</span> <span class="n">terminologies_filtered</span><span class="p">[</span><span class="s2">&quot;annotation_value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Equipped with this information, we can now download the annotations file for the atlas.
-Annotation files are stored in zipped zarr files in the cloud.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">ZARR_ANNOTATIONS_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;25um.zarr.zip&quot;</span>
-<span class="n">zarr_path</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span>
-    <span class="n">url</span><span class="o">=</span><span class="n">atlas_url</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="n">ZARR_ANNOTATIONS_FILENAME</span><span class="p">,</span>
-    <span class="n">known_hash</span><span class="o">=</span><span class="s2">&quot;4a28ba2b3f25cea9c7d2c944ab42014c9f09aaef3bb32f14b9fcccc536a6140f&quot;</span><span class="p">,</span>
-    <span class="n">processor</span><span class="o">=</span><span class="n">pooch</span><span class="o">.</span><span class="n">Unzip</span><span class="p">(),</span>
-    <span class="n">path</span><span class="o">=</span><span class="n">pooch</span><span class="o">.</span><span class="n">os_cache</span><span class="p">(</span><span class="s2">&quot;brainglobe_atlases&quot;</span><span class="p">)</span>
-<span class="p">)</span>
+<p>Equipped with this information, we can now access the annotations file for the atlas.
+Annotation files are stored in an OME-zarr file in the cloud.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">annotations</span> <span class="o">=</span> <span class="n">nz</span><span class="o">.</span><span class="n">from_ngff_zarr</span><span class="p">(</span><span class="n">annotation_uri</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;anon&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">zarr_path</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">annotations</span><span class="o">.</span><span class="n">metadata</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Downloading data from &#39;https://gin.g-node.org/BrainGlobe/atlases-v2/raw/master/annotations/allen_mouse_v1//25um.zarr.zip&#39; to file &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip&#39;.
-Unzipping contents of &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip&#39; to &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip&#39;
-[&#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/zarr.json&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/6/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/6/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/6/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/6/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/5/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/5/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/5/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/5/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/7/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/7/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/1/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/1/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/1/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/1/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/2/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/2/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/2/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/2/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/4/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/4/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/4/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/4/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/0/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/0/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/3/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/3/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/3/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/6/3/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/6/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/6/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/6/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/6/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/5/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/5/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/5/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/5/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/7/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/7/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/7/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/7/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/1/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/1/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/1/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/1/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/2/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/2/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/2/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/2/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/4/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/4/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/4/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/4/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/0/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/0/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/0/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/0/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/3/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/3/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/3/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/5/3/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/6/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/6/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/6/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/6/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/5/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/5/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/5/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/5/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/7/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/7/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/1/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/1/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/1/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/1/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/2/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/2/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/2/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/2/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/4/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/4/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/4/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/4/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/0/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/0/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/3/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/3/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/3/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/7/3/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/6/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/6/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/5/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/5/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/5/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/5/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/1/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/1/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/2/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/2/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/2/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/2/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/4/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/4/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/4/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/4/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/3/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/3/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/3/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/1/3/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/6/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/6/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/6/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/6/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/5/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/5/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/5/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/5/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/7/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/7/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/1/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/1/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/1/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/1/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/2/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/2/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/2/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/2/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/4/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/4/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/4/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/4/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/0/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/0/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/3/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/3/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/3/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/2/3/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/6/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/6/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/6/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/6/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/5/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/5/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/5/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/5/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/7/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/7/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/7/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/7/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/1/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/1/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/1/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/1/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/2/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/2/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/2/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/2/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/4/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/4/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/4/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/4/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/0/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/0/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/0/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/0/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/3/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/3/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/3/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/4/3/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/6/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/6/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/5/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/5/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/2/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/2/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/4/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/4/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/3/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/0/3/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/6/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/6/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/6/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/6/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/5/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/5/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/5/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/5/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/7/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/7/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/7/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/7/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/1/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/1/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/1/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/1/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/2/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/2/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/2/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/2/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/4/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/4/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/4/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/4/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/0/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/0/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/0/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/0/3&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/3/1&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/3/2&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/3/0&#39;, &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip/c/3/3/3&#39;]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Metadata(axes=[Axis(name=&#39;z&#39;, type=&#39;space&#39;, unit=&#39;millimeter&#39;, orientation={&#39;type&#39;: &#39;anatomical&#39;, &#39;direction&#39;: &#39;anterior-to-posterior&#39;}), Axis(name=&#39;y&#39;, type=&#39;space&#39;, unit=&#39;millimeter&#39;, orientation={&#39;type&#39;: &#39;anatomical&#39;, &#39;direction&#39;: &#39;superior-to-inferior&#39;}), Axis(name=&#39;x&#39;, type=&#39;space&#39;, unit=&#39;millimeter&#39;, orientation={&#39;type&#39;: &#39;anatomical&#39;, &#39;direction&#39;: &#39;right-to-left&#39;})], datasets=[Dataset(path=&#39;0&#39;, coordinateTransformations=[Scale(scale=[0.01, 0.01, 0.01], type=&#39;scale&#39;)]), Dataset(path=&#39;1&#39;, coordinateTransformations=[Scale(scale=[0.025, 0.025, 0.025], type=&#39;scale&#39;)]), Dataset(path=&#39;2&#39;, coordinateTransformations=[Scale(scale=[0.05, 0.05, 0.05], type=&#39;scale&#39;)]), Dataset(path=&#39;3&#39;, coordinateTransformations=[Scale(scale=[0.1, 0.1, 0.1], type=&#39;scale&#39;)])], coordinateTransformations=None, omero=None, name=&#39;image&#39;, type=None, metadata=None)
 </pre></div>
 </div>
-<p>After downloading and unzipping, we can open the zarr folder, which contains a single zarr array.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">zarr_array</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">zarr_path</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<p>We can see from the metadata that the zarr contains multiple resolution levels (a pyramid).
+For this tutorial, we will use the highest resolution level (level 0).</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">pyramid_level</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">annotation_image</span> <span class="o">=</span> <span class="n">annotations</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="n">pyramid_level</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">zarr_array</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">annotation_image</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;Array file:///home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed211b31620b50e2b3d8-25um.zarr.zip.unzip shape=(528, 320, 456) dtype=uint32&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>NgffImage(data=dask.array&lt;from-zarr, shape=(1320, 800, 1140), dtype=uint32, chunksize=(83, 100, 143), chunktype=numpy.ndarray&gt;, dims=(&#39;z&#39;, &#39;y&#39;, &#39;x&#39;), scale={&#39;z&#39;: 0.01, &#39;y&#39;: 0.01, &#39;x&#39;: 0.01}, translation={&#39;z&#39;: 0.0, &#39;y&#39;: 0.0, &#39;x&#39;: 0.0}, name=&#39;image&#39;, axes_units={&#39;z&#39;: &#39;millimeter&#39;, &#39;y&#39;: &#39;millimeter&#39;, &#39;x&#39;: &#39;millimeter&#39;}, axes_orientations=None, computed_callbacks=[])
 </pre></div>
 </div>
 <p>By plotting a slice of the array contents, we can see the various regions encoded by integer values:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the middle section and plot</span>
-<span class="n">middle_section</span> <span class="o">=</span> <span class="n">zarr_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="n">middle_section</span> <span class="o">=</span> <span class="n">annotation_image</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span>
 
 <span class="c1"># Create a cyclic colormap due to the high values in the Allen atlas</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">512</span>
@@ -694,28 +737,33 @@ Unzipping contents of &#39;/home/runner/.cache/brainglobe_atlases/59ad86bcafd1ed
 <span class="n">lut</span> <span class="o">=</span> <span class="n">colors</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
 
 <span class="c1"># Map label image to lookup table and plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lut</span><span class="p">[</span><span class="n">zarr_array</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:]</span> <span class="o">%</span> <span class="n">N</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lut</span><span class="p">[</span><span class="n">annotation_image</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:]</span> <span class="o">%</span> <span class="n">N</span><span class="p">])</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_explore_atlas_001.png" srcset="../_images/sphx_glr_explore_atlas_001.png" alt="explore atlas" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7fe7f0798e60&gt;
+<img src="../_images/sphx_glr_explore_atlas_001.png" srcset="../_images/sphx_glr_explore_atlas_001.png" alt="explore atlas" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f425c3fd0d0&gt;
 </pre></div>
 </div>
 <p>Combining the annotation data with our RSP IDs allows us to calculate the volume of the RSP,
 which we finally print. This reaches the goal of this tutorial.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">num_pixels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">zarr_array</span><span class="p">[:],</span> <span class="n">rsp_ids</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="n">pixel_volume</span> <span class="o">=</span> <span class="mi">25</span><span class="o">*</span><span class="mi">25</span><span class="o">*</span><span class="mi">25</span>
-<span class="n">cubic_microns_to_cubic_millimeters</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="mi">1000</span><span class="o">**</span><span class="mi">3</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">annotation_image</span><span class="o">.</span><span class="n">scale</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">annotation_image</span><span class="o">.</span><span class="n">axes_units</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RSP has volume of around </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">num_pixels</span><span class="o">*</span><span class="n">pixel_volume</span><span class="o">*</span><span class="n">cubic_microns_to_cubic_millimeters</span><span class="p">)</span><span class="si">}</span><span class="s2"> cubic millimeters&quot;</span><span class="p">)</span>
+<span class="n">num_pixels</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">annotation_image</span><span class="o">.</span><span class="n">data</span><span class="p">[:],</span> <span class="n">rsp_ids</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+<span class="n">pixel_size_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">annotation_image</span><span class="o">.</span><span class="n">scale</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">pixel_volume</span> <span class="o">=</span> <span class="n">pixel_size_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">pixel_size_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">pixel_size_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># in cubic millimeters</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RSP has volume of around </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">num_pixels</span><span class="o">*</span><span class="n">pixel_volume</span><span class="p">)</span><span class="si">}</span><span class="s2"> cubic millimeters&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>RSP has volume of around 11.0 cubic millimeters
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;z&#39;: 0.01, &#39;y&#39;: 0.01, &#39;x&#39;: 0.01}
+{&#39;z&#39;: &#39;millimeter&#39;, &#39;y&#39;: &#39;millimeter&#39;, &#39;x&#39;: &#39;millimeter&#39;}
+RSP has volume of around 11.0 cubic millimeters
 </pre></div>
 </div>
 <p>In conclusion, this tutorial shows how to programmatically access and process atlas data for
 the specific purpose of calculating a region volume. More generally, it also constitutes an example for
 BrainGlobe atlas data being used independently of the BrainGlobe software tools.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 19.867 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 37.207 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-aws-examples-explore-atlas-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/fc12a6a5a016d084e9466efdf58f2d6e/explore_atlas.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">explore_atlas.ipynb</span></code></a></p>
