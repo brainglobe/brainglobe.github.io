@@ -834,22 +834,25 @@ bytes.</p></li>
 <tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.get_structure_mask" title="brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.get_structure_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_structure_mask</span></code></a>(structure)</p></td>
 <td><p>Return a stack with the mask for a specific structure (including all sub-structures).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.hemisphere_from_coords" title="brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.hemisphere_from_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hemisphere_from_coords</span></code></a>(coords[, microns, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.get_structures_at_hierarchy_level" title="brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.get_structures_at_hierarchy_level"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_structures_at_hierarchy_level</span></code></a>(structure)</p></td>
+<td><p>Get structures at a specific hierarchy level within the subgraph of nodes connected to the given structure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.hemisphere_from_coords" title="brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.hemisphere_from_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hemisphere_from_coords</span></code></a>(coords[, microns, ...])</p></td>
 <td><p>Get the hemisphere from a coordinate triplet.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.mesh_from_structure" title="brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.mesh_from_structure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mesh_from_structure</span></code></a>(structure)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.mesh_from_structure" title="brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.mesh_from_structure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mesh_from_structure</span></code></a>(structure)</p></td>
 <td><p>Retrieve the mesh associated with a given structure.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.meshfile_from_structure" title="brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.meshfile_from_structure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meshfile_from_structure</span></code></a>(structure)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.meshfile_from_structure" title="brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.meshfile_from_structure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meshfile_from_structure</span></code></a>(structure)</p></td>
 <td><p>Retrieve the path to the mesh file associated with a given structure.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.root_mesh" title="brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.root_mesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">root_mesh</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.root_mesh" title="brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.root_mesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">root_mesh</span></code></a>()</p></td>
 <td><p>Retrieve the mesh for the root structure.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.root_meshfile" title="brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.root_meshfile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">root_meshfile</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.root_meshfile" title="brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.root_meshfile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">root_meshfile</span></code></a>()</p></td>
 <td><p>Retrieve the path to the mesh file for the root structure.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.structure_from_coords" title="brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.structure_from_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">structure_from_coords</span></code></a>(coords[, microns, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.structure_from_coords" title="brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.structure_from_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">structure_from_coords</span></code></a>(coords[, microns, ...])</p></td>
 <td><p>Get the structure from a coordinate triplet.</p></td>
 </tr>
 </tbody>
@@ -995,6 +998,48 @@ children.</p>
 <dd class="field-odd"><p>np.array</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.get_structures_at_hierarchy_level">
+<span class="sig-name descname"><span class="pre">get_structures_at_hierarchy_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hierarchy_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_acronym</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.get_structures_at_hierarchy_level" title="Link to this definition">#</a></dt>
+<dd><p>Get structures at a specific hierarchy level within the subgraph
+of nodes connected to the given structure.</p>
+<p>For a given brain structure, this method finds all leaf nodes
+(terminal structures with no children) in its subtree, then extracts
+the structures at the specified hierarchy level from their paths.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>structure</strong> (<em>str</em><em> or </em><em>int</em>) – Structure ID or acronym to query.</p></li>
+<li><p><strong>hierarchy_level</strong> (<em>int</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – The hierarchy level to extract (0-indexed, where 0 is root).
+If None, returns all structures in the paths to all leaves
+in anatomical order (breadth-first traversal).</p></li>
+<li><p><strong>as_acronym</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, return acronyms instead of IDs. Default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of structure IDs (if as_acronym=False) or acronyms
+(if as_acronym=True) at the specified hierarchy level.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If hierarchy_level is not an integer or None.
+    If the structure has no descendants at the specified level.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s2">&quot;allen_mouse_25um&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get all level-3 structures under cortex</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ids</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">get_structures_at_hierarchy_level</span><span class="p">(</span><span class="s2">&quot;CTX&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get as acronyms instead</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">acronyms</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">get_structures_at_hierarchy_level</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">&quot;CTX&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">as_acronym</span><span class="o">=</span><span class="kc">True</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -1247,6 +1292,7 @@ return “Outside atlas”</p></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.get_structure_ancestors"><code class="docutils literal notranslate"><span class="pre">BrainGlobeAtlas.get_structure_ancestors()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.get_structure_descendants"><code class="docutils literal notranslate"><span class="pre">BrainGlobeAtlas.get_structure_descendants()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.get_structure_mask"><code class="docutils literal notranslate"><span class="pre">BrainGlobeAtlas.get_structure_mask()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.get_structures_at_hierarchy_level"><code class="docutils literal notranslate"><span class="pre">BrainGlobeAtlas.get_structures_at_hierarchy_level()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.hemisphere_from_coords"><code class="docutils literal notranslate"><span class="pre">BrainGlobeAtlas.hemisphere_from_coords()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.hemispheres"><code class="docutils literal notranslate"><span class="pre">BrainGlobeAtlas.hemispheres</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.hierarchy"><code class="docutils literal notranslate"><span class="pre">BrainGlobeAtlas.hierarchy</span></code></a></li>

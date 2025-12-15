@@ -48,6 +48,9 @@ BrainGlobeAtlas
    
    
    
+   
+   
+   
 
    
    .. rubric:: Methods
@@ -69,6 +72,9 @@ BrainGlobeAtlas
    
    
       ~BrainGlobeAtlas.get_structure_mask
+   
+   
+      ~BrainGlobeAtlas.get_structures_at_hierarchy_level
    
    
       ~BrainGlobeAtlas.hemisphere_from_coords

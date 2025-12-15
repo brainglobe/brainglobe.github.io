@@ -536,7 +536,7 @@
 <span></span><span class="sd">&quot;&quot;&quot;Module containing the core Atlas class.&quot;&quot;&quot;</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">UserDict</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">UserDict</span><span class="p">,</span> <span class="n">deque</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -921,6 +921,123 @@
                 <span class="n">descendants</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_from_structure</span><span class="p">(</span><span class="n">struc</span><span class="p">,</span> <span class="s2">&quot;acronym&quot;</span><span class="p">))</span>
 
         <span class="k">return</span> <span class="n">descendants</span></div>
+
+
+<div class="viewcode-block" id="Atlas.get_structures_at_hierarchy_level">
+<a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.core.Atlas.html#brainglobe_atlasapi.core.Atlas.get_structures_at_hierarchy_level">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_structures_at_hierarchy_level</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">structure</span><span class="p">,</span> <span class="n">hierarchy_level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">as_acronym</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get structures at a specific hierarchy level within the subgraph</span>
+<span class="sd">        of nodes connected to the given structure.</span>
+
+<span class="sd">        For a given brain structure, this method finds all leaf nodes</span>
+<span class="sd">        (terminal structures with no children) in its subtree, then extracts</span>
+<span class="sd">        the structures at the specified hierarchy level from their paths.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        structure : str or int</span>
+<span class="sd">            Structure ID or acronym to query.</span>
+<span class="sd">        hierarchy_level : int or None, optional</span>
+<span class="sd">            The hierarchy level to extract (0-indexed, where 0 is root).</span>
+<span class="sd">            If None, returns all structures in the paths to all leaves</span>
+<span class="sd">            in anatomical order (breadth-first traversal).</span>
+<span class="sd">        as_acronym : bool, optional</span>
+<span class="sd">            If True, return acronyms instead of IDs. Default is False.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        list</span>
+<span class="sd">            List of structure IDs (if as_acronym=False) or acronyms</span>
+<span class="sd">            (if as_acronym=True) at the specified hierarchy level.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If hierarchy_level is not an integer or None.</span>
+<span class="sd">            If the structure has no descendants at the specified level.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; atlas = BrainGlobeAtlas(&quot;allen_mouse_25um&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; # Get all level-3 structures under cortex</span>
+<span class="sd">        &gt;&gt;&gt; ids = atlas.get_structures_at_hierarchy_level(&quot;CTX&quot;, 3)</span>
+<span class="sd">        &gt;&gt;&gt; # Get as acronyms instead</span>
+<span class="sd">        &gt;&gt;&gt; acronyms = atlas.get_structures_at_hierarchy_level(</span>
+<span class="sd">        ...     &quot;CTX&quot;, 3, as_acronym=True</span>
+<span class="sd">        ... )</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Type validation</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span>
+            <span class="n">hierarchy_level</span> <span class="ow">is</span> <span class="kc">None</span>
+            <span class="ow">or</span> <span class="p">(</span>
+                <span class="nb">isinstance</span><span class="p">(</span><span class="n">hierarchy_level</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+                <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hierarchy_level</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;hierarchy_level must be an int or None, &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">hierarchy_level</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Validate non-negative hierarchy level</span>
+        <span class="k">if</span> <span class="n">hierarchy_level</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">hierarchy_level</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;hierarchy_level must be non-negative&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Validate structure exists</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">input_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">structures</span><span class="p">[</span><span class="n">structure</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Structure &#39;</span><span class="si">{</span><span class="n">structure</span><span class="si">}</span><span class="s2">&#39; not found in atlas&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">hierarchy_level</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># Return all ancestors + descendants in anatomical (BFS) order</span>
+
+            <span class="c1"># Start with ancestors (already ordered root → input_id)</span>
+            <span class="n">ancestor_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">structures</span><span class="p">[</span><span class="n">input_id</span><span class="p">][</span><span class="s2">&quot;structure_id_path&quot;</span><span class="p">]</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ancestor_path</span><span class="p">)</span>
+            <span class="n">seen</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">ancestor_path</span><span class="p">)</span>
+
+            <span class="c1"># BFS through descendants</span>
+            <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="n">input_id</span><span class="p">])</span>
+            <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+                <span class="n">current_id</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+                <span class="n">children</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">structures</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">children</span><span class="p">(</span><span class="n">current_id</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
+                    <span class="n">child_id</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">identifier</span>
+                    <span class="k">if</span> <span class="n">child_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">seen</span><span class="p">:</span>
+                        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child_id</span><span class="p">)</span>
+                        <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">child_id</span><span class="p">)</span>
+                        <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child_id</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Get structures at specific hierarchy level</span>
+            <span class="c1"># Get all leaf nodes (terminal descendants) of this structure</span>
+            <span class="n">input_id_leaves</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">structures</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">leaves</span><span class="p">(</span><span class="n">input_id</span><span class="p">)</span>
+
+            <span class="c1"># If input_id is itself a leaf, use it as its own leaf</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">input_id_leaves</span><span class="p">:</span>
+                <span class="n">input_id_leaves</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">structures</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="n">input_id</span><span class="p">)]</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+                    <span class="nb">set</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">structures</span><span class="p">[</span><span class="n">leaf</span><span class="o">.</span><span class="n">identifier</span><span class="p">][</span><span class="s2">&quot;structure_id_path&quot;</span><span class="p">][</span>
+                            <span class="n">hierarchy_level</span>
+                        <span class="p">]</span>
+                        <span class="k">for</span> <span class="n">leaf</span> <span class="ow">in</span> <span class="n">input_id_leaves</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+            <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s1">&#39;Structure </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">structures</span><span class="p">[</span><span class="n">structure</span><span class="p">][</span><span class="s2">&quot;acronym&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> &#39;</span>
+                    <span class="sa">f</span><span class="s2">&quot;has no descendants at hierarchy level </span><span class="si">{</span><span class="n">hierarchy_level</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">as_acronym</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">structures</span><span class="p">[</span><span class="n">sid</span><span class="p">][</span><span class="s2">&quot;acronym&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">sid</span> <span class="ow">in</span> <span class="n">result</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">result</span></div>
 
 
 <div class="viewcode-block" id="Atlas.get_structure_mask">
