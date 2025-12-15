@@ -3,7 +3,11 @@
 ## Introduction
 
 **Contributors to BrainGlobe are absolutely encouraged**, whether to fix a bug, develop a new feature, or add a new atlas.
-Note that contributors are welcome to use AI tools, but are expected to comply with our [AI policy](./ai_policy.md).
+
+::: {admonition} A note on AI use
+:class: note
+Note that contributors are welcome to use AI tools (should they wish to), but are expected to comply with our [AI policy](./ai_policy.md).
+:::
 
 
 There are many BrainGlobe repositories, so it may not be obvious where a new contribution should go.
