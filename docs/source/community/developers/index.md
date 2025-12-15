@@ -3,6 +3,8 @@
 ## Introduction
 
 **Contributors to BrainGlobe are absolutely encouraged**, whether to fix a bug, develop a new feature, or add a new atlas.
+Note that contributors are allowed to use AI tools, but are expected to comply with our [AI policy](./ai_policy.md).
+
 
 There are many BrainGlobe repositories, so it may not be obvious where a new contribution should go.
 If you're unsure about any part of the contributing process, please [get in touch](../../contact.md).
