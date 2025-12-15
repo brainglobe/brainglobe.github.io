@@ -45,7 +45,7 @@ To add a new BrainGlobe atlas, please see the guide [here](/documentation/braing
 
 ## To contribute code
 
-Before contributing code, it may be useful to familiarise yourself with the [introduction to the BrainGlobe code for developers](./intro_to_codebase.md) as well as the [testing](./testing.md), [developer tooling](./tooling.md) and [conventions](./conventions.md) sections. 
+Before contributing code, it may be useful to familiarise yourself with the [introduction to the BrainGlobe code for developers](./intro_to_codebase.md) as well as the [testing](./testing.md), [developer tooling](./tooling.md) and [conventions](./conventions.md) sections. You should also be aware of our [AI policy](./ai_policy.md).
 
 The core development team will support you in contributing code, irrespective of your experience.
 To ensure BrainGlobe remains easy-to-maintain, they will help ensure all code contributions meet 
@@ -171,5 +171,6 @@ conventions
 testing
 new_releases
 specific_repos
+ai_policy
 Code of conduct <https://github.com/brainglobe/.github/blob/main/CODE_OF_CONDUCT.md>
 :::
