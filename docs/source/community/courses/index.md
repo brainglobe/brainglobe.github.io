@@ -1,17 +1,15 @@
 # Courses
 
-Details of BrainGlobe training courses:
+Details of upcoming and previous BrainGlobe training courses:
 
-## Course materials
+
+
+
 ```{toctree}
 :maxdepth: 1
-
-materials/whole-brain-analysis/index
-```
-## Previous courses
-```{toctree}
-:maxdepth: 1
-
-scheduled/oct-2024/index
-scheduled/dec-2023/index
+specific-courses/aug-2026/index
+specific-courses/oct-2025/index
+specific-courses/aug-2025/index
+specific-courses/oct-2024/index
+specific-courses/dec-2023/index
 ```
