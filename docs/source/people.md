@@ -701,12 +701,12 @@ In no particular order:
 :img-bottom: https://avatars.githubusercontent.com/u/150372232?v=4
 :link: https://github.com/nishanthcr7777
 :::
-::::
 
 :::{grid-item-card} Ardavan Shahrabi
 :img-bottom: https://avatars.githubusercontent.com/u/105448579?v=4
 :link: https://github.com/a-shahrabi
 :::
+::::
 
 
 Inspired by [All Contributors](https://allcontributors.org/). All information is sourced from GitHub. If any changes 
