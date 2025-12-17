@@ -539,6 +539,7 @@
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">rich</span><span class="w"> </span><span class="kn">import</span> <span class="nb">print</span> <span class="k">as</span> <span class="n">rprint</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">rich.panel</span><span class="w"> </span><span class="kn">import</span> <span class="n">Panel</span>
@@ -549,13 +550,13 @@
 
 <div class="viewcode-block" id="get_downloaded_atlases">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.list_atlases.get_downloaded_atlases.html#brainglobe_atlasapi.list_atlases.get_downloaded_atlases">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">get_downloaded_atlases</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get a list of all the downloaded atlases and their version.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_downloaded_atlases</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get a list of all the downloaded atlases.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    list</span>
-<span class="sd">        A list of tuples with the locally available atlases and their version</span>
+<span class="sd">    List[str]</span>
+<span class="sd">        A list of the locally available atlases.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Get brainglobe directory:</span>
     <span class="n">brainglobe_dir</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get_brainglobe_dir</span><span class="p">()</span>
@@ -570,7 +571,7 @@
 
 <div class="viewcode-block" id="get_local_atlas_version">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.list_atlases.get_local_atlas_version.html#brainglobe_atlasapi.list_atlases.get_local_atlas_version">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">get_local_atlas_version</span><span class="p">(</span><span class="n">atlas_name</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_local_atlas_version</span><span class="p">(</span><span class="n">atlas_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Get version of a downloaded available atlas.</span>
 
 <span class="sd">    Arguments</span>
@@ -598,7 +599,7 @@
 
 <div class="viewcode-block" id="get_all_atlases_lastversions">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.list_atlases.get_all_atlases_lastversions.html#brainglobe_atlasapi.list_atlases.get_all_atlases_lastversions">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">get_all_atlases_lastversions</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_all_atlases_lastversions</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Read from URL or local cache all available last versions.&quot;&quot;&quot;</span>
     <span class="n">cache_path</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get_brainglobe_dir</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;last_versions.conf&quot;</span>
     <span class="n">custom_path</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get_brainglobe_dir</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;custom_atlases.conf&quot;</span>
@@ -622,7 +623,7 @@
 
 <div class="viewcode-block" id="get_atlases_lastversions">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.list_atlases.get_atlases_lastversions.html#brainglobe_atlasapi.list_atlases.get_atlases_lastversions">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">get_atlases_lastversions</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_atlases_lastversions</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return a dictionary of atlas metadata for the latest versions of all</span>
 <span class="sd">    available atlases.</span>
@@ -731,7 +732,12 @@
 
 <div class="viewcode-block" id="add_atlas_to_row">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.list_atlases.add_atlas_to_row.html#brainglobe_atlasapi.list_atlases.add_atlas_to_row">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">add_atlas_to_row</span><span class="p">(</span><span class="n">atlas</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">show_local_path</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add_atlas_to_row</span><span class="p">(</span>
+    <span class="n">atlas</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">info</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+    <span class="n">table</span><span class="p">:</span> <span class="n">Table</span><span class="p">,</span>
+    <span class="n">show_local_path</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Add information about each atlas to a row of the rich table.</span>
 

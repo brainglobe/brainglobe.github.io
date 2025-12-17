@@ -536,21 +536,23 @@
 <span></span><span class="sd">&quot;&quot;&quot;Utility functions for working with structure trees.&quot;&quot;&quot;</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">deque</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Generator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">treelib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tree</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">treelib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Node</span><span class="p">,</span> <span class="n">Tree</span>
 
 <span class="c1"># TODO evaluate whether we want this as a method in StructureDict</span>
 
 
 <div class="viewcode-block" id="child_ids">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.structure_tree_util.child_ids.html#brainglobe_atlasapi.structure_tree_util.child_ids">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">child_ids</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="n">structure_list</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">child_ids</span><span class="p">(</span><span class="n">structure</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">structure_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return a list of IDs of the children of a given structure.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    structure : dict</span>
+<span class="sd">    structure : int</span>
 <span class="sd">        The structure to find the children of.</span>
 <span class="sd">    structure_list : list</span>
 <span class="sd">        A list of structures to search within.</span>
@@ -571,7 +573,7 @@
 
 <div class="viewcode-block" id="get_structures_tree">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.structure_tree_util.get_structures_tree.html#brainglobe_atlasapi.structure_tree_util.get_structures_tree">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">get_structures_tree</span><span class="p">(</span><span class="n">structures_list</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_structures_tree</span><span class="p">(</span><span class="n">structures_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Tree</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Create a `tree` graph with the hierarchical organisation of all</span>
 <span class="sd">    structures.</span>
@@ -621,7 +623,7 @@
 
 <div class="viewcode-block" id="preorder_depth_first_search">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.structure_tree_util.preorder_depth_first_search.html#brainglobe_atlasapi.structure_tree_util.preorder_depth_first_search">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">preorder_depth_first_search</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">preorder_depth_first_search</span><span class="p">(</span><span class="n">tree</span><span class="p">:</span> <span class="n">Tree</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">Node</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Yield nodes in a pre-order depth first traversal of the tree.&quot;&quot;&quot;</span>
     <span class="n">root_node</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">tree</span><span class="o">.</span><span class="n">root</span><span class="p">]</span>
 

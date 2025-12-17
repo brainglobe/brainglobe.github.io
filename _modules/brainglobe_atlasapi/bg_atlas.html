@@ -536,9 +536,10 @@
 <span></span><span class="sd">&quot;&quot;&quot;Defines the BrainGlobeAtlas class for accessing brain atlas data.&quot;&quot;&quot;</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">tarfile</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">io</span><span class="w"> </span><span class="kn">import</span> <span class="n">StringIO</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">rich</span><span class="w"> </span><span class="kn">import</span> <span class="nb">print</span> <span class="k">as</span> <span class="n">rprint</span>
@@ -554,11 +555,11 @@
 <span class="n">COMPRESSED_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;atlas.tar.gz&quot;</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">_version_tuple_from_str</span><span class="p">(</span><span class="n">version_str</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_version_tuple_from_str</span><span class="p">(</span><span class="n">version_str</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
     <span class="k">return</span> <span class="nb">tuple</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">version_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)])</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">_version_str_from_tuple</span><span class="p">(</span><span class="n">version_tuple</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_version_str_from_tuple</span><span class="p">(</span><span class="n">version_tuple</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">version_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">version_tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
 
 
@@ -593,12 +594,12 @@
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">atlas_name</span><span class="p">,</span>
-        <span class="n">brainglobe_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">interm_download_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">check_latest</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">config_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">fn_update</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">atlas_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">brainglobe_dir</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">interm_download_dir</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">check_latest</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">config_dir</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">fn_update</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span> <span class="o">=</span> <span class="n">atlas_name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fn_update</span> <span class="o">=</span> <span class="n">fn_update</span>
@@ -638,7 +639,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">check_latest_version</span><span class="p">()</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">local_version</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">local_version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;If atlas is local, return actual version of the downloaded files;</span>
 <span class="sd">        Else, return none.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -650,7 +651,7 @@
         <span class="k">return</span> <span class="n">_version_tuple_from_str</span><span class="p">(</span><span class="n">full_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_v&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">remote_version</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">remote_version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Remote version read from GIN conf file. If we are offline, return</span>
 <span class="sd">        None.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -663,14 +664,13 @@
             <span class="k">return</span> <span class="kc">None</span>
 
         <span class="k">try</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">_version_tuple_from_str</span><span class="p">(</span>
-                <span class="n">versions_conf</span><span class="p">[</span><span class="s2">&quot;atlases&quot;</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="p">]</span>
-            <span class="p">)</span>
+            <span class="n">version_str</span> <span class="o">=</span> <span class="n">versions_conf</span><span class="p">[</span><span class="s2">&quot;atlases&quot;</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">_version_tuple_from_str</span><span class="p">(</span><span class="n">version_str</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">local_full_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">local_full_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;As we can&#39;t know the local version a priori, search candidate dirs</span>
 <span class="sd">        using name and not version number. If none is found, return None.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -685,13 +685,13 @@
             <span class="p">)</span>
         <span class="c1"># If no one exist, return None:</span>
         <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidate_dirs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span>
+            <span class="k">return</span> <span class="kc">None</span>
         <span class="c1"># Else, return actual name:</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">candidate_dirs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">remote_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">remote_url</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Format complete url for download.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">remote_version</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">name</span> <span class="o">=</span> <span class="p">(</span>
@@ -701,9 +701,11 @@
 
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_remote_url_base</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 
+        <span class="k">return</span> <span class="kc">None</span>
+
 <div class="viewcode-block" id="BrainGlobeAtlas.download_extract_file">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.download_extract_file">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">download_extract_file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">download_extract_file</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Download and extract atlas from remote url.&quot;&quot;&quot;</span>
         <span class="n">check_internet_connection</span><span class="p">()</span>
         <span class="n">check_gin_status</span><span class="p">()</span>
@@ -750,7 +752,7 @@
         <span class="n">remote_version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">remote_version</span>
         <span class="c1"># If we are offline, return None</span>
         <span class="k">if</span> <span class="n">remote_version</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span>
+            <span class="k">return</span> <span class="kc">None</span>
 
         <span class="n">local</span> <span class="o">=</span> <span class="n">_version_str_from_tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">local_version</span><span class="p">)</span>
         <span class="n">online</span> <span class="o">=</span> <span class="n">_version_str_from_tuple</span><span class="p">(</span><span class="n">remote_version</span><span class="p">)</span>
@@ -768,14 +770,14 @@
         <span class="k">return</span> <span class="kc">True</span></div>
 
 
-    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Fancy print providing atlas information.&quot;&quot;&quot;</span>
         <span class="n">name_split</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)</span>
         <span class="n">res</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot; (res. </span><span class="si">{</span><span class="n">name_split</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span><span class="si">}</span><span class="s2">)&quot;</span>
         <span class="n">pretty_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">name_split</span><span class="p">)</span><span class="si">}</span><span class="s2"> atlas</span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="k">return</span> <span class="n">pretty_name</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        If the atlas metadata are to be printed</span>
 <span class="sd">        with the built in print function instead of rich&#39;s, then</span>
