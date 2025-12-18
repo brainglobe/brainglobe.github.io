@@ -5,7 +5,7 @@ In some BrainGlobe tools, you need to specify the orientation and resolution of 
 ## Axes
 Misinterpreting axes can lead to mistakes when using BrainGlobe tools. So before you can specify the orientation and resolution of your data, it is a good idea to figure out which axis maps on to which dimension in the underlying data.
 
-When you open an image in napari or FIJI, the default ordering of the axes is:
+When you open an image in [napari](https://napari.org) or [FIJI](https://imagej.net/software/fiji/), the default ordering of the axes is:
 - Axis 0: Image depth 
 - Axis 1: Image height
 - Axis 2: Image width
