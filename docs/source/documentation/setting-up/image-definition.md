@@ -14,28 +14,19 @@ When you open an image in [napari](https://napari.org) or [FIJI](https://imagej.
 BrainGlobe uses axis labels 0, 1, 2, instead of z, y, x. This is because the underlying data is stored as NumPy arrays, which use numeric indices for their dimensions. Mapping to z, y, x can lead to ambiguity because different mapping conventions exist. To avoid this, we label axes 0, 1, 2 referring directly to the structure of the underlying data and ensure our documentation matches how the data is represented. 
 :::
 
-
 ## napari
-The order in which the dimensions are visualised in napari can be rearranged, for example by using the shortcut `Ctrl+E` or `Ctrl+T`. After rearranging the axis order, the visualisation of the data changes (this is only a display effect, the underlying data structure remains unchanged). Axis 0, for example, might now correspond to image height instead of image depth.  
+The order in which the dimensions are visualised in napari can be rearranged. After rearranging the axis order, the visualisation of the data changes (this is only a display effect, the underlying data structure remains unchanged). Axis 0, for example, might now correspond to image height instead of image depth.  
 
 The voxel coordinate shown in the status bar always reflects the structure of the underlying data. So the voxel coordinate can always be relied on to figure out which dimension maps to which axis.
 
 ### Using the voxel coordinate to determine axis order
-After opening an image stack in napari, use `Ctrl+E` to reorder the axes.
-
-To determine the axis order, observe how the voxel coordinates change when you scroll through the images and move the cursor over the image vertically or horizontally.
+To confirm the axis order (default int the example below), observe how the voxel coordinates change when you scroll through the images and move the cursor over the image vertically or horizontally.
 
 | Action                       | Changing coordinate | 
 |:-------------------------------|:--------------------| 
-| Scrolling through images       | [0 1 **2**]         | 
-| Moving the cursor vertically   | [**0** 1 2]         | 
-| Moving the cursor horizontally |[0 **1** 2]          | 
-
-So, in this case, the ordering of the axes is:
-
-- Axis 0: Image height
-- Axis 1: Image width
-- Axis 2: Image depth
+| Scrolling through images (depth)     | [**0** 1 2]         | 
+| Moving the cursor vertically (height)   | [0 **1** 2]         | 
+| Moving the cursor horizontally (width) |[0 1 **2**]          | 
 
 ### FIJI
 By default, FIJI opens image stacks so that the x-axis corresponds to axis 2, the y-axis corresponds to axis 1, and the z-axis corresponds axis 0.
