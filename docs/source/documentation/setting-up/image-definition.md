@@ -11,7 +11,7 @@ When you open an image in [napari](https://napari.org) or [FIJI](https://imagej.
 - Axis 2: Image width
 
 :::{note}
-BrainGlobe uses axis labels 0, 1, 2, instead of z, y, x. This is because the underlying data is stored as NumPy arrays, which use numeric indices for their dimensions. So the axis labels 0, 1, 2 refer directly to the structure of the underlying data and ensure our documentation matches how the data is represented. 
+BrainGlobe uses axis labels 0, 1, 2, instead of z, y, x. This is because the underlying data is stored as NumPy arrays, which use numeric indices for their dimensions. Mapping to z, y, x can lead to ambiguity because different mapping conventions exist. To avoid this, we label axes 0, 1, 2 referring directly to the structure of the underlying data and ensure our documentation matches how the data is represented. 
 :::
 
 
