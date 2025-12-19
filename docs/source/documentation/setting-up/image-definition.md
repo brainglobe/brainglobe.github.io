@@ -5,7 +5,7 @@ In some BrainGlobe tools, you need to specify the orientation and resolution of 
 ## Axes
 Misinterpreting axes can lead to mistakes when using BrainGlobe tools. So before you can specify the orientation and resolution of your data, it is a good idea to figure out which axis maps on to which dimension in the underlying data.
 
-When you open an image in [napari](https://napari.org) or [FIJI](https://imagej.net/software/fiji/), the default ordering of the axes is:
+When you open an image in [napari](https://napari.org) or [Fiji](https://imagej.net/software/Fiji/), the default ordering of the axes is:
 - Axis 0: Image depth 
 - Axis 1: Image height
 - Axis 2: Image width
@@ -28,18 +28,18 @@ To confirm the axis order (default int the example below), observe how the voxel
 | Moving the cursor vertically (height)   | [0 **1** 2]         | 
 | Moving the cursor horizontally (width) |[0 1 **2**]          | 
 
-### FIJI
-By default, FIJI opens image stacks so that the x-axis corresponds to axis 2, the y-axis corresponds to axis 1, and the z-axis corresponds axis 0.
+### Fiji
+By default, Fiji opens image stacks so that the x-axis corresponds to axis 2, the y-axis corresponds to axis 1, and the z-axis corresponds axis 0.
 
 :::{note}
-FIJI displays x, y, z coordinates in the status bar when you hover over the image. Unlike napari, in FIJI these refer to the display, not the underlying data structure. This means FIJI’s axis labels do not necessarily match the numeric axes (0, 1, 2) used by BrainGlobe, and these coordinates cannot be used to determine which axis is which when the display of the axes has been rearranged.
+Fiji displays x, y, z coordinates in the status bar when you hover over the image. Unlike napari, in Fiji these refer to the display, not the underlying data structure. This means Fiji’s axis labels do not necessarily match the numeric axes (0, 1, 2) used by BrainGlobe, and these coordinates cannot be used to determine which axis is which when the display of the axes has been rearranged.
 :::
 
 ## Orientation
 To describe the orientation of 3D brain imaging data in anatomical terms, [brainglobe-space](https://github.com/brainglobe/brainglobe-space) uses an anatomical description of the relative location of **the origin**—the voxel at position [0, 0, 0], which when you open the stack with [napari](https://napari.org/) by default corresponds with the pixel in the upper left corner of the first image in the stack. 
 
 :::note
-The position of the origin voxel can be verified by opening the image stack in FIJI or napari, selecting the first image, and hovering the cursor over the top-left region of that image. Check the status bar. It should report the coordinates `[0 0 0]`.
+The position of the origin voxel can be verified by opening the image stack in Fiji or napari, selecting the first image, and hovering the cursor over the top-left region of that image. Check the status bar. It should report the coordinates `[0 0 0]`.
 :::
 
 The origin can be described by a three letter string in which each letter corresponds to one of the following **anatomical directions**:
