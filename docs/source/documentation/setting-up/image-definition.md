@@ -29,7 +29,7 @@ To confirm the axis order (default int the example below), observe how the voxel
 | Moving the cursor horizontally (width) |[0 1 **2**]          | 
 
 ### Fiji
-By default, Fiji opens image stacks so that the x-axis corresponds to axis 2, the y-axis corresponds to axis 1, and the z-axis corresponds axis 0.
+By default, Fiji opens image stacks so that the x-axis corresponds to axis 2 (image width), the y-axis corresponds to axis 1 (image height), and the z-axis corresponds axis 0 (image depth).
 
 :::{note}
 Fiji displays x, y, z coordinates in the status bar when you hover over the image. Unlike napari, in Fiji these refer to the display, not the underlying data structure. This means Fiji’s axis labels do not necessarily match the numeric axes (0, 1, 2) used by BrainGlobe, and these coordinates cannot be used to determine which axis is which when the display of the axes has been rearranged.
