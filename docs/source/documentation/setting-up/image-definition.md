@@ -29,11 +29,12 @@ To confirm the axis order (default int the example below), observe how the voxel
 | Moving the cursor horizontally (width) |[0 1 **2**]          | 
 
 ### Fiji
-By default, Fiji opens image stacks so that the x-axis corresponds to axis 2 (image width), the y-axis corresponds to axis 1 (image height), and the z-axis corresponds axis 0 (image depth).
+By default, Fiji opens image stacks so that the x-axis corresponds to axis 2 (image width), the y-axis corresponds to axis 1 (image height), and the z-axis corresponds axis 0 (image depth). The x, y, z coordinates in the status bar when you hover over the image. 
 
-:::{note}
-Fiji displays x, y, z coordinates in the status bar when you hover over the image. Unlike napari, in Fiji these refer to the display, not the underlying data structure. This means Fiji’s axis labels do not necessarily match the numeric axes (0, 1, 2) used by BrainGlobe, and these coordinates cannot be used to determine which axis is which when the display of the axes has been rearranged.
-:::
+Unlike napari, in Fiji these refer to the display, not the underlying data structure. You can for example see this by using [Orthogonal Views](https://imagej.net/imaging/z-functions#orthogonal-views) to visualise 3D data. Each panel shows a different orientation of the image. However, hovering over the displayed images, shows the x coordinate is always image width and the y coordinate is always image height.
+
+This means Fiji’s axis labels do not necessarily match the numeric axes (0, 1, 2) used by BrainGlobe, and these coordinates cannot be used to determine which axis is which when the display of the axes has been rearranged. So when using Fiji, make sure you are using the default view to determine which axis is which.
+
 
 ## Orientation
 To describe the orientation of 3D brain imaging data in anatomical terms, [brainglobe-space](https://github.com/brainglobe/brainglobe-space) uses an anatomical description of the relative location of **the origin**—the voxel at position [0, 0, 0], which when you open the stack with [napari](https://napari.org/) by default corresponds with the pixel in the upper left corner of the first image in the stack. 
