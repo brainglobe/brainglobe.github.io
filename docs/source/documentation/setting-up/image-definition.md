@@ -41,7 +41,7 @@ To confirm the axis order, observe how the voxel indices change when you scroll 
 | Moving the cursor horizontally (width) |[0 1 **2**]          | 
 
 ### Fiji
-By default, Fiji opens image stacks so that the x-axis corresponds to axis 2 (image width), the y-axis corresponds to axis 1 (image height), and the z-axis corresponds axis 0 (image depth). The x, y, z coordinates in the status bar when you hover over the image. 
+By default, Fiji opens image stacks so that the x-axis corresponds to axis 2 (image width), the y-axis corresponds to axis 1 (image height), and the z-axis corresponds axis 0 (image depth). The x, y, z coordinates are displayed in the status bar when you hover over the image. 
 
 Unlike napari, in Fiji these refer to the display, not the underlying data structure. You can for example see this by using [Orthogonal Views](https://imagej.net/imaging/z-functions#orthogonal-views) to visualise 3D data. Each panel shows a different orientation of the image. However, hovering over the displayed images, shows the x coordinate is always image width and the y coordinate is always image height.
 
@@ -115,7 +115,7 @@ microns, then the voxel sizes would be `5 2 2`.
 |![left handed](images/left_handed.gif)  | ![right-handed](images/right_handed.gif)|
 
 
-*3D render of 25 μm mouse brain atlas by [Wang et al., 2020](https://doi.org/10.1016/j.cell.2020.04.007), visualised in napari with visible axes, using the [brainrender-napari plugin](https://napari-hub.org/plugins/brainrender-napari.html)*.
+*3D render of 25 μm mouse brain atlas by [Wang et al., 2020](https://doi.org/10.1016/j.cell.2020.04.007), visualised in napari with visible axes at the origin, using the [brainrender-napari plugin](https://napari-hub.org/plugins/brainrender-napari.html). Like other BrainGlobe atlases, its orientation is `ASR`. The `R` means that the right hemisphere is always closer to the origin, and the right hemisphere looks like it's a left hemisphere in the right-handed coordinate system.*
 
 `napari v0.6.0` and later use a **right-handed 3D coordinate system** by default, however `brainrender` expects a **left-handed system**, so 3D visualisations may appear mirrored (left-right flipped).  
 
