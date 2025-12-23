@@ -115,7 +115,7 @@ microns, then the voxel sizes would be `5 2 2`.
 |![left handed](images/left_handed.gif)  | ![right-handed](images/right_handed.gif)|
 
 
-*3D render of 25 μm mouse brain atlas by [Wang et al., 2020](https://doi.org/10.1016/j.cell.2020.04.007), visualised in napari with visible axes at the origin, using the [brainrender-napari plugin](https://napari-hub.org/plugins/brainrender-napari.html). Like other BrainGlobe atlases, its orientation is `ASR`. The `R` means that the right hemisphere is closer to the origin. Note that in the right-handed coordinate system, the right hemisphere looks like it's a left hemisphere.*
+*3D render of 25 μm mouse brain atlas by [Wang et al., 2020](https://doi.org/10.1016/j.cell.2020.04.007), visualised in napari with visible axes at the origin, using the [brainrender-napari plugin](https://napari-hub.org/plugins/brainrender-napari.html). Like other BrainGlobe atlases, its orientation is `ASR`. The `R` means that the right hemisphere is closer to the origin. Therefore, in the right-handed coordinate system, the right hemisphere looks like it's a left hemisphere.*
 
 `napari v0.6.0` and later use a **right-handed 3D coordinate system** by default, however `brainrender` expects a **left-handed system**, so 3D visualisations may appear mirrored (left-right flipped).  
 
