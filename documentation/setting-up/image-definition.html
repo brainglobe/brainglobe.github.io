@@ -790,9 +790,70 @@
                    <section class="tex2jax_ignore mathjax_ignore" id="image-space-definition">
 <h1>Image space definition<a class="headerlink" href="#image-space-definition" title="Link to this heading">#</a></h1>
 <p>In some BrainGlobe tools, you need to specify the orientation and resolution of the data.</p>
+<section id="axes">
+<h2>Axes<a class="headerlink" href="#axes" title="Link to this heading">#</a></h2>
+<p>Misinterpreting axes can lead to mistakes when using BrainGlobe tools. So before you can specify the orientation and resolution of your data, it is a good idea to figure out which axis maps on to which dimension in the underlying data.</p>
+<p>When you open an image in <a class="reference external" href="https://napari.org">napari</a> or <a class="reference external" href="https://imagej.net/software/Fiji/">Fiji</a>, the default ordering of the axes is:</p>
+<ul class="simple">
+<li><p>Axis 0: Image depth</p></li>
+<li><p>Axis 1: Image height</p></li>
+<li><p>Axis 2: Image width</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>BrainGlobe uses axis labels 0, 1, 2, instead of z, y, x. This is because the underlying data is stored as NumPy arrays, which use numeric indices for their dimensions. Mapping to z, y, x can lead to ambiguity because different mapping conventions exist. To avoid this, we label axes 0, 1, 2 referring directly to the structure of the underlying data and ensure our documentation matches how the data is represented.</p>
+</div>
+</section>
+<section id="dimensions-in-image-stacks">
+<h2>Dimensions in image stacks<a class="headerlink" href="#dimensions-in-image-stacks" title="Link to this heading">#</a></h2>
+<p>By default, opening a 3D image in napari or Fiji displays it as a scrollable stack of 2D images. For example, when viewing the Allen Mouse Brain Atlas reference (<a class="reference external" href="https://doi.org/10.1016/j.cell.2020.04.007">Wang et al., 2020</a>) in napari, the default image that appears is the one in the left panel where the the purple arrow indicates the direction of dimension 1, the blue arrow indicates the direction of dimension 2. Scrolling through the stack of images corresponds to dimension 0.</p>
+<p>The order and direction in which the different dimensions are displayed can be changed. For example, by “rolling” the order of the visualised dimensions (see <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.roll.html"><code class="docutils literal notranslate"><span class="pre">numpy.roll</span></code></a>).</p>
+<ul class="simple">
+<li><p><strong>First roll</strong>: [0 1 2] → [2 0 1] (middle panel)</p></li>
+<li><p><strong>Second roll</strong>: [2 0 1] → [1 2 0] (right panel)</p></li>
+</ul>
+<p><img alt="allen mouse atlas 50μm" src="../../_images/directions.png" /></p>
+</section>
+<section id="napari">
+<h2>napari<a class="headerlink" href="#napari" title="Link to this heading">#</a></h2>
+<p>After rearranging the axis order, the visualisation of the data changes. This is only a display effect, the underlying data structure remains unchanged. Axis 0, for example, might now correspond to image height instead of image depth.</p>
+<p>The <a class="reference external" href="https://napari.org/dev/tutorials/fundamentals/viewer.html#status-bar">status bar</a> shows indices of any voxels that are currently hovered over, depending on which layer is selected. These voxel indices always reflect the structure of the underlying data. They can therefore be relied on to figure out which dimension maps to which axis.</p>
+<section id="using-the-voxel-coordinate-to-determine-axis-order">
+<h3>Using the voxel coordinate to determine axis order<a class="headerlink" href="#using-the-voxel-coordinate-to-determine-axis-order" title="Link to this heading">#</a></h3>
+<p>To confirm the axis order, observe how the voxel indices change when you scroll through the images and move the cursor over the image vertically or horizontally.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Action</p></th>
+<th class="head text-left"><p>Changing coordinate</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Scrolling through images (depth)</p></td>
+<td class="text-left"><p>[<strong>0</strong> 1 2]</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Moving the cursor vertically (height)</p></td>
+<td class="text-left"><p>[0 <strong>1</strong> 2]</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Moving the cursor horizontally (width)</p></td>
+<td class="text-left"><p>[0 1 <strong>2</strong>]</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="fiji">
+<h3>Fiji<a class="headerlink" href="#fiji" title="Link to this heading">#</a></h3>
+<p>By default, Fiji opens image stacks so that the x-axis corresponds to axis 2 (image width), the y-axis corresponds to axis 1 (image height), and the z-axis corresponds axis 0 (image depth). The x, y, z coordinates are displayed in the status bar when you hover over the image.</p>
+<p>Unlike napari, in Fiji these refer to the display, not the underlying data structure. You can for example see this by using <a class="reference external" href="https://imagej.net/imaging/z-functions#orthogonal-views">Orthogonal Views</a> to visualise 3D data. Each panel shows a different orientation of the image. However, hovering over the displayed images, shows the x coordinate is always image width and the y coordinate is always image height.</p>
+<p>This means Fiji’s axis labels do not necessarily match the numeric axes (0, 1, 2) used by BrainGlobe, and these coordinates cannot be used to determine which axis is which when the display of the axes has been rearranged. So when using Fiji, make sure you are using the default view to determine which axis is which.</p>
+</section>
+</section>
 <section id="orientation">
 <h2>Orientation<a class="headerlink" href="#orientation" title="Link to this heading">#</a></h2>
-<p>To describe the orientation of 3D brain imaging data in anatomical terms, <a class="reference external" href="https://github.com/brainglobe/brainglobe-space">brainglobe-space</a> uses a anatomical description of the relative location of <strong>the origin</strong>—the voxel at position [0, 0, 0], which when you open the stack with <a class="reference external" href="https://napari.org/">napari</a> by default corresponds with the pixel in the upper left corner of the first image in the stack.</p>
+<p>To describe the orientation of 3D brain imaging data in anatomical terms, <a class="reference external" href="https://github.com/brainglobe/brainglobe-space">brainglobe-space</a> uses an anatomical description of the relative location of <strong>the origin</strong>—the voxel at position [0, 0, 0], which when you open the stack with <a class="reference external" href="https://napari.org/">napari</a> by default corresponds with the pixel in the upper left corner of the first image in the stack.</p>
+<div class="note docutils">
+<p>The position of the origin voxel can be verified by opening the image stack in Fiji or napari, selecting the first image, and hovering the cursor over the top-left region of that image. Check the status bar. It should report the coordinates <code class="docutils literal notranslate"><span class="pre">[0</span> <span class="pre">0</span> <span class="pre">0]</span></code>.</p>
+</div>
 <p>The origin can be described by a three letter string in which each letter corresponds to one of the following <strong>anatomical directions</strong>:</p>
 <ul class="simple">
 <li><p>posterior (<code class="docutils literal notranslate"><span class="pre">p</span></code>) ↔ anterior (<code class="docutils literal notranslate"><span class="pre">a</span></code>)</p></li>
@@ -804,7 +865,7 @@
 <em>50 μm mouse brain atlas by <a class="reference external" href="https://doi.org/10.1016/j.cell.2020.04.007">Wang et al., 2020</a>, visualised in napari using the <a class="reference external" href="https://napari-hub.org/plugins/brainrender-napari.html">brainrender-napari plugin</a></em>.</p>
 <section id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
-<p>The examples below assume default ordering of the axes, i.e. axis 0 (slice depth), axis 1 (image height), axis 2 (image width).</p>
+<p>The examples below assume default ordering of the axes, i.e. axis 0 (image depth), axis 1 (image height), axis 2 (image width).</p>
 <section id="coronal">
 <h4>Coronal<a class="headerlink" href="#coronal" title="Link to this heading">#</a></h4>
 <a class="reference internal image-reference" href="../../_images/coronal.png"><img alt="coronal" src="../../_images/coronal.png" style="width: 200px;" />
@@ -828,7 +889,7 @@
 <h4>Sagittal<a class="headerlink" href="#sagittal" title="Link to this heading">#</a></h4>
 <a class="reference internal image-reference" href="../../_images/sagittal.png"><img alt="sagittal" src="../../_images/sagittal.png" style="height: 143px;" />
 </a>
-<p>If the stack is sliced from the left side of the brain toward the right, the origin corresponds to the most left (<code class="docutils literal notranslate"><span class="pre">l</span></code>), superior (<code class="docutils literal notranslate"><span class="pre">s</span></code>), anterior (<code class="docutils literal notranslate"><span class="pre">a</span></code>) part of the brain, so the origin string is <code class="docutils literal notranslate"><span class="pre">lsa</span></code>.</p>
+<p>If the stack is imaged from the left side of the brain toward the right, the origin corresponds to the most left (<code class="docutils literal notranslate"><span class="pre">l</span></code>), superior (<code class="docutils literal notranslate"><span class="pre">s</span></code>), anterior (<code class="docutils literal notranslate"><span class="pre">a</span></code>) part of the brain, so the origin string is <code class="docutils literal notranslate"><span class="pre">lsa</span></code>.</p>
 </section>
 </section>
 </section>
@@ -842,6 +903,23 @@ microns, then the voxel sizes would be <code class="docutils literal notranslate
 </section>
 <section id="napari-3d-orientation-for-brainrender">
 <h2>Napari 3D Orientation for brainrender<a class="headerlink" href="#napari-3d-orientation-for-brainrender" title="Link to this heading">#</a></h2>
+</section>
+<section id="handedness">
+<h2>Handedness<a class="headerlink" href="#handedness" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Left-handed</p></th>
+<th class="head"><p>Right-handed</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="left handed" src="../../_images/left_handed.gif" /></p></td>
+<td><p><img alt="right-handed" src="../../_images/right_handed.gif" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>3D render of 25 μm mouse brain atlas by <a class="reference external" href="https://doi.org/10.1016/j.cell.2020.04.007">Wang et al., 2020</a>, visualised in napari with visible axes at the origin, using the <a class="reference external" href="https://napari-hub.org/plugins/brainrender-napari.html">brainrender-napari plugin</a>. Like other BrainGlobe atlases, its orientation is <code class="docutils literal notranslate"><span class="pre">ASR</span></code>. The <code class="docutils literal notranslate"><span class="pre">R</span></code> means that the right hemisphere is closer to the origin. Therefore, in the right-handed coordinate system, the right hemisphere looks like it’s a left hemisphere.</em></p>
 <p><code class="docutils literal notranslate"><span class="pre">napari</span> <span class="pre">v0.6.0</span></code> and later use a <strong>right-handed 3D coordinate system</strong> by default, however <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> expects a <strong>left-handed system</strong>, so 3D visualisations may appear mirrored (left-right flipped).</p>
 <p>To change to a left-handed system</p>
 <ol class="arabic simple">
@@ -903,6 +981,13 @@ For more details on napari’s 3D axis directions and handedness, see the <a cla
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axes">Axes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensions-in-image-stacks">Dimensions in image stacks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#napari">napari</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-voxel-coordinate-to-determine-axis-order">Using the voxel coordinate to determine axis order</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fiji">Fiji</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orientation">Orientation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#coronal">Coronal</a></li>
@@ -914,6 +999,7 @@ For more details on napari’s 3D axis directions and handedness, see the <a cla
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voxel-sizes">Voxel sizes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#napari-3d-orientation-for-brainrender">Napari 3D Orientation for brainrender</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handedness">Handedness</a></li>
 </ul>
   </nav></div>
 
