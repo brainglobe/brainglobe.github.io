@@ -14,18 +14,17 @@ When you open an image in [napari](https://napari.org) or [Fiji](https://imagej.
 BrainGlobe uses axis labels 0, 1, 2, instead of z, y, x. This is because the underlying data is stored as NumPy arrays, which use numeric indices for their dimensions. Mapping to z, y, x can lead to ambiguity because different mapping conventions exist. To avoid this, we label axes 0, 1, 2 referring directly to the structure of the underlying data and ensure our documentation matches how the data is represented. 
 :::
 
-## Dimensions in 3D images rendered as stacks of 2D images
+## Dimensions in image stacks
 
-By default, opening a 3D image in napari or Fiji displays it as a scrollable stack of 2D slices. For example, when viewing the Allen Mouse Brain Atlas reference in napari, the default image appears in the left panel where the the purple arrow indicates the direction of dimension 1, the blue arrow indicates the direction of dimension 2. Scrolling through the stack of images corresponds to dimension 0.
+By default, opening a 3D image in napari or Fiji displays it as a scrollable stack of 2D images. For example, when viewing the Allen Mouse Brain Atlas reference ([Wang et al., 2020](https://doi.org/10.1016/j.cell.2020.04.007)) in napari, the default image that appears is the one in the left panel where the the purple arrow indicates the direction of dimension 1, the blue arrow indicates the direction of dimension 2. Scrolling through the stack of images corresponds to dimension 0.
 
-The order and direction in which the different dimensions are displayed can be changed. For example, by "rolling" the order of the visualised dimensions (see [numpy.roll](https://numpy.org/devdocs/reference/generated/numpy.roll.html)).
+The order and direction in which the different dimensions are displayed can be changed. For example, by "rolling" the order of the visualised dimensions (see [`numpy.roll`](https://numpy.org/devdocs/reference/generated/numpy.roll.html)).
 
 - **First roll**: [0 1 2] → [2 0 1] (middle panel)
 - **Second roll**: [2 0 1] → [1 2 0] (right panel)
 
 ![allen mouse atlas 50μm](images/directions.png)
 
-*50 μm mouse brain atlas by [Wang et al., 2020](https://doi.org/10.1016/j.cell.2020.04.007), visualised in napari using the [brainrender-napari plugin](https://napari-hub.org/plugins/brainrender-napari.html)*.
 
 ## napari
 After rearranging the axis order, the visualisation of the data changes. This is only a display effect, the underlying data structure remains unchanged. Axis 0, for example, might now correspond to image height instead of image depth.  
@@ -113,9 +112,10 @@ microns, then the voxel sizes would be `5 2 2`.
 
 | Left-handed | Right-handed |
 |-------------|--------------|
-|![left handed](images/rock_left_handed_90degrees_slow.gif)  | ![right-handed](images/rock_right_handed_90degrees_slow.gif)|
+|![left handed](images/left_handed.gif)  | ![right-handed](images/right_handed.gif)|
 
 
+*3D render of 25 μm mouse brain atlas by [Wang et al., 2020](https://doi.org/10.1016/j.cell.2020.04.007), visualised in napari with visible axes, using the [brainrender-napari plugin](https://napari-hub.org/plugins/brainrender-napari.html)*.
 
 `napari v0.6.0` and later use a **right-handed 3D coordinate system** by default, however `brainrender` expects a **left-handed system**, so 3D visualisations may appear mirrored (left-right flipped).  
 
