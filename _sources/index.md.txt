@@ -12,7 +12,7 @@ We have three aims:
 scientific, and open-source community (e.g., by organising hackathons).
 
 
-::::{grid} 1 2 2 3
+::::{grid} 1 2 2 4
 :gutter: 3
 
 :::{grid-item-card} {fas}`question;sd-text-primary` About
@@ -38,6 +38,14 @@ How do I get started with these tools?
 
 Find out more about these tools.
 :::
+
+:::{grid-item-card} {fas}`comments;sd-text-primary` Get in touch
+:img-bottom: _static/group.png
+:link: contact
+:link-type: doc
+
+Questions, feedback, or want to get involved?
+:::
 ::::
 
 ```{toctree}
@@ -51,5 +59,4 @@ community/index
 blog/index
 projects/index
 blackcap
-
-```
+contact
