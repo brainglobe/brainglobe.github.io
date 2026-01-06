@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**06:11.140** total execution time for 2 files **from all galleries**:
+**03:30.440** total execution time for 2 files **from all galleries**:
 
 .. container::
 
@@ -33,8 +33,8 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_api_examples_brainglobe_atlasapi.py` (``api_examples_source/brainglobe_atlasapi.py``)
-     - 05:51.920
+     - 03:04.301
      - 0.0
    * - :ref:`sphx_glr_aws_examples_explore_atlas.py` (``aws_examples_source/explore_atlas.py``)
-     - 00:19.220
+     - 00:26.139
      - 0.0
