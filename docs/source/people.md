@@ -706,6 +706,12 @@ In no particular order:
 :img-bottom: https://avatars.githubusercontent.com/u/105448579?v=4
 :link: https://github.com/a-shahrabi
 :::
+
+:::{grid-item-card} Varun Singh
+:img-bottom: https://avatars.githubusercontent.com/u/88921846?v=4
+:link: https://github.com/AlgoFoe
+:::
+
 ::::
 
 
