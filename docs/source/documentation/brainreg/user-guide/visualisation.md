@@ -10,7 +10,7 @@ Various images should then open, including:
 * `Registered image` - the image used for registration, downsampled to atlas resolution
 * `atlas_name` - e.g. `allen_mouse_25um` the atlas labels, warped to your sample brain
 * `Boundaries` - the boundaries of the atlas regions
-* `Registered hemisphere` - the hemisphere annotations , warped to your sample brain
+* `Hemispheres` - the hemisphere annotations, warped to your sample brain
 If you downsampled additional channels, these will also be loaded.
 
 Some of these images will not be visible by default. Click the little eye icon to toggle visibility.
