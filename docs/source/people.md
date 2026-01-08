@@ -717,6 +717,11 @@ In no particular order:
 :link: https://github.com/HARSHDIPSAHA
 :::
 
+:::{grid-item-card} sid-42-d
+:img-bottom: https://avatars.githubusercontent.com/u/200499185?v=4
+:link: https://github.com/sid-42-d
+:::
+
 ::::
 
 
