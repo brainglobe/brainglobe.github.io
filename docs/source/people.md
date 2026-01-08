@@ -712,6 +712,11 @@ In no particular order:
 :link: https://github.com/AlgoFoe
 :::
 
+:::{grid-item-card} Harshdip Saha
+:img-bottom: https://avatars.githubusercontent.com/u/141698575?v=4
+:link: https://github.com/HARSHDIPSAHA
+:::
+
 ::::
 
 
