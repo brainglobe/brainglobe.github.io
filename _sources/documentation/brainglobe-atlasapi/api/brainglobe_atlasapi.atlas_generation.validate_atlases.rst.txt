@@ -44,4 +44,6 @@
     
     validate_reference_image_pixels
     
+    validate_unique_acronyms
+    
 

@@ -32,7 +32,7 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=1227d6e8" />
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=d2d258e8" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
@@ -54,7 +54,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'aws_examples/explore_atlas';</script>
@@ -727,7 +727,7 @@ Annotation files are stored in an OME-zarr file in the cloud.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">annotations</span><span class="o">.</span><span class="n">metadata</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Metadata(axes=[Axis(name=&#39;z&#39;, type=&#39;space&#39;, unit=&#39;millimeter&#39;, orientation={&#39;type&#39;: &#39;anatomical&#39;, &#39;direction&#39;: &#39;anterior-to-posterior&#39;}), Axis(name=&#39;y&#39;, type=&#39;space&#39;, unit=&#39;millimeter&#39;, orientation={&#39;type&#39;: &#39;anatomical&#39;, &#39;direction&#39;: &#39;superior-to-inferior&#39;}), Axis(name=&#39;x&#39;, type=&#39;space&#39;, unit=&#39;millimeter&#39;, orientation={&#39;type&#39;: &#39;anatomical&#39;, &#39;direction&#39;: &#39;right-to-left&#39;})], datasets=[Dataset(path=&#39;0&#39;, coordinateTransformations=[Scale(scale=[0.01, 0.01, 0.01], type=&#39;scale&#39;)]), Dataset(path=&#39;1&#39;, coordinateTransformations=[Scale(scale=[0.025, 0.025, 0.025], type=&#39;scale&#39;)]), Dataset(path=&#39;2&#39;, coordinateTransformations=[Scale(scale=[0.05, 0.05, 0.05], type=&#39;scale&#39;)]), Dataset(path=&#39;3&#39;, coordinateTransformations=[Scale(scale=[0.1, 0.1, 0.1], type=&#39;scale&#39;)])], coordinateTransformations=None, omero=None, name=&#39;image&#39;, type=None, metadata=None)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Metadata(axes=[Axis(name=&#39;z&#39;, type=&#39;space&#39;, unit=&#39;millimeter&#39;, orientation={&#39;type&#39;: &#39;anatomical&#39;, &#39;direction&#39;: &#39;anterior-to-posterior&#39;}), Axis(name=&#39;y&#39;, type=&#39;space&#39;, unit=&#39;millimeter&#39;, orientation={&#39;type&#39;: &#39;anatomical&#39;, &#39;direction&#39;: &#39;superior-to-inferior&#39;}), Axis(name=&#39;x&#39;, type=&#39;space&#39;, unit=&#39;millimeter&#39;, orientation={&#39;type&#39;: &#39;anatomical&#39;, &#39;direction&#39;: &#39;right-to-left&#39;})], datasets=[Dataset(path=&#39;0&#39;, coordinateTransformations=[Scale(scale=[0.01, 0.01, 0.01], type=&#39;scale&#39;)]), Dataset(path=&#39;1&#39;, coordinateTransformations=[Scale(scale=[0.025, 0.025, 0.025], type=&#39;scale&#39;)]), Dataset(path=&#39;2&#39;, coordinateTransformations=[Scale(scale=[0.05, 0.05, 0.05], type=&#39;scale&#39;)]), Dataset(path=&#39;3&#39;, coordinateTransformations=[Scale(scale=[0.1, 0.1, 0.1], type=&#39;scale&#39;)])], coordinateTransformations=None, omero=None, name=&#39;/&#39;, type=None, metadata=None)
 </pre></div>
 </div>
 <p>We can see from the metadata that the zarr contains multiple resolution levels (a pyramid).
@@ -738,7 +738,7 @@ For this tutorial, we will use the highest resolution level (level 0).</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">annotation_image</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>NgffImage(data=dask.array&lt;from-zarr, shape=(1320, 800, 1140), dtype=uint32, chunksize=(83, 100, 143), chunktype=numpy.ndarray&gt;, dims=(&#39;z&#39;, &#39;y&#39;, &#39;x&#39;), scale={&#39;z&#39;: 0.01, &#39;y&#39;: 0.01, &#39;x&#39;: 0.01}, translation={&#39;z&#39;: 0.0, &#39;y&#39;: 0.0, &#39;x&#39;: 0.0}, name=&#39;image&#39;, axes_units={&#39;z&#39;: &#39;millimeter&#39;, &#39;y&#39;: &#39;millimeter&#39;, &#39;x&#39;: &#39;millimeter&#39;}, axes_orientations=None, computed_callbacks=[])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>NgffImage(data=dask.array&lt;from-zarr, shape=(1320, 800, 1140), dtype=uint32, chunksize=(83, 100, 143), chunktype=numpy.ndarray&gt;, dims=(&#39;z&#39;, &#39;y&#39;, &#39;x&#39;), scale={&#39;z&#39;: 0.01, &#39;y&#39;: 0.01, &#39;x&#39;: 0.01}, translation={&#39;z&#39;: 0.0, &#39;y&#39;: 0.0, &#39;x&#39;: 0.0}, name=&#39;/&#39;, axes_units={&#39;z&#39;: &#39;millimeter&#39;, &#39;y&#39;: &#39;millimeter&#39;, &#39;x&#39;: &#39;millimeter&#39;}, axes_orientations=None, computed_callbacks=[])
 </pre></div>
 </div>
 <p>By plotting a slice of the array contents, we can see the various regions encoded by integer values:</p>
@@ -754,7 +754,7 @@ For this tutorial, we will use the highest resolution level (level 0).</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lut</span><span class="p">[</span><span class="n">annotation_image</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:]</span> <span class="o">%</span> <span class="n">N</span><span class="p">])</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_explore_atlas_001.png" srcset="../_images/sphx_glr_explore_atlas_001.png" alt="explore atlas" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f7b3d366210&gt;
+<img src="../_images/sphx_glr_explore_atlas_001.png" srcset="../_images/sphx_glr_explore_atlas_001.png" alt="explore atlas" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f153b9f2390&gt;
 </pre></div>
 </div>
 <p>Combining the annotation data with our RSP IDs allows us to calculate the volume of the RSP,
@@ -777,7 +777,7 @@ RSP has volume of around 11.0 cubic millimeters
 <p>In conclusion, this tutorial shows how to programmatically access and process atlas data for
 the specific purpose of calculating a region volume. More generally, it also constitutes an example for
 BrainGlobe atlas data being used independently of the BrainGlobe software tools.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 35.458 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 36.068 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-aws-examples-explore-atlas-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/fc12a6a5a016d084e9466efdf58f2d6e/explore_atlas.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">explore_atlas.ipynb</span></code></a></p>
