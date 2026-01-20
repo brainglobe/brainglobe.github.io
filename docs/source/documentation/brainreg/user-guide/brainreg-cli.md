@@ -23,7 +23,7 @@ If you have any spaces in your file-path, please enclose it in quotation marks, 
 * Output directory for all intermediate and final results
 
 :::{hint}
-You must also specify the orientation and voxel size of your data, see [Image definition](/documentation/setting-up/image-definition).
+You must also specify the **voxel size** (using `-v`, in microns matching your orientation order) and **orientation** (using `--orientation`) of your data. See [Image definition](/documentation/setting-up/image-definition) for details on how to determine the correct values.
 :::
 
 ### Additional options
