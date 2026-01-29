@@ -1,0 +1,6 @@
+modal\_filter\_ignore\_zeros
+============================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.annotation_utils
+
+.. autofunction:: modal_filter_ignore_zeros

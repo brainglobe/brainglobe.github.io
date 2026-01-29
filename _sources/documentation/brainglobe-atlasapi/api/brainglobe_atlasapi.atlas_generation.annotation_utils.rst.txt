@@ -16,6 +16,10 @@
     :toctree: .
     :nosignatures:
     
+    apply_modal_filter
+    
+    modal_filter_ignore_zeros
+    
     read_itk_labels
     
     split_label_text

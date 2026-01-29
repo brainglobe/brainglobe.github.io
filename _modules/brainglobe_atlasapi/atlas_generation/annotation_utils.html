@@ -206,13 +206,6 @@
   </a>
 </li>
 
-
-<li class=" ">
-  <a class="nav-link dropdown-item nav-internal" href="../../../contact.html">
-    Contact
-  </a>
-</li>
-
                 </ul>
             </li>
             
@@ -399,13 +392,6 @@
   </a>
 </li>
 
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../../contact.html">
-    Contact
-  </a>
-</li>
-
   </ul>
 </nav></div>
           
@@ -551,6 +537,9 @@
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.ndimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">generic_filter</span>
+
 
 <div class="viewcode-block" id="split_label_text">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.annotation_utils.split_label_text.html#brainglobe_atlasapi.atlas_generation.annotation_utils.split_label_text">[docs]</a>
@@ -640,6 +629,58 @@
                 <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="p">[</span><span class="s1">&#39;rgb_triplet&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2"> 1.00 1 1 &quot;</span>
                 <span class="sa">f</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="n">label</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; (&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label</span><span class="p">[</span><span class="s2">&quot;acronym&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;)&quot;</span><span class="si">}</span><span class="s1">&quot;</span><span class="se">\n</span><span class="s1">&#39;</span>
             <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="modal_filter_ignore_zeros">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.annotation_utils.modal_filter_ignore_zeros.html#brainglobe_atlasapi.atlas_generation.annotation_utils.modal_filter_ignore_zeros">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">modal_filter_ignore_zeros</span><span class="p">(</span><span class="n">window</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the mode of the window, ignoring zero values.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    window : numpy.ndarray</span>
+<span class="sd">        The input window of values.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int or float</span>
+<span class="sd">        The most common non-zero value in the window, or 0 if all values</span>
+<span class="sd">        are zero.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Remove zeros from the window</span>
+    <span class="n">non_zero_values</span> <span class="o">=</span> <span class="n">window</span><span class="p">[</span><span class="n">window</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">non_zero_values</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>  <span class="c1"># If all values are zero, return 0</span>
+    <span class="c1"># Compute the mode (most common value)</span>
+    <span class="n">values</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">non_zero_values</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">values</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">counts</span><span class="p">)]</span></div>
+
+
+
+<div class="viewcode-block" id="apply_modal_filter">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.annotation_utils.apply_modal_filter.html#brainglobe_atlasapi.atlas_generation.annotation_utils.apply_modal_filter">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">apply_modal_filter</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">filter_size</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Apply a modal filter to the image, ignoring zero neighbors.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    image : numpy.ndarray</span>
+<span class="sd">        Input image as a 2D NumPy array.</span>
+<span class="sd">    filter_size : int</span>
+<span class="sd">        Size of the filtering window (must be odd).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numpy.ndarray</span>
+<span class="sd">        Filtered image.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Apply the modal filter using a sliding window</span>
+    <span class="n">filtered_image</span> <span class="o">=</span> <span class="n">generic_filter</span><span class="p">(</span>
+        <span class="n">image</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="n">modal_filter_ignore_zeros</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">filter_size</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">filtered_image</span></div>
 
 </pre></div>
 <div class="section ablog__blog_comments">

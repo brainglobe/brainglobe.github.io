@@ -59,4 +59,3 @@ community/index
 blog/index
 projects/index
 blackcap
-contact
