@@ -273,6 +273,7 @@ To know what atlases are available through BrainGlobe, we can use the `show_atla
     │  swc_female_rat_50um                                                 1.0     │
     │  unam_axolotl_40um                                                   1.1     │
     │  whs_sd_rat_39um                                                     1.2     │
+    │  whs_sd_swc_female_rat_39um                                          1.0     │
     ╰──────────────────────────────────────────────────────────────────────────────╯
 
 
@@ -301,7 +302,7 @@ and stored on your local machine (by default, in `~/.brainglobe`):
 
  .. code-block:: none
 
-    Downloading... ━━━━━━━━━━ 100.0% • 61.0/61.0   • speed: 30.5 MB/s • ETA: 0:00:00
+    Downloading... ━━━━━━━━━━ 100.0% • 61.0/61.0   • speed: 22.0 MB/s • ETA: 0:00:00
                                        MB                                           
 
 
@@ -404,7 +405,7 @@ Anatomical reference (or template) image:
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f4da9f1f5c0>
+    <matplotlib.image.AxesImage object at 0x7f61b1edee70>
 
 
 
@@ -441,7 +442,7 @@ Annotations stack
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f4dd6e35190>
+    <matplotlib.image.AxesImage object at 0x7f61df5320c0>
 
 
 
@@ -471,7 +472,7 @@ Hemisheres stack:
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f4dd6e82f00>
+    <matplotlib.image.AxesImage object at 0x7f61df570710>
 
 
 
@@ -1475,7 +1476,7 @@ To get the mask for a region, use
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f4dd6e5a6f0>
+    <matplotlib.image.AxesImage object at 0x7f61df572600>
 
 
 
@@ -1729,7 +1730,7 @@ Now print hemisphere string
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 13.522 seconds)
+   **Total running time of the script:** (0 minutes 16.182 seconds)
 
 
 .. _sphx_glr_download_api_examples_brainglobe_atlasapi.py:
