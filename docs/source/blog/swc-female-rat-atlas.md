@@ -27,7 +27,7 @@ This atlas is a population-based anatomical template generated from female Liste
 
 This atlas is particularly well suited for users who want to work in a **native, microscopy-derived female rat brain space**.
 
-![SWC female rat atlas](images/swc_female_rat.gif)
+![SWC female rat atlas](images/swc_female_rat-ezgif.com-video-to-gif-converter.gif)
 
 ### Waxholm Space–registered female rat atlas
 
@@ -41,7 +41,7 @@ To support interoperability with existing rat resources, we also provide a versi
 
 This atlas enables **direct comparison and integration** with datasets and tools that already rely on Waxholm Space, while retaining the fine anatomical detail of the SWC template.
 
-![Waxholm SWC female rat atlas](images/whs_swc_female_rat.gif)
+![Waxholm SWC female rat atlas](images/whs_swc_female_rat-ezgif.com-video-to-gif-converter.gif)
 
 ### Future plans
 
