@@ -82,7 +82,7 @@ To know what atlases are available through BrainGlobe, we can use the `show_atla
     │  admba_3d_p4_mouse_16.752um                                          1.1     │
     │  admba_3d_p56_mouse_25um                                             1.1     │
     │  african_molerat_20um                                                1.1     │
-    │  allen_cord_20um                                                     1.1     │
+    │  allen_cord_20um                                                     1.2     │
     │  allen_human_500um                                                   1.0     │
     │  allen_mouse_100um                                                   1.2     │
     │  allen_mouse_10um                                                    1.2     │
@@ -92,6 +92,7 @@ To know what atlases are available through BrainGlobe, we can use the `show_atla
     │  allen_mouse_bluebrain_barrels_2…                                    1.0     │
     │  australian_mouse_15um                                               1.0     │
     │  azba_zfish_4um                                                      1.2     │
+    │  carea_mouse_25um                                                    1.0     │
     │  ccfv3augmented_mouse_10um                                           1.0     │
     │  ccfv3augmented_mouse_25um                                           1.0     │
     │  columbia_cuttlefish_50um                                            1.0     │
@@ -302,7 +303,7 @@ and stored on your local machine (by default, in `~/.brainglobe`):
 
  .. code-block:: none
 
-    Downloading... ━━━━━━━━━━ 100.0% • 61.0/61.0   • speed: 15.0 MB/s • ETA: 0:00:00
+    Downloading... ━━━━━━━━━━ 100.0% • 61.0/61.0   • speed: 34.7 MB/s • ETA: 0:00:00
                                        MB                                           
 
 
@@ -405,7 +406,7 @@ Anatomical reference (or template) image:
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f062c241d30>
+    <matplotlib.image.AxesImage object at 0x7f6ab1f315e0>
 
 
 
@@ -442,7 +443,7 @@ Annotations stack
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f0659735af0>
+    <matplotlib.image.AxesImage object at 0x7f6adf3496d0>
 
 
 
@@ -472,7 +473,7 @@ Hemisheres stack:
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f065976e150>
+    <matplotlib.image.AxesImage object at 0x7f6adf35cce0>
 
 
 
@@ -1476,7 +1477,7 @@ To get the mask for a region, use
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f0659766ab0>
+    <matplotlib.image.AxesImage object at 0x7f6adf35c2c0>
 
 
 
@@ -1730,7 +1731,7 @@ Now print hemisphere string
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 20.005 seconds)
+   **Total running time of the script:** (0 minutes 12.887 seconds)
 
 
 .. _sphx_glr_download_api_examples_brainglobe_atlasapi.py:
