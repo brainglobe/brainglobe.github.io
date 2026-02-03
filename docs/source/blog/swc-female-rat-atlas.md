@@ -56,4 +56,4 @@ This upcoming release will further improve anatomical detail and support fine-sc
 
 Both atlases are available via the BrainGlobe Atlas API and can be used seamlessly with tools such as `brainreg`, `brainrender`, `napari`, and `brainrender-napari`.
 
-If you’re interested in using these atlases or collaborating on future developments, feel free to get in touch via the BrainGlobe GitHub or SWC
+If you’re interested in using these atlases or collaborating on future developments, feel free to [get in touch](/contact).
