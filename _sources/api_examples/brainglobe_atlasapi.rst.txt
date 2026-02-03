@@ -92,7 +92,7 @@ To know what atlases are available through BrainGlobe, we can use the `show_atla
     │  allen_mouse_bluebrain_barrels_2…                                    1.0     │
     │  australian_mouse_15um                                               1.0     │
     │  azba_zfish_4um                                                      1.2     │
-    │  carea_mouse_25um                                                    1.0     │
+    │  carea_mouse_25um                                                    1.1     │
     │  ccfv3augmented_mouse_10um                                           1.0     │
     │  ccfv3augmented_mouse_25um                                           1.0     │
     │  columbia_cuttlefish_50um                                            1.0     │
@@ -303,7 +303,7 @@ and stored on your local machine (by default, in `~/.brainglobe`):
 
  .. code-block:: none
 
-    Downloading... ━━━━━━━━━━ 100.0% • 61.0/61.0   • speed: 34.7 MB/s • ETA: 0:00:00
+    Downloading... ━━━━━━━━━━ 100.0% • 61.0/61.0   • speed: 34.1 MB/s • ETA: 0:00:00
                                        MB                                           
 
 
@@ -406,7 +406,7 @@ Anatomical reference (or template) image:
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f6ab1f315e0>
+    <matplotlib.image.AxesImage object at 0x7f2c26748fb0>
 
 
 
@@ -443,7 +443,7 @@ Annotations stack
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f6adf3496d0>
+    <matplotlib.image.AxesImage object at 0x7f2c53422990>
 
 
 
@@ -473,7 +473,7 @@ Hemisheres stack:
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f6adf35cce0>
+    <matplotlib.image.AxesImage object at 0x7f2c5346b410>
 
 
 
@@ -1477,7 +1477,7 @@ To get the mask for a region, use
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f6adf35c2c0>
+    <matplotlib.image.AxesImage object at 0x7f2c5345b080>
 
 
 
@@ -1731,7 +1731,7 @@ Now print hemisphere string
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 12.887 seconds)
+   **Total running time of the script:** (0 minutes 13.305 seconds)
 
 
 .. _sphx_glr_download_api_examples_brainglobe_atlasapi.py:
