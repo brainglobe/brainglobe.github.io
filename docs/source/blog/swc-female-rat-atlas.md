@@ -15,7 +15,7 @@ We’re excited to announce the release of two rat brain atlases generated at th
 These atlases expand the available rat resources by providing **two-photon microscopy–based, three-dimensional templates derived from juvenile female animals**, addressing gaps in both resolution and biological diversity in existing rat atlases.
 
 
-### Native female rat atlas
+## Native female rat atlas
 
 This atlas is a population-based anatomical template generated from female Lister Hooded rats (5–8 weeks old) using automated serial two-photon tomography.
 
@@ -29,7 +29,7 @@ This atlas is particularly well suited for users who want to work in a **native,
 
 ![SWC female rat atlas](images/swc_female_rat.gif)
 
-### Waxholm Space–registered female rat atlas
+## Waxholm Space–registered female rat atlas
 
 To support interoperability with existing rat resources, we also provide a version of the SWC female rat template registered to Waxholm Space.
 
@@ -43,7 +43,7 @@ This atlas enables **direct comparison and integration** with datasets and tools
 
 ![Waxholm SWC female rat atlas](images/whs_swc_female_rat.gif)
 
-### Future plans
+## Future plans
 
 Work is ongoing to generate a higher-resolution version of the atlas:
 
@@ -52,7 +52,7 @@ Work is ongoing to generate a higher-resolution version of the atlas:
 This upcoming release will further improve anatomical detail and support fine-scale analyses.
 
 
-### Availability and collaboration 
+## Availability and collaboration 
 
 Both atlases are available via the BrainGlobe Atlas API and can be used seamlessly with tools such as `brainreg`, `brainrender`, `napari`, and `brainrender-napari`.
 

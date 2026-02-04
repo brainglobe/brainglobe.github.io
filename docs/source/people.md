@@ -693,8 +693,8 @@ In no particular order:
 :::
 
 :::{grid-item-card} Leoni-Marie Webb
-:img-bottom: 
-:link: 
+:img-bottom: /_static/molerat.png
+:link: https://www.linkedin.com/in/leoni-marie-webb-b87504251
 :::
 
 :::{grid-item-card} Nishanth B
