@@ -403,6 +403,15 @@ manually delineated.
 Available versions:
 * `dorr_mouse_mri_32um`
 
+### [CArea Mouse Atlas](https://doi.org/10.64898/2026.01.20.700446)
+This atlas has regions which are automatically clustered based on three dimensional maps of gene expression. Voxels 
+with similar patterns of gene expression are assigned the same region ID. The template is a population average Nissl 
+volume, based on the CCFv3BBP atlas (also in 
+[brainglobe](https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html#ccfv3-augmented-mouse-atlas)) 
+with some improvements. This atlas was constructed from reregistered ISH data from the Allen Institute for Brain Science. 
+
+Available versions:
+* `carea_mouse_25um`
 ## Rat
 ### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
 The Waxholm Space rat brain atlas features annotations of 222 structures, alongside a 39μm MRI template. It provides detailed delineations 
