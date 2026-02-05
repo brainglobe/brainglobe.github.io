@@ -407,7 +407,7 @@ Available versions:
 This atlas has regions which are automatically clustered based on three dimensional maps of gene expression. Voxels 
 with similar patterns of gene expression are assigned the same region ID. The template is a population average Nissl 
 volume, based on the CCFv3BBP atlas (also in 
-[brainglobe](https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html#ccfv3-augmented-mouse-atlas)) 
+[BrainGlobe](https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html#ccfv3-augmented-mouse-atlas)) 
 with some improvements. This atlas was constructed from reregistered ISH data from the Allen Institute for Brain Science. 
 
 Available versions:
