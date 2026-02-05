@@ -21,6 +21,7 @@ In the future, atlases regions may be defined automatically based on cell type, 
 
 
 ![A flythrough of the CArea template and annotations](images/carea_flythrough.gif)
+
 **Figure 1. Two-dimensional view of the CArea Mouse atlas: reference (left) and annotations (right)** 
 
 ## How do I use the new atlas?
@@ -33,5 +34,6 @@ The end result will look something like Figure 2.
 
 ![CArea atlas visualised in napari](images/carea_napari_visualisation.png)
 **Figure 2. CArea atlas visualised with `brainrender-napari`.** 
+
 ## Why are we adding new atlases?
 A fundamental aim of the BrainGlobe project is to make various brain atlases easily accessible by users across the globe. If you would like to get involved with a similar project, please [get in touch](/contact).
