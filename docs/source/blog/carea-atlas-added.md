@@ -23,8 +23,5 @@ In the future, atlases regions may be defined automatically based on cell type, 
 ![CArea mouse atlas](images/carea_flythrough.gif)
 
 
-### Availability and collaboration 
-
-The atlas is available via the BrainGlobe Atlas API and can be used seamlessly with tools such as `brainreg`, `brainrender`, `napari`, and `brainrender-napari`.
-
-If you’re interested in using this atlas or collaborating on future developments, feel free to [get in touch](/contact).
+## Why are we adding new atlases?
+A fundamental aim of the BrainGlobe project is to make various brain atlases easily accessible by users across the globe. If you would like to get involved with a similar project, please [get in touch](/contact).
