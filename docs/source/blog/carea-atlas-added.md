@@ -20,8 +20,7 @@ In the future, atlases regions may be defined automatically based on cell type, 
 
 
 
-![CArea mouse atlas](images/carea_flythrough.gif)
-
+<img src="images/carea_flythrough.gif" alt="CArea mouse atlas" style="width: 2000rem;">
 
 ## Why are we adding new atlases?
 A fundamental aim of the BrainGlobe project is to make various brain atlases easily accessible by users across the globe. If you would like to get involved with a similar project, please [get in touch](/contact).
