@@ -10,7 +10,7 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
+import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
@@ -200,6 +200,12 @@ linkcheck_ignore = [
     "https://brainglobe.info",
     "https://doi.org/10.1162/imag_a_00209"
     ]
+
+linkcheck_request_headers = {
+    "https://github.com": {
+        "Authorization": f"Bearer {os.environ.get('GITHUB_TOKEN', '')}",
+    },
+}
 
 # To ignore warnings, as these files aren't used directly
 exclude_patterns = ['**_examples_source']
