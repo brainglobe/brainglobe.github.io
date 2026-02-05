@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: February 3, 2026
+date: February 5, 2026
 author: Harry Carey
 location: London, England
 category: brainglobe
