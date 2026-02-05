@@ -22,5 +22,14 @@ In the future, atlases regions may be defined automatically based on cell type, 
 
 <img src="images/carea_flythrough.gif" alt="CArea mouse atlas" style="width: 2000rem;">
 
+## How do I use the new atlas?
+You can use the CArea mouse atlas like all other BrainGlobe atlases. To visualise the atlas, you could follow the steps below:
+* Install BrainGlobe ([instructions](/documentation/index)).
+* Open Napari and follow the steps in our [download tutorial](/tutorials/manage-atlases-in-GUI.md) for the `carea_mouse_25um` atlas.
+* Run `napari -w brainrender-napari` and visualise the different parts of the atlas as described in our [visualisation tutorial](/tutorials/visualise-atlas-napari).
+
+The end result will look something like Figure 2.
+
+![Dorr atlas visualised in napari](images/carea_napari_visualisation.png)
 ## Why are we adding new atlases?
 A fundamental aim of the BrainGlobe project is to make various brain atlases easily accessible by users across the globe. If you would like to get involved with a similar project, please [get in touch](/contact).
