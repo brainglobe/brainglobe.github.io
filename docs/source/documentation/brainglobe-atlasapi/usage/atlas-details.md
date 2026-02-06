@@ -420,6 +420,21 @@ It is comprehensive, covering the entire rat brain.
 This atlas is only available at 39μm resolution:
 * `whs_sd_rat_39um`
 
+### [SWC Female Rat Brain Atlas](https://brainglobe.info/blog/swc-female-rat-atlas.html#native-female-rat-atlas)
+This atlas is a population-based anatomical template generated from female Lister Hooded rats (5–8 weeks old) using automated serial two-photon tomography. 
+It provides a three-dimensional template derived from juvenile female animals, addressing gaps in both resolution and biological diversity in existing rat atlases. 
+The atlas is particularly well suited for users who want to work in a native, microscopy-derived female rat brain space. The annotations are curated and adapted from the Waxholm Space rat brain atlas.
+
+This atlas is only available at 50μm resolution:
+* `swc_female_rat_50um`
+
+### [Waxholm-aligned SWC Female Rat Atlas](https://brainglobe.info/blog/swc-female-rat-atlas.html#waxholm-space-registered-female-rat-atlas)
+To support interoperability with existing rat resources, this atlas provides a version of the SWC female rat template registered to Waxholm Space. 
+The template is resampled from 50μm to 39μm during registration to Waxholm Space, enabling direct comparison and integration with datasets and tools that already rely on Waxholm Space, while retaining the fine anatomical detail of the SWC template. The annotations are from the Waxholm Space rat brain atlas.
+
+This atlas is only available at 39μm resolution (resampled from 50 µm during registration to Waxholm Space):
+* `whs_sd_swc_female_rat_39um`
+
 ## Other rodent
 ### [Prairie vole brain atlas](https://doi.org/10.7554/eLife.87029.3.sa0)
 This is a brain atlas of the Prairie vole (Microtus ochrogaster) from

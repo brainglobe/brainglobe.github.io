@@ -88,6 +88,10 @@ exclude_patterns = [
     # to ensure that include files (partial pages) aren't built, exclude them
     # https://github.com/sphinx-doc/sphinx/issues/1965#issuecomment-124732907
     "**/includes/**",
+    # exclude partial table file (included via {include} directive)
+    "documentation/brainglobe-atlasapi/_atlas_table.md",
+    # To ignore warnings, as these files aren't used directly
+    "**_examples_source",
 ]
 
 
@@ -201,5 +205,3 @@ linkcheck_ignore = [
     "https://doi.org/10.1162/imag_a_00209"
     ]
 
-# To ignore warnings, as these files aren't used directly
-exclude_patterns = ['**_examples_source']
