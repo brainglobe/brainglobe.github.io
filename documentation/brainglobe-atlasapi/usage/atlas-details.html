@@ -526,6 +526,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html">BrainGlobeAtlas</a></li>
 </ul>
 </details></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/brainglobe_atlasapi.atlas_name.html">brainglobe_atlasapi.atlas_name</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../api/brainglobe_atlasapi.list_atlases.html">brainglobe_atlasapi.list_atlases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/brainglobe_atlasapi.list_atlases.add_atlas_to_row.html">add_atlas_to_row</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/brainglobe_atlasapi.list_atlases.get_all_atlases_lastversions.html">get_all_atlases_lastversions</a></li>
@@ -577,6 +578,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../api/brainglobe_atlasapi.atlas_generation.validate_atlases.validate_atlas.html">validate_atlas</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/brainglobe_atlasapi.atlas_generation.validate_atlases.validate_atlas_files.html">validate_atlas_files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/brainglobe_atlasapi.atlas_generation.validate_atlases.validate_atlas_name.html">validate_atlas_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/brainglobe_atlasapi.atlas_generation.validate_atlases.validate_atlas_name_listed.html">validate_atlas_name_listed</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/brainglobe_atlasapi.atlas_generation.validate_atlases.validate_checksum.html">validate_checksum</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/brainglobe_atlasapi.atlas_generation.validate_atlases.validate_image_dimensions.html">validate_image_dimensions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/brainglobe_atlasapi.atlas_generation.validate_atlases.validate_mesh_matches_image_extents.html">validate_mesh_matches_image_extents</a></li>
@@ -1437,6 +1439,25 @@ This atlas is only available at 39μm resolution:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">whs_sd_rat_39um</span></code></p></li>
 </ul>
 </section>
+<section id="swc-female-rat-brain-atlas">
+<h3><a class="reference external" href="https://brainglobe.info/blog/swc-female-rat-atlas.html#native-female-rat-atlas">SWC Female Rat Brain Atlas</a><a class="headerlink" href="#swc-female-rat-brain-atlas" title="Link to this heading">#</a></h3>
+<p>This atlas is a population-based anatomical template generated from female Lister Hooded rats (5–8 weeks old) using automated serial two-photon tomography.
+It provides a three-dimensional template derived from juvenile female animals, addressing gaps in both resolution and biological diversity in existing rat atlases.
+The atlas is particularly well suited for users who want to work in a native, microscopy-derived female rat brain space. The annotations are curated and adapted from the Waxholm Space rat brain atlas.</p>
+<p>This atlas is only available at 50μm resolution:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">swc_female_rat_50um</span></code></p></li>
+</ul>
+</section>
+<section id="waxholm-aligned-swc-female-rat-atlas">
+<h3><a class="reference external" href="https://brainglobe.info/blog/swc-female-rat-atlas.html#waxholm-space-registered-female-rat-atlas">Waxholm-aligned SWC Female Rat Atlas</a><a class="headerlink" href="#waxholm-aligned-swc-female-rat-atlas" title="Link to this heading">#</a></h3>
+<p>To support interoperability with existing rat resources, this atlas provides a version of the SWC female rat template registered to Waxholm Space.
+The template is resampled from 50μm to 39μm during registration to Waxholm Space, enabling direct comparison and integration with datasets and tools that already rely on Waxholm Space, while retaining the fine anatomical detail of the SWC template. The annotations are from the Waxholm Space rat brain atlas.</p>
+<p>This atlas is only available at 39μm resolution (resampled from 50 µm during registration to Waxholm Space):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">whs_sd_swc_female_rat_39um</span></code></p></li>
+</ul>
+</section>
 </section>
 <section id="other-rodent">
 <h2>Other rodent<a class="headerlink" href="#other-rodent" title="Link to this heading">#</a></h2>
@@ -1640,6 +1661,8 @@ This atlas has 2um isotropic resolution.</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rat">Rat</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waxholm-space-atlas-of-the-sprague-dawley-rat-brain">Waxholm Space atlas of the Sprague Dawley rat brain</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#swc-female-rat-brain-atlas">SWC Female Rat Brain Atlas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waxholm-aligned-swc-female-rat-atlas">Waxholm-aligned SWC Female Rat Atlas</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-rodent">Other rodent</a><ul class="nav section-nav flex-column">

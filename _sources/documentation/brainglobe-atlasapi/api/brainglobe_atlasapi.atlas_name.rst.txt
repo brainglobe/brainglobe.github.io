@@ -1,0 +1,11 @@
+﻿brainglobe\_atlasapi.atlas\_name
+================================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.atlas_name
+
+.. currentmodule:: brainglobe_atlasapi.atlas_name
+
+
+

@@ -539,10 +539,12 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_args</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">BrainGlobeAtlas</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.atlas_name</span><span class="w"> </span><span class="kn">import</span> <span class="n">AtlasName</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_brainglobe_dir</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.descriptors</span><span class="w"> </span><span class="kn">import</span> <span class="n">METADATA_TEMPLATE</span><span class="p">,</span> <span class="n">REFERENCE_DTYPE</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.list_atlases</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
@@ -1078,6 +1080,34 @@
 
 
 
+<div class="viewcode-block" id="validate_atlas_name_listed">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.validate_atlases.validate_atlas_name_listed.html#brainglobe_atlasapi.atlas_generation.validate_atlases.validate_atlas_name_listed">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">validate_atlas_name_listed</span><span class="p">(</span><span class="n">atlas</span><span class="p">:</span> <span class="n">BrainGlobeAtlas</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Validate that the atlas name is listed in atlas_name.py.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atlas : BrainGlobeAtlas</span>
+<span class="sd">        The BrainGlobeAtlas object to validate.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if the atlas name is listed in atlas_name.py.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    AssertionError</span>
+<span class="sd">        If the atlas name is not listed in atlas_name.py.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">atlas_name</span>
+    <span class="k">assert</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">get_args</span><span class="p">(</span>
+        <span class="n">AtlasName</span>
+    <span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Atlas name </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> is not listed in atlas_name.py&quot;</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+
 <div class="viewcode-block" id="validate_metadata">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.validate_atlases.validate_metadata.html#brainglobe_atlasapi.atlas_generation.validate_atlases.validate_metadata">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">validate_metadata</span><span class="p">(</span><span class="n">atlas</span><span class="p">:</span> <span class="n">BrainGlobeAtlas</span><span class="p">):</span>
@@ -1140,6 +1170,7 @@
         <span class="n">validate_annotation_symmetry</span><span class="p">,</span>
         <span class="n">validate_unique_acronyms</span><span class="p">,</span>
         <span class="n">validate_atlas_name</span><span class="p">,</span>
+        <span class="n">validate_atlas_name_listed</span><span class="p">,</span>
     <span class="p">]</span></div>
 
 
@@ -1197,20 +1228,7 @@
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Main execution block for running atlas validations.&quot;&quot;&quot;</span>
     <span class="c1"># list to store the validation functions</span>
-    <span class="n">all_validation_functions</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">validate_atlas_files</span><span class="p">,</span>
-        <span class="n">validate_mesh_matches_image_extents</span><span class="p">,</span>
-        <span class="n">open_for_visual_check</span><span class="p">,</span>
-        <span class="n">validate_checksum</span><span class="p">,</span>
-        <span class="n">validate_image_dimensions</span><span class="p">,</span>
-        <span class="n">validate_additional_references</span><span class="p">,</span>
-        <span class="n">catch_missing_mesh_files</span><span class="p">,</span>
-        <span class="n">catch_missing_structures</span><span class="p">,</span>
-        <span class="n">validate_reference_image_pixels</span><span class="p">,</span>
-        <span class="n">validate_annotation_symmetry</span><span class="p">,</span>
-        <span class="n">validate_unique_acronyms</span><span class="p">,</span>
-        <span class="n">validate_atlas_name</span><span class="p">,</span>
-    <span class="p">]</span>
+    <span class="n">all_validation_functions</span> <span class="o">=</span> <span class="n">get_all_validation_functions</span><span class="p">()</span>
 
     <span class="n">valid_atlases</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">invalid_atlases</span> <span class="o">=</span> <span class="p">[]</span>

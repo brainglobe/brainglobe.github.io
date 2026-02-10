@@ -34,6 +34,8 @@
     
     validate_atlas_name
     
+    validate_atlas_name_listed
+    
     validate_checksum
     
     validate_image_dimensions
