@@ -722,6 +722,11 @@ In no particular order:
 :link: https://github.com/sid-42-d
 :::
 
+:::{grid-item-card} James Rowland
+:img-bottom: https://avatars.githubusercontent.com/u/28537547?v=4
+:link: https://github.com/neuromantic99
+:::
+
 ::::
 
 
