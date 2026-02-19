@@ -713,7 +713,7 @@ Annotation files are stored in an OME-zarr file in the cloud.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">annotations</span><span class="o">.</span><span class="n">metadata</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Metadata(axes=[Axis(name=&#39;z&#39;, type=&#39;space&#39;, unit=&#39;millimeter&#39;, orientation={&#39;type&#39;: &#39;anatomical&#39;, &#39;direction&#39;: &#39;anterior-to-posterior&#39;}), Axis(name=&#39;y&#39;, type=&#39;space&#39;, unit=&#39;millimeter&#39;, orientation={&#39;type&#39;: &#39;anatomical&#39;, &#39;direction&#39;: &#39;superior-to-inferior&#39;}), Axis(name=&#39;x&#39;, type=&#39;space&#39;, unit=&#39;millimeter&#39;, orientation={&#39;type&#39;: &#39;anatomical&#39;, &#39;direction&#39;: &#39;right-to-left&#39;})], datasets=[Dataset(path=&#39;0&#39;, coordinateTransformations=[Scale(scale=[0.01, 0.01, 0.01], type=&#39;scale&#39;)]), Dataset(path=&#39;1&#39;, coordinateTransformations=[Scale(scale=[0.025, 0.025, 0.025], type=&#39;scale&#39;)]), Dataset(path=&#39;2&#39;, coordinateTransformations=[Scale(scale=[0.05, 0.05, 0.05], type=&#39;scale&#39;)]), Dataset(path=&#39;3&#39;, coordinateTransformations=[Scale(scale=[0.1, 0.1, 0.1], type=&#39;scale&#39;)])], coordinateTransformations=None, omero=None, name=&#39;/&#39;, type=None, metadata=None)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Metadata(axes=[Axis(name=&#39;z&#39;, type=&#39;space&#39;, unit=&#39;millimeter&#39;, orientation={&#39;type&#39;: &#39;anatomical&#39;, &#39;value&#39;: &#39;anterior-to-posterior&#39;}), Axis(name=&#39;y&#39;, type=&#39;space&#39;, unit=&#39;millimeter&#39;, orientation={&#39;type&#39;: &#39;anatomical&#39;, &#39;value&#39;: &#39;superior-to-inferior&#39;}), Axis(name=&#39;x&#39;, type=&#39;space&#39;, unit=&#39;millimeter&#39;, orientation={&#39;type&#39;: &#39;anatomical&#39;, &#39;value&#39;: &#39;right-to-left&#39;})], datasets=[Dataset(path=&#39;0&#39;, coordinateTransformations=[Scale(scale=[0.01, 0.01, 0.01], type=&#39;scale&#39;)]), Dataset(path=&#39;1&#39;, coordinateTransformations=[Scale(scale=[0.025, 0.025, 0.025], type=&#39;scale&#39;)]), Dataset(path=&#39;2&#39;, coordinateTransformations=[Scale(scale=[0.05, 0.05, 0.05], type=&#39;scale&#39;)]), Dataset(path=&#39;3&#39;, coordinateTransformations=[Scale(scale=[0.1, 0.1, 0.1], type=&#39;scale&#39;)])], coordinateTransformations=None, omero=None, name=&#39;/&#39;, type=None, metadata=None)
 </pre></div>
 </div>
 <p>We can see from the metadata that the zarr contains multiple resolution levels (a pyramid).
@@ -740,7 +740,7 @@ For this tutorial, we will use the highest resolution level (level 0).</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lut</span><span class="p">[</span><span class="n">annotation_image</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:]</span> <span class="o">%</span> <span class="n">N</span><span class="p">])</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_explore_atlas_001.png" srcset="../_images/sphx_glr_explore_atlas_001.png" alt="explore atlas" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7fd09502fad0&gt;
+<img src="../_images/sphx_glr_explore_atlas_001.png" srcset="../_images/sphx_glr_explore_atlas_001.png" alt="explore atlas" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7fd1df472480&gt;
 </pre></div>
 </div>
 <p>Combining the annotation data with our RSP IDs allows us to calculate the volume of the RSP,
@@ -763,7 +763,7 @@ RSP has volume of around 11.0 cubic millimeters
 <p>In conclusion, this tutorial shows how to programmatically access and process atlas data for
 the specific purpose of calculating a region volume. More generally, it also constitutes an example for
 BrainGlobe atlas data being used independently of the BrainGlobe software tools.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 32.622 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 27.654 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-aws-examples-explore-atlas-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/fc12a6a5a016d084e9466efdf58f2d6e/explore_atlas.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">explore_atlas.ipynb</span></code></a></p>

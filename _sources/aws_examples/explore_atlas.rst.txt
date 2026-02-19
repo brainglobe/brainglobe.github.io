@@ -238,7 +238,7 @@ Annotation files are stored in an OME-zarr file in the cloud.
 
  .. code-block:: none
 
-    Metadata(axes=[Axis(name='z', type='space', unit='millimeter', orientation={'type': 'anatomical', 'direction': 'anterior-to-posterior'}), Axis(name='y', type='space', unit='millimeter', orientation={'type': 'anatomical', 'direction': 'superior-to-inferior'}), Axis(name='x', type='space', unit='millimeter', orientation={'type': 'anatomical', 'direction': 'right-to-left'})], datasets=[Dataset(path='0', coordinateTransformations=[Scale(scale=[0.01, 0.01, 0.01], type='scale')]), Dataset(path='1', coordinateTransformations=[Scale(scale=[0.025, 0.025, 0.025], type='scale')]), Dataset(path='2', coordinateTransformations=[Scale(scale=[0.05, 0.05, 0.05], type='scale')]), Dataset(path='3', coordinateTransformations=[Scale(scale=[0.1, 0.1, 0.1], type='scale')])], coordinateTransformations=None, omero=None, name='/', type=None, metadata=None)
+    Metadata(axes=[Axis(name='z', type='space', unit='millimeter', orientation={'type': 'anatomical', 'value': 'anterior-to-posterior'}), Axis(name='y', type='space', unit='millimeter', orientation={'type': 'anatomical', 'value': 'superior-to-inferior'}), Axis(name='x', type='space', unit='millimeter', orientation={'type': 'anatomical', 'value': 'right-to-left'})], datasets=[Dataset(path='0', coordinateTransformations=[Scale(scale=[0.01, 0.01, 0.01], type='scale')]), Dataset(path='1', coordinateTransformations=[Scale(scale=[0.025, 0.025, 0.025], type='scale')]), Dataset(path='2', coordinateTransformations=[Scale(scale=[0.05, 0.05, 0.05], type='scale')]), Dataset(path='3', coordinateTransformations=[Scale(scale=[0.1, 0.1, 0.1], type='scale')])], coordinateTransformations=None, omero=None, name='/', type=None, metadata=None)
 
 
 
@@ -305,7 +305,7 @@ By plotting a slice of the array contents, we can see the various regions encode
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7fd09502fad0>
+    <matplotlib.image.AxesImage object at 0x7fd1df472480>
 
 
 
@@ -351,7 +351,7 @@ BrainGlobe atlas data being used independently of the BrainGlobe software tools.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 32.622 seconds)
+   **Total running time of the script:** (0 minutes 27.654 seconds)
 
 
 .. _sphx_glr_download_aws_examples_explore_atlas.py:

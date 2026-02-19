@@ -535,7 +535,9 @@
                    <h1>Source code for brainglobe_atlasapi.bg_atlas</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;Defines the BrainGlobeAtlas class for accessing brain atlas data.&quot;&quot;&quot;</span>
 
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">tarfile</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">io</span><span class="w"> </span><span class="kn">import</span> <span class="n">StringIO</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
@@ -634,7 +636,24 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">download_extract_file</span><span class="p">()</span>
 
         <span class="c1"># Instantiate after eventual download:</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">brainglobe_dir</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">local_full_name</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">attempt</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">brainglobe_dir</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">local_full_name</span><span class="p">)</span>
+                <span class="k">break</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">FileNotFoundError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">attempt</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="k">raise</span>
+
+                <span class="n">atlas_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">brainglobe_dir</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">local_full_name</span>
+                <span class="k">if</span> <span class="n">atlas_path</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span> <span class="ow">and</span> <span class="n">atlas_path</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+                    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                        <span class="s2">&quot;Atlas metadata appears corrupted or incomplete. &quot;</span>
+                        <span class="s2">&quot;Re-downloading atlas...&quot;</span><span class="p">,</span>
+                        <span class="ne">UserWarning</span><span class="p">,</span>
+                    <span class="p">)</span>
+                    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">atlas_path</span><span class="p">)</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">download_extract_file</span><span class="p">()</span>
 
         <span class="k">if</span> <span class="n">check_latest</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">check_latest_version</span><span class="p">()</span>
@@ -693,7 +712,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">remote_url</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Format complete url for download.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Format complete url for download, or None if unavailable.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">remote_version</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">name</span> <span class="o">=</span> <span class="p">(</span>
                 <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">_v</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">remote_version</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">.&quot;</span>
