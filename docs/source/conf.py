@@ -173,6 +173,7 @@ html_theme_options = {
     "footer_start": ["footer_start"],
     "footer_end": ["footer_end"],
     "external_links": [],
+     "announcement": "Would you like a paid internship with BrainGlobe this summer? We're taking part in <a href='https://neuroinformatics.dev/get-involved/gsoc/index.html'>Google Summer of Code</a> with the Neuroinformatics Unit!",
 }
 
 
