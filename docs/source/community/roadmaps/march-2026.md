@@ -2,4 +2,24 @@
 
 ## Current status
 
-## Future
+### High-level priorities for the next year
+
+* enable `cellfinder` to analyse more cells (millions) with more detail (e.g intensity)
+* make template-building and annotation widely accessible
+* make atlas downloads faster and leaner (BrainGlobe Atlas API v2)
+* broaden the range of atlas-registered data available within BrainGlobe, and make accessible via BrainGlobe GUIs (BrainGlobe Data API)
+* register arbitrary subvolumes/planes to atlases with `brainglobe-registration`
+* add existing API documentation to website
+
+### Recent progress
+
+* PyTorch backend for cellfinder, enabling use with the latest versions of Python & release on conda-forge.
+* Registration of 2D (e.g. conventional sections) data to an atlas (in alpha)
+* Template building tools have been used with help of the BrainGlobe team to make three new atlases.
+* Improvements to test coverage, bencharking tools, documentation and ease of installation
+* Many atlas bugs were fixed, and validation improved
+
+## Future plans
+
+* Consistent and documented API, e.g. `from brainglobe import cellfinder` or `from brainglobe import cell_detector_3D` (or both)
+* A `napari` meta-plugin
