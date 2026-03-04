@@ -16,7 +16,7 @@ print("Starting to fetch repositories...")
 # Format: (repository_url, local_download_path, branch, optional_dependencies)
 # Use empty string for no optional dependencies.
 REPOS = [
-    ("https://github.com/brainglobe/brainglobe-atlasapi.git", "downloads/brainglobe-atlasapi", "main", "[atlasgen]"),
+    ("https://github.com/brainglobe/brainglobe-atlasapi.git", "downloads/brainglobe-atlasapi", "main", ""),
     # Add more (url, path, branch, optional) pairs as needed
 ]
 
