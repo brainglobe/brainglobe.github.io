@@ -727,6 +727,11 @@ In no particular order:
 :link: https://github.com/neuromantic99
 :::
 
+:::{grid-item-card} Kavyashah067
+:img-bottom: https://avatars.githubusercontent.com/u/151618561?v=4
+:link: https://github.com/Kavyashah067
+:::
+
 ::::
 
 
