@@ -88,6 +88,10 @@ exclude_patterns = [
     # to ensure that include files (partial pages) aren't built, exclude them
     # https://github.com/sphinx-doc/sphinx/issues/1965#issuecomment-124732907
     "**/includes/**",
+    # exclude partial table file (included via {include} directive)
+    "documentation/brainglobe-atlasapi/_atlas_table.md",
+    # To ignore warnings, as these files aren't used directly
+    "**_examples_source",
 ]
 
 
@@ -169,7 +173,7 @@ html_theme_options = {
     "footer_start": ["footer_start"],
     "footer_end": ["footer_end"],
     "external_links": [],
-       "announcement": "Learn more about BrainGlobe at the <a href='https://neuroinformatics.dev/open-software-summer-school/index.html'>Neuroinformatics Unit Open Software Summer School</a> in London, August 2026!",
+     "announcement": "Would you like a paid internship with BrainGlobe this summer? We're taking part in <a href='https://neuroinformatics.dev/get-involved/gsoc/index.html'>Google Summer of Code</a> with the Neuroinformatics Unit!",
 }
 
 

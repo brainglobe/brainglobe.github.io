@@ -403,6 +403,15 @@ manually delineated.
 Available versions:
 * `dorr_mouse_mri_32um`
 
+### [CArea Mouse Atlas](https://doi.org/10.64898/2026.01.20.700446)
+This atlas has regions which are automatically clustered based on three dimensional maps of gene expression. Voxels 
+with similar patterns of gene expression are assigned the same region ID. The template is a population average Nissl 
+volume, based on the CCFv3BBP atlas (also in 
+[BrainGlobe](https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html#ccfv3-augmented-mouse-atlas)) 
+with some improvements. This atlas was constructed from reregistered ISH data from the Allen Institute for Brain Science. 
+
+Available versions:
+* `carea_mouse_25um`
 ## Rat
 ### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
 The Waxholm Space rat brain atlas features annotations of 222 structures, alongside a 39μm MRI template. It provides detailed delineations 
@@ -410,6 +419,21 @@ of the cerebral cortex, hippocampus, striatopallidal areas, midbrain, thalamus, 
 It is comprehensive, covering the entire rat brain. 
 This atlas is only available at 39μm resolution:
 * `whs_sd_rat_39um`
+
+### [SWC Female Rat Brain Atlas](https://brainglobe.info/blog/swc-female-rat-atlas.html#native-female-rat-atlas)
+This atlas is a population-based anatomical template generated from female Lister Hooded rats (5–8 weeks old) using automated serial two-photon tomography. 
+It provides a three-dimensional template derived from juvenile female animals, addressing gaps in both resolution and biological diversity in existing rat atlases. 
+The atlas is particularly well suited for users who want to work in a native, microscopy-derived female rat brain space. The annotations are curated and adapted from the Waxholm Space rat brain atlas.
+
+This atlas is only available at 50μm resolution:
+* `swc_female_rat_50um`
+
+### [Waxholm-aligned SWC Female Rat Atlas](https://brainglobe.info/blog/swc-female-rat-atlas.html#waxholm-space-registered-female-rat-atlas)
+To support interoperability with existing rat resources, this atlas provides a version of the SWC female rat template registered to Waxholm Space. 
+The template is resampled from 50μm to 39μm during registration to Waxholm Space, enabling direct comparison and integration with datasets and tools that already rely on Waxholm Space, while retaining the fine anatomical detail of the SWC template. The annotations are from the Waxholm Space rat brain atlas.
+
+This atlas is only available at 39μm resolution (resampled from 50 µm during registration to Waxholm Space):
+* `whs_sd_swc_female_rat_39um`
 
 ## Other rodent
 ### [Prairie vole brain atlas](https://doi.org/10.7554/eLife.87029.3.sa0)

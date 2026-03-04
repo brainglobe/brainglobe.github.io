@@ -1,0 +1,39 @@
+---
+blogpost: true
+date: February 5, 2026
+author: Harry Carey
+location: London, England
+category: brainglobe
+language: English
+---
+
+
+# New mouse brain atlas based on gene expression
+
+The CArea atlas has been added to BrainGlobe. Regions in this atlas are delineated based on clustering 3D volumes of gene expression, finding voxels with similar "gene expression fingerprints". Data from over 1000 mice was used to generate both volumes of gene expression, and an average Nissl template. This template is a slightly improved and updated version the [CCFv3BBP template](https://doi.org/10.1162/imag_a_00565) (also in BrainGlobe as [ccfv3augmented_mouse](https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html#ccfv3-augmented-mouse-atlas)). 
+
+In the future, atlases regions may be defined automatically based on cell type, pathology, or other properties which can be mapped to a template. A paper describing this atlas and the accompanying gene expression dataset is now available on [bioRxiv](https://doi.org/10.64898/2026.01.20.700446). The ISH data is originally sourced from the [Allen Brain Atlas ISH dataset](https://mouse.brain-map.org/). The reconstructed gene volumes have a [web app](https://neural-systems-at-uio.github.io/spatial_brain_maps/) for searching and interacting with them. 
+
+- **Atlas name:** `carea_mouse_25um`
+- **Resolution:** 25 µm isotropic
+- **Template space:** Aligned to the CCFv3BBP
+
+
+
+![A flythrough of the CArea template and annotations](images/carea_flythrough.gif)
+
+**Figure 1. Two-dimensional view of the CArea Mouse atlas: reference (left) and annotations (right)** 
+
+## How do I use the new atlas?
+You can use the CArea mouse atlas like all other BrainGlobe atlases. To visualise the atlas, you could follow the steps below:
+* Install BrainGlobe ([instructions](/documentation/index)).
+* Open Napari and follow the steps in our [download tutorial](/tutorials/manage-atlases-in-GUI.md) for the `carea_mouse_25um` atlas.
+* Run `napari -w brainrender-napari` and visualise the different parts of the atlas as described in our [visualisation tutorial](/tutorials/visualise-atlas-napari).
+
+The end result will look something like Figure 2.
+
+![CArea atlas visualised in napari](images/carea_napari_visualisation.png)
+**Figure 2. CArea atlas visualised with `brainrender-napari`.** 
+
+## Why are we adding new atlases?
+A fundamental aim of the BrainGlobe project is to make various brain atlases easily accessible by users across the globe. If you would like to get involved with a similar project, please [get in touch](/contact).
