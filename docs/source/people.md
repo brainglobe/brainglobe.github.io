@@ -732,6 +732,11 @@ In no particular order:
 :link: https://github.com/Kavyashah067
 :::
 
+:::{grid-item-card} AdityaGupta716
+:img-bottom: https://avatars.githubusercontent.com/u/222836259?v=4
+:link: https://github.com/AdityaGupta716
+:::
+
 ::::
 
 
