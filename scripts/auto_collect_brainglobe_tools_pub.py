@@ -14,7 +14,7 @@ BRAINGLOBE_CORE_WORKS = [
     "https://openalex.org/W4206584351",
     "https://openalex.org/W3209832784",
     "https://openalex.org/W3165052512",
-    "https://openalex.org/W3205056304"
+    "https://openalex.org/W3205056304",
     "https://openalex.org/W4408279592"
 ]
 
@@ -155,7 +155,7 @@ def generate_markdown(works):
         
         # Add DOI link if available
         if work["doi"]:
-            entry.append(f"[DOI](https://doi.org/{work['doi']})")
+            entry.append(f"[DOI]({work['doi']})")
         
         if entry:
             md.append("  \n".join(entry))
