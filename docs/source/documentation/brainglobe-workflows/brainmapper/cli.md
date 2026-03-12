@@ -22,9 +22,15 @@ All options can be found by running `brainmapper -h`
 - **This background channel will be used for all signal channels**
 - `-o` or `--output-dir` Output directory for all intermediate and final results
 
-:::{caution}
-You must also specify the orientation and voxel size of your data, see [Image definition](/documentation/setting-up/image-definition).
+:::{hint}
+You must also specify the **voxel size** using the `-v` flag (in microns,
+matching your orientation order) and the **orientation** using the `--orientation`
+flag.
+
+See [Image definition](/documentation/setting-up/image-definition)
+for details on how to determine the correct values.
 :::
+
 
 ### Optional Arguments
 
