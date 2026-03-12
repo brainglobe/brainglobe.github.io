@@ -805,9 +805,13 @@
 <li><p><strong>This background channel will be used for all signal channels</strong></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-o</span></code> or <code class="docutils literal notranslate"><span class="pre">--output-dir</span></code> Output directory for all intermediate and final results</p></li>
 </ul>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>You must also specify the orientation and voxel size of your data, see <a class="reference internal" href="../../setting-up/image-definition.html"><span class="doc std std-doc">Image definition</span></a>.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>You must also specify the <strong>voxel size</strong> using the <code class="docutils literal notranslate"><span class="pre">-v</span></code> flag (in microns,
+matching your orientation order) and the <strong>orientation</strong> using the <code class="docutils literal notranslate"><span class="pre">--orientation</span></code>
+flag.</p>
+<p>See <a class="reference internal" href="../../setting-up/image-definition.html"><span class="doc std std-doc">Image definition</span></a>
+for details on how to determine the correct values.</p>
 </div>
 </section>
 <section id="optional-arguments">
