@@ -107,6 +107,11 @@ neuralib is a utility toolkit for rodent systems neuroscience research. It provi
 - [GitHub repository](https://github.com/ytsimon2004/neuralib)
 - [Documentation](https://neuralib.readthedocs.io)
 
+## ConfUSIus
+ConfUSIus is a Python package for handling, visualization, preprocessing, and statistical analysis of functional ultrasound imaging (fUSI) data.
+- [GitHub repository](https://github.com/sdiebolt/confusius)
+- [Documentation](https://samuel.diebolt.io/confusius/)
+
 :::{hint}
 If you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. Typically we include tools which:
 
