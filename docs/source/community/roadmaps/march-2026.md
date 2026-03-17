@@ -6,10 +6,10 @@
 
 We've created three new software tools, and we've worked on improving and maintaining the BrainGlobe infrastructure.
 Specifically we have made
-* An alpha version of `brainglobe-registration`, allowing 2D (e.g. conventional sections) data to an atlas.
+* An alpha version of `brainglobe-registration`, allowing registration of 2D data (e.g. conventional tissue sections)  to an atlas.
 * An alpha version of `brainglobe-stitch`, allowing efficient stitching of light-sheet data with a GUI.
 * An alpha version of template building tools, which have been used with help of the BrainGlobe team to make three new atlases.
-* An updated Pytorch backend for `cellfinder` now has a PyTorch backend, simplifying installation and support, and laying the groundwork for new analyses.
+* An updated Pytorch backend for `cellfinder`, simplifying installation and support, and laying the groundwork for new analyses.
 * Improvements to test coverage, bencharking tools, documentation and ease of installation.
 * Improvements and bug fixes to BrainGlobe atlases and related validation tools.
 * Many atlas available via the BrainGlobe Atlas API.
@@ -23,7 +23,7 @@ In particular, we are working towards
 * Enabling users to create their own templates and annotations and use them within BrainGlobe.
 * Making atlas downloads faster and leaner (BrainGlobe Atlas API v2).
 * Making diverse atlas-registered data such as gene expression maps accessible via BrainGlobe GUIs (BrainGlobe Data API).
-* Allowing registration of single histological sections and images of brain subvolumes to BrainGlobe atlases.
+* Allowing easy registration of single histological sections and images of brain subvolumes to BrainGlobe atlases.
 * Adding existing API documentation to website.
 * Further expanding the number of atlases available via the BrainGlobe Atlas API.
 
