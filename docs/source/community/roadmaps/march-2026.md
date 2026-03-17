@@ -4,7 +4,8 @@
 
 ### High-level priorities for the next year
 
-* enable users to analyse cells from C-Fos experiments in larger (e.g. rat) brains
+* enable users to detect and analyse more cells, e.g. from c-Fos experiments
+* enable users to detect and analyse cells from larger (e.g. rat) brains
 * enable users to create their own templates and annotations and use them within BrainGlobe
 * make atlas downloads faster and leaner (BrainGlobe Atlas API v2)
 * make diverse atlas-registered data such as gene expression maps accessible via BrainGlobe GUIs (BrainGlobe Data API)
