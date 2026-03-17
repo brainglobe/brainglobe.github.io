@@ -9,7 +9,7 @@
 * enable users to create their own templates and annotations and use them within BrainGlobe
 * make atlas downloads faster and leaner (BrainGlobe Atlas API v2)
 * make diverse atlas-registered data such as gene expression maps accessible via BrainGlobe GUIs (BrainGlobe Data API)
-* allow registration single histological sections and images of brain subvolumnes to BrainGlobe atlases
+* allow registration of single histological sections and images of brain subvolumes to BrainGlobe atlases
 * add existing API documentation to website
 
 ### Recent progress
