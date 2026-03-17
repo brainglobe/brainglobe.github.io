@@ -4,11 +4,11 @@
 
 ### High-level priorities for the next year
 
-* enable `cellfinder` to analyse more cells (millions) with more detail (e.g intensity)
-* make template-building and annotation widely accessible
+* enable users to analyse cells from C-Fos experiments in larger (e.g. rat) brains
+* enable users to create their own templates and annotations and use them within BrainGlobe
 * make atlas downloads faster and leaner (BrainGlobe Atlas API v2)
-* broaden the range of atlas-registered data available within BrainGlobe, and make accessible via BrainGlobe GUIs (BrainGlobe Data API)
-* register arbitrary subvolumes/planes to atlases with `brainglobe-registration`
+* make diverse atlas-registered data such as gene expression maps accessible via BrainGlobe GUIs (BrainGlobe Data API)
+* allow registration single histological sections and images of brain subvolumnes to BrainGlobe atlases
 * add existing API documentation to website
 
 ### Recent progress
