@@ -98,4 +98,4 @@ algorithm. This will create a new labels layer.
 - Follow the instructions for [2/3D region analysis](./segmenting-3d-structures) 
 to analyse the distribution of the thresholded voxels.
 
-**Instructions by** [**Sara Mederos**](https://www.sainsburywellcome.org/web/people/sara-mederos).
+**Instructions by** [**Sara Mederos**](https://orcid.org/0000-0003-0960-9974).

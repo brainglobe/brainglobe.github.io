@@ -1,6 +1,6 @@
 # brainrender
 
-See [brainrender Quickstart](https://github.com/brainglobe/brainrender?tab=readme-ov-file#quickstart) for an example of how to create and render scenes.
+See [brainrender Quickstart](https://github.com/brainglobe/brainrender#quickstart) for an example of how to create and render scenes.
 
 ## Introduction
 

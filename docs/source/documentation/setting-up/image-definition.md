@@ -5,7 +5,7 @@ In some BrainGlobe tools, you need to specify the orientation and resolution of 
 ## Axes
 Misinterpreting axes can lead to mistakes when using BrainGlobe tools. So before you can specify the orientation and resolution of your data, it is a good idea to figure out which axis maps on to which dimension in the underlying data.
 
-When you open an image in [napari](https://napari.org) or [Fiji](https://imagej.net/software/Fiji/), the default ordering of the axes is:
+When you open an image in [napari](https://napari.org) or [Fiji](https://imagej.net/software/fiji/index), the default ordering of the axes is:
 - Axis 0: Image depth 
 - Axis 1: Image height
 - Axis 2: Image width
@@ -29,7 +29,7 @@ The order and direction in which the different dimensions are displayed can be c
 ## napari
 After rearranging the axis order, the visualisation of the data changes. This is only a display effect, the underlying data structure remains unchanged. Axis 0, for example, might now correspond to image height instead of image depth.  
 
-The [status bar](https://napari.org/dev/tutorials/fundamentals/viewer.html#status-bar) shows indices of any voxels that are currently hovered over, depending on which layer is selected. These voxel indices always reflect the structure of the underlying data. They can therefore be relied on to figure out which dimension maps to which axis.
+The [status bar](https://napari.org/stable/tutorials/fundamentals/viewer.html#status-bar) shows indices of any voxels that are currently hovered over, depending on which layer is selected. These voxel indices always reflect the structure of the underlying data. They can therefore be relied on to figure out which dimension maps to which axis.
 
 ### Using the voxel coordinate to determine axis order
 To confirm the axis order, observe how the voxel indices change when you scroll through the images and move the cursor over the image vertically or horizontally.

@@ -189,7 +189,7 @@ In no particular order:
 
 :::{grid-item-card} ramroomh
 :img-bottom: https://avatars.githubusercontent.com/u/39342954?v=4?
-:link: https://github.com/ramroomh
+:link:
 :::
 
 :::{grid-item-card} Samuel Diebolt
@@ -494,7 +494,7 @@ In no particular order:
 
 :::{grid-item-card} Kirato Yoshihara
 :img-bottom: https://avatars.githubusercontent.com/u/36755839?v=4
-:link: https://github.com/kira1228
+:link: https://github.com/kiratoyoshihara
 :::
 
 :::{grid-item-card} Leonard Schwigon

@@ -213,4 +213,4 @@ linkcheck_request_headers = {
 }
 
 # To ignore warnings, as these files aren't used directly
-exclude_patterns = ['**_examples_source']
+exclude_patterns = ['**_examples_source', '**_examples']

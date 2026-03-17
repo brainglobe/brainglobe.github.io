@@ -1,6 +1,6 @@
 # Troubleshooting
 
-brainreg uses [NiftyReg](http://cmictig.cs.ucl.ac.uk/wiki/index.php/NiftyReg) "under the hood" to perform the 
+brainreg uses [NiftyReg](https://github.com/KCL-BMEIS/niftyreg) "under the hood" to perform the 
 registration. For this reason, some of the error messages are not very easy to understand, because they come from 
 NiftyReg, and not directly from brainreg. 
 
