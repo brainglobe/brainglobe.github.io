@@ -11,6 +11,7 @@
 * make diverse atlas-registered data such as gene expression maps accessible via BrainGlobe GUIs (BrainGlobe Data API)
 * allow registration of single histological sections and images of brain subvolumes to BrainGlobe atlases
 * add existing API documentation to website
+* Greatly expand the number of atlases available via the BrainGlobe Atlas API
 
 ### Recent progress
 
