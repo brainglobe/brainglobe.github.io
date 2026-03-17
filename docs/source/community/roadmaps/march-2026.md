@@ -1,8 +1,6 @@
 # March 2026
 
-## Current status
-
-### Recent progress
+## Recent progress
 
 We've created three new software tools, and we've worked on improving and maintaining the BrainGlobe infrastructure.
 Specifically we have made
@@ -10,11 +8,11 @@ Specifically we have made
 * An alpha version of `brainglobe-stitch`, allowing efficient stitching of light-sheet data with a GUI.
 * An alpha version of template building tools, which have been used with help of the BrainGlobe team to make three new atlases.
 * An updated Pytorch backend for `cellfinder`, simplifying installation and support, and laying the groundwork for new analyses.
-* Improvements to test coverage, bencharking tools, documentation and ease of installation.
+* Improvements to test coverage, benchmarking tools, documentation and ease of installation.
 * Improvements and bug fixes to BrainGlobe atlases and related validation tools.
-* Many atlas available via the BrainGlobe Atlas API.
+* More atlases available via the BrainGlobe Atlas API.
 
-### High-level priorities for the next year
+## High-level priorities for the next year
 
 Overall, the team will focus on further expanding access to BrainGlobe through new features, atlases and atlas-registered data.
 In particular, we are working towards
