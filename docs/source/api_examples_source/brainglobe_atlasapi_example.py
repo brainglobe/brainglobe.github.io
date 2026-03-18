@@ -22,7 +22,7 @@ from matplotlib import colormaps as cm
 # To know what atlases are available through BrainGlobe, we can use the `show_atlases` function
 # (requires an internet connection):
 
-from brainglobe_atlasapi import show_atlases
+from docs.source.api_examples_source.brainglobe_atlasapi_example import show_atlases
 show_atlases()
 
 # %%
