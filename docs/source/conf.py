@@ -216,6 +216,7 @@ linkcheck_ignore = [
     "https://www.science.org",
     "https://journals.asm.org",
     "https://www.mdpi.com",
+    "https://chatgpt.com",
     ]
 
 linkcheck_anchors_ignore_for_url = [
