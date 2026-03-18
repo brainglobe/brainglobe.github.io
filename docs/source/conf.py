@@ -198,13 +198,29 @@ notfound_urls_prefix = None
 
 
 linkcheck_ignore = [
+    # Sphinx-gallery output files only exist after a full HTML build, not during linkcheck
+    ".*/*_examples/.*\.html",
     "https://neuromorpho.org/",
     "https://brainglobe.zulipchat.com/#narrow/stream/414089-developer-meeting",
     "https://easyengine.io",
     "https://www.scientifica.uk.com",
     "https://brainglobe.info",
-    "https://doi.org/10.1162/imag_a_00209"
+    "https://doi.org/10.1162/imag_a_00209",
+    "https://cziscience.medium.com/why-these-python-coders-are-joining-the-napari-community-c0af6bb6ee3a",
+    "https://onlinelibrary.wiley.com",
+    "https://direct.mit.edu",
+    "https://pubs.acs.org",
+    "https://academic.oup.com",
+    "https://pnas.org",
+    "https://physoc.onlinelibrary.wiley.com",
+    "https://www.science.org",
+    "https://journals.asm.org",
+    "https://www.mdpi.com",
     ]
+
+linkcheck_anchors_ignore_for_url = [
+    "https://github.com/brainglobe/brainrender"
+]
 
 linkcheck_request_headers = {
     "https://github.com": {
@@ -213,4 +229,4 @@ linkcheck_request_headers = {
 }
 
 # To ignore warnings, as these files aren't used directly
-exclude_patterns = ['**_examples_source', '**_examples']
+exclude_patterns = ['**_examples_source']
