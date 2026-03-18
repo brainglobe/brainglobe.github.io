@@ -217,6 +217,7 @@ linkcheck_ignore = [
     "https://journals.asm.org",
     "https://www.mdpi.com",
     "https://chatgpt.com",
+    "https://www.jneurosci.org",
     ]
 
 linkcheck_anchors_ignore_for_url = [
@@ -224,9 +225,6 @@ linkcheck_anchors_ignore_for_url = [
 ]
 
 linkcheck_request_headers = {
-    "*": {
-          "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0",
-    },
     "https://github.com": {
         "Authorization": f"Bearer {os.environ.get('GITHUB_TOKEN', '')}",
     },
