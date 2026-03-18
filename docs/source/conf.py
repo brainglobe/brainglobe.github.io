@@ -218,6 +218,7 @@ linkcheck_ignore = [
     "https://www.mdpi.com",
     "https://chatgpt.com",
     "https://www.jneurosci.org",
+    "https://figshare.com",
     ]
 
 linkcheck_anchors_ignore_for_url = [
