@@ -230,6 +230,3 @@ linkcheck_request_headers = {
         "Authorization": f"Bearer {os.environ.get('GITHUB_TOKEN', '')}",
     },
 }
-
-# To ignore warnings, as these files aren't used directly
-exclude_patterns = ['**_examples_source']
