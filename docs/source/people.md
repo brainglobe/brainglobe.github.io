@@ -189,7 +189,6 @@ In no particular order:
 
 :::{grid-item-card} ramroomh
 :img-bottom: https://avatars.githubusercontent.com/u/39342954?v=4?
-:link:
 :::
 
 :::{grid-item-card} Samuel Diebolt
