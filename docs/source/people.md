@@ -737,6 +737,11 @@ In no particular order:
 :link: https://github.com/AdityaGupta716
 :::
 
+:::{grid-item-card} Luigi Meola
+:img-bottom: https://avatars.githubusercontent.com/u/66880228?v=4
+:link: https://github.com/git-gigi
+:::
+
 ::::
 
 
