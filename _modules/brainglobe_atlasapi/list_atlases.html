@@ -601,9 +601,9 @@
         <span class="n">official_atlases</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">conf_from_file</span><span class="p">(</span><span class="n">cache_path</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">custom_atlases</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">conf_from_file</span><span class="p">(</span><span class="n">custom_path</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">official_atlases</span><span class="p">[</span><span class="s2">&quot;atlases&quot;</span><span class="p">])</span>
-    <span class="k">return</span> <span class="p">{</span><span class="o">**</span><span class="n">official_atlases</span><span class="p">[</span><span class="s2">&quot;atlases&quot;</span><span class="p">],</span> <span class="o">**</span><span class="n">custom_atlases</span><span class="p">[</span><span class="s2">&quot;atlases&quot;</span><span class="p">]}</span></div>
+        <span class="k">return</span> <span class="p">{</span><span class="o">**</span><span class="n">official_atlases</span><span class="p">[</span><span class="s2">&quot;atlases&quot;</span><span class="p">],</span> <span class="o">**</span><span class="n">custom_atlases</span><span class="p">[</span><span class="s2">&quot;atlases&quot;</span><span class="p">]}</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">FileNotFoundError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">official_atlases</span><span class="p">[</span><span class="s2">&quot;atlases&quot;</span><span class="p">])</span></div>
 
 
 
