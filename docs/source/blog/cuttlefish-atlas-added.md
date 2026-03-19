@@ -9,7 +9,7 @@ language: English
 
 # An Atlas for the dwarf cuttlefish, _Sepia bandensis_ has been added to BrainGlobe
 
-Cephalopods are fascinating model organisms for neuroscience research. The dwarf cuttlefish in particular (_Sepia bandensis_) is known for its camouflage using dynamic skin pattern changes, but it is also known to display social communication behaviour. In 2023, [Montague et al.](https://www.sciencedirect.com/science/article/pii/S0960982223007571) created a magnetic resonance imaging (MRI) atlas by combining data from 8 dwarf cuttlefish brains (4 female, 4 male) using deep learning. The cuttlefish atlas provides researchers with a useful resource for investigating the neural processes governing cephalopod behaviour. 
+Cephalopods are fascinating model organisms for neuroscience research. The dwarf cuttlefish in particular (_Sepia bandensis_) is known for its camouflage using dynamic skin pattern changes, but it is also known to display social communication behaviour. In 2023, [Montague et al.](https://doi.org/10.1016/j.cub.2023.06.007) created a magnetic resonance imaging (MRI) atlas by combining data from 8 dwarf cuttlefish brains (4 female, 4 male) using deep learning. The cuttlefish atlas provides researchers with a useful resource for investigating the neural processes governing cephalopod behaviour. 
 
 ![cuttlefish brain atlas annotations](./images/cuttlefish_annotations.png)
 
