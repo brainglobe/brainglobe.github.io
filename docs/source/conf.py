@@ -219,6 +219,7 @@ linkcheck_ignore = [
     "https://chatgpt.com",
     "https://www.jneurosci.org",
     "https://figshare.com",
+    "https://www.world-wide.org/seminar/6583/"
     ]
 
 linkcheck_anchors_ignore_for_url = [
