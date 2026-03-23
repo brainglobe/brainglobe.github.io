@@ -1,6 +1,0 @@
-create\_region\_mesh
-====================
-
-.. currentmodule:: brainglobe_atlasapi.atlas_generation.mesh_utils
-
-.. autofunction:: create_region_mesh

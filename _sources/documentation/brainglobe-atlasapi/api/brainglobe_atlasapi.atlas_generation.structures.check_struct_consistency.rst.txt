@@ -1,6 +1,0 @@
-check\_struct\_consistency
-==========================
-
-.. currentmodule:: brainglobe_atlasapi.atlas_generation.structures
-
-.. autofunction:: check_struct_consistency

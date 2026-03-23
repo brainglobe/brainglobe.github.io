@@ -1,6 +1,0 @@
-show\_atlases
-=============
-
-.. currentmodule:: brainglobe_atlasapi.list_atlases
-
-.. autofunction:: show_atlases

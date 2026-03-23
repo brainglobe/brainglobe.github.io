@@ -1,6 +1,0 @@
-write\_config\_value
-====================
-
-.. currentmodule:: brainglobe_atlasapi.config
-
-.. autofunction:: write_config_value

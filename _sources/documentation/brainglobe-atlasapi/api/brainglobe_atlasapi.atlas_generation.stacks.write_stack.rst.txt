@@ -1,6 +1,0 @@
-write\_stack
-============
-
-.. currentmodule:: brainglobe_atlasapi.atlas_generation.stacks
-
-.. autofunction:: write_stack

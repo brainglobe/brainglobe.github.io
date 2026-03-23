@@ -1,6 +1,0 @@
-conf\_from\_url
-===============
-
-.. currentmodule:: brainglobe_atlasapi.utils
-
-.. autofunction:: conf_from_url

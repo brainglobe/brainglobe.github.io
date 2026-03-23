@@ -1,6 +1,0 @@
-child\_ids
-==========
-
-.. currentmodule:: brainglobe_atlasapi.structure_tree_util
-
-.. autofunction:: child_ids

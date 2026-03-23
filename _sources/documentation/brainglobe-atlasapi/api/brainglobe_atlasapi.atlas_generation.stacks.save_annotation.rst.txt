@@ -1,6 +1,0 @@
-save\_annotation
-================
-
-.. currentmodule:: brainglobe_atlasapi.atlas_generation.stacks
-
-.. autofunction:: save_annotation

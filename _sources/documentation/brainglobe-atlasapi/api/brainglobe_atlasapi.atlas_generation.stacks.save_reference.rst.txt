@@ -1,6 +1,0 @@
-save\_reference
-===============
-
-.. currentmodule:: brainglobe_atlasapi.atlas_generation.stacks
-
-.. autofunction:: save_reference

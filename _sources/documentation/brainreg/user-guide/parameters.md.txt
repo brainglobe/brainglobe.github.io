@@ -3,7 +3,7 @@ To change how the image registration performs, you can change the options that a
 
 ## NiftyReg
 
-If using the [NiftyReg](http://cmictig.cs.ucl.ac.uk/wiki/index.php/NiftyReg) backend, the following options can be changed:
+If using the [NiftyReg](https://github.com/KCL-BMEIS/niftyreg) backend, the following options can be changed:
 
 ### **Affine registration**
 

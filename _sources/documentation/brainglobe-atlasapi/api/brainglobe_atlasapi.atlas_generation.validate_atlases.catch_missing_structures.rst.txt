@@ -1,6 +1,0 @@
-catch\_missing\_structures
-==========================
-
-.. currentmodule:: brainglobe_atlasapi.atlas_generation.validate_atlases
-
-.. autofunction:: catch_missing_structures

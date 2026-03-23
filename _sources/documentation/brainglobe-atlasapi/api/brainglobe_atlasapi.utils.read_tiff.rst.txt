@@ -1,6 +1,0 @@
-read\_tiff
-==========
-
-.. currentmodule:: brainglobe_atlasapi.utils
-
-.. autofunction:: read_tiff

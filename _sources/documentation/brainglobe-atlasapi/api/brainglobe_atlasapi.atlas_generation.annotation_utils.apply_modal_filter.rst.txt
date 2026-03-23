@@ -1,6 +1,0 @@
-apply\_modal\_filter
-====================
-
-.. currentmodule:: brainglobe_atlasapi.atlas_generation.annotation_utils
-
-.. autofunction:: apply_modal_filter

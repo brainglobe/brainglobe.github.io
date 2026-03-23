@@ -1,6 +1,0 @@
-check\_gin\_status
-==================
-
-.. currentmodule:: brainglobe_atlasapi.utils
-
-.. autofunction:: check_gin_status

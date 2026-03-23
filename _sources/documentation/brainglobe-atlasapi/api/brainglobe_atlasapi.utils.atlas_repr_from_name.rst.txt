@@ -1,6 +1,0 @@
-atlas\_repr\_from\_name
-=======================
-
-.. currentmodule:: brainglobe_atlasapi.utils
-
-.. autofunction:: atlas_repr_from_name
