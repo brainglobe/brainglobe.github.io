@@ -227,7 +227,7 @@ linkcheck_anchors_ignore_for_url = [
 ]
 
 linkcheck_request_headers = {
-    "https://doi.org": {
+    "https://elifesciences.org": {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
     },
     "https://github.com": {
