@@ -219,7 +219,8 @@ linkcheck_ignore = [
     "https://chatgpt.com",
     "https://www.jneurosci.org",
     "https://figshare.com",
-    "https://www.world-wide.org/seminar/6583/"
+    "https://www.world-wide.org/seminar/6583/",
+    "https://elifesciences.org" # 406 Client Error: Not Acceptable for url
     ]
 
 linkcheck_anchors_ignore_for_url = [
@@ -227,9 +228,6 @@ linkcheck_anchors_ignore_for_url = [
 ]
 
 linkcheck_request_headers = {
-    "https://elifesciences.org": {
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
-    },
     "https://github.com": {
         "Authorization": f"Bearer {os.environ.get('GITHUB_TOKEN', '')}",
     },
