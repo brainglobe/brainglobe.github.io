@@ -95,6 +95,13 @@ Whole brain cell detection and registration
 Aligning samples to image axes for template building (experimental!)
 :::
 
+:::{grid-item-card} {fas}`brain;sd-text-primary` Standardise template inputs
+:img-bottom: images/brainglobe-template-builder/template-builder-header-qc.png
+:link: howto-process-for-template-building
+:link-type: doc
+Standardising and preprocessing images for template building (experimental!)
+:::
+
 :::{grid-item-card} {fas}`brain;sd-text-primary` Exploring atlas data
 :img-bottom: ../aws_examples/images/thumb/sphx_glr_explore_atlas_thumb.png
 :link: ../aws_examples/explore_atlas.html
