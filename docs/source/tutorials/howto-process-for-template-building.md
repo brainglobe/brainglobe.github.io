@@ -8,7 +8,7 @@ This guide shows how to prepare input images for building a symmetric anatomical
 We will use some serial-section two-photon microscopy images of whole zebra finch brains as an example.
 
 :::{note}
-After preparation, you will need access to a high-performance computing (HPC) platform to build a template. On the HPC, you will need to have ANTs and the optimizedANTs scripts installed and available on your path. See our [installation guide](https://github.com/brainglobe/brainglobe-template-builder?tab=readme-ov-file#installation) for more details.
+After preparation, you will need access to a high-performance computing (HPC) platform to build a template. On the HPC, you will need to have ANTs and the optimizedANTs scripts installed and available on your path. See our [installation guide](https://github.com/brainglobe/brainglobe-template-builder/blob/main/README.md#installation) for more details.
 
 To follow this how-to guide, you will need
 * Your input images
@@ -152,7 +152,7 @@ The `.png` files in `preprocessed-QC/` show a series of coronal sections of each
 - mask should exclude obvious background/non-brain regions
 
 If you need to improve a mask, open it with `napari` as a `Labels` layer to edit it, and overwrite the previous mask on disk. 
-You should also update the `mask_filepath` in `<output_dir>/standardised/standardised_images.csv` for the corrected sample.
+You should also update the `mask_filepath` in `standardised/standardised_images.csv` for the corrected sample.
 
 If you have many unsatisfactory masks, you can try experimenting with different `MaskConfig` parameters using the "Preprocess" `napari` widget.
 
@@ -176,7 +176,7 @@ Save the selected sample image to a separate repository and make a note of its p
 
 If your output directory was local, copy the entire preprocessed folder to your HPC storage.
 
-Copy the text files from your `<output_dir>/preprocessed/` folder to a new folder on the HPC storage. The new folder's name should reflect the template you are planning to build. In our example, this was `template_sym_female_res-50um_n-8` to denote that it was a symmetric template at 50 micrometer resolution, made from 8 female zebra finch brains.
+Copy the text files from your `preprocessed/` folder to a new folder on the HPC storage. The new folder's name should reflect the template you are planning to build. In our example, this was `template_sym_female_res-50um_n-8` to denote that it was a symmetric template at 50 micrometer resolution, made from 8 female zebra finch brains.
 
 Update the paths inside the text files to point to the processed input images on the HPC storage.
 

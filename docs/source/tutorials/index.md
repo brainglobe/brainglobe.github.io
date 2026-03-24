@@ -102,6 +102,13 @@ Aligning samples to image axes for template building (experimental!)
 Standardising and preprocessing images for template building (experimental!)
 :::
 
+:::{grid-item-card} {fas}`brain;sd-text-primary` Run template building
+:img-bottom: images/brainglobe-template-builder/bird-template-header.png
+:link: howto-configure-hpc-template-building-job
+:link-type: doc
+Configuring and running an HPC job for template building
+:::
+
 :::{grid-item-card} {fas}`brain;sd-text-primary` Exploring atlas data
 :img-bottom: ../aws_examples/images/thumb/sphx_glr_explore_atlas_thumb.png
 :link: ../aws_examples/explore_atlas.html
