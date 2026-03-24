@@ -106,7 +106,7 @@ Standardising and preprocessing images for template building (experimental!)
 :img-bottom: images/brainglobe-template-builder/bird-template-header.png
 :link: howto-configure-hpc-template-building-job
 :link-type: doc
-Configuring and running an HPC job for template building
+Configuring and running an HPC job for template building (experimental!)
 :::
 
 :::{grid-item-card} {fas}`brain;sd-text-primary` Exploring atlas data
