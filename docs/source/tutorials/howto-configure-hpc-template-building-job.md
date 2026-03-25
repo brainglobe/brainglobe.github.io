@@ -99,7 +99,7 @@ You will at least need to set
 
 You may also want to customise with
 * the [slurm job variables](https://slurm.schedmd.com/heterogeneous_jobs.html)
-* the []`qbatch` variables](https://github.com/CoBrALab/qbatch/blob/master/README.md#environment-variable-defaults), in particular `QBATCH_QUEUE` should match the name of a partition on your HPC, otherwise parallelisation will not work.
+* the [`qbatch` environmental variables](https://github.com/CoBrALab/qbatch/blob/master/README.md), in particular `QBATCH_QUEUE` should match the name of a partition on your HPC, otherwise parallelisation will not work.
 
 If you want to [customise `modelbuild.sh` in more detail](https://github.com/CoBrALab/optimized_antsMultivariateTemplateConstruction/blob/master/modelbuild.sh)(beyond the option shown in our example configuration script), you will have to adapt the build script instead of the configuration script.
 
