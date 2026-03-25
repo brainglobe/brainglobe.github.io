@@ -10,7 +10,7 @@ This how-to guide documents how to run a configure a Slurm job to make a templat
 ## Before you start
 
 :::{note}
-You will need access to a high-performance computing (HPC) platform to build a template. On the HPC, you will need to have ANTs and the optimizedANTs scripts installed and available on your path. See our [installation guide](https://github.com/brainglobe/brainglobe-template-builder/blob/main/README.md#installation) for more details. In our case, we have this as [an `Lmod` module](https://lmod.readthedocs.io/en/latest/) that we can access by calling `module load template-builder`.
+You will need access to a high-performance computing (HPC) platform to build a template. On the HPC, you will need to have ANTs and the optimizedANTs scripts installed and available on your path. See our [installation guide](https://github.com/brainglobe/brainglobe-template-builder/blob/main/README.md) for more details. In our case, we have this as [an `Lmod` module](https://lmod.readthedocs.io/en/latest/) that we can access by calling `module load template-builder`.
 
 
 You will also require, in an otherwise empty "template folder":
