@@ -211,6 +211,7 @@ linkcheck_ignore = [
     "https://figshare.com",
     "https://www.world-wide.org/seminar/6583/",
     "https://doi.org", # Various errors due to rate-limiting and time outs
+    "https://elifesciences.org", # 406 Client Error: Not Acceptable
     ]
 
 linkcheck_anchors_ignore_for_url = [
