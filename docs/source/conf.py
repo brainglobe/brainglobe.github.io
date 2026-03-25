@@ -207,21 +207,10 @@ linkcheck_ignore = [
     "https://brainglobe.info",
     "https://doi.org/10.1162/imag_a_00209",
     "https://cziscience.medium.com/why-these-python-coders-are-joining-the-napari-community-c0af6bb6ee3a",
-    "https://onlinelibrary.wiley.com",
-    "https://direct.mit.edu",
-    "https://pubs.acs.org",
-    "https://academic.oup.com",
-    "https://pnas.org",
-    "https://physoc.onlinelibrary.wiley.com",
-    "https://www.science.org",
-    "https://journals.asm.org",
-    "https://www.mdpi.com",
     "https://chatgpt.com",
-    "https://www.jneurosci.org",
     "https://figshare.com",
     "https://www.world-wide.org/seminar/6583/",
-    "https://elifesciences.org", # 406 Client Error: Not Acceptable for url
-    "https://biorxiv.org", # Read time outs
+    "https://doi.org", # Various errors due to rate-limiting and time outs
     ]
 
 linkcheck_anchors_ignore_for_url = [
