@@ -113,7 +113,7 @@ and submit your script to the Slurm queue
 ```bash
 sbatch configure_slurm.sh
 ```
-The configuration job will spawn a number of parallel jobs (depending on how you have set up [your `qbatch` variables](https://github.com/CoBrALab/qbatch/blob/master/README.md#environment-variable-defaults) in the configuration script).
+The configuration job will spawn a number of parallel jobs (depending on how you have set up [your `qbatch` environmental variables](https://github.com/CoBrALab/qbatch/blob/master/README.md) in the configuration script).
 
 ### Monitor Slurm job
 

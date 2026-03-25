@@ -8,9 +8,9 @@ This guide shows how to prepare input images for building a symmetric anatomical
 We will use some serial-section two-photon microscopy images of whole zebra finch brains as an example.
 
 :::{note}
-After preparation, you will need access to a high-performance computing (HPC) platform to build a template. On the HPC, you will need to have ANTs and the optimizedANTs scripts installed and available on your path. See our [installation guide](https://github.com/brainglobe/brainglobe-template-builder/blob/main/README.md#installation) for more details.
+After preparation, you will need access to a high-performance computing (HPC) platform to build a template. On the HPC, you will need to have ANTs and the optimizedANTs scripts installed and available on your path. See our [installation guide](https://github.com/brainglobe/brainglobe-template-builder/blob/main/README.md) for more details.
 
-To follow this how-to guide, you will need
+However, to follow this how-to guide, you will only need
 * Your input images
 * Initial familiarity with Python scripting
 * Initial familiarity with setting up a `conda` environment or similar
