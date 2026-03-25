@@ -220,7 +220,8 @@ linkcheck_ignore = [
     "https://www.jneurosci.org",
     "https://figshare.com",
     "https://www.world-wide.org/seminar/6583/",
-    "https://elifesciences.org" # 406 Client Error: Not Acceptable for url
+    "https://elifesciences.org", # 406 Client Error: Not Acceptable for url,
+    "https://biorxiv.org", # Read time outs
     ]
 
 linkcheck_anchors_ignore_for_url = [
