@@ -8,7 +8,7 @@ This guide shows how to prepare input images for building a symmetric anatomical
 We will use some serial-section two-photon microscopy images of whole zebra finch brains as an example.
 
 :::{note}
-After preparation, you will probably need access to a high-performance computing (HPC) platform to build a template. On the HPC, you will need to have ANTs and the optimizedANTs scripts installed and available on your path. See our [installation guide](https://github.com/brainglobe/brainglobe-template-builder/blob/main/README.md) for more details.
+After preparation, you will probably need access to a high-performance computing (HPC) platform to build a template. On the HPC, you will need to have ANTs and the optimizedANTs scripts installed and available on your path (these won't work on Windows systems!). See our [installation guide](https://github.com/brainglobe/brainglobe-template-builder/blob/main/README.md) for more details.
 
 However, to follow this how-to guide, you will only need
 * Your input images
@@ -59,7 +59,7 @@ Some quick checks before proceeding:
 - Each `subject_id` is unique
 - There are no spaces in the core CSV columns (You can have spaces in your own metadata).
 - Every `filepath` exists and is readable
-- `origin` values are [in the correct orientation](/documentation/setting-up/image-definition.html)
+- `origin` values are [in the correct orientation](/documentation/setting-up/image-definition)
 
 ## Standardise orientation and resolution
 
@@ -99,7 +99,7 @@ For quality-control, inspect the `.png` files in the `standardised-QC/` subfolde
 - Images are of sufficiently high quality. You could check that
   - The signal-to-noise ratio is high and consistent across the image
   - The brains are not severely cropped or damaged
-- Orientation is [consistently "ASR"](/documentation/setting-up/image-definition.html) across samples (Figure 1)
+- Orientation is [consistently "ASR"](/documentation/setting-up/image-definition) across samples (Figure 1)
 
 ![Orthogonal slices and a 3D render of a standardised high-quality zebrafinch sample](./images/brainglobe-template-builder/standardised-sample-plot-good.png)
 
