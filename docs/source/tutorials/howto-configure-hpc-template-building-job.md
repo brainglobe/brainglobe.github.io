@@ -141,9 +141,3 @@ The configuration job will spawn a number of parallel jobs (depending on how you
 
 If you are running on a desktop machine without slurm, remove the lines starting with `#SBATCH` and `QBATCH` and execute the script with `bash`.
 
-### Monitor Slurm job
-
-TODO
-For troubleshooting, you can check the various logs for an indication of where things went wrong.
-* explain structure of outputs
-* point to which logs are where
