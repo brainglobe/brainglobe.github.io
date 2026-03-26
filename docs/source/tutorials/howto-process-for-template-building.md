@@ -8,12 +8,16 @@ This guide shows how to prepare input images for building a symmetric anatomical
 We will use some serial-section two-photon microscopy images of whole zebra finch brains as an example.
 
 :::{note}
-After preparation, you will need access to a high-performance computing (HPC) platform to build a template. On the HPC, you will need to have ANTs and the optimizedANTs scripts installed and available on your path. See our [installation guide](https://github.com/brainglobe/brainglobe-template-builder/blob/main/README.md) for more details.
+After preparation, you will probably need access to a high-performance computing (HPC) platform to build a template. On the HPC, you will need to have ANTs and the optimizedANTs scripts installed and available on your path. See our [installation guide](https://github.com/brainglobe/brainglobe-template-builder/blob/main/README.md) for more details.
 
 However, to follow this how-to guide, you will only need
 * Your input images
-* Initial familiarity with Python scripting
-* Initial familiarity with setting up a `conda` environment or similar
+* Familiarity with Python scripting
+* Familiarity with setting up a `conda` environment or similar
+
+Input images can be 
+* A folder of 2D TIFFs, or 3D TIFF or NIfTI images that fit into your memory
+* A folder of 2D TIFF images (can in total be larger than your available memory)
 :::
 
 ## Installation	
@@ -39,20 +43,21 @@ You can optionally include a `mask_filepath` column, with paths to pre-computed 
 You can also include a boolean column `use`, and set entries for samples you'd like to exclude to `False`.
 
 You can have an arbitrary number of unique additional columns, to help you keep track of any metadata you may be interested in. These will be ignored by our code, but it can be useful for you to cross-check this information.
+We provide a [minimal google sheet](https://docs.google.com/spreadsheets/d/14YnAdZsB7vp0Tyg5FbSBWlMCNIx9-iJLHWQzNgdMxWE/edit?usp=sharing) as a template for you to copy and edit.
 
 For example, your CSV file may look like this:
 
 ```
-subject_id,resolution_0,resolution_1,resolution_2,origin,filepath,species,sex,use
-ZF8001m,25,25,25,PSL,/data/zebrafinch/sourcedata/ZF8001m.tif,Zebra finch,M,True
-ZF8002f,25,25,25,PSL,/data/zebrafinch/sourcedata/ZF8002f.tif,Zebra finch,F,True
-...
+| subject_id | resolution_0 | resolution_1 | resolution_2 | origin | filepath | mask_filepath | species | sex | use |
+|---|---|---|---|---|---|---|---|---|
+| ZF8001m | 25 | 25 | 25 | PSL | /data/zebrafinch/sourcedata/ZF8001m.tif | 											    | Zebra finch | M | True |
+| ZF8002f | 25 | 25 | 25 | PSL | /data/zebrafinch/sourcedata/ZF8002f.tif | /data/zebrafinch/sourcedata/ZF8002f_mask.tif | Zebra finch | F | True |
 ```
 
 Some quick checks before proceeding:
 
 - Each `subject_id` is unique
-- There are no spaces in your CSV columns that the template-building code will use.
+- There are no spaces in the core CSV columns (You can have spaces in your own metadata).
 - Every `filepath` exists and is readable
 - `origin` values are [in the correct orientation](/documentation/setting-up/image-definition.html)
 
@@ -61,6 +66,12 @@ Some quick checks before proceeding:
 Copy the below script, and adapt paths and `output_vox_size` for your purposes.
 `source_csv` should point to the CSV file you created in the previous step.
 In this example, we choose an output directory on mounted HPC storage, and downsample our data to 50um resolution.
+
+:::{note}
+If your input images are folders of 2D TIFFs that will not fit into your memory, choose `output_vox_size` sufficiently large so the downsampled array will fit.
+We recommend `output_vox_size` to be at least 1/1000th of the longest brain axis: for example, if your brains are ~1 cm long, the highest resolution would be 10 um.
+It may be worth running the pipeline on lower-resolution data first (in our example, e.g. 50 um or 100 um) to accelerate trouble-shooting.
+:::
 
 ```
 from pathlib import Path
@@ -75,7 +86,7 @@ standardise(
 	output_vox_size=50,
 )
 ```
-This will standardise the orientation and isotropic resolution of your inputs.
+This will standardise the orientation and resolution of your inputs.
 After running the script, you should have these expected outputs in your output directory:
 
 - `standardised/standardised_images.csv`
@@ -96,45 +107,38 @@ For quality-control, inspect the `.png` files in the `standardised-QC/` subfolde
 
 If a sample is oriented or scaled wrongly:
 
-- fix its `origin` or `resolution_` entries in the input CSV
-- rerun the standardisation script.
+- Fix its `origin` or `resolution_` entries in the input CSV
+- Rerun the standardisation script.
 
 If a sample image is not of sufficient quality
-- remove it from the input CSV file
-- delete the `standardised/` subfolder
-- rerun the standardisation script.
+- Remove it from the input CSV file
+- Delete the `standardised/` subfolder
+- Rerun the standardisation script.
 
 :::{note}
-Gauging image quality is somewhat subjective and speculative - we provide examples of the zebra finch template building team's judgement calls in Figures 2+3, for reference.
+Gauging image quality is somewhat subjective and speculative. We provide examples of the zebra finch template building team's judgement calls in Figures 2+3, for reference. Mild sample warping and damage is usually fine, as long as it's distributed differentially across samples. 
 
-![Orthogonal slices and a 3D render of a standardised high-quality zebrafinch sample](./images/brainglobe-template-builder/standardised-sample-plot-good-enough.png)
+![Orthogonal slices and a 3D render of a standardised OK zebrafinch sample](./images/brainglobe-template-builder/standardised-sample-plot-good-enough.png)
 
 **Figure 2: A standardised plot of a zebra finch brain image, displaying mild damage (missing parts of cerebellum, sample seems slightly deformed by preparation/imaging). We included this sample.**
 
-![Orthogonal slices and a 3D render of a standardised high-quality zebrafinch sample](./images/brainglobe-template-builder/standardised-sample-plot-too-cropped.png)
+![Orthogonal slices and a 3D render of a standardised zebrafinch sample with major parts of the brain cropped](./images/brainglobe-template-builder/standardised-sample-plot-too-cropped.png)
 
 **Figure 3: A standardised plot of a zebra finch brain image, displaying severe cropping on each side. We excluded this sample.**
 :::
 
 ## Apply brightness correction and mask the samples
 
-To normalise the brightness and create masks of each sample, copy the code below, adapt the paths and optionally the `MaskConfig` parameters. The `output_dir` variable should match the output directory passed in the previous script.
+To normalise the brightness and create masks of each sample, copy the code below, adapt the path to the output directory. The `output_dir` variable should match the output directory passed in the previous script.
 
 ```
 from pathlib import Path
 from brainglobe_template_builder.preprocess import preprocess
-from brainglobe_template_builder.utils.preproc_config import PreprocConfig, MaskConfig
 
 output_dir = Path("/path/to/atlas-forge/ZebraFinch")
-config = PreprocConfig(
-	output_dir=output_dir,
-	mask=MaskConfig()
-)
-
 standardised_csv = output_dir / "standardised" / "standardised_images.csv"
-preprocess(standardised_csv, config=config)
+preprocess(standardised_csv)
 ```
-
 After running the script, check that you have the expected outputs:
 
 - `preprocessed/all_processed_brain_paths.txt`
@@ -143,7 +147,7 @@ After running the script, check that you have the expected outputs:
 - `preprocessed/sub-<subject_id>/..._processed_mask.nii.gz` for each sample
 - `preprocessed-QC/sub-<subject_id>-mask-QC-grid.png` for each sample
 
-Each `nii.gz` file should also have a `_lrflip` equivalent, which contains images mirrored along the mid-sagittal plane. This will result in a symmetric template despite asymmetry in the inputs.
+Each `nii.gz` file should also have a left-right flipped (`..._lrflip.nii.gz`) equivalent. This will result in a symmetric template despite asymmetry in the inputs.
 
 ## Inspect quality-control plots for preprocessing
 
@@ -151,10 +155,36 @@ The `.png` files in `preprocessed-QC/` show a series of coronal sections of each
 - mask should include full brain volume generously (with a small border around the brain - see Figure 4)
 - mask should exclude obvious background/non-brain regions
 
-If you need to improve a mask, open it with `napari` as a `Labels` layer to edit it, and overwrite the previous mask on disk. 
+If you need to improve a mask, open it with `napari` as [a `Labels` layer](https://napari.org/stable/howtos/layers/labels.html) to edit it, and overwrite the previous mask on disk. 
 You should also update the `mask_filepath` in `standardised/standardised_images.csv` for the corrected sample.
 
-If you have many unsatisfactory masks, you can try experimenting with different `MaskConfig` parameters using the "Preprocess" `napari` widget.
+:::{note}
+If you have many unsatisfactory masks, you can try experimenting with different `MaskConfig` parameters using the "Preprocess" `napari` widget. Once you have found a set of parameters you are happy with, you can create `PreprocConfig` and `MaskConfig` objects to pass to your `preprocess` function.
+
+The code above would then change to something like
+
+```
+from pathlib import Path
+from brainglobe_template_builder.preprocess import preprocess
+from brainglobe_template_builder.utils.preproc_config import PreprocConfig, MaskConfig, ThresholdMethod
+
+output_dir = Path("/path/to/atlas-forge/ZebraFinch")
+standardised_csv = output_dir / "standardised" / "standardised_images.csv"
+
+# pad more generously, and use non-default masking parameters
+config = PreprocConfig(
+	output_dir=output_dir,
+	mask=MaskConfig(   
+		gaussian_sigma = 5, # default 3
+    	threshold_method = "otsu", # default "triangle"
+    	closing_size = 7, # default 5
+    	erode_size = 2, # default 0
+	)
+	pad_pixels = 20
+)
+preprocess(standardised_csv, config=config)
+```
+:::
 
 ![Coronal sections of a zebra finch brain, with nicely fitting masks overlaid](./images/brainglobe-template-builder/preprocessed-sample-plot-nice-masks.png)
 
