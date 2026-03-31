@@ -111,6 +111,9 @@ Using the BrainGlobe Atlas API to fetch and inspect an atlas
 
 ## Template building (experimental)
 
+::::{grid} 1 2 2 3
+:gutter: 3
+
 :::{grid-item-card} {fas}`brain;sd-text-primary` Preparing template inputs
 :img-bottom: images/brainglobe-template-builder/template-builder-header-qc.png
 :link: howto-process-for-template-building
@@ -132,6 +135,7 @@ Configuring and running an HPC job for template building (experimental!)
 :link-type: doc
 Aligning samples to image axes for template building (experimental!)
 :::
+::::
 
 ## Downloads
 - [⬇️ Download all examples in Python source code (.zip)](/api_examples/api_examples_python.zip)
