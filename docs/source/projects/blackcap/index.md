@@ -51,8 +51,8 @@ To view BrainGlobe atlases in [napari](https://napari.org), please follow the
 **Blackcap atlas viewed coronally**
 
 ## Get involved
-The blackcap atlas is version 1, and we anticipate releasing further versions at higher resolutions and with more 
-regions annotated. If you find this atlas useful for your work and would like to contribute, please [get in touch](/contact).
+We anticipate releasing further versions at higher resolutions and with more regions annotated.
+If you find this atlas useful for your work and would like to contribute, please [get in touch](/contact).
 
 We are creating further novel atlases, and we'd be very happy to chat if you're also interested in making an 
 atlas for your application. 
