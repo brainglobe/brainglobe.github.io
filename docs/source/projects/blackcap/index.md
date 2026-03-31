@@ -10,7 +10,7 @@ The Eurasian blackcap (*Sylvia atricapilla*) is a songbird known to navigate by 
 a very interesting animal model. However, the lack of a high quality reference atlas hinders computational neuroanatomy 
 research in this species. Anatomical atlases define a standard coordinate system for an organ, and allow data from 
 multiple sources to be aligned and then visualised and analysed together. This makes it easier to integrate results 
-different sources, and facilitates data sharing and collaboration.
+from different sources, and facilitates data sharing and collaboration.
 
 For this reason, we collaborated with [Simon Weiler](https://sites.google.com/view/neuroweiler) from the 
 [Sainsbury Wellcome Centre](https://www.sainsburywellcome.org), and the lab of 
@@ -36,7 +36,7 @@ The template generation process is simplified by
 improved to allow others to create their own atlases.
 :::
 
-![Atlas generation process](./images/atlas-generation.jpg)
+![Atlas generation process](./images/atlas-generation.png)
 **Atlas generation process**
 
 ## Results
