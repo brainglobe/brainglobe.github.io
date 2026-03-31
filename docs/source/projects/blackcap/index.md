@@ -40,7 +40,7 @@ improved to allow others to create their own atlases.
 **Atlas generation process**
 
 ## Results
-We have initially generated a template reference image at 25 micron isotropic resolution and annotated 23 brain regions. 
+We have initially generated a template reference image at 25 micron isotropic resolution and annotated 44 brain regions. 
 This atlas is available within BrainGlobe as `eurasian_blackcap_25um` and is compatible with all BrainGlobe tools.
 The raw data used to generate the template reference (downsampled to 25um) is also [available online](https://gin.g-node.org/BrainGlobe/blackcap_materials/src/master/raw_data_males_25um).
 
