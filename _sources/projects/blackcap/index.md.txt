@@ -10,7 +10,7 @@ The Eurasian blackcap (*Sylvia atricapilla*) is a songbird known to navigate by 
 a very interesting animal model. However, the lack of a high quality reference atlas hinders computational neuroanatomy 
 research in this species. Anatomical atlases define a standard coordinate system for an organ, and allow data from 
 multiple sources to be aligned and then visualised and analysed together. This makes it easier to integrate results 
-different sources, and facilitates data sharing and collaboration.
+from different sources, and facilitates data sharing and collaboration.
 
 For this reason, we collaborated with [Simon Weiler](https://sites.google.com/view/neuroweiler) from the 
 [Sainsbury Wellcome Centre](https://www.sainsburywellcome.org), and the lab of 
@@ -36,11 +36,11 @@ The template generation process is simplified by
 improved to allow others to create their own atlases.
 :::
 
-![Atlas generation process](./images/atlas-generation.jpg)
+![Atlas generation process](./images/atlas-generation.png)
 **Atlas generation process**
 
 ## Results
-We have initially generated a template reference image at 25 micron isotropic resolution and annotated 23 brain regions. 
+We have initially generated a template reference image at 25 micron isotropic resolution and annotated 44 brain regions. 
 This atlas is available within BrainGlobe as `eurasian_blackcap_25um` and is compatible with all BrainGlobe tools.
 The raw data used to generate the template reference (downsampled to 25um) is also [available online](https://gin.g-node.org/BrainGlobe/blackcap_materials/src/master/raw_data_males_25um).
 
@@ -51,8 +51,8 @@ To view BrainGlobe atlases in [napari](https://napari.org), please follow the
 **Blackcap atlas viewed coronally**
 
 ## Get involved
-The blackcap atlas is version 1, and we anticipate releasing further versions at higher resolutions and with more 
-regions annotated. If you find this atlas useful for your work and would like to contribute, please [get in touch](/contact).
+We anticipate releasing further versions at higher resolutions and with more regions annotated.
+If you find this atlas useful for your work and would like to contribute, please [get in touch](/contact).
 
 We are creating further novel atlases, and we'd be very happy to chat if you're also interested in making an 
 atlas for your application. 

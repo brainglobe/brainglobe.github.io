@@ -73,208 +73,208 @@ To know what atlases are available through BrainGlobe, we can use the `show_atla
     ╭───────────────────────────── Brainglobe Atlases ─────────────────────────────╮
     │                                                          Local     Latest    │
     │  Name                              Download…  Updated   version    version   │
-    │  allen_mouse_100um                     ✔         ✔        1.2        1.2     │
-    │  admba_3d_e11_5_mouse_16um                                           1.1     │
-    │  admba_3d_e13_5_mouse_16um                                           1.1     │
-    │  admba_3d_e15_5_mouse_16um                                           1.1     │
-    │  admba_3d_e18_5_mouse_16um                                           1.1     │
-    │  admba_3d_p14_mouse_16.752um                                         1.1     │
-    │  admba_3d_p28_mouse_16.752um                                         1.1     │
-    │  admba_3d_p4_mouse_16.752um                                          1.1     │
-    │  admba_3d_p56_mouse_25um                                             1.1     │
-    │  african_molerat_20um                                                1.1     │
-    │  allen_cord_20um                                                     1.2     │
-    │  allen_human_500um                                                   1.0     │
-    │  allen_mouse_10um                                                    1.2     │
-    │  allen_mouse_25um                                                    1.2     │
-    │  allen_mouse_50um                                                    1.2     │
-    │  allen_mouse_bluebrain_barrels_1…                                    1.0     │
-    │  allen_mouse_bluebrain_barrels_2…                                    1.0     │
-    │  australian_mouse_15um                                               1.0     │
-    │  azba_zfish_4um                                                      1.2     │
-    │  carea_mouse_25um                                                    1.1     │
-    │  ccfv3augmented_mouse_10um                                           1.0     │
-    │  ccfv3augmented_mouse_25um                                           1.0     │
-    │  columbia_cuttlefish_50um                                            1.0     │
-    │  csl_cat_500um                                                       1.0     │
-    │  demba_allen_seg_dev_mouse_p10_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p10_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p11_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p11_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p12_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p12_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p13_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p13_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p14_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p14_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p15_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p15_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p16_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p16_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p17_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p17_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p18_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p18_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p19_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p19_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p20_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p20_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p21_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p21_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p22_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p22_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p23_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p23_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p24_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p24_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p25_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p25_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p26_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p26_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p27_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p27_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p28_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p28_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p29_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p29_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p30_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p30_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p31_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p31_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p32_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p32_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p33_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p33_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p34_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p34_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p35_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p35_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p36_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p36_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p37_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p37_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p38_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p38_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p39_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p39_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p40_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p40_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p41_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p41_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p42_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p42_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p43_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p43_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p44_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p44_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p45_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p45_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p46_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p46_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p47_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p47_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p48_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p48_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p49_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p49_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p4_20…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p4_25…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p50_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p50_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p51_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p51_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p52_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p52_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p53_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p53_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p54_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p54_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p55_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p55_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p56_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p56_2…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p5_20…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p5_25…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p6_20…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p6_25…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p7_20…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p7_25…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p8_20…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p8_25…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p9_20…                                    1.0     │
-    │  demba_allen_seg_dev_mouse_p9_25…                                    1.0     │
-    │  dorr_mouse_mri_32um                                                 1.0     │
-    │  drosophila_wingdisc_instar3_2um                                     1.0     │
-    │  eurasian_blackcap_25um                                              1.5     │
-    │  example_mouse_100um                                                 1.2     │
-    │  kim_dev_mouse_e11-5_lsfm_20um                                       1.3     │
-    │  kim_dev_mouse_e11-5_mri-adc_31.…                                    1.3     │
-    │  kim_dev_mouse_e11-5_mri-dwi_31.…                                    1.3     │
-    │  kim_dev_mouse_e11-5_mri-fa_31.5…                                    1.3     │
-    │  kim_dev_mouse_e11-5_mri-t2_31.5…                                    1.3     │
-    │  kim_dev_mouse_e13-5_lsfm_20um                                       1.3     │
-    │  kim_dev_mouse_e13-5_mri-adc_34um                                    1.3     │
-    │  kim_dev_mouse_e13-5_mri-dwi_34um                                    1.3     │
-    │  kim_dev_mouse_e13-5_mri-fa_34um                                     1.3     │
-    │  kim_dev_mouse_e13-5_mri-t2_34um                                     1.3     │
-    │  kim_dev_mouse_e15-5_lsfm_20um                                       1.3     │
-    │  kim_dev_mouse_e15-5_mri-adc_37.…                                    1.3     │
-    │  kim_dev_mouse_e15-5_mri-dwi_37.…                                    1.3     │
-    │  kim_dev_mouse_e15-5_mri-fa_37.5…                                    1.3     │
-    │  kim_dev_mouse_e15-5_mri-mtr_37.…                                    1.3     │
-    │  kim_dev_mouse_e15-5_mri-t2_37.5…                                    1.3     │
-    │  kim_dev_mouse_e18-5_lsfm_20um                                       1.3     │
-    │  kim_dev_mouse_e18-5_mri-adc_40um                                    1.3     │
-    │  kim_dev_mouse_e18-5_mri-dwi_40um                                    1.3     │
-    │  kim_dev_mouse_e18-5_mri-fa_40um                                     1.3     │
-    │  kim_dev_mouse_e18-5_mri-t2_40um                                     1.3     │
-    │  kim_dev_mouse_idisco_10um                                           1.2     │
-    │  kim_dev_mouse_mri_a0_10um                                           1.2     │
-    │  kim_dev_mouse_mri_adc_10um                                          1.2     │
-    │  kim_dev_mouse_mri_dwi_10um                                          1.2     │
-    │  kim_dev_mouse_mri_fa_10um                                           1.2     │
-    │  kim_dev_mouse_mri_mtr_10um                                          1.2     │
-    │  kim_dev_mouse_mri_t2_10um                                           1.2     │
-    │  kim_dev_mouse_p04_lsfm_20um                                         1.3     │
-    │  kim_dev_mouse_p04_mri-adc_50um                                      1.3     │
-    │  kim_dev_mouse_p04_mri-dwi_50um                                      1.3     │
-    │  kim_dev_mouse_p04_mri-fa_50um                                       1.3     │
-    │  kim_dev_mouse_p04_mri-mtr_50um                                      1.3     │
-    │  kim_dev_mouse_p04_mri-t2_50um                                       1.3     │
-    │  kim_dev_mouse_p14_lsfm_20um                                         1.3     │
-    │  kim_dev_mouse_p14_mri-adc_50um                                      1.3     │
-    │  kim_dev_mouse_p14_mri-dwi_50um                                      1.3     │
-    │  kim_dev_mouse_p14_mri-fa_50um                                       1.3     │
-    │  kim_dev_mouse_p14_mri-mtr_50um                                      1.3     │
-    │  kim_dev_mouse_p14_mri-t2_50um                                       1.3     │
-    │  kim_dev_mouse_p56_lsfm_20um                                         1.3     │
-    │  kim_dev_mouse_p56_mri-adc_50um                                      1.3     │
-    │  kim_dev_mouse_p56_mri-dwi_50um                                      1.3     │
-    │  kim_dev_mouse_p56_mri-fa_50um                                       1.3     │
-    │  kim_dev_mouse_p56_mri-t2_50um                                       1.3     │
-    │  kim_dev_mouse_stp_10um                                              1.2     │
-    │  kim_mouse_100um                                                     1.1     │
-    │  kim_mouse_10um                                                      1.1     │
-    │  kim_mouse_25um                                                      1.1     │
-    │  kim_mouse_50um                                                      1.1     │
-    │  kim_mouse_isotropic_20um                                            1.0     │
-    │  kocher_bumblebee_2.542um                                            1.0     │
-    │  mpin_zfish_1um                                                      1.0     │
-    │  nadkarni_mri_mouselemur_91um                                        1.1     │
-    │  osten_mouse_100um                                                   1.1     │
-    │  osten_mouse_10um                                                    1.1     │
-    │  osten_mouse_25um                                                    1.1     │
-    │  osten_mouse_50um                                                    1.1     │
-    │  perens_lsfm_mouse_20um                                              1.2     │
-    │  perens_multimodal_lsfm_25um                                         1.0     │
-    │  perens_stereotaxic_mri_mouse_25…                                    1.0     │
-    │  prairie_vole_25um                                                   1.0     │
-    │  princeton_mouse_20um                                                1.1     │
-    │  sju_cavefish_2um                                                    1.0     │
-    │  swc_female_rat_50um                                                 1.0     │
-    │  unam_axolotl_40um                                                   1.1     │
-    │  whs_sd_rat_39um                                                     1.2     │
-    │  whs_sd_swc_female_rat_39um                                          1.0     │
+    │  admba_3d_e11_5_mouse_16um                                           3.0     │
+    │  admba_3d_e13_5_mouse_16um                                           3.0     │
+    │  admba_3d_e15_5_mouse_16um                                           3.0     │
+    │  admba_3d_e18_5_mouse_16um                                           3.0     │
+    │  admba_3d_p14_mouse_16.752um                                         3.0     │
+    │  admba_3d_p28_mouse_16.752um                                         3.0     │
+    │  admba_3d_p4_mouse_16.752um                                          3.0     │
+    │  admba_3d_p56_mouse_25um                                             3.0     │
+    │  african_molerat_20um                                                3.0     │
+    │  allen_cord_20um                                                     3.0     │
+    │  allen_human_500um                                                   3.0     │
+    │  allen_mouse_100um                                                   3.0     │
+    │  allen_mouse_10um                                                    3.0     │
+    │  allen_mouse_25um                                                    3.0     │
+    │  allen_mouse_50um                                                    3.0     │
+    │  allen_mouse_bluebrain_barrels_1…                                    3.0     │
+    │  allen_mouse_bluebrain_barrels_2…                                    3.0     │
+    │  australian_mouse_15um                                               3.0     │
+    │  azba_zfish_4um                                                      3.0     │
+    │  carea_mouse_25um                                                    3.0     │
+    │  ccfv3augmented_mouse_10um                                           3.0     │
+    │  ccfv3augmented_mouse_25um                                           3.0     │
+    │  columbia_cuttlefish_50um                                            3.0     │
+    │  csl_cat_500um                                                       3.0     │
+    │  demba_allen_seg_dev_mouse_p10_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p10_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p11_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p11_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p12_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p12_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p13_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p13_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p14_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p14_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p15_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p15_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p16_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p16_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p17_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p17_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p18_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p18_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p19_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p19_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p20_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p20_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p21_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p21_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p22_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p22_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p23_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p23_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p24_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p24_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p25_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p25_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p26_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p26_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p27_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p27_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p28_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p28_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p29_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p29_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p30_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p30_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p31_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p31_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p32_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p32_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p33_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p33_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p34_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p34_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p35_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p35_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p36_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p36_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p37_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p37_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p38_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p38_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p39_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p39_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p40_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p40_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p41_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p41_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p42_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p42_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p43_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p43_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p44_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p44_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p45_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p45_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p46_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p46_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p47_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p47_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p48_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p48_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p49_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p49_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p4_20…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p4_25…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p50_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p50_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p51_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p51_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p52_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p52_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p53_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p53_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p54_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p54_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p55_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p55_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p56_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p56_2…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p5_20…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p5_25…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p6_20…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p6_25…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p7_20…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p7_25…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p8_20…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p8_25…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p9_20…                                    3.0     │
+    │  demba_allen_seg_dev_mouse_p9_25…                                    3.0     │
+    │  dorr_mouse_mri_32um                                                 3.0     │
+    │  drosophila_wingdisc_instar3_2um                                     3.0     │
+    │  eurasian_blackcap_25um                                              3.0     │
+    │  example_mouse_100um                                                 3.0     │
+    │  kim_dev_mouse_e11-5_lsfm_20um                                       3.0     │
+    │  kim_dev_mouse_e11-5_mri-adc_31.…                                    3.0     │
+    │  kim_dev_mouse_e11-5_mri-dwi_31.…                                    3.0     │
+    │  kim_dev_mouse_e11-5_mri-fa_31.5…                                    3.0     │
+    │  kim_dev_mouse_e11-5_mri-t2_31.5…                                    3.0     │
+    │  kim_dev_mouse_e13-5_lsfm_20um                                       3.0     │
+    │  kim_dev_mouse_e13-5_mri-adc_34um                                    3.0     │
+    │  kim_dev_mouse_e13-5_mri-dwi_34um                                    3.0     │
+    │  kim_dev_mouse_e13-5_mri-fa_34um                                     3.0     │
+    │  kim_dev_mouse_e13-5_mri-t2_34um                                     3.0     │
+    │  kim_dev_mouse_e15-5_lsfm_20um                                       3.0     │
+    │  kim_dev_mouse_e15-5_mri-adc_37.…                                    3.0     │
+    │  kim_dev_mouse_e15-5_mri-dwi_37.…                                    3.0     │
+    │  kim_dev_mouse_e15-5_mri-fa_37.5…                                    3.0     │
+    │  kim_dev_mouse_e15-5_mri-mtr_37.…                                    3.0     │
+    │  kim_dev_mouse_e15-5_mri-t2_37.5…                                    3.0     │
+    │  kim_dev_mouse_e18-5_lsfm_20um                                       3.0     │
+    │  kim_dev_mouse_e18-5_mri-adc_40um                                    3.0     │
+    │  kim_dev_mouse_e18-5_mri-dwi_40um                                    3.0     │
+    │  kim_dev_mouse_e18-5_mri-fa_40um                                     3.0     │
+    │  kim_dev_mouse_e18-5_mri-t2_40um                                     3.0     │
+    │  kim_dev_mouse_idisco_10um                                           3.0     │
+    │  kim_dev_mouse_mri_a0_10um                                           3.0     │
+    │  kim_dev_mouse_mri_adc_10um                                          3.0     │
+    │  kim_dev_mouse_mri_dwi_10um                                          3.0     │
+    │  kim_dev_mouse_mri_fa_10um                                           3.0     │
+    │  kim_dev_mouse_mri_mtr_10um                                          3.0     │
+    │  kim_dev_mouse_mri_t2_10um                                           3.0     │
+    │  kim_dev_mouse_p04_lsfm_20um                                         3.0     │
+    │  kim_dev_mouse_p04_mri-adc_50um                                      3.0     │
+    │  kim_dev_mouse_p04_mri-dwi_50um                                      3.0     │
+    │  kim_dev_mouse_p04_mri-fa_50um                                       3.0     │
+    │  kim_dev_mouse_p04_mri-mtr_50um                                      3.0     │
+    │  kim_dev_mouse_p04_mri-t2_50um                                       3.0     │
+    │  kim_dev_mouse_p14_lsfm_20um                                         3.0     │
+    │  kim_dev_mouse_p14_mri-adc_50um                                      3.0     │
+    │  kim_dev_mouse_p14_mri-dwi_50um                                      3.0     │
+    │  kim_dev_mouse_p14_mri-fa_50um                                       3.0     │
+    │  kim_dev_mouse_p14_mri-mtr_50um                                      3.0     │
+    │  kim_dev_mouse_p14_mri-t2_50um                                       3.0     │
+    │  kim_dev_mouse_p56_lsfm_20um                                         3.0     │
+    │  kim_dev_mouse_p56_mri-adc_50um                                      3.0     │
+    │  kim_dev_mouse_p56_mri-dwi_50um                                      3.0     │
+    │  kim_dev_mouse_p56_mri-fa_50um                                       3.0     │
+    │  kim_dev_mouse_p56_mri-t2_50um                                       3.0     │
+    │  kim_dev_mouse_stp_10um                                              3.0     │
+    │  kim_mouse_100um                                                     3.0     │
+    │  kim_mouse_10um                                                      3.0     │
+    │  kim_mouse_25um                                                      3.0     │
+    │  kim_mouse_50um                                                      3.0     │
+    │  kim_mouse_isotropic_20um                                            3.0     │
+    │  kocher_bumblebee_2.542um                                            3.0     │
+    │  mpin_zfish_1um                                                      3.0     │
+    │  nadkarni_mri_mouselemur_91um                                        3.0     │
+    │  osten_mouse_100um                                                   3.0     │
+    │  osten_mouse_10um                                                    3.0     │
+    │  osten_mouse_25um                                                    3.0     │
+    │  osten_mouse_50um                                                    3.0     │
+    │  perens_lsfm_mouse_20um                                              3.0     │
+    │  perens_multimodal_lsfm_25um                                         3.0     │
+    │  perens_stereotaxic_mri_mouse_25…                                    3.0     │
+    │  prairie_vole_25um                                                   3.0     │
+    │  princeton_mouse_20um                                                3.0     │
+    │  sju_cavefish_2um                                                    3.0     │
+    │  swc_female_rat_50um                                                 3.0     │
+    │  unam_axolotl_40um                                                   3.0     │
+    │  whs_sd_rat_39um                                                     3.0     │
+    │  whs_sd_swc_female_rat_39um                                          3.0     │
     ╰──────────────────────────────────────────────────────────────────────────────╯
 
 
@@ -298,6 +298,21 @@ and stored on your local machine (by default, in `~/.brainglobe`):
 
 
 
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Downloading allen_mouse_100um atlas v3.0 manifest:
+      0%|          | 0/1 [00:00<?, ?it/s]    100%|██████████| 1/1 [00:00<00:00,  7.46it/s]    100%|██████████| 1/1 [00:00<00:00,  7.44it/s]
+    Downloading terminology metadata for allen_mouse-terminology:
+      0%|          | 0/2 [00:00<?, ?it/s]    100%|██████████| 2/2 [00:00<00:00,  7.17it/s]    100%|██████████| 2/2 [00:00<00:00,  7.16it/s]
+    Downloading coordinate space metadata for allen-adult-mouse-ccf-space:
+      0%|          | 0/2 [00:00<?, ?it/s]    100%|██████████| 2/2 [00:00<00:00, 15.48it/s]    100%|██████████| 2/2 [00:00<00:00, 15.44it/s]
+    Downloading annotation metadata for allen_mouse-annotation:
+      0%|          | 0/5 [00:00<?, ?it/s]     20%|██        | 1/5 [00:00<00:00,  9.44it/s]     40%|████      | 2/5 [00:00<00:00,  6.62it/s]    100%|██████████| 5/5 [00:00<00:00, 16.90it/s]
+    Downloading template metadata for allen-adult-mouse-stpt-template:
+      0%|          | 0/5 [00:00<?, ?it/s]     20%|██        | 1/5 [00:00<00:00,  8.64it/s]    100%|██████████| 5/5 [00:00<00:00, 27.66it/s]
 
 
 
@@ -347,19 +362,37 @@ All atlases have a standard set of metatata describing their source, species, re
  .. code-block:: none
 
     {'additional_references': [],
+     'annotation_set': {'location': '/annotation-sets/allen_mouse-annotation/1_2',
+                        'name': 'allen_mouse-annotation',
+                        'template': {'location': '/templates/allen-adult-mouse-stpt-template/2015',
+                                     'name': 'allen-adult-mouse-stpt-template',
+                                     'version': '2015'},
+                        'terminology': {'location': '/terminologies/allen_mouse-terminology/1_2',
+                                        'name': 'allen_mouse-terminology',
+                                        'version': '1_2'},
+                        'version': '1_2'},
      'atlas_link': 'http://www.brain-map.org',
      'citation': 'Wang et al 2020, https://doi.org/10.1016/j.cell.2020.04.007',
+     'coordinate_space': {'location': '/coordinate-spaces/allen-adult-mouse-ccf-space/2015',
+                          'name': 'allen-adult-mouse-ccf-space',
+                          'template': {'location': '/templates/allen-adult-mouse-stpt-template/2015',
+                                       'name': 'allen-adult-mouse-stpt-template',
+                                       'version': '2015'},
+                          'version': '2015'},
+     'location': '/atlases/allen_mouse_100um/3_0',
      'name': 'allen_mouse',
      'orientation': 'asr',
      'resolution': [100.0, 100.0, 100.0],
      'shape': [132, 80, 114],
      'species': 'Mus musculus',
      'symmetric': True,
-     'trasform_to_bg': [[1.0, 0.0, 0.0, 0.0],
-                        [0.0, 1.0, 0.0, 0.0],
-                        [0.0, 0.0, 1.0, 0.0],
-                        [0.0, 0.0, 0.0, 1.0]],
-     'version': '1.2'}
+     'template': {'location': '/templates/allen-adult-mouse-stpt-template/2015',
+                  'name': 'allen-adult-mouse-stpt-template',
+                  'version': '2015'},
+     'terminology': {'location': '/terminologies/allen_mouse-terminology/1_2',
+                     'name': 'allen_mouse-terminology',
+                     'version': '1_2'},
+     'version': '3.0'}
 
 
 
@@ -398,8 +431,11 @@ Anatomical reference (or template) image:
 
  .. code-block:: none
 
+    Warning: atlas.reference is a deprecated alias for atlas.template, and will be removed in future versions.
+    Downloading template...
+      0%|          | 0/14 [00:00<?, ?it/s]     43%|████▎     | 6/14 [00:00<00:00, 37.81it/s]     71%|███████▏  | 10/14 [00:00<00:00, 28.15it/s]     93%|█████████▎| 13/14 [00:00<00:00, 20.80it/s]    100%|██████████| 14/14 [00:00<00:00, 25.10it/s]
 
-    <matplotlib.image.AxesImage object at 0x7f203928b440>
+    <matplotlib.image.AxesImage object at 0x7faf4c4973b0>
 
 
 
@@ -435,8 +471,10 @@ Annotations stack
 
  .. code-block:: none
 
+    Downloading annotations...
+      0%|          | 0/14 [00:00<?, ?it/s]     43%|████▎     | 6/14 [00:00<00:00, 53.99it/s]    100%|██████████| 14/14 [00:00<00:00, 92.56it/s]
 
-    <matplotlib.image.AxesImage object at 0x7f2026c80080>
+    <matplotlib.image.AxesImage object at 0x7faef4e49d30>
 
 
 
@@ -466,7 +504,7 @@ Hemisheres stack:
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f2026cca0c0>
+    <matplotlib.image.AxesImage object at 0x7faef485ac30>
 
 
 
@@ -1359,10 +1397,12 @@ The structures attribute is a custom dictionary that can be queried by region nu
  .. code-block:: none
 
     {'acronym': 'root',
+     'annotation_value': 997,
      'id': 997,
      'mesh': None,
-     'mesh_filename': PosixPath('/home/runner/.brainglobe/allen_mouse_100um_v1.2/meshes/997.obj'),
+     'mesh_filename': PosixPath('/home/runner/.brainglobe/brainglobe-atlasapi/annotation-sets/allen_mouse-annotation/1_2/annotation.precomputed/997'),
      'name': 'root',
+     'parent_structure_id': None,
      'rgb_triplet': [255, 255, 255],
      'structure_id_path': [997]}
 
@@ -1470,7 +1510,7 @@ To get the mask for a region, use
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f20266cf2c0>
+    <matplotlib.image.AxesImage object at 0x7faef4e6e2a0>
 
 
 
@@ -1498,12 +1538,11 @@ To access the 3D structure mesh for visualisation, this can be queried using the
 
  .. code-block:: none
 
+      0%|          | 0/1 [00:00<?, ?it/s]    100%|██████████| 1/1 [00:00<00:00,  1.55it/s]    100%|██████████| 1/1 [00:00<00:00,  1.55it/s]
     <meshio mesh object>
       Number of points: 56703
       Number of cells:
         triangle: 112948
-      Point data: obj:vn
-      Cell data: obj:group_ids
 
 
 
@@ -1527,18 +1566,15 @@ A list of regions can also be queried:
 
  .. code-block:: none
 
+      0%|          | 0/1 [00:00<?, ?it/s]    100%|██████████| 1/1 [00:00<00:00,  3.99it/s]    100%|██████████| 1/1 [00:00<00:00,  3.98it/s]
     [<meshio mesh object>
       Number of points: 56703
       Number of cells:
-        triangle: 112948
-      Point data: obj:vn
-      Cell data: obj:group_ids,
+        triangle: 112948,
      <meshio mesh object>
       Number of points: 3532
       Number of cells:
-        triangle: 7056
-      Point data: obj:vn
-      Cell data: obj:group_ids]
+        triangle: 7056]
 
 
 
@@ -1564,7 +1600,7 @@ The path can also be queried directly, if it's needed to be used within another 
 
  .. code-block:: none
 
-    /home/runner/.brainglobe/allen_mouse_100um_v1.2/meshes/567.obj
+    /home/runner/.brainglobe/brainglobe-atlasapi/annotation-sets/allen_mouse-annotation/1_2/annotation.precomputed/567
 
 
 
@@ -1724,7 +1760,7 @@ Now print hemisphere string
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 3.704 seconds)
+   **Total running time of the script:** (0 minutes 8.611 seconds)
 
 
 .. _sphx_glr_download_api_examples_brainglobe_atlasapi_example.py:
