@@ -304,15 +304,15 @@ and stored on your local machine (by default, in `~/.brainglobe`):
  .. code-block:: none
 
     Downloading allen_mouse_100um atlas v3.0 manifest:
-      0%|          | 0/1 [00:00<?, ?it/s]    100%|██████████| 1/1 [00:00<00:00,  7.46it/s]    100%|██████████| 1/1 [00:00<00:00,  7.44it/s]
+      0%|          | 0/1 [00:00<?, ?it/s]    100%|██████████| 1/1 [00:00<00:00, 10.81it/s]
     Downloading terminology metadata for allen_mouse-terminology:
-      0%|          | 0/2 [00:00<?, ?it/s]    100%|██████████| 2/2 [00:00<00:00,  7.17it/s]    100%|██████████| 2/2 [00:00<00:00,  7.16it/s]
+      0%|          | 0/2 [00:00<?, ?it/s]    100%|██████████| 2/2 [00:00<00:00, 10.95it/s]    100%|██████████| 2/2 [00:00<00:00, 10.93it/s]
     Downloading coordinate space metadata for allen-adult-mouse-ccf-space:
-      0%|          | 0/2 [00:00<?, ?it/s]    100%|██████████| 2/2 [00:00<00:00, 15.48it/s]    100%|██████████| 2/2 [00:00<00:00, 15.44it/s]
+      0%|          | 0/2 [00:00<?, ?it/s]    100%|██████████| 2/2 [00:00<00:00, 22.79it/s]
     Downloading annotation metadata for allen_mouse-annotation:
-      0%|          | 0/5 [00:00<?, ?it/s]     20%|██        | 1/5 [00:00<00:00,  9.44it/s]     40%|████      | 2/5 [00:00<00:00,  6.62it/s]    100%|██████████| 5/5 [00:00<00:00, 16.90it/s]
+      0%|          | 0/5 [00:00<?, ?it/s]     40%|████      | 2/5 [00:00<00:00,  9.64it/s]    100%|██████████| 5/5 [00:00<00:00, 18.42it/s]
     Downloading template metadata for allen-adult-mouse-stpt-template:
-      0%|          | 0/5 [00:00<?, ?it/s]     20%|██        | 1/5 [00:00<00:00,  8.64it/s]    100%|██████████| 5/5 [00:00<00:00, 27.66it/s]
+      0%|          | 0/5 [00:00<?, ?it/s]    100%|██████████| 5/5 [00:00<00:00, 47.74it/s]    100%|██████████| 5/5 [00:00<00:00, 47.59it/s]
 
 
 
@@ -433,9 +433,9 @@ Anatomical reference (or template) image:
 
     Warning: atlas.reference is a deprecated alias for atlas.template, and will be removed in future versions.
     Downloading template...
-      0%|          | 0/14 [00:00<?, ?it/s]     43%|████▎     | 6/14 [00:00<00:00, 37.81it/s]     71%|███████▏  | 10/14 [00:00<00:00, 28.15it/s]     93%|█████████▎| 13/14 [00:00<00:00, 20.80it/s]    100%|██████████| 14/14 [00:00<00:00, 25.10it/s]
+      0%|          | 0/14 [00:00<?, ?it/s]     43%|████▎     | 6/14 [00:00<00:00, 41.70it/s]     79%|███████▊  | 11/14 [00:00<00:00, 39.93it/s]    100%|██████████| 14/14 [00:00<00:00, 33.15it/s]
 
-    <matplotlib.image.AxesImage object at 0x7faf4c4973b0>
+    <matplotlib.image.AxesImage object at 0x7f1e3077c170>
 
 
 
@@ -472,9 +472,9 @@ Annotations stack
  .. code-block:: none
 
     Downloading annotations...
-      0%|          | 0/14 [00:00<?, ?it/s]     43%|████▎     | 6/14 [00:00<00:00, 53.99it/s]    100%|██████████| 14/14 [00:00<00:00, 92.56it/s]
+      0%|          | 0/14 [00:00<?, ?it/s]     79%|███████▊  | 11/14 [00:00<00:00, 105.15it/s]    100%|██████████| 14/14 [00:00<00:00, 87.10it/s] 
 
-    <matplotlib.image.AxesImage object at 0x7faef4e49d30>
+    <matplotlib.image.AxesImage object at 0x7f1e305eb170>
 
 
 
@@ -504,7 +504,7 @@ Hemisheres stack:
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7faef485ac30>
+    <matplotlib.image.AxesImage object at 0x7f1e30790fe0>
 
 
 
@@ -1510,7 +1510,7 @@ To get the mask for a region, use
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7faef4e6e2a0>
+    <matplotlib.image.AxesImage object at 0x7f1e30790590>
 
 
 
@@ -1538,7 +1538,7 @@ To access the 3D structure mesh for visualisation, this can be queried using the
 
  .. code-block:: none
 
-      0%|          | 0/1 [00:00<?, ?it/s]    100%|██████████| 1/1 [00:00<00:00,  1.55it/s]    100%|██████████| 1/1 [00:00<00:00,  1.55it/s]
+      0%|          | 0/1 [00:00<?, ?it/s]    100%|██████████| 1/1 [00:00<00:00,  2.02it/s]    100%|██████████| 1/1 [00:00<00:00,  2.02it/s]
     <meshio mesh object>
       Number of points: 56703
       Number of cells:
@@ -1566,7 +1566,7 @@ A list of regions can also be queried:
 
  .. code-block:: none
 
-      0%|          | 0/1 [00:00<?, ?it/s]    100%|██████████| 1/1 [00:00<00:00,  3.99it/s]    100%|██████████| 1/1 [00:00<00:00,  3.98it/s]
+      0%|          | 0/1 [00:00<?, ?it/s]    100%|██████████| 1/1 [00:00<00:00,  5.21it/s]    100%|██████████| 1/1 [00:00<00:00,  5.20it/s]
     [<meshio mesh object>
       Number of points: 56703
       Number of cells:
@@ -1760,7 +1760,7 @@ Now print hemisphere string
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 8.611 seconds)
+   **Total running time of the script:** (0 minutes 7.330 seconds)
 
 
 .. _sphx_glr_download_api_examples_brainglobe_atlasapi_example.py:
