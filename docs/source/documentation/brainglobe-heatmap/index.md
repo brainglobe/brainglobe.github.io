@@ -123,7 +123,7 @@ bgh.Heatmap(
 * `cmap`: Specifies the colormap used for visualization, Standard matplotlib colormaps like 'Reds', 'Blues', 'viridis', or 'Purples' can be used. See more [here](https://matplotlib.org/stable/users/explain/colors/colormaps.html#sequential).
 * `annotate_regions`: Automatically annotates regions on the visualization. Can also annotate regions with custom text `{"VIS": "Visual Cortex"}` or only specified regions `["VIS", "HIP"]`.
 * `format`: Specifies if a 2D plot should be made (using `matplotlib`) or a 3D rendering instead (using `brainrender`).
-* `label_regions`: Labels regions on the colorbar (2D only). If `True`, labels all visible regions. Can also label only specific regions `["VIS", "HIP"]` or use custom label text `{"VIS": "Visual Cortex", "HIP": "Hippocampus"}`.
+* `label_regions`: Labels regions on the colorbar (2D only). If `True`, labels all visible regions. Can also use custom label text `{"VIS": "Visual Cortex"}` or label only specific regions `["VIS", "HIP"]`.
 
 #### Colorbar region labels
 
