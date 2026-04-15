@@ -770,26 +770,26 @@ and stored on your local machine (by default, in <cite>~/.brainglobe</cite>):</p
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Downloading allen_mouse_100um atlas v3.0 manifest:
 
   0%|          | 0/1 [00:00&lt;?, ?it/s]
-100%|██████████| 1/1 [00:00&lt;00:00, 10.81it/s]
+100%|██████████| 1/1 [00:00&lt;00:00, 13.75it/s]
 Downloading terminology metadata for allen_mouse-terminology:
 
   0%|          | 0/2 [00:00&lt;?, ?it/s]
-100%|██████████| 2/2 [00:00&lt;00:00, 10.95it/s]
-100%|██████████| 2/2 [00:00&lt;00:00, 10.93it/s]
+100%|██████████| 2/2 [00:00&lt;00:00,  6.00it/s]
+100%|██████████| 2/2 [00:00&lt;00:00,  6.00it/s]
 Downloading coordinate space metadata for allen-adult-mouse-ccf-space:
 
   0%|          | 0/2 [00:00&lt;?, ?it/s]
-100%|██████████| 2/2 [00:00&lt;00:00, 22.79it/s]
+100%|██████████| 2/2 [00:00&lt;00:00, 31.46it/s]
 Downloading annotation metadata for allen_mouse-annotation:
 
   0%|          | 0/5 [00:00&lt;?, ?it/s]
- 40%|████      | 2/5 [00:00&lt;00:00,  9.64it/s]
-100%|██████████| 5/5 [00:00&lt;00:00, 18.42it/s]
+ 40%|████      | 2/5 [00:00&lt;00:00,  7.53it/s]
+100%|██████████| 5/5 [00:00&lt;00:00, 18.68it/s]
 Downloading template metadata for allen-adult-mouse-stpt-template:
 
   0%|          | 0/5 [00:00&lt;?, ?it/s]
-100%|██████████| 5/5 [00:00&lt;00:00, 47.74it/s]
-100%|██████████| 5/5 [00:00&lt;00:00, 47.59it/s]
+100%|██████████| 5/5 [00:00&lt;00:00, 42.07it/s]
+100%|██████████| 5/5 [00:00&lt;00:00, 41.93it/s]
 </pre></div>
 </div>
 <div class="note admonition">
@@ -868,11 +868,11 @@ atlas, as it is relatively small, but high quality.</p>
 Downloading template...
 
   0%|          | 0/14 [00:00&lt;?, ?it/s]
- 43%|████▎     | 6/14 [00:00&lt;00:00, 41.70it/s]
- 79%|███████▊  | 11/14 [00:00&lt;00:00, 39.93it/s]
-100%|██████████| 14/14 [00:00&lt;00:00, 33.15it/s]
+ 43%|████▎     | 6/14 [00:00&lt;00:00, 51.34it/s]
+ 86%|████████▌ | 12/14 [00:00&lt;00:00, 40.24it/s]
+100%|██████████| 14/14 [00:00&lt;00:00, 45.19it/s]
 
-&lt;matplotlib.image.AxesImage object at 0x7f1e3077c170&gt;
+&lt;matplotlib.image.AxesImage object at 0x7fee8373b500&gt;
 </pre></div>
 </div>
 <p>Annotations stack</p>
@@ -890,10 +890,10 @@ Downloading template...
 <img src="../_images/sphx_glr_brainglobe_atlasapi_example_002.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_example_002.png" alt="brainglobe atlasapi example" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Downloading annotations...
 
   0%|          | 0/14 [00:00&lt;?, ?it/s]
- 79%|███████▊  | 11/14 [00:00&lt;00:00, 105.15it/s]
-100%|██████████| 14/14 [00:00&lt;00:00, 87.10it/s]
+100%|██████████| 14/14 [00:00&lt;00:00, 122.58it/s]
+100%|██████████| 14/14 [00:00&lt;00:00, 122.25it/s]
 
-&lt;matplotlib.image.AxesImage object at 0x7f1e305eb170&gt;
+&lt;matplotlib.image.AxesImage object at 0x7fee804bda90&gt;
 </pre></div>
 </div>
 <p>Hemisheres stack:</p>
@@ -901,7 +901,7 @@ Downloading template...
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">hemispheres</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:])</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_example_003.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_example_003.png" alt="brainglobe atlasapi example" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f1e30790fe0&gt;
+<img src="../_images/sphx_glr_brainglobe_atlasapi_example_003.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_example_003.png" alt="brainglobe atlasapi example" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7fee80096930&gt;
 </pre></div>
 </div>
 </section>
@@ -1799,7 +1799,7 @@ midbrain, and forebrain, <cite>annotation == root_id</cite> will be all False).<
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mask</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_example_004.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_example_004.png" alt="brainglobe atlasapi example" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f1e30790590&gt;
+<img src="../_images/sphx_glr_brainglobe_atlasapi_example_004.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_example_004.png" alt="brainglobe atlasapi example" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7fee800e2b10&gt;
 </pre></div>
 </div>
 </section>
@@ -1810,8 +1810,8 @@ midbrain, and forebrain, <cite>annotation == root_id</cite> will be all False).<
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>  0%|          | 0/1 [00:00&lt;?, ?it/s]
-100%|██████████| 1/1 [00:00&lt;00:00,  2.02it/s]
-100%|██████████| 1/1 [00:00&lt;00:00,  2.02it/s]
+100%|██████████| 1/1 [00:00&lt;00:00,  2.82it/s]
+100%|██████████| 1/1 [00:00&lt;00:00,  2.82it/s]
 &lt;meshio mesh object&gt;
   Number of points: 56703
   Number of cells:
@@ -1823,8 +1823,8 @@ midbrain, and forebrain, <cite>annotation == root_id</cite> will be all False).<
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>  0%|          | 0/1 [00:00&lt;?, ?it/s]
-100%|██████████| 1/1 [00:00&lt;00:00,  5.21it/s]
-100%|██████████| 1/1 [00:00&lt;00:00,  5.20it/s]
+100%|██████████| 1/1 [00:00&lt;00:00,  5.23it/s]
+100%|██████████| 1/1 [00:00&lt;00:00,  5.22it/s]
 [&lt;meshio mesh object&gt;
   Number of points: 56703
   Number of cells:
@@ -1894,7 +1894,7 @@ hemispheres, but we can ask for the hemisphere name instead of the number:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>right
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 7.330 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 6.416 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-api-examples-brainglobe-atlasapi-example-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/840be451c2bf6a8a35c0d5c99bb0858e/brainglobe_atlasapi_example.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">brainglobe_atlasapi_example.ipynb</span></code></a></p>

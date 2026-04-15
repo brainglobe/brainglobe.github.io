@@ -750,8 +750,49 @@ In <code class="docutils literal notranslate"><span class="pre">examples/plan.py
 <li><p><code class="docutils literal notranslate"><span class="pre">cmap</span></code>: Specifies the colormap used for visualization, Standard matplotlib colormaps like ‘Reds’, ‘Blues’, ‘viridis’, or ‘Purples’ can be used. See more <a class="reference external" href="https://matplotlib.org/stable/users/explain/colors/colormaps.html#sequential">here</a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">annotate_regions</span></code>: Automatically annotates regions on the visualization. Can also annotate regions with custom text <code class="docutils literal notranslate"><span class="pre">{&quot;VIS&quot;:</span> <span class="pre">&quot;Visual</span> <span class="pre">Cortex&quot;}</span></code> or only specified regions <code class="docutils literal notranslate"><span class="pre">[&quot;VIS&quot;,</span> <span class="pre">&quot;HIP&quot;]</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">format</span></code>: Specifies if a 2D plot should be made (using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>) or a 3D rendering instead (using <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">label_regions</span></code>: Labels regions on the colorbar (2D only). If <code class="docutils literal notranslate"><span class="pre">True</span></code>, labels all visible regions. Can also use custom label text <code class="docutils literal notranslate"><span class="pre">{&quot;VIS&quot;:</span> <span class="pre">&quot;Visual</span> <span class="pre">Cortex&quot;}</span></code> or label only specific regions <code class="docutils literal notranslate"><span class="pre">[&quot;VIS&quot;,</span> <span class="pre">&quot;HIP&quot;]</span></code>.</p></li>
 </ul>
 <p><img alt="" src="../../_images/heatmap_2d.png" /></p>
+<section id="colorbar-region-labels">
+<h4>Colorbar region labels<a class="headerlink" href="#colorbar-region-labels" title="Link to this heading">#</a></h4>
+<p>You can label regions on the colorbar by passing <code class="docutils literal notranslate"><span class="pre">label_regions=True</span></code> to label all visible regions:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bgh</span><span class="o">.</span><span class="n">Heatmap</span><span class="p">(</span>
+    <span class="n">values</span><span class="p">,</span>
+    <span class="n">position</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;frontal&quot;</span><span class="p">,</span>
+    <span class="n">vmin</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">label_regions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;2D&quot;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>To label only specific regions (useful when labels overlap):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bgh</span><span class="o">.</span><span class="n">Heatmap</span><span class="p">(</span>
+    <span class="n">values</span><span class="p">,</span>
+    <span class="n">position</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;frontal&quot;</span><span class="p">,</span>
+    <span class="n">vmin</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">label_regions</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;TH&quot;</span><span class="p">,</span> <span class="s2">&quot;VIS&quot;</span><span class="p">,</span> <span class="s2">&quot;HIP&quot;</span><span class="p">],</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;2D&quot;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Or use a dictionary to provide custom label text:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bgh</span><span class="o">.</span><span class="n">Heatmap</span><span class="p">(</span>
+    <span class="n">values</span><span class="p">,</span>
+    <span class="n">position</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;frontal&quot;</span><span class="p">,</span>
+    <span class="n">vmin</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">label_regions</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;TH&quot;</span><span class="p">:</span> <span class="s2">&quot;Thalamus&quot;</span><span class="p">,</span> <span class="s2">&quot;VIS&quot;</span><span class="p">:</span> <span class="s2">&quot;Visual Cortex&quot;</span><span class="p">},</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;2D&quot;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="2D heatmap with labelled colorbar" src="../../_images/heatmap_2d_label_regions.png" /></p>
+</section>
 </section>
 <section id="regions-coordinates">
 <h3>Regions coordinates<a class="headerlink" href="#regions-coordinates" title="Link to this heading">#</a></h3>
@@ -860,7 +901,10 @@ For more information see the API’s <a class="reference internal" href="../brai
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-guide">User guide</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-plane-position">Slicing plane position</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#colorbar-region-labels">Colorbar region labels</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regions-coordinates">Regions coordinates</a></li>
 </ul>
 </li>
