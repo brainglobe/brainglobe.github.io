@@ -123,8 +123,55 @@ bgh.Heatmap(
 * `cmap`: Specifies the colormap used for visualization, Standard matplotlib colormaps like 'Reds', 'Blues', 'viridis', or 'Purples' can be used. See more [here](https://matplotlib.org/stable/users/explain/colors/colormaps.html#sequential).
 * `annotate_regions`: Automatically annotates regions on the visualization. Can also annotate regions with custom text `{"VIS": "Visual Cortex"}` or only specified regions `["VIS", "HIP"]`.
 * `format`: Specifies if a 2D plot should be made (using `matplotlib`) or a 3D rendering instead (using `brainrender`).
+* `label_regions`: Labels regions on the colorbar (2D only). If `True`, labels all visible regions. Can also use custom label text `{"VIS": "Visual Cortex"}` or label only specific regions `["VIS", "HIP"]`.
 
 ![](images/heatmap_2d.png)
+
+#### Colorbar region labels
+
+You can label regions on the colorbar by passing `label_regions=True` to label all visible regions:
+
+```python
+bgh.Heatmap(
+    values,
+    position=5000,
+    orientation="frontal",
+    vmin=-5,
+    vmax=3,
+    label_regions=True,
+    format="2D",
+).show()
+```
+
+To label only specific regions (useful when labels overlap):
+
+```python
+bgh.Heatmap(
+    values,
+    position=5000,
+    orientation="frontal",
+    vmin=-5,
+    vmax=3,
+    label_regions=["TH", "VIS", "HIP"],
+    format="2D",
+).show()
+```
+
+Or use a dictionary to provide custom label text:
+
+```python
+bgh.Heatmap(
+    values,
+    position=5000,
+    orientation="frontal",
+    vmin=-5,
+    vmax=3,
+    label_regions={"TH": "Thalamus", "VIS": "Visual Cortex"},
+    format="2D",
+).show()
+```
+
+![2D heatmap with labelled colorbar](images/heatmap_2d_label_regions.png)
 
 ### Regions coordinates
 
