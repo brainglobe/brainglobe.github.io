@@ -94,8 +94,6 @@ exclude_patterns = [
     "**_examples_source",
 ]
 
-autosummary_generate = True
-
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
