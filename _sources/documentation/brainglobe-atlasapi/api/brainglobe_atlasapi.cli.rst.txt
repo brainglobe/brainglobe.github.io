@@ -1,0 +1,11 @@
+﻿brainglobe\_atlasapi.cli
+========================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.cli
+
+.. currentmodule:: brainglobe_atlasapi.cli
+
+
+

@@ -1,0 +1,6 @@
+read\_config
+============
+
+.. currentmodule:: brainglobe_atlasapi.config
+
+.. autofunction:: read_config

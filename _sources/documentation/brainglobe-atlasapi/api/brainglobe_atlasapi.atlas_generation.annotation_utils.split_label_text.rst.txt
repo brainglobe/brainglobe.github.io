@@ -1,0 +1,6 @@
+split\_label\_text
+==================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.annotation_utils
+
+.. autofunction:: split_label_text

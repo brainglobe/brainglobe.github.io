@@ -1,0 +1,6 @@
+get\_structures\_tree
+=====================
+
+.. currentmodule:: brainglobe_atlasapi.structure_tree_util
+
+.. autofunction:: get_structures_tree

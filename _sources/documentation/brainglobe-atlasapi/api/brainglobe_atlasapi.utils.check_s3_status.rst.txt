@@ -1,0 +1,6 @@
+check\_s3\_status
+=================
+
+.. currentmodule:: brainglobe_atlasapi.utils
+
+.. autofunction:: check_s3_status

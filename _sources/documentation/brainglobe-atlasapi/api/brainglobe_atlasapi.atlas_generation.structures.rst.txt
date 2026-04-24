@@ -1,0 +1,25 @@
+﻿brainglobe\_atlasapi.atlas\_generation.structures
+=================================================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.atlas_generation.structures
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.structures
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    check_struct_consistency
+    
+    get_structure_children
+    
+    get_structure_terminal_nodes
+    
+

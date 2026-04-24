@@ -1,0 +1,6 @@
+get\_downloaded\_atlases
+========================
+
+.. currentmodule:: brainglobe_atlasapi.list_atlases
+
+.. autofunction:: get_downloaded_atlases

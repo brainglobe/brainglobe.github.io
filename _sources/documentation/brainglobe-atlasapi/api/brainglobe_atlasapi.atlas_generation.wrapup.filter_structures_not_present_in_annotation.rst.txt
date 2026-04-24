@@ -1,0 +1,6 @@
+filter\_structures\_not\_present\_in\_annotation
+================================================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.wrapup
+
+.. autofunction:: filter_structures_not_present_in_annotation

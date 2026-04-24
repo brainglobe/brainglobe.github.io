@@ -1,0 +1,6 @@
+construct\_meshes\_from\_annotation
+===================================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.mesh_utils
+
+.. autofunction:: construct_meshes_from_annotation

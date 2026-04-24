@@ -1,0 +1,6 @@
+catch\_missing\_mesh\_files
+===========================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.validate_atlases
+
+.. autofunction:: catch_missing_mesh_files

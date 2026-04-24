@@ -1,0 +1,6 @@
+validate\_checksum
+==================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.validate_atlases
+
+.. autofunction:: validate_checksum

@@ -1,0 +1,6 @@
+load\_structures\_from\_csv
+===========================
+
+.. currentmodule:: brainglobe_atlasapi.utils
+
+.. autofunction:: load_structures_from_csv

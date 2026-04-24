@@ -1,0 +1,6 @@
+convert\_structure\_json\_to\_csv
+=================================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.structure_json_to_csv
+
+.. autofunction:: convert_structure_json_to_csv

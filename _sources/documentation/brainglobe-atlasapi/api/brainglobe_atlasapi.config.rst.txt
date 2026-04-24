@@ -1,0 +1,29 @@
+﻿brainglobe\_atlasapi.config
+===========================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.config
+
+.. currentmodule:: brainglobe_atlasapi.config
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    cli_modify_config
+    
+    get_brainglobe_dir
+    
+    read_config
+    
+    write_config_value
+    
+    write_default_config
+    
+

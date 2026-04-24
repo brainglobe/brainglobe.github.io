@@ -1,0 +1,6 @@
+add\_atlas\_to\_row
+===================
+
+.. currentmodule:: brainglobe_atlasapi.list_atlases
+
+.. autofunction:: add_atlas_to_row

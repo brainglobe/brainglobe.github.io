@@ -1,0 +1,6 @@
+read\_json
+==========
+
+.. currentmodule:: brainglobe_atlasapi.utils
+
+.. autofunction:: read_json

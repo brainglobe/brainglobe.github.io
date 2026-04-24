@@ -1,0 +1,6 @@
+preorder\_depth\_first\_search
+==============================
+
+.. currentmodule:: brainglobe_atlasapi.structure_tree_util
+
+.. autofunction:: preorder_depth_first_search

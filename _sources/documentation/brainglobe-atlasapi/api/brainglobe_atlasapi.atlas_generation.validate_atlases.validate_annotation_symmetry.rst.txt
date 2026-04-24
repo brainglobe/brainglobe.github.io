@@ -1,0 +1,6 @@
+validate\_annotation\_symmetry
+==============================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.validate_atlases
+
+.. autofunction:: validate_annotation_symmetry

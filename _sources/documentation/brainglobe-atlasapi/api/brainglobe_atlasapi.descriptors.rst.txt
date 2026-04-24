@@ -1,0 +1,11 @@
+﻿brainglobe\_atlasapi.descriptors
+================================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.descriptors
+
+.. currentmodule:: brainglobe_atlasapi.descriptors
+
+
+

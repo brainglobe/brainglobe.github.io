@@ -1,0 +1,6 @@
+get\_latest\_version
+====================
+
+.. currentmodule:: brainglobe_atlasapi.utils
+
+.. autofunction:: get_latest_version

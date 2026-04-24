@@ -1,0 +1,6 @@
+validate\_atlas\_name\_listed
+=============================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.validate_atlases
+
+.. autofunction:: validate_atlas_name_listed

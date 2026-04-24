@@ -1,0 +1,23 @@
+﻿brainglobe\_atlasapi.structure\_class
+=====================================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.structure_class
+
+.. currentmodule:: brainglobe_atlasapi.structure_class
+
+
+.. rubric:: Classes
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    Structure
+    
+    StructuresDict
+    
+
+
+

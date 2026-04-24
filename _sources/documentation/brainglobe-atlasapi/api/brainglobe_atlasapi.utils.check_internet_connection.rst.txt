@@ -1,0 +1,6 @@
+check\_internet\_connection
+===========================
+
+.. currentmodule:: brainglobe_atlasapi.utils
+
+.. autofunction:: check_internet_connection

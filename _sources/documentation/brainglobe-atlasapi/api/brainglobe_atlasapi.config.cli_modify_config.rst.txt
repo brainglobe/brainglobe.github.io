@@ -1,0 +1,6 @@
+cli\_modify\_config
+===================
+
+.. currentmodule:: brainglobe_atlasapi.config
+
+.. autofunction:: cli_modify_config

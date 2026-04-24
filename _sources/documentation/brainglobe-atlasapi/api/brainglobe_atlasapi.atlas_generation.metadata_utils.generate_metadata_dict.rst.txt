@@ -1,0 +1,6 @@
+generate\_metadata\_dict
+========================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.metadata_utils
+
+.. autofunction:: generate_metadata_dict

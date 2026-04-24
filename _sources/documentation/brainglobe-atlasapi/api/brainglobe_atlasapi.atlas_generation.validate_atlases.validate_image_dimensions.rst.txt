@@ -1,0 +1,6 @@
+validate\_image\_dimensions
+===========================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.validate_atlases
+
+.. autofunction:: validate_image_dimensions

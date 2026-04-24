@@ -1,0 +1,6 @@
+structure\_id\_path\_to\_string
+===============================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.structure_json_to_csv
+
+.. autofunction:: structure_id_path_to_string

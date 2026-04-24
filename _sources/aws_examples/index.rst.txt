@@ -8,6 +8,10 @@ Atlas data examples
 Below is a gallery of examples showcasing the use of publicly hosted BrainGlobe atlas data independent of BrainGlobe.
 
 
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
 
 .. raw:: html
 

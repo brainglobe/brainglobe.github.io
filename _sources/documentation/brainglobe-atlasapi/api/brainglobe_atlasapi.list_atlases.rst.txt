@@ -1,0 +1,31 @@
+﻿brainglobe\_atlasapi.list\_atlases
+==================================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.list_atlases
+
+.. currentmodule:: brainglobe_atlasapi.list_atlases
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    add_atlas_to_row
+    
+    get_all_atlases_lastversions
+    
+    get_atlases_lastversions
+    
+    get_downloaded_atlases
+    
+    get_local_atlas_version
+    
+    show_atlases
+    
+

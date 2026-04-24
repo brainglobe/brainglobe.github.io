@@ -1,0 +1,6 @@
+open\_for\_visual\_check
+========================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.validate_atlases
+
+.. autofunction:: open_for_visual_check

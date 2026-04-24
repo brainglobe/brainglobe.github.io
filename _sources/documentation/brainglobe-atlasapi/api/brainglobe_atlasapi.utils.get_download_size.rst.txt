@@ -1,0 +1,6 @@
+get\_download\_size
+===================
+
+.. currentmodule:: brainglobe_atlasapi.utils
+
+.. autofunction:: get_download_size
