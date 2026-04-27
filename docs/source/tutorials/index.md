@@ -88,13 +88,6 @@ Analyze and visualize bulk fluorescence tracing data
 Whole brain cell detection and registration
 :::
 
-:::{grid-item-card} {fas}`brain;sd-text-primary` Aligning samples
-:img-bottom: images/brainglobe-template-builder/template-builder-header.png
-:link: template-builder-pre-align
-:link-type: doc
-Aligning samples to image axes for template building (experimental!)
-:::
-
 :::{grid-item-card} {fas}`brain;sd-text-primary` Exploring atlas data
 :img-bottom: ../aws_examples/images/thumb/sphx_glr_explore_atlas_thumb.png
 :link: ../aws_examples/explore_atlas.html
@@ -113,6 +106,34 @@ Deepening understanding of atlas data and metadata (experimental!)
 :link: ../api_examples/brainglobe_atlasapi.html
 :link-type: url
 Using the BrainGlobe Atlas API to fetch and inspect an atlas
+:::
+::::
+
+## Template building (experimental)
+
+::::{grid} 1 2 2 3
+:gutter: 3
+
+:::{grid-item-card} {fas}`brain;sd-text-primary` Preparing template inputs
+:img-bottom: images/brainglobe-template-builder/template-builder-header-qc.png
+:link: howto-process-for-template-building
+:link-type: doc
+Standardising and preprocessing images for template building (experimental!)
+:::
+
+:::{grid-item-card} {fas}`brain;sd-text-primary` Run template building
+:img-bottom: images/brainglobe-template-builder/bird-template-header.png
+:link: howto-configure-hpc-template-building-job
+:link-type: doc
+Configuring and running an HPC job for template building (experimental!)
+:::
+
+
+:::{grid-item-card} {fas}`brain;sd-text-primary` Aligning samples
+:img-bottom: images/brainglobe-template-builder/template-builder-header.png
+:link: template-builder-pre-align
+:link-type: doc
+Aligning samples to image axes for template building (experimental!)
 :::
 ::::
 
