@@ -13,7 +13,7 @@ The purpose of the BrainGlobe atlas api has always been to standardise atlases a
 
 While this may be a long process we have decided to start. First by creating a comprehensive list of all published non-human brain atlases which is available [here](https://docs.google.com/spreadsheets/d/18_ow4llQQVuwKu5WWM3PsZ1SjmeNYAhi6eENzhQRc40/edit?usp=sharing). This list is a work in progress and if you find an atlas which is not mentioned please open an issue on the [brainglobe-atlasapi](https://github.com/brainglobe/brainglobe-atlasapi/issues?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen) repository and we will be sure to add it. 
 
-The second step is to actually integrate the atlases on this list into the API. To this end we have hired [Jung Woo Kim](https://github.com/kjungwoo5) and [Amirreza Bahramani](https://github.com/bahramani). They have already begun integrating several atlases (expect to see a Macaque atlas soon!). 
+The second step is to actually integrate the atlases on this list into the API. To this end we [Jung Woo Kim](https://github.com/kjungwoo5) and [Amirreza Bahramani](https://github.com/bahramani) have joined the BrainGlobe team. They have already begun integrating several atlases (expect to see a Macaque atlas soon!). 
 
 In total our review found 221 3D atlases across approximately 89 species of which we could find shared data for 121. 
 
