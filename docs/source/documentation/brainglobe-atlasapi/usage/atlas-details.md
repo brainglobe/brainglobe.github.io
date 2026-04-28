@@ -412,6 +412,34 @@ with some improvements. This atlas was constructed from reregistered ISH data fr
 
 Available versions:
 * `carea_mouse_25um`
+
+### [Allen CCFv2 Mouse Brain Atlas](https://doi.org/10.1038/nature05453)
+This is a mouse brain atlas using version 2 of the commonly used Allen Common Coordinate Framework, which is included 
+here for historical reasons. The template is based on population average coronal slices with Nissl staining. Though 
+it is not without its faults (misalignment of coronal slices on the anterio-posterior axis), it still serves the 
+very useful purpose of providing a common coordinate framework for many other useful mouse atlases, which can be 
+translated to other atlases using the [BrainGlobe CCF Translator](https://github.com/brainglobe/brainglobe-ccf-translator). This atlas was 
+packaged from archived data from the Allen Institute for Brain Science. 
+
+Available versions:
+* `ccfv2_mouse_25um`
+
+### [Allen CCFv2 Mouse Fiber Tract Atlas](https://doi.org/10.1038/nature05453)
+This is a mouse brain fiber tract atlas using version 2 of the commonly used Allen Common Coordinate Framework. The 
+template is based on population average coronal slices with Nissl staining, and annotates the fiber tracts using 
+the CCFv2 system. This atlas was packaged from archived data from the Allen Institute for Brain Science. 
+
+Available versions:
+* `ccfv2_fiber_mouse_25um`
+
+### [Allen CCFv2 Developmental Mouse Brain Atlas](https://doi.org/10.1038/nature05453)
+This is a developmental mouse brain atlas using version 2 of the commonly used Allen Common Coordinate Framework. 
+The template is based on population average coronal slices with Nissl staining, and annotates the fiber tracts 
+using the CCFv2 system. This atlas was packaged from archived data from the Allen Institute for Brain Science. 
+
+Available versions:
+* `ccfv2_dev_mouse_25um`
+  
 ## Rat
 ### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
 The Waxholm Space rat brain atlas features annotations of 222 structures, alongside a 39μm MRI template. It provides detailed delineations 
