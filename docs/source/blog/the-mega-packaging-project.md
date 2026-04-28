@@ -17,12 +17,15 @@ The second step is to actually integrate the atlases on this list into the API. 
 
 In total our review found 221 3D atlases across approximately 89 species of which we could find shared data for 121. 
 
-```{figure} ../_static/atlases.png
-:alt: BrainGlobe Atlases
-:width: 65%
-:align: center
-:name: fig-bg-atlases
-
-Figure 1. The BrainGlobe ecosystem provides a common interface for a wide range of neuroanatomical atlases across species.
+```{raw} html
+<iframe 
+  src="../_static/species_bubbles.html" 
+  width="100%" 
+  height="840" 
+  frameborder="0" 
+  style="border:none; overflow:hidden;">
+</iframe>
 ```
+
+As always, if you would like to get involved with this project just get in touch with us! There are several ways to contribute  including adding missing atlases to the list, helping with data standardisation, or contributing to integration and validationWe are available via GitHub issues and [zulip](https://brainglobe.zulipchat.com). 
 
