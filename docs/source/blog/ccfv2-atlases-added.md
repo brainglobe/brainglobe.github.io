@@ -9,17 +9,28 @@ language: English
 
 # Three Atlases for the Allen Common Coordinate Framework v2 Mouse Brain have been added to BrainGlobe
 
-The mouse brain atlases provided by the Allen Institute for Brain Science (AIBS) are widely used in the neuroscience community, and as of the writing of this blog post, the most updated version of their atlas uses version 3 of the Common Coordinate Framework (CCF). However, there are many benefits from adding older versions of atlases, namely in terms of keeping a record of the history of atlas versions, as well as providing a way to translate between other older atlases that were based on CCFv2. Hence, we have packaged the three atlases provided by the Allen Institute, namely that of the mouse brain, its fiber tracts, and developmental origin. CCFv2 is [ADD SOMETHING ABOUT THE METHODOLOGY]
+The mouse brain atlases provided by the Allen Institute for Brain Science (AIBS) are widely used in the neuroscience community, and as of the writing of this blog post, the most updated version of their atlas uses version 3 of the Common Coordinate Framework (CCF). However, there are many benefits from adding older versions of atlases, namely in terms of keeping a record of the history of atlas versions, as well as providing a way to translate between other older atlases that were based on CCFv2. Hence, we have packaged the three atlases provided by the Allen Institute, namely that of the mouse brain, its fiber tracts, and developmental origin. The CCFv2 is a symmetric atlas constructed from Nissl stained coronal slices, annotated using the Allen Reference Atlas. 
 
-TOD
+We have packaged the following three atlases: 
+1. CCFv2 Mouse Brain Atlas
+![ccfv2 mouse brain atlas annotations](./images/ccfv2_mouse_brain.png)
 
-![cuttlefish brain atlas annotations](./images/cuttlefish_annotations.png)
+**Figure 1. Anterior view of the CCFv2 Mouse Brain atlas annotations and reference image.**
 
-**Figure 1. Anterior view of the cuttlefish brain atlas annotations and reference image.**
+2. CCFv2 Mouse Fiber Tracts Atlas
+![ccfv2 mouse fiber tracts atlas annotations](./images/ccfv2_fiber_mouse.png)
 
-The BrainGlobe team re-packaged the data generated and made public by the original study, making it now possible to use the cuttlefish atlas within the BrainGlobe ecosystem. The atlas name is `columbia_cuttlefish_50um`.
+**Figure 2. Anterior view of the CCFv2 Mouse Fiber Tracts atlas annotations and reference image.**
 
-## How do I use the new atlas?
+3. CCFv2 Developmental Mouse Brain Atlas
+![ccfv2 developmental mouse brain annotations](./images/ccfv2_dev_mouse.png)
+
+**Figure 3. Anterior view of the CCFv2 Developmental Mouse Brain atlas annotations and reference image.**
+
+
+The BrainGlobe team re-packaged the data generated and made public by the Allen Institute, making it now possible to use the CCFv2 mouse atlases within the BrainGlobe ecosystem. The atlas names are `ccfv2_mouse_25um`, `ccfv2_fiber_mouse_25um`, and `ccfv2_dev_mouse_25um`.
+
+## How do I use the new atlases?
 
 You can use the CCFv2 atlases for visualisation like other BrainGlobe atlases, as written below:
 
@@ -27,14 +38,13 @@ You can use the CCFv2 atlases for visualisation like other BrainGlobe atlases, a
 * Open napari and follow the steps in our [download tutorial](/tutorials/manage-atlases-in-GUI.md) for the CCFv2 atlas
 * Visualise the different parts of the atlas as described in our [visualisation tutorial](/tutorials/visualise-atlas-napari)
 
-The end result will look something like Figure 2.
+The end result will look something like Figure 4.
 
-![cuttlefish atlas visualised in napari](./images/cuttlefish_napari.png)
+![ccfv2 mouse brain atlas visualised in napari](./images/ccfv2_mouse_brain_napari.png)
+
+**Figure 4: The CCFv2 Mouse Brain atlas visualised with `brainrender-napari`: with mesh overlays for the brain (grey), the hippocampal formation (green) and the cerebellum (yellow).**
 
 Additionally, the CCFv2 mouse brain atlas can be used in conjunction with our CCF Translator to translate data between other mouse brain atlases based on the CCFv2 framwework. For more details, check out the [CCF Translator GitHub page](https://github.com/brainglobe/brainglobe-ccf-translator). 
-
-**Figure 2: The cuttlefish atlas visualised with `brainrender-napari`: with mesh overlays for the brain (grey), the optic lobes (yellow, right hemisphere; green, left hemisphere) and the brachial lobe (blue).**
-
 ## Why are we adding new atlases?
 
 A fundamental aim of the BrainGlobe project is to make various brain atlases easily accessible by users across the globe. The cuttlefish atlas is the first cephalopod brain atlas available through BrainGlobe. If you would like to get involved with a similar project, please [get in touch](/contact).
