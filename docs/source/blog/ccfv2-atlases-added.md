@@ -12,18 +12,18 @@ language: English
 The mouse brain atlases provided by the Allen Institute for Brain Science (AIBS) are widely used in the neuroscience community, and as of the writing of this blog post, the most updated version of their atlas uses version 3 of the Common Coordinate Framework (CCF). However, there are many benefits from adding older versions of atlases, namely in terms of keeping a record of the history of atlas versions, as well as providing a way to translate between other older atlases that were based on CCFv2. Hence, we have packaged the three atlases provided by the Allen Institute, namely that of the mouse brain, its fiber tracts, and developmental origin. The CCFv2 is a symmetric atlas constructed from Nissl stained coronal slices, annotated using the Allen Reference Atlas. 
 
 We have packaged the following three atlases: 
-1. CCFv2 Mouse Brain Atlas
-![ccfv2 mouse brain atlas annotations](./images/ccfv2_mouse_brain.png)
+### 1. CCFv2 Mouse Brain Atlas
+<img src="./images/ccfv2_mouse_brain.png" alt="ccfv2 mouse brain atlas annotations" width="830" height="630">
 
 **Figure 1. Anterior view of the CCFv2 Mouse Brain atlas annotations and reference image.**
 
-2. CCFv2 Mouse Fiber Tracts Atlas
-![ccfv2 mouse fiber tracts atlas annotations](./images/ccfv2_fiber_mouse.png)
+### 2. CCFv2 Mouse Fiber Tracts Atlas
+<img src="./images/ccfv2_fiber_mouse.png" alt="ccfv2 mouse fiber tracts atlas annotations" width="830" height="630">
 
 **Figure 2. Anterior view of the CCFv2 Mouse Fiber Tracts atlas annotations and reference image.**
 
-3. CCFv2 Developmental Mouse Brain Atlas
-![ccfv2 developmental mouse brain annotations](./images/ccfv2_dev_mouse.png)
+### 3. CCFv2 Developmental Mouse Brain Atlas
+<img src="./images/ccfv2_dev_mouse.png" alt="ccfv2 developmental mouse brain atlas annotations" width="830" height="630">
 
 **Figure 3. Anterior view of the CCFv2 Developmental Mouse Brain atlas annotations and reference image.**
 
