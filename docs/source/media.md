@@ -5,14 +5,6 @@ BrainGlobe reported in press/online
 
 _UCL News, April 2026_
 
-## [Scientists map migratory bird brain](myscience.org/news/2026/scientists_map_migratory_bird_brain-2026-ucl)
-
-_myScience News, April 2026_
-
-## [Scientists map the blackcap bird brain, opening a new era of 3D digital atlases](eurekalert.org/news-releases/1124203)
-
-_EurekAlert!, April 2026_
-
 ## [Scientists map the blackcap bird brain, opening a new era of 3D digital atlases](https://www.sainsburywellcome.org/research-news/scientists-map-blackcap-bird-brain-opening-new-era-3d-digital-atlases)
 
 _Sainsbury Wellcome Centre, April 2026_
