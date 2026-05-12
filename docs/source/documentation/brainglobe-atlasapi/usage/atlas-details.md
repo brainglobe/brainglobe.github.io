@@ -413,29 +413,33 @@ with some improvements. This atlas was constructed from reregistered ISH data fr
 Available versions:
 * `carea_mouse_25um`
 
-### [Allen CCFv2 Mouse Brain Atlas](https://doi.org/10.1038/nature05453)
+### [Allen CCFv2 Mouse Brain Atlas](https://doi.org/10.1038/nature13186)
 This is a mouse brain atlas using version 2 of the commonly used Allen Common Coordinate Framework, which is included 
-here for historical reasons. The template is based on population average coronal slices with Nissl staining. Though 
-it is not without its faults (misalignment of coronal slices on the anterio-posterior axis), it still serves the 
-very useful purpose of providing a common coordinate framework for many other useful mouse atlases, which can be 
-translated to other atlases using the [BrainGlobe CCF Translator](https://github.com/brainglobe/brainglobe-ccf-translator). This atlas was 
-packaged from archived data from the Allen Institute for Brain Science. 
+here for historical reasons. The template is based on 528 Nissl-stained coronal slices from the mouse specimen used in 
+the Allen Reference Atlas. This atlas annotates the grey matter and ventricular systems of the mouse brain. Though it 
+is not without its faults (misalignment of coronal slices on the anterio-posterior axis), it still serves the very useful 
+purpose of providing a common coordinate framework for many other useful mouse atlases, which can be translated to other 
+atlases using the [BrainGlobe CCF Translator](https://github.com/brainglobe/brainglobe-ccf-translator). 
+This atlas was packaged from archived data from the Allen Institute for Brain Science. 
 
 Available versions:
 * `ccfv2_mouse_25um`
 
-### [Allen CCFv2 Mouse Fiber Tract Atlas](https://doi.org/10.1038/nature05453)
-This is a mouse brain fiber tract atlas using version 2 of the commonly used Allen Common Coordinate Framework. The 
-template is based on population average coronal slices with Nissl staining, and annotates the fiber tracts using 
-the CCFv2 system. This atlas was packaged from archived data from the Allen Institute for Brain Science. 
+### [Allen CCFv2 Mouse Fiber Tracts Atlas](https://doi.org/10.1038/nature13186)
+This is a mouse brain fiber tract atlas using version 2 of the commonly used Allen Common Coordinate Framework. Where
+the CCFv2 Mouse Brain atlas only provides information on the grey matter and ventricular systems of the mouse brain, 
+this atlas contains fiber tract structural annotation information. as delineated in the Allen Reference Atlas. The 
+template is based on 528 Nissl-stained coronal slices from the mouse specimen used in the Allen Reference Atlas. 
+This atlas was packaged from archived data from the Allen Institute for Brain Science. 
 
 Available versions:
 * `ccfv2_fiber_mouse_25um`
 
-### [Allen CCFv2 Developmental Mouse Brain Atlas](https://doi.org/10.1038/nature05453)
+### [Allen CCFv2 Developmental Mouse Brain Atlas](https://doi.org/10.1038/nature13186)
 This is a developmental mouse brain atlas using version 2 of the commonly used Allen Common Coordinate Framework. 
-The template is based on population average coronal slices with Nissl staining, and annotates the fiber tracts 
-using the CCFv2 system. This atlas was packaged from archived data from the Allen Institute for Brain Science. 
+The template is based on 528 Nissl-stained coronal slices from the mouse specimen used in the Allen Reference Atlas. 
+The annotations contain the developmental taxonomy of mouse brain structures as given in the Allen Developing Mouse
+Brain atlas. This atlas was packaged from archived data from the Allen Institute for Brain Science. 
 
 Available versions:
 * `ccfv2_dev_mouse_25um`
