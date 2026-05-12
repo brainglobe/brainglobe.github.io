@@ -18,6 +18,8 @@
     
     add_atlas_to_row
     
+    folder_version_to_dotted
+    
     get_all_atlases_lastversions
     
     get_atlases_lastversions

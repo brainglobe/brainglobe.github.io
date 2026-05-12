@@ -1,0 +1,6 @@
+folder\_version\_to\_dotted
+===========================
+
+.. currentmodule:: brainglobe_atlasapi.list_atlases
+
+.. autofunction:: folder_version_to_dotted

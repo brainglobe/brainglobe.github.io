@@ -534,6 +534,7 @@
 </details></li>
 <li class="toctree-l3 current active has-children"><a class="reference internal" href="brainglobe_atlasapi.list_atlases.html">brainglobe_atlasapi.list_atlases</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.list_atlases.add_atlas_to_row.html">add_atlas_to_row</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.list_atlases.folder_version_to_dotted.html">folder_version_to_dotted</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.list_atlases.get_all_atlases_lastversions.html">get_all_atlases_lastversions</a></li>
 <li class="toctree-l4 current active"><a class="current reference internal" href="#">get_atlases_lastversions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.list_atlases.get_downloaded_atlases.html">get_downloaded_atlases</a></li>
@@ -798,7 +799,9 @@
 available atlases.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>A dictionary with metadata about already installed atlases.</p>
+<dd class="field-odd"><p>A dictionary with metadata about already installed atlases. The
+<code class="docutils literal notranslate"><span class="pre">version</span></code> and <code class="docutils literal notranslate"><span class="pre">latest_version</span></code> fields use the same dotted form
+(e.g. <code class="docutils literal notranslate"><span class="pre">3.0</span></code>), matching <code class="docutils literal notranslate"><span class="pre">last_versions.conf</span></code>.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>dict</p>

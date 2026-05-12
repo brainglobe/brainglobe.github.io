@@ -1,6 +1,14 @@
 # Media
 BrainGlobe reported in press/online
 
+## [Scientists map migratory bird brain](ucl.ac.uk/news/2026/apr/scientists-map-migratory-bird-brain)
+
+_UCL News, April 2026_
+
+## [Scientists map the blackcap bird brain, opening a new era of 3D digital atlases](https://www.sainsburywellcome.org/research-news/scientists-map-blackcap-bird-brain-opening-new-era-3d-digital-atlases)
+
+_Sainsbury Wellcome Centre, April 2026_
+
 ## [The Neuro – Irv and Helga Cooper Foundation Open Science Prizes: Meet the winners of an exceptional edition](https://www.mcgill.ca/neuro/article/neuro-irv-and-helga-cooper-foundation-open-science-prizes-meet-winners-exceptional-edition)
 
 _The Neuro (Montreal Neurological Institute-Hospital), October 2025_

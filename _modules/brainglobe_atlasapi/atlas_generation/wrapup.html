@@ -763,7 +763,9 @@
 
     <span class="k">for</span> <span class="n">mesh_id</span><span class="p">,</span> <span class="n">meshfile</span> <span class="ow">in</span> <span class="n">meshes_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="n">mesh</span> <span class="o">=</span> <span class="n">mio</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">meshfile</span><span class="p">)</span>
-
+        <span class="c1"># do not write empty meshes as this causes wrapup to crash</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
         <span class="k">if</span> <span class="n">scale_meshes</span><span class="p">:</span>
             <span class="c1"># Scale the mesh to the desired resolution, BEFORE transforming:</span>
             <span class="c1"># Note that this transformation happens in original space,</span>
