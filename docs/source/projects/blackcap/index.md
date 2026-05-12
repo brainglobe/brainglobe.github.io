@@ -19,7 +19,7 @@ For this reason, we collaborated with [Simon Weiler](https://sites.google.com/vi
 of the blackcap brain.
 
 ## Process
-Full details of the atlas generation process are available in the [preprint](https://doi.org/10.1101/2025.03.04.641293), 
+Full details of the atlas generation process are available in the [published article](https://doi.org/10.1016/j.cub.2026.03.034), 
 however it is briefly as follows:
 1. Acquire high-resolution whole-brain images using the
 [Sainsbury Wellcome Centre serial section two-photon platform](https://swcmicroscopy.com)
@@ -49,6 +49,12 @@ To view BrainGlobe atlases in [napari](https://napari.org), please follow the
 
 ![Blackcap atlas viewed coronally](./images/animation.gif)
 **Blackcap atlas viewed coronally**
+
+
+## Find out more
+
+* Read the feature in the [Sainsbury Wellcome Centre's Research News](https://www.sainsburywellcome.org/research-news/scientists-map-blackcap-bird-brain-opening-new-era-3d-digital-atlases)
+* Read the [Current Biology article](https://doi.org/10.1016/j.cub.2026.03.034).
 
 ## Get involved
 We anticipate releasing further versions at higher resolutions and with more regions annotated.
