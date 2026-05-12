@@ -212,6 +212,7 @@ linkcheck_ignore = [
     "https://doi.org", # Various errors due to rate-limiting and time outs
     "https://elifesciences.org", # 406 Client Error: Not Acceptable
     "https://www.biorxiv.org", # 403 Client Error: Forbidden
+    "https://mousespinal.brain-map.org",
     ]
 
 linkcheck_anchors_ignore_for_url = [
