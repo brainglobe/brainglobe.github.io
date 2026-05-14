@@ -418,7 +418,7 @@ Anatomical reference (or template) image:
 
     Warning: atlas.reference is a deprecated alias for atlas.template, and will be removed in future versions.
 
-    <matplotlib.image.AxesImage object at 0x7f1a15996f90>
+    <matplotlib.image.AxesImage object at 0x7f78a0711580>
 
 
 
@@ -455,7 +455,7 @@ Annotations stack
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f1a158360f0>
+    <matplotlib.image.AxesImage object at 0x7f78a076f740>
 
 
 
@@ -485,7 +485,7 @@ Hemisheres stack:
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f1a158a3320>
+    <matplotlib.image.AxesImage object at 0x7f78a0796300>
 
 
 
@@ -1491,7 +1491,7 @@ To get the mask for a region, use
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f1a15837500>
+    <matplotlib.image.AxesImage object at 0x7f78a07ba480>
 
 
 
@@ -1739,7 +1739,7 @@ Now print hemisphere string
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.125 seconds)
+   **Total running time of the script:** (0 minutes 1.098 seconds)
 
 
 .. _sphx_glr_download_api_examples_brainglobe_atlasapi_example.py:
