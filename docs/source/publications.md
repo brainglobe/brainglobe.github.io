@@ -2,7 +2,7 @@
 
 - **Eurasian blackcap (_Sylvia atricapilla_) atlas:**
   
-  > Sirmpilatze, N., Felder, A., Abdulazhanova, D., Schwigon, L., Tatarnikov, I., Haase, K., Musielak, I., Kobylkov, D., Margrie, T. W., Mouritsen, H., Heyers, D., Tyson, A. L. , Weiler, S. (2026) "An open-source three-dimensional digital brain atlas of a migratory bird, the Eurasian blackcap" *Current Biology* 36, 2063-2077.e5,  [https://doi.org/10.1016/j.cub.2026.03.034](https://doi.org/10.1016/j.cub.2026.03.034)
+  > Sirmpilatze, N., Felder, A., Abdulazhanova, D., Schwigon, L., Tatarnikov, I., Haase, K., Musielak, I., Kobylkov, D., Margrie, T. W., Mouritsen, H., Heyers, D., Tyson, A. L. , Weiler, S. (2026) "An open-source three-dimensional digital brain atlas of a migratory bird, the Eurasian blackcap" *Current Biology* 36 2063-2077.e5,  [https://doi.org/10.1016/j.cub.2026.03.034](https://doi.org/10.1016/j.cub.2026.03.034)
 
 - **Brainreg & brainglobe-segmentation (formerly brainreg-segment):**  
 
