@@ -1,7 +1,7 @@
 # Media
 BrainGlobe reported in press/online
 
-## [Scientists map migratory bird brain](ucl.ac.uk/news/2026/apr/scientists-map-migratory-bird-brain)
+## [Scientists map migratory bird brain](https://ucl.ac.uk/news/2026/apr/scientists-map-migratory-bird-brain)
 
 _UCL News, April 2026_
 
