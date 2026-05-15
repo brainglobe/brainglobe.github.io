@@ -9,7 +9,7 @@ language: English
 
 # The Systematic Atlas Packaging Project
 
-The purpose of the BrainGlobe atlas api has always been to standardise atlases and provide them to researchers via a common, easy to use, interface. As part of this initiative we have integrated atlases of all kinds, including atlases of bees, cuttlefish, mice, and more. The logical endpoint of all of this would be integrate _all_ existing 3D atlases into BrainGlobe. 
+The purpose of the BrainGlobe Atlas API is to standardise atlases and provide them to researchers via a common, easy to use, interface. As part of this initiative we have integrated atlases of all kinds, including atlases of mice, rats, bees, cuttlefish, and more. The logical endpoint of all of this would be integrate _all_ existing 3D atlases into BrainGlobe. 
 
 While this may be a long process we have decided to get started. First by creating a comprehensive list of all published non-human brain atlases which have available data. It is available [here](https://github.com/brainglobe/brainglobe-atlasapi/issues?q=is%3Aissue%20state%3Aopen%20label%3Anew-atlas).  This list is a work in progress and if you find an atlas which is not mentioned please open an issue on the brainglobe-atlasapi repository and we will be sure to add it. 
 
