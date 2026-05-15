@@ -32,7 +32,7 @@ body .bd-article-container {
 /* Contributor avatar grid */
 .contributors-grid .sd-card,
 .contributors-grid .sd-card-body {
-  background: transparent !important;
+  background: var(--pst-color-on-background) !important;
   border: none !important;
   box-shadow: none !important;
   text-align: center;
@@ -43,24 +43,18 @@ body .bd-article-container {
   overflow: hidden;
 }
 
-html[data-theme=dark] .contributors-grid .sd-card,
-html[data-theme=dark] .contributors-grid .sd-card-body {
-  background: var(--pst-color-on-background) !important;
-}
-
 .contributors-grid .sd-card-hover {
-  transition: transform 0.15s ease, background 0.15s ease;
+  transition: transform 0.15s ease;
 }
 
 .contributors-grid .sd-card-hover:hover {
-  background: var(--pst-color-on-background) !important;
   transform: translateY(-2px);
 }
 
 .contributors-grid .sd-card-img-top {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
+  border-radius: 50% !important;
   object-fit: cover;
   margin: 0.75rem auto 0;
   display: block;
