@@ -28,3 +28,47 @@ body .bd-article-container {
   justify-content: space-between;
   gap: 12px;
 }
+
+/* Contributor avatar grid */
+.contributors-grid .sd-card,
+.contributors-grid .sd-card-body {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-align: center;
+}
+
+html[data-theme=dark] .contributors-grid .sd-card,
+html[data-theme=dark] .contributors-grid .sd-card-body {
+  background: var(--pst-color-on-background) !important;
+}
+
+.contributors-grid .sd-card-hover {
+  border-radius: 8px;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.contributors-grid .sd-card-hover:hover {
+  background: var(--pst-color-on-background) !important;
+  transform: translateY(-2px);
+}
+
+.contributors-grid .sd-card-img-top {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0.75rem auto 0;
+  display: block;
+}
+
+.contributors-grid .sd-card-body {
+  padding: 0.4rem 0.25rem 0.4rem;
+}
+
+.contributors-grid .sd-card-title {
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  line-height: 1.3;
+  margin-bottom: 0 !important;
+}
