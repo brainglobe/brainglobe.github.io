@@ -416,11 +416,9 @@ Available versions:
 ### [Allen CCFv2 Mouse Brain Atlas](https://doi.org/10.1038/nature13186)
 This is a mouse brain atlas using version 2 of the commonly used Allen Common Coordinate Framework, which is included 
 here for historical reasons. The template is based on 528 Nissl-stained coronal slices from the mouse specimen used in 
-the Allen Reference Atlas. This atlas annotates the grey matter and ventricular systems of the mouse brain. Though it 
-is not without its faults (misalignment of coronal slices on the anterio-posterior axis), it still serves the very useful 
-purpose of providing a common coordinate framework for many other useful mouse atlases, which can be translated to other 
-atlases using the [BrainGlobe CCF Translator](https://github.com/brainglobe/brainglobe-ccf-translator). 
-This atlas was packaged from archived data from the Allen Institute for Brain Science. 
+the Allen Reference Atlas. This atlas annotates the grey matter and ventricular systems of the mouse brain. This atlas
+provides a common coordinate framework for many other useful mouse atlases based on CCFv2. Note that the additional 
+reference is averaged based on serial two-photon tomography, and is misaligned with the original Nissl template.
 
 Available versions:
 * `ccfv2_mouse_25um`
@@ -430,7 +428,8 @@ This is a mouse brain fiber tract atlas using version 2 of the commonly used All
 the CCFv2 Mouse Brain atlas only provides information on the grey matter and ventricular systems of the mouse brain, 
 this atlas contains fiber tract structural annotation information. as delineated in the Allen Reference Atlas. The 
 template is based on 528 Nissl-stained coronal slices from the mouse specimen used in the Allen Reference Atlas. 
-This atlas was packaged from archived data from the Allen Institute for Brain Science. 
+Note that the additional reference is averaged based on serial two-photon tomography, and is misaligned with the 
+original Nissl template.
 
 Available versions:
 * `ccfv2_fiber_mouse_25um`
@@ -439,7 +438,8 @@ Available versions:
 This is a developmental mouse brain atlas using version 2 of the commonly used Allen Common Coordinate Framework. 
 The template is based on 528 Nissl-stained coronal slices from the mouse specimen used in the Allen Reference Atlas. 
 The annotations contain the developmental taxonomy of mouse brain structures as given in the Allen Developing Mouse
-Brain atlas. This atlas was packaged from archived data from the Allen Institute for Brain Science. 
+Brain atlas. Note that the additional reference is averaged based on serial two-photon tomography, and is misaligned 
+with the original Nissl template.
 
 Available versions:
 * `ccfv2_dev_mouse_25um`
