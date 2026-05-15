@@ -38,13 +38,17 @@ body .bd-article-container {
   text-align: center;
 }
 
+.contributors-grid .sd-card {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
 html[data-theme=dark] .contributors-grid .sd-card,
 html[data-theme=dark] .contributors-grid .sd-card-body {
   background: var(--pst-color-on-background) !important;
 }
 
 .contributors-grid .sd-card-hover {
-  border-radius: 8px;
   transition: transform 0.15s ease, background 0.15s ease;
 }
 
