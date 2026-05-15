@@ -43,13 +43,6 @@ body .bd-article-container {
   overflow: hidden;
 }
 
-.contributors-grid .sd-card-hover {
-  transition: transform 0.15s ease;
-}
-
-.contributors-grid .sd-card-hover:hover {
-  transform: translateY(-2px);
-}
 
 .contributors-grid .sd-card-img-top {
   width: 80px;
