@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: April 28, 2026
+date: May 15, 2026
 author: Harry Carey
 location: London, England
 category: brainglobe
@@ -17,7 +17,90 @@ The second step is to actually integrate the atlases on this list into the API. 
 
 In total our review found 221 3D atlases across approximately 89 species of which we could find shared data for 121. 
 
-![Number of atlases for each species that we plan to integrate](./images/species_bubble_plot.png)
+<div style="max-height: 400px; overflow-y: auto; border: 1px solid #ddd; border-radius: 4px; margin: 1em 0;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 0.9em;">
+    <thead style="position: sticky; top: 0; background: #f5f5f5; z-index: 1;">
+      <tr>
+        <th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #ccc;">Species</th>
+        <th style="padding: 8px 12px; text-align: center; border-bottom: 2px solid #ccc; min-width: 140px;">Number of Atlases</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr><td>Mouse</td><td style="text-align:center">54</td></tr>
+    <tr><td>Rat</td><td style="text-align:center">21</td></tr>
+    <tr><td>Rhesus macaque</td><td style="text-align:center">16</td></tr>
+    <tr><td>Marmoset</td><td style="text-align:center">9</td></tr>
+    <tr><td>Drosophilia</td><td style="text-align:center">9</td></tr>
+    <tr><td>Dog</td><td style="text-align:center">8</td></tr>
+    <tr><td>Macaque</td><td style="text-align:center">6</td></tr>
+    <tr><td>Chimpanzee</td><td style="text-align:center">5</td></tr>
+    <tr><td>Moth</td><td style="text-align:center">5</td></tr>
+    <tr><td>Zebrafish</td><td style="text-align:center">4</td></tr>
+    <tr><td>Bee</td><td style="text-align:center">4</td></tr>
+    <tr><td>Sheep</td><td style="text-align:center">3</td></tr>
+    <tr><td>Vervet monkey</td><td style="text-align:center">3</td></tr>
+    <tr><td>Mouse lemur</td><td style="text-align:center">3</td></tr>
+    <tr><td>Squirrel monkey</td><td style="text-align:center">3</td></tr>
+    <tr><td>Cynomolgus macaque</td><td style="text-align:center">3</td></tr>
+    <tr><td>Spider</td><td style="text-align:center">3</td></tr>
+    <tr><td>Rabbit</td><td style="text-align:center">2</td></tr>
+    <tr><td>Ferret</td><td style="text-align:center">2</td></tr>
+    <tr><td>Ant</td><td style="text-align:center">2</td></tr>
+    <tr><td>Red flour beetle</td><td style="text-align:center">2</td></tr>
+    <tr><td>Tree shrew</td><td style="text-align:center">2</td></tr>
+    <tr><td>Dung beetle</td><td style="text-align:center">2</td></tr>
+    <tr><td>Cat</td><td style="text-align:center">2</td></tr>
+    <tr><td>Locust</td><td style="text-align:center">2</td></tr>
+    <tr><td>Baboon</td><td style="text-align:center">2</td></tr>
+    <tr><td>Wasp</td><td style="text-align:center">1</td></tr>
+    <tr><td>Squirrel</td><td style="text-align:center">1</td></tr>
+    <tr><td>Starling</td><td style="text-align:center">1</td></tr>
+    <tr><td>Tawny dragon</td><td style="text-align:center">1</td></tr>
+    <tr><td>Teleost fish</td><td style="text-align:center">1</td></tr>
+    <tr><td>Sea lion</td><td style="text-align:center">1</td></tr>
+    <tr><td>Zebrafinch</td><td style="text-align:center">1</td></tr>
+    <tr><td>Monarch butterfly</td><td style="text-align:center">1</td></tr>
+    <tr><td>Sea spider</td><td style="text-align:center">1</td></tr>
+    <tr><td>Minpig</td><td style="text-align:center">1</td></tr>
+    <tr><td>California sea lion</td><td style="text-align:center">1</td></tr>
+    <tr><td>Cockroach</td><td style="text-align:center">1</td></tr>
+    <tr><td>Cynomolgus macaques</td><td style="text-align:center">1</td></tr>
+    <tr><td>Octopus</td><td style="text-align:center">1</td></tr>
+    <tr><td>Hagfish</td><td style="text-align:center">1</td></tr>
+    <tr><td>Killer whale</td><td style="text-align:center">1</td></tr>
+    <tr><td>Sea turtle</td><td style="text-align:center">1</td></tr>
+    <tr><td>Mozambique tilapia</td><td style="text-align:center">1</td></tr>
+    <tr><td>Prairie vole</td><td style="text-align:center">1</td></tr>
+    <tr><td>Pigeon</td><td style="text-align:center">1</td></tr>
+    <tr><td>Common degu</td><td style="text-align:center">1</td></tr>
+    <tr><td>Pygmy squid</td><td style="text-align:center">1</td></tr>
+    <tr><td>Squid</td><td style="text-align:center">1</td></tr>
+    <tr><td>Australian tawny dragon</td><td style="text-align:center">1</td></tr>
+    <tr><td>Axolotl</td><td style="text-align:center">1</td></tr>
+    <tr><td>Bearded dragon</td><td style="text-align:center">1</td></tr>
+    <tr><td>Blackcap</td><td style="text-align:center">1</td></tr>
+    <tr><td>Canary</td><td style="text-align:center">1</td></tr>
+    <tr><td>Canine</td><td style="text-align:center">1</td></tr>
+    <tr><td>Cavefish</td><td style="text-align:center">1</td></tr>
+    <tr><td>Common shrew</td><td style="text-align:center">1</td></tr>
+    <tr><td>Crocodile</td><td style="text-align:center">1</td></tr>
+    <tr><td>Cuttlefish</td><td style="text-align:center">1</td></tr>
+    <tr><td>Degu</td><td style="text-align:center">1</td></tr>
+    <tr><td>Domestic pig</td><td style="text-align:center">1</td></tr>
+    <tr><td>Fly</td><td style="text-align:center">1</td></tr>
+    <tr><td>Horse</td><td style="text-align:center">1</td></tr>
+    <tr><td>Japanese quail</td><td style="text-align:center">1</td></tr>
+    <tr><td>Lemur</td><td style="text-align:center">1</td></tr>
+    <tr><td>Lungfish</td><td style="text-align:center">1</td></tr>
+    <tr><td>Mole rat</td><td style="text-align:center">1</td></tr>
+    <tr><td>Moustached bat</td><td style="text-align:center">1</td></tr>
+    <tr><td>African elephant</td><td style="text-align:center">1</td></tr>
+    <tr><td>Opossum</td><td style="text-align:center">1</td></tr>
+    <tr><td>Pig</td><td style="text-align:center">1</td></tr>
+    <tr><td>Coyote</td><td style="text-align:center">1</td></tr>
+    </tbody>
+  </table>
+</div>
 
 
 As always, if you would like to get involved with this project just get in touch with us! There are several ways to contribute including adding missing atlases to the list, helping with data standardisation, or contributing to integration and validation. [Reach out to us](https://brainglobe.info/contact.html) if you would like to get involved. 
