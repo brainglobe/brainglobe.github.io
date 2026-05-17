@@ -418,7 +418,7 @@ This is a mouse brain atlas using version 2 of the commonly used Allen Common Co
 here for historical reasons. The template is based on 528 Nissl-stained coronal slices from the mouse specimen used in 
 the Allen Reference Atlas. This atlas annotates the grey matter and ventricular systems of the mouse brain. This atlas
 provides a common coordinate framework for many other useful mouse atlases based on CCFv2. Note that the additional 
-reference is averaged based on serial two-photon tomography, and is misaligned with the original Nissl template.
+reference is an average template based on serial two-photon tomography, and is misaligned with the original Nissl template.
 
 Available versions:
 * `ccfv2_mouse_25um`
@@ -428,8 +428,8 @@ This is a mouse brain fiber tract atlas using version 2 of the commonly used All
 the CCFv2 Mouse Brain atlas only provides information on the grey matter and ventricular systems of the mouse brain, 
 this atlas contains fiber tract structural annotation information. as delineated in the Allen Reference Atlas. The 
 template is based on 528 Nissl-stained coronal slices from the mouse specimen used in the Allen Reference Atlas. 
-Note that the additional reference is averaged based on serial two-photon tomography, and is misaligned with the 
-original Nissl template.
+Note that the additional reference is an average template based on serial two-photon tomography, and is misaligned with 
+the original Nissl template.
 
 Available versions:
 * `ccfv2_fiber_mouse_25um`
@@ -438,8 +438,8 @@ Available versions:
 This is a developmental mouse brain atlas using version 2 of the commonly used Allen Common Coordinate Framework. 
 The template is based on 528 Nissl-stained coronal slices from the mouse specimen used in the Allen Reference Atlas. 
 The annotations contain the developmental taxonomy of mouse brain structures as given in the Allen Developing Mouse
-Brain atlas. Note that the additional reference is averaged based on serial two-photon tomography, and is misaligned 
-with the original Nissl template.
+Brain atlas. Note that the additional reference is an average template based on serial two-photon tomography, and is 
+misaligned with the original Nissl template.
 
 Available versions:
 * `ccfv2_dev_mouse_25um`
