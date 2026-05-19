@@ -16,6 +16,7 @@ import os
 
 from ablog.blog import Blog
 from docutils import nodes
+from sphinx.errors import ExtensionError
 
 
 # -- Project information -----------------------------------------------------
@@ -238,8 +239,10 @@ def add_blog_author_byline(app, doctree, docname):
     post = posts[0]
     authors = post.get("author", [])
     date = post.get("date")
-    if not authors and not date:
-        return
+    if not authors or not date:
+        raise ExtensionError(
+            f"Blog post '{docname}' must define both author and date metadata."
+        )
 
     byline = nodes.line_block(classes=["blog-post-author"])
 
