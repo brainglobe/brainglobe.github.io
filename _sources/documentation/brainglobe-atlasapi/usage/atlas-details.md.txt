@@ -412,6 +412,38 @@ with some improvements. This atlas was constructed from reregistered ISH data fr
 
 Available versions:
 * `carea_mouse_25um`
+
+### [Allen CCFv2 Mouse Brain Atlas](https://doi.org/10.1038/nature13186)
+This is a mouse brain atlas using version 2 of the commonly used Allen Common Coordinate Framework, which is included 
+here for historical reasons. The template is based on 528 Nissl-stained coronal slices from the mouse specimen used in 
+the Allen Reference Atlas. This atlas annotates the grey matter and ventricular systems of the mouse brain. This atlas
+provides a common coordinate framework for many other useful mouse atlases based on CCFv2. Note that the additional 
+reference is an average template based on serial two-photon tomography, and is misaligned with the original Nissl template.
+
+Available versions:
+* `ccfv2_mouse_25um`
+
+### [Allen CCFv2 Mouse Fiber Tracts Atlas](https://doi.org/10.1038/nature13186)
+This is a mouse brain fiber tract atlas using version 2 of the commonly used Allen Common Coordinate Framework. Where
+the CCFv2 Mouse Brain atlas only provides information on the grey matter and ventricular systems of the mouse brain, 
+this atlas contains fiber tract structural annotation information. as delineated in the Allen Reference Atlas. The 
+template is based on 528 Nissl-stained coronal slices from the mouse specimen used in the Allen Reference Atlas. 
+Note that the additional reference is an average template based on serial two-photon tomography, and is misaligned with 
+the original Nissl template.
+
+Available versions:
+* `ccfv2_fiber_mouse_25um`
+
+### [Allen CCFv2 Developmental Mouse Brain Atlas](https://doi.org/10.1038/nature13186)
+This is a developmental mouse brain atlas using version 2 of the commonly used Allen Common Coordinate Framework. 
+The template is based on 528 Nissl-stained coronal slices from the mouse specimen used in the Allen Reference Atlas. 
+The annotations contain the developmental taxonomy of mouse brain structures as given in the Allen Developing Mouse
+Brain atlas. Note that the additional reference is an average template based on serial two-photon tomography, and is 
+misaligned with the original Nissl template.
+
+Available versions:
+* `ccfv2_dev_mouse_25um`
+  
 ## Rat
 ### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
 The Waxholm Space rat brain atlas features annotations of 222 structures, alongside a 39μm MRI template. It provides detailed delineations 

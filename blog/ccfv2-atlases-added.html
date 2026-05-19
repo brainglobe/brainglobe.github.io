@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Computation times &#8212; BrainGlobe</title>
+    <title>Three Atlases for the Allen Common Coordinate Framework v2 Mouse Brain have been added to BrainGlobe &#8212; BrainGlobe</title>
   
   
   
@@ -58,9 +58,9 @@
     <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'aws_examples/sg_execution_times';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/ccfv2-atlases-added';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
-    <link rel="canonical" href="https://brainglobe.info/aws_examples/sg_execution_times.html" />
+    <link rel="canonical" href="https://brainglobe.info/blog/ccfv2-atlases-added.html" />
     <link rel="icon" href="../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -186,7 +186,7 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../blog/index.html">
+  <a class="nav-link nav-internal" href="index.html">
     Blog
   </a>
 </li>
@@ -305,6 +305,10 @@
   
 
   
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
 
     </header>
@@ -362,7 +366,7 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../blog/index.html">
+  <a class="nav-link nav-internal" href="index.html">
     Blog
   </a>
 </li>
@@ -495,7 +499,7 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Computation times</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Three Atlases for the Allen Common Coordinate Framework v2 Mouse Brain have been added to BrainGlobe</span></li>
   </ul>
 </nav>
 </div>
@@ -511,41 +515,73 @@
                 
 <div id="searchbox"></div>
                 <article class="bd-article">
-                   <section id="computation-times">
-<span id="sphx-glr-aws-examples-sg-execution-times"></span><h1>Computation times<a class="headerlink" href="#computation-times" title="Link to this heading">#</a></h1>
-<p><strong>01:21.156</strong> total execution time for 1 file <strong>from aws_examples</strong>:</p>
-<div class="docutils container">
-<style scoped>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
-<link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
-</style>
-<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-<script type="text/javascript" class="init">
-$(document).ready( function () {
-    $('table.sg-datatable').DataTable({order: [[1, 'desc']]});
-} );
-</script><div class="pst-scrollable-table-container"><table class="table table-striped sg-datatable">
-<thead>
-<tr class="row-odd"><th class="head"><p>Example</p></th>
-<th class="head"><p>Time</p></th>
-<th class="head"><p>Mem (MB)</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><a class="reference internal" href="explore_atlas.html#sphx-glr-aws-examples-explore-atlas-py"><span class="std std-ref">Interacting with cloud atlas data through Python</span></a> (<code class="docutils literal notranslate"><span class="pre">explore_atlas.py</span></code>)</p></td>
-<td><p>01:21.156</p></td>
-<td><p>0.0</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+                   <section class="tex2jax_ignore mathjax_ignore" id="three-atlases-for-the-allen-common-coordinate-framework-v2-mouse-brain-have-been-added-to-brainglobe">
+<h1>Three Atlases for the Allen Common Coordinate Framework v2 Mouse Brain have been added to BrainGlobe<a class="headerlink" href="#three-atlases-for-the-allen-common-coordinate-framework-v2-mouse-brain-have-been-added-to-brainglobe" title="Link to this heading">#</a></h1>
+<p>The mouse brain atlases provided by the Allen Institute for Brain Science (AIBS) are widely used in the neuroscience community, and as of the writing of this blog post, the most updated version of their atlas is version 3 of the Common Coordinate Framework (CCF). However, there are many benefits from adding older versions of atlases, namely in terms of keeping a record of the history of atlas versions, as well as reproducing historical results which used older atlases. Therefore, we have packaged the CCFv2 mouse brain atlases provided by the Allen Institute. These include an adult mouse brain atlas with all grey matter regions without fiber tracts, an adult mouse brain atlas with only the fiber tracts, and a developmental adult mouse brain atlas containing information on the developmental taxonomy of various regions. The CCFv2 is a symmetric atlas constructed from the same 528 Nissl stained 25um coronal slices as in CCFv1, but reprocessed for symmetry and to introduce more annotations based on the Allen Reference Atlas.</p>
+<p>We have packaged the following three atlases:</p>
+<section id="ccfv2-mouse-brain-atlas">
+<h2>1. CCFv2 Mouse Brain Atlas<a class="headerlink" href="#ccfv2-mouse-brain-atlas" title="Link to this heading">#</a></h2>
+<a class="reference internal image-reference" href="../_images/ccfv2_mouse_brain.png"><img alt="ccfv2 mouse brain atlas annotations" src="../_images/ccfv2_mouse_brain.png" style="width: 830px; height: 630px;" />
+</a>
+<p><strong>Figure 1. Anterior view of the CCFv2 Mouse Brain atlas annotations and reference image.</strong></p>
+</section>
+<section id="ccfv2-mouse-fiber-tracts-atlas">
+<h2>2. CCFv2 Mouse Fiber Tracts Atlas<a class="headerlink" href="#ccfv2-mouse-fiber-tracts-atlas" title="Link to this heading">#</a></h2>
+<a class="reference internal image-reference" href="../_images/ccfv2_fiber_mouse.png"><img alt="ccfv2 mouse fiber tracts atlas annotations" src="../_images/ccfv2_fiber_mouse.png" style="width: 830px; height: 630px;" />
+</a>
+<p><strong>Figure 2. Anterior view of the CCFv2 Mouse Fiber Tracts atlas annotations and reference image.</strong></p>
+</section>
+<section id="ccfv2-developmental-mouse-brain-atlas">
+<h2>3. CCFv2 Developmental Mouse Brain Atlas<a class="headerlink" href="#ccfv2-developmental-mouse-brain-atlas" title="Link to this heading">#</a></h2>
+<a class="reference internal image-reference" href="../_images/ccfv2_dev_mouse.png"><img alt="ccfv2 developmental mouse brain atlas annotations" src="../_images/ccfv2_dev_mouse.png" style="width: 830px; height: 630px;" />
+</a>
+<p><strong>Figure 3. Anterior view of the CCFv2 Developmental Mouse Brain atlas annotations and reference image.</strong></p>
+<p>The BrainGlobe team re-packaged the data generated and made public by the Allen Institute, making it now possible to use the CCFv2 mouse atlases within the BrainGlobe ecosystem. The atlas names are <code class="docutils literal notranslate"><span class="pre">ccfv2_mouse_25um</span></code>, <code class="docutils literal notranslate"><span class="pre">ccfv2_fiber_mouse_25um</span></code>, and <code class="docutils literal notranslate"><span class="pre">ccfv2_dev_mouse_25um</span></code>.</p>
+</section>
+<section id="how-do-i-use-the-new-atlases">
+<h2>How do I use the new atlases?<a class="headerlink" href="#how-do-i-use-the-new-atlases" title="Link to this heading">#</a></h2>
+<p>You can use the CCFv2 atlases for visualisation like other BrainGlobe atlases, as written below:</p>
+<ul class="simple">
+<li><p>Install BrainGlobe (<a class="reference internal" href="../documentation/index.html"><span class="doc std std-doc">instructions</span></a>)</p></li>
+<li><p>Open napari and follow the steps in our <a class="reference internal" href="../tutorials/manage-atlases-in-GUI.html"><span class="std std-doc">download tutorial</span></a> for the CCFv2 atlas</p></li>
+<li><p>Visualise the different parts of the atlas as described in our <a class="reference internal" href="../tutorials/visualise-atlas-napari.html"><span class="doc std std-doc">visualisation tutorial</span></a></p></li>
+</ul>
+<p>The end result will look something like Figure 4.</p>
+<p><img alt="ccfv2 mouse brain atlas visualised in napari" src="../_images/ccfv2_mouse_brain_napari.png" /></p>
+<p><strong>Figure 4: The CCFv2 Mouse Brain atlas visualised with <code class="docutils literal notranslate"><span class="pre">brainrender-napari</span></code>: with mesh overlays for the brain (grey), the hippocampal formation (green) and the cerebellum (yellow).</strong></p>
+</section>
+<section id="why-are-we-adding-new-atlases">
+<h2>Why are we adding new atlases?<a class="headerlink" href="#why-are-we-adding-new-atlases" title="Link to this heading">#</a></h2>
+<p>A fundamental aim of the BrainGlobe project is to make various brain atlases easily accessible by users across the globe. The CCFv2 Mouse Brain atlases allow for users to use historical versions of the Allen 3D atlases easily on BrainGlobe. If you would like to get involved with a similar project, please <a class="reference internal" href="../contact.html"><span class="doc std std-doc">get in touch</span></a>.</p>
+</section>
 </section>
 
 <div class="section ablog__blog_comments">
-   
+     
+<div class="section ablog__prev-next">
+  <span class="ablog__prev">
+     
+    <a href="carea-atlas-added.html">
+      
+      <i class="fa fa-arrow-circle-left"></i>
+      
+      <span>New mouse brain atlas based on gene expression</span>
+    </a>
+    
+  </span>
+  <span class="ablog__spacer">&nbsp;</span>
+  <span class="ablog__next">
+     
+    <a href="the-systematic-atlas-packaging-project.html">
+      <span>The Systematic Atlas Packaging Project</span>
+      
+      <i class="fa fa-arrow-circle-right"></i>
+      
+    </a>
+    
+  </span>
+</div>
+  
 </div>
 
                 </article>
@@ -563,6 +599,28 @@ $(document).ready( function () {
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ccfv2-mouse-brain-atlas">1. CCFv2 Mouse Brain Atlas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ccfv2-mouse-fiber-tracts-atlas">2. CCFv2 Mouse Fiber Tracts Atlas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ccfv2-developmental-mouse-brain-atlas">3. CCFv2 Developmental Mouse Brain Atlas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-use-the-new-atlases">How do I use the new atlases?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-we-adding-new-atlases">Why are we adding new atlases?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
