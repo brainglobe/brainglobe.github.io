@@ -198,7 +198,7 @@ notfound_urls_prefix = None
 
 linkcheck_ignore = [
     # Sphinx-gallery output files only exist after a full HTML build, not during linkcheck
-    ".*/*_examples/.*\.html",
+    r".*/*_examples/.*\.html",
     "https://neuromorpho.org/",
     "https://brainglobe.zulipchat.com/#narrow/stream/414089-developer-meeting",
     "https://easyengine.io",
