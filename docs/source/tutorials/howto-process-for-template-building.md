@@ -39,11 +39,13 @@ Create an input CSV (comma-separated values) file (for example `zebrafinch.csv`)
 - `origin` (3-letter anatomical code)
 - `filepath` (absolute path to input image)
 
+The anatomical code for the `origin` and the order of the `resolution` axes should reflect the order of [image axes](/documentation/setting-up/image-definition).
+
 You can optionally include a `mask_filepath` column, with paths to pre-computed or manually generated masks of each sample. Automatic generation of masks will be skipped for samples that have a non-empty `mask_filepath`.
 You can also include a boolean column `use`, and set entries for samples you'd like to exclude to `False`.
 
 You can have an arbitrary number of unique additional columns, to help you keep track of any metadata you may be interested in. These will be ignored by our code, but it can be useful for you to cross-check this information.
-We provide a [minimal google sheet](https://docs.google.com/spreadsheets/d/14YnAdZsB7vp0Tyg5FbSBWlMCNIx9-iJLHWQzNgdMxWE/edit?usp=sharing) as a template for you to copy and edit.
+We provide a [minimal google sheet](https://docs.google.com/spreadsheets/d/14YnAdZsB7vp0Tyg5FbSBWlMCNIx9-iJLHWQzNgdMxWE/edit?usp=sharing) and an [example CSV file](https://github.com/brainglobe/atlas-forge/blob/main/fiddler_crab/template-building-crab-3um-april-2026.csv) as starting points for you to copy and edit.
 
 For example, your CSV file may look like this:
 
@@ -59,7 +61,7 @@ Some quick checks before proceeding:
 - Each `subject_id` is unique
 - There are no spaces in the core CSV columns (You can have spaces in your own metadata).
 - Every `filepath` exists and is readable
-- `origin` values are [in the correct orientation](/documentation/setting-up/image-definition)
+- `origin` and `resolution` values both match [the order of the image axes](/documentation/setting-up/image-definition)
 
 ## Standardise orientation and resolution
 
@@ -179,7 +181,7 @@ config = PreprocConfig(
     	threshold_method = "otsu", # default "triangle"
     	closing_size = 7, # default 5
     	erode_size = 2, # default 0
-	)
+	),
 	pad_pixels = 20
 )
 preprocess(standardised_csv, config=config)
