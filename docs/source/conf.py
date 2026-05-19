@@ -14,6 +14,9 @@ import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+from ablog.blog import Blog
+from docutils import nodes
+
 
 # -- Project information -----------------------------------------------------
 
@@ -198,7 +201,7 @@ notfound_urls_prefix = None
 
 linkcheck_ignore = [
     # Sphinx-gallery output files only exist after a full HTML build, not during linkcheck
-    ".*/*_examples/.*\.html",
+    r".*/*_examples/.*\.html",
     "https://neuromorpho.org/",
     "https://brainglobe.zulipchat.com/#narrow/stream/414089-developer-meeting",
     "https://easyengine.io",
@@ -224,3 +227,53 @@ linkcheck_request_headers = {
         "Authorization": f"Bearer {os.environ.get('GITHUB_TOKEN', '')}",
     },
 }
+
+
+def add_blog_author_byline(app, doctree, docname):
+    """Add ABlog author metadata to individual blog post pages."""
+    posts = getattr(app.env, "ablog_posts", {}).get(docname, [])
+    if len(posts) != 1:
+        return
+
+    post = posts[0]
+    authors = post.get("author", [])
+    date = post.get("date")
+    if not authors and not date:
+        return
+
+    byline = nodes.line_block(classes=["blog-post-author"])
+
+    if authors:
+        author_line = nodes.line()
+        author_line += nodes.Text("By ")
+
+        blog = Blog(app)
+        author_catalog = blog.catalogs["author"].collections
+        for index, author in enumerate(authors):
+            if index:
+                author_line += nodes.Text(", ")
+
+            author_page = author_catalog.get(author)
+            if author_page is None:
+                author_line += nodes.Text(author)
+                continue
+
+            author_line += nodes.reference(
+                "",
+                author,
+                refuri=app.builder.get_relative_uri(docname, author_page.docname),
+            )
+
+        byline += author_line
+
+    if date:
+        byline += nodes.line(text=date.strftime(app.config["post_date_format"]))
+
+    for section in doctree.findall(nodes.section):
+        if section.children and isinstance(section.children[0], nodes.title):
+            section.insert(1, byline)
+            return
+
+
+def setup(app):
+    app.connect("doctree-resolved", add_blog_author_byline)
