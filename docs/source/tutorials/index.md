@@ -173,6 +173,8 @@ silicon-probe-tracking
 tracing-tracking
 brainmapper/index
 template-builder-pre-align
+howto-process-for-template-building
+howto-configure-hpc-template-building-job
 ../api_examples/brainglobe_atlasapi
 ../aws_examples/explore_atlas
 ```
