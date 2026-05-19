@@ -11,7 +11,8 @@ language: English
 
 The purpose of the BrainGlobe Atlas API is to standardise atlases and provide them to researchers via a common, easy to use, interface. As part of this initiative we have integrated atlases of all kinds, including atlases of mice, rats, bees, cuttlefish, and more. The logical endpoint of all of this would be integrate _all_ existing 3D atlases into BrainGlobe. 
 
-While this may be a long process we have decided to get started. First by creating a comprehensive list of all published non-human brain atlases which have available data. It is available [here](https://github.com/brainglobe/brainglobe-atlasapi/issues?q=is%3Aissue%20state%3Aopen%20label%3Anew-atlas).  This list is a work in progress and if you find an atlas which is not mentioned please open an issue on the brainglobe-atlasapi repository and we will be sure to add it. 
+While this may be a long process we have decided to get started. First by creating a comprehensive list of all published non-human brain atlases which have available data that we haven't yet added to BrainGlobe. It is available [here](https://github.com/brainglobe/brainglobe-atlasapi/issues?q=is%3Aissue%20state%3Aopen%20label%3Anew-atlas).  This list is a work in progress and if you find an atlas which is not mentioned please open an issue on the brainglobe-atlasapi repository and we will be sure to add it. 
+The list of atlases we have already added can be found [here](/documentation/brainglobe-atlasapi/usage/atlas-details).
 
 The second step is to actually integrate the atlases on this list into the API. To this end [Jung Woo Kim](https://github.com/kjungwoo5) and [Amirreza Bahramani](https://github.com/bahramani) have joined the BrainGlobe team. They have already begun integrating several atlases (expect to see a Macaque atlas soon!). 
 
