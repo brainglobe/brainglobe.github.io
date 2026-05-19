@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**01:35.860** total execution time for 1 file **from aws_examples**:
+**00:36.788** total execution time for 1 file **from aws_examples**:
 
 .. container::
 
@@ -33,5 +33,5 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_aws_examples_explore_atlas.py` (``explore_atlas.py``)
-     - 01:35.860
+     - 00:36.788
      - 0.0
