@@ -13,17 +13,26 @@ The mouse brain atlases provided by the Allen Institute for Brain Science (AIBS)
 
 We have packaged the following three atlases: 
 ### 1. CCFv2 Mouse Brain Atlas
-<img src="./images/ccfv2_mouse_brain.png" alt="ccfv2 mouse brain atlas annotations"  style="width: 830px; max-width: 100%; height: auto;">
+```{image} ./images/ccfv2_mouse_brain.png
+:alt: ccfv2 mouse brain atlas annotations
+:width: 830px
+```
 
 **Figure 1. Anterior view of the CCFv2 Mouse Brain atlas annotations and reference image.**
 
 ### 2. CCFv2 Mouse Fiber Tracts Atlas
-<img src="./images/ccfv2_fiber_mouse.png" alt="ccfv2 mouse fiber tracts atlas annotations"  style="width: 830px; max-width: 100%; height: auto;">
+```{image} ./images/ccfv2_fiber_mouse.png
+:alt: ccfv2 mouse fiber tracts atlas annotations
+:width: 830px
+```
 
 **Figure 2. Anterior view of the CCFv2 Mouse Fiber Tracts atlas annotations and reference image.**
 
 ### 3. CCFv2 Developmental Mouse Brain Atlas
-<img src="./images/ccfv2_dev_mouse.png" alt="ccfv2 developmental mouse brain atlas annotations" style="width: 830px; max-width: 100%; height: auto;">
+```{image} ./images/ccfv2_dev_mouse.png
+:alt: ccfv2 developmental mouse brain atlas annotations
+:width: 830px
+```
 
 **Figure 3. Anterior view of the CCFv2 Developmental Mouse Brain atlas annotations and reference image.**
 
