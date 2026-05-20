@@ -217,7 +217,7 @@ linkcheck_ignore = [
     "https://elifesciences.org", # 406 Client Error: Not Acceptable
     "https://www.biorxiv.org", # 403 Client Error: Forbidden
     "https://mousespinal.brain-map.org",
-    "https://gin.g-node.org/BrainGlobe", # often down, or throttling many requests
+    "https://gin.g-node.org", # often down, or throttling many requests
     ]
 
 linkcheck_anchors_ignore_for_url = [
