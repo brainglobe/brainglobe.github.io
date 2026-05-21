@@ -1,0 +1,894 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>How to prepare input images for template building &#8212; BrainGlobe</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=8dea78f2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=fd6457a4" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+
+    <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/sg-tags.js?v=d80f6fa4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/howto-process-for-template-building';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://brainglobe.info/tutorials/howto-process-for-template-building.html" />
+    <link rel="icon" href="../_static/brainglobe.png"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Configuring a template-building run on the HPC" href="howto-configure-hpc-template-building-job.html" />
+    <link rel="prev" title="Aligning samples for template building" href="template-builder-pre-align.html" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+     
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/brainglobe.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/brainglobe.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BrainGlobe</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../community/index.html">
+    Community
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../blog/index.html">
+    Blog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../projects/index.html">
+    Projects
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://mastodon.online/@brainglobe" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i><span class="visually-hidden">Mastodon</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/brainglobe.info" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i><span class="visually-hidden">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://brainglobe.zulipchat.com" title="Zulip (Developer chat)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i><span class="visually-hidden">Zulip (Developer chat)</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://forum.image.sc/tag/brainglobe" title="image.sc (Help forum)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-question fa-lg" aria-hidden="true"></i><span class="visually-hidden">image.sc (Help forum)</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../community/index.html">
+    Community
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../blog/index.html">
+    Blog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../projects/index.html">
+    Projects
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://mastodon.online/@brainglobe" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i><span class="visually-hidden">Mastodon</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/brainglobe.info" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i><span class="visually-hidden">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://brainglobe.zulipchat.com" title="Zulip (Developer chat)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i><span class="visually-hidden">Zulip (Developer chat)</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://forum.image.sc/tag/brainglobe" title="image.sc (Help forum)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-question fa-lg" aria-hidden="true"></i><span class="visually-hidden">image.sc (Help forum)</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Index</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="visualise-atlas-napari.html">Visualise an atlas in napari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manage-atlases-in-GUI.html">Download an atlas through napari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial-whole-brain-registration.html">Registering a whole-brain image to an atlas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="segmenting-1d-tracks.html">Segmenting a 1D track</a></li>
+<li class="toctree-l1"><a class="reference internal" href="segmenting-3d-structures.html">Segmenting 2/3D structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transform-cells-atlas.html">Analysing brainwide distribution of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cellfinder-detection.html">Detecting cells in 3D with cellfinder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cellfinder-retraining.html">Retraining the cellfinder classification network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="silicon-probe-tracking.html">Silicon probe tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracing-tracking.html">Analyze and visualize bulk fluorescence tracing data</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="brainmapper/index.html">Whole brain cell detection and registration with the <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code> command line tool</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="brainmapper/setting-up.html">Setting up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brainmapper/running-brainmapper.html">Running <code class="docutils literal notranslate"><span class="pre">brainmapper</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="brainmapper/visualising-the-results.html">Visualising the results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brainmapper/exploring-the-numerical-results.html">Exploring the numerical results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brainmapper/visualising-your-data-in-brainrender.html">Visualising your data in brainrender</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="template-builder-pre-align.html">Aligning samples for template building</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">How to prepare input images for template building</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howto-configure-hpc-template-building-job.html">Configuring a template-building run on the HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aws_examples/explore_atlas.html">Interacting with cloud atlas data through Python</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">How to prepare input images for template building</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                   <section class="tex2jax_ignore mathjax_ignore" id="how-to-prepare-input-images-for-template-building">
+<h1>How to prepare input images for template building<a class="headerlink" href="#how-to-prepare-input-images-for-template-building" title="Link to this heading">#</a></h1>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This tutorial uses <code class="docutils literal notranslate"><span class="pre">brainglobe-template-builder</span></code> which is still in early development. This means features are missing and things may change a lot. We welcome your feedback on how this works for you - please get <a class="reference internal" href="../contact.html"><span class="doc std std-doc">in touch</span></a>!</p>
+</div>
+<p>This guide shows how to prepare input images for building a symmetric anatomical template, and how to perform quality-control checks at each step.
+We will use some serial-section two-photon microscopy images of whole zebra finch brains as an example.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After preparation, you will probably need access to a high-performance computing (HPC) platform to build a template. On the HPC, you will need to have ANTs and the optimizedANTs scripts installed and available on your path (these won’t work on Windows systems!). See our <a class="reference external" href="https://github.com/brainglobe/brainglobe-template-builder/blob/main/README.md">installation guide</a> for more details.</p>
+<p>However, to follow this how-to guide, you will only need</p>
+<ul class="simple">
+<li><p>Your input images</p></li>
+<li><p>Familiarity with Python scripting</p></li>
+<li><p>Familiarity with setting up a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment or similar</p></li>
+</ul>
+<p>Input images can be</p>
+<ul class="simple">
+<li><p>A folder of 2D TIFFs, or 3D TIFF or NIfTI images that fit into your memory</p></li>
+<li><p>A folder of 2D TIFF images (can in total be larger than your available memory)</p></li>
+</ul>
+</div>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<p>If needed, create and activate a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment, then install <code class="docutils literal notranslate"><span class="pre">brainglobe-template-builder</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>template-builder<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.13<span class="w"> </span>-y
+conda<span class="w"> </span>activate<span class="w"> </span>template-builder
+pip<span class="w"> </span>install<span class="w"> </span>brainglobe-template-builder
+</pre></div>
+</div>
+</section>
+<section id="collate-input-image-information-in-a-file">
+<h2>Collate input image information in a file<a class="headerlink" href="#collate-input-image-information-in-a-file" title="Link to this heading">#</a></h2>
+<p>Create an input CSV (comma-separated values) file (for example <code class="docutils literal notranslate"><span class="pre">zebrafinch.csv</span></code>) with at least these columns:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">subject_id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">resolution_0</span></code>, <code class="docutils literal notranslate"><span class="pre">resolution_1</span></code>, <code class="docutils literal notranslate"><span class="pre">resolution_2</span></code> (in µm)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">origin</span></code> (3-letter anatomical code)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code> (absolute path to input image)</p></li>
+</ul>
+<p>The anatomical code for the <code class="docutils literal notranslate"><span class="pre">origin</span></code> and the order of the <code class="docutils literal notranslate"><span class="pre">resolution</span></code> axes should reflect the order of <a class="reference internal" href="../documentation/setting-up/image-definition.html"><span class="doc std std-doc">image axes</span></a>.</p>
+<p>You can optionally include a <code class="docutils literal notranslate"><span class="pre">mask_filepath</span></code> column, with paths to pre-computed or manually generated masks of each sample. Automatic generation of masks will be skipped for samples that have a non-empty <code class="docutils literal notranslate"><span class="pre">mask_filepath</span></code>.
+You can also include a boolean column <code class="docutils literal notranslate"><span class="pre">use</span></code>, and set entries for samples you’d like to exclude to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>You can have an arbitrary number of unique additional columns, to help you keep track of any metadata you may be interested in. These will be ignored by our code, but it can be useful for you to cross-check this information.
+We provide a <a class="reference external" href="https://docs.google.com/spreadsheets/d/14YnAdZsB7vp0Tyg5FbSBWlMCNIx9-iJLHWQzNgdMxWE/edit?usp=sharing">minimal google sheet</a> and an <a class="reference external" href="https://github.com/brainglobe/atlas-forge/blob/main/fiddler_crab/template-building-crab-3um-april-2026.csv">example CSV file</a> as starting points for you to copy and edit.</p>
+<p>For example, your CSV file may look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">subject_id</span> <span class="o">|</span> <span class="n">resolution_0</span> <span class="o">|</span> <span class="n">resolution_1</span> <span class="o">|</span> <span class="n">resolution_2</span> <span class="o">|</span> <span class="n">origin</span> <span class="o">|</span> <span class="n">filepath</span> <span class="o">|</span> <span class="n">mask_filepath</span> <span class="o">|</span> <span class="n">species</span> <span class="o">|</span> <span class="n">sex</span> <span class="o">|</span> <span class="n">use</span> <span class="o">|</span>
+<span class="o">|---|---|---|---|---|---|---|---|---|</span>
+<span class="o">|</span> <span class="n">ZF8001m</span> <span class="o">|</span> <span class="mi">25</span> <span class="o">|</span> <span class="mi">25</span> <span class="o">|</span> <span class="mi">25</span> <span class="o">|</span> <span class="n">PSL</span> <span class="o">|</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">zebrafinch</span><span class="o">/</span><span class="n">sourcedata</span><span class="o">/</span><span class="n">ZF8001m</span><span class="o">.</span><span class="n">tif</span> <span class="o">|</span> 											    <span class="o">|</span> <span class="n">Zebra</span> <span class="n">finch</span> <span class="o">|</span> <span class="n">M</span> <span class="o">|</span> <span class="kc">True</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">ZF8002f</span> <span class="o">|</span> <span class="mi">25</span> <span class="o">|</span> <span class="mi">25</span> <span class="o">|</span> <span class="mi">25</span> <span class="o">|</span> <span class="n">PSL</span> <span class="o">|</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">zebrafinch</span><span class="o">/</span><span class="n">sourcedata</span><span class="o">/</span><span class="n">ZF8002f</span><span class="o">.</span><span class="n">tif</span> <span class="o">|</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">zebrafinch</span><span class="o">/</span><span class="n">sourcedata</span><span class="o">/</span><span class="n">ZF8002f_mask</span><span class="o">.</span><span class="n">tif</span> <span class="o">|</span> <span class="n">Zebra</span> <span class="n">finch</span> <span class="o">|</span> <span class="n">F</span> <span class="o">|</span> <span class="kc">True</span> <span class="o">|</span>
+</pre></div>
+</div>
+<p>Some quick checks before proceeding:</p>
+<ul class="simple">
+<li><p>Each <code class="docutils literal notranslate"><span class="pre">subject_id</span></code> is unique</p></li>
+<li><p>There are no spaces in the core CSV columns (You can have spaces in your own metadata).</p></li>
+<li><p>Every <code class="docutils literal notranslate"><span class="pre">filepath</span></code> exists and is readable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">origin</span></code> and <code class="docutils literal notranslate"><span class="pre">resolution</span></code> values both match <a class="reference internal" href="../documentation/setting-up/image-definition.html"><span class="doc std std-doc">the order of the image axes</span></a></p></li>
+</ul>
+</section>
+<section id="standardise-orientation-and-resolution">
+<h2>Standardise orientation and resolution<a class="headerlink" href="#standardise-orientation-and-resolution" title="Link to this heading">#</a></h2>
+<p>Copy the below script, and adapt paths and <code class="docutils literal notranslate"><span class="pre">output_vox_size</span></code> for your purposes.
+<code class="docutils literal notranslate"><span class="pre">source_csv</span></code> should point to the CSV file you created in the previous step.
+In this example, we choose an output directory on mounted HPC storage, and downsample our data to 50um resolution.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If your input images are folders of 2D TIFFs that will not fit into your memory, choose <code class="docutils literal notranslate"><span class="pre">output_vox_size</span></code> sufficiently large so the downsampled array will fit.
+We recommend <code class="docutils literal notranslate"><span class="pre">output_vox_size</span></code> to be at least 1/1000th of the longest brain axis: for example, if your brains are ~1 cm long, the highest resolution would be 10 um.
+It may be worth running the pipeline on lower-resolution data first (in our example, e.g. 50 um or 100 um) to accelerate trouble-shooting.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_template_builder.standardise</span><span class="w"> </span><span class="kn">import</span> <span class="n">standardise</span>
+
+<span class="n">input_csv</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/path/to/zebrafinch.csv&quot;</span><span class="p">)</span>
+<span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/path/to/atlas-forge/ZebraFinch&quot;</span><span class="p">)</span>
+
+<span class="n">standardise</span><span class="p">(</span>
+	<span class="n">source_csv</span><span class="o">=</span><span class="n">input_csv</span><span class="p">,</span>
+	<span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
+	<span class="n">output_vox_size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>This will standardise the orientation and resolution of your inputs.
+After running the script, you should have these expected outputs in your output directory:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">standardised/standardised_images.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">standardised/sub-&lt;subject_id&gt;/...origin-asr.nii.gz</span></code> for each sample</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">standardised-QC/sub-&lt;subject_id&gt;-QC-orthographic.png</span></code> for each sample</p></li>
+</ul>
+</section>
+<section id="inspect-standardised-plots">
+<h2>Inspect standardised plots<a class="headerlink" href="#inspect-standardised-plots" title="Link to this heading">#</a></h2>
+<p>For quality-control, inspect the <code class="docutils literal notranslate"><span class="pre">.png</span></code> files in the <code class="docutils literal notranslate"><span class="pre">standardised-QC/</span></code> subfolder and confirm:</p>
+<ul class="simple">
+<li><p>Images are of sufficiently high quality. You could check that</p>
+<ul>
+<li><p>The signal-to-noise ratio is high and consistent across the image</p></li>
+<li><p>The brains are not severely cropped or damaged</p></li>
+</ul>
+</li>
+<li><p>Orientation is <a class="reference internal" href="../documentation/setting-up/image-definition.html"><span class="doc std std-doc">consistently “ASR”</span></a> across samples (Figure 1)</p></li>
+</ul>
+<p><img alt="Orthogonal slices and a 3D render of a standardised high-quality zebrafinch sample" src="../_images/standardised-sample-plot-good.png" /></p>
+<p><strong>Figure 1: A standardised plot of high-quality zebrafinch brain image. No major damage or cropping visible, and its orientation matches the plot labels.</strong></p>
+<p>If a sample is oriented or scaled wrongly:</p>
+<ul class="simple">
+<li><p>Fix its <code class="docutils literal notranslate"><span class="pre">origin</span></code> or <code class="docutils literal notranslate"><span class="pre">resolution_</span></code> entries in the input CSV</p></li>
+<li><p>Rerun the standardisation script.</p></li>
+</ul>
+<p>If a sample image is not of sufficient quality</p>
+<ul class="simple">
+<li><p>Remove it from the input CSV file</p></li>
+<li><p>Delete the <code class="docutils literal notranslate"><span class="pre">standardised/</span></code> subfolder</p></li>
+<li><p>Rerun the standardisation script.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Gauging image quality is somewhat subjective and speculative. We provide examples of the zebra finch template building team’s judgement calls in Figures 2+3, for reference. Mild sample warping and damage is usually fine, as long as it’s distributed differentially across samples.</p>
+<p><img alt="Orthogonal slices and a 3D render of a standardised OK zebrafinch sample" src="../_images/standardised-sample-plot-good-enough.png" /></p>
+<p><strong>Figure 2: A standardised plot of a zebra finch brain image, displaying mild damage (missing parts of cerebellum, sample seems slightly deformed by preparation/imaging). We included this sample.</strong></p>
+<p><img alt="Orthogonal slices and a 3D render of a standardised zebrafinch sample with major parts of the brain cropped" src="../_images/standardised-sample-plot-too-cropped.png" /></p>
+<p><strong>Figure 3: A standardised plot of a zebra finch brain image, displaying severe cropping on each side. We excluded this sample.</strong></p>
+</div>
+</section>
+<section id="apply-brightness-correction-and-mask-the-samples">
+<h2>Apply brightness correction and mask the samples<a class="headerlink" href="#apply-brightness-correction-and-mask-the-samples" title="Link to this heading">#</a></h2>
+<p>To normalise the brightness and create masks of each sample, copy the code below, adapt the path to the output directory. The <code class="docutils literal notranslate"><span class="pre">output_dir</span></code> variable should match the output directory passed in the previous script.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_template_builder.preprocess</span><span class="w"> </span><span class="kn">import</span> <span class="n">preprocess</span>
+
+<span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/path/to/atlas-forge/ZebraFinch&quot;</span><span class="p">)</span>
+<span class="n">standardised_csv</span> <span class="o">=</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;standardised&quot;</span> <span class="o">/</span> <span class="s2">&quot;standardised_images.csv&quot;</span>
+<span class="n">preprocess</span><span class="p">(</span><span class="n">standardised_csv</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After running the script, check that you have the expected outputs:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">preprocessed/all_processed_brain_paths.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">preprocessed/all_processed_mask_paths.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">preprocessed/sub-&lt;subject_id&gt;/..._processed.nii.gz</span></code> for each sample</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">preprocessed/sub-&lt;subject_id&gt;/..._processed_mask.nii.gz</span></code> for each sample</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">preprocessed-QC/sub-&lt;subject_id&gt;-mask-QC-grid.png</span></code> for each sample</p></li>
+</ul>
+<p>Each <code class="docutils literal notranslate"><span class="pre">nii.gz</span></code> file should also have a left-right flipped (<code class="docutils literal notranslate"><span class="pre">..._lrflip.nii.gz</span></code>) equivalent. This will result in a symmetric template despite asymmetry in the inputs.</p>
+</section>
+<section id="inspect-quality-control-plots-for-preprocessing">
+<h2>Inspect quality-control plots for preprocessing<a class="headerlink" href="#inspect-quality-control-plots-for-preprocessing" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">.png</span></code> files in <code class="docutils literal notranslate"><span class="pre">preprocessed-QC/</span></code> show a series of coronal sections of each of your samples, with their masks. You should check that</p>
+<ul class="simple">
+<li><p>mask should include full brain volume generously (with a small border around the brain - see Figure 4)</p></li>
+<li><p>mask should exclude obvious background/non-brain regions</p></li>
+</ul>
+<p>If you need to improve a mask, open it with <code class="docutils literal notranslate"><span class="pre">napari</span></code> as <a class="reference external" href="https://napari.org/stable/howtos/layers/labels.html">a <code class="docutils literal notranslate"><span class="pre">Labels</span></code> layer</a> to edit it, and overwrite the previous mask on disk.
+You should also update the <code class="docutils literal notranslate"><span class="pre">mask_filepath</span></code> in <code class="docutils literal notranslate"><span class="pre">standardised/standardised_images.csv</span></code> for the corrected sample.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have many unsatisfactory masks, you can try experimenting with different <code class="docutils literal notranslate"><span class="pre">MaskConfig</span></code> parameters using the “Preprocess” <code class="docutils literal notranslate"><span class="pre">napari</span></code> widget. Once you have found a set of parameters you are happy with, you can create <code class="docutils literal notranslate"><span class="pre">PreprocConfig</span></code> and <code class="docutils literal notranslate"><span class="pre">MaskConfig</span></code> objects to pass to your <code class="docutils literal notranslate"><span class="pre">preprocess</span></code> function.</p>
+<p>The code above would then change to something like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_template_builder.preprocess</span><span class="w"> </span><span class="kn">import</span> <span class="n">preprocess</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_template_builder.utils.preproc_config</span><span class="w"> </span><span class="kn">import</span> <span class="n">PreprocConfig</span><span class="p">,</span> <span class="n">MaskConfig</span><span class="p">,</span> <span class="n">ThresholdMethod</span>
+
+<span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/path/to/atlas-forge/ZebraFinch&quot;</span><span class="p">)</span>
+<span class="n">standardised_csv</span> <span class="o">=</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;standardised&quot;</span> <span class="o">/</span> <span class="s2">&quot;standardised_images.csv&quot;</span>
+
+<span class="c1"># pad more generously, and use non-default masking parameters</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">PreprocConfig</span><span class="p">(</span>
+	<span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
+	<span class="n">mask</span><span class="o">=</span><span class="n">MaskConfig</span><span class="p">(</span>   
+		<span class="n">gaussian_sigma</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="c1"># default 3</span>
+    	<span class="n">threshold_method</span> <span class="o">=</span> <span class="s2">&quot;otsu&quot;</span><span class="p">,</span> <span class="c1"># default &quot;triangle&quot;</span>
+    	<span class="n">closing_size</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="c1"># default 5</span>
+    	<span class="n">erode_size</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="c1"># default 0</span>
+	<span class="p">),</span>
+	<span class="n">pad_pixels</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="p">)</span>
+<span class="n">preprocess</span><span class="p">(</span><span class="n">standardised_csv</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><img alt="Coronal sections of a zebra finch brain, with nicely fitting masks overlaid" src="../_images/preprocessed-sample-plot-nice-masks.png" /></p>
+<p><strong>Figure 4: Quality-control plot showing coronal sections of a zebra finch brain image, overlaid with nicely-fitting masks. A small border around the brain is expected, and no part of the brain should be missing from the mask.</strong></p>
+</section>
+<section id="optional-set-the-initial-target-with-the-tilting-widget">
+<h2>(Optional) Set the initial target with the tilting widget<a class="headerlink" href="#optional-set-the-initial-target-with-the-tilting-widget" title="Link to this heading">#</a></h2>
+<p>Choose one high-quality preprocessed brain as an initial target candidate. Save a copy of it separately to your input image.</p>
+<p>Open <code class="docutils literal notranslate"><span class="pre">napari</span></code> and start the <code class="docutils literal notranslate"><span class="pre">brainglobe-template-builder</span></code> <strong>Preprocess</strong> widget. In the widget panel, use:</p>
+<ol class="arabic simple">
+<li><p><strong>Reorient to standard space</strong> (if needed)</p></li>
+<li><p><strong>Align midplane</strong> to correct tilt/midline alignment</p></li>
+<li><p><strong>Save files</strong> to export the corrected target image</p></li>
+</ol>
+<p>Save the selected sample image to a separate repository and make a note of its path.</p>
+</section>
+<section id="move-preprocessed-inputs-to-the-hpc-storage">
+<h2>Move preprocessed inputs to the HPC storage<a class="headerlink" href="#move-preprocessed-inputs-to-the-hpc-storage" title="Link to this heading">#</a></h2>
+<p>If your output directory was local, copy the entire preprocessed folder to your HPC storage.</p>
+<p>Copy the text files from your <code class="docutils literal notranslate"><span class="pre">preprocessed/</span></code> folder to a new folder on the HPC storage. The new folder’s name should reflect the template you are planning to build. In our example, this was <code class="docutils literal notranslate"><span class="pre">template_sym_female_res-50um_n-8</span></code> to denote that it was a symmetric template at 50 micrometer resolution, made from 8 female zebra finch brains.</p>
+<p>Update the paths inside the text files to point to the processed input images on the HPC storage.</p>
+<p>For example, we run the preprocessing steps on a local mount of the HPC storage to <code class="docutils literal notranslate"><span class="pre">/media</span></code>, so our text files look something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ceph</span><span class="o">/</span><span class="n">neuroinformatics</span><span class="o">/</span><span class="n">neuroinformatics</span><span class="o">/</span><span class="n">atlas</span><span class="o">-</span><span class="n">forge</span><span class="o">/</span><span class="n">ZebraFinch</span><span class="o">/</span><span class="n">preprocessed</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="n">ZF7927f</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="n">ZF7927f_res</span><span class="o">-</span><span class="mi">50</span><span class="n">x50x50um_origin</span><span class="o">-</span><span class="n">asr_processed</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span>
+<span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ceph</span><span class="o">/</span><span class="n">neuroinformatics</span><span class="o">/</span><span class="n">neuroinformatics</span><span class="o">/</span><span class="n">atlas</span><span class="o">-</span><span class="n">forge</span><span class="o">/</span><span class="n">ZebraFinch</span><span class="o">/</span><span class="n">preprocessed</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="n">ZF7927f</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="n">ZF7927f_res</span><span class="o">-</span><span class="mi">50</span><span class="n">x50x50um_origin</span><span class="o">-</span><span class="n">asr_processed_lrflip</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span>
+<span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ceph</span><span class="o">/</span><span class="n">neuroinformatics</span><span class="o">/</span><span class="n">neuroinformatics</span><span class="o">/</span><span class="n">atlas</span><span class="o">-</span><span class="n">forge</span><span class="o">/</span><span class="n">ZebraFinch</span><span class="o">/</span><span class="n">preprocessed</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="n">ZF0065f</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="n">ZF0065f_res</span><span class="o">-</span><span class="mi">50</span><span class="n">x50x50um_origin</span><span class="o">-</span><span class="n">asr_processed</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span>
+<span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ceph</span><span class="o">/</span><span class="n">neuroinformatics</span><span class="o">/</span><span class="n">neuroinformatics</span><span class="o">/</span><span class="n">atlas</span><span class="o">-</span><span class="n">forge</span><span class="o">/</span><span class="n">ZebraFinch</span><span class="o">/</span><span class="n">preprocessed</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="n">ZF0065f</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="n">ZF0065f_res</span><span class="o">-</span><span class="mi">50</span><span class="n">x50x50um_origin</span><span class="o">-</span><span class="n">asr_processed_lrflip</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
+<p>We then update it to</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">ceph</span><span class="o">/</span><span class="n">neuroinformatics</span><span class="o">/</span><span class="n">neuroinformatics</span><span class="o">/</span><span class="n">atlas</span><span class="o">-</span><span class="n">forge</span><span class="o">/</span><span class="n">ZebraFinch</span><span class="o">/</span><span class="n">preprocessed</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="n">ZF7927f</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="n">ZF7927f_res</span><span class="o">-</span><span class="mi">50</span><span class="n">x50x50um_origin</span><span class="o">-</span><span class="n">asr_processed</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span>
+<span class="o">/</span><span class="n">ceph</span><span class="o">/</span><span class="n">neuroinformatics</span><span class="o">/</span><span class="n">neuroinformatics</span><span class="o">/</span><span class="n">atlas</span><span class="o">-</span><span class="n">forge</span><span class="o">/</span><span class="n">ZebraFinch</span><span class="o">/</span><span class="n">preprocessed</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="n">ZF7927f</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="n">ZF7927f_res</span><span class="o">-</span><span class="mi">50</span><span class="n">x50x50um_origin</span><span class="o">-</span><span class="n">asr_processed_lrflip</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span>
+<span class="o">/</span><span class="n">ceph</span><span class="o">/</span><span class="n">neuroinformatics</span><span class="o">/</span><span class="n">neuroinformatics</span><span class="o">/</span><span class="n">atlas</span><span class="o">-</span><span class="n">forge</span><span class="o">/</span><span class="n">ZebraFinch</span><span class="o">/</span><span class="n">preprocessed</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="n">ZF0065f</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="n">ZF0065f_res</span><span class="o">-</span><span class="mi">50</span><span class="n">x50x50um_origin</span><span class="o">-</span><span class="n">asr_processed</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span>
+<span class="o">/</span><span class="n">ceph</span><span class="o">/</span><span class="n">neuroinformatics</span><span class="o">/</span><span class="n">neuroinformatics</span><span class="o">/</span><span class="n">atlas</span><span class="o">-</span><span class="n">forge</span><span class="o">/</span><span class="n">ZebraFinch</span><span class="o">/</span><span class="n">preprocessed</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="n">ZF0065f</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="n">ZF0065f_res</span><span class="o">-</span><span class="mi">50</span><span class="n">x50x50um_origin</span><span class="o">-</span><span class="n">asr_processed_lrflip</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
+<p>to reflect the absolute path of the images from the perspective of the HPC.</p>
+<p>You are now ready to <a class="reference internal" href="howto-configure-hpc-template-building-job.html"><span class="std std-doc">configure and launch the template building script on your HPC</span></a>.</p>
+</section>
+</section>
+
+<div class="section ablog__blog_comments">
+   
+</div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="template-builder-pre-align.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Aligning samples for template building</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="howto-configure-hpc-template-building-job.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Configuring a template-building run on the HPC</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collate-input-image-information-in-a-file">Collate input image information in a file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardise-orientation-and-resolution">Standardise orientation and resolution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-standardised-plots">Inspect standardised plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-brightness-correction-and-mask-the-samples">Apply brightness correction and mask the samples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-quality-control-plots-for-preprocessing">Inspect quality-control plots for preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-set-the-initial-target-with-the-tilting-widget">(Optional) Set the initial target with the tilting widget</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#move-preprocessed-inputs-to-the-hpc-storage">Move preprocessed inputs to the HPC storage</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p class="sphinx-version">
+Created using <a href="https://sphinx-doc.org/">Sphinx</a> 8.2.3.
+<br/>
+</p>
+<p class="theme-version">
+Built with the
+<a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
+0.18.0.
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><div class="things-in-a-row">
+</div></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
