@@ -14,11 +14,6 @@ import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
-from ablog.blog import Blog
-from docutils import nodes
-from sphinx.errors import ExtensionError
-
-
 # -- Project information -----------------------------------------------------
 
 project = "BrainGlobe"
@@ -180,6 +175,23 @@ html_theme_options = {
     "external_links": [],
 }
 
+# Show ABlog's "postcard" (date, author, category, etc.) in the sidebar of blog
+# post pages, see https://ablog.readthedocs.io/en/latest/manual/templates-themes.html
+# Note: this replaces the default site nav sidebar on blog pages only.
+html_sidebars = {
+    "blog/index": [
+        "ablog/authors.html",
+        "ablog/archives.html",
+    ],
+    "blog/**": [
+        "ablog/postcard.html",
+        "ablog/recentposts.html",
+    ],
+}
+
+# The PyData theme bundles FontAwesome, so let ABlog render its postcard icons
+# (calendar, user, ...) instead of plain-text "Author:"/"Location:" labels.
+fontawesome_included = True
 
 html_show_sourcelink = False
 
@@ -230,54 +242,3 @@ linkcheck_request_headers = {
     },
 }
 
-
-def add_blog_author_byline(app, doctree, docname):
-    """Add ABlog author metadata to individual blog post pages."""
-    posts = getattr(app.env, "ablog_posts", {}).get(docname, [])
-    if len(posts) != 1:
-        return
-
-    post = posts[0]
-    authors = post.get("author", [])
-    date = post.get("date")
-    if not authors or not date:
-        raise ExtensionError(
-            f"Blog post '{docname}' must define both author and date metadata."
-        )
-
-    byline = nodes.line_block(classes=["blog-post-author"])
-
-    if authors:
-        author_line = nodes.line()
-        author_line += nodes.Text("By ")
-
-        blog = Blog(app)
-        author_catalog = blog.catalogs["author"].collections
-        for index, author in enumerate(authors):
-            if index:
-                author_line += nodes.Text(", ")
-
-            author_page = author_catalog.get(author)
-            if author_page is None:
-                author_line += nodes.Text(author)
-                continue
-
-            author_line += nodes.reference(
-                "",
-                author,
-                refuri=app.builder.get_relative_uri(docname, author_page.docname),
-            )
-
-        byline += author_line
-
-    if date:
-        byline += nodes.line(text=date.strftime(app.config["post_date_format"]))
-
-    for section in doctree.findall(nodes.section):
-        if section.children and isinstance(section.children[0], nodes.title):
-            section.insert(1, byline)
-            return
-
-
-def setup(app):
-    app.connect("doctree-resolved", add_blog_author_byline)
