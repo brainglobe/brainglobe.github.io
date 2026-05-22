@@ -112,6 +112,11 @@ ConfUSIus is a Python package for handling, visualization, preprocessing, and st
 - [GitHub repository](https://github.com/confusius-tools/confusius/)
 - [Documentation](https://confusius.tools/)
 
+## LangSlice
+LangSlice uses vision-language models to perform alignment and registration of histological brain sections to any BrainGlobe atlas in any orientation plane.
+- [GitHub repository](https://github.com/greenpolo/LangSlice)
+- [Documentation](https://langslice.readthedocs.io/en/latest/)
+
 :::{hint}
 If you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. Typically we include tools which:
 
