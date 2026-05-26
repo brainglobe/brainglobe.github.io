@@ -29,7 +29,7 @@
   <link href="../../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=8dea78f2" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=3215791a" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
@@ -526,11 +526,18 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">requests.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">InvalidURL</span><span class="p">,</span> <span class="n">MissingSchema</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">descriptors</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.atlas_generation.atlas_packaging_data</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">AnnotationInfo</span><span class="p">,</span>
+    <span class="n">CoordinateSpaceInfo</span><span class="p">,</span>
+    <span class="n">TemplateInfo</span><span class="p">,</span>
+    <span class="n">TerminologyInfo</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.atlas_generation.structure_json_to_csv</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">convert_structure_json_to_csv</span><span class="p">,</span>
 <span class="p">)</span>
@@ -540,17 +547,22 @@
 <div class="viewcode-block" id="generate_metadata_dict">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.metadata_utils.generate_metadata_dict.html#brainglobe_atlasapi.atlas_generation.metadata_utils.generate_metadata_dict">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">generate_metadata_dict</span><span class="p">(</span>
-    <span class="n">name</span><span class="p">,</span>
-    <span class="n">citation</span><span class="p">,</span>
-    <span class="n">atlas_link</span><span class="p">,</span>
-    <span class="n">species</span><span class="p">,</span>
-    <span class="n">symmetric</span><span class="p">,</span>
-    <span class="n">resolution</span><span class="p">,</span>
-    <span class="n">orientation</span><span class="p">,</span>
-    <span class="n">version</span><span class="p">,</span>
-    <span class="n">shape</span><span class="p">,</span>
-    <span class="n">additional_references</span><span class="p">,</span>
-    <span class="n">atlas_packager</span><span class="p">,</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">location</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">citation</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">atlas_link</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">species</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">symmetric</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">resolution</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">|</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span>
+    <span class="n">orientation</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">version</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">shape</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+    <span class="n">additional_references</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">TemplateInfo</span><span class="p">],</span>
+    <span class="n">atlas_packager</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">coordinate_space</span><span class="p">:</span> <span class="n">CoordinateSpaceInfo</span><span class="p">,</span>
+    <span class="n">terminology</span><span class="p">:</span> <span class="n">TerminologyInfo</span><span class="p">,</span>
+    <span class="n">annotation_set</span><span class="p">:</span> <span class="n">AnnotationInfo</span><span class="p">,</span>
+    <span class="n">template</span><span class="p">:</span> <span class="n">TemplateInfo</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generate a dictionary containing metadata for a BrainGlobe atlas.</span>
@@ -559,6 +571,8 @@
 <span class="sd">    ----------</span>
 <span class="sd">    name : str</span>
 <span class="sd">        The name of the atlas.</span>
+<span class="sd">    location : str</span>
+<span class="sd">        The relative path to the atlas data within the brainglobe directory.</span>
 <span class="sd">    citation : str</span>
 <span class="sd">        The citation for the atlas.</span>
 <span class="sd">    atlas_link : str</span>
@@ -567,18 +581,27 @@
 <span class="sd">        The species the atlas belongs to (e.g., &quot;mouse&quot;, &quot;rat&quot;).</span>
 <span class="sd">    symmetric : bool</span>
 <span class="sd">        True if the atlas is symmetric, False otherwise.</span>
-<span class="sd">    resolution : tuple of int/float</span>
+<span class="sd">    resolution : Tuple[int, int, int] | Tuple[float, float, float]</span>
 <span class="sd">        The resolution of the atlas in micrometers per voxel.</span>
 <span class="sd">    orientation : str</span>
 <span class="sd">        The orientation of the atlas (e.g., &quot;RAS&quot;, &quot;LPS&quot;).</span>
 <span class="sd">    version : str</span>
 <span class="sd">        The version of the atlas.</span>
-<span class="sd">    shape : tuple of int</span>
+<span class="sd">    shape : Tuple[int, int, int]</span>
 <span class="sd">        The shape (dimensions) of the atlas volume (e.g., (z, y, x)).</span>
-<span class="sd">    additional_references : list of str</span>
+<span class="sd">    additional_references : List[TemplateInfo]</span>
 <span class="sd">        A list of additional reference links or citations.</span>
 <span class="sd">    atlas_packager : str</span>
 <span class="sd">        The name of the person or entity packaging the atlas.</span>
+<span class="sd">    coordinate_space : CoordinateSpaceInfo</span>
+<span class="sd">        Metadata for the coordinate space.</span>
+<span class="sd">    terminology : TerminologyInfo</span>
+<span class="sd">        Metadata for the terminology.</span>
+<span class="sd">    annotation_set : AnnotationInfo</span>
+<span class="sd">        Metadata for the annotation set.</span>
+<span class="sd">    template : TemplateInfo</span>
+<span class="sd">        Metadata for the template.</span>
+
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -613,8 +636,13 @@
 
     <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">additional_references</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
 
+    <span class="n">additional_references_metadata</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">ref_info</span><span class="o">.</span><span class="n">metadata</span> <span class="k">for</span> <span class="n">ref_info</span> <span class="ow">in</span> <span class="n">additional_references</span>
+    <span class="p">]</span>
+
     <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
         <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+        <span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span>
         <span class="n">citation</span><span class="o">=</span><span class="n">citation</span><span class="p">,</span>
         <span class="n">atlas_link</span><span class="o">=</span><span class="n">atlas_link</span><span class="p">,</span>
         <span class="n">species</span><span class="o">=</span><span class="n">species</span><span class="p">,</span>
@@ -623,8 +651,12 @@
         <span class="n">orientation</span><span class="o">=</span><span class="n">orientation</span><span class="p">,</span>
         <span class="n">version</span><span class="o">=</span><span class="n">version</span><span class="p">,</span>
         <span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span>
-        <span class="n">additional_references</span><span class="o">=</span><span class="n">additional_references</span><span class="p">,</span>
+        <span class="n">additional_references</span><span class="o">=</span><span class="n">additional_references_metadata</span><span class="p">,</span>
         <span class="n">atlas_packager</span><span class="o">=</span><span class="n">atlas_packager</span><span class="p">,</span>
+        <span class="n">coordinate_space</span><span class="o">=</span><span class="n">coordinate_space</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+        <span class="n">terminology</span><span class="o">=</span><span class="n">terminology</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+        <span class="n">annotation_set</span><span class="o">=</span><span class="n">annotation_set</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+        <span class="n">template</span><span class="o">=</span><span class="n">template</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
     <span class="p">)</span></div>
 
 

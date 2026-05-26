@@ -1,0 +1,6 @@
+format\_annotation\_stub
+========================
+
+.. currentmodule:: brainglobe_atlasapi.descriptors
+
+.. autofunction:: format_annotation_stub

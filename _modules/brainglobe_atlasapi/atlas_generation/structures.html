@@ -29,7 +29,7 @@
   <link href="../../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=8dea78f2" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=3215791a" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
@@ -520,6 +520,8 @@
                    <h1>Source code for brainglobe_atlasapi.atlas_generation.structures</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;Handle structure information for atlas generation.&quot;&quot;&quot;</span>
 
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.descriptors</span><span class="w"> </span><span class="kn">import</span> <span class="n">STRUCTURE_TEMPLATE</span> <span class="k">as</span> <span class="n">STEMPLATE</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.structure_tree_util</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_structures_tree</span>
 
@@ -676,6 +678,40 @@
         <span class="k">return</span> <span class="kc">None</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">sub_region_ids</span></div>
+
+
+
+<div class="viewcode-block" id="filter_structures_not_present_in_annotation">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.structures.filter_structures_not_present_in_annotation.html#brainglobe_atlasapi.atlas_generation.structures.filter_structures_not_present_in_annotation">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">filter_structures_not_present_in_annotation</span><span class="p">(</span><span class="n">structures</span><span class="p">,</span> <span class="n">annotation</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Filter out structures not present in the annotation volume.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    structures : list of dict</span>
+<span class="sd">    annotation : np.ndarray</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list of dict</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">present_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">annotation</span><span class="p">))</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">get_structures_tree</span><span class="p">(</span><span class="n">structures</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_present</span><span class="p">(</span><span class="n">structure_id</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">structure_id</span> <span class="ow">in</span> <span class="n">present_ids</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">for</span> <span class="n">child_node</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">children</span><span class="p">(</span><span class="n">structure_id</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">is_present</span><span class="p">(</span><span class="n">child_node</span><span class="o">.</span><span class="n">identifier</span><span class="p">):</span>
+                <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="n">removed</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">structures</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">is_present</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">])]</span>
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">removed</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Removed structure:&quot;</span><span class="p">,</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="s2">&quot;(ID:&quot;</span><span class="p">,</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">structures</span> <span class="k">if</span> <span class="n">is_present</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">])]</span></div>
 
 </pre></div>
 <div class="section ablog__blog_comments">

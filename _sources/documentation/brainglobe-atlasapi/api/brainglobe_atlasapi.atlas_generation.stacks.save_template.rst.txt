@@ -1,0 +1,6 @@
+save\_template
+==============
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.stacks
+
+.. autofunction:: save_template

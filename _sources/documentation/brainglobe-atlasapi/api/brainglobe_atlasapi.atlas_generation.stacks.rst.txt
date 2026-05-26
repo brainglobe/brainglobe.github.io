@@ -22,7 +22,9 @@
     
     save_reference
     
-    save_secondary_reference
+    save_template
+    
+    write_multiscale_ome_zarr
     
     write_stack
     

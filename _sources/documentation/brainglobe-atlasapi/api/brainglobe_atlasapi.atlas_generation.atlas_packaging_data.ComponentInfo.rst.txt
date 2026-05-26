@@ -1,0 +1,107 @@
+ComponentInfo
+=============
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.atlas_packaging_data
+
+.. autoclass:: ComponentInfo
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~ComponentInfo.generate_metadata_dict
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~ComponentInfo.existing_stub
+   
+   
+      ~ComponentInfo.existing_version
+   
+   
+      ~ComponentInfo.file_name
+   
+   
+      ~ComponentInfo.root_dir
+   
+   
+      ~ComponentInfo.stub
+   
+   
+      ~ComponentInfo.update_existing
+   
+   
+      ~ComponentInfo.use_existing
+   
+   
+      ~ComponentInfo.name
+   
+   
+      ~ComponentInfo.version
+   
+   
+      ~ComponentInfo.metadata
+   
+   
+   

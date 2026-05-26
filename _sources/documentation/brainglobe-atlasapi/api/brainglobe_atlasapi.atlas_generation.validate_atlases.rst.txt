@@ -24,6 +24,8 @@
     
     open_for_visual_check
     
+    report_validation_results
+    
     validate_additional_references
     
     validate_annotation_symmetry
@@ -44,7 +46,7 @@
     
     validate_metadata
     
-    validate_reference_image_pixels
+    validate_template_image_pixels
     
     validate_unique_acronyms
     

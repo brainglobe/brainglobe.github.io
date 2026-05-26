@@ -1,0 +1,6 @@
+format\_hemispheres\_stub
+=========================
+
+.. currentmodule:: brainglobe_atlasapi.descriptors
+
+.. autofunction:: format_hemispheres_stub

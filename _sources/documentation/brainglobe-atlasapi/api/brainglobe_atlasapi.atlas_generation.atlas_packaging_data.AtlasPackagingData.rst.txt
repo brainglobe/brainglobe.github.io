@@ -1,0 +1,173 @@
+AtlasPackagingData
+==================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.atlas_packaging_data
+
+.. autoclass:: AtlasPackagingData
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~AtlasPackagingData.atlas_packager
+   
+   
+      ~AtlasPackagingData.atlas_version_underscore
+   
+   
+      ~AtlasPackagingData.hemispheres_stack
+   
+   
+      ~AtlasPackagingData.orientation
+   
+   
+      ~AtlasPackagingData.space_convention
+   
+   
+      ~AtlasPackagingData.atlas_name
+   
+   
+      ~AtlasPackagingData.atlas_version
+   
+   
+      ~AtlasPackagingData.citation
+   
+   
+      ~AtlasPackagingData.atlas_link
+   
+   
+      ~AtlasPackagingData.species
+   
+   
+      ~AtlasPackagingData.resolution
+   
+   
+      ~AtlasPackagingData.root_id
+   
+   
+      ~AtlasPackagingData.working_dir
+   
+   
+      ~AtlasPackagingData.reference_stack
+   
+   
+      ~AtlasPackagingData.annotation_stack
+   
+   
+      ~AtlasPackagingData.structures_list
+   
+   
+      ~AtlasPackagingData.meshes_dict
+   
+   
+      ~AtlasPackagingData.template_info
+   
+   
+      ~AtlasPackagingData.annotation_info
+   
+   
+      ~AtlasPackagingData.terminology_info
+   
+   
+      ~AtlasPackagingData.coordinate_space_info
+   
+   
+      ~AtlasPackagingData.additional_references
+   
+   
+      ~AtlasPackagingData.additional_metadata
+   
+   
+   

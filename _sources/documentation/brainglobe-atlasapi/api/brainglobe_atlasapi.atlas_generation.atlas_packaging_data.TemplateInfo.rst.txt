@@ -1,0 +1,107 @@
+TemplateInfo
+============
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.atlas_packaging_data
+
+.. autoclass:: TemplateInfo
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~TemplateInfo.generate_metadata_dict
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~TemplateInfo.existing_stub
+   
+   
+      ~TemplateInfo.existing_version
+   
+   
+      ~TemplateInfo.file_name
+   
+   
+      ~TemplateInfo.root_dir
+   
+   
+      ~TemplateInfo.stub
+   
+   
+      ~TemplateInfo.update_existing
+   
+   
+      ~TemplateInfo.use_existing
+   
+   
+      ~TemplateInfo.name
+   
+   
+      ~TemplateInfo.version
+   
+   
+      ~TemplateInfo.metadata
+   
+   
+   

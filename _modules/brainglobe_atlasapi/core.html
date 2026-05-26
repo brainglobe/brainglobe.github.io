@@ -29,7 +29,7 @@
   <link href="../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=8dea78f2" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=3215791a" />
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -559,13 +559,13 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">_determine_pyramid_level</span><span class="p">(</span>
     <span class="n">multiscale</span><span class="p">:</span> <span class="n">nz</span><span class="o">.</span><span class="n">Multiscales</span><span class="p">,</span> <span class="n">resolution</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span>
 <span class="p">):</span>
-    <span class="k">for</span> <span class="n">metadata</span> <span class="ow">in</span> <span class="n">multiscale</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">datasets</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">metadata</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">multiscale</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">datasets</span><span class="p">):</span>
         <span class="n">scales</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">coordinateTransformations</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scale</span>
         <span class="k">if</span> <span class="nb">all</span><span class="p">(</span>
             <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">res</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">scale</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">res</span><span class="p">,</span> <span class="n">scale</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">resolution</span><span class="p">,</span> <span class="n">scales</span><span class="p">)</span>
         <span class="p">):</span>
-            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">idx</span>
 
     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Requested resolution </span><span class="si">{</span><span class="n">resolution</span><span class="si">}</span><span class="s2"> um is invalid.&quot;</span><span class="p">)</span>
 
@@ -712,12 +712,15 @@
         <span class="n">template_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root_dir</span> <span class="o">/</span> <span class="n">template_location</span> <span class="o">/</span> <span class="n">V2_TEMPLATE_NAME</span>
 
         <span class="n">multiscale</span> <span class="o">=</span> <span class="n">nz</span><span class="o">.</span><span class="n">from_ngff_zarr</span><span class="p">(</span><span class="n">template_path</span><span class="p">)</span>
-        <span class="n">resolution_path</span> <span class="o">=</span> <span class="n">template_path</span> <span class="o">/</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_template_pyramid_level</span><span class="p">)</span>
+        <span class="n">dataset_path</span> <span class="o">=</span> <span class="n">multiscale</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">datasets</span><span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_template_pyramid_level</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">path</span>
+        <span class="n">resolution_path</span> <span class="o">=</span> <span class="n">template_path</span> <span class="o">/</span> <span class="n">dataset_path</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">resolution_path</span> <span class="o">/</span> <span class="s2">&quot;c&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Downloading template...&quot;</span><span class="p">)</span>
             <span class="n">remote_path</span> <span class="o">=</span> <span class="n">remote_url_s3</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">template_location</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">V2_TEMPLATE_NAME</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_template_pyramid_level</span><span class="si">}</span><span class="s2">/&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">template_location</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">V2_TEMPLATE_NAME</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">dataset_path</span><span class="si">}</span><span class="s2">/&quot;</span>
             <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
                 <span class="n">remote_path</span><span class="p">,</span>
@@ -757,12 +760,15 @@
         <span class="p">)</span>
 
         <span class="n">multiscale</span> <span class="o">=</span> <span class="n">nz</span><span class="o">.</span><span class="n">from_ngff_zarr</span><span class="p">(</span><span class="n">annotation_path</span><span class="p">)</span>
-        <span class="n">resolution_path</span> <span class="o">=</span> <span class="n">annotation_path</span> <span class="o">/</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_annotation_pyramid_level</span><span class="p">)</span>
+        <span class="n">dataset_path</span> <span class="o">=</span> <span class="n">multiscale</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">datasets</span><span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_annotation_pyramid_level</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">path</span>
+        <span class="n">resolution_path</span> <span class="o">=</span> <span class="n">annotation_path</span> <span class="o">/</span> <span class="n">dataset_path</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">resolution_path</span> <span class="o">/</span> <span class="s2">&quot;c&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Downloading annotations...&quot;</span><span class="p">)</span>
             <span class="n">remote_path</span> <span class="o">=</span> <span class="n">remote_url_s3</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">annotation_location</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">V2_ANNOTATION_NAME</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_annotation_pyramid_level</span><span class="si">}</span><span class="s2">/&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">annotation_location</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">V2_ANNOTATION_NAME</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">dataset_path</span><span class="si">}</span><span class="s2">/&quot;</span>
             <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
                 <span class="n">remote_path</span><span class="p">,</span>
@@ -815,14 +821,15 @@
             <span class="p">)</span>
 
             <span class="n">multiscale</span> <span class="o">=</span> <span class="n">nz</span><span class="o">.</span><span class="n">from_ngff_zarr</span><span class="p">(</span><span class="n">hemispheres_path</span><span class="p">)</span>
-            <span class="n">resolution_path</span> <span class="o">=</span> <span class="n">hemispheres_path</span> <span class="o">/</span> <span class="nb">str</span><span class="p">(</span>
+            <span class="n">dataset_path</span> <span class="o">=</span> <span class="n">multiscale</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">datasets</span><span class="p">[</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_annotation_pyramid_level</span>
-            <span class="p">)</span>
+            <span class="p">]</span><span class="o">.</span><span class="n">path</span>
+            <span class="n">resolution_path</span> <span class="o">=</span> <span class="n">hemispheres_path</span> <span class="o">/</span> <span class="n">dataset_path</span>
 
             <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">resolution_path</span> <span class="o">/</span> <span class="s2">&quot;c&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Downloading hemispheres...&quot;</span><span class="p">)</span>
                 <span class="n">remote_path</span> <span class="o">=</span> <span class="n">remote_url_s3</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">annotation_location</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">V2_HEMISPHERES_NAME</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_annotation_pyramid_level</span><span class="si">}</span><span class="s2">/&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">annotation_location</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">V2_HEMISPHERES_NAME</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">dataset_path</span><span class="si">}</span><span class="s2">/&quot;</span>
                 <span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
                     <span class="n">remote_path</span><span class="p">,</span>
@@ -1289,12 +1296,13 @@
                 <span class="n">multiscale</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolution</span>
             <span class="p">)</span>
 
-            <span class="n">resolution_path</span> <span class="o">=</span> <span class="n">local_path</span> <span class="o">/</span> <span class="nb">str</span><span class="p">(</span><span class="n">pyramid_level</span><span class="p">)</span>
+            <span class="n">dataset_path</span> <span class="o">=</span> <span class="n">multiscale</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">datasets</span><span class="p">[</span><span class="n">pyramid_level</span><span class="p">]</span><span class="o">.</span><span class="n">path</span>
+            <span class="n">resolution_path</span> <span class="o">=</span> <span class="n">local_path</span> <span class="o">/</span> <span class="n">dataset_path</span>
 
             <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">resolution_path</span> <span class="o">/</span> <span class="s2">&quot;c&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Downloading template...&quot;</span><span class="p">)</span>
                 <span class="n">remote_path</span> <span class="o">=</span> <span class="n">remote_url_s3</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">additional_ref_location</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">V2_TEMPLATE_NAME</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">pyramid_level</span><span class="si">}</span><span class="s2">/&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">additional_ref_location</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">V2_TEMPLATE_NAME</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">dataset_path</span><span class="si">}</span><span class="s2">/&quot;</span>
                 <span class="p">)</span>
                 <span class="n">fs</span> <span class="o">=</span> <span class="n">s3fs</span><span class="o">.</span><span class="n">S3FileSystem</span><span class="p">(</span><span class="n">anon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
                 <span class="n">fs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>

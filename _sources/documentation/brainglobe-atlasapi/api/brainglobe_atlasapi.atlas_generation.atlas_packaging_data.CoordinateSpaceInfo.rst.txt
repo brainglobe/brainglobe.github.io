@@ -1,0 +1,113 @@
+CoordinateSpaceInfo
+===================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.atlas_packaging_data
+
+.. autoclass:: CoordinateSpaceInfo
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~CoordinateSpaceInfo.generate_metadata_dict
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~CoordinateSpaceInfo.existing_stub
+   
+   
+      ~CoordinateSpaceInfo.existing_version
+   
+   
+      ~CoordinateSpaceInfo.file_name
+   
+   
+      ~CoordinateSpaceInfo.root_dir
+   
+   
+      ~CoordinateSpaceInfo.stub
+   
+   
+      ~CoordinateSpaceInfo.update_existing
+   
+   
+      ~CoordinateSpaceInfo.use_existing
+   
+   
+      ~CoordinateSpaceInfo.template
+   
+   
+      ~CoordinateSpaceInfo.name
+   
+   
+      ~CoordinateSpaceInfo.version
+   
+   
+      ~CoordinateSpaceInfo.metadata
+   
+   
+   

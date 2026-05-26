@@ -1,0 +1,6 @@
+validate\_template\_image\_pixels
+=================================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.validate_atlases
+
+.. autofunction:: validate_template_image_pixels

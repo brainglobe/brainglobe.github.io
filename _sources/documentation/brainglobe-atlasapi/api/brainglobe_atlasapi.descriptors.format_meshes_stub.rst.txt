@@ -1,0 +1,6 @@
+format\_meshes\_stub
+====================
+
+.. currentmodule:: brainglobe_atlasapi.descriptors
+
+.. autofunction:: format_meshes_stub

@@ -1,0 +1,6 @@
+format\_template\_stub
+======================
+
+.. currentmodule:: brainglobe_atlasapi.descriptors
+
+.. autofunction:: format_template_stub

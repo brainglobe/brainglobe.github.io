@@ -29,6 +29,7 @@ Information on specific functions, classes, and methods.
     brainglobe_atlasapi.atlas_generation.stacks
     brainglobe_atlasapi.atlas_generation.structure_json_to_csv
     brainglobe_atlasapi.atlas_generation.annotation_utils
+    brainglobe_atlasapi.atlas_generation.atlas_packaging_data
     brainglobe_atlasapi.atlas_generation.volume_utils
     brainglobe_atlasapi.atlas_generation.structures
     brainglobe_atlasapi.atlas_generation.mesh_utils

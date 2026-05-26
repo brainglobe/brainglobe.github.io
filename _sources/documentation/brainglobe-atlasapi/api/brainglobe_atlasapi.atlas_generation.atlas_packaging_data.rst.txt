@@ -1,0 +1,41 @@
+﻿brainglobe\_atlasapi.atlas\_generation.atlas\_packaging\_data
+=============================================================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.atlas_generation.atlas_packaging_data
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.atlas_packaging_data
+
+
+.. rubric:: Classes
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    AnnotationInfo
+    
+    AtlasPackagingData
+    
+    ComponentInfo
+    
+    CoordinateSpaceInfo
+    
+    TemplateInfo
+    
+    TerminologyInfo
+    
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    check_requested_component
+    
+

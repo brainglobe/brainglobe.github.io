@@ -1,0 +1,6 @@
+report\_validation\_results
+===========================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.validate_atlases
+
+.. autofunction:: report_validation_results

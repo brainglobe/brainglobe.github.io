@@ -1,0 +1,6 @@
+write\_multiscale\_ome\_zarr
+============================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.stacks
+
+.. autofunction:: write_multiscale_ome_zarr

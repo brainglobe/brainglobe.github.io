@@ -16,8 +16,6 @@
     :toctree: .
     :nosignatures:
     
-    filter_structures_not_present_in_annotation
-    
     wrapup_atlas_from_data
     
 

@@ -18,6 +18,8 @@
     
     check_struct_consistency
     
+    filter_structures_not_present_in_annotation
+    
     get_structure_children
     
     get_structure_terminal_nodes

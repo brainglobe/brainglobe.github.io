@@ -1,0 +1,119 @@
+AnnotationInfo
+==============
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.atlas_packaging_data
+
+.. autoclass:: AnnotationInfo
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~AnnotationInfo.generate_metadata_dict
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~AnnotationInfo.existing_stub
+   
+   
+      ~AnnotationInfo.existing_version
+   
+   
+      ~AnnotationInfo.file_name
+   
+   
+      ~AnnotationInfo.root_dir
+   
+   
+      ~AnnotationInfo.stub
+   
+   
+      ~AnnotationInfo.update_existing
+   
+   
+      ~AnnotationInfo.use_existing
+   
+   
+      ~AnnotationInfo.template
+   
+   
+      ~AnnotationInfo.terminology
+   
+   
+      ~AnnotationInfo.name
+   
+   
+      ~AnnotationInfo.version
+   
+   
+      ~AnnotationInfo.metadata
+   
+   
+   

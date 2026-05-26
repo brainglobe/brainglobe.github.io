@@ -1,0 +1,107 @@
+TerminologyInfo
+===============
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.atlas_packaging_data
+
+.. autoclass:: TerminologyInfo
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~TerminologyInfo.generate_metadata_dict
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~TerminologyInfo.existing_stub
+   
+   
+      ~TerminologyInfo.existing_version
+   
+   
+      ~TerminologyInfo.file_name
+   
+   
+      ~TerminologyInfo.root_dir
+   
+   
+      ~TerminologyInfo.stub
+   
+   
+      ~TerminologyInfo.update_existing
+   
+   
+      ~TerminologyInfo.use_existing
+   
+   
+      ~TerminologyInfo.name
+   
+   
+      ~TerminologyInfo.version
+   
+   
+      ~TerminologyInfo.metadata
+   
+   
+   

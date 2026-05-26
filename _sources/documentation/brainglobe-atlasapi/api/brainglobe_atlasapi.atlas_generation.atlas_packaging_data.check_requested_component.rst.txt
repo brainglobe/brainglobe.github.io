@@ -1,0 +1,6 @@
+check\_requested\_component
+===========================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.atlas_packaging_data
+
+.. autofunction:: check_requested_component

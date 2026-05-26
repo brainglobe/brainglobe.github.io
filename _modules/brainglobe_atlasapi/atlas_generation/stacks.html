@@ -29,7 +29,7 @@
   <link href="../../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=8dea78f2" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=3215791a" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
@@ -522,9 +522,46 @@
 <span class="sd">atlas generation.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy.typing</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">npt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">tifffile</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">zarr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ome_zarr.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse_url</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ome_zarr.writer</span><span class="w"> </span><span class="kn">import</span> <span class="n">write_multiscale</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">descriptors</span>
+
+<span class="n">BG_OME_ZARR_AXES</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;space&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;millimeter&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;anatomical&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;anterior-to-posterior&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;space&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;millimeter&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;anatomical&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;superior-to-inferior&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;space&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;millimeter&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;anatomical&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;right-to-left&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">]</span>
 
 
 <div class="viewcode-block" id="write_stack">
@@ -540,6 +577,45 @@
 <span class="sd">        The path and filename where the stack will be saved.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">tifffile</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="n">stack</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="write_multiscale_ome_zarr">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.stacks.write_multiscale_ome_zarr.html#brainglobe_atlasapi.atlas_generation.stacks.write_multiscale_ome_zarr">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_multiscale_ome_zarr</span><span class="p">(</span>
+    <span class="n">images</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">],</span>
+    <span class="n">output_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">transformations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]],</span>
+    <span class="n">axes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="n">BG_OME_ZARR_AXES</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write a multiscale image pyramid to an OME-Zarr file.</span>
+
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    images : list of np.ndarray</span>
+<span class="sd">        A list of image stacks representing different levels of the pyramid.</span>
+<span class="sd">    output_path : Path</span>
+<span class="sd">        The path where the OME-Zarr file will be saved.</span>
+<span class="sd">    transformations : list of lists of dicts</span>
+<span class="sd">        A list of transformations to be saved alongside the images.</span>
+<span class="sd">    axes : list of dicts, optional</span>
+<span class="sd">        A list of axis descriptors to be included in the OME-Zarr metadata.</span>
+<span class="sd">        If not provided, defaults to BG_OME_ZARR_AXES.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">zarr_loc</span> <span class="o">=</span> <span class="n">parse_url</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">zarr_loc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="n">store</span> <span class="o">=</span> <span class="n">zarr_loc</span><span class="o">.</span><span class="n">store</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="n">store</span><span class="o">=</span><span class="n">store</span><span class="p">)</span>
+
+    <span class="n">write_multiscale</span><span class="p">(</span>
+        <span class="n">pyramid</span><span class="o">=</span><span class="n">images</span><span class="p">,</span>
+        <span class="n">group</span><span class="o">=</span><span class="n">root</span><span class="p">,</span>
+        <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">,</span>
+        <span class="n">coordinate_transformations</span><span class="o">=</span><span class="n">transformations</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">store</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
 
 
@@ -563,65 +639,102 @@
 
 
 
-<div class="viewcode-block" id="save_secondary_reference">
-<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.stacks.save_secondary_reference.html#brainglobe_atlasapi.atlas_generation.stacks.save_secondary_reference">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">save_secondary_reference</span><span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save a secondary reference image stack with a given name.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_save_as_ome_zarr</span><span class="p">(</span>
+    <span class="n">stack</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">],</span>
+    <span class="n">dtype</span><span class="p">:</span> <span class="n">npt</span><span class="o">.</span><span class="n">DTypeLike</span><span class="p">,</span>
+    <span class="n">output_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">transformations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">stack</span><span class="p">]</span>
 
-<span class="sd">    Ensures the stack is of the correct data type before saving.</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">transformations</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span>
+        <span class="n">stack</span>
+    <span class="p">),</span> <span class="s2">&quot;Number of transformation sets must match number of scales in stack.&quot;</span>
+    <span class="n">write_multiscale_ome_zarr</span><span class="p">(</span>
+        <span class="n">images</span><span class="o">=</span><span class="n">stack</span><span class="p">,</span>
+        <span class="n">output_path</span><span class="o">=</span><span class="n">output_path</span><span class="p">,</span>
+        <span class="n">transformations</span><span class="o">=</span><span class="n">transformations</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<div class="viewcode-block" id="save_template">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.stacks.save_template.html#brainglobe_atlasapi.atlas_generation.stacks.save_template">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">save_template</span><span class="p">(</span>
+    <span class="n">stack</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">],</span>
+    <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">transformations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]],</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save the template image stack along with its transformations.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    stack : np.ndarray</span>
-<span class="sd">        The secondary reference image stack.</span>
-<span class="sd">    name : str</span>
-<span class="sd">        The base name for the output file (e.g., &quot;my_secondary_reference&quot;).</span>
+<span class="sd">    stack : List[np.ndarray]</span>
+<span class="sd">        The template image stack.</span>
 <span class="sd">    output_dir : Path</span>
-<span class="sd">        The directory where the secondary reference image will be saved.</span>
+<span class="sd">        The directory where the template image will be saved.</span>
+<span class="sd">    transformations : List[List[Dict]]</span>
+<span class="sd">        A list of transformations to be saved alongside the template.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">stack</span><span class="o">.</span><span class="n">dtype</span> <span class="o">!=</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">REFERENCE_DTYPE</span><span class="p">:</span>
-        <span class="n">stack</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">descriptors</span><span class="o">.</span><span class="n">REFERENCE_DTYPE</span><span class="p">)</span>
-    <span class="n">write_stack</span><span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.tiff&quot;</span><span class="p">)</span></div>
+    <span class="n">_save_as_ome_zarr</span><span class="p">(</span>
+        <span class="n">stack</span><span class="p">,</span>
+        <span class="n">descriptors</span><span class="o">.</span><span class="n">REFERENCE_DTYPE</span><span class="p">,</span>
+        <span class="n">output_dir</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V2_TEMPLATE_NAME</span><span class="p">,</span>
+        <span class="n">transformations</span><span class="p">,</span>
+    <span class="p">)</span></div>
 
 
 
 <div class="viewcode-block" id="save_annotation">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.stacks.save_annotation.html#brainglobe_atlasapi.atlas_generation.stacks.save_annotation">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">save_annotation</span><span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">save_annotation</span><span class="p">(</span>
+    <span class="n">stack</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">],</span>
+    <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">transformations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]],</span>
+<span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Save the annotation image stack.</span>
-
-<span class="sd">    Ensures the stack is of the correct data type before saving.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    stack : np.ndarray</span>
+<span class="sd">    stack : List[np.ndarray]</span>
 <span class="sd">        The annotation image stack.</span>
 <span class="sd">    output_dir : Path</span>
 <span class="sd">        The directory where the annotation image will be saved.</span>
+<span class="sd">    transformations : List[List[Dict]]</span>
+<span class="sd">        A list of transformations to be saved alongside the annotation.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">stack</span><span class="o">.</span><span class="n">dtype</span> <span class="o">!=</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">ANNOTATION_DTYPE</span><span class="p">:</span>
-        <span class="n">stack</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">descriptors</span><span class="o">.</span><span class="n">ANNOTATION_DTYPE</span><span class="p">)</span>
-    <span class="n">write_stack</span><span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">ANNOTATION_FILENAME</span><span class="p">)</span></div>
+    <span class="n">_save_as_ome_zarr</span><span class="p">(</span>
+        <span class="n">stack</span><span class="p">,</span>
+        <span class="n">descriptors</span><span class="o">.</span><span class="n">ANNOTATION_DTYPE</span><span class="p">,</span>
+        <span class="n">output_dir</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V2_ANNOTATION_NAME</span><span class="p">,</span>
+        <span class="n">transformations</span><span class="p">,</span>
+    <span class="p">)</span></div>
 
 
 
 <div class="viewcode-block" id="save_hemispheres">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.stacks.save_hemispheres.html#brainglobe_atlasapi.atlas_generation.stacks.save_hemispheres">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">save_hemispheres</span><span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">save_hemispheres</span><span class="p">(</span>
+    <span class="n">stack</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">],</span>
+    <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">transformations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]],</span>
+<span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Save the hemispheres image stack.</span>
-
-<span class="sd">    Ensures the stack is of the correct data type before saving.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    stack : np.ndarray</span>
+<span class="sd">    stack : List[np.ndarray]</span>
 <span class="sd">        The hemispheres image stack.</span>
 <span class="sd">    output_dir : Path</span>
 <span class="sd">        The directory where the hemispheres image will be saved.</span>
+<span class="sd">    transformations : List[List[Dict]]</span>
+<span class="sd">        A list of transformations to be saved alongside the hemispheres.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">stack</span><span class="o">.</span><span class="n">dtype</span> <span class="o">!=</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">HEMISPHERES_DTYPE</span><span class="p">:</span>
-        <span class="n">stack</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">descriptors</span><span class="o">.</span><span class="n">HEMISPHERES_DTYPE</span><span class="p">)</span>
-    <span class="n">write_stack</span><span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">HEMISPHERES_FILENAME</span><span class="p">)</span></div>
+    <span class="n">_save_as_ome_zarr</span><span class="p">(</span>
+        <span class="n">stack</span><span class="p">,</span>
+        <span class="n">descriptors</span><span class="o">.</span><span class="n">HEMISPHERES_DTYPE</span><span class="p">,</span>
+        <span class="n">output_dir</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V2_HEMISPHERES_NAME</span><span class="p">,</span>
+        <span class="n">transformations</span><span class="p">,</span>
+    <span class="p">)</span></div>
 
 </pre></div>
 <div class="section ablog__blog_comments">
