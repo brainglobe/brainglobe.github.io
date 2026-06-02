@@ -34,3 +34,39 @@ include:
 In addition, we usually post about the atlas in any forum we think will find it useful, e.g. if we think there is a 
 specific research community that may want to use the new atlas. 
 
+
+## Uploading an atlas to AWS
+::: {admonition} Set up instructions
+:class: note
+Ensure you have an AWS account with the correct permissions (write access to s3://brainglobe/atlas)
+
+Please install the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and authenticate by running:
+
+```bash
+aws login
+```
+:::
+
+
+1. Run the atlas script to generate the new atlas, and double-check it passes our validation.
+2. Navigate to the `brainglobe-atlasapi` directory inside the packaging working directory:
+   * This directory should contain the `annotation-sets`, `atlases`, `coordinate-spaces`, `templates`, and `terminologies` subdirectories and nothing else
+3. Get a preview of the files that will be synced with the remote by running:
+```bash
+aws s3 sync --dry-run . s3://brainglobe/atlas
+```
+4. If the output of the dry-run is correct, upload the new atlas using:
+```bash
+aws s3 sync . s3://brainglobe/atlas
+```
+5. To update the `latest_versions.conf` file:
+   * Fetch the file by running:
+```bash
+aws s3 cp s3://brainglobe/atlas/atlases/last_versions.conf ./atlases/last_versions.conf
+```
+   * Add the new atlas name/version and run to sync back to the remote:
+```bash
+aws s3 cp ./atlases/last_versions.conf s3://brainglobe/atlas/atlases/last_versions.conf
+```
+
+
