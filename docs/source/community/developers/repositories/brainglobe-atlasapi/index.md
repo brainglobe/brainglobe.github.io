@@ -51,11 +51,11 @@ aws login
 1. Run the atlas script to generate the new atlas, and double-check it passes our validation.
 2. Navigate to the `brainglobe-atlasapi` directory inside the packaging working directory:
    * This directory should contain the `annotation-sets`, `atlases`, `coordinate-spaces`, `templates`, and `terminologies` subdirectories and nothing else
-3. From this directory run to get a preview of the files that will be uploaded.
+3. Get a preview of the files that will be synced with the remote by running:
 ```bash
 aws s3 sync --dry-run . s3://brainglobe/atlas
 ```
-4. If the output of the dry-run is correct, you can remove that argunent and run:
+4. If the output of the dry-run is correct, upload the new atlas using:
 ```bash
 aws s3 sync . s3://brainglobe/atlas
 ```
