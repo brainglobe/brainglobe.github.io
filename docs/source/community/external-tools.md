@@ -117,6 +117,12 @@ LangSlice uses vision-language models to perform alignment and registration of h
 - [GitHub repository](https://github.com/greenpolo/LangSlice)
 - [Documentation](https://langslice.readthedocs.io/en/latest/)
 
+## PixelMap
+PixelMap is a browser-based GUI to generate Neuropixels channelmaps
+- [GitHub repository](https://github.com/m-beau/pixelmap)
+- [Online GUI](https://pixelmap.pni.princeton.edu/app)
+- [Documentation](https://pixelmap-neuropixels.readthedocs.io/en/latest/)
+
 :::{hint}
 If you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. Typically we include tools which:
 
