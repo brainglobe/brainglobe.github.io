@@ -118,7 +118,7 @@ LangSlice uses vision-language models to perform alignment and registration of h
 - [Documentation](https://langslice.readthedocs.io/en/latest/)
 
 ## PixelMap
-PixelMap is a browser-based GUI to generate Neuropixels channelmaps
+PixelMap is a browser-based GUI to generate Neuropixels channelmaps.
 - [GitHub repository](https://github.com/m-beau/pixelmap)
 - [Online GUI](https://pixelmap.pni.princeton.edu/app)
 - [Documentation](https://pixelmap-neuropixels.readthedocs.io/en/latest/)
