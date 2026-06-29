@@ -14,7 +14,7 @@ developers have created a BrainGlobe Atlas Installer.
 - [Paper](https://doi.org/10.3389/fninf.2019.00075)
 
 ## VERSO
-VERSO is an under development all-in-one tool for linear and nonlinear section to atlas registration
+VERSO is an all-in-one tool for linear and nonlinear section to atlas registration
 - [GitHub repository](https://github.com/LeonardoLupori/verso)
 
 ## Aligning Big Brains & Atlases
