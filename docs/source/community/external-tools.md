@@ -6,6 +6,17 @@ developers creating interoperable tools. The BrainGlobe core developers have cre
 [brainrender](/documentation/brainrender/index) etc.). More recently, members of the community have built their own 
 software that leverages the BrainGlobe ecosystem in some way:
 
+## QUINT
+QUINT is a registration pipeline which consists of QuickNII, VisuAlign, and Nutil for quantification. The QUINT 
+developers have created a BrainGlobe Atlas Installer. 
+- [BrainGlobe Atlas Installer](https://github.com/Tevemadar/BrainGlobe-support)
+- [Documentation](https://quint-workflow.readthedocs.io/en/latest/QUINTintro.html)
+- [Paper](https://doi.org/10.3389/fninf.2019.00075)
+
+## VERSO
+VERSO is an all-in-one tool for linear and nonlinear section to atlas registration
+- [GitHub repository](https://github.com/LeonardoLupori/verso)
+
 ## Aligning Big Brains & Atlases
 Aligning Big Brains & Atlases (ABBA) is a FIJI plugin for the registration of 2D brain sections to an atlas. Using 
 the [Python version](https://github.com/BIOP/abba_python) allows users to register their data to any BrainGlobe Atlas. 
