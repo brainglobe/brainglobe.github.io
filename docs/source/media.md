@@ -1,6 +1,10 @@
 # Media
 BrainGlobe reported in press/online
 
+## [Dr Adam Tyson receives RMS Award for Life Sciences](https://www.rms.org.uk/resource/dr-adam-tyson-receives-rms-award-for-life-sciences.html)
+
+_Royal Microscopical Society, May 2026_
+
 ## [Scientists map migratory bird brain](https://ucl.ac.uk/news/2026/apr/scientists-map-migratory-bird-brain)
 
 _UCL News, April 2026_
