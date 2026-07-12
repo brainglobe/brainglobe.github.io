@@ -519,5 +519,24 @@ This is a confocal microscopy atlas of the fruit fly larva's imaginal wing disc,
 This atlas has 2um isotropic resolution. 
 * `drosophila_wingdisc_instar3_2um`
 
+### [Virtual Fly Brain JRC2018Unisex neuropils atlas](https://www.virtualflybrain.org/blog/2022/01/01/jrc-2018-templates-rois-jrc2018/)
+
+This atlas packages the JRC2018Unisex adult _Drosophila melanogaster_ brain
+template with 46 VFB-painted neuropil ROI annotations. The annotations form a
+flat structure list and include source meshes provided by Virtual Fly Brain.
+
+This atlas has anisotropic 0.5189161 × 1.0 × 0.5189161 µm resolution:
+* `vfb_jrc2018u_neuropils_fly`
+
+### [Virtual Fly Brain JRC2018Unisex VNC atlas](https://www.virtualflybrain.org/term/adult-vnc-neuropils-court2020-court2020/)
+
+This atlas packages the JRC2018UnisexVNC adult _Drosophila melanogaster_
+template with VFB neuropil and domain annotations based on
+[Court et al. (2020)](https://doi.org/10.1016/j.neuron.2020.08.005). It has 20
+visible non-root regions in a flat structure list and includes source meshes
+provided by Virtual Fly Brain.
+
+This atlas has 0.4 µm isotropic resolution:
+* `vfb_jrc2018u_vnc_fly`
 
 
