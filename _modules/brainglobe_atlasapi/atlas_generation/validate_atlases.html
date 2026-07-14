@@ -26,8 +26,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=3215791a" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
@@ -40,10 +40,10 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
     <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
@@ -585,15 +585,15 @@
     <span class="n">expected_files</span> <span class="o">=</span> <span class="p">[</span>
         <span class="p">(</span>
             <span class="s2">&quot;Annotations&quot;</span><span class="p">,</span>
-            <span class="n">root_dir</span> <span class="o">/</span> <span class="n">annotation_location</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V2_ANNOTATION_NAME</span><span class="p">,</span>
+            <span class="n">root_dir</span> <span class="o">/</span> <span class="n">annotation_location</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V3_ANNOTATION_NAME</span><span class="p">,</span>
         <span class="p">),</span>
         <span class="p">(</span>
             <span class="s2">&quot;Meshes&quot;</span><span class="p">,</span>
-            <span class="n">root_dir</span> <span class="o">/</span> <span class="n">annotation_location</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V2_MESHES_DIRECTORY</span><span class="p">,</span>
+            <span class="n">root_dir</span> <span class="o">/</span> <span class="n">annotation_location</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V3_MESHES_DIRECTORY</span><span class="p">,</span>
         <span class="p">),</span>
         <span class="p">(</span>
             <span class="s2">&quot;Template&quot;</span><span class="p">,</span>
-            <span class="n">root_dir</span> <span class="o">/</span> <span class="n">template_location</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V2_TEMPLATE_NAME</span><span class="p">,</span>
+            <span class="n">root_dir</span> <span class="o">/</span> <span class="n">template_location</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V3_TEMPLATE_NAME</span><span class="p">,</span>
         <span class="p">),</span>
         <span class="p">(</span>
             <span class="s2">&quot;Coordinate Space&quot;</span><span class="p">,</span>
@@ -601,7 +601,7 @@
         <span class="p">),</span>
         <span class="p">(</span>
             <span class="s2">&quot;Terminology&quot;</span><span class="p">,</span>
-            <span class="n">root_dir</span> <span class="o">/</span> <span class="n">terminology_location</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V2_TERMINOLOGY_NAME</span><span class="p">,</span>
+            <span class="n">root_dir</span> <span class="o">/</span> <span class="n">terminology_location</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V3_TERMINOLOGY_NAME</span><span class="p">,</span>
         <span class="p">),</span>
     <span class="p">]</span>
     <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">expected_path</span> <span class="ow">in</span> <span class="n">expected_files</span><span class="p">:</span>
@@ -855,7 +855,7 @@
 <span class="sd">    ------</span>
 <span class="sd">    AssertionError</span>
 <span class="sd">        If any structure ID found in `atlas.structures` does not have a</span>
-<span class="sd">        matching `.obj` file in the atlas&#39;s `meshes` directory.</span>
+<span class="sd">        matching mesh file in the atlas&#39;s `meshes` directory.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">ids_from_bg_atlas_api</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">structures</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 
@@ -863,13 +863,14 @@
     <span class="n">meshes_location</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;annotation_set&quot;</span><span class="p">][</span><span class="s2">&quot;location&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
 
     <span class="n">mesh_path</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">Path</span><span class="p">(</span><span class="n">atlas_path</span><span class="p">)</span> <span class="o">/</span> <span class="n">meshes_location</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V2_MESHES_DIRECTORY</span>
+        <span class="n">Path</span><span class="p">(</span><span class="n">atlas_path</span><span class="p">)</span> <span class="o">/</span> <span class="n">meshes_location</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V3_MESHES_DIRECTORY</span>
     <span class="p">)</span>
 
+    <span class="c1"># Mesh files are named as &lt;structure_id&gt;</span>
     <span class="n">ids_from_mesh_files</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="nb">int</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">stem</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">mesh_path</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">stem</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>
+        <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">stem</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">mesh_path</span><span class="o">.</span><span class="n">iterdir</span><span class="p">()</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;info&quot;</span> <span class="ow">and</span> <span class="n">f</span><span class="o">.</span><span class="n">suffix</span> <span class="o">!=</span> <span class="s2">&quot;.index&quot;</span><span class="p">)</span>
     <span class="p">]</span>
 
     <span class="n">in_bg_not_mesh</span> <span class="o">=</span> <span class="p">[]</span>
@@ -914,13 +915,13 @@
     <span class="n">meshes_location</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;annotation_set&quot;</span><span class="p">][</span><span class="s2">&quot;location&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
 
     <span class="n">mesh_path</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">Path</span><span class="p">(</span><span class="n">atlas_path</span><span class="p">)</span> <span class="o">/</span> <span class="n">meshes_location</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V2_MESHES_DIRECTORY</span>
+        <span class="n">Path</span><span class="p">(</span><span class="n">atlas_path</span><span class="p">)</span> <span class="o">/</span> <span class="n">meshes_location</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V3_MESHES_DIRECTORY</span>
     <span class="p">)</span>
 
     <span class="n">ids_from_mesh_files</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="nb">int</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">stem</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">mesh_path</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">stem</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>
+        <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">stem</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">mesh_path</span><span class="o">.</span><span class="n">iterdir</span><span class="p">()</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;info&quot;</span> <span class="ow">and</span> <span class="n">f</span><span class="o">.</span><span class="n">suffix</span> <span class="o">!=</span> <span class="s2">&quot;.index&quot;</span><span class="p">)</span>
     <span class="p">]</span>
 
     <span class="n">in_mesh_not_bg</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1344,8 +1345,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1359,7 +1360,7 @@ Created using <a href="https://sphinx-doc.org/">Sphinx</a> 8.2.3.
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.18.0.
+0.20.0.
 </p></div>
       
     </div>

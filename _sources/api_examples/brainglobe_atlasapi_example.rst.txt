@@ -347,15 +347,15 @@ All atlases have a standard set of metatata describing their source, species, re
  .. code-block:: none
 
     {'additional_references': [],
-     'annotation_set': {'location': '/annotation-sets/allen_mouse-annotation/1_2',
+     'annotation_set': {'location': '/annotation-sets/allen_mouse-annotation/3_0',
                         'name': 'allen_mouse-annotation',
                         'template': {'location': '/templates/allen-adult-mouse-stpt-template/2015',
                                      'name': 'allen-adult-mouse-stpt-template',
                                      'version': '2015'},
-                        'terminology': {'location': '/terminologies/allen_mouse-terminology/1_2',
+                        'terminology': {'location': '/terminologies/allen_mouse-terminology/3_0',
                                         'name': 'allen_mouse-terminology',
-                                        'version': '1_2'},
-                        'version': '1_2'},
+                                        'version': '3.0'},
+                        'version': '3.0'},
      'atlas_link': 'http://www.brain-map.org',
      'citation': 'Wang et al 2020, https://doi.org/10.1016/j.cell.2020.04.007',
      'coordinate_space': {'location': '/coordinate-spaces/allen-adult-mouse-ccf-space/2015',
@@ -374,9 +374,9 @@ All atlases have a standard set of metatata describing their source, species, re
      'template': {'location': '/templates/allen-adult-mouse-stpt-template/2015',
                   'name': 'allen-adult-mouse-stpt-template',
                   'version': '2015'},
-     'terminology': {'location': '/terminologies/allen_mouse-terminology/1_2',
+     'terminology': {'location': '/terminologies/allen_mouse-terminology/3_0',
                      'name': 'allen_mouse-terminology',
-                     'version': '1_2'},
+                     'version': '3.0'},
      'version': '3.0'}
 
 
@@ -418,7 +418,7 @@ Anatomical reference (or template) image:
 
     Warning: atlas.reference is a deprecated alias for atlas.template, and will be removed in future versions.
 
-    <matplotlib.image.AxesImage object at 0x7f15c4f3f260>
+    <matplotlib.image.AxesImage object at 0x7f726e308470>
 
 
 
@@ -455,7 +455,7 @@ Annotations stack
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f15feed71d0>
+    <matplotlib.image.AxesImage object at 0x7f726e127230>
 
 
 
@@ -485,7 +485,7 @@ Hemisheres stack:
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f15ff3a7740>
+    <matplotlib.image.AxesImage object at 0x7f726e3c5df0>
 
 
 
@@ -1381,7 +1381,7 @@ The structures attribute is a custom dictionary that can be queried by region nu
      'annotation_value': 997,
      'id': 997,
      'mesh': None,
-     'mesh_filename': PosixPath('/home/runner/.brainglobe/brainglobe-atlasapi/annotation-sets/allen_mouse-annotation/1_2/annotation.precomputed/997'),
+     'mesh_filename': PosixPath('/home/runner/.brainglobe/brainglobe-atlasapi/annotation-sets/allen_mouse-annotation/3_0/annotations.precomputed/mesh/997'),
      'name': 'root',
      'parent_structure_id': None,
      'rgb_triplet': [255, 255, 255],
@@ -1491,7 +1491,7 @@ To get the mask for a region, use
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f15feefe690>
+    <matplotlib.image.AxesImage object at 0x7f726e1b45c0>
 
 
 
@@ -1520,7 +1520,7 @@ To access the 3D structure mesh for visualisation, this can be queried using the
  .. code-block:: none
 
     <meshio mesh object>
-      Number of points: 56703
+      Number of points: 56709
       Number of cells:
         triangle: 112948
 
@@ -1547,7 +1547,7 @@ A list of regions can also be queried:
  .. code-block:: none
 
     [<meshio mesh object>
-      Number of points: 56703
+      Number of points: 56709
       Number of cells:
         triangle: 112948,
      <meshio mesh object>
@@ -1579,7 +1579,7 @@ The path can also be queried directly, if it's needed to be used within another 
 
  .. code-block:: none
 
-    /home/runner/.brainglobe/brainglobe-atlasapi/annotation-sets/allen_mouse-annotation/1_2/annotation.precomputed/567
+    /home/runner/.brainglobe/brainglobe-atlasapi/annotation-sets/allen_mouse-annotation/3_0/annotations.precomputed/mesh/567
 
 
 
@@ -1739,7 +1739,7 @@ Now print hemisphere string
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.580 seconds)
+   **Total running time of the script:** (0 minutes 1.642 seconds)
 
 
 .. _sphx_glr_download_api_examples_brainglobe_atlasapi_example.py:

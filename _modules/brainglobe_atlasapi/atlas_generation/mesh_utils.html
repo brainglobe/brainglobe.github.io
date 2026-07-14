@@ -26,8 +26,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=3215791a" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
@@ -40,10 +40,10 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
     <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
@@ -520,9 +520,16 @@
                    <h1>Source code for brainglobe_atlasapi.atlas_generation.mesh_utils</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;Utility functions for working with meshes.&quot;&quot;&quot;</span>
 
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
 
+<span class="kn">import</span><span class="w"> </span><span class="nn">DracoPy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">meshio</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_utils.general.system</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_num_processes</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cloudvolume.datasource.precomputed.mesh.multilod</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">MultiLevelPrecomputedMeshManifest</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">rich.progress</span><span class="w"> </span><span class="kn">import</span> <span class="n">track</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.ndimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">binary_closing</span><span class="p">,</span> <span class="n">binary_fill_holes</span>
 
@@ -970,6 +977,107 @@
 
 
 
+<div class="viewcode-block" id="write_mesh_info">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.mesh_utils.write_mesh_info.html#brainglobe_atlasapi.atlas_generation.mesh_utils.write_mesh_info">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_mesh_info</span><span class="p">(</span>
+    <span class="n">mesh_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">vertex_quantization_bits</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="n">transform</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">lod_scale_multiplier</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Write the mesh-directory metadata file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mesh_dir : Path</span>
+<span class="sd">        Path to the mesh directory where the `info` file will be written.</span>
+<span class="sd">    vertex_quantization_bits : int, optional</span>
+<span class="sd">        Number of bits used for vertex quantization (default is 16).</span>
+<span class="sd">    transform : List[int], optional</span>
+<span class="sd">        A 4x3 transformation matrix in row-major order (default is identity).</span>
+<span class="sd">    lod_scale_multiplier : float, optional</span>
+<span class="sd">        Scale multiplier for level-of-detail (LOD) (default is 1.0).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        The metadata dictionary that was written to the `info` file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">transform</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">transform</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">info</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;neuroglancer_multilod_draco&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;vertex_quantization_bits&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">vertex_quantization_bits</span><span class="p">),</span>
+        <span class="s2">&quot;transform&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">transform</span><span class="p">],</span>
+        <span class="s2">&quot;lod_scale_multiplier&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">lod_scale_multiplier</span><span class="p">),</span>
+    <span class="p">}</span>
+    <span class="p">(</span><span class="n">mesh_dir</span> <span class="o">/</span> <span class="s2">&quot;info&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">info</span></div>
+
+
+
+<div class="viewcode-block" id="write_mesh">
+<a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.mesh_utils.write_mesh.html#brainglobe_atlasapi.atlas_generation.mesh_utils.write_mesh">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_mesh</span><span class="p">(</span>
+    <span class="n">mesh</span><span class="p">:</span> <span class="n">meshio</span><span class="o">.</span><span class="n">Mesh</span><span class="p">,</span>
+    <span class="n">mesh_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">segment_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">vertex_quantization_bits</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="n">compression_level</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write one object as a single-LOD, single-fragment multi-res mesh.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mesh_dir : path to the mesh directory (gets `info`, `&lt;id&gt;`, `&lt;id&gt;.index`)</span>
+<span class="sd">    segment_id : int label of the object</span>
+<span class="sd">    vertices : (N, 3) float array of xyz coordinates (&quot;points&quot;)</span>
+<span class="sd">    faces : (M, 3) int array of triangle vertex indices</span>
+<span class="sd">    vertex_quantization_bits : 10 or 16 (Neuroglancer only allows these two)</span>
+<span class="sd">    compression_level : 0-10 (higher = more compression)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">vertices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">faces</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span>
+
+    <span class="c1"># Define the single octree cell that holds the whole mesh.</span>
+    <span class="c1"># Draco quantizes ALL axes against one uniform range (a bounding *cube*).</span>
+    <span class="n">bbox_min</span> <span class="o">=</span> <span class="n">vertices</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">bbox_max</span> <span class="o">=</span> <span class="n">vertices</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">qrange</span> <span class="o">=</span> <span class="nb">float</span><span class="p">((</span><span class="n">bbox_max</span> <span class="o">-</span> <span class="n">bbox_min</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">qrange</span> <span class="o">&lt;=</span> <span class="mf">0.0</span><span class="p">:</span>  <span class="c1"># degenerate (single point / planar in all axes)</span>
+        <span class="n">qrange</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+    <span class="n">grid_origin</span> <span class="o">=</span> <span class="n">bbox_min</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+    <span class="c1"># Encode the one fragment</span>
+    <span class="n">fragment</span> <span class="o">=</span> <span class="n">DracoPy</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">vertices</span><span class="p">,</span>
+        <span class="n">faces</span><span class="p">,</span>
+        <span class="n">quantization_bits</span><span class="o">=</span><span class="n">vertex_quantization_bits</span><span class="p">,</span>
+        <span class="n">compression_level</span><span class="o">=</span><span class="n">compression_level</span><span class="p">,</span>
+        <span class="n">quantization_range</span><span class="o">=</span><span class="n">qrange</span><span class="p">,</span>
+        <span class="n">quantization_origin</span><span class="o">=</span><span class="n">grid_origin</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+    <span class="p">)</span>
+
+    <span class="n">manifest</span> <span class="o">=</span> <span class="n">MultiLevelPrecomputedMeshManifest</span><span class="p">(</span>
+        <span class="n">segment_id</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">segment_id</span><span class="p">),</span>
+        <span class="n">chunk_shape</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">qrange</span><span class="p">,</span> <span class="n">qrange</span><span class="p">,</span> <span class="n">qrange</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span>
+        <span class="n">grid_origin</span><span class="o">=</span><span class="n">grid_origin</span><span class="p">,</span>
+        <span class="n">num_lods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">lod_scales</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">qrange</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span>
+        <span class="n">vertex_offsets</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span>
+        <span class="n">num_fragments_per_lod</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">),</span>
+        <span class="n">fragment_positions</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)],</span>
+        <span class="n">fragment_offsets</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">fragment</span><span class="p">)],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)],</span>
+    <span class="p">)</span>
+
+    <span class="p">(</span><span class="n">mesh_dir</span> <span class="o">/</span> <span class="nb">str</span><span class="p">(</span><span class="n">segment_id</span><span class="p">))</span><span class="o">.</span><span class="n">write_bytes</span><span class="p">(</span><span class="n">fragment</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">mesh_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">segment_id</span><span class="p">)</span><span class="si">}</span><span class="s2">.index&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write_bytes</span><span class="p">(</span><span class="n">manifest</span><span class="o">.</span><span class="n">to_binary</span><span class="p">())</span></div>
+
+
+
 <div class="viewcode-block" id="Region">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.mesh_utils.Region.html#brainglobe_atlasapi.atlas_generation.mesh_utils.Region">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Region</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -1014,8 +1122,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1029,7 +1137,7 @@ Created using <a href="https://sphinx-doc.org/">Sphinx</a> 8.2.3.
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.18.0.
+0.20.0.
 </p></div>
       
     </div>

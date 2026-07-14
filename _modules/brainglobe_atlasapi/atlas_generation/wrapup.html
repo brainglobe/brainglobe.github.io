@@ -26,8 +26,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=3215791a" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
@@ -40,10 +40,10 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
     <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
@@ -526,11 +526,18 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">brainglobe_space</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">bgs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dask.array</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">da</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">meshio</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mio</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">ngff_zarr</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nz</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy.typing</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">npt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">treelib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">zarr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cloudvolume</span><span class="w"> </span><span class="kn">import</span> <span class="n">CloudVolume</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">numba.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">types</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">numba.typed</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dict</span> <span class="k">as</span> <span class="n">TypedDict</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">atlas_generation</span><span class="p">,</span> <span class="n">descriptors</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.atlas_generation.atlas_packaging_data</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
@@ -540,11 +547,17 @@
     <span class="n">TemplateInfo</span><span class="p">,</span>
     <span class="n">TerminologyInfo</span><span class="p">,</span>
 <span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.atlas_generation.mesh_utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">write_mesh</span><span class="p">,</span>
+    <span class="n">write_mesh_info</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.atlas_generation.metadata_utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">generate_metadata_dict</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.atlas_generation.stacks</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">BG_OME_ZARR_AXES</span><span class="p">,</span>
     <span class="n">save_annotation</span><span class="p">,</span>
+    <span class="n">save_annotation_masks</span><span class="p">,</span>
     <span class="n">save_hemispheres</span><span class="p">,</span>
     <span class="n">save_template</span><span class="p">,</span>
     <span class="n">write_multiscale_ome_zarr</span><span class="p">,</span>
@@ -553,11 +566,20 @@
     <span class="n">get_all_validation_functions</span><span class="p">,</span>
     <span class="n">report_validation_results</span><span class="p">,</span>
 <span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.atlas_generation.volume_utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">create_masked_array_numba</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.bg_atlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">BrainGlobeAtlas</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.descriptors</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ANNOTATION_DTYPE</span><span class="p">,</span>
+    <span class="n">V3_ANNOTATION_MAP_NAME</span><span class="p">,</span>
     <span class="n">Resolution</span><span class="p">,</span>
     <span class="n">ResolutionList</span><span class="p">,</span>
     <span class="n">ValidComponentData</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.structure_tree_util</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">get_structures_tree</span><span class="p">,</span>
+    <span class="n">postorder_depth_first_search</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">atlas_name_from_repr</span>
 
@@ -594,6 +616,7 @@
     <span class="n">transformations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]],</span>
     <span class="n">new_data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">],</span>
     <span class="n">working_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">axes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="n">BG_OME_ZARR_AXES</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="n">requested_resolutions</span> <span class="o">=</span> <span class="p">[</span>
         <span class="nb">tuple</span><span class="p">(</span><span class="n">transform</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;scale&quot;</span><span class="p">])</span> <span class="k">for</span> <span class="n">transform</span> <span class="ow">in</span> <span class="n">transformations</span>
@@ -628,6 +651,7 @@
         <span class="n">images</span><span class="o">=</span><span class="n">stack_list</span><span class="p">,</span>
         <span class="n">output_path</span><span class="o">=</span><span class="n">working_dir</span><span class="p">,</span>
         <span class="n">transformations</span><span class="o">=</span><span class="n">new_transformations</span><span class="p">,</span>
+        <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">,</span>
     <span class="p">)</span>
 
 
@@ -677,6 +701,96 @@
         <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">coordinate_space_metadata</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 
 
+<span class="k">def</span><span class="w"> </span><span class="nf">_save_precomputed_directory</span><span class="p">(</span>
+    <span class="n">packaging_data</span><span class="p">:</span> <span class="n">AtlasPackagingData</span><span class="p">,</span>
+    <span class="n">mesh_dest_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">scale_meshes</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">resolution_mapping</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="n">_save_meshes</span><span class="p">(</span>
+        <span class="n">packaging_data</span><span class="o">.</span><span class="n">meshes_dict</span><span class="p">,</span>
+        <span class="n">mesh_dest_dir</span><span class="p">,</span>
+        <span class="n">packaging_data</span><span class="o">.</span><span class="n">space_convention</span><span class="p">,</span>
+        <span class="n">scale_meshes</span><span class="p">,</span>
+        <span class="n">packaging_data</span><span class="o">.</span><span class="n">resolution</span><span class="p">,</span>
+        <span class="n">resolution_mapping</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">output_dir</span> <span class="o">=</span> <span class="n">mesh_dest_dir</span><span class="o">.</span><span class="n">parent</span>
+
+    <span class="n">_write_precomputed_annotations</span><span class="p">(</span><span class="n">packaging_data</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_write_precomputed_annotations</span><span class="p">(</span>
+    <span class="n">packaging_data</span><span class="p">:</span> <span class="n">AtlasPackagingData</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="n">cloudpath</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;file://</span><span class="si">{</span><span class="n">output_dir</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">annotations</span> <span class="o">=</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">annotation_stack</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">resolution_nm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">resolution</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="mi">1000</span>
+
+    <span class="c1"># All values in XYZ</span>
+    <span class="n">resolution_nm</span> <span class="o">=</span> <span class="n">resolution_nm</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+    <span class="n">annotations</span> <span class="o">=</span> <span class="n">annotations</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span>
+        <span class="n">descriptors</span><span class="o">.</span><span class="n">ANNOTATION_DTYPE</span>
+    <span class="p">)</span>  <span class="c1"># ZYX -&gt; XYZ</span>
+    <span class="n">voxel_offset</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">chunk_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+    <span class="n">cseg_block_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+
+    <span class="n">info</span> <span class="o">=</span> <span class="n">CloudVolume</span><span class="o">.</span><span class="n">create_new_info</span><span class="p">(</span>
+        <span class="n">num_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">layer_type</span><span class="o">=</span><span class="s2">&quot;segmentation&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">annotations</span><span class="o">.</span><span class="n">dtype</span><span class="p">),</span>
+        <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;compressed_segmentation&quot;</span><span class="p">,</span>
+        <span class="n">resolution</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">resolution_nm</span><span class="p">),</span>
+        <span class="n">voxel_offset</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">voxel_offset</span><span class="p">),</span>
+        <span class="n">chunk_size</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">chunk_size</span><span class="p">),</span>
+        <span class="n">compressed_segmentation_block_size</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">cseg_block_size</span><span class="p">),</span>
+        <span class="n">volume_size</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">annotations</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span>
+        <span class="n">mesh</span><span class="o">=</span><span class="s2">&quot;mesh&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">info</span><span class="p">[</span><span class="s2">&quot;segment_properties&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;segment_properties&quot;</span>
+
+    <span class="n">vol</span> <span class="o">=</span> <span class="n">CloudVolume</span><span class="p">(</span><span class="n">cloudpath</span><span class="p">,</span> <span class="n">info</span><span class="o">=</span><span class="n">info</span><span class="p">,</span> <span class="n">compress</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">vol</span><span class="o">.</span><span class="n">commit_info</span><span class="p">()</span>
+    <span class="n">vol</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">annotations</span>
+
+    <span class="n">prop_out</span> <span class="o">=</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;segment_properties&quot;</span>
+    <span class="n">prop_out</span><span class="o">.</span><span class="n">mkdir</span><span class="p">()</span>
+
+    <span class="n">terminology_path</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span> <span class="o">/</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">terminology_info</span><span class="o">.</span><span class="n">stub</span>
+    <span class="p">)</span>
+    <span class="n">ontology</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">terminology_path</span><span class="p">)</span>
+
+    <span class="n">formatted_ontology</span> <span class="o">=</span> <span class="n">ontology</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="p">(</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;identifier&quot;</span><span class="p">]),</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;abbreviation&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: (</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+
+    <span class="n">segment_properties</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;neuroglancer_segment_properties&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;inline&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;ids&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">id</span> <span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">formatted_ontology</span><span class="p">],</span>
+            <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;abbreviation&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;label&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">abbr</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">abbr</span> <span class="ow">in</span> <span class="n">formatted_ontology</span><span class="p">],</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+        <span class="p">},</span>
+    <span class="p">}</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">prop_out</span> <span class="o">/</span> <span class="s2">&quot;info&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">segment_properties</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+
 <span class="k">def</span><span class="w"> </span><span class="nf">_save_meshes</span><span class="p">(</span>
     <span class="n">meshes_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">],</span>
     <span class="n">mesh_dest_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
@@ -697,27 +811,31 @@
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">continue</span>
 
+        <span class="c1"># Scale from voxel to physical units (um) if requested</span>
         <span class="k">if</span> <span class="n">scale_meshes</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">resolution_mapping</span><span class="p">:</span>
-                <span class="n">mesh</span><span class="o">.</span><span class="n">points</span> <span class="o">*=</span> <span class="n">resolution_standard</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">mesh</span><span class="o">.</span><span class="n">points</span> <span class="o">*=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">resolution_standard</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">original_resolution</span> <span class="o">=</span> <span class="p">(</span>
                     <span class="n">resolution_standard</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">resolution_mapping</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
                     <span class="n">resolution_standard</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">resolution_mapping</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
                     <span class="n">resolution_standard</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">resolution_mapping</span><span class="p">[</span><span class="mi">2</span><span class="p">]],</span>
                 <span class="p">)</span>
-                <span class="n">mesh</span><span class="o">.</span><span class="n">points</span> <span class="o">*=</span> <span class="n">original_resolution</span>
+                <span class="n">mesh</span><span class="o">.</span><span class="n">points</span> <span class="o">*=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">original_resolution</span><span class="p">)</span>
 
+        <span class="c1"># Reorient to the atlas space convention</span>
         <span class="n">mesh</span><span class="o">.</span><span class="n">points</span> <span class="o">=</span> <span class="n">space_convention</span><span class="o">.</span><span class="n">map_points_to</span><span class="p">(</span>
             <span class="n">descriptors</span><span class="o">.</span><span class="n">ATLAS_ORIENTATION</span><span class="p">,</span> <span class="n">mesh</span><span class="o">.</span><span class="n">points</span>
         <span class="p">)</span>
 
+        <span class="c1"># Reorient from ZYX to XYZ for Neuroglancer and scale from um to nm</span>
+        <span class="n">mesh</span><span class="o">.</span><span class="n">points</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span> <span class="o">*</span> <span class="mi">1000</span>  <span class="c1"># um -&gt; nm</span>
+        <span class="n">mesh</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+
         <span class="c1"># TODO: parallelise and copy if not scaling or reorienting</span>
-        <span class="n">mio</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
-            <span class="n">mesh_dest_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mesh_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
-            <span class="n">mesh</span><span class="p">,</span>
-            <span class="n">file_format</span><span class="o">=</span><span class="s2">&quot;neuroglancer&quot;</span><span class="p">,</span>
-        <span class="p">)</span>
+        <span class="n">write_mesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">mesh_dest_dir</span><span class="p">,</span> <span class="n">mesh_id</span><span class="p">)</span>
+
+    <span class="n">write_mesh_info</span><span class="p">(</span><span class="n">mesh_dest_dir</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_save_template_data</span><span class="p">(</span>
@@ -853,16 +971,221 @@
             <span class="n">annotation_info</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">annotation_info</span><span class="o">.</span><span class="n">version</span>
         <span class="p">)</span>
         <span class="n">mesh_dest_dir</span> <span class="o">=</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span> <span class="o">/</span> <span class="n">meshes_stub</span>
-        <span class="n">_save_meshes</span><span class="p">(</span>
-            <span class="n">packaging_data</span><span class="o">.</span><span class="n">meshes_dict</span><span class="p">,</span>
+        <span class="n">_save_precomputed_directory</span><span class="p">(</span>
+            <span class="n">packaging_data</span><span class="p">,</span>
             <span class="n">mesh_dest_dir</span><span class="p">,</span>
-            <span class="n">packaging_data</span><span class="o">.</span><span class="n">space_convention</span><span class="p">,</span>
             <span class="n">scale_meshes</span><span class="p">,</span>
-            <span class="n">packaging_data</span><span class="o">.</span><span class="n">resolution</span><span class="p">,</span>
             <span class="n">resolution_mapping</span><span class="p">,</span>
         <span class="p">)</span>
 
     <span class="k">return</span> <span class="n">annotation_multiscale</span><span class="p">,</span> <span class="n">hemispheres_multiscale</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_generate_annotation_mapping</span><span class="p">(</span><span class="n">tree</span><span class="p">:</span> <span class="n">treelib</span><span class="o">.</span><span class="n">Tree</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return {structure_id: index} in post-order (leaves first).&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">identifier</span><span class="p">:</span> <span class="n">i</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">postorder_depth_first_search</span><span class="p">(</span><span class="n">tree</span><span class="p">))</span>
+    <span class="p">}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_compute_4d_masks_for_scale</span><span class="p">(</span>
+    <span class="n">annotation_scale</span><span class="p">:</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span>
+    <span class="n">structures_tree</span><span class="p">:</span> <span class="n">treelib</span><span class="o">.</span><span class="n">Tree</span><span class="p">,</span>
+    <span class="n">mapping</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+    <span class="n">scratch_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">da</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute (N, Z, Y, X) uint8 mask array for one annotation scale level.</span>
+
+<span class="sd">    Masks are streamed into an on-disk scratch zarr (one structure per chunk)</span>
+<span class="sd">    rather than held in memory. During the post-order walk each structure&#39;s</span>
+<span class="sd">    children are read back from the scratch store, so peak memory is a few</span>
+<span class="sd">    (Z, Y, X) masks regardless of the number of structures. Returns a lazy</span>
+<span class="sd">    dask handle backed by ``scratch_path``; the caller owns that path and must</span>
+<span class="sd">    keep it alive until the handle has been computed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n_structures</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span>
+    <span class="n">typed_dict</span> <span class="o">=</span> <span class="n">TypedDict</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span>
+        <span class="n">key_type</span><span class="o">=</span><span class="n">types</span><span class="o">.</span><span class="n">uint32</span><span class="p">,</span>
+        <span class="n">value_type</span><span class="o">=</span><span class="n">types</span><span class="o">.</span><span class="n">uint32</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">typed_dict</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">uint32</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">uint32</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+    <span class="n">z</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">annotation_scale</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">masks</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">open_array</span><span class="p">(</span>
+        <span class="n">scratch_path</span><span class="p">,</span>
+        <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span>
+        <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">n_structures</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span>
+        <span class="n">chunks</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">),</span>
+        <span class="n">dtype</span><span class="o">=</span><span class="n">descriptors</span><span class="o">.</span><span class="n">ANNOTATION_MASKS_DTYPE</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">flat_vol</span> <span class="o">=</span> <span class="n">annotation_scale</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">annotation_id</span><span class="p">,</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span>
+        <span class="n">mapping</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Processing annotations&quot;</span>
+    <span class="p">):</span>
+        <span class="c1"># Get labels for region and it&#39;s children</span>
+        <span class="n">stree</span> <span class="o">=</span> <span class="n">structures_tree</span><span class="o">.</span><span class="n">subtree</span><span class="p">(</span><span class="n">annotation_id</span><span class="p">)</span>
+        <span class="n">ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">stree</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+        <span class="n">mapped_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">mapping</span><span class="p">[</span><span class="n">id_</span><span class="p">]</span> <span class="k">for</span> <span class="n">id_</span> <span class="ow">in</span> <span class="n">ids</span><span class="p">])</span>
+
+        <span class="n">lut</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">mapped_ids</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+        <span class="n">lut</span><span class="p">[</span><span class="n">mapped_ids</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">annotation_scale</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+
+        <span class="n">create_masked_array_numba</span><span class="p">(</span><span class="n">flat_vol</span><span class="p">,</span> <span class="n">lut</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">typed_dict</span><span class="p">)</span>
+
+        <span class="n">masks</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">annotation_scale</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">da</span><span class="o">.</span><span class="n">from_zarr</span><span class="p">(</span><span class="n">scratch_path</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_save_4d_annotation_data</span><span class="p">(</span>
+    <span class="n">packaging_data</span><span class="p">:</span> <span class="n">AtlasPackagingData</span><span class="p">,</span>
+    <span class="n">transformations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write the 4D annotation masks array alongside annotations_compressed.&quot;&quot;&quot;</span>
+    <span class="n">annotation_info</span> <span class="o">=</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">annotation_info</span>
+
+    <span class="k">if</span> <span class="n">annotation_info</span><span class="o">.</span><span class="n">use_existing</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="k">if</span> <span class="n">annotation_info</span><span class="o">.</span><span class="n">update_existing</span><span class="p">:</span>
+        <span class="n">_insert_into_4d_masks</span><span class="p">(</span><span class="n">packaging_data</span><span class="p">,</span> <span class="n">transformations</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="n">dest_dir</span> <span class="o">=</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span> <span class="o">/</span> <span class="n">annotation_info</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span>
+        <span class="s2">&quot;location&quot;</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+
+    <span class="n">structures_tree</span> <span class="o">=</span> <span class="n">get_structures_tree</span><span class="p">(</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">structures_list</span><span class="p">)</span>
+    <span class="n">mapping</span> <span class="o">=</span> <span class="n">_generate_annotation_mapping</span><span class="p">(</span><span class="n">structures_tree</span><span class="p">)</span>
+
+    <span class="n">transformations_4d</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">[{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scale&quot;</span><span class="p">,</span> <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span> <span class="o">+</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;scale&quot;</span><span class="p">]}]</span>
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">transformations</span>
+    <span class="p">]</span>
+
+    <span class="n">masks_path</span> <span class="o">=</span> <span class="n">dest_dir</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V3_ANNOTATION_MASKS_NAME</span>
+    <span class="n">scratch_dir</span> <span class="o">=</span> <span class="n">dest_dir</span> <span class="o">/</span> <span class="s2">&quot;.mask_scratch&quot;</span>
+    <span class="n">scratch_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">masks_per_scale</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">_compute_4d_masks_for_scale</span><span class="p">(</span>
+                <span class="n">ann_scale</span><span class="p">,</span>
+                <span class="n">structures_tree</span><span class="p">,</span>
+                <span class="n">mapping</span><span class="p">,</span>
+                <span class="n">scratch_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;scale_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.zarr&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ann_scale</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">annotation_stack</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="n">save_annotation_masks</span><span class="p">(</span><span class="n">masks_per_scale</span><span class="p">,</span> <span class="n">dest_dir</span><span class="p">,</span> <span class="n">transformations_4d</span><span class="p">)</span>
+
+        <span class="n">root</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">open_group</span><span class="p">(</span><span class="n">masks_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;r+&quot;</span><span class="p">)</span>
+
+        <span class="n">sorted_mapping_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mapping</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">ANNOTATION_DTYPE</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">annotation_id</span><span class="p">,</span> <span class="n">array_ind</span> <span class="ow">in</span> <span class="n">mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">sorted_mapping_list</span><span class="p">[</span><span class="n">array_ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">annotation_id</span>
+
+        <span class="n">root</span><span class="p">[</span><span class="n">V3_ANNOTATION_MAP_NAME</span><span class="p">]</span> <span class="o">=</span> <span class="n">sorted_mapping_list</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">scratch_dir</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_insert_into_4d_masks</span><span class="p">(</span>
+    <span class="n">packaging_data</span><span class="p">:</span> <span class="n">AtlasPackagingData</span><span class="p">,</span>
+    <span class="n">transformations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Insert new resolution levels into an existing annotations.ome.zarr.</span>
+
+<span class="sd">    Reads the existing zarr from the previous version&#39;s directory, validates</span>
+<span class="sd">    that the annotation_mapping is unchanged, computes 4D masks for the new</span>
+<span class="sd">    scales, merges all scale levels, and writes to the new versioned directory.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">annotation_info</span> <span class="o">=</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">annotation_info</span>
+    <span class="n">existing_masks_path</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span>
+        <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="n">annotation_info</span><span class="o">.</span><span class="n">existing_stub</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
+        <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V3_ANNOTATION_MASKS_NAME</span>
+    <span class="p">)</span>
+    <span class="n">target_dir</span> <span class="o">=</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="n">annotation_info</span><span class="o">.</span><span class="n">stub</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
+    <span class="n">target_masks_path</span> <span class="o">=</span> <span class="n">target_dir</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V3_ANNOTATION_MASKS_NAME</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">existing_masks_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;No existing 4D masks zarr found at </span><span class="si">{</span><span class="n">existing_masks_path</span><span class="si">}</span><span class="s2">. &quot;</span>
+            <span class="s2">&quot;This atlas may predate the 4D masks feature — &quot;</span>
+            <span class="s2">&quot;re-run without update_existing to build from scratch.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="n">existing_root</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">open_group</span><span class="p">(</span><span class="n">existing_masks_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+    <span class="n">raw_mapping</span> <span class="o">=</span> <span class="n">existing_root</span><span class="p">[</span><span class="n">V3_ANNOTATION_MAP_NAME</span><span class="p">][:]</span>
+    <span class="n">stored_mapping</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nb">int</span><span class="p">(</span><span class="n">annotation_id</span><span class="p">):</span> <span class="n">array_ind</span>
+        <span class="k">for</span> <span class="n">array_ind</span><span class="p">,</span> <span class="n">annotation_id</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">raw_mapping</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="n">structures_tree</span> <span class="o">=</span> <span class="n">get_structures_tree</span><span class="p">(</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">structures_list</span><span class="p">)</span>
+    <span class="n">expected_mapping</span> <span class="o">=</span> <span class="n">_generate_annotation_mapping</span><span class="p">(</span><span class="n">structures_tree</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">stored_mapping</span> <span class="o">!=</span> <span class="n">expected_mapping</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;The annotation_mapping in the existing 4D masks zarr does not &quot;</span>
+            <span class="s2">&quot;match the structures_list for this atlas version. &quot;</span>
+            <span class="s2">&quot;Re-run without update_existing to rebuild from scratch.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="n">existing_multiscale</span> <span class="o">=</span> <span class="n">nz</span><span class="o">.</span><span class="n">from_ngff_zarr</span><span class="p">(</span><span class="n">existing_masks_path</span><span class="p">)</span>
+    <span class="n">resolution_to_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">da</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nb">tuple</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">scale</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">1</span><span class="p">:]:</span> <span class="n">im</span><span class="o">.</span><span class="n">data</span>
+        <span class="k">for</span> <span class="n">im</span> <span class="ow">in</span> <span class="n">existing_multiscale</span><span class="o">.</span><span class="n">images</span>
+    <span class="p">}</span>
+
+    <span class="n">new_resolutions</span> <span class="o">=</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;scale&quot;</span><span class="p">])</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">transformations</span><span class="p">]</span>
+    <span class="n">target_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">scratch_dir</span> <span class="o">=</span> <span class="n">target_dir</span> <span class="o">/</span> <span class="s2">&quot;.mask_scratch&quot;</span>
+    <span class="n">scratch_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">annotation_scale</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+            <span class="nb">zip</span><span class="p">(</span><span class="n">new_resolutions</span><span class="p">,</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">annotation_stack</span><span class="p">)</span>
+        <span class="p">):</span>
+            <span class="n">resolution_to_data</span><span class="p">[</span><span class="n">res</span><span class="p">]</span> <span class="o">=</span> <span class="n">_compute_4d_masks_for_scale</span><span class="p">(</span>
+                <span class="n">annotation_scale</span><span class="p">,</span>
+                <span class="n">structures_tree</span><span class="p">,</span>
+                <span class="n">expected_mapping</span><span class="p">,</span>
+                <span class="n">scratch_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;scale_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.zarr&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="n">existing_resolutions</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="nb">tuple</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">scale</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">for</span> <span class="n">im</span> <span class="ow">in</span> <span class="n">existing_multiscale</span><span class="o">.</span><span class="n">images</span>
+        <span class="p">]</span>
+        <span class="n">merged_resolutions</span> <span class="o">=</span> <span class="n">_merge_resolutions_list</span><span class="p">(</span>
+            <span class="n">existing_resolutions</span><span class="p">,</span> <span class="n">new_resolutions</span>
+        <span class="p">)</span>
+
+        <span class="n">merged_stack</span> <span class="o">=</span> <span class="p">[</span><span class="n">resolution_to_data</span><span class="p">[</span><span class="n">res</span><span class="p">]</span> <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">merged_resolutions</span><span class="p">]</span>
+        <span class="n">transformations_4d</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">[{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scale&quot;</span><span class="p">,</span> <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">res</span><span class="p">)}]</span>
+            <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">merged_resolutions</span>
+        <span class="p">]</span>
+
+        <span class="n">save_annotation_masks</span><span class="p">(</span><span class="n">merged_stack</span><span class="p">,</span> <span class="n">target_dir</span><span class="p">,</span> <span class="n">transformations_4d</span><span class="p">)</span>
+
+        <span class="n">new_root</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">open_group</span><span class="p">(</span><span class="n">target_masks_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;r+&quot;</span><span class="p">)</span>
+
+        <span class="n">sorted_mapping_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">expected_mapping</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">ANNOTATION_DTYPE</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">annotation_id</span><span class="p">,</span> <span class="n">array_ind</span> <span class="ow">in</span> <span class="n">expected_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">sorted_mapping_list</span><span class="p">[</span><span class="n">array_ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">annotation_id</span>
+
+        <span class="n">new_root</span><span class="p">[</span><span class="n">V3_ANNOTATION_MAP_NAME</span><span class="p">]</span> <span class="o">=</span> <span class="n">sorted_mapping_list</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">scratch_dir</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_save_additional_references</span><span class="p">(</span>
@@ -910,7 +1233,7 @@
 
     <span class="n">atlas_name_with_res</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">resolution</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">um&quot;</span>
     <span class="n">atlas_location</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="n">descriptors</span><span class="o">.</span><span class="n">V2_ATLAS_ROOTDIR</span><span class="si">}</span><span class="s2">/&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="n">descriptors</span><span class="o">.</span><span class="n">V3_ATLAS_ROOTDIR</span><span class="si">}</span><span class="s2">/&quot;</span>
         <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">atlas_name_with_res</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">atlas_version_underscore</span><span class="si">}</span><span class="s2">&quot;</span>
     <span class="p">)</span>
     <span class="n">atlas_dir</span> <span class="o">=</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span> <span class="o">/</span> <span class="n">atlas_location</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
@@ -934,7 +1257,7 @@
     <span class="p">]</span>
 
     <span class="n">metadata_dict</span> <span class="o">=</span> <span class="n">generate_metadata_dict</span><span class="p">(</span>
-        <span class="n">name</span><span class="o">=</span><span class="n">atlas_name_with_res</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="n">atlas_name</span><span class="p">,</span>
         <span class="n">location</span><span class="o">=</span><span class="n">atlas_location</span><span class="p">,</span>
         <span class="n">citation</span><span class="o">=</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">citation</span><span class="p">,</span>
         <span class="n">atlas_link</span><span class="o">=</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">atlas_link</span><span class="p">,</span>
@@ -1118,7 +1441,7 @@
         <span class="n">atlas_name_with_res</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">um&quot;</span>
         <span class="n">atlas_dir</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">working_dir</span>
-            <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V2_ATLAS_ROOTDIR</span>
+            <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V3_ATLAS_ROOTDIR</span>
             <span class="o">/</span> <span class="n">atlas_name_with_res</span>
             <span class="o">/</span> <span class="n">atlas_version_underscore</span>
         <span class="p">)</span>
@@ -1154,7 +1477,7 @@
 
     <span class="k">if</span> <span class="n">coordinate_space_info</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">coordinate_space_info</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">-coordinate-space&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">-space&quot;</span><span class="p">,</span>
             <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="n">atlas_version</span><span class="p">,</span>
         <span class="p">}</span>
 
@@ -1246,14 +1569,23 @@
         <span class="n">transformations</span><span class="p">,</span>
     <span class="p">)</span>
 
-    <span class="n">shapes</span> <span class="o">=</span> <span class="p">[</span><span class="n">image</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span> <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">template_multiscale</span><span class="o">.</span><span class="n">images</span><span class="p">]</span>
+    <span class="n">shapes</span> <span class="o">=</span> <span class="p">{}</span>
 
-    <span class="n">_save_annotation_data</span><span class="p">(</span>
-        <span class="n">packaging_data</span><span class="p">,</span>
-        <span class="n">transformations</span><span class="p">,</span>
-        <span class="n">scale_meshes</span><span class="p">,</span>
-        <span class="n">resolution_mapping</span><span class="p">,</span>
-    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">resolution</span> <span class="ow">in</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">resolution</span><span class="p">:</span>
+        <span class="c1"># Find the closest matching resolution in the template multiscale</span>
+        <span class="n">template_resolutions</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="nb">tuple</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">scale</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="k">for</span> <span class="n">im</span> <span class="ow">in</span> <span class="n">template_multiscale</span><span class="o">.</span><span class="n">images</span>
+        <span class="p">]</span>
+        <span class="n">closest_template_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">resolution</span><span class="p">))</span>
+                <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">template_resolutions</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">closest_template_shape</span> <span class="o">=</span> <span class="n">template_multiscale</span><span class="o">.</span><span class="n">images</span><span class="p">[</span>
+            <span class="n">closest_template_idx</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">shapes</span><span class="p">[</span><span class="n">resolution</span><span class="p">]</span> <span class="o">=</span> <span class="n">closest_template_shape</span>
 
     <span class="n">_save_additional_references</span><span class="p">(</span>
         <span class="n">packaging_data</span><span class="p">,</span>
@@ -1277,7 +1609,20 @@
             <span class="n">coordinate_space_info</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span> <span class="n">coordinate_space_path</span>
         <span class="p">)</span>
 
-    <span class="k">for</span> <span class="n">resolution</span><span class="p">,</span> <span class="n">shape</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">resolution</span><span class="p">,</span> <span class="n">shapes</span><span class="p">):</span>
+    <span class="n">_save_annotation_data</span><span class="p">(</span>
+        <span class="n">packaging_data</span><span class="p">,</span>
+        <span class="n">transformations</span><span class="p">,</span>
+        <span class="n">scale_meshes</span><span class="p">,</span>
+        <span class="n">resolution_mapping</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">_save_4d_annotation_data</span><span class="p">(</span>
+        <span class="n">packaging_data</span><span class="p">,</span>
+        <span class="n">transformations</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">resolution</span> <span class="ow">in</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">resolution</span><span class="p">:</span>
+        <span class="n">shape</span> <span class="o">=</span> <span class="n">shapes</span><span class="p">[</span><span class="n">resolution</span><span class="p">]</span>
         <span class="n">_finalize_atlas_at_resolution</span><span class="p">(</span>
             <span class="n">resolution</span><span class="o">=</span><span class="n">resolution</span><span class="p">,</span>
             <span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span>
@@ -1319,8 +1664,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1334,7 +1679,7 @@ Created using <a href="https://sphinx-doc.org/">Sphinx</a> 8.2.3.
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.18.0.
+0.20.0.
 </p></div>
       
     </div>

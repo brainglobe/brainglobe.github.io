@@ -18,6 +18,8 @@
     
     save_annotation
     
+    save_annotation_masks
+    
     save_hemispheres
     
     save_reference

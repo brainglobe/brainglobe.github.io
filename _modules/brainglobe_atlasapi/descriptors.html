@@ -26,8 +26,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=3215791a" />
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
@@ -40,10 +40,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
     <script src="../../_static/documentation_options.js?v=d45e8c67"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
@@ -528,8 +528,10 @@
 
 <span class="c1"># Base url of the gin repository:</span>
 <span class="n">remote_url_base</span> <span class="o">=</span> <span class="s2">&quot;https://gin.g-node.org/brainglobe/atlases/raw/master/</span><span class="si">{}</span><span class="s2">&quot;</span>
-<span class="n">remote_url_s3</span> <span class="o">=</span> <span class="s2">&quot;s3://brainglobe/atlas/</span><span class="si">{}</span><span class="s2">&quot;</span>
-<span class="n">remote_url_s3_http</span> <span class="o">=</span> <span class="s2">&quot;https://brainglobe.s3.us-west-2.amazonaws.com/atlas/</span><span class="si">{}</span><span class="s2">&quot;</span>
+<span class="n">remote_url_s3</span> <span class="o">=</span> <span class="s2">&quot;s3://brainglobe/atlas-rc2/</span><span class="si">{}</span><span class="s2">&quot;</span>
+<span class="n">remote_url_s3_http</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;https://brainglobe.s3.us-west-2.amazonaws.com/atlas-rc2/</span><span class="si">{}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
 
 <span class="c1"># Major version of atlases used by current brainglobe-atlasapi release:</span>
 <span class="n">ATLAS_MAJOR_V</span> <span class="o">=</span> <span class="mi">0</span>
@@ -573,22 +575,25 @@
 <span class="n">HEMISPHERES_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;hemispheres.tiff&quot;</span>
 <span class="n">MESHES_DIRNAME</span> <span class="o">=</span> <span class="s2">&quot;meshes&quot;</span>
 
-<span class="c1"># V2 file names</span>
-<span class="n">V2_ATLAS_ROOTDIR</span> <span class="o">=</span> <span class="s2">&quot;atlases&quot;</span>
-<span class="n">V2_ANNOTATION_ROOTDIR</span> <span class="o">=</span> <span class="s2">&quot;annotation-sets&quot;</span>
-<span class="n">V2_COORDINATE_SPACE_ROOTDIR</span> <span class="o">=</span> <span class="s2">&quot;coordinate-spaces&quot;</span>
-<span class="n">V2_TEMPLATE_ROOTDIR</span> <span class="o">=</span> <span class="s2">&quot;templates&quot;</span>
-<span class="n">V2_TERMINOLOGY_ROOTDIR</span> <span class="o">=</span> <span class="s2">&quot;terminologies&quot;</span>
-<span class="n">V2_TERMINOLOGY_NAME</span> <span class="o">=</span> <span class="s2">&quot;terminology.csv&quot;</span>
-<span class="n">V2_MESHES_DIRECTORY</span> <span class="o">=</span> <span class="s2">&quot;annotation.precomputed&quot;</span>
-<span class="n">V2_TEMPLATE_NAME</span> <span class="o">=</span> <span class="s2">&quot;anatomical_template.ome.zarr&quot;</span>
-<span class="n">V2_ANNOTATION_NAME</span> <span class="o">=</span> <span class="s2">&quot;annotation.ome.zarr&quot;</span>
-<span class="n">V2_HEMISPHERES_NAME</span> <span class="o">=</span> <span class="s2">&quot;hemispheres.ome.zarr&quot;</span>
+<span class="c1"># V3 file names</span>
+<span class="n">V3_ATLAS_ROOTDIR</span> <span class="o">=</span> <span class="s2">&quot;atlases&quot;</span>
+<span class="n">V3_ANNOTATION_ROOTDIR</span> <span class="o">=</span> <span class="s2">&quot;annotation-sets&quot;</span>
+<span class="n">V3_COORDINATE_SPACE_ROOTDIR</span> <span class="o">=</span> <span class="s2">&quot;coordinate-spaces&quot;</span>
+<span class="n">V3_TEMPLATE_ROOTDIR</span> <span class="o">=</span> <span class="s2">&quot;templates&quot;</span>
+<span class="n">V3_TERMINOLOGY_ROOTDIR</span> <span class="o">=</span> <span class="s2">&quot;terminologies&quot;</span>
+<span class="n">V3_TERMINOLOGY_NAME</span> <span class="o">=</span> <span class="s2">&quot;terminology.csv&quot;</span>
+<span class="n">V3_MESHES_DIRECTORY</span> <span class="o">=</span> <span class="s2">&quot;annotations.precomputed/mesh&quot;</span>
+<span class="n">V3_TEMPLATE_NAME</span> <span class="o">=</span> <span class="s2">&quot;template.ome.zarr&quot;</span>
+<span class="n">V3_ANNOTATION_NAME</span> <span class="o">=</span> <span class="s2">&quot;annotations_compressed.ome.zarr&quot;</span>
+<span class="n">V3_ANNOTATION_MASKS_NAME</span> <span class="o">=</span> <span class="s2">&quot;annotations.ome.zarr&quot;</span>
+<span class="n">V3_ANNOTATION_MAP_NAME</span> <span class="o">=</span> <span class="s2">&quot;annotation_values&quot;</span>
+<span class="n">V3_HEMISPHERES_NAME</span> <span class="o">=</span> <span class="s2">&quot;hemispheres.ome.zarr&quot;</span>
 
 <span class="c1"># Types for the atlas stacks:</span>
 <span class="n">REFERENCE_DTYPE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint16</span>
 <span class="n">ANNOTATION_DTYPE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint32</span>
 <span class="n">HEMISPHERES_DTYPE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span>
+<span class="n">ANNOTATION_MASKS_DTYPE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span>
 
 <span class="c1"># Standard orientation origin: Anterior, Superior, Right</span>
 <span class="c1"># (using brainglobe-space definition)</span>
@@ -658,7 +663,7 @@
 <span class="sd">        The formatted template stub.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">format_component_stub</span><span class="p">(</span>
-        <span class="n">template_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">V2_TEMPLATE_ROOTDIR</span><span class="p">,</span> <span class="n">V2_TEMPLATE_NAME</span>
+        <span class="n">template_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">V3_TEMPLATE_ROOTDIR</span><span class="p">,</span> <span class="n">V3_TEMPLATE_NAME</span>
     <span class="p">)</span></div>
 
 
@@ -682,7 +687,7 @@
 <span class="sd">        The formatted annotation stub.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">format_component_stub</span><span class="p">(</span>
-        <span class="n">annotation_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">V2_ANNOTATION_ROOTDIR</span><span class="p">,</span> <span class="n">V2_ANNOTATION_NAME</span>
+        <span class="n">annotation_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">V3_ANNOTATION_ROOTDIR</span><span class="p">,</span> <span class="n">V3_ANNOTATION_NAME</span>
     <span class="p">)</span></div>
 
 
@@ -706,7 +711,7 @@
 <span class="sd">        The formatted hemispheres stub.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">format_component_stub</span><span class="p">(</span>
-        <span class="n">annotation_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">V2_ANNOTATION_ROOTDIR</span><span class="p">,</span> <span class="n">V2_HEMISPHERES_NAME</span>
+        <span class="n">annotation_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">V3_ANNOTATION_ROOTDIR</span><span class="p">,</span> <span class="n">V3_HEMISPHERES_NAME</span>
     <span class="p">)</span></div>
 
 
@@ -730,7 +735,7 @@
 <span class="sd">        The formatted terminology stub.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">format_component_stub</span><span class="p">(</span>
-        <span class="n">terminology_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">V2_TERMINOLOGY_ROOTDIR</span><span class="p">,</span> <span class="n">V2_TERMINOLOGY_NAME</span>
+        <span class="n">terminology_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">V3_TERMINOLOGY_ROOTDIR</span><span class="p">,</span> <span class="n">V3_TERMINOLOGY_NAME</span>
     <span class="p">)</span></div>
 
 
@@ -754,7 +759,7 @@
 <span class="sd">        The formatted meshes stub.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">format_component_stub</span><span class="p">(</span>
-        <span class="n">annotation_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">V2_ANNOTATION_ROOTDIR</span><span class="p">,</span> <span class="n">V2_MESHES_DIRECTORY</span>
+        <span class="n">annotation_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">V3_ANNOTATION_ROOTDIR</span><span class="p">,</span> <span class="n">V3_MESHES_DIRECTORY</span>
     <span class="p">)</span></div>
 
 </pre></div>
@@ -789,8 +794,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -804,7 +809,7 @@ Created using <a href="https://sphinx-doc.org/">Sphinx</a> 8.2.3.
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.18.0.
+0.20.0.
 </p></div>
       
     </div>

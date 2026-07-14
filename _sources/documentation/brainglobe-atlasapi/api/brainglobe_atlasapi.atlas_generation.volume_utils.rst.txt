@@ -18,4 +18,6 @@
     
     create_masked_array
     
+    create_masked_array_numba
+    
 

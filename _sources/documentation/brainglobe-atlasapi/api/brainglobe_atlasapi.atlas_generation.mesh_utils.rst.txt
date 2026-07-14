@@ -32,4 +32,8 @@
     
     extract_mesh_from_mask
     
+    write_mesh
+    
+    write_mesh_info
+    
 

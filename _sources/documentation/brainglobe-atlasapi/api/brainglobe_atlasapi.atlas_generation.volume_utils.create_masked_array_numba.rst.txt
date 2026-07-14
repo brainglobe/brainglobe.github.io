@@ -1,0 +1,6 @@
+create\_masked\_array\_numba
+============================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.volume_utils
+
+.. autofunction:: create_masked_array_numba

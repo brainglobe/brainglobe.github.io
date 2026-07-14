@@ -1,0 +1,6 @@
+save\_annotation\_masks
+=======================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.stacks
+
+.. autofunction:: save_annotation_masks

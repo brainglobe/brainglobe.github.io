@@ -1,0 +1,6 @@
+write\_mesh\_info
+=================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.mesh_utils
+
+.. autofunction:: write_mesh_info

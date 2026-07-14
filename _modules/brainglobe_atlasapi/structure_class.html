@@ -26,8 +26,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=3215791a" />
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
@@ -40,10 +40,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
     <script src="../../_static/documentation_options.js?v=d45e8c67"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
@@ -528,6 +528,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">UserDict</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
+<span class="kn">import</span><span class="w"> </span><span class="nn">DracoPy</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">meshio</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mio</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">s3fs</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">fsspec.callbacks</span><span class="w"> </span><span class="kn">import</span> <span class="n">TqdmCallback</span>
@@ -580,31 +581,63 @@
                 <span class="p">)</span>
                 <span class="k">return</span> <span class="kc">None</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_check_mesh_cached</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="n">mio</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>
-                    <span class="n">file_name</span><span class="p">,</span> <span class="n">file_format</span><span class="o">=</span><span class="s2">&quot;neuroglancer&quot;</span>
-                <span class="p">)</span>
-            <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="n">mio</span><span class="o">.</span><span class="n">ReadError</span><span class="p">,</span> <span class="ne">FileNotFoundError</span><span class="p">):</span>
-                <span class="k">raise</span> <span class="n">mio</span><span class="o">.</span><span class="n">ReadError</span><span class="p">(</span>
-                    <span class="s2">&quot;No valid mesh for region: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;acronym&quot;</span><span class="p">])</span>
-                <span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">file_name</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_download_mesh</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_mesh</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+            <span class="k">except</span> <span class="p">(</span>
+                <span class="ne">TypeError</span><span class="p">,</span>
+                <span class="n">mio</span><span class="o">.</span><span class="n">ReadError</span><span class="p">,</span>
+                <span class="ne">FileNotFoundError</span><span class="p">,</span>
+                <span class="n">DracoPy</span><span class="o">.</span><span class="n">FileTypeException</span><span class="p">,</span>
+            <span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Failed to read mesh for region </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;acronym&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;from file </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_check_mesh_cached</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="n">Path</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if the mesh is cached, and if not, attempt to load it.&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">file_name</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
-            <span class="k">return</span>
-
-        <span class="n">root_path</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)[</span><span class="o">-</span><span class="mi">5</span><span class="p">:])</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_download_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Download the mesh from the remote S3 bucket if it is not cached.&quot;&quot;&quot;</span>
+        <span class="n">root_path</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)[</span><span class="o">-</span><span class="mi">6</span><span class="p">:])</span>
         <span class="n">remote_mesh_path</span> <span class="o">=</span> <span class="n">remote_url_s3</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">root_path</span><span class="p">)</span>
         <span class="n">fs</span> <span class="o">=</span> <span class="n">s3fs</span><span class="o">.</span><span class="n">S3FileSystem</span><span class="p">(</span><span class="n">anon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
         <span class="k">if</span> <span class="ow">not</span> <span class="n">fs</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">remote_mesh_path</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
                 <span class="sa">f</span><span class="s2">&quot;Mesh file </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2"> not found locally or remotely.&quot;</span>
             <span class="p">)</span>
 
-        <span class="n">fs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_mesh_path</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">TqdmCallback</span><span class="p">())</span></div>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">fs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_mesh_path</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">TqdmCallback</span><span class="p">())</span>
+        <span class="k">except</span> <span class="ne">BaseException</span><span class="p">:</span>
+            <span class="n">file_name</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">missing_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Removes corrupt file</span>
+            <span class="k">raise</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_read_mesh</span><span class="p">(</span><span class="n">mesh_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">mio</span><span class="o">.</span><span class="n">Mesh</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read one object back into (vertices, faces).</span>
+
+<span class="sd">        Re-orient from XYZ to ZYX and scale from nm to um.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        meshio.Mesh</span>
+<span class="sd">            The mesh object reoriented and scaled.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">mesh_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">mesh</span> <span class="o">=</span> <span class="n">DracoPy</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+        <span class="n">points</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">points</span> <span class="o">/</span> <span class="mf">1000.0</span>  <span class="c1"># scale from nm to um</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">points</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>  <span class="c1"># reorient from XYZ to ZYX</span>
+        <span class="n">faces</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">faces</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>  <span class="c1"># reorient from XYZ to ZYX</span>
+
+        <span class="k">return</span> <span class="n">mio</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span>
+            <span class="n">points</span><span class="o">=</span><span class="n">points</span><span class="p">,</span>
+            <span class="n">cells</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;triangle&quot;</span><span class="p">,</span> <span class="n">faces</span><span class="p">)],</span>
+        <span class="p">)</span></div>
 
 
 
@@ -691,8 +724,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -706,7 +739,7 @@ Created using <a href="https://sphinx-doc.org/">Sphinx</a> 8.2.3.
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.18.0.
+0.20.0.
 </p></div>
       
     </div>
