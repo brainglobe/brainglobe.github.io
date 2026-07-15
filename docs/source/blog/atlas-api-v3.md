@@ -9,7 +9,7 @@ language: English
 
 # `brainglobe-atlasapi` V3
 
-A pre-release version of `brainglobe-atlasapi` V3 is now available.
+A pre-release version of `brainglobe-atlasapi` V3 is now available. Please try it in your tools and workflows and report any [issues](https://github.com/brainglobe/brainglobe-atlasapi/issues) you encounter!
 
 ## New file formats and storage
 
