@@ -31,8 +31,8 @@ The end result will look something like Figure 2.
 
 ![tawny dragon brain atlas visualised in napari](./images/tawny_dragon_brain_napari.png)
 
-**Figure 2: The Tawny Dragon Brain atlas visualised with `brainrender-napari`: with mesh overlays for the brain (grey), the hippocampal formation (green) and the cerebellum (yellow).**
+**Figure 2: The Tawny Dragon Brain atlas visualised with `brainrender-napari`: with mesh overlays for the brain (grey), the locus coeruleus (cyan) and the dorsomedial cortex (yellow).**
 
 ## Why are we adding new atlases?
 
-A fundamental aim of the BrainGlobe project is to make various brain atlases easily accessible by users across the globe. The CCFv2 Mouse Brain atlases allow for users to use historical versions of the Allen 3D atlases easily on BrainGlobe. If you would like to get involved with a similar project, please [get in touch](/contact).
+A fundamental aim of the BrainGlobe project is to make various brain atlases easily accessible by users across the globe. The tawny dragon brain atlas allows for users to use the atlases created by Hoops et al easily on BrainGlobe. If you would like to get involved with a similar project, please [get in touch](/contact).
