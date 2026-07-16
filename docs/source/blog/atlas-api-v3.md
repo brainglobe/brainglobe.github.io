@@ -9,7 +9,7 @@ language: English
 
 # `brainglobe-atlasapi` V3
 
-A pre-release version of `brainglobe-atlasapi` V3 is now available. Please try it in your tools and workflows and report any [issues](https://github.com/brainglobe/brainglobe-atlasapi/issues) you encounter!
+A pre-release version of `brainglobe-atlasapi` V3 is now available. Please try it in your tools and workflows and report any issues you encounter on either [Zulip](https://brainglobe.zulipchat.com/#narrow/channel/483906-Atlas-API) or [GitHub](https://github.com/brainglobe/brainglobe-atlasapi/issues) you encounter!
 
 ## New file formats and storage
 
@@ -17,6 +17,10 @@ The most significant change is how atlases are stored on disk. Previously, each 
 
 V3 moves image data to [OME-Zarr](https://ngff.openmicroscopy.org/), a chunked, pyramidal, cloud-native format, and stores everything on AWS S3.
 Further, an atlas is no longer a monolithic bundle. It's now assembled from independently versioned components: templates, annotation sets, coordinate spaces and terminologies. Each of these can be shared between atlases and updated on its own.
+
+![An illustration showing the the remote and the local directory structures. The remote directory shows two atlases with their shared components. The total disk usage on the remote is 2.8 GB. The local directory is shown after installing the atlases. Only the necessary components are downloaded and the disk usage is 268 KB](images/brainglobe_atlasapi_v3_structure.png)
+
+**Figure 1. An example of the local and remote directory structure for the new version.**
 
 Importantly, installing an atlas no longer downloads all components up front. The meshes, template, and annotations are fetched from S3 the first time you access them. That means faster instantiation and a much smaller footprint on disk and bandwidth than the previous monolithic atlases.
 
