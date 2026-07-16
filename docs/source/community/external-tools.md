@@ -134,6 +134,10 @@ PixelMap is a browser-based GUI to generate Neuropixels channelmaps.
 - [Online GUI](https://pixelmap.pni.princeton.edu/app)
 - [Documentation](https://pixelmap-neuropixels.readthedocs.io/en/latest/)
 
+## 3D Brain Animations
+3D Brain Animations is a Claude Code skill that renders glowing, rotating 3D brain animations and stills from natural language descriptions, using BlenderBrain and BrainGlobe atlases.
+- [GitHub repository](https://github.com/SamedVossberg/3d-brain-animations)
+
 :::{hint}
 If you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. Typically we include tools which:
 
