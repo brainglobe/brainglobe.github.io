@@ -18,7 +18,15 @@ The most significant change is how atlases are stored on disk. Previously, each 
 V3 moves image data to [OME-Zarr](https://ngff.openmicroscopy.org/), a chunked, pyramidal, cloud-native format, and stores everything on AWS S3.
 Further, an atlas is no longer a monolithic bundle. It's now assembled from independently versioned components: templates, annotation sets, coordinate spaces and terminologies. Each of these can be shared between atlases and updated on its own.
 
-![An illustration showing the the remote and the local directory structures. The remote directory shows two atlases with their shared components. The total disk usage on the remote is 2.8 GB. The local directory is shown after installing the atlases. Only the necessary components are downloaded and the disk usage is 268 KB](images/brainglobe_atlasapi_v3_structure.png)
+```{image} ./images/brainglobe-atlasapi_v3_structure_dark.png
+:class: only-dark
+:alt: An illustration showing the the remote and the local directory structures. The remote directory shows two atlases with their shared components. The total disk usage on the remote is 2.8 GB. The local directory is shown after installing the atlases. Only the necessary components are downloaded and the disk usage is 268 KB.
+```
+
+```{image} ./images/brainglobe-atlasapi_v3_structure.png
+:class: only-light
+:alt: An illustration showing the the remote and the local directory structures. The remote directory shows two atlases with their shared components. The total disk usage on the remote is 2.8 GB. The local directory is shown after installing the atlases. Only the necessary components are downloaded and the disk usage is 268 KB.
+```
 
 **Figure 1. An example of the local and remote directory structure for the new version.**
 
