@@ -28,7 +28,7 @@ Further, an atlas is no longer a monolithic bundle. It's now assembled from inde
 :alt: An illustration showing the the remote and the local directory structures. The remote directory shows two atlases with their shared components. The total disk usage on the remote is 2.8 GB. The local directory is shown after installing the atlases. Only the necessary components are downloaded and the disk usage is 268 KB.
 ```
 
-**Figure 1. An example of the local and remote directory structure for the new version.**
+**Figure 1. An example of the local and remote directory structure for brainglobe-atlasapi V2 and V3.**
 
 Importantly, installing an atlas no longer downloads all components up front. The meshes, template, and annotations are fetched from S3 the first time you access them. That means faster instantiation and a much smaller footprint on disk and bandwidth than the previous monolithic atlases.
 
