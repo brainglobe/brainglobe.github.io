@@ -13,7 +13,7 @@ A pre-release version of `brainglobe-atlasapi` V3 is now available. Please try i
 
 ## New file formats and storage
 
-The most significant change is how atlases are stored on disk. In the current version, each atlas is a single package: `reference.tiff`, `annotation.tiff`, `hemispheres.tiff`, a `structures.json` and a `meshes/` folder, bundled together and downloaded from GIN as one monolithic archive.
+The most significant change is how atlases are stored on disk. In the current version, each atlas is a single package, including `reference.tiff`, `annotation.tiff`, `hemispheres.tiff` files, a `structures.json` and a `meshes/` folder, bundled together and downloaded from GIN as one monolithic archive.
 
 V3 moves image data to [OME-Zarr](https://ngff.openmicroscopy.org/), a chunked, pyramidal, cloud-native format, and stores everything on AWS S3.
 Further, an atlas is no longer a monolithic bundle. It's now assembled from independently versioned components: templates, annotation sets, coordinate spaces and terminologies. Each of these can be shared between atlases and updated on its own.
