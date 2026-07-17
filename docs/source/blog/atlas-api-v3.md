@@ -1,13 +1,13 @@
 ---
 blogpost: true
-date: Jul 15, 2026
+date: Jul 17, 2026
 author: Igor Tatarnikov
 location: London, England
 category: brainglobe
 language: English
 ---
 
-# `brainglobe-atlasapi` V3
+# `brainglobe-atlasapi` V3 pre-release
 
 A pre-release version of `brainglobe-atlasapi` V3 is now available. Please try it in your tools and workflows and report any issues you encounter on either [Zulip](https://brainglobe.zulipchat.com/#narrow/channel/483906-Atlas-API) or [GitHub](https://github.com/brainglobe/brainglobe-atlasapi/issues).
 
@@ -30,7 +30,7 @@ Further, an atlas is no longer a monolithic bundle. It's now assembled from inde
 
 **Figure 1. An example of the local and remote directory structure for brainglobe-atlasapi V2 and V3.**
 
-Importantly, installing an atlas no longer downloads all components up front. The meshes, template, and annotations are fetched from S3 the first time you access them. That means faster instantiation and a much smaller footprint on disk and bandwidth than the previous monolithic atlases.
+Importantly, installing an atlas no longer downloads all components up front. The meshes, template, and annotations are fetched from S3 the first time you access them. That means faster instantiation and a much smaller footprint on disk than the previous monolithic atlases. This also allows the components to be streamed to online viewers such as [neuroglancer](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/columbia_cuttlefish.json).
 
 ## What do I need to do?
 
