@@ -217,6 +217,7 @@ linkcheck_ignore = [
     r".*/*_examples/.*\.html",
     "https://neuromorpho.org/",
     "https://brainglobe.zulipchat.com/#narrow/stream/414089-developer-meeting",
+    "https://brainglobe.zulipchat.com/#narrow/channel/483906-Atlas-API",
     "https://easyengine.io",
     "https://www.scientifica.uk.com",
     "https://brainglobe.info",
