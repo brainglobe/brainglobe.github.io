@@ -9,7 +9,7 @@ language: English
 
 # `brainglobe-atlasapi` V3
 
-A pre-release version of `brainglobe-atlasapi` V3 is now available. Please try it in your tools and workflows and report any issues you encounter on either [Zulip](https://brainglobe.zulipchat.com/#narrow/channel/483906-Atlas-API) or [GitHub](https://github.com/brainglobe/brainglobe-atlasapi/issues) you encounter!
+A pre-release version of `brainglobe-atlasapi` V3 is now available. Please try it in your tools and workflows and report any issues you encounter on either [Zulip](https://brainglobe.zulipchat.com/#narrow/channel/483906-Atlas-API) or [GitHub](https://github.com/brainglobe/brainglobe-atlasapi/issues).
 
 ## New file formats and storage
 
