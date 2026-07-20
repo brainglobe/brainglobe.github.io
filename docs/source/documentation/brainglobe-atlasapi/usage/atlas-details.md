@@ -467,6 +467,22 @@ The template is resampled from 50μm to 39μm during registration to Waxholm Spa
 This atlas is only available at 39μm resolution (resampled from 50 µm during registration to Waxholm Space):
 * `whs_sd_swc_female_rat_39um`
 
+### [Duke Developmental Rat Brain Atlas](https://doi.org/10.1016/j.neuroimage.2013.01.017)
+These atlases from [Calabrese et al. (2013)](https://doi.org/10.1016/j.neuroimage.2013.01.017) were obtained from 5 specimens each from 9 different time
+points using a 7T MRI. The earliest 5 timepoints were registered to the Ashwell and Paxions neonatal rat atlas and the last 4 timepoints were registered
+to the Paxinos and Watson adult rat atlas to give a consistent view of the structural changes that occur over development. 
+
+These atlases are only available at 25μm resolution:
+* `duke_dev_rat_p00_25um` - P0
+* `duke_dev_rat_p02_25um` - P2
+* `duke_dev_rat_p04_25um` - P4
+* `duke_dev_rat_p08_25um` - P8
+* `duke_dev_rat_p12_25um` - P12
+* `duke_dev_rat_p18_25um` - P18
+* `duke_dev_rat_p24_25um` - P24
+* `duke_dev_rat_p40_25um` - P40
+* `duke_dev_rat_p80_25um` - P80
+
 ## Other rodent
 ### [Prairie vole brain atlas](https://doi.org/10.7554/eLife.87029.3.sa0)
 This is a brain atlas of the Prairie vole (Microtus ochrogaster) from
