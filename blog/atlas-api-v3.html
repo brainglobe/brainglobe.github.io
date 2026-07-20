@@ -627,7 +627,11 @@
                 <article class="bd-article">
                    <section class="tex2jax_ignore mathjax_ignore" id="brainglobe-atlasapi-v3-pre-release">
 <h1><code class="docutils literal notranslate"><span class="pre">brainglobe-atlasapi</span></code> V3 pre-release<a class="headerlink" href="#brainglobe-atlasapi-v3-pre-release" title="Link to this heading">#</a></h1>
-<p>A pre-release version of <code class="docutils literal notranslate"><span class="pre">brainglobe-atlasapi</span></code> V3 is now available. Please try it in your tools and workflows and report any issues you encounter on either <a class="reference external" href="https://brainglobe.zulipchat.com/#narrow/channel/483906-Atlas-API">Zulip</a> or <a class="reference external" href="https://github.com/brainglobe/brainglobe-atlasapi/issues">GitHub</a>.</p>
+<p>A pre-release version of <code class="docutils literal notranslate"><span class="pre">brainglobe-atlasapi</span></code> V3 is now available. You can install it using by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>brainglobe-atlasapi<span class="w"> </span>--pre
+</pre></div>
+</div>
+<p>Please try it in your tools and workflows, in a fresh environment if possible, and report any issues you encounter on either <a class="reference external" href="https://brainglobe.zulipchat.com/#narrow/channel/483906-Atlas-API">Zulip</a> or <a class="reference external" href="https://github.com/brainglobe/brainglobe-atlasapi/issues">GitHub</a>.</p>
 <section id="new-file-formats-and-storage">
 <h2>New file formats and storage<a class="headerlink" href="#new-file-formats-and-storage" title="Link to this heading">#</a></h2>
 <p>The most significant change is how atlases are stored on disk. Previously, each atlas was a single package, including <code class="docutils literal notranslate"><span class="pre">reference.tiff</span></code>, <code class="docutils literal notranslate"><span class="pre">annotation.tiff</span></code>, <code class="docutils literal notranslate"><span class="pre">hemispheres.tiff</span></code> files, a <code class="docutils literal notranslate"><span class="pre">structures.json</span></code> and a <code class="docutils literal notranslate"><span class="pre">meshes/</span></code> folder, bundled together and downloaded from GIN as one monolithic archive.</p>
