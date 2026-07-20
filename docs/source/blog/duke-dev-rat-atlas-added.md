@@ -9,13 +9,11 @@ language: English
 
 # The Duke Developmental Rat Brain Atlases have been added to BrainGlobe
 
-TODO: Add info about the atlases. 
-
-We have packaged the nine atlases which comprise the Duke developmental rat brain atlas. 
+The brain continues to develop well after an organism is born. To provide a comprehensive view of the growth of various brain regions in rats, [Calabrese et al. (2013)](https://doi.org/10.1016/j.neuroimage.2013.01.017) of Duke University created a high resolution averaged T2 MRI atlas of postnatal rat brain development using five specimens each at nine different timepoints (P0, P2, P4, P8, P12, P18, P24, P40, P80), with consistent region labelling across all nine atlases. These atlases were aligned to two rat atlases for consistency: the Paxinos and Watson adult rat atlas for the latest four timepoints, and the Ashwell and Paxions neonatal rat atlas for the earliest five timepoints. This gave the authors 26 developmentally distinct regions, allowing them to plot growth curves for the rat brain by measuring their volumes over time. We have packaged the nine atlases which comprise the Duke developmental rat brain atlas to be used within BrainGlobe. 
 
 ![duke dev rat brain atlas annotations](./images/duke_dev_rat_brain_atlas.png)
 
-**Figure 1. The nine timepoints of the Duke Developmental Rat Brain Atlas.**
+**Figure 1. The nine timepoints of the Duke Developmental Rat Brain Atlas, with right annotations overlaid on references (not to scale).**
 
 The BrainGlobe team re-packaged the data generated and made public by the authors, making it now possible to use the Duke developmental rat brain atlases within the BrainGlobe ecosystem. The atlas names are:
 
