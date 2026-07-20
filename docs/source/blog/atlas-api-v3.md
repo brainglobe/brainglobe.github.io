@@ -15,7 +15,7 @@ A pre-release version of `brainglobe-atlasapi` V3 is now available. You can inst
 pip install brainglobe-atlasapi --pre
 ```
 
-Please try it in your tools and workflows and report any issues you encounter on either [Zulip](https://brainglobe.zulipchat.com/#narrow/channel/483906-Atlas-API) or [GitHub](https://github.com/brainglobe/brainglobe-atlasapi/issues).
+Please try it in your tools and workflows, in a fresh environment if possible, and report any issues you encounter on either [Zulip](https://brainglobe.zulipchat.com/#narrow/channel/483906-Atlas-API) or [GitHub](https://github.com/brainglobe/brainglobe-atlasapi/issues).
 
 ## New file formats and storage
 
