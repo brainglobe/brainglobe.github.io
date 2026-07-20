@@ -104,4 +104,4 @@ This will provide a 3D interactive display of the probe tracks:
 The code to run this example can be found at [probe_tracks.py](https://github.com/brainglobe/brainrender/blob/main/examples/probe_tracks.py).
 :::
 
-**Tutorial adapted from instructions by** [**Mateo Vélez-Fort**](https://www.sainsburywellcome.org/web/people/mateo-velez-fort) and [**Jingjie Li**](https://www.sainsburywellcome.org/web/people/jingjie-li)
+**Tutorial adapted from instructions by** [**Mateo Vélez-Fort**](https://www.sainsburywellcome.org/web/people/mateo-velez-fort) and [**Jingjie Li**](https://github.com/jingjie-li)
