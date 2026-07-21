@@ -9,7 +9,7 @@ software that leverages the BrainGlobe ecosystem in some way:
 ## QUINT
 QUINT is a registration pipeline which consists of QuickNII, VisuAlign, and Nutil for quantification. The QUINT 
 developers have created a BrainGlobe Atlas Installer. 
-- [BrainGlobe Atlas Installer](https://github.com/Tevemadar/BrainGlobe-support)
+- [GitHub repository](https://github.com/Tevemadar/BrainGlobe-support)
 - [Documentation](https://quint-workflow.readthedocs.io/en/latest/QUINTintro.html)
 - [Paper](https://doi.org/10.3389/fninf.2019.00075)
 
