@@ -49,6 +49,7 @@ For a tutorial on how to use the basic features of the API, please see the [Brai
 
 ```{toctree}
 :maxdepth: 2
+usage/quickstart
 usage/atlas-details
 usage/command-line-interface
 usage/using-the-files-directly
