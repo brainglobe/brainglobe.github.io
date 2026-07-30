@@ -5,13 +5,6 @@
 ::::{grid} 1 2 2 3
 :gutter: 3
 
-:::{grid-item-card} {fas}`brain;sd-text-primary` BrainGlobe Atlas API quickstart
-:img-bottom: ../api_examples/images/thumb/sphx_glr_brainglobe_atlasapi_thumb.png
-:link: ../api_examples/brainglobe_atlasapi.html
-:link-type: url
-Using the BrainGlobe Atlas API to fetch and inspect an atlas
-:::
-
 :::{grid-item-card} {fas}`brain;sd-text-primary` Atlas visualisation
 :img-bottom: images/visualise-atlas-napari.png
 :link: visualise-atlas-napari
@@ -102,6 +95,18 @@ Whole brain cell detection and registration
 Deepening understanding of atlas data and metadata (experimental!)
 :::
 
+::::
+
+## API tutorials
+::::{grid} 1 2 2 3
+:gutter: 3
+
+:::{grid-item-card} {fas}`brain;sd-text-primary` BrainGlobe Atlas API
+:img-bottom: ../api_examples/images/thumb/sphx_glr_brainglobe_atlasapi_thumb.png
+:link: ../api_examples/brainglobe_atlasapi.html
+:link-type: url
+Using the BrainGlobe Atlas API to fetch and inspect an atlas
+:::
 ::::
 
 ## Template building (experimental)
