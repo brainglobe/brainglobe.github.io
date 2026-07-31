@@ -515,6 +515,37 @@ This is an MRI atlas of the grey mouse lemur (Microcebus murinus) from
 This atlas is only available at 91um resolution
 * `nadkarni_mri_mouselemur_91um`
 
+### [Cortical Hierarchy Atlas of the Rhesus Macaque (CHARM)](https://doi.org/10.1016/j.neuroimage.2021.117997)
+This is a hierarchical cortical atlas of the rhesus macaque (_Macaca mulatta_) in NIMH Macaque Template (NMT) space
+from [Jung et al. (2021)](https://doi.org/10.1016/j.neuroimage.2021.117997).
+The atlas provides six annotation levels, from broad cortical subdivisions to finer D99-derived cortical regions.
+BrainGlobe hosts the symmetric full-head 250um version in NMT v2.0 space. For more details please see
+[the blogpost](/blog/nmt-macaque-atlases-added).
+
+This atlas is only available at 250um resolution:
+* `nmt_charm_sym_macaque_250um`
+
+### [Subcortical Atlas of the Rhesus Macaque (SARM)](https://doi.org/10.1016/j.neuroimage.2021.117996)
+This is a hierarchical subcortical atlas of the rhesus macaque in NMT space from
+[Hartig et al. (2021)](https://doi.org/10.1016/j.neuroimage.2021.117996). It was built from high-resolution
+ex vivo structural imaging and histological data, then warped and refined in NMT v2 space. The atlas covers
+subcortical structures including the basal ganglia, thalamus, hypothalamus, brainstem, and cerebellum.
+BrainGlobe hosts the symmetric full-head 250um version in NMT v2.0 space. For more details please see
+[the blogpost](/blog/nmt-macaque-atlases-added).
+
+This atlas is only available at 250um resolution:
+* `nmt_sarm_sym_macaque_250um`
+
+### [Atlas of the Rhesus Macaque (ARM)](https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/template_nmtv2.html)
+This atlas combines the cortical CHARM and subcortical SARM resources into a single full-brain hierarchy in
+the updated NMT v2.1 symmetric full-head space. It is useful when users want cortex and subcortex together
+rather than loading separate cortical and subcortical atlases. The packaged atlas includes improved hippocampal
+annotations compared with the NMT v2.0 distribution. For more details please see
+[the blogpost](/blog/nmt-macaque-atlases-added).
+
+This atlas is only available at 250um resolution:
+* `nmt_arm_sym_macaque_250um`
+
 ## Other mammal
 ### [Cat brain atlas](https://doi.org/10.1002/cne.24271)
 
