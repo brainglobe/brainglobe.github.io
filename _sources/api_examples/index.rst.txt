@@ -25,10 +25,10 @@ Below is a gallery of examples showcasing the use of BrainGlobe APIs.
 
 .. only:: html
 
-  .. image:: /api_examples/images/thumb/sphx_glr_brainglobe_atlasapi_example_thumb.png
+  .. image:: /api_examples/images/thumb/sphx_glr_brainglobe_atlasapi_thumb.png
     :alt:
 
-  :doc:`/api_examples/brainglobe_atlasapi_example`
+  :doc:`/api_examples/brainglobe_atlasapi`
 
 .. raw:: html
 
@@ -46,7 +46,7 @@ Below is a gallery of examples showcasing the use of BrainGlobe APIs.
 .. toctree::
    :hidden:
 
-   /api_examples/brainglobe_atlasapi_example
+   /api_examples/brainglobe_atlasapi
 
 
 .. only:: html

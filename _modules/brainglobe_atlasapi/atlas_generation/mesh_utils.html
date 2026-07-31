@@ -886,7 +886,9 @@
     <span class="n">volume_size</span> <span class="o">=</span> <span class="n">volume</span><span class="o">.</span><span class="n">size</span>
     <span class="k">if</span> <span class="n">parallel</span><span class="p">:</span>
         <span class="n">compressor</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">codecs</span><span class="o">.</span><span class="n">BloscCodec</span><span class="p">(</span>
-            <span class="n">cname</span><span class="o">=</span><span class="s2">&quot;zstd&quot;</span><span class="p">,</span> <span class="n">clevel</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="n">zarr</span><span class="o">.</span><span class="n">codecs</span><span class="o">.</span><span class="n">BloscShuffle</span><span class="o">.</span><span class="n">bitshuffle</span>
+            <span class="n">cname</span><span class="o">=</span><span class="s2">&quot;zstd&quot;</span><span class="p">,</span>
+            <span class="n">clevel</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+            <span class="n">shuffle</span><span class="o">=</span><span class="s2">&quot;bitshuffle&quot;</span><span class="p">,</span>
         <span class="p">)</span>
 
         <span class="k">if</span> <span class="n">ann_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
