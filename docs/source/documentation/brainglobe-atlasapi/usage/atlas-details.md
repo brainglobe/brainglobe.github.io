@@ -491,13 +491,13 @@ This atlas is only available at 2μm resolution:
 * `sju_cavefish_2um`
 
 ## Lizard
-### [Tawny Dragon Brain Atlas](https://doi.org/10.1007/s00429-021-02282-z)
+### [Hoops Tawny Dragon Brain Atlas](https://doi.org/10.1007/s00429-021-02282-z)
 This is a symmetric atlas of the tawny dragon lizard (Ctenophorus decresii) brain from 
 [Hoops et al. (2021)](https://doi.org/10.1007/s00429-021-02282-z) with 224 segmentations, 
 made from averaged MRI images of 13 male tawny dragon lizards. For more details please 
-see [the blogpost](/blog/dragon-atlas-added).
+see [the blogpost](/blog/tawny-dragon-atlas-added).
 This atlas is only available at 50μm resolution:
-* `hoops_dragon_50um`
+* `hoops_tawny_dragon_50um`
 
 ## Amphibian
 ### [UNAM Axolotl Brain Atlas](https://doi.org/10.1038/s41598-021-89357-3)
