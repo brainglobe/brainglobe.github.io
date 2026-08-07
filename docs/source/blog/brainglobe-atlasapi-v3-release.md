@@ -22,7 +22,7 @@ If you followed along with the [V3 pre-release post](atlas-api-v3.md), you alrea
 
 An atlas is no longer a single bundle. It is a manifest that points at four kinds of independently versioned components: a template, an annotation set (labels, hemispheres, meshes, and pre-computed masks), a coordinate space, and a terminology. The layout follows the [Atlas Asset Organization](https://atlas-assets.readthedocs.io/en/latest/index.html) from the Allen Institute.
 
-Components that are shared between atlases are stored once rather than duplicated per atlas. Two annotation sets over the same template, or the same terminology reused across related atlases, are uploaded a single time.
+Components that are shared between atlases are stored once rather than duplicated per atlas. Two annotation sets associated with the same template, or the same terminology reused across related atlases, are uploaded a single time.
 
 ```{image} ./images/brainglobe-atlasapi_v3_structure_dark.png
 :class: only-dark
@@ -54,11 +54,11 @@ Download times now scale with what your analysis needs, not with the size of the
 
 ### Uptime and download speed
 
-Atlases are now served from AWS S3 rather than from [GIN](https://gin.g-node.org/). GIN has served BrainGlobe well for years, but it is a single research-hosted service, and when it was slow or down every pipeline that needed a fresh atlas stalled. S3 is redundant and has much higher throughput, so that should stop happening. The chunked formats help here too: a download is now many small independent requests that can be fetched in parallel, instead of one long serial transfer.
+Atlases are now served from AWS S3 rather than from [GIN](https://gin.g-node.org/). GIN has served BrainGlobe well for years, but it is hosted by a single research institute, and when it was slow or down every pipeline that needed a fresh atlas stalled. S3 is redundant and has much higher throughput, so that should stop happening. The chunked formats help here too: a download is now many small independent requests that can be fetched in parallel, instead of one long serial transfer.
 
 ### Faster iteration across atlases
 
-Comparing regions across atlases used to mean waiting for each atlas to download in full before you could look at anything. Now a loop over a dozen atlases costs a dozen manifest downloads plus whichever components you touch. Comparing region hierarchies never downloads a single voxel, and comparing one region's mesh downloads one mesh per atlas.
+Comparing regions across atlases used to mean waiting for each atlas to download in full before you could look at anything. Now a loop over a many atlases costs a few manifest downloads plus whichever components you touch. Comparing region hierarchies never downloads a single voxel, and comparing one region's mesh downloads one mesh per atlas.
 
 ### Faster structure mask computation
 
@@ -74,7 +74,7 @@ from brainglobe_atlasapi import BrainGlobeAtlas
 atlas = BrainGlobeAtlas("allen_mouse_25um", version="3.0")
 ```
 
-Leave it out and you get the latest release, as before. Give it and you get that specific BrainGlobe version of the atlas. A methods section can then name the version it used, and someone else can reproduce the analysis years later. Several versions of the same atlas can also sit side by side locally, which the old layout did not allow.
+Leave it out and you get the latest release, as before. Provide it and you get that specific BrainGlobe version of the atlas. A methods section can then name the version it used, and someone else can reproduce the analysis years later. Several versions of the same atlas can also sit side by side locally, which the old format did not allow.
 
 ### Looking at an atlas without installing anything
 
@@ -84,11 +84,11 @@ Being able to preview an atlas this quickly makes it much easier to decide wheth
 
 ### Faster releases of new atlases
 
-Since components are versioned separately, changing one of them no longer forces a rebuild of everything else. Fixing a typo in a region name used to mean regenerating and repackaging the whole atlas, which for a high-resolution atlas is hours of compute followed by a fresh multi-gigabyte upload. Now it means republishing a terminology file and referencing it from a new atlas manifest. The same goes for adding metadata to an atlas or one of its components, so expect considerable work here in the future!
+Since components are versioned separately, changing one of them no longer forces a rebuild of everything else. Fixing a typo in a region name used to mean regenerating and repackaging the whole atlas, which for a high-resolution atlas is hours of compute followed by a fresh multi-gigabyte upload. Now it means republishing a terminology file and referencing it from a new atlas manifest. The same goes for adding additional metadata to an atlas or one of its components, so expect considerable progress here in the future!
 
 ### Easier atlas collections
 
-Shared components make families of atlases much cheaper to publish. A single template with several annotation sets, or an atlas with multiple templates that share a single annotation set, is now a handful of manifests pointing at mostly the same objects, rather than several nearly identical multi-gigabyte bundles.
+Shared components make families of atlases much cheaper to publish. A single template with several annotation sets, or an atlas with multiple templates that share a single annotation set, is now a handful of manifest files pointing at mostly the same objects, rather than several nearly identical multi-gigabyte bundles.
 
 ## What do I need to do?
 
