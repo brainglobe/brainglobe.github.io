@@ -42,8 +42,8 @@ from matplotlib import colormaps as cm
 # Next, we use pandas to access the terminologies files using its S3 URI.
 
 s3_bucket_stub = "s3://brainglobe/atlas/{}"
-annotation_uri = s3_bucket_stub.format("annotation-sets/allen_mouse-annotation/1_2/annotation.ome.zarr")
-terminologies_uri = s3_bucket_stub.format("terminologies/allen_mouse-terminology/1_2/terminology.csv")
+annotation_uri = s3_bucket_stub.format("annotation-sets/allen_mouse-annotation/3_0/annotations.ome.zarr")
+terminologies_uri = s3_bucket_stub.format("terminologies/allen_mouse-terminology/3_0/terminology.csv")
 
 terminologies_df = pd.read_csv(terminologies_uri, storage_options={"anon": True})
 
