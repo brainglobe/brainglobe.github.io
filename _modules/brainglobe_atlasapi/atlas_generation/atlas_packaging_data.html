@@ -1000,6 +1000,9 @@
 
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">symmetric</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">hemispheres_stack</span> <span class="o">=</span> <span class="n">_load_stack</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hemispheres_stack</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hemispheres_stack</span> <span class="o">=</span> <span class="n">_reorient_stacks</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">hemispheres_stack</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">space_convention</span>
+            <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">hemispheres_stack</span> <span class="o">=</span> <span class="n">_auto_generate_hemispheres</span><span class="p">(</span>
                 <span class="n">shapes</span><span class="o">=</span><span class="p">[</span><span class="n">stack</span><span class="o">.</span><span class="n">shape</span> <span class="k">for</span> <span class="n">stack</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">annotation_stack</span><span class="p">],</span>

@@ -79,8 +79,8 @@ Next, we use pandas to access the terminologies files using its S3 URI.
 
 
     s3_bucket_stub = "s3://brainglobe/atlas/{}"
-    annotation_uri = s3_bucket_stub.format("annotation-sets/allen_mouse-annotation/1_2/annotation.ome.zarr")
-    terminologies_uri = s3_bucket_stub.format("terminologies/allen_mouse-terminology/1_2/terminology.csv")
+    annotation_uri = s3_bucket_stub.format("annotation-sets/allen_mouse-annotation/3_0/annotations_compressed.ome.zarr")
+    terminologies_uri = s3_bucket_stub.format("terminologies/allen_mouse-terminology/3_0/terminology.csv")
 
     terminologies_df = pd.read_csv(terminologies_uri, storage_options={"anon": True})
 
@@ -238,7 +238,7 @@ Annotation files are stored in an OME-zarr file in the cloud.
 
  .. code-block:: none
 
-    Metadata(axes=[Axis(name='z', type='space', unit='millimeter', orientation={'type': 'anatomical', 'value': 'anterior-to-posterior'}), Axis(name='y', type='space', unit='millimeter', orientation={'type': 'anatomical', 'value': 'superior-to-inferior'}), Axis(name='x', type='space', unit='millimeter', orientation={'type': 'anatomical', 'value': 'right-to-left'})], datasets=[Dataset(path='0', coordinateTransformations=[Scale(scale=[0.01, 0.01, 0.01], type='scale')]), Dataset(path='1', coordinateTransformations=[Scale(scale=[0.025, 0.025, 0.025], type='scale')]), Dataset(path='2', coordinateTransformations=[Scale(scale=[0.05, 0.05, 0.05], type='scale')]), Dataset(path='3', coordinateTransformations=[Scale(scale=[0.1, 0.1, 0.1], type='scale')])], coordinateTransformations=None, omero=None, name='/', type=None, metadata=None)
+    Metadata(axes=[Axis(name='z', type='space', unit='millimeter', orientation={'type': 'anatomical', 'value': 'anterior-to-posterior'}), Axis(name='y', type='space', unit='millimeter', orientation={'type': 'anatomical', 'value': 'superior-to-inferior'}), Axis(name='x', type='space', unit='millimeter', orientation={'type': 'anatomical', 'value': 'right-to-left'})], datasets=[Dataset(path='s0', coordinateTransformations=[Scale(scale=[0.01, 0.01, 0.01], type='scale'), Translation(translation=[0.0, 0.0, 0.0], type='translation')]), Dataset(path='s1', coordinateTransformations=[Scale(scale=[0.025, 0.025, 0.025], type='scale'), Translation(translation=[0.0075, 0.0075, 0.0075], type='translation')]), Dataset(path='s2', coordinateTransformations=[Scale(scale=[0.05, 0.05, 0.05], type='scale'), Translation(translation=[0.02, 0.02, 0.02], type='translation')]), Dataset(path='s3', coordinateTransformations=[Scale(scale=[0.1, 0.1, 0.1], type='scale'), Translation(translation=[0.045, 0.045, 0.045], type='translation')])], coordinateTransformations=None, omero=None, name='/', type=None, metadata=None)
 
 
 
@@ -305,7 +305,7 @@ By plotting a slice of the array contents, we can see the various regions encode
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f230e996bd0>
+    <matplotlib.image.AxesImage object at 0x7f93317e2bd0>
 
 
 
@@ -351,7 +351,7 @@ BrainGlobe atlas data being used independently of the BrainGlobe software tools.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 44.196 seconds)
+   **Total running time of the script:** (1 minutes 0.645 seconds)
 
 
 .. _sphx_glr_download_aws_examples_explore_atlas.py:

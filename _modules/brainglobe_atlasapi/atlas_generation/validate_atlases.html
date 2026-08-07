@@ -1000,9 +1000,14 @@
 <span class="sd">        If the annotation labels at the chosen symmetric points are different.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">annotation</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">annotation</span>
-    <span class="n">centre</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">annotation</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+
+    <span class="n">annotation_shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">annotation</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">remainder</span> <span class="o">=</span> <span class="n">annotation_shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">%</span> <span class="mi">2</span>
+    <span class="n">centre</span> <span class="o">=</span> <span class="n">annotation_shape</span> <span class="o">//</span> <span class="mi">2</span>
     <span class="n">central_leftright_axis_annotations</span> <span class="o">=</span> <span class="n">annotation</span><span class="p">[</span><span class="n">centre</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">centre</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">:]</span>
-    <span class="n">label_5_left_of_centre</span> <span class="o">=</span> <span class="n">central_leftright_axis_annotations</span><span class="p">[</span><span class="n">centre</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="mi">5</span><span class="p">]</span>
+    <span class="n">label_5_left_of_centre</span> <span class="o">=</span> <span class="n">central_leftright_axis_annotations</span><span class="p">[</span>
+        <span class="n">centre</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span> <span class="o">+</span> <span class="n">remainder</span><span class="p">)</span>
+    <span class="p">]</span>
     <span class="n">label_5_right_of_centre</span> <span class="o">=</span> <span class="n">central_leftright_axis_annotations</span><span class="p">[</span><span class="n">centre</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">5</span><span class="p">]</span>
     <span class="k">assert</span> <span class="p">(</span>
         <span class="n">label_5_left_of_centre</span> <span class="o">==</span> <span class="n">label_5_right_of_centre</span>
