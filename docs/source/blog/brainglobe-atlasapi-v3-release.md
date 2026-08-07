@@ -8,7 +8,7 @@ language: English
 ---
 
 
-# `brainglobe-atlasapi` V3 is Here!
+# `brainglobe-atlasapi` V3 is here!
 
 We're excited to announce the full release of `brainglobe-atlasapi` version 3. You can install it (or upgrade) with:
 
