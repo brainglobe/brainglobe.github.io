@@ -236,7 +236,9 @@ linkcheck_ignore = [
     ]
 
 linkcheck_anchors_ignore_for_url = [
-    "https://github.com/brainglobe/brainrender"
+    "https://github.com/brainglobe/brainrender",
+    # GitHub renders blob pages client-side, so heading anchors are never in the fetched HTML
+    r"https://github\.com/.*/blob/.*",
 ]
 
 linkcheck_request_headers = {
