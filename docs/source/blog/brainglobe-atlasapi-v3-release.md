@@ -44,7 +44,7 @@ The [pre-release post](atlas-api-v3.md) has the full detail on the format itself
 
 Instantiating an atlas fetches the manifest, the terminology, and a handful of small metadata files. Templates, annotations, hemispheres, meshes and masks are each fetched from S3 the first time they are requested, and cached locally afterwards.
 
-Download times now scale with what your analysis needs, not with the size of the atlas it happens to use. Visualising the hippocampal mesh for every BrainGlobe atlas fetches around 100 MB of meshes. Those atlases contain over 500 GB of images and meshes between them.
+Download times now scale with what your analysis needs, not with the size of the atlas it happens to use. Visualising the hippocampus for every BrainGlobe atlas only fetches around 100 MB of meshes. To complete this workflow in the current version, all data would be downloaded for every atlas resulting in 500 GB of images and meshes on disk.
 
 ```{image} ./images/task_figure.png
 :alt: Two routes to the same result for the task "visualise the hippocampus inside the brain". The old route downloads the whole atlas as a single 7.4 GB TAR archive containing every image and mesh. The new route downloads only the requested hippocampus and root meshes, 2.3 MB. Both end at the same rendering of a green hippocampus inside a transparent brain.
