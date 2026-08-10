@@ -17,7 +17,7 @@ One useful feature of the DMBA is how it was built. The MRH data were acquired f
 
 For BrainGlobe, the main reference image is the DMBA mean diffusivity template, and the annotation image uses the RCCFv3 labels supplied with the atlas data. RCCFv3 is the Duke team's reduced version of the Allen CCFv3 label set: related structures smaller than 0.1 mm<sup>3</sup> were grouped into larger anatomical regions, reducing registration noise from small regions that are difficult to align reliably.
 
-The BrainGlobe package includes 12 registered reference images. In addition to the main mean diffusivity template, the package includes AD, DWI, NQA, RD, FA, M0, M1, M2, M3, ISO, and unmasked mGRE. These complementary images can be useful for different anatomical questions because each contrast highlights different tissueproperties.
+The BrainGlobe package includes 12 registered reference images. In addition to the main mean diffusivity template, the package includes AD, DWI, NQA, RD, FA, M0, M1, M2, M3, ISO, and unmasked mGRE. These complementary images can be useful for different anatomical questions because each contrast highlights different tissue properties.
 
 ![The 12 reference images included with the Duke Mouse Brain Atlas](./images/duke_mouse_12_references.gif)
 
