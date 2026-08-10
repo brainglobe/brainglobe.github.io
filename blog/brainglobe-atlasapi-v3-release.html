@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>An extended and improved CCF for the mouse brain has been added to BrainGlobe &#8212; BrainGlobe</title>
+    <title>brainglobe-atlasapi V3 is here! &#8212; BrainGlobe</title>
   
   
   
@@ -58,9 +58,9 @@
     <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/CCFv3BBP';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/brainglobe-atlasapi-v3-release';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
-    <link rel="canonical" href="https://brainglobe.info/blog/CCFv3BBP.html" />
+    <link rel="canonical" href="https://brainglobe.info/blog/brainglobe-atlasapi-v3-release.html" />
     <link rel="icon" href="../_static/brainglobe.png"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -476,7 +476,7 @@
      
     <i class="fa fa-calendar"></i>
     
-    <span>06 June 2025</span>
+    <span>07 August 2026</span>
     
   </h2>
   <ul>
@@ -489,9 +489,7 @@
       
     </span>
      
-    <a href="author/sebastien-piluso.html">Sébastien Piluso</a>
-     ,    
-    <a href="author/harry-carey.html">Harry Carey</a>
+    <a href="author/igor-tatarnikov.html">Igor Tatarnikov</a>
       
   </li>
    
@@ -502,11 +500,9 @@
       
     </span>
      
-    <a href="location/geneva.html">Geneva</a>
+    <a href="location/london.html">London</a>
      ,    
-    <a href="location/switzerland-oslo.html">Switzerland; Oslo</a>
-     ,    
-    <a href="location/norway.html">Norway</a>
+    <a href="location/england.html">England</a>
       
   </li>
    
@@ -544,12 +540,6 @@
   <ul>
      
     <li>
-      <a href="brainglobe-atlasapi-v3-release.html">
-        07 August - brainglobe-atlasapi V3 is here!
-      </a>
-    </li>
-    
-    <li>
       <a href="atlas-api-v3.html">
         17 July - brainglobe-atlasapi V3 pre-release
       </a>
@@ -570,6 +560,12 @@
     <li>
       <a href="carea-atlas-added.html">
         05 February - New mouse brain atlas based on gene expression
+      </a>
+    </li>
+    
+    <li>
+      <a href="swc-female-rat-atlas.html">
+        02 February - New female rat brain atlases added to BrainGlobe
       </a>
     </li>
     
@@ -613,7 +609,7 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">An extended and improved CCF for the mouse brain has been added to BrainGlobe</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis"><code class="docutils literal notranslate"><span class="pre">brainglobe-atlasapi</span></code> V3 is here!</span></li>
   </ul>
 </nav>
 </div>
@@ -629,25 +625,82 @@
                 
 <div id="searchbox"></div>
                 <article class="bd-article">
-                   <section class="tex2jax_ignore mathjax_ignore" id="an-extended-and-improved-ccf-for-the-mouse-brain-has-been-added-to-brainglobe">
-<h1>An extended and improved CCF for the mouse brain has been added to BrainGlobe<a class="headerlink" href="#an-extended-and-improved-ccf-for-the-mouse-brain-has-been-added-to-brainglobe" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://doi.org/10.1162/imag_a_00565">Piluso et al., 2025</a> recently published an extended and improved Common Coordinate Framework atlas version of the entire mouse brain, called CCFv3BBP or CCFv3a extended. While the previous <a class="reference external" href="https://doi.org/10.1016/j.cell.2020.04.007">CCFv2 and CCFv3</a> atlas versions from the Allen Institute for Brain Science (AIBS) have been widely adopted by the neuroscience community, they retained certain limitations. The updated framework addresses these by incorporating the most rostral and caudal parts of the brain, resulting in a non-truncated main olfactory bulb, cerebellum, and medulla (CCFv3a), features absent or truncated in earlier versions. Additionally, the cerebellum annotation now includes the granular, molecular, and Purkinje cell layers. This new version incorporates a high resolution (10 µm isotropic) Nissl-stained volume precisely aligned to the CCFv3a.</p>
-<p>In addition to this “single animal” volume, a population-based average Nissl template was constructed from 86,901 coronal Nissl-stained slices, derived from 734 postnatal day 56 C57BL/6J mouse brains from the <a class="reference external" href="https://www.nature.com/articles/nature05453">AIBS in situ hybridization data portal</a>.</p>
-<p><img alt="Lateral views of CCFv2, CCFv3, and CCFv3a annotations" src="../_images/ccfv3a.png" />
-<strong>Figure 1: Different versions of the Common Coordinate Framework: CCFv2 and CCFv3 from the AIBS, as well as the extended and improved CCFv3a-BBP from the Blue Brain Project.</strong></p>
-<p>The CCFv3a is available in both 10 µm and 25 µm isotropic resolutions and can be accessed through BrainGlobe as <code class="docutils literal notranslate"><span class="pre">ccfv3augmented_mouse_10um</span></code> and <code class="docutils literal notranslate"><span class="pre">ccfv3augmented_mouse_25um</span></code>. The default anatomical template is the population average Nissl. If you wish to use the single animal volume which was used as our registration target it is accessible as an additional reference named <code class="docutils literal notranslate"><span class="pre">single_animal_nissl</span></code>.</p>
-<section id="how-do-i-use-the-new-atlas">
-<h2>How do I use the new atlas?<a class="headerlink" href="#how-do-i-use-the-new-atlas" title="Link to this heading">#</a></h2>
-<p>You can use the extended and improved CCF for visualisation like other BrainGlobe atlases. To visualise the atlas, you could follow the steps below:</p>
+                   <section class="tex2jax_ignore mathjax_ignore" id="brainglobe-atlasapi-v3-is-here">
+<h1><code class="docutils literal notranslate"><span class="pre">brainglobe-atlasapi</span></code> V3 is here!<a class="headerlink" href="#brainglobe-atlasapi-v3-is-here" title="Link to this heading">#</a></h1>
+<p>We’re excited to announce the full release of <code class="docutils literal notranslate"><span class="pre">brainglobe-atlasapi</span></code> version 3. You can install it (or upgrade) with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>brainglobe-atlasapi
+</pre></div>
+</div>
+<p>If you followed along with the <a class="reference internal" href="atlas-api-v3.html"><span class="std std-doc">V3 pre-release post</span></a>, you already know what changed under the hood. Atlases have moved from single monolithic archives on <a class="reference external" href="https://gin.g-node.org/">GIN</a> to independently versioned components stored on AWS S3, with image data in the <a class="reference external" href="https://ngff.openmicroscopy.org/">OME-Zarr</a> format and meshes in the <a class="reference external" href="https://github.com/google/neuroglancer/blob/576c94b08ad7609919eb42f8a93b9cf0e161df14/src/datasource/precomputed/meshes.md#multi-resolution-mesh-format">precomputed</a> format.</p>
+<section id="a-quick-recap-of-the-new-structure">
+<h2>A quick recap of the new structure<a class="headerlink" href="#a-quick-recap-of-the-new-structure" title="Link to this heading">#</a></h2>
+<p>An atlas is no longer a single bundle. It is a manifest that points at four kinds of independently versioned components: a template, an annotation set (labels, hemispheres, meshes, and pre-computed masks), a coordinate space, and a terminology. The layout follows the <a class="reference external" href="https://atlas-assets.readthedocs.io/en/latest/index.html">Atlas Asset Organization</a> from the Allen Institute.</p>
+<p>Components that are shared between atlases are stored once rather than duplicated per atlas. Two annotation sets associated with the same template, or the same terminology reused across related atlases, are uploaded a single time.</p>
+<img alt="An illustration showing the remote and the local directory structures. The remote directory shows two atlases with their shared components. The total disk usage on the remote is 2.8 GB. The local directory is shown after installing the atlases. Only the necessary components are downloaded and the disk usage is 268 KB." class="only-dark" src="../_images/brainglobe-atlasapi_v3_structure_dark.png" />
+<img alt="An illustration showing the remote and the local directory structures. The remote directory shows two atlases with their shared components. The total disk usage on the remote is 2.8 GB. The local directory is shown after installing the atlases. Only the necessary components are downloaded and the disk usage is 268 KB." class="only-light" src="../_images/brainglobe-atlasapi_v3_structure.png" />
+<p><strong>Figure 1. The remote and local directory structures for two atlases sharing components.</strong> The files on the remote take 2.8 GB. A local install of both atlases takes 268 KB until you ask for actual pixels or meshes.</p>
+<p>The <a class="reference internal" href="atlas-api-v3.html"><span class="std std-doc">pre-release post</span></a> has the full detail on the format itself.</p>
+</section>
+<section id="what-this-means-now">
+<h2>What this means now<a class="headerlink" href="#what-this-means-now" title="Link to this heading">#</a></h2>
+<section id="components-are-only-fetched-when-requested">
+<h3>Components are only fetched when requested<a class="headerlink" href="#components-are-only-fetched-when-requested" title="Link to this heading">#</a></h3>
+<p>Instantiating an atlas fetches the manifest, the terminology, and a handful of small metadata files. Templates, annotations, hemispheres, meshes and masks are each fetched from S3 the first time they are requested, and cached locally afterwards.</p>
+<p>Download times now scale with what your analysis needs, not with the size of the atlas it happens to use. Visualising the hippocampus for every BrainGlobe atlas only fetches around 100 MB of meshes. To complete this workflow in the current version, all data would be downloaded for every atlas resulting in 500 GB of images and meshes on disk.</p>
+<img alt="Two routes to the same result for the task &quot;visualise the hippocampus inside the brain&quot;. The old route downloads the whole atlas as a single 7.4 GB TAR archive containing every image and mesh. The new route downloads only the requested hippocampus and root meshes, 2.3 MB. Both end at the same rendering of a green hippocampus inside a transparent brain." src="../_images/task_figure.png" />
+<p><strong>Figure 2. Lazy fetching of components for analysis.</strong> To draw the hippocampus inside a transparent brain, V2 pulled a 7.4 GB archive containing every image and every mesh in the atlas. V3 fetches the two meshes the render actually uses, 2.3 MB.</p>
+</section>
+<section id="uptime-and-download-speed">
+<h3>Uptime and download speed<a class="headerlink" href="#uptime-and-download-speed" title="Link to this heading">#</a></h3>
+<p>Atlases are now served from AWS S3 rather than from <a class="reference external" href="https://gin.g-node.org/">GIN</a>. GIN has served BrainGlobe well for years, but it is hosted by a single research institute, and when it was slow or down every pipeline that needed a fresh atlas stalled. S3 is redundant and has much higher throughput, so that should stop happening. The chunked formats help here too: a download is now many small independent requests that can be fetched in parallel, instead of one long serial transfer.</p>
+</section>
+<section id="faster-iteration-across-atlases">
+<h3>Faster iteration across atlases<a class="headerlink" href="#faster-iteration-across-atlases" title="Link to this heading">#</a></h3>
+<p>Comparing regions across atlases used to mean waiting for each atlas to download in full before you could look at anything. Now a loop over a many atlases costs a few manifest downloads plus whichever components you touch. Comparing region hierarchies never downloads a single voxel, and comparing one region’s mesh downloads one mesh per atlas.</p>
+</section>
+<section id="faster-structure-mask-computation">
+<h3>Faster structure mask computation<a class="headerlink" href="#faster-structure-mask-computation" title="Link to this heading">#</a></h3>
+<p>In V2, <code class="docutils literal notranslate"><span class="pre">atlas.get_structure_mask(&quot;CTX&quot;)</span></code> walked the region tree, collected every descendant id, and ran <code class="docutils literal notranslate"><span class="pre">np.isin</span></code> over the entire annotation volume. This took seconds to minutes for a region with many children, every time, for every region. V3 ships masks as a pre-computed 4D array with one slice per region, so <code class="docutils literal notranslate"><span class="pre">get_structure_mask</span></code> fetches and reads a single slice. This doesn’t add a significant disk space burden as the masks are highly compressible.</p>
+</section>
+<section id="pinning-an-atlas-version">
+<h3>Pinning an atlas version<a class="headerlink" href="#pinning-an-atlas-version" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">BrainGlobeAtlas</span></code> can now take an explicit version:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">BrainGlobeAtlas</span>
+
+<span class="n">atlas</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s2">&quot;allen_mouse_25um&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Leave it out and you get the latest release, as before. Provide it and you get that specific BrainGlobe version of the atlas. A methods section can then name the version it used, and someone else can reproduce the analysis years later. Several versions of the same atlas can also sit side by side locally, which the old format did not allow.</p>
+</section>
+<section id="looking-at-an-atlas-without-installing-anything">
+<h3>Looking at an atlas without installing anything<a class="headerlink" href="#looking-at-an-atlas-without-installing-anything" title="Link to this heading">#</a></h3>
+<p>Because the image data are OME-Zarr and the meshes are in the precomputed format, both are directly readable by <a class="reference external" href="https://github.com/google/neuroglancer">neuroglancer</a>. Atlases on the <a class="reference internal" href="../documentation/brainglobe-atlasapi/usage/atlas-details.html"><span class="std std-doc">atlas details page</span></a> now carry a “View in neuroglancer” badge, for example the <a class="reference external" href="https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/allen_mouse.json">Allen adult mouse atlas</a> or the <a class="reference external" href="https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/columbia_cuttlefish.json">Columbia cuttlefish atlas</a>.</p>
+<p>Being able to preview an atlas this quickly makes it much easier to decide whether it suits your data before you build an analysis pipeline around it, and to share a specific view with a collaborator or a reviewer.</p>
+</section>
+<section id="faster-releases-of-new-atlases">
+<h3>Faster releases of new atlases<a class="headerlink" href="#faster-releases-of-new-atlases" title="Link to this heading">#</a></h3>
+<p>Since components are versioned separately, changing one of them no longer forces a rebuild of everything else. Fixing a typo in a region name used to mean regenerating and repackaging the whole atlas, which for a high-resolution atlas is hours of compute followed by a fresh multi-gigabyte upload. Now it means republishing a terminology file and referencing it from a new atlas manifest. The same goes for adding additional metadata to an atlas or one of its components, so expect considerable progress here in the future!</p>
+</section>
+<section id="easier-atlas-collections">
+<h3>Easier atlas collections<a class="headerlink" href="#easier-atlas-collections" title="Link to this heading">#</a></h3>
+<p>Shared components make families of atlases much cheaper to publish. A single template with several annotation sets, or an atlas with multiple templates that share a single annotation set, is now a handful of manifest files pointing at mostly the same objects, rather than several nearly identical multi-gigabyte bundles.</p>
+</section>
+</section>
+<section id="what-do-i-need-to-do">
+<h2>What do I need to do?<a class="headerlink" href="#what-do-i-need-to-do" title="Link to this heading">#</a></h2>
+<p>For most users, nothing. The Python API for the common paths is unchanged, and the first instantiation of an atlas will download the atlases in the new format automatically. V3 cannot read the old atlas format, so the old directories (for example <code class="docutils literal notranslate"><span class="pre">~/.brainglobe/allen_mouse_25um</span></code>) are no longer used and can be deleted.</p>
+<p>A few things did change, and are worth checking if you are using them directly:</p>
 <ul class="simple">
-<li><p>Install BrainGlobe (<a class="reference internal" href="../documentation/index.html"><span class="doc std std-doc">instructions</span></a>)</p></li>
-<li><p>Open napari and follow the steps in our <a class="reference internal" href="../tutorials/manage-atlases-in-GUI.html"><span class="std std-doc">download tutorial</span></a> for the extended and improved CCF atlas.</p></li>
-<li><p>Visualise the different parts of the atlas as described in our <a class="reference internal" href="../tutorials/visualise-atlas-napari.html"><span class="doc std std-doc">visualisation tutorial</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_structure_mask</span></code> now returns a binary mask. V2 returned an array holding the structure’s id at every voxel belonging to that structure. V3 returns <code class="docutils literal notranslate"><span class="pre">1</span></code> where the structure or a descendant is present and <code class="docutils literal notranslate"><span class="pre">0</span></code> elsewhere, as <code class="docutils literal notranslate"><span class="pre">uint8</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">atlas.reference</span></code> is deprecated in favour of <code class="docutils literal notranslate"><span class="pre">atlas.template</span></code>. It still works, but prints a warning and will be removed in a future version.</p></li>
+<li><p>Mesh paths no longer end in <code class="docutils literal notranslate"><span class="pre">.obj</span></code>. <code class="docutils literal notranslate"><span class="pre">structure[&quot;mesh_filename&quot;]</span></code> points at a Draco-encoded precomputed mesh. Use <code class="docutils literal notranslate"><span class="pre">structure[&quot;mesh&quot;]</span></code>, which decodes it for you and returns a <code class="docutils literal notranslate"><span class="pre">meshio.Mesh</span></code> in the same orientation and units as before.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BrainGlobeAtlas</span></code> no longer accepts <code class="docutils literal notranslate"><span class="pre">interm_download_dir</span></code> or <code class="docutils literal notranslate"><span class="pre">print_authors</span></code>.</p></li>
+<li><p>The local layout has moved to <code class="docutils literal notranslate"><span class="pre">~/.brainglobe/brainglobe-atlasapi/</span></code>. If you were locating atlas files by searching <code class="docutils literal notranslate"><span class="pre">~/.brainglobe</span></code> directly, please use <code class="docutils literal notranslate"><span class="pre">BrainGlobeAtlas</span></code> or <code class="docutils literal notranslate"><span class="pre">brainglobe_atlasapi.list_atlases</span></code> instead.</p></li>
 </ul>
 </section>
-<section id="why-are-we-adding-new-atlases">
-<h2>Why are we adding new atlases?<a class="headerlink" href="#why-are-we-adding-new-atlases" title="Link to this heading">#</a></h2>
-<p>A fundamental aim of the BrainGlobe project is to make various brain atlases easily accessible by users across the globe. If you would like to get involved with a similar project, please <a class="reference internal" href="../contact.html"><span class="doc std std-doc">get in touch</span></a>.</p>
+<section id="feedback">
+<h2>Feedback<a class="headerlink" href="#feedback" title="Link to this heading">#</a></h2>
+<p>If you have any feedback please contact us on <a class="reference external" href="https://brainglobe.zulipchat.com/#narrow/channel/483906-Atlas-API">Zulip</a> or open an issue on <a class="reference external" href="https://github.com/brainglobe/brainglobe-atlasapi/issues">GitHub</a>.</p>
 </section>
 </section>
 
@@ -656,23 +709,16 @@
 <div class="section ablog__prev-next">
   <span class="ablog__prev">
      
-    <a href="uncharted-brains.html">
+    <a href="atlas-api-v3.html">
       
       <i class="fa fa-arrow-circle-left"></i>
       
-      <span>Uncharted brains: expanding beyond existing atlases</span>
+      <span>brainglobe-atlasapi V3 pre-release</span>
     </a>
     
   </span>
   <span class="ablog__spacer">&nbsp;</span>
   <span class="ablog__next">
-     
-    <a href="bee-atlas-added.html">
-      <span>An atlas of the bumblebee brain has been added to BrainGlobe</span>
-      
-      <i class="fa fa-arrow-circle-right"></i>
-      
-    </a>
     
   </span>
 </div>
@@ -707,8 +753,20 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-use-the-new-atlas">How do I use the new atlas?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-we-adding-new-atlases">Why are we adding new atlases?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-recap-of-the-new-structure">A quick recap of the new structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-means-now">What this means now</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-are-only-fetched-when-requested">Components are only fetched when requested</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uptime-and-download-speed">Uptime and download speed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#faster-iteration-across-atlases">Faster iteration across atlases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#faster-structure-mask-computation">Faster structure mask computation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinning-an-atlas-version">Pinning an atlas version</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-at-an-atlas-without-installing-anything">Looking at an atlas without installing anything</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#faster-releases-of-new-atlases">Faster releases of new atlases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#easier-atlas-collections">Easier atlas collections</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-i-need-to-do">What do I need to do?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback">Feedback</a></li>
 </ul>
   </nav></div>
 
