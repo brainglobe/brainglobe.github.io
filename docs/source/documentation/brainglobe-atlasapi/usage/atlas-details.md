@@ -441,14 +441,16 @@ manually delineated.
 
 Available versions:
 * `dorr_mouse_mri_32um`
-
+  
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/dorr_mouse_mri.json)
 ### [Duke Mouse Brain Atlas](https://doi.org/10.1126/sciadv.adq8089)
 This atlas from [Mansour et al. (2025)](https://doi.org/10.1126/sciadv.adq8089) is a 15 μm isotropic MRH-based stereotaxic atlas of the adult C57BL/6J mouse brain. The source atlas was built from five 90 ± 2 day male mice scanned in skull, limiting tissue deformation from cranial dissection and conventional histology. Micro-CT images of the skull provide bregma and lambda landmarks in the same stereotaxic space.
 
-BrainGlobe includes the mean diffusivity template as the main reference image, the source RCCFv3 annotation image, generated meshes, and 11 additional registered reference images. RCCFv3 is the Duke team's reduced version of the Allen CCFv3 label set, in which related structures smaller than 0.1 mm3 are grouped into larger regions to reduce registration noise from small structures.
+BrainGlobe includes the mean diffusivity template as the main reference image, the source annotation image, generated meshes, and 11 additional registered reference images. RCCFv3 is the Duke team's reduced version of the Allen CCFv3 label set, in which related structures smaller than 0.1 mm3 are grouped into larger regions to reduce registration noise from small structures.
 
 Available versions:
 * `duke_mouse_15um`
+  
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_mouse.json)
 
 
