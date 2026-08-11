@@ -14,7 +14,6 @@ import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
-
 # -- Project information -----------------------------------------------------
 
 project = "BrainGlobe"
@@ -113,7 +112,7 @@ sitemap_url_scheme = "{link}"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
-html_extra_path = ["_redirects"]
+html_extra_path = ["_redirects", "robots.txt"]
 
 html_css_files = [
     ("css/custom.css", {"priority": 100}),
@@ -176,6 +175,23 @@ html_theme_options = {
     "external_links": [],
 }
 
+# Show ABlog's "postcard" (date, author, category, etc.) in the sidebar of blog
+# post pages, see https://ablog.readthedocs.io/en/latest/manual/templates-themes.html
+# Note: this replaces the default site nav sidebar on blog pages only.
+html_sidebars = {
+    "blog/index": [
+        "ablog/authors.html",
+        "ablog/archives.html",
+    ],
+    "blog/**": [
+        "ablog/postcard.html",
+        "ablog/recentposts.html",
+    ],
+}
+
+# The PyData theme bundles FontAwesome, so let ABlog render its postcard icons
+# (calendar, user, ...) instead of plain-text "Author:"/"Location:" labels.
+fontawesome_included = True
 
 html_show_sourcelink = False
 
@@ -198,9 +214,10 @@ notfound_urls_prefix = None
 
 linkcheck_ignore = [
     # Sphinx-gallery output files only exist after a full HTML build, not during linkcheck
-    ".*/*_examples/.*\.html",
+    r".*/*_examples/.*\.html",
     "https://neuromorpho.org/",
     "https://brainglobe.zulipchat.com/#narrow/stream/414089-developer-meeting",
+    "https://brainglobe.zulipchat.com/#narrow/channel/483906-Atlas-API",
     "https://easyengine.io",
     "https://www.scientifica.uk.com",
     "https://brainglobe.info",
@@ -213,10 +230,15 @@ linkcheck_ignore = [
     "https://elifesciences.org", # 406 Client Error: Not Acceptable
     "https://www.biorxiv.org", # 403 Client Error: Forbidden
     "https://mousespinal.brain-map.org",
+    "https://gin.g-node.org", # often down, or throttling many requests
+    "https://openalex.org", # 403 Client Error: Forbidden
+    "https://data.mendeley.com/", # 403 Client Error: Forbidden
     ]
 
 linkcheck_anchors_ignore_for_url = [
-    "https://github.com/brainglobe/brainrender"
+    "https://github.com/brainglobe/brainrender",
+    # GitHub renders blob pages client-side, so heading anchors are never in the fetched HTML
+    r"https://github\.com/.*/blob/.*",
 ]
 
 linkcheck_request_headers = {
@@ -224,3 +246,4 @@ linkcheck_request_headers = {
         "Authorization": f"Bearer {os.environ.get('GITHUB_TOKEN', '')}",
     },
 }
+

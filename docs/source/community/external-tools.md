@@ -6,6 +6,17 @@ developers creating interoperable tools. The BrainGlobe core developers have cre
 [brainrender](/documentation/brainrender/index) etc.). More recently, members of the community have built their own 
 software that leverages the BrainGlobe ecosystem in some way:
 
+## QUINT
+QUINT is a registration pipeline which consists of QuickNII, VisuAlign, and Nutil for quantification. The QUINT 
+developers have created a BrainGlobe Atlas Installer. 
+- [GitHub repository](https://github.com/Tevemadar/BrainGlobe-support)
+- [Documentation](https://quint-workflow.readthedocs.io/en/latest/QUINTintro.html)
+- [Paper](https://doi.org/10.3389/fninf.2019.00075)
+
+## VERSO
+VERSO is an all-in-one tool for linear and nonlinear section to atlas registration
+- [GitHub repository](https://github.com/LeonardoLupori/verso)
+
 ## Aligning Big Brains & Atlases
 Aligning Big Brains & Atlases (ABBA) is a FIJI plugin for the registration of 2D brain sections to an atlas. Using 
 the [Python version](https://github.com/BIOP/abba_python) allows users to register their data to any BrainGlobe Atlas. 
@@ -111,6 +122,21 @@ neuralib is a utility toolkit for rodent systems neuroscience research. It provi
 ConfUSIus is a Python package for handling, visualization, preprocessing, and statistical analysis of functional ultrasound imaging (fUSI) data.
 - [GitHub repository](https://github.com/confusius-tools/confusius/)
 - [Documentation](https://confusius.tools/)
+
+## LangSlice
+LangSlice uses vision-language models to perform alignment and registration of histological brain sections to any BrainGlobe atlas in any orientation plane.
+- [GitHub repository](https://github.com/greenpolo/LangSlice)
+- [Documentation](https://langslice.readthedocs.io/en/latest/)
+
+## PixelMap
+PixelMap is a browser-based GUI to generate Neuropixels channelmaps.
+- [GitHub repository](https://github.com/m-beau/pixelmap)
+- [Online GUI](https://pixelmap.pni.princeton.edu/app)
+- [Documentation](https://pixelmap-neuropixels.readthedocs.io/en/latest/)
+
+## 3D Brain Animations
+3D Brain Animations is a Claude Code skill that renders glowing, rotating 3D brain animations and stills from natural language descriptions, using BlenderBrain and BrainGlobe atlases.
+- [GitHub repository](https://github.com/SamedVossberg/3d-brain-animations)
 
 :::{hint}
 If you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. Typically we include tools which:
