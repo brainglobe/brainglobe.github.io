@@ -570,6 +570,7 @@ This is a symmetric atlas of the tawny dragon lizard (Ctenophorus decresii) brai
 made from averaged MRI images of 13 male tawny dragon lizards. 
 This atlas is only available at 50μm resolution:
 * `hoops_tawny_dragon_50um`
+  
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/hoops_tawny_dragon.json)
 
 
