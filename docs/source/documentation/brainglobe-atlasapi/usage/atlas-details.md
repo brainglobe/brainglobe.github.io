@@ -558,8 +558,7 @@ This atlas is only available at 2μm resolution:
 ### [Hoops Tawny Dragon Brain Atlas](https://doi.org/10.1007/s00429-021-02282-z)
 This is a symmetric atlas of the tawny dragon lizard (Ctenophorus decresii) brain from 
 [Hoops et al. (2021)](https://doi.org/10.1007/s00429-021-02282-z) with 224 segmentations, 
-made from averaged MRI images of 13 male tawny dragon lizards. For more details please 
-see [the blogpost](/blog/tawny-dragon-atlas-added).
+made from averaged MRI images of 13 male tawny dragon lizards. 
 This atlas is only available at 50μm resolution:
 * `hoops_tawny_dragon_50um`
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/hoops_tawny_dragon.json)
