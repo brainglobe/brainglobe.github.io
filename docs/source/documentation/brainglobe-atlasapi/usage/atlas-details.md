@@ -552,6 +552,7 @@ This is a brain atlas of the blind Mexican cavefish (Astyanax mexicanus) from
 see [the blogpost](/blog/cavefish-atlas-added).
 This atlas is only available at 2μm resolution:
 * `sju_cavefish_2um`
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/sju_cavefish.json)
 
 ## Lizard
 ### [Hoops Tawny Dragon Brain Atlas](https://doi.org/10.1007/s00429-021-02282-z)
@@ -561,8 +562,8 @@ made from averaged MRI images of 13 male tawny dragon lizards. For more details 
 see [the blogpost](/blog/tawny-dragon-atlas-added).
 This atlas is only available at 50μm resolution:
 * `hoops_tawny_dragon_50um`
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/hoops_tawny_dragon.json)
 
-[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/sju_cavefish.json)
 
 
 ## Amphibian
