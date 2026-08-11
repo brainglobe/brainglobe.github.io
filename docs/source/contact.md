@@ -10,6 +10,11 @@ contribute to the discussion.
 If you would like to get in touch with the development team, e.g. to ask a question about contributing to BrainGlobe, or anything else that isn't troubleshooting, please use the
 [BrainGlobe Zulip chat](https://brainglobe.zulipchat.com/).
 
+:::{note}
+Asking questions in the appropriate public channels helps ensure that the right person can help you, and that others 
+can benefit from the solution. Please refrain from contacting BrainGlobe team members directly with questions. 
+:::
+
 ## Bugs
 If you think you have found a bug, please open an issue at the relevant repository on 
 [GitHub](https://github.com/brainglobe). If you're not sure how to do this, feel free to report the issue on the forum, and 
