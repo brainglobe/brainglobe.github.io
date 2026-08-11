@@ -451,6 +451,7 @@ BrainGlobe includes the mean diffusivity template as the main reference image, t
 Available versions:
 * `duke_mouse_15um`
   
+
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_mouse.json)
 
 
