@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: Aug 7, 2026
+date: Aug 10, 2026
 author: Igor Tatarnikov
 location: London, England
 category: brainglobe

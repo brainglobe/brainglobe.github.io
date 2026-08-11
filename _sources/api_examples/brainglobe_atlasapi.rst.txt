@@ -205,9 +205,15 @@ To know what atlases are available through BrainGlobe, we can use the `show_atla
     │  demba_allen_seg_dev_mouse_p9_25…                                    3.0     │
     │  dorr_mouse_mri_32um                                                 3.0     │
     │  drosophila_wingdisc_instar3_2um                                     3.0     │
+    │  duke_mouse_100um                                                    3.0     │
+    │  duke_mouse_150um                                                    3.0     │
+    │  duke_mouse_15um                                                     3.0     │
+    │  duke_mouse_25um                                                     3.0     │
+    │  duke_mouse_50um                                                     3.0     │
+    │  duke_mouse_75um                                                     3.0     │
     │  eurasian_blackcap_25um                                              3.0     │
     │  example_mouse_100um                                                 3.0     │
-    │  hoops_dragon_50um                                                   3.0     │
+    │  hoops_tawny_dragon_50um                                             3.1     │
     │  kim_dev_mouse_e11-5_lsfm_20um                                       3.0     │
     │  kim_dev_mouse_e11-5_mri-adc_31.…                                    3.0     │
     │  kim_dev_mouse_e11-5_mri-dwi_31.…                                    3.0     │
@@ -419,7 +425,7 @@ Anatomical reference (or template) image:
 
     Warning: atlas.reference is a deprecated alias for atlas.template, and will be removed in future versions.
 
-    <matplotlib.image.AxesImage object at 0x7fc5d0092a80>
+    <matplotlib.image.AxesImage object at 0x7f89cc8dbf50>
 
 
 
@@ -456,7 +462,7 @@ Annotations stack
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7fc615c2ae10>
+    <matplotlib.image.AxesImage object at 0x7f89cc946330>
 
 
 
@@ -486,7 +492,7 @@ Hemisheres stack:
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7fc615bec9b0>
+    <matplotlib.image.AxesImage object at 0x7f89cc9146b0>
 
 
 
@@ -1492,7 +1498,7 @@ To get the mask for a region, use
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7fc5d00b00b0>
+    <matplotlib.image.AxesImage object at 0x7f89cc9bf200>
 
 
 
@@ -1740,7 +1746,7 @@ Now print hemisphere string
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.244 seconds)
+   **Total running time of the script:** (0 minutes 1.300 seconds)
 
 
 .. _sphx_glr_download_api_examples_brainglobe_atlasapi.py:

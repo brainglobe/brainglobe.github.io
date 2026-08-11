@@ -724,9 +724,15 @@ to download the full example code.</p>
 │  demba_allen_seg_dev_mouse_p9_25…                                    3.0     │
 │  dorr_mouse_mri_32um                                                 3.0     │
 │  drosophila_wingdisc_instar3_2um                                     3.0     │
+│  duke_mouse_100um                                                    3.0     │
+│  duke_mouse_150um                                                    3.0     │
+│  duke_mouse_15um                                                     3.0     │
+│  duke_mouse_25um                                                     3.0     │
+│  duke_mouse_50um                                                     3.0     │
+│  duke_mouse_75um                                                     3.0     │
 │  eurasian_blackcap_25um                                              3.0     │
 │  example_mouse_100um                                                 3.0     │
-│  hoops_dragon_50um                                                   3.0     │
+│  hoops_tawny_dragon_50um                                             3.1     │
 │  kim_dev_mouse_e11-5_lsfm_20um                                       3.0     │
 │  kim_dev_mouse_e11-5_mri-adc_31.…                                    3.0     │
 │  kim_dev_mouse_e11-5_mri-dwi_31.…                                    3.0     │
@@ -881,7 +887,7 @@ atlas, as it is relatively small, but high quality.</p>
 </div>
 <img src="../_images/sphx_glr_brainglobe_atlasapi_001.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_001.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Warning: atlas.reference is a deprecated alias for atlas.template, and will be removed in future versions.
 
-&lt;matplotlib.image.AxesImage object at 0x7fc5d0092a80&gt;
+&lt;matplotlib.image.AxesImage object at 0x7f89cc8dbf50&gt;
 </pre></div>
 </div>
 <p>Annotations stack</p>
@@ -896,7 +902,7 @@ atlas, as it is relatively small, but high quality.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lut</span><span class="p">[</span><span class="n">annotation</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:]</span> <span class="o">%</span> <span class="n">N</span><span class="p">])</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_002.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_002.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7fc615c2ae10&gt;
+<img src="../_images/sphx_glr_brainglobe_atlasapi_002.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_002.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f89cc946330&gt;
 </pre></div>
 </div>
 <p>Hemisheres stack:</p>
@@ -904,7 +910,7 @@ atlas, as it is relatively small, but high quality.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">hemispheres</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:])</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_003.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_003.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7fc615bec9b0&gt;
+<img src="../_images/sphx_glr_brainglobe_atlasapi_003.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_003.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f89cc9146b0&gt;
 </pre></div>
 </div>
 </section>
@@ -1802,7 +1808,7 @@ midbrain, and forebrain, <cite>annotation == root_id</cite> will be all False).<
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mask</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_004.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_004.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7fc5d00b00b0&gt;
+<img src="../_images/sphx_glr_brainglobe_atlasapi_004.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_004.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f89cc9bf200&gt;
 </pre></div>
 </div>
 </section>
@@ -1891,7 +1897,7 @@ hemispheres, but we can ask for the hemisphere name instead of the number:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>right
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.244 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.300 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-api-examples-brainglobe-atlasapi-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/2e0fdc7133fc99c7b6e3378f40c7675f/brainglobe_atlasapi.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">brainglobe_atlasapi.ipynb</span></code></a></p>
