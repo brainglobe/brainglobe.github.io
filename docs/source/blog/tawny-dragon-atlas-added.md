@@ -15,7 +15,7 @@ The tawny dragon is an Australian lizard which has shown great promise for neuro
 - **Resolution:** 50 µm isotropic
 - **Modality:** MRI
 
-![Tawny dragon brain atlas annotations](./images/hoops_dragon_annotations.png)
+![Tawny dragon brain atlas annotations](./images/hoops_tawny_dragon_annotations.png)
 
 **Figure 1: Coronal section of the tawny dragon brain atlas annotations (only right hemisphere shown) and reference image.**
 
@@ -29,7 +29,7 @@ You can use the tawny dragon brain atlas for visualisation like other BrainGlobe
 
 The end result will look something like Figure 2.
 
-![Tawny dragon brain atlas visualised in napari](./images/tawny_dragon_brain_napari.png)
+![Tawny dragon brain atlas visualised in napari](./images/hoops_tawny_dragon_napari.png)
 
 **Figure 2: The Tawny Dragon Brain atlas visualised with `brainrender-napari`: with mesh overlays for the brain (grey), the locus coeruleus (cyan) and the dorsomedial cortex (yellow).**
 
