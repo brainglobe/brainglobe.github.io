@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: July 23, 2026
+date: August 12, 2026
 author: Jung Woo Kim
 location: London, England
 category: brainglobe
