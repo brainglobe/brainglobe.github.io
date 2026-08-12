@@ -477,6 +477,8 @@ reference is an average template based on serial two-photon tomography, and is m
 Available versions:
 * `ccfv2_mouse_25um`
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/ccfv2_mouse.json)
+
 ### [Allen CCFv2 Mouse Fiber Tracts Atlas](https://doi.org/10.1038/nature13186)
 This is a mouse brain fiber tract atlas using version 2 of the commonly used Allen Common Coordinate Framework. Where
 the CCFv2 Mouse Brain atlas only provides information on the grey matter and ventricular systems of the mouse brain, 
@@ -488,6 +490,8 @@ the original Nissl template.
 Available versions:
 * `ccfv2_fiber_mouse_25um`
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/ccfv2_fiber_mouse.json)
+
 ### [Allen CCFv2 Developmental Mouse Brain Atlas](https://doi.org/10.1038/nature13186)
 This is a developmental mouse brain atlas using version 2 of the commonly used Allen Common Coordinate Framework. 
 The template is based on 528 Nissl-stained coronal slices from the mouse specimen used in the Allen Reference Atlas. 
@@ -498,6 +502,8 @@ misaligned with the original Nissl template.
 Available versions:
 * `ccfv2_dev_mouse_25um`
   
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/ccfv2_dev_mouse.json)
+
 ## Rat
 ### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
 The Waxholm Space rat brain atlas features annotations of 222 structures, alongside a 39μm MRI template. It provides detailed delineations 
