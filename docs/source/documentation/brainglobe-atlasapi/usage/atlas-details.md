@@ -596,8 +596,8 @@ This atlas is only available at 40μm resolution:
 ## Human and non-human primate
 ### [Allen Human Brain Atlas](https://www.brain-map.org)
 This atlas is included mostly for visualisation and comparison to the other atlases. 
-Note that it is also only a single hemisphere. There are many better atlases
-(and indeed software tools) for the analysis of human neuroimaging data.
+There are many better atlases (and indeed software tools) for the analysis of human 
+neuroimaging data.
 
 This atlas is only available at 500μm resolution:
 * `allen_human_500um`
