@@ -112,7 +112,7 @@ csv files with the structures metadata information, a JSON file laying out the a
 
 ### Extracting meshes
 
-While most atlases will have a set of 3D images that can be used as annotated and template stacks, not all atlases will have mesh (.obj) files for each brain region in the atlas.
+While most atlases will have a set of 3D images that can be used as annotated and template stacks, not all atlases will have mesh files for each brain region in the atlas.
 However, regions’ meshes are used frequently by BrainGlobe tools, especially in `brainrender` for visualizing anatomical data in 3D.
 For this reason, the atlas generation code from BrainGlobe provides functionality that can be used to generate such mesh files.
 A mask image is created which only contains the annotation for the brain region of interest, and a marching cubes algorithm is used to identify the surface of the region; finally, a mesh is created from the output of the marching cubes algorithm, and the results are saved to a .obj file.
@@ -133,9 +133,7 @@ To check if everything went smoothly,
 you can just go to the folder with the atlas content
 (named `atlasname_resolutionum` in the directory you were generating the atlas in) and check out its content.&#x20;
 
-For the metadata, you can just open the json file and inspect it.
-
-To inspect the reference.tiff file and the annotation.tiff file, you can just drag and drop them in napari (to install napari, see [here](https://napari.org/stable/tutorials/fundamentals/installation)), and 
+For the metadata, you can just open the json files and inspect them.
 
 Once an atlas is created with BrainGlobe’s atlas generation tools, it can be used with most software from the BrainGlobe software suite.
 These include [brainrender](/documentation/brainrender/index) and [brainrender-napari](/tutorials/visualise-atlas-napari) which provide a convenient way to visually inspect the generated atlas meshes.
