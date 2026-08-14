@@ -3,12 +3,11 @@
 ## How are BrainGlobe atlases distributed?
 
 BrainGlobe atlases are downloaded locally to the user’s machine whenever they try to use an atlas that has not yet been downloaded.
-By default, they will end up in the `~/.brainglobe` folder, unless differently specified in the `brainglobe-atlasapi` configuration.
+By default, they will end up in the `~/.brainglobe/brainglobe-atlasapi` folder, unless differently specified in the `brainglobe-atlasapi` configuration.
 
-The BrainGlobeAtlas class fetches those atlases from a dedicated GIN repository
-([https://gin.g-node.org/brainglobe/atlases](https://gin.g-node.org/brainglobe/atlases)). GIN repos are very similar
-to GitHub repos, but support storage of large datasets, using git-annex.
-Only members of the BrainGlobe initiative can upload new atlases to the GIN repo,
+The BrainGlobeAtlas class fetches those atlases from a dedicated S3 bucket
+([s3://brainglobe/atlas](https://open.quiltdata.com/b/brainglobe/tree/atlas/)).
+Only members of the BrainGlobe initiative can upload new atlases to the S3 bucket,
 and this is essential to ensure the interoperability of all atlases that are part of the BrainGlobe suite.
 Still, we want to keep the process open to external contribution,
 and we tried to streamline the process for people who want to expand the list of BrainGlobe supported atlases.
@@ -108,9 +107,8 @@ of each brain region
 Once an atlas script has been written which sets out all the necessary metadata and loads all the files required,
 code provided by BrainGlobe’s atlas generation submodule can be used to format the data as needed by the BrainGlobe
 AtlasAPI. The atlas generation submodule provides one convenient function `wrapup_atlas_from_data`  which takes all the metadata and data
-from above and creates the data structures required. These data structures include .tiff files with the various images,
-csv files with the structures metadata information, a README file laying out the atlas content, etc. The same function
-creates a compressed folder which can be uploaded to GIN for distribution (see above).
+from above and creates the data structures required. These data structures include [OME-Zarr](https://ngff.openmicroscopy.org/index.html) files with the various images,
+csv files with the structures metadata information, a JSON file laying out the atlas content, etc.
 
 ### Extracting meshes
 
@@ -137,13 +135,13 @@ you can just go to the folder with the atlas content
 
 For the metadata, you can just open the json file and inspect it.
 
-To inspect the reference.tiff file and the annotation.tiff file, you can just drag and drop them in napari (to install napari, see [here](https://napari.org/stable/tutorials/fundamentals/installation)), and they will open as an image layer, and a label layer, respectively.
-You know the orientation is correct if you are looking at upright (dorsal top, ventral bottom) frontal sections, and when you scroll the slider to inspect sections with a higher index, you are moving from anterior to posterior.
+To inspect the reference.tiff file and the annotation.tiff file, you can just drag and drop them in napari (to install napari, see [here](https://napari.org/stable/tutorials/fundamentals/installation)), and 
 
 Once an atlas is created with BrainGlobe’s atlas generation tools, it can be used with most software from the BrainGlobe software suite.
 These include [brainrender](/documentation/brainrender/index) and [brainrender-napari](/tutorials/visualise-atlas-napari) which provide a convenient way to visually inspect the generated atlas meshes.
 
-For example, you can visualise various parts of the Max Planck Zebrafish Brain Atlas next to each other by running the script below. You can do the same with your own newly-packaged atlas (or any other BrainGlobe atlas) by replacing the atlas name, the name of the additional reference, and the acronym of the structure you're interested in, as explained in the comments below:
+For example, you can visualise various parts of the Max Planck Zebrafish Brain Atlas next to each other by running the script below. You can do the same with your own newly-packaged atlas (or any other BrainGlobe atlas) by replacing the atlas name, the name of the additional reference, and the acronym of the structure you're interested in, and the BrainGlobe directory. They will open as an image layer, and a label layer, respectively.
+You know the orientation is correct if you are looking at upright (dorsal top, ventral bottom) frontal sections, and when you scroll the slider to inspect sections with a higher index, you are moving from anterior to posterior.
 
 ```python
 from brainrender_napari.napari_atlas_representation import NapariAtlasRepresentation
@@ -154,11 +152,11 @@ if __name__ == "__main__":
     viewer = napari.Viewer()
     viewer.dims.ndisplay = 3
     # replace "mpin_zfish_1um" with atlas of interest below
-    napari_atlas = NapariAtlasRepresentation(BrainGlobeAtlas("mpin_zfish_1um"), viewer)
+    napari_atlas = NapariAtlasRepresentation(BrainGlobeAtlas("mpin_zfish_1um", brainglobe_dir="/path/to/brainglobe_workingdir"), viewer)
     napari_atlas.add_to_viewer()
     
     # replace "GADb1" with name of additional reference for your atlas (if it has any)
-    napari_atlas.add_additional_reference("GADb1")
+    napari_atlas.add_additional_reference("mpin_zfish-GAD1b-template")
     
     # replace "root" with acronym of structure of interest below
     napari_atlas.add_structure_to_viewer("<structure_id>")
@@ -167,11 +165,11 @@ if __name__ == "__main__":
 
 ## Uploading the atlas
 
-After the pull request is merged, one of the BrainGlobe core developers will run the script and upload the packaged atlas (`.tar.gz` archive) to [the GIN repository](https://gin.g-node.org/BrainGlobe/atlases).
-The [`latest_versions.conf`](https://gin.g-node.org/BrainGlobe/atlases/src/master/last_versions.conf) file will also be updated to include the new atlas. At this point, the atlas will be available for use in the API.
+After the pull request is merged, one of the BrainGlobe core developers will run the script and upload the packaged atlas to [the S3 bucket](https://open.quiltdata.com/b/brainglobe/tree/atlas/).
+The [`last_versions.conf`](https://open.quiltdata.com/b/brainglobe/tree/atlas/atlases/last_versions.conf) file will also be updated to include the new atlas. At this point, the atlas will be available for use in the API.
 
 ## Updating an existing atlas
 
 To update an existing atlas, a pull request must be raised to change the existing script.
 Once this pull request is merged, the new atlas will be generated and uploaded to the GIN repository as normal.
-The [`latest_versions.conf`](https://gin.g-node.org/BrainGlobe/atlases/src/master/last_versions.conf) can then be updated to reflect the latest version.
+The [`last_versions.conf`](https://open.quiltdata.com/b/brainglobe/tree/atlas/atlases/last_versions.conf) can then be updated to reflect the latest version.
