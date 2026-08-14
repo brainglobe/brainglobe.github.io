@@ -233,6 +233,7 @@ linkcheck_ignore = [
     "https://gin.g-node.org", # often down, or throttling many requests
     "https://openalex.org", # 403 Client Error: Forbidden
     "https://data.mendeley.com/", # 403 Client Error: Forbidden
+    "https://www.mcgill.ca/neuro/article/neuro-irv-and-helga-cooper-foundation-open-science-prizes-meet-winners-exceptional-edition", # 403 Client Error: Forbidden
     ]
 
 linkcheck_anchors_ignore_for_url = [
