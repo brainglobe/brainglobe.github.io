@@ -7,7 +7,7 @@ By default, they will end up in the `~/.brainglobe/brainglobe-atlasapi` folder, 
 
 The BrainGlobeAtlas class fetches those atlases from a dedicated S3 bucket
 ([s3://brainglobe/atlas](https://open.quiltdata.com/b/brainglobe/tree/atlas/)).
-Only members of the BrainGlobe initiative can upload new atlases to the S3 bucket,
+Only members of the BrainGlobe Initiative can upload new atlases to the S3 bucket,
 and this is essential to ensure the interoperability of all atlases that are part of the BrainGlobe suite.
 Still, we want to keep the process open to external contribution,
 and we tried to streamline the process for people who want to expand the list of BrainGlobe supported atlases.
