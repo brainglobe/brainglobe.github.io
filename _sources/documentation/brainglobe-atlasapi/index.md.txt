@@ -8,14 +8,6 @@ data from multiple sources.
 
 The brainglobe atlas API deals with this problem by providing a common interface for programmers to download and process data from multiple sources.
 
-Each atlas consists of data files in a common format:
-
-* A "reference" image of a brain (`.tiff`)
-* An "annotation" image, with each brain region defined by a unique pixel value (`.tiff`)
-* Meshes defining the surface of each brain region (`.obj`)
-* A mapping of brain region pixel value to region name, and structure hierarchy (`.json`)
-* Metadata defining the shape, orientation etc. of the data, and other info such as animal species and authors (`.json`)
-
 ## Atlases available
 
 
@@ -51,7 +43,6 @@ For a tutorial on how to use the basic features of the API, please see the [Brai
 :maxdepth: 2
 usage/atlas-details
 usage/command-line-interface
-usage/using-the-files-directly
 
 ```
 

@@ -562,9 +562,37 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">_determine_pyramid_level</span><span class="p">(</span>
     <span class="n">multiscale</span><span class="p">:</span> <span class="n">nz</span><span class="o">.</span><span class="n">Multiscales</span><span class="p">,</span> <span class="n">resolution</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">metadata</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">multiscale</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">datasets</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the pyramid level matching ``resolution``.</span>
+
+<span class="sd">    The scale of each level is read from ``NgffImage.scale``, which ngff-zarr</span>
+<span class="sd">    populates from the coordinate transformations of the corresponding</span>
+<span class="sd">    dataset. That mapping is keyed by dimension name and is the same whatever</span>
+<span class="sd">    OME-Zarr version the store is written in, so it avoids interpreting the</span>
+<span class="sd">    version-specific transformation metadata directly.</span>
+
+<span class="sd">    ``images`` and ``metadata.datasets`` are built in the same pass over the</span>
+<span class="sd">    stored datasets, so their indices refer to the same pyramid level.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    multiscale : nz.Multiscales</span>
+<span class="sd">        The multiscale image to search.</span>
+<span class="sd">    resolution : tuple of float</span>
+<span class="sd">        Requested resolution in microns, in ``(z, y, x)`` order.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">        Index of the matching pyramid level.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If no pyramid level has the requested resolution.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">image</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">multiscale</span><span class="o">.</span><span class="n">images</span><span class="p">):</span>
         <span class="c1"># Only check spatial scale against resolution</span>
-        <span class="n">scales</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">coordinateTransformations</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scale</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>
+        <span class="n">scales</span> <span class="o">=</span> <span class="p">[</span><span class="n">image</span><span class="o">.</span><span class="n">scale</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="n">image</span><span class="o">.</span><span class="n">dims</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]]</span>
         <span class="k">if</span> <span class="nb">all</span><span class="p">(</span>
             <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">res</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">scale</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">res</span><span class="p">,</span> <span class="n">scale</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">resolution</span><span class="p">,</span> <span class="n">scales</span><span class="p">)</span>

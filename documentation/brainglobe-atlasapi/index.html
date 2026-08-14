@@ -492,7 +492,6 @@
 <li class="toctree-l2"><a class="reference internal" href="usage/atlas-details.html">Atlas details</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="usage/command-line-interface.html">Command line interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage/using-the-files-directly.html">Using the files directly</a></li>
 <li class="toctree-l2"><a class="reference internal" href="adding-a-new-atlas.html">Adding a new atlas</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="api.html">API reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="api/brainglobe_atlasapi.descriptors.html">brainglobe_atlasapi.descriptors</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -819,14 +818,6 @@ to allow users to interact with the data programmatically (e.g. the excellent
 <a class="reference external" href="https://portal.brain-map.org">Allen Mouse Brain Atlas</a>), but many do not, and there is no consistent way to process
 data from multiple sources.</p>
 <p>The brainglobe atlas API deals with this problem by providing a common interface for programmers to download and process data from multiple sources.</p>
-<p>Each atlas consists of data files in a common format:</p>
-<ul class="simple">
-<li><p>A “reference” image of a brain (<code class="docutils literal notranslate"><span class="pre">.tiff</span></code>)</p></li>
-<li><p>An “annotation” image, with each brain region defined by a unique pixel value (<code class="docutils literal notranslate"><span class="pre">.tiff</span></code>)</p></li>
-<li><p>Meshes defining the surface of each brain region (<code class="docutils literal notranslate"><span class="pre">.obj</span></code>)</p></li>
-<li><p>A mapping of brain region pixel value to region name, and structure hierarchy (<code class="docutils literal notranslate"><span class="pre">.json</span></code>)</p></li>
-<li><p>Metadata defining the shape, orientation etc. of the data, and other info such as animal species and authors (<code class="docutils literal notranslate"><span class="pre">.json</span></code>)</p></li>
-</ul>
 <section id="atlases-available">
 <h2>Atlases available<a class="headerlink" href="#atlases-available" title="Link to this heading">#</a></h2>
 <p>A number of atlases are in development, but those available currently are:</p>
@@ -1113,7 +1104,6 @@ data from multiple sources.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="usage/command-line-interface.html">Command line interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage/using-the-files-directly.html">Using the files directly</a></li>
 </ul>
 </div>
 </section>

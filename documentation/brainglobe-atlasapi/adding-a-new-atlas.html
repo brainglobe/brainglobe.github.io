@@ -66,7 +66,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="API reference" href="api.html" />
-    <link rel="prev" title="Using the files directly" href="usage/using-the-files-directly.html" /> 
+    <link rel="prev" title="Command line interface" href="usage/command-line-interface.html" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -492,7 +492,6 @@
 <li class="toctree-l2"><a class="reference internal" href="usage/atlas-details.html">Atlas details</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="usage/command-line-interface.html">Command line interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage/using-the-files-directly.html">Using the files directly</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Adding a new atlas</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="api.html">API reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="api/brainglobe_atlasapi.descriptors.html">brainglobe_atlasapi.descriptors</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -820,11 +819,10 @@
 <section id="how-are-brainglobe-atlases-distributed">
 <h2>How are BrainGlobe atlases distributed?<a class="headerlink" href="#how-are-brainglobe-atlases-distributed" title="Link to this heading">#</a></h2>
 <p>BrainGlobe atlases are downloaded locally to the user’s machine whenever they try to use an atlas that has not yet been downloaded.
-By default, they will end up in the <code class="docutils literal notranslate"><span class="pre">~/.brainglobe</span></code> folder, unless differently specified in the <code class="docutils literal notranslate"><span class="pre">brainglobe-atlasapi</span></code> configuration.</p>
-<p>The BrainGlobeAtlas class fetches those atlases from a dedicated GIN repository
-(<a class="reference external" href="https://gin.g-node.org/brainglobe/atlases">https://gin.g-node.org/brainglobe/atlases</a>). GIN repos are very similar
-to GitHub repos, but support storage of large datasets, using git-annex.
-Only members of the BrainGlobe initiative can upload new atlases to the GIN repo,
+By default, they will end up in the <code class="docutils literal notranslate"><span class="pre">~/.brainglobe/brainglobe-atlasapi</span></code> folder, unless differently specified in the <code class="docutils literal notranslate"><span class="pre">brainglobe-atlasapi</span></code> configuration.</p>
+<p>The BrainGlobeAtlas class fetches those atlases from a dedicated S3 bucket
+(<a class="reference external" href="https://open.quiltdata.com/b/brainglobe/tree/atlas/">s3://brainglobe/atlas</a>).
+Only members of the BrainGlobe Initiative can upload new atlases to the S3 bucket,
 and this is essential to ensure the interoperability of all atlases that are part of the BrainGlobe suite.
 Still, we want to keep the process open to external contribution,
 and we tried to streamline the process for people who want to expand the list of BrainGlobe supported atlases.
@@ -920,13 +918,12 @@ of each brain region</p></li>
 <p>Once an atlas script has been written which sets out all the necessary metadata and loads all the files required,
 code provided by BrainGlobe’s atlas generation submodule can be used to format the data as needed by the BrainGlobe
 AtlasAPI. The atlas generation submodule provides one convenient function <code class="docutils literal notranslate"><span class="pre">wrapup_atlas_from_data</span></code>  which takes all the metadata and data
-from above and creates the data structures required. These data structures include .tiff files with the various images,
-csv files with the structures metadata information, a README file laying out the atlas content, etc. The same function
-creates a compressed folder which can be uploaded to GIN for distribution (see above).</p>
+from above and creates the data structures required. These data structures include <a class="reference external" href="https://ngff.openmicroscopy.org/index.html">OME-Zarr</a> files with the various images,
+csv files with the structures metadata information, a JSON file laying out the atlas content, etc.</p>
 </section>
 <section id="extracting-meshes">
 <h3>Extracting meshes<a class="headerlink" href="#extracting-meshes" title="Link to this heading">#</a></h3>
-<p>While most atlases will have a set of 3D images that can be used as annotated and template stacks, not all atlases will have mesh (.obj) files for each brain region in the atlas.
+<p>While most atlases will have a set of 3D images that can be used as annotated and template stacks, not all atlases will have mesh files for each brain region in the atlas.
 However, regions’ meshes are used frequently by BrainGlobe tools, especially in <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> for visualizing anatomical data in 3D.
 For this reason, the atlas generation code from BrainGlobe provides functionality that can be used to generate such mesh files.
 A mask image is created which only contains the annotation for the brain region of interest, and a marching cubes algorithm is used to identify the surface of the region; finally, a mesh is created from the output of the marching cubes algorithm, and the results are saved to a .obj file.
@@ -944,12 +941,11 @@ The <code class="docutils literal notranslate"><span class="pre">ATLAS_PACKAGER<
 <p>To check if everything went smoothly,
 you can just go to the folder with the atlas content
 (named <code class="docutils literal notranslate"><span class="pre">atlasname_resolutionum</span></code> in the directory you were generating the atlas in) and check out its content. </p>
-<p>For the metadata, you can just open the json file and inspect it.</p>
-<p>To inspect the reference.tiff file and the annotation.tiff file, you can just drag and drop them in napari (to install napari, see <a class="reference external" href="https://napari.org/stable/tutorials/fundamentals/installation">here</a>), and they will open as an image layer, and a label layer, respectively.
-You know the orientation is correct if you are looking at upright (dorsal top, ventral bottom) frontal sections, and when you scroll the slider to inspect sections with a higher index, you are moving from anterior to posterior.</p>
+<p>For the metadata, you can just open the json files and inspect them.</p>
 <p>Once an atlas is created with BrainGlobe’s atlas generation tools, it can be used with most software from the BrainGlobe software suite.
 These include <a class="reference internal" href="../brainrender/index.html"><span class="doc std std-doc">brainrender</span></a> and <a class="reference internal" href="../../tutorials/visualise-atlas-napari.html"><span class="doc std std-doc">brainrender-napari</span></a> which provide a convenient way to visually inspect the generated atlas meshes.</p>
-<p>For example, you can visualise various parts of the Max Planck Zebrafish Brain Atlas next to each other by running the script below. You can do the same with your own newly-packaged atlas (or any other BrainGlobe atlas) by replacing the atlas name, the name of the additional reference, and the acronym of the structure you’re interested in, as explained in the comments below:</p>
+<p>For example, you can visualise various parts of the Max Planck Zebrafish Brain Atlas next to each other by running the script below. You can do the same with your own newly-packaged atlas (or any other BrainGlobe atlas) by replacing the atlas name, the name of the additional reference, and the acronym of the structure you’re interested in, and the BrainGlobe directory. They will open as an image layer, and a label layer, respectively.
+You know the orientation is correct if you are looking at upright (dorsal top, ventral bottom) frontal sections, and when you scroll the slider to inspect sections with a higher index, you are moving from anterior to posterior.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">brainrender_napari.napari_atlas_representation</span><span class="w"> </span><span class="kn">import</span> <span class="n">NapariAtlasRepresentation</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">BrainGlobeAtlas</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">napari</span>
@@ -958,11 +954,11 @@ These include <a class="reference internal" href="../brainrender/index.html"><sp
     <span class="n">viewer</span> <span class="o">=</span> <span class="n">napari</span><span class="o">.</span><span class="n">Viewer</span><span class="p">()</span>
     <span class="n">viewer</span><span class="o">.</span><span class="n">dims</span><span class="o">.</span><span class="n">ndisplay</span> <span class="o">=</span> <span class="mi">3</span>
     <span class="c1"># replace &quot;mpin_zfish_1um&quot; with atlas of interest below</span>
-    <span class="n">napari_atlas</span> <span class="o">=</span> <span class="n">NapariAtlasRepresentation</span><span class="p">(</span><span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s2">&quot;mpin_zfish_1um&quot;</span><span class="p">),</span> <span class="n">viewer</span><span class="p">)</span>
+    <span class="n">napari_atlas</span> <span class="o">=</span> <span class="n">NapariAtlasRepresentation</span><span class="p">(</span><span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s2">&quot;mpin_zfish_1um&quot;</span><span class="p">,</span> <span class="n">brainglobe_dir</span><span class="o">=</span><span class="s2">&quot;/path/to/brainglobe_workingdir&quot;</span><span class="p">),</span> <span class="n">viewer</span><span class="p">)</span>
     <span class="n">napari_atlas</span><span class="o">.</span><span class="n">add_to_viewer</span><span class="p">()</span>
     
     <span class="c1"># replace &quot;GADb1&quot; with name of additional reference for your atlas (if it has any)</span>
-    <span class="n">napari_atlas</span><span class="o">.</span><span class="n">add_additional_reference</span><span class="p">(</span><span class="s2">&quot;GADb1&quot;</span><span class="p">)</span>
+    <span class="n">napari_atlas</span><span class="o">.</span><span class="n">add_additional_reference</span><span class="p">(</span><span class="s2">&quot;mpin_zfish-GAD1b-template&quot;</span><span class="p">)</span>
     
     <span class="c1"># replace &quot;root&quot; with acronym of structure of interest below</span>
     <span class="n">napari_atlas</span><span class="o">.</span><span class="n">add_structure_to_viewer</span><span class="p">(</span><span class="s2">&quot;&lt;structure_id&gt;&quot;</span><span class="p">)</span>
@@ -973,14 +969,14 @@ These include <a class="reference internal" href="../brainrender/index.html"><sp
 </section>
 <section id="uploading-the-atlas">
 <h2>Uploading the atlas<a class="headerlink" href="#uploading-the-atlas" title="Link to this heading">#</a></h2>
-<p>After the pull request is merged, one of the BrainGlobe core developers will run the script and upload the packaged atlas (<code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code> archive) to <a class="reference external" href="https://gin.g-node.org/BrainGlobe/atlases">the GIN repository</a>.
-The <a class="reference external" href="https://gin.g-node.org/BrainGlobe/atlases/src/master/last_versions.conf"><code class="docutils literal notranslate"><span class="pre">latest_versions.conf</span></code></a> file will also be updated to include the new atlas. At this point, the atlas will be available for use in the API.</p>
+<p>After the pull request is merged, one of the BrainGlobe core developers will run the script and upload the packaged atlas to <a class="reference external" href="https://open.quiltdata.com/b/brainglobe/tree/atlas/">the S3 bucket</a>.
+The <a class="reference external" href="https://open.quiltdata.com/b/brainglobe/tree/atlas/atlases/last_versions.conf"><code class="docutils literal notranslate"><span class="pre">last_versions.conf</span></code></a> file will also be updated to include the new atlas. At this point, the atlas will be available for use in the API.</p>
 </section>
 <section id="updating-an-existing-atlas">
 <h2>Updating an existing atlas<a class="headerlink" href="#updating-an-existing-atlas" title="Link to this heading">#</a></h2>
 <p>To update an existing atlas, a pull request must be raised to change the existing script.
 Once this pull request is merged, the new atlas will be generated and uploaded to the GIN repository as normal.
-The <a class="reference external" href="https://gin.g-node.org/BrainGlobe/atlases/src/master/last_versions.conf"><code class="docutils literal notranslate"><span class="pre">latest_versions.conf</span></code></a> can then be updated to reflect the latest version.</p>
+The <a class="reference external" href="https://open.quiltdata.com/b/brainglobe/tree/atlas/atlases/last_versions.conf"><code class="docutils literal notranslate"><span class="pre">last_versions.conf</span></code></a> can then be updated to reflect the latest version.</p>
 </section>
 </section>
 
@@ -998,12 +994,12 @@ The <a class="reference external" href="https://gin.g-node.org/BrainGlobe/atlase
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="usage/using-the-files-directly.html"
+       href="usage/command-line-interface.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Using the files directly</p>
+        <p class="prev-next-title">Command line interface</p>
       </div>
     </a>
     <a class="right-next"

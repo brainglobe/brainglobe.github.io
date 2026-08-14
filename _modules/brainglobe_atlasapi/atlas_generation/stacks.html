@@ -615,6 +615,11 @@
         <span class="n">group</span><span class="o">=</span><span class="n">root</span><span class="p">,</span>
         <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">,</span>
         <span class="n">coordinate_transformations</span><span class="o">=</span><span class="n">transformations</span><span class="p">,</span>
+        <span class="n">storage_options</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;chunks&quot;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span> <span class="k">if</span> <span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">4</span> <span class="k">else</span> <span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">},</span>
     <span class="p">)</span>
 
     <span class="n">store</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
