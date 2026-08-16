@@ -11,13 +11,13 @@ language: English
 
 [Mansour et al. (2025)](https://doi.org/10.1126/sciadv.adq8089) introduced the Duke Mouse Brain Atlas (DMBA), a high-resolution 15 µm isotropic stereotaxic atlas of the adult mouse brain. The atlas combines magnetic resonance histology (MRH), diffusion MRI-derived contrasts, micro-CT, light sheet microscopy, and registered anatomical annotations in a common reference space.
 
-The atlas is now available through BrainGlobe as `duke_mouse_15um`, with downloads at 15, 25, 50, 75, 100, and 150 µm isotropic resolution.
+The atlas is now available through BrainGlobe via `duke_mouse_15um` for the 15 micron version, with downsampled versions available at 25, 50, 75, 100, and 150 µm isotropic resolution.
 
 One useful feature of the DMBA is how it was built. The MRH data were acquired from perfusion-fixed specimens with the brains still in the skull. This makes the reference less affected by global or regional swelling, shrinkage, and deformation than atlases built after cranial dissection or conventional histological sectioning.
 
 For BrainGlobe, the main reference image is the unmasked multigradient-echo (mGRE) template, and the annotation image uses the RCCFv3 labels supplied with the atlas data. RCCFv3 is the Duke team's reduced version of the Allen CCFv3 label set: related structures smaller than 0.1 mm<sup>3</sup> were grouped into larger anatomical regions, reducing registration noise from small regions that are difficult to align reliably.
 
-The BrainGlobe package includes 12 registered reference images. These templates present the same anatomy through complementary MRI contrasts: diffusion-derived images are sensitive to water movement and tissue microstructure, while multigradient-echo images capture magnetic relaxation properties. Together, they can make different anatomical structures and tissue properties easier to inspect.
+The packaged atlas includes 12 registered reference images. These templates present the same anatomy through complementary MRI contrasts: diffusion-derived images are sensitive to water movement and tissue microstructure, while multigradient-echo images capture magnetic relaxation properties. Together, they can make different anatomical structures and tissue properties easier to inspect.
 
 The atlas is stereotaxic, and information about stereotaxic landmarks is available with the source DMBA data.
 
