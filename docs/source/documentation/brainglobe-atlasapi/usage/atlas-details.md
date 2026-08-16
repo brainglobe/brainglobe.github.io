@@ -449,7 +449,12 @@ This atlas from [Mansour et al. (2025)](https://doi.org/10.1126/sciadv.adq8089) 
 BrainGlobe includes the mean diffusivity template as the main reference image, the source annotation image, generated meshes, and 11 additional registered reference images. RCCFv3 is the Duke team's reduced version of the Allen CCFv3 label set, in which related structures smaller than 0.1 mm3 are grouped into larger regions to reduce registration noise from small structures.
 
 Available versions:
-* `duke_mouse_15um`
+* `duke_mouse_15um` - 15μm resolution
+* `duke_mouse_25um` - 25μm resolution
+* `duke_mouse_50um` - 50μm resolution
+* `duke_mouse_75um` - 75μm resolution
+* `duke_mouse_100um` - 100μm resolution
+* `duke_mouse_150um` - 150μm resolution
   
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_mouse.json)
 
