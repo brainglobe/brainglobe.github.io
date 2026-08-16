@@ -541,15 +541,15 @@ points using a 7T MRI. The earliest 5 timepoints were registered to the Ashwell 
 to the Paxinos and Watson adult rat atlas to give a consistent view of the structural changes that occur over development. 
 
 These atlases are only available at 25μm resolution:
-* `duke_dev_rat_p00_25um` - P0
-* `duke_dev_rat_p02_25um` - P2
-* `duke_dev_rat_p04_25um` - P4
-* `duke_dev_rat_p08_25um` - P8
-* `duke_dev_rat_p12_25um` - P12
-* `duke_dev_rat_p18_25um` - P18
-* `duke_dev_rat_p24_25um` - P24
-* `duke_dev_rat_p40_25um` - P40
-* `duke_dev_rat_p80_25um` - P80
+* `duke_dev_rat_p00_25um` - P0 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p00.json)
+* `duke_dev_rat_p02_25um` - P2 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p02.json)
+* `duke_dev_rat_p04_25um` - P4 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p04.json)
+* `duke_dev_rat_p08_25um` - P8 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p08.json)
+* `duke_dev_rat_p12_25um` - P12 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p12.json)
+* `duke_dev_rat_p18_25um` - P18 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p18.json)
+* `duke_dev_rat_p24_25um` - P24 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p24.json)
+* `duke_dev_rat_p40_25um` - P40 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p40.json)
+* `duke_dev_rat_p80_25um` - P80 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p80.json)
 
 ## Other rodent
 ### [Prairie vole brain atlas](https://doi.org/10.7554/eLife.87029.3.sa0)
