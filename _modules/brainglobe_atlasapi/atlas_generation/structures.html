@@ -518,7 +518,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                    <h1>Source code for brainglobe_atlasapi.atlas_generation.structures</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;Handle structure information for atlas generation.&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""Handle structure information for atlas generation."""</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
@@ -529,7 +529,7 @@
 <div class="viewcode-block" id="check_struct_consistency">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.structures.check_struct_consistency.html#brainglobe_atlasapi.atlas_generation.structures.check_struct_consistency">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">check_struct_consistency</span><span class="p">(</span><span class="n">structures</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Ensure internal consistency of the structures list.</span>
+<span class="w">    </span><span class="sd">"""Ensure internal consistency of the structures list.</span>
 
 <span class="sd">    Checks that each structure dictionary in the list has all the required</span>
 <span class="sd">    keys and that their values are of the correct types, as defined by</span>
@@ -550,7 +550,7 @@
 <span class="sd">    AssertionError</span>
 <span class="sd">        If any structure dictionary is missing required keys, or if</span>
 <span class="sd">        the types of values do not match the expected template.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">structures</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
     <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">structures</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">dict</span><span class="p">)</span>
 
@@ -563,7 +563,7 @@
             <span class="p">)</span>
         <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;Inconsistencies found for structure </span><span class="si">{</span><span class="n">struct</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="sa">f</span><span class="s2">"Inconsistencies found for structure </span><span class="si">{</span><span class="n">struct</span><span class="si">}</span><span class="s2">"</span>
             <span class="p">)</span></div>
 
 
@@ -571,7 +571,7 @@
 <div class="viewcode-block" id="get_structure_children">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.structures.get_structure_children.html#brainglobe_atlasapi.atlas_generation.structures.get_structure_children">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">get_structure_children</span><span class="p">(</span><span class="n">structures</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">use_tree</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the direct and indirect children of a given brain region.</span>
+<span class="w">    </span><span class="sd">"""Get the direct and indirect children of a given brain region.</span>
 
 <span class="sd">    Given a list of dictionaries with structures data and a specific</span>
 <span class="sd">    region from that list, this function returns the IDs of all structures</span>
@@ -585,7 +585,7 @@
 <span class="sd">        structure with its properties.</span>
 <span class="sd">    region : dict</span>
 <span class="sd">        A dictionary representing the parent brain region, which must contain</span>
-<span class="sd">        &#39;id&#39; and &#39;structure_id_path&#39; keys.</span>
+<span class="sd">        'id' and 'structure_id_path' keys.</span>
 <span class="sd">    use_tree : bool, optional</span>
 <span class="sd">        If True, a `StructureTree` will be constructed and used to find</span>
 <span class="sd">        children. If False, a simpler list comprehension will be used.</span>
@@ -601,39 +601,39 @@
 <span class="sd">    ------</span>
 <span class="sd">    ValueError</span>
 <span class="sd">        If `structures` is not a list of dictionaries, or if `region` is not</span>
-<span class="sd">        a dictionary, or if `region` is missing &#39;id&#39; or &#39;structure_id_path&#39;.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">        a dictionary, or if `region` is missing 'id' or 'structure_id_path'.</span>
+<span class="sd">    """</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">structures</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;structures should be a list&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"structures should be a list"</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">structures</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">dict</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;structures should be a list of dictionaries&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"structures should be a list of dictionaries"</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-            <span class="s2">&quot;region should be a dictionary with a structures data&quot;</span>
+            <span class="s2">"region should be a dictionary with a structures data"</span>
         <span class="p">)</span>
 
-    <span class="k">if</span> <span class="s2">&quot;id&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">region</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;structure_id_path&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">region</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">if</span> <span class="s2">"id"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">region</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">"structure_id_path"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">region</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-            <span class="s2">&quot;Incomplete structures dicts, &quot;</span>
-            <span class="s2">&quot;need both &#39;id&#39; and &#39;structure_id_path&#39;&quot;</span>
+            <span class="s2">"Incomplete structures dicts, "</span>
+            <span class="s2">"need both 'id' and 'structure_id_path'"</span>
         <span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">use_tree</span><span class="p">:</span>
         <span class="n">sub_region_ids</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">subregion</span> <span class="ow">in</span> <span class="n">structures</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">region</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">subregion</span><span class="p">[</span><span class="s2">&quot;structure_id_path&quot;</span><span class="p">]:</span>
-                <span class="k">if</span> <span class="n">subregion</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">region</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]:</span>
-                    <span class="n">sub_region_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subregion</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">region</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span> <span class="ow">in</span> <span class="n">subregion</span><span class="p">[</span><span class="s2">"structure_id_path"</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">subregion</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">region</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]:</span>
+                    <span class="n">sub_region_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subregion</span><span class="p">[</span><span class="s2">"id"</span><span class="p">])</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">tree</span> <span class="o">=</span> <span class="n">get_structures_tree</span><span class="p">(</span><span class="n">structures</span><span class="p">)</span>
         <span class="n">sub_region_ids</span> <span class="o">=</span> <span class="p">[</span>
             <span class="n">n</span><span class="o">.</span><span class="n">identifier</span>
-            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">subtree</span><span class="p">(</span><span class="n">region</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">identifier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">region</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">subtree</span><span class="p">(</span><span class="n">region</span><span class="p">[</span><span class="s2">"id"</span><span class="p">])</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">identifier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">region</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span>
         <span class="p">]</span>
 
     <span class="k">if</span> <span class="n">sub_region_ids</span> <span class="o">==</span> <span class="p">[]:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">region</span><span class="p">[</span><span class="s1">&#39;acronym&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> doesnt seem to contain any other regions&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">region</span><span class="p">[</span><span class="s1">'acronym'</span><span class="p">]</span><span class="si">}</span><span class="s2"> doesnt seem to contain any other regions"</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">None</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">sub_region_ids</span></div>
@@ -643,7 +643,7 @@
 <div class="viewcode-block" id="get_structure_terminal_nodes">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.structures.get_structure_terminal_nodes.html#brainglobe_atlasapi.atlas_generation.structures.get_structure_terminal_nodes">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">get_structure_terminal_nodes</span><span class="p">(</span><span class="n">structures</span><span class="p">,</span> <span class="n">region</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the terminal (leaf) child nodes of a given brain region.</span>
+<span class="w">    </span><span class="sd">"""Get the terminal (leaf) child nodes of a given brain region.</span>
 
 <span class="sd">    Given a list of dictionaries with structures data and a specific</span>
 <span class="sd">    region from that list, this function returns the IDs of all structures</span>
@@ -657,24 +657,24 @@
 <span class="sd">        structure with its properties.</span>
 <span class="sd">    region : dict</span>
 <span class="sd">        A dictionary representing the parent brain region, which must contain</span>
-<span class="sd">        an &#39;id&#39; key.</span>
+<span class="sd">        an 'id' key.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    list of int or None</span>
 <span class="sd">        A list of integer IDs for all terminal child structures, or None if</span>
 <span class="sd">        the region contains no terminal child regions.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">tree</span> <span class="o">=</span> <span class="n">get_structures_tree</span><span class="p">(</span><span class="n">structures</span><span class="p">)</span>
 
     <span class="n">sub_region_ids</span> <span class="o">=</span> <span class="p">[</span>
         <span class="n">n</span><span class="o">.</span><span class="n">identifier</span>
-        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">subtree</span><span class="p">(</span><span class="n">region</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">leaves</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">identifier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">region</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">subtree</span><span class="p">(</span><span class="n">region</span><span class="p">[</span><span class="s2">"id"</span><span class="p">])</span><span class="o">.</span><span class="n">leaves</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">identifier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">region</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span>
     <span class="p">]</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">sub_region_ids</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">region</span><span class="p">[</span><span class="s1">&#39;acronym&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> doesnt seem to contain any other regions&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">region</span><span class="p">[</span><span class="s1">'acronym'</span><span class="p">]</span><span class="si">}</span><span class="s2"> doesnt seem to contain any other regions"</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">None</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">sub_region_ids</span></div>
@@ -684,7 +684,7 @@
 <div class="viewcode-block" id="filter_structures_not_present_in_annotation">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.structures.filter_structures_not_present_in_annotation.html#brainglobe_atlasapi.atlas_generation.structures.filter_structures_not_present_in_annotation">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">filter_structures_not_present_in_annotation</span><span class="p">(</span><span class="n">structures</span><span class="p">,</span> <span class="n">annotation</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Filter out structures not present in the annotation volume.</span>
 
 <span class="sd">    Parameters</span>
@@ -695,7 +695,7 @@
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    list of dict</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">present_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">annotation</span><span class="p">))</span>
     <span class="n">tree</span> <span class="o">=</span> <span class="n">get_structures_tree</span><span class="p">(</span><span class="n">structures</span><span class="p">)</span>
 
@@ -707,11 +707,11 @@
                 <span class="k">return</span> <span class="kc">True</span>
         <span class="k">return</span> <span class="kc">False</span>
 
-    <span class="n">removed</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">structures</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">is_present</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">])]</span>
+    <span class="n">removed</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">structures</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">is_present</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">"id"</span><span class="p">])]</span>
     <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">removed</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Removed structure:&quot;</span><span class="p">,</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="s2">&quot;(ID:&quot;</span><span class="p">,</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Removed structure:"</span><span class="p">,</span> <span class="n">r</span><span class="p">[</span><span class="s2">"name"</span><span class="p">],</span> <span class="s2">"(ID:"</span><span class="p">,</span> <span class="n">r</span><span class="p">[</span><span class="s2">"id"</span><span class="p">],</span> <span class="s2">")"</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">structures</span> <span class="k">if</span> <span class="n">is_present</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">])]</span></div>
+    <span class="k">return</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">structures</span> <span class="k">if</span> <span class="n">is_present</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">"id"</span><span class="p">])]</span></div>
 
 </pre></div>
 <div class="section ablog__blog_comments">

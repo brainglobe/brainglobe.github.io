@@ -634,14 +634,14 @@ We would then decide to release a minor version of the meta-package, which updat
 <p>With the above conventions on versioning in mind, meta-package dependencies are always <strong>pinned from below, and from above by the next major version</strong>.
 As such, all BrainGlobe dependencies in the meta-package <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> will have the form:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;brainglobe-tool-1&gt;=X.Y.Z,&lt;(X+1)&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"brainglobe-tool-1&gt;=X.Y.Z,&lt;(X+1)"</span><span class="p">,</span>
 <span class="p">]</span>
 </pre></div>
 </div>
 <p>for example,</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;cellfinder&gt;=1.1.0,&lt;2&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;brainrender&gt;=2.1.3,&lt;3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"cellfinder&gt;=1.1.0,&lt;2"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"brainrender&gt;=2.1.3,&lt;3"</span><span class="p">,</span>
 <span class="p">]</span>
 </pre></div>
 </div>

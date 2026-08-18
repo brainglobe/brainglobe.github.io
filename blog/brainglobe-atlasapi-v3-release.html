@@ -540,6 +540,12 @@
   <ul>
      
     <li>
+      <a href="duke-mouse-brain-atlas-added.html">
+        18 August - Duke Mouse Brain Atlas has been added to BrainGlobe
+      </a>
+    </li>
+    
+    <li>
       <a href="tawny-dragon-atlas-added.html">
         12 August - A Brain Atlas for the Tawny Dragon, Ctenophorus decresii, has been added to BrainGlobe
       </a>
@@ -560,12 +566,6 @@
     <li>
       <a href="the-systematic-atlas-packaging-project.html">
         15 May - The Systematic Atlas Packaging Project
-      </a>
-    </li>
-    
-    <li>
-      <a href="carea-atlas-added.html">
-        05 February - New mouse brain atlas based on gene expression
       </a>
     </li>
     
@@ -667,7 +667,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">BrainGlobeAtlas</span></code> can now take an explicit version:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">BrainGlobeAtlas</span>
 
-<span class="n">atlas</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s2">&quot;allen_mouse_25um&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">)</span>
+<span class="n">atlas</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s2">"allen_mouse_25um"</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Leave it out and you get the latest release, as before. Provide it and you get that specific BrainGlobe version of the atlas. A methods section can then name the version it used, and someone else can reproduce the analysis years later. Several versions of the same atlas can also sit side by side locally, which the old format did not allow.</p>

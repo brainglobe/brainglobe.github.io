@@ -518,7 +518,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                    <h1>Source code for brainglobe_atlasapi.bg_atlas</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;Defines the BrainGlobe Atlas API V3 classes and functions.&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""Defines the BrainGlobe Atlas API V3 classes and functions."""</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span>
@@ -553,17 +553,17 @@
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_version_tuple_from_str</span><span class="p">(</span><span class="n">version_str</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">tuple</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">version_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)])</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">version_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"."</span><span class="p">)])</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_version_str_from_tuple</span><span class="p">(</span><span class="n">version_tuple</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="k">return</span> <span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">version_tuple</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">"_"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">version_tuple</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="BrainGlobeAtlas">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">BrainGlobeAtlas</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">Atlas</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add remote atlas fetching and version comparison functionalities</span>
+<span class="w">    </span><span class="sd">"""Add remote atlas fetching and version comparison functionalities</span>
 <span class="sd">    to the core Atlas class.</span>
 
 <span class="sd">    Parameters</span>
@@ -581,7 +581,7 @@
 <span class="sd">    fn_update : Callable</span>
 <span class="sd">        Handler function to update during download. Takes completed and total</span>
 <span class="sd">        bytes.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -595,10 +595,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_remote_version</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_local_full_name</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_requested_version</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">version</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="n">version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"."</span><span class="p">,</span> <span class="s2">"_"</span><span class="p">)</span> <span class="k">if</span> <span class="n">version</span> <span class="k">else</span> <span class="kc">None</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_local_version</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">_version_tuple_from_str</span><span class="p">(</span><span class="n">version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">))</span>
+            <span class="n">_version_tuple_from_str</span><span class="p">(</span><span class="n">version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"_"</span><span class="p">,</span> <span class="s2">"."</span><span class="p">))</span>
             <span class="k">if</span> <span class="n">version</span>
             <span class="k">else</span> <span class="kc">None</span>
         <span class="p">)</span>
@@ -613,11 +613,11 @@
         <span class="c1"># Use either input locations or locations from the config file,</span>
         <span class="c1"># and create directory if it does not exist:</span>
         <span class="k">if</span> <span class="n">brainglobe_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">brainglobe_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">conf</span><span class="p">[</span><span class="s2">&quot;default_dirs&quot;</span><span class="p">][</span><span class="s2">&quot;brainglobe_dir&quot;</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">brainglobe_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">conf</span><span class="p">[</span><span class="s2">"default_dirs"</span><span class="p">][</span><span class="s2">"brainglobe_dir"</span><span class="p">])</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">brainglobe_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">brainglobe_dir</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">brainglobe_dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">brainglobe_dir</span> <span class="o">/</span> <span class="s2">&quot;brainglobe-atlasapi&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">brainglobe_dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">brainglobe_dir</span> <span class="o">/</span> <span class="s2">"brainglobe-atlasapi"</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">brainglobe_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -627,12 +627,12 @@
                 <span class="n">check_internet_connection</span><span class="p">(</span><span class="n">raise_error</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
                 <span class="c1"># If internet is up, then the atlas name was invalid</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2"> is not a valid atlas name!&quot;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2"> is not a valid atlas name!"</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>
                 <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">local_full_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="p">(</span>
-                    <span class="s2">&quot;Download failed: local atlas manifest not found after &quot;</span>
-                    <span class="s2">&quot;download.&quot;</span>
+                    <span class="s2">"Download failed: local atlas manifest not found after "</span>
+                    <span class="s2">"download."</span>
                 <span class="p">)</span>
 
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">brainglobe_dir</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">local_full_name</span><span class="p">)</span>
@@ -642,14 +642,14 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">local_full_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Returns the local full path to the manifest.json file of the atlas.</span>
 
 <span class="sd">        This will return either the path to the requested version if it is</span>
 <span class="sd">        found locally, or the latest version found locally.</span>
 
 <span class="sd">        If not found, returns None.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_local_full_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_local_full_name</span>
 
@@ -659,16 +659,16 @@
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_requested_version</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">pattern</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">V3_ATLAS_ROOTDIR</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">/&quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_requested_version</span><span class="si">}</span><span class="s2">/manifest.json&quot;</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">V3_ATLAS_ROOTDIR</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">/"</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_requested_version</span><span class="si">}</span><span class="s2">/manifest.json"</span>
             <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">pattern</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="sa">rf</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">V3_ATLAS_ROOTDIR</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">/&quot;</span>
-                <span class="sa">rf</span><span class="s2">&quot;\d+(?:_\d+)?/manifest.json&quot;</span>
+                <span class="sa">rf</span><span class="s2">"</span><span class="si">{</span><span class="n">V3_ATLAS_ROOTDIR</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">/"</span>
+                <span class="sa">rf</span><span class="s2">"\d+(?:_\d+)?/manifest.json"</span>
             <span class="p">)</span>
 
-        <span class="n">glob_pattern</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">V3_ATLAS_ROOTDIR</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">/*/manifest.json&quot;</span>
+        <span class="n">glob_pattern</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">V3_ATLAS_ROOTDIR</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">/*/manifest.json"</span>
 
         <span class="n">available_versions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
             <span class="n">p</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">name</span>
@@ -682,66 +682,66 @@
         <span class="n">latest_version</span> <span class="o">=</span> <span class="n">get_latest_version</span><span class="p">(</span><span class="n">available_versions</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_local_full_name</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">V3_ATLAS_ROOTDIR</span><span class="si">}</span><span class="s2">/&quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">/&quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">latest_version</span><span class="si">}</span><span class="s2">/&quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;manifest.json&quot;</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">V3_ATLAS_ROOTDIR</span><span class="si">}</span><span class="s2">/"</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">/"</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">latest_version</span><span class="si">}</span><span class="s2">/"</span>
+            <span class="sa">f</span><span class="s2">"manifest.json"</span>
         <span class="p">)</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_local_full_name</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">local_version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;If atlas is local, return actual version of the downloaded files.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""If atlas is local, return actual version of the downloaded files."""</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_local_version</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_local_version</span>
 
-        <span class="n">version_str</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;version&quot;</span><span class="p">]</span>
+        <span class="n">version_str</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"version"</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_local_version</span> <span class="o">=</span> <span class="n">_version_tuple_from_str</span><span class="p">(</span>
-            <span class="n">version_str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+            <span class="n">version_str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"_"</span><span class="p">,</span> <span class="s2">"."</span><span class="p">)</span>
         <span class="p">)</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_local_version</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">remote_version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Reads remote version from s3 bucket.</span>
+<span class="w">        </span><span class="sd">"""Reads remote version from s3 bucket.</span>
 
 <span class="sd">        Largest numerical version assumed to be latest.</span>
 <span class="sd">        If we are offline, return None.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_remote_version</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_remote_version</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">check_s3_status</span><span class="p">(</span><span class="n">raise_error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
             <span class="k">return</span> <span class="kc">None</span>
 
-        <span class="n">bucket_path</span> <span class="o">=</span> <span class="n">remote_url_s3</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;atlases/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">bucket_path</span> <span class="o">=</span> <span class="n">remote_url_s3</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="sa">f</span><span class="s2">"atlases/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">bucket_path</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2"> is not a valid atlas name!&quot;</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2"> is not a valid atlas name!"</span>
             <span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_requested_version</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">versions_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="n">bucket_path</span><span class="p">)</span>
             <span class="n">available_versions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="n">path_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">path_str</span> <span class="ow">in</span> <span class="n">versions_path</span>
+                <span class="n">path_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">path_str</span> <span class="ow">in</span> <span class="n">versions_path</span>
             <span class="p">]</span>
             <span class="n">latest_version</span> <span class="o">=</span> <span class="n">get_latest_version</span><span class="p">(</span><span class="n">available_versions</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_remote_version</span> <span class="o">=</span> <span class="n">_version_tuple_from_str</span><span class="p">(</span>
-                <span class="n">latest_version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+                <span class="n">latest_version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"_"</span><span class="p">,</span> <span class="s2">"."</span><span class="p">)</span>
             <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">requested_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bucket_path</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_requested_version</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">requested_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">bucket_path</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_requested_version</span><span class="si">}</span><span class="s2">"</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">requested_path</span><span class="p">):</span>
                 <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
-                    <span class="sa">f</span><span class="s2">&quot;Requested version </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_requested_version</span><span class="si">}</span><span class="s2"> for atlas &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2"> not found in remote.&quot;</span>
+                    <span class="sa">f</span><span class="s2">"Requested version </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_requested_version</span><span class="si">}</span><span class="s2"> for atlas "</span>
+                    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2"> not found in remote."</span>
                 <span class="p">)</span>
 
             <span class="bp">self</span><span class="o">.</span><span class="n">_remote_version</span> <span class="o">=</span> <span class="n">_version_tuple_from_str</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_requested_version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_requested_version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"_"</span><span class="p">,</span> <span class="s2">"."</span><span class="p">)</span>
             <span class="p">)</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_remote_version</span>
@@ -749,17 +749,17 @@
 <div class="viewcode-block" id="BrainGlobeAtlas.download">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.download">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">download</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Download and extract the atlas files from remote storage.</span>
+<span class="w">        </span><span class="sd">"""Download and extract the atlas files from remote storage.</span>
 
 <span class="sd">        The manifest file is removed if any error occurs during the</span>
 <span class="sd">        download to ensure that incomplete downloads are retried.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">check_s3_status</span><span class="p">()</span>
 
         <span class="n">remote_version_str</span> <span class="o">=</span> <span class="n">_version_str_from_tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">remote_version</span><span class="p">)</span>
         <span class="n">key_name</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">V3_ATLAS_ROOTDIR</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">/&quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">remote_version_str</span><span class="si">}</span><span class="s2">/manifest.json&quot;</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">V3_ATLAS_ROOTDIR</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">/"</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">remote_version_str</span><span class="si">}</span><span class="s2">/manifest.json"</span>
         <span class="p">)</span>
 
         <span class="n">local_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">brainglobe_dir</span> <span class="o">/</span> <span class="n">key_name</span>
@@ -767,23 +767,23 @@
 
         <span class="n">local_path</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;Downloading </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2"> atlas &quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;v</span><span class="si">{</span><span class="n">remote_version_str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;.&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> manifest:&quot;</span>
+            <span class="sa">f</span><span class="s2">"Downloading </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2"> atlas "</span>
+            <span class="sa">f</span><span class="s2">"v</span><span class="si">{</span><span class="n">remote_version_str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span><span class="w"> </span><span class="s1">'.'</span><span class="p">)</span><span class="si">}</span><span class="s2"> manifest:"</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_path</span><span class="p">,</span> <span class="n">local_path</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">TqdmCallback</span><span class="p">())</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="n">read_json</span><span class="p">(</span><span class="n">local_path</span><span class="p">)</span>
 
         <span class="k">try</span><span class="p">:</span>
             <span class="c1"># Download terminology file</span>
-            <span class="n">terminology_location</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;terminology&quot;</span><span class="p">][</span><span class="s2">&quot;location&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="n">terminology_location</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"terminology"</span><span class="p">][</span><span class="s2">"location"</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
             <span class="n">local_terminology_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">brainglobe_dir</span> <span class="o">/</span> <span class="n">terminology_location</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">local_terminology_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
                 <span class="n">remote_terminology_path</span> <span class="o">=</span> <span class="n">remote_url_s3</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                     <span class="n">terminology_location</span>
                 <span class="p">)</span>
                 <span class="nb">print</span><span class="p">(</span>
-                    <span class="sa">f</span><span class="s2">&quot;Downloading terminology metadata &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;terminology&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">:&quot;</span>
+                    <span class="sa">f</span><span class="s2">"Downloading terminology metadata "</span>
+                    <span class="sa">f</span><span class="s2">"for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'terminology'</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2">:"</span>
                 <span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
                     <span class="n">remote_terminology_path</span><span class="p">,</span>
@@ -793,8 +793,8 @@
                 <span class="p">)</span>
 
             <span class="c1"># Download coordinate space files</span>
-            <span class="n">coordspace_location</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;coordinate_space&quot;</span><span class="p">][</span>
-                <span class="s2">&quot;location&quot;</span>
+            <span class="n">coordspace_location</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"coordinate_space"</span><span class="p">][</span>
+                <span class="s2">"location"</span>
             <span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
             <span class="n">local_coordspace_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">brainglobe_dir</span> <span class="o">/</span> <span class="n">coordspace_location</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">local_coordspace_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
@@ -802,8 +802,8 @@
                     <span class="n">coordspace_location</span>
                 <span class="p">)</span>
                 <span class="nb">print</span><span class="p">(</span>
-                    <span class="sa">f</span><span class="s2">&quot;Downloading coordinate space metadata &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;coordinate_space&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">:&quot;</span>
+                    <span class="sa">f</span><span class="s2">"Downloading coordinate space metadata "</span>
+                    <span class="sa">f</span><span class="s2">"for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'coordinate_space'</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2">:"</span>
                 <span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
                     <span class="n">remote_coordspace_path</span><span class="p">,</span>
@@ -813,20 +813,20 @@
                 <span class="p">)</span>
 
             <span class="c1"># Download annotation metadata files</span>
-            <span class="n">annotation_location</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;annotation_set&quot;</span><span class="p">][</span><span class="s2">&quot;location&quot;</span><span class="p">][</span>
+            <span class="n">annotation_location</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"annotation_set"</span><span class="p">][</span><span class="s2">"location"</span><span class="p">][</span>
                 <span class="mi">1</span><span class="p">:</span>
             <span class="p">]</span>
             <span class="n">local_annotation_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">brainglobe_dir</span> <span class="o">/</span> <span class="n">annotation_location</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">local_annotation_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
                 <span class="n">root_metadata_path</span> <span class="o">=</span> <span class="p">(</span>
-                    <span class="n">annotation_location</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="n">V3_ANNOTATION_NAME</span><span class="si">}</span><span class="s2">/**/*.json&quot;</span>
+                    <span class="n">annotation_location</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">"/</span><span class="si">{</span><span class="n">V3_ANNOTATION_NAME</span><span class="si">}</span><span class="s2">/**/*.json"</span>
                 <span class="p">)</span>
                 <span class="n">remote_root_metadata_path</span> <span class="o">=</span> <span class="n">remote_url_s3</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                     <span class="n">root_metadata_path</span>
                 <span class="p">)</span>
                 <span class="nb">print</span><span class="p">(</span>
-                    <span class="sa">f</span><span class="s2">&quot;Downloading annotation metadata &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;annotation_set&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">:&quot;</span>
+                    <span class="sa">f</span><span class="s2">"Downloading annotation metadata "</span>
+                    <span class="sa">f</span><span class="s2">"for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'annotation_set'</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2">:"</span>
                 <span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
                     <span class="n">remote_root_metadata_path</span><span class="p">,</span>
@@ -840,7 +840,7 @@
                 <span class="k">try</span><span class="p">:</span>
                     <span class="n">masks_metadata_glob</span> <span class="o">=</span> <span class="p">(</span>
                         <span class="n">annotation_location</span>
-                        <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="n">V3_ANNOTATION_MASKS_NAME</span><span class="si">}</span><span class="s2">/**/*.json&quot;</span>
+                        <span class="o">+</span> <span class="sa">f</span><span class="s2">"/</span><span class="si">{</span><span class="n">V3_ANNOTATION_MASKS_NAME</span><span class="si">}</span><span class="s2">/**/*.json"</span>
                     <span class="p">)</span>
                     <span class="n">remote_masks_metadata</span> <span class="o">=</span> <span class="n">remote_url_s3</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                         <span class="n">masks_metadata_glob</span>
@@ -851,8 +851,8 @@
                         <span class="n">callback</span><span class="o">=</span><span class="n">TqdmCallback</span><span class="p">(),</span>
                     <span class="p">)</span>
                     <span class="n">masks_annotation_values_path</span> <span class="o">=</span> <span class="p">(</span>
-                        <span class="n">annotation_location</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="n">V3_ANNOTATION_MASKS_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
-                        <span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="n">V3_ANNOTATION_MAP_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
+                        <span class="n">annotation_location</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">"/</span><span class="si">{</span><span class="n">V3_ANNOTATION_MASKS_NAME</span><span class="si">}</span><span class="s2">"</span>
+                        <span class="sa">f</span><span class="s2">"/</span><span class="si">{</span><span class="n">V3_ANNOTATION_MAP_NAME</span><span class="si">}</span><span class="s2">"</span>
                     <span class="p">)</span>
                     <span class="n">remote_masks_annotation_values_path</span> <span class="o">=</span> <span class="n">remote_url_s3</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                         <span class="n">masks_annotation_values_path</span>
@@ -865,15 +865,15 @@
                     <span class="p">)</span>
                 <span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
-                        <span class="sa">f</span><span class="s2">&quot;Annotation masks metadata not found for atlas &quot;</span>
-                        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2"> &quot;</span>
-                        <span class="sa">f</span><span class="s2">&quot;v</span><span class="si">{</span><span class="n">remote_version_str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;.&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span>
+                        <span class="sa">f</span><span class="s2">"Annotation masks metadata not found for atlas "</span>
+                        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2"> "</span>
+                        <span class="sa">f</span><span class="s2">"v</span><span class="si">{</span><span class="n">remote_version_str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span><span class="w"> </span><span class="s1">'.'</span><span class="p">)</span><span class="si">}</span><span class="s2">."</span>
                     <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
 
-                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;symmetric&quot;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"symmetric"</span><span class="p">]:</span>
                     <span class="n">root_hemisphere_path</span> <span class="o">=</span> <span class="p">(</span>
                         <span class="n">annotation_location</span>
-                        <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="n">V3_HEMISPHERES_NAME</span><span class="si">}</span><span class="s2">/**/*.json&quot;</span>
+                        <span class="o">+</span> <span class="sa">f</span><span class="s2">"/</span><span class="si">{</span><span class="n">V3_HEMISPHERES_NAME</span><span class="si">}</span><span class="s2">/**/*.json"</span>
                     <span class="p">)</span>
                     <span class="n">remote_root_hemisphere_path</span> <span class="o">=</span> <span class="n">remote_url_s3</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                         <span class="n">root_hemisphere_path</span>
@@ -885,21 +885,21 @@
                     <span class="p">)</span>
 
             <span class="c1"># Download template metadata files</span>
-            <span class="n">template_location</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;annotation_set&quot;</span><span class="p">][</span><span class="s2">&quot;template&quot;</span><span class="p">][</span>
-                <span class="s2">&quot;location&quot;</span>
+            <span class="n">template_location</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"annotation_set"</span><span class="p">][</span><span class="s2">"template"</span><span class="p">][</span>
+                <span class="s2">"location"</span>
             <span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
             <span class="n">local_template_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">brainglobe_dir</span> <span class="o">/</span> <span class="n">template_location</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">local_template_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
                 <span class="n">root_metadata_path</span> <span class="o">=</span> <span class="p">(</span>
-                    <span class="n">template_location</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="n">V3_TEMPLATE_NAME</span><span class="si">}</span><span class="s2">/**/*.json&quot;</span>
+                    <span class="n">template_location</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">"/</span><span class="si">{</span><span class="n">V3_TEMPLATE_NAME</span><span class="si">}</span><span class="s2">/**/*.json"</span>
                 <span class="p">)</span>
                 <span class="n">remote_root_metadata_path</span> <span class="o">=</span> <span class="n">remote_url_s3</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                     <span class="n">root_metadata_path</span>
                 <span class="p">)</span>
 
                 <span class="nb">print</span><span class="p">(</span>
-                    <span class="sa">f</span><span class="s2">&quot;Downloading template metadata &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;template&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">:&quot;</span>
+                    <span class="sa">f</span><span class="s2">"Downloading template metadata "</span>
+                    <span class="sa">f</span><span class="s2">"for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'template'</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2">:"</span>
                 <span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
                     <span class="n">remote_root_metadata_path</span><span class="p">,</span>
@@ -908,23 +908,23 @@
                 <span class="p">)</span>
 
             <span class="n">additional_reference_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-                <span class="s2">&quot;additional_references&quot;</span><span class="p">,</span> <span class="p">[]</span>
+                <span class="s2">"additional_references"</span><span class="p">,</span> <span class="p">[]</span>
             <span class="p">)</span>
 
             <span class="k">for</span> <span class="n">ref</span> <span class="ow">in</span> <span class="n">additional_reference_names</span><span class="p">:</span>
-                <span class="n">template_location</span> <span class="o">=</span> <span class="n">ref</span><span class="p">[</span><span class="s2">&quot;location&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+                <span class="n">template_location</span> <span class="o">=</span> <span class="n">ref</span><span class="p">[</span><span class="s2">"location"</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
                 <span class="n">local_template_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">brainglobe_dir</span> <span class="o">/</span> <span class="n">template_location</span>
 
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">local_template_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
                     <span class="n">root_metadata_path</span> <span class="o">=</span> <span class="p">(</span>
-                        <span class="n">template_location</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="n">V3_TEMPLATE_NAME</span><span class="si">}</span><span class="s2">/**/*.json&quot;</span>
+                        <span class="n">template_location</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">"/</span><span class="si">{</span><span class="n">V3_TEMPLATE_NAME</span><span class="si">}</span><span class="s2">/**/*.json"</span>
                     <span class="p">)</span>
                     <span class="n">remote_root_metadata_path</span> <span class="o">=</span> <span class="n">remote_url_s3</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                         <span class="n">root_metadata_path</span>
                     <span class="p">)</span>
                     <span class="nb">print</span><span class="p">(</span>
-                        <span class="sa">f</span><span class="s2">&quot;Downloading template metadata &quot;</span>
-                        <span class="sa">f</span><span class="s2">&quot;for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;template&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">:&quot;</span>
+                        <span class="sa">f</span><span class="s2">"Downloading template metadata "</span>
+                        <span class="sa">f</span><span class="s2">"for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'template'</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2">:"</span>
                     <span class="p">)</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
                         <span class="n">remote_root_metadata_path</span><span class="p">,</span>
@@ -946,7 +946,7 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">check_latest_version</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">print_warning</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Check if the local version is the latest available</span>
 <span class="sd">        and prompts the user to update if not.</span>
 
@@ -962,7 +962,7 @@
 <span class="sd">        Optional[bool]</span>
 <span class="sd">            Returns False if the local version is not the latest,</span>
 <span class="sd">            True if it is, and None if we are offline.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="c1"># Cache remote version to avoid multiple requests</span>
         <span class="n">remote_version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">remote_version</span>
         <span class="c1"># If we are offline, return None</span>
@@ -975,34 +975,34 @@
         <span class="k">if</span> <span class="n">local</span> <span class="o">!=</span> <span class="n">online</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">print_warning</span><span class="p">:</span>
                 <span class="n">rprint</span><span class="p">(</span>
-                    <span class="s2">&quot;[b][magenta2]brainglobe_atlasapi[/b]: &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;[b]</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">[/b] version &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;[b]</span><span class="si">{</span><span class="n">local</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;.&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">[/b] &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;is not the latest available &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;([b]</span><span class="si">{</span><span class="n">online</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;.&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">[/b]). &quot;</span>
-                    <span class="s2">&quot;To update the atlas run in the terminal:[/magenta2]</span><span class="se">\n</span><span class="s2">&quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot; [gold1]brainglobe update -a </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">[/gold1]&quot;</span>
+                    <span class="s2">"[b][magenta2]brainglobe_atlasapi[/b]: "</span>
+                    <span class="sa">f</span><span class="s2">"[b]</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">[/b] version "</span>
+                    <span class="sa">f</span><span class="s2">"[b]</span><span class="si">{</span><span class="n">local</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span><span class="w"> </span><span class="s1">'.'</span><span class="p">)</span><span class="si">}</span><span class="s2">[/b] "</span>
+                    <span class="sa">f</span><span class="s2">"is not the latest available "</span>
+                    <span class="sa">f</span><span class="s2">"([b]</span><span class="si">{</span><span class="n">online</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span><span class="w"> </span><span class="s1">'.'</span><span class="p">)</span><span class="si">}</span><span class="s2">[/b]). "</span>
+                    <span class="s2">"To update the atlas run in the terminal:[/magenta2]</span><span class="se">\n</span><span class="s2">"</span>
+                    <span class="sa">f</span><span class="s2">" [gold1]brainglobe update -a </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">[/gold1]"</span>
                 <span class="p">)</span>
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">return</span> <span class="kc">True</span></div>
 
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fancy print providing atlas information.&quot;&quot;&quot;</span>
-        <span class="n">name_split</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)</span>
-        <span class="n">res</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot; (res. </span><span class="si">{</span><span class="n">name_split</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span><span class="si">}</span><span class="s2">)&quot;</span>
-        <span class="n">pretty_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">name_split</span><span class="p">)</span><span class="si">}</span><span class="s2"> atlas</span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="sd">"""Fancy print providing atlas information."""</span>
+        <span class="n">name_split</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"_"</span><span class="p">)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">" (res. </span><span class="si">{</span><span class="n">name_split</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span><span class="si">}</span><span class="s2">)"</span>
+        <span class="n">pretty_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">name_split</span><span class="p">)</span><span class="si">}</span><span class="s2"> atlas</span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s2">"</span>
         <span class="k">return</span> <span class="n">pretty_name</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        If the atlas metadata are to be printed</span>
-<span class="sd">        with the built-in print function instead of rich&#39;s, then</span>
+<span class="sd">        with the built-in print function instead of rich's, then</span>
 <span class="sd">        print the rich panel as a string.</span>
 
 <span class="sd">        It will miss the colors.</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">buf</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">()</span>
         <span class="n">_console</span> <span class="o">=</span> <span class="n">Console</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">buf</span><span class="p">,</span> <span class="n">force_jupyter</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
         <span class="n">_console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
@@ -1010,10 +1010,10 @@
         <span class="k">return</span> <span class="n">buf</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">__rich_console__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Use rich API&#39;s console protocol.</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Use rich API's console protocol.</span>
 <span class="sd">        Prints the atlas metadata as a table nested in a panel.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">panel</span> <span class="o">=</span> <span class="n">_rich_atlas_metadata</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">)</span>
         <span class="k">yield</span> <span class="n">panel</span></div>
 

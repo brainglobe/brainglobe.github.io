@@ -518,10 +518,10 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                    <h1>Source code for brainglobe_atlasapi.structure_class</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Provide a class for representing hierarchical structures,</span>
 <span class="sd">such as brain regions in an atlas.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
@@ -540,13 +540,13 @@
 <div class="viewcode-block" id="Structure">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.structure_class.Structure.html#brainglobe_atlasapi.structure_class.Structure">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Structure</span><span class="p">(</span><span class="n">UserDict</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class implementing the lazy loading of a mesh if the dictionary is</span>
+<span class="w">    </span><span class="sd">"""Class implementing the lazy loading of a mesh if the dictionary is</span>
 <span class="sd">    queried for it.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Retrieve an item from the structure&#39;s data.</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Retrieve an item from the structure's data.</span>
 
 <span class="sd">        If the item is `mesh` and the mesh data is currently None, it attempts</span>
 <span class="sd">        to load the mesh from the `mesh_filename` if available.</span>
@@ -559,24 +559,24 @@
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        meshio.Mesh or None or any</span>
-<span class="sd">            - If `item` is &quot;mesh&quot; and the mesh data is successfully loaded,</span>
+<span class="sd">            - If `item` is "mesh" and the mesh data is successfully loaded,</span>
 <span class="sd">              returns a `meshio.Mesh` object.</span>
-<span class="sd">            - If `item` is &quot;mesh&quot; and `mesh_filename` is None, returns `None`.</span>
+<span class="sd">            - If `item` is "mesh" and `mesh_filename` is None, returns `None`.</span>
 <span class="sd">            - For other keys, returns the value associated with the given item,</span>
 <span class="sd">              which can be of any type depending on the stored data.</span>
 
 <span class="sd">        Raises</span>
 <span class="sd">        ------</span>
 <span class="sd">        meshio.ReadError</span>
-<span class="sd">            If `item` is &quot;mesh&quot; and the mesh cannot be read.</span>
+<span class="sd">            If `item` is "mesh" and the mesh cannot be read.</span>
 <span class="sd">            The value associated with the given item.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;mesh&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">file_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;mesh_filename&quot;</span><span class="p">]</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">"mesh"</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">file_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">"mesh_filename"</span><span class="p">]</span>
             <span class="k">if</span> <span class="n">file_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-                    <span class="s2">&quot;No mesh filename for region </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;acronym&quot;</span><span class="p">]</span>
+                    <span class="s2">"No mesh filename for region </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">"acronym"</span><span class="p">]</span>
                     <span class="p">)</span>
                 <span class="p">)</span>
                 <span class="k">return</span> <span class="kc">None</span>
@@ -592,21 +592,21 @@
                 <span class="n">DracoPy</span><span class="o">.</span><span class="n">FileTypeException</span><span class="p">,</span>
             <span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
-                    <span class="sa">f</span><span class="s2">&quot;Failed to read mesh for region </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;acronym&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;from file </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="sa">f</span><span class="s2">"Failed to read mesh for region </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">'acronym'</span><span class="p">]</span><span class="si">}</span><span class="s2"> "</span>
+                    <span class="sa">f</span><span class="s2">"from file </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span>
                 <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">_download_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Download the mesh from the remote S3 bucket if it is not cached.&quot;&quot;&quot;</span>
-        <span class="n">root_path</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)[</span><span class="o">-</span><span class="mi">6</span><span class="p">:])</span>
+<span class="w">        </span><span class="sd">"""Download the mesh from the remote S3 bucket if it is not cached."""</span>
+        <span class="n">root_path</span> <span class="o">=</span> <span class="s2">"/"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)[</span><span class="o">-</span><span class="mi">6</span><span class="p">:])</span>
         <span class="n">remote_mesh_path</span> <span class="o">=</span> <span class="n">remote_url_s3</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">root_path</span><span class="p">)</span>
         <span class="n">fs</span> <span class="o">=</span> <span class="n">s3fs</span><span class="o">.</span><span class="n">S3FileSystem</span><span class="p">(</span><span class="n">anon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">fs</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">remote_mesh_path</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;Mesh file </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2"> not found locally or remotely.&quot;</span>
+                <span class="sa">f</span><span class="s2">"Mesh file </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2"> not found locally or remotely."</span>
             <span class="p">)</span>
 
         <span class="k">try</span><span class="p">:</span>
@@ -617,7 +617,7 @@
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">_read_mesh</span><span class="p">(</span><span class="n">mesh_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">mio</span><span class="o">.</span><span class="n">Mesh</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Read one object back into (vertices, faces).</span>
 
 <span class="sd">        Re-orient from XYZ to ZYX and scale from nm to um.</span>
@@ -626,8 +626,8 @@
 <span class="sd">        -------</span>
 <span class="sd">        meshio.Mesh</span>
 <span class="sd">            The mesh object reoriented and scaled.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">mesh_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="sd">        """</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">mesh_path</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="n">mesh</span> <span class="o">=</span> <span class="n">DracoPy</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 
         <span class="n">points</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">points</span> <span class="o">/</span> <span class="mf">1000.0</span>  <span class="c1"># scale from nm to um</span>
@@ -636,7 +636,7 @@
 
         <span class="k">return</span> <span class="n">mio</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span>
             <span class="n">points</span><span class="o">=</span><span class="n">points</span><span class="p">,</span>
-            <span class="n">cells</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;triangle&quot;</span><span class="p">,</span> <span class="n">faces</span><span class="p">)],</span>
+            <span class="n">cells</span><span class="o">=</span><span class="p">[(</span><span class="s2">"triangle"</span><span class="p">,</span> <span class="n">faces</span><span class="p">)],</span>
         <span class="p">)</span></div>
 
 
@@ -644,30 +644,30 @@
 <div class="viewcode-block" id="StructuresDict">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.structure_class.StructuresDict.html#brainglobe_atlasapi.structure_class.StructuresDict">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">StructuresDict</span><span class="p">(</span><span class="n">UserDict</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to handle dual indexing by either acronym or id.</span>
+<span class="w">    </span><span class="sd">"""Class to handle dual indexing by either acronym or id.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    mesh_path : str or Path object</span>
 <span class="sd">        path to folder containing all meshes .obj files</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">structures_list</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
         <span class="c1"># Acronym to id map:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">acronym_to_id_map</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="n">r</span><span class="p">[</span><span class="s2">&quot;acronym&quot;</span><span class="p">]:</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">structures_list</span>
+            <span class="n">r</span><span class="p">[</span><span class="s2">"acronym"</span><span class="p">]:</span> <span class="n">r</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">structures_list</span>
         <span class="p">}</span>
 
         <span class="k">for</span> <span class="n">struct</span> <span class="ow">in</span> <span class="n">structures_list</span><span class="p">:</span>
-            <span class="n">sid</span> <span class="o">=</span> <span class="n">struct</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+            <span class="n">sid</span> <span class="o">=</span> <span class="n">struct</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">sid</span><span class="p">]</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span><span class="o">**</span><span class="n">struct</span><span class="p">,</span> <span class="n">mesh</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">tree</span> <span class="o">=</span> <span class="n">get_structures_tree</span><span class="p">(</span><span class="n">structures_list</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Core implementation of the class support for different indexing.</span>
+<span class="w">        </span><span class="sd">"""Core implementation of the class support for different indexing.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -678,7 +678,7 @@
 <span class="sd">        -------</span>
 <span class="sd">        Structure</span>
 <span class="sd">            The Structure requested.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">item</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
@@ -687,9 +687,9 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">item</span><span class="p">)]</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return string representation of the class,</span>
+<span class="w">        </span><span class="sd">"""Return string representation of the class,</span>
 <span class="sd">        showing all region names.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">stdout</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
 
 </pre></div>

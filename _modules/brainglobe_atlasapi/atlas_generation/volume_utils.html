@@ -518,11 +518,11 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                    <h1>Source code for brainglobe_atlasapi.atlas_generation.volume_utils</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Code useful for dealing with volumetric data</span>
 <span class="sd">(e.g. allen annotation volume for the mouse atlas)</span>
 <span class="sd">extracting surfaces from volumetric data ....</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">zarr</span>
@@ -533,7 +533,7 @@
 <div class="viewcode-block" id="create_masked_array">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.volume_utils.create_masked_array.html#brainglobe_atlasapi.atlas_generation.volume_utils.create_masked_array">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">create_masked_array</span><span class="p">(</span><span class="n">volume</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">greater_than</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a binary masked array from a volumetric dataset.</span>
+<span class="w">    </span><span class="sd">"""Create a binary masked array from a volumetric dataset.</span>
 
 <span class="sd">    Given a 2D or 3D NumPy array and a label value (or list of labels),</span>
 <span class="sd">    this function generates a binary array. The output array will have</span>
@@ -563,11 +563,11 @@
 <span class="sd">    ------</span>
 <span class="sd">    ValueError</span>
 <span class="sd">        If `volume` is not a NumPy array.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">volume</span><span class="p">,</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">zarr</span><span class="o">.</span><span class="n">Array</span><span class="p">)):</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;Argument volume should be an np.ndarray or a zarr.Array&quot;</span>
-            <span class="sa">f</span><span class="s2">&quot; object not </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">volume</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">"Argument volume should be an np.ndarray or a zarr.Array"</span>
+            <span class="sa">f</span><span class="s2">" object not </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">volume</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
         <span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">greater_than</span><span class="p">:</span>
@@ -588,7 +588,7 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">create_masked_array_numba</span><span class="p">(</span>
     <span class="n">flat_vol</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">lut</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">mapping</span><span class="p">:</span> <span class="n">Dict</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Create a binary masked array from a flattened volumetric dataset.</span>
 
 <span class="sd">    Given a flattened 1D NumPy array representing a volumetric dataset,</span>
@@ -606,7 +606,7 @@
 <span class="sd">        The output 1D NumPy array where the binary mask will be stored.</span>
 <span class="sd">    mapping : Dict</span>
 <span class="sd">        A Numba typed dictionary mapping `flat_vol` values to indices in LUT.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">lut</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">prange</span><span class="p">(</span><span class="n">flat_vol</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
         <span class="n">v</span> <span class="o">=</span> <span class="n">flat_vol</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>

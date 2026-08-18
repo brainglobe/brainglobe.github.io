@@ -518,7 +518,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                    <h1>Source code for brainglobe_atlasapi.atlas_generation.structure_json_to_csv</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;Convert structure JSON files to CSV format.&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""Convert structure JSON files to CSV format."""</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
@@ -528,10 +528,10 @@
 <div class="viewcode-block" id="structure_id_path_to_string">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.structure_json_to_csv.structure_id_path_to_string.html#brainglobe_atlasapi.atlas_generation.structure_json_to_csv.structure_id_path_to_string">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">structure_id_path_to_string</span><span class="p">(</span><span class="n">structure_id_path</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a structure ID path list to a string.</span>
+<span class="w">    </span><span class="sd">"""Convert a structure ID path list to a string.</span>
 
 <span class="sd">    Given a path (as a list of structure IDs) to a specific structure,</span>
-<span class="sd">    return it as a string of &quot;/&quot; separated structure IDs.</span>
+<span class="sd">    return it as a string of "/" separated structure IDs.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -542,12 +542,12 @@
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    str</span>
-<span class="sd">        A string with structure IDs separated by &quot;/&quot;.</span>
-<span class="sd">        Example: &quot;/997/8/567/&quot;</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">path_string</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+<span class="sd">        A string with structure IDs separated by "/".</span>
+<span class="sd">        Example: "/997/8/567/"</span>
+<span class="sd">    """</span>
+    <span class="n">path_string</span> <span class="o">=</span> <span class="s2">"/"</span>
     <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">structure_id_path</span><span class="p">:</span>
-        <span class="n">path_string</span> <span class="o">=</span> <span class="n">path_string</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">element</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span>
+        <span class="n">path_string</span> <span class="o">=</span> <span class="n">path_string</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">element</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"/"</span>
     <span class="k">return</span> <span class="n">path_string</span></div>
 
 
@@ -555,7 +555,7 @@
 <div class="viewcode-block" id="get_parent_id">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.structure_json_to_csv.get_parent_id.html#brainglobe_atlasapi.atlas_generation.structure_json_to_csv.get_parent_id">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">get_parent_id</span><span class="p">(</span><span class="n">structure_id_path</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">997</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the parent ID of a given structure.</span>
+<span class="w">    </span><span class="sd">"""Get the parent ID of a given structure.</span>
 
 <span class="sd">    Given a path (as a list of structure IDs) to a specific structure,</span>
 <span class="sd">    return the ID of its parent structure.</span>
@@ -574,7 +574,7 @@
 <span class="sd">    int or None</span>
 <span class="sd">        The ID of the parent structure, or None if the input structure is</span>
 <span class="sd">        the root (has no parent).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">if</span> <span class="n">structure_id_path</span> <span class="o">==</span> <span class="p">[</span><span class="n">root</span><span class="p">]:</span>
         <span class="k">return</span> <span class="kc">None</span>
     <span class="k">else</span><span class="p">:</span>
@@ -587,7 +587,7 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">convert_structure_json_to_csv</span><span class="p">(</span>
     <span class="n">structure_json_path</span><span class="p">,</span> <span class="n">destination_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">997</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert an atlas structure JSON file to CSV format.</span>
+<span class="w">    </span><span class="sd">"""Convert an atlas structure JSON file to CSV format.</span>
 
 <span class="sd">    This function converts a JSON dictionary of atlas structures into a CSV</span>
 <span class="sd">    format, which can be useful for compatibility with tools like cellfinder</span>
@@ -603,23 +603,23 @@
 <span class="sd">    root : int, optional</span>
 <span class="sd">        The ID value for the root (whole brain) structure, used when</span>
 <span class="sd">        determining parent IDs. By default, 997.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">structure_json_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">structure_json_path</span><span class="p">)</span>
 
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">structure_json_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;rgb_triplet&quot;</span><span class="p">])</span>
-    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;parent_structure_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;structure_id_path&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">structure_json_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"rgb_triplet"</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">"parent_structure_id"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"structure_id_path"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
         <span class="n">get_parent_id</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="n">root</span>
     <span class="p">)</span>
-    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;structure_id_path&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;structure_id_path&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">"structure_id_path"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"structure_id_path"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
         <span class="n">structure_id_path_to_string</span>
     <span class="p">)</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">destination_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">destination_path</span> <span class="o">=</span> <span class="n">structure_json_path</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">&quot;.csv&quot;</span><span class="p">)</span>
+        <span class="n">destination_path</span> <span class="o">=</span> <span class="n">structure_json_path</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">".csv"</span><span class="p">)</span>
 
-    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">destination_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span></div>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">destination_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span></div>
 
 </pre></div>
 <div class="section ablog__blog_comments">

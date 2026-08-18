@@ -829,20 +829,20 @@
 <p>If you want your scene to be rendered in a new window, then set this option before you create
 your <code class="docutils literal notranslate"><span class="pre">Scene</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vedo</span>
-<span class="n">vedo</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">default_backend</span><span class="o">=</span> <span class="s1">&#39;vtk&#39;</span>
+<span class="n">vedo</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">default_backend</span><span class="o">=</span> <span class="s1">'vtk'</span>
 </pre></div>
 </div>
 <p>After this everything will work exactly the same as usual, and you will have access to all of <code class="docutils literal notranslate"><span class="pre">brainrender</span></code>’s features.
 E.g. to visualise primary visual cortex in the Allen Adult Mouse Brain Atlas:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vedo</span>
-<span class="n">vedo</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">default_backend</span><span class="o">=</span> <span class="s1">&#39;vtk&#39;</span>
+<span class="n">vedo</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">default_backend</span><span class="o">=</span> <span class="s1">'vtk'</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainrender</span><span class="w"> </span><span class="kn">import</span> <span class="n">Scene</span>
-<span class="n">popup_scene</span> <span class="o">=</span> <span class="n">Scene</span><span class="p">(</span><span class="n">atlas_name</span><span class="o">=</span><span class="s1">&#39;allen_mouse_50um&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;popup&#39;</span><span class="p">)</span>
+<span class="n">popup_scene</span> <span class="o">=</span> <span class="n">Scene</span><span class="p">(</span><span class="n">atlas_name</span><span class="o">=</span><span class="s1">'allen_mouse_50um'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'popup'</span><span class="p">)</span>
 
-<span class="n">popup_scene</span><span class="o">.</span><span class="n">add_brain_region</span><span class="p">(</span><span class="s1">&#39;VISp&#39;</span><span class="p">)</span>
+<span class="n">popup_scene</span><span class="o">.</span><span class="n">add_brain_region</span><span class="p">(</span><span class="s1">'VISp'</span><span class="p">)</span>
 
-<span class="n">popup_scene</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>  <span class="c1"># press &#39;Esc&#39; to close</span>
+<span class="n">popup_scene</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>  <span class="c1"># press 'Esc' to close</span>
 </pre></div>
 </div>
 </section>
@@ -858,20 +858,20 @@ If you want to support all of <code class="docutils literal notranslate"><span c
 tectum in the larval zebrafish atlas:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the backend</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">vedo</span>
-<span class="n">vedo</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">default_backend</span><span class="o">=</span> <span class="s1">&#39;k3d&#39;</span>
+<span class="n">vedo</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">default_backend</span><span class="o">=</span> <span class="s1">'k3d'</span>
 
 <span class="c1"># Create a brainrender scene</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainrender</span><span class="w"> </span><span class="kn">import</span> <span class="n">Scene</span>
-<span class="n">scene</span> <span class="o">=</span> <span class="n">Scene</span><span class="p">(</span><span class="n">atlas_name</span><span class="o">=</span><span class="s1">&#39;mpin_zfish_1um&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Embedded&#39;</span><span class="p">)</span>  <span class="c1"># note the title will not actually display</span>
-<span class="n">scene</span><span class="o">.</span><span class="n">add_brain_region</span><span class="p">(</span><span class="s1">&#39;tectum&#39;</span><span class="p">)</span>
+<span class="n">scene</span> <span class="o">=</span> <span class="n">Scene</span><span class="p">(</span><span class="n">atlas_name</span><span class="o">=</span><span class="s1">'mpin_zfish_1um'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Embedded'</span><span class="p">)</span>  <span class="c1"># note the title will not actually display</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add_brain_region</span><span class="p">(</span><span class="s1">'tectum'</span><span class="p">)</span>
 
 <span class="c1"># Make sure it gets embedded in the window</span>
 <span class="n">scene</span><span class="o">.</span><span class="n">jupyter</span> <span class="o">=</span> <span class="kc">True</span>
 
-<span class="c1"># scene.render now will prepare the scene for rendering, but it won&#39;t render anything yet</span>
+<span class="c1"># scene.render now will prepare the scene for rendering, but it won't render anything yet</span>
 <span class="n">scene</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
 
-<span class="c1"># To display the scene we use `vedo`&#39;s `show` method to show the scene&#39;s actors</span>
+<span class="c1"># To display the scene we use `vedo`'s `show` method to show the scene's actors</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">vedo</span><span class="w"> </span><span class="kn">import</span> <span class="n">Plotter</span>  <span class="c1"># &lt;- this will be used to render an embedded scene </span>
 <span class="n">plt</span> <span class="o">=</span> <span class="n">Plotter</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="o">*</span><span class="n">scene</span><span class="o">.</span><span class="n">renderables</span><span class="p">)</span>  <span class="c1"># same as vedo.show(*scene.renderables)</span>

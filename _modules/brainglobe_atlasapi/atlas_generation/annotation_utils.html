@@ -518,7 +518,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                    <h1>Source code for brainglobe_atlasapi.atlas_generation.annotation_utils</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;Helper functions to read annotation metadata from common formats.&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""Helper functions to read annotation metadata from common formats."""</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
@@ -529,20 +529,20 @@
 <div class="viewcode-block" id="split_label_text">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.annotation_utils.split_label_text.html#brainglobe_atlasapi.atlas_generation.annotation_utils.split_label_text">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">split_label_text</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">acronym_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Split label text into name + acronym.</span>
+<span class="w">    </span><span class="sd">"""Split label text into name + acronym.</span>
 
-<span class="sd">    If the label text ends with &#39;)&#39;, extract the acronym inside parentheses.</span>
+<span class="sd">    If the label text ends with ')', extract the acronym inside parentheses.</span>
 <span class="sd">    Otherwise, you can specify  how many first letters</span>
 <span class="sd">    you would like to use as acronym</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;)&quot;</span><span class="p">):</span>
-        <span class="n">name</span><span class="p">,</span> <span class="n">acronym</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;(&quot;</span><span class="p">)</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">")"</span><span class="p">):</span>
+        <span class="n">name</span><span class="p">,</span> <span class="n">acronym</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"("</span><span class="p">)</span>
         <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># ignore trailing space</span>
         <span class="n">acronym</span> <span class="o">=</span> <span class="n">acronym</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># ignore trailing )</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">acronym_length</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="s2">&quot;Acronym length cannot be longer than the name itself.&quot;</span>
+                <span class="s2">"Acronym length cannot be longer than the name itself."</span>
             <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">acronym</span> <span class="o">=</span> <span class="n">name</span><span class="p">[:</span><span class="n">acronym_length</span><span class="p">]</span>
@@ -553,34 +553,34 @@
 <div class="viewcode-block" id="read_itk_labels">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.annotation_utils.read_itk_labels.html#brainglobe_atlasapi.atlas_generation.annotation_utils.read_itk_labels">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">read_itk_labels</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">acronym_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Turn ITK label data from a file into a list of dictionaries.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Turn ITK label data from a file into a list of dictionaries."""</span>
     <span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">labels_file</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">labels_file</span><span class="p">:</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"#"</span><span class="p">):</span>
                 <span class="n">raw_values</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">maxsplit</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
                 <span class="nb">id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">raw_values</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
                 <span class="n">rgb</span> <span class="o">=</span> <span class="nb">list</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">raw_values</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]))</span>
-                <span class="k">if</span> <span class="n">raw_values</span><span class="p">[</span><span class="mi">7</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">raw_values</span><span class="p">[</span><span class="mi">7</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">:</span>
                     <span class="n">raw_values</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="n">raw_values</span><span class="p">[</span><span class="mi">7</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
                 <span class="n">label_text</span> <span class="o">=</span> <span class="n">raw_values</span><span class="p">[</span><span class="mi">7</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-                <span class="k">if</span> <span class="n">label_text</span> <span class="o">!=</span> <span class="s2">&quot;Clear Label&quot;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">label_text</span> <span class="o">!=</span> <span class="s2">"Clear Label"</span><span class="p">:</span>
                     <span class="n">name</span><span class="p">,</span> <span class="n">acronym</span> <span class="o">=</span> <span class="n">split_label_text</span><span class="p">(</span>
                         <span class="n">label_text</span><span class="p">,</span> <span class="n">acronym_length</span>
                     <span class="p">)</span>
                     <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
                         <span class="p">{</span>
-                            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="nb">id</span><span class="p">,</span>
-                            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
-                            <span class="s2">&quot;rgb_triplet&quot;</span><span class="p">:</span> <span class="n">rgb</span><span class="p">,</span>
-                            <span class="s2">&quot;acronym&quot;</span><span class="p">:</span> <span class="n">acronym</span><span class="p">,</span>
+                            <span class="s2">"id"</span><span class="p">:</span> <span class="nb">id</span><span class="p">,</span>
+                            <span class="s2">"name"</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+                            <span class="s2">"rgb_triplet"</span><span class="p">:</span> <span class="n">rgb</span><span class="p">,</span>
+                            <span class="s2">"acronym"</span><span class="p">:</span> <span class="n">acronym</span><span class="p">,</span>
                         <span class="p">}</span>
                     <span class="p">)</span>
     <span class="k">return</span> <span class="n">labels</span></div>
 
 
 
-<span class="n">ITK_SNAP_HEADER</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;################################################</span>
+<span class="n">ITK_SNAP_HEADER</span> <span class="o">=</span> <span class="s2">"""################################################</span>
 <span class="s2"># ITK-SnAP Label Description File</span>
 <span class="s2"># File format:</span>
 <span class="s2"># IDX   -R-  -G-  -B-  -A--  VIS MSH  LABEL</span>
@@ -594,25 +594,25 @@
 <span class="s2">#    IDX:   Label mesh visibility (0 or 1)</span>
 <span class="s2">#  LABEL:   Label description</span>
 <span class="s2">################################################</span>
-<span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">"""</span>
 
-<span class="n">ITK_CLEAR_LABEL</span> <span class="o">=</span> <span class="s1">&#39;0 0 0 0 0 0 0 &quot;Clear Label&quot;</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="n">ITK_CLEAR_LABEL</span> <span class="o">=</span> <span class="s1">'0 0 0 0 0 0 0 "Clear Label"</span><span class="se">\n</span><span class="s1">'</span>
 
 
 <div class="viewcode-block" id="write_itk_labels">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.annotation_utils.write_itk_labels.html#brainglobe_atlasapi.atlas_generation.annotation_utils.write_itk_labels">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">write_itk_labels</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write ITK label data to a file.&quot;&quot;&quot;</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">labels_file</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Write ITK label data to a file."""</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">labels_file</span><span class="p">:</span>
         <span class="n">labels_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ITK_SNAP_HEADER</span><span class="p">)</span>
         <span class="n">labels_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ITK_CLEAR_LABEL</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">:</span>
             <span class="n">labels_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="p">[</span><span class="s1">&#39;rgb_triplet&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="p">[</span><span class="s1">&#39;rgb_triplet&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="p">[</span><span class="s1">&#39;rgb_triplet&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2"> 1.00 1 1 &quot;</span>
-                <span class="sa">f</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="n">label</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; (&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label</span><span class="p">[</span><span class="s2">&quot;acronym&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;)&quot;</span><span class="si">}</span><span class="s1">&quot;</span><span class="se">\n</span><span class="s1">&#39;</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">label</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span><span class="si">}</span><span class="s2"> "</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">label</span><span class="p">[</span><span class="s1">'rgb_triplet'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> "</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">label</span><span class="p">[</span><span class="s1">'rgb_triplet'</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> "</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">label</span><span class="p">[</span><span class="s1">'rgb_triplet'</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2"> 1.00 1 1 "</span>
+                <span class="sa">f</span><span class="s1">'"</span><span class="si">{</span><span class="n">label</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" ("</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label</span><span class="p">[</span><span class="s2">"acronym"</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">")"</span><span class="si">}</span><span class="s1">"</span><span class="se">\n</span><span class="s1">'</span>
             <span class="p">)</span></div>
 
 
@@ -620,7 +620,7 @@
 <div class="viewcode-block" id="modal_filter_ignore_zeros">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.annotation_utils.modal_filter_ignore_zeros.html#brainglobe_atlasapi.atlas_generation.annotation_utils.modal_filter_ignore_zeros">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">modal_filter_ignore_zeros</span><span class="p">(</span><span class="n">window</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Compute the mode of the window, ignoring zero values.</span>
 
 <span class="sd">    Parameters</span>
@@ -633,7 +633,7 @@
 <span class="sd">    int or float</span>
 <span class="sd">        The most common non-zero value in the window, or 0 if all values</span>
 <span class="sd">        are zero.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="c1"># Remove zeros from the window</span>
     <span class="n">non_zero_values</span> <span class="o">=</span> <span class="n">window</span><span class="p">[</span><span class="n">window</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">non_zero_values</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -647,7 +647,7 @@
 <div class="viewcode-block" id="apply_modal_filter">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.annotation_utils.apply_modal_filter.html#brainglobe_atlasapi.atlas_generation.annotation_utils.apply_modal_filter">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">apply_modal_filter</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">filter_size</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Apply a modal filter to the image, ignoring zero neighbors.</span>
+<span class="w">    </span><span class="sd">"""Apply a modal filter to the image, ignoring zero neighbors.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -660,7 +660,7 @@
 <span class="sd">    -------</span>
 <span class="sd">    numpy.ndarray</span>
 <span class="sd">        Filtered image.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="c1"># Apply the modal filter using a sliding window</span>
     <span class="n">filtered_image</span> <span class="o">=</span> <span class="n">generic_filter</span><span class="p">(</span>
         <span class="n">image</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="n">modal_filter_ignore_zeros</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">filter_size</span>

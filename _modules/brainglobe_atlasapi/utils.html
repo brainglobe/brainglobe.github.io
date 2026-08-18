@@ -518,7 +518,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                    <h1>Source code for brainglobe_atlasapi.utils</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;Provide utility functions for brainglobe-atlasapi.&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""Provide utility functions for brainglobe-atlasapi."""</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">configparser</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
@@ -548,49 +548,49 @@
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">descriptors</span>
 
-<span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;urllib3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">"urllib3"</span><span class="p">)</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_rich_atlas_metadata</span><span class="p">(</span><span class="n">atlas_name</span><span class="p">,</span> <span class="n">metadata</span><span class="p">):</span>
-    <span class="n">orange</span> <span class="o">=</span> <span class="s2">&quot;#f59e42&quot;</span>
-    <span class="n">dimorange</span> <span class="o">=</span> <span class="s2">&quot;#b56510&quot;</span>
-    <span class="n">gray</span> <span class="o">=</span> <span class="s2">&quot;#A9A9A9&quot;</span>
-    <span class="n">mocassin</span> <span class="o">=</span> <span class="s2">&quot;#FFE4B5&quot;</span>
+    <span class="n">orange</span> <span class="o">=</span> <span class="s2">"#f59e42"</span>
+    <span class="n">dimorange</span> <span class="o">=</span> <span class="s2">"#b56510"</span>
+    <span class="n">gray</span> <span class="o">=</span> <span class="s2">"#A9A9A9"</span>
+    <span class="n">mocassin</span> <span class="o">=</span> <span class="s2">"#FFE4B5"</span>
 
     <span class="c1"># Create a rich table</span>
     <span class="n">tb</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span>
         <span class="n">box</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">show_lines</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="n">title</span><span class="o">=</span><span class="n">atlas_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span>
-        <span class="n">title_style</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;bold </span><span class="si">{</span><span class="n">orange</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="n">atlas_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"_"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span>
+        <span class="n">title_style</span><span class="o">=</span><span class="sa">f</span><span class="s2">"bold </span><span class="si">{</span><span class="n">orange</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
     <span class="p">)</span>
 
     <span class="c1"># Add entries to table</span>
     <span class="n">tb</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span>
-        <span class="n">style</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;bold </span><span class="si">{</span><span class="n">mocassin</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
-        <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
+        <span class="n">style</span><span class="o">=</span><span class="sa">f</span><span class="s2">"bold </span><span class="si">{</span><span class="n">mocassin</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="n">justify</span><span class="o">=</span><span class="s2">"right"</span><span class="p">,</span>
         <span class="n">min_width</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
         <span class="n">max_width</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="n">tb</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="n">min_width</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">max_width</span><span class="o">=</span><span class="mi">48</span><span class="p">)</span>
 
     <span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span>
-        <span class="s2">&quot;name:&quot;</span><span class="p">,</span>
+        <span class="s2">"name:"</span><span class="p">,</span>
         <span class="n">Text</span><span class="o">.</span><span class="n">from_markup</span><span class="p">(</span>
-            <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot; [</span><span class="si">{</span><span class="n">gray</span><span class="si">}</span><span class="s2">](v</span><span class="si">{</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">" [</span><span class="si">{</span><span class="n">gray</span><span class="si">}</span><span class="s2">](v</span><span class="si">{</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'version'</span><span class="p">]</span><span class="si">}</span><span class="s2">)"</span>
         <span class="p">),</span>
     <span class="p">)</span>
-    <span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;species:&quot;</span><span class="p">,</span> <span class="n">Text</span><span class="o">.</span><span class="n">from_markup</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[i]</span><span class="si">{</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
-    <span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;citation:&quot;</span><span class="p">,</span> <span class="n">Text</span><span class="o">.</span><span class="n">from_markup</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;citation&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
-    <span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;link:&quot;</span><span class="p">,</span> <span class="n">Text</span><span class="o">.</span><span class="n">from_markup</span><span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;atlas_link&quot;</span><span class="p">]))</span>
-    <span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">"species:"</span><span class="p">,</span> <span class="n">Text</span><span class="o">.</span><span class="n">from_markup</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[i]</span><span class="si">{</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'species'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">))</span>
+    <span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">"citation:"</span><span class="p">,</span> <span class="n">Text</span><span class="o">.</span><span class="n">from_markup</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'citation'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">))</span>
+    <span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">"link:"</span><span class="p">,</span> <span class="n">Text</span><span class="o">.</span><span class="n">from_markup</span><span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"atlas_link"</span><span class="p">]))</span>
+    <span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
     <span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span>
-        <span class="s2">&quot;orientation:&quot;</span><span class="p">,</span>
-        <span class="n">Text</span><span class="o">.</span><span class="n">from_markup</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[bold]</span><span class="si">{</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;orientation&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+        <span class="s2">"orientation:"</span><span class="p">,</span>
+        <span class="n">Text</span><span class="o">.</span><span class="n">from_markup</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[bold]</span><span class="si">{</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'orientation'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">),</span>
     <span class="p">)</span>
-    <span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;symmetric:&quot;</span><span class="p">,</span> <span class="n">Pretty</span><span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;symmetric&quot;</span><span class="p">]))</span>
-    <span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;resolution:&quot;</span><span class="p">,</span> <span class="n">Pretty</span><span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;resolution&quot;</span><span class="p">]))</span>
-    <span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">&quot;shape:&quot;</span><span class="p">,</span> <span class="n">Pretty</span><span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;shape&quot;</span><span class="p">]))</span>
+    <span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">"symmetric:"</span><span class="p">,</span> <span class="n">Pretty</span><span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"symmetric"</span><span class="p">]))</span>
+    <span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">"resolution:"</span><span class="p">,</span> <span class="n">Pretty</span><span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"resolution"</span><span class="p">]))</span>
+    <span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="s2">"shape:"</span><span class="p">,</span> <span class="n">Pretty</span><span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"shape"</span><span class="p">]))</span>
 
     <span class="c1"># Fit into panel and yield</span>
     <span class="n">panel</span> <span class="o">=</span> <span class="n">Panel</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">tb</span><span class="p">,</span> <span class="n">border_style</span><span class="o">=</span><span class="n">dimorange</span><span class="p">)</span>
@@ -600,8 +600,8 @@
 <div class="viewcode-block" id="atlas_repr_from_name">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.utils.atlas_repr_from_name.html#brainglobe_atlasapi.utils.atlas_repr_from_name">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">atlas_repr_from_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate dictionary with atlas description given the name.&quot;&quot;&quot;</span>
-    <span class="n">parts</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="sd">"""Generate dictionary with atlas description given the name."""</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"_"</span><span class="p">)</span>
 
     <span class="c1"># if atlas name with no version:</span>
     <span class="n">version_str</span> <span class="o">=</span> <span class="p">(</span>
@@ -611,11 +611,11 @@
     <span class="p">)</span>
     <span class="n">resolution_str</span> <span class="o">=</span> <span class="n">parts</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
 
-    <span class="n">atlas_name</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span>
+    <span class="n">atlas_name</span> <span class="o">=</span> <span class="s2">"_"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span>
 
     <span class="c1"># For specified version:</span>
     <span class="k">if</span> <span class="n">version_str</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">major_vers</span><span class="p">,</span> <span class="n">minor_vers</span> <span class="o">=</span> <span class="n">version_str</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+        <span class="n">major_vers</span><span class="p">,</span> <span class="n">minor_vers</span> <span class="o">=</span> <span class="n">version_str</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"."</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">major_vers</span><span class="p">,</span> <span class="n">minor_vers</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
 
@@ -634,7 +634,7 @@
         <span class="n">resolution</span><span class="o">=</span><span class="n">resolution_str</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="k">if</span> <span class="n">unit</span><span class="p">:</span>
-        <span class="n">result</span><span class="p">[</span><span class="s2">&quot;unit&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">unit</span>
+        <span class="n">result</span><span class="p">[</span><span class="s2">"unit"</span><span class="p">]</span> <span class="o">=</span> <span class="n">unit</span>
     <span class="k">return</span> <span class="n">result</span></div>
 
 
@@ -642,13 +642,13 @@
 <div class="viewcode-block" id="atlas_name_from_repr">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.utils.atlas_name_from_repr.html#brainglobe_atlasapi.utils.atlas_name_from_repr">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">atlas_name_from_repr</span><span class="p">(</span>
-    <span class="n">name</span><span class="p">,</span> <span class="n">resolution</span><span class="p">,</span> <span class="n">major_vers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">minor_vers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;um&quot;</span>
+    <span class="n">name</span><span class="p">,</span> <span class="n">resolution</span><span class="p">,</span> <span class="n">major_vers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">minor_vers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">"um"</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate atlas name given a description.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Generate atlas name given a description."""</span>
     <span class="k">if</span> <span class="n">major_vers</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">minor_vers</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">resolution</span><span class="si">}{</span><span class="n">unit</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">resolution</span><span class="si">}{</span><span class="n">unit</span><span class="si">}</span><span class="s2">"</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">resolution</span><span class="si">}{</span><span class="n">unit</span><span class="si">}</span><span class="s2">_v</span><span class="si">{</span><span class="n">major_vers</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">minor_vers</span><span class="si">}</span><span class="s2">&quot;</span></div>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">resolution</span><span class="si">}{</span><span class="n">unit</span><span class="si">}</span><span class="s2">_v</span><span class="si">{</span><span class="n">major_vers</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">minor_vers</span><span class="si">}</span><span class="s2">"</span></div>
 
 
 
@@ -658,29 +658,29 @@
 <div class="viewcode-block" id="check_internet_connection">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.utils.check_internet_connection.html#brainglobe_atlasapi.utils.check_internet_connection">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">check_internet_connection</span><span class="p">(</span>
-    <span class="n">url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;http://www.google.com/&quot;</span><span class="p">,</span>
+    <span class="n">url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"http://www.google.com/"</span><span class="p">,</span>
     <span class="n">timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
     <span class="n">raise_error</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Check that there is an internet connection.</span>
 
 <span class="sd">    url : str</span>
-<span class="sd">        url to use for testing (Default value = &#39;http://www.google.com/&#39;)</span>
+<span class="sd">        url to use for testing (Default value = 'http://www.google.com/')</span>
 <span class="sd">    timeout : int</span>
 <span class="sd">        timeout to wait for [in seconds] (Default value = 5).</span>
 <span class="sd">    raise_error : bool</span>
 <span class="sd">        if false, warning but no error.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">urls_to_try</span> <span class="o">=</span> <span class="p">[</span><span class="n">url</span><span class="p">]</span>
 
-    <span class="k">if</span> <span class="n">url</span> <span class="o">==</span> <span class="s2">&quot;http://www.google.com/&quot;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">url</span> <span class="o">==</span> <span class="s2">"http://www.google.com/"</span><span class="p">:</span>
         <span class="c1"># fallback URLs that are globally accessible</span>
         <span class="n">fallback_urls</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="s2">&quot;https://pypi.org/&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;https://www.bing.com/&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;https://gitee.com/&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;http://perdu.com/&quot;</span><span class="p">,</span>
+            <span class="s2">"https://pypi.org/"</span><span class="p">,</span>
+            <span class="s2">"https://www.bing.com/"</span><span class="p">,</span>
+            <span class="s2">"https://gitee.com/"</span><span class="p">,</span>
+            <span class="s2">"http://perdu.com/"</span><span class="p">,</span>
         <span class="p">]</span>
 
         <span class="n">urls_to_try</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">u</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">fallback_urls</span> <span class="k">if</span> <span class="n">u</span> <span class="o">!=</span> <span class="n">url</span><span class="p">])</span>
@@ -693,11 +693,11 @@
             <span class="k">continue</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">raise_error</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No internet connection available.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"No internet connection available."</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span>
-            <span class="s2">&quot;No internet connection, try again when you are &quot;</span>
-            <span class="s2">&quot;connected to the internet.&quot;</span>
+            <span class="s2">"No internet connection, try again when you are "</span>
+            <span class="s2">"connected to the internet."</span>
         <span class="p">)</span>
 
     <span class="k">return</span> <span class="kc">False</span></div>
@@ -707,21 +707,21 @@
 <div class="viewcode-block" id="check_s3_status">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.utils.check_s3_status.html#brainglobe_atlasapi.utils.check_s3_status">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">check_s3_status</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">raise_error</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Check that the S3 BrainGlobe bucket is accessible.</span>
 
 <span class="sd">    timeout : int</span>
 <span class="sd">        timeout to wait for [in seconds] (Default value = 5).</span>
 <span class="sd">    raise_error : bool</span>
 <span class="sd">        if false, warning but no error.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">remote_url_s3_http</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="sd">    """</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">remote_url_s3_http</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="n">_</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">except</span> <span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">Timeout</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="n">error_message</span> <span class="o">=</span> <span class="s2">&quot;S3 BrainGlobe bucket is not accessible.&quot;</span>
+        <span class="n">error_message</span> <span class="o">=</span> <span class="s2">"S3 BrainGlobe bucket is not accessible."</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">raise_error</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">error_message</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
@@ -734,21 +734,21 @@
 <div class="viewcode-block" id="check_gin_status">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.utils.check_gin_status.html#brainglobe_atlasapi.utils.check_gin_status">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">check_gin_status</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">raise_error</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check that the GIN server is up.</span>
+<span class="w">    </span><span class="sd">"""Check that the GIN server is up.</span>
 
 <span class="sd">    timeout : int</span>
 <span class="sd">        timeout to wait for [in seconds] (Default value = 5).</span>
 <span class="sd">    raise_error : bool</span>
 <span class="sd">        if false, warning but no error.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gin.g-node.org/&quot;</span>
+<span class="sd">    """</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://gin.g-node.org/"</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="n">_</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">except</span> <span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">Timeout</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="n">error_message</span> <span class="o">=</span> <span class="s2">&quot;GIN server is down.&quot;</span>
+        <span class="n">error_message</span> <span class="o">=</span> <span class="s2">"GIN server is down."</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">raise_error</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">error_message</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
@@ -765,7 +765,7 @@
     <span class="n">output_file_path</span><span class="p">,</span>
     <span class="n">fn_update</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="kc">None</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Download file from remote location, with progress bar.</span>
+<span class="w">    </span><span class="sd">"""Download file from remote location, with progress bar.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -777,17 +777,17 @@
 <span class="sd">        Handler function to update during download. Takes completed and total</span>
 <span class="sd">        bytes.</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="c1"># Make Rich progress bar</span>
     <span class="n">progress</span> <span class="o">=</span> <span class="n">Progress</span><span class="p">(</span>
-        <span class="n">TextColumn</span><span class="p">(</span><span class="s2">&quot;[bold]Downloading...&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">),</span>
+        <span class="n">TextColumn</span><span class="p">(</span><span class="s2">"[bold]Downloading..."</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">"right"</span><span class="p">),</span>
         <span class="n">BarColumn</span><span class="p">(</span><span class="n">bar_width</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
-        <span class="s2">&quot;</span><span class="si">{task.percentage:&gt;3.1f}</span><span class="s2">%&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;•&quot;</span><span class="p">,</span>
+        <span class="s2">"</span><span class="si">{task.percentage:&gt;3.1f}</span><span class="s2">%"</span><span class="p">,</span>
+        <span class="s2">"•"</span><span class="p">,</span>
         <span class="n">DownloadColumn</span><span class="p">(),</span>
-        <span class="s2">&quot;• speed:&quot;</span><span class="p">,</span>
+        <span class="s2">"• speed:"</span><span class="p">,</span>
         <span class="n">TransferSpeedColumn</span><span class="p">(),</span>
-        <span class="s2">&quot;• ETA:&quot;</span><span class="p">,</span>
+        <span class="s2">"• ETA:"</span><span class="p">,</span>
         <span class="n">TimeRemainingColumn</span><span class="p">(),</span>
     <span class="p">)</span>
 
@@ -796,7 +796,7 @@
     <span class="k">try</span><span class="p">:</span>
         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="k">with</span> <span class="n">progress</span><span class="p">:</span>
-            <span class="n">tot</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;content-length&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+            <span class="n">tot</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"content-length"</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 
             <span class="k">if</span> <span class="n">tot</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">try</span><span class="p">:</span>
@@ -805,13 +805,13 @@
                     <span class="n">tot</span> <span class="o">=</span> <span class="mi">0</span>
 
             <span class="n">task_id</span> <span class="o">=</span> <span class="n">progress</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span>
-                <span class="s2">&quot;download&quot;</span><span class="p">,</span>
+                <span class="s2">"download"</span><span class="p">,</span>
                 <span class="n">filename</span><span class="o">=</span><span class="n">output_file_path</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
                 <span class="n">start</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                 <span class="n">total</span><span class="o">=</span><span class="n">tot</span><span class="p">,</span>
             <span class="p">)</span>
 
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file_path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fout</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file_path</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fout</span><span class="p">:</span>
                 <span class="n">completed</span> <span class="o">=</span> <span class="mi">0</span>
                 <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="n">CHUNK_SIZE</span><span class="p">):</span>
                     <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
@@ -826,7 +826,7 @@
     <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">:</span>
         <span class="n">output_file_path</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">missing_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="k">raise</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;Could not download file from </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">"Could not download file from </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">"</span>
         <span class="p">)</span></div>
 
 
@@ -834,12 +834,12 @@
 <div class="viewcode-block" id="get_download_size">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.utils.get_download_size.html#brainglobe_atlasapi.utils.get_download_size">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">get_download_size</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get file size based on the MB value on the &quot;src&quot; page of each atlas.</span>
+<span class="w">    </span><span class="sd">"""Get file size based on the MB value on the "src" page of each atlas.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    url : str</span>
-<span class="sd">        atlas file url (in a repo, make sure the &quot;raw&quot; url is passed)</span>
+<span class="sd">        atlas file url (in a repo, make sure the "raw" url is passed)</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -848,23 +848,23 @@
 
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
-<span class="sd">        requests.exceptions.HTTPError: If there&#39;s an issue with HTTP request.</span>
+<span class="sd">        requests.exceptions.HTTPError: If there's an issue with HTTP request.</span>
 <span class="sd">        ValueError: If the file size cannot be extracted from the response.</span>
 <span class="sd">        IndexError: If the url is not formatted as expected</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="c1"># Replace the &#39;raw&#39; in the url with &#39;src&#39;</span>
-        <span class="n">url_split</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
-        <span class="n">url_split</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;src&quot;</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">url_split</span><span class="p">)</span>
+        <span class="c1"># Replace the 'raw' in the url with 'src'</span>
+        <span class="n">url_split</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+        <span class="n">url_split</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"src"</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">"/"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">url_split</span><span class="p">)</span>
 
         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
         <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
 
-        <span class="n">response_string</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="n">response_string</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">)</span>
         <span class="n">search_result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
-            <span class="sa">r</span><span class="s2">&quot;([0-9]+\.[0-9] [MGK]B)|([0-9]+ [MGK]B)&quot;</span><span class="p">,</span> <span class="n">response_string</span>
+            <span class="sa">r</span><span class="s2">"([0-9]+\.[0-9] [MGK]B)|([0-9]+ [MGK]B)"</span><span class="p">,</span> <span class="n">response_string</span>
         <span class="p">)</span>
 
         <span class="k">assert</span> <span class="n">search_result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
@@ -876,11 +876,11 @@
         <span class="n">size</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">size_string</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
         <span class="n">prefix</span> <span class="o">=</span> <span class="n">size_string</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
 
-        <span class="k">if</span> <span class="n">prefix</span> <span class="o">==</span> <span class="s2">&quot;G&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">prefix</span> <span class="o">==</span> <span class="s2">"G"</span><span class="p">:</span>
             <span class="n">size</span> <span class="o">*=</span> <span class="mf">1e9</span>
-        <span class="k">elif</span> <span class="n">prefix</span> <span class="o">==</span> <span class="s2">&quot;M&quot;</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">prefix</span> <span class="o">==</span> <span class="s2">"M"</span><span class="p">:</span>
             <span class="n">size</span> <span class="o">*=</span> <span class="mf">1e6</span>
-        <span class="k">elif</span> <span class="n">prefix</span> <span class="o">==</span> <span class="s2">&quot;K&quot;</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">prefix</span> <span class="o">==</span> <span class="s2">"K"</span><span class="p">:</span>
             <span class="n">size</span> <span class="o">*=</span> <span class="mf">1e3</span>
 
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
@@ -888,16 +888,16 @@
     <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">HTTPError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">e</span>
     <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;File size information not found in the response.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"File size information not found in the response."</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;Improperly formatted URL&quot;</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">"Improperly formatted URL"</span><span class="p">)</span></div>
 
 
 
 <div class="viewcode-block" id="get_latest_version">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.utils.get_latest_version.html#brainglobe_atlasapi.utils.get_latest_version">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">get_latest_version</span><span class="p">(</span><span class="n">available_versions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Get the latest version from a list of version strings.</span>
 
 <span class="sd">    Parameters</span>
@@ -909,9 +909,9 @@
 <span class="sd">    -------</span>
 <span class="sd">    str</span>
 <span class="sd">        The latest version string.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">available_versions</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span>
-        <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">v</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span>
+        <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">v</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"_"</span><span class="p">)),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span>
     <span class="p">)</span>
     <span class="k">return</span> <span class="n">available_versions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
 
@@ -920,13 +920,13 @@
 <div class="viewcode-block" id="conf_from_url">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.utils.conf_from_url.html#brainglobe_atlasapi.utils.conf_from_url">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">conf_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">cache_path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">configparser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Read conf file from a URL and</span>
+<span class="w">    </span><span class="sd">"""Read conf file from a URL and</span>
 <span class="sd">    cache a copy of the configuration file in the brainglobe directory.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    url : str</span>
-<span class="sd">        URL of the configuration file. Ensure it&#39;s the raw URL for repository</span>
+<span class="sd">        URL of the configuration file. Ensure it's the raw URL for repository</span>
 <span class="sd">        files (e.g., from GIN raw content).</span>
 <span class="sd">    cache_path : Path</span>
 <span class="sd">        The path where the configuration file will be cached.</span>
@@ -936,7 +936,7 @@
 <span class="sd">    configparser.ConfigParser</span>
 <span class="sd">        A ConfigParser object containing the configuration data.</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">max_tries</span> <span class="o">=</span> <span class="mi">5</span>
     <span class="n">sleep_time</span> <span class="o">=</span> <span class="mf">0.5</span>
     <span class="n">status_code</span> <span class="o">=</span> <span class="mi">418</span>  <span class="c1"># teapot status code</span>
@@ -953,8 +953,8 @@
         <span class="n">sleep</span><span class="p">(</span><span class="n">sleep_time</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not fetch the latest atlas versions: </span><span class="si">{</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using the last cached version from </span><span class="si">{</span><span class="n">cache_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Could not fetch the latest atlas versions: </span><span class="si">{</span><span class="n">status_code</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Using the last cached version from </span><span class="si">{</span><span class="n">cache_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">conf_from_file</span><span class="p">(</span><span class="n">cache_path</span><span class="p">)</span>
 
@@ -967,10 +967,10 @@
             <span class="n">cache_path</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="c1"># Cache the available atlases</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">cache_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">cache_path</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
             <span class="n">config_obj</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f_out</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not update the latest atlas versions cache: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Could not update the latest atlas versions cache: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">config_obj</span></div>
 
@@ -979,7 +979,7 @@
 <div class="viewcode-block" id="conf_from_file">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.utils.conf_from_file.html#brainglobe_atlasapi.utils.conf_from_file">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">conf_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">configparser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Read a configuration file from a local file path.</span>
+<span class="w">    </span><span class="sd">"""Read a configuration file from a local file path.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -996,11 +996,11 @@
 <span class="sd">    ------</span>
 <span class="sd">    FileNotFoundError</span>
 <span class="sd">        If the specified `file_path` does not exist.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">file_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
-        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;Last versions cache file not found.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">"Last versions cache file not found."</span><span class="p">)</span>
 
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
         <span class="n">text</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
     <span class="n">config</span> <span class="o">=</span> <span class="n">configparser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">()</span>
@@ -1016,7 +1016,7 @@
 <div class="viewcode-block" id="read_json">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.utils.read_json.html#brainglobe_atlasapi.utils.read_json">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">read_json</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Read a json file.</span>
+<span class="w">    </span><span class="sd">"""Read a json file.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -1027,8 +1027,8 @@
 <span class="sd">    dict</span>
 <span class="sd">        Dictionary from the json</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="sd">    """</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">data</span></div>
 
@@ -1037,7 +1037,7 @@
 <div class="viewcode-block" id="load_structures_from_csv">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.utils.load_structures_from_csv.html#brainglobe_atlasapi.utils.load_structures_from_csv">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">load_structures_from_csv</span><span class="p">(</span><span class="n">structures_path</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Load structures information from a CSV file.</span>
 
 <span class="sd">    Parameters</span>
@@ -1051,30 +1051,30 @@
 <span class="sd">        A list of dictionaries, where each dictionary contains information</span>
 <span class="sd">        about a structure, such as its acronym, id, name, structure_id_path,</span>
 <span class="sd">        rgb_triplet, and mesh_filename.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">structures_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
         <span class="n">structures_path</span><span class="p">,</span>
-        <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;parent_identifier&quot;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">UInt16Dtype</span><span class="p">()},</span>
+        <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"parent_identifier"</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">UInt16Dtype</span><span class="p">()},</span>
         <span class="n">converters</span><span class="o">=</span><span class="p">{</span>
-            <span class="s2">&quot;root_identifier_path&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span>
-                <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;[]&quot;</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span>
+            <span class="s2">"root_identifier_path"</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span>
+                <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"[]"</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s2">","</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span>
             <span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
-            <span class="s2">&quot;color_hex_triplet&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span>
-                <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">)[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+            <span class="s2">"color_hex_triplet"</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span>
+                <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"#"</span><span class="p">)[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
             <span class="p">],</span>
         <span class="p">},</span>
         <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="n">na_values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;NaN&quot;</span><span class="p">,</span> <span class="s2">&quot;NULL&quot;</span><span class="p">,</span> <span class="s2">&quot;nan&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;na&quot;</span><span class="p">,</span> <span class="s2">&quot;null&quot;</span><span class="p">],</span>
+        <span class="n">na_values</span><span class="o">=</span><span class="p">[</span><span class="s2">""</span><span class="p">,</span> <span class="s2">"NaN"</span><span class="p">,</span> <span class="s2">"NULL"</span><span class="p">,</span> <span class="s2">"nan"</span><span class="p">,</span> <span class="s2">"N/A"</span><span class="p">,</span> <span class="s2">"na"</span><span class="p">,</span> <span class="s2">"null"</span><span class="p">],</span>
     <span class="p">)</span>
     <span class="n">rename_dict</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;identifier&quot;</span><span class="p">:</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;parent_identifier&quot;</span><span class="p">:</span> <span class="s2">&quot;parent_structure_id&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;abbreviation&quot;</span><span class="p">:</span> <span class="s2">&quot;acronym&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;root_identifier_path&quot;</span><span class="p">:</span> <span class="s2">&quot;structure_id_path&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;color_hex_triplet&quot;</span><span class="p">:</span> <span class="s2">&quot;rgb_triplet&quot;</span><span class="p">,</span>
+        <span class="s2">"identifier"</span><span class="p">:</span> <span class="s2">"id"</span><span class="p">,</span>
+        <span class="s2">"parent_identifier"</span><span class="p">:</span> <span class="s2">"parent_structure_id"</span><span class="p">,</span>
+        <span class="s2">"abbreviation"</span><span class="p">:</span> <span class="s2">"acronym"</span><span class="p">,</span>
+        <span class="s2">"root_identifier_path"</span><span class="p">:</span> <span class="s2">"structure_id_path"</span><span class="p">,</span>
+        <span class="s2">"color_hex_triplet"</span><span class="p">:</span> <span class="s2">"rgb_triplet"</span><span class="p">,</span>
     <span class="p">}</span>
     <span class="n">structures_df</span> <span class="o">=</span> <span class="n">structures_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">rename_dict</span><span class="p">)</span>
-    <span class="n">structures_list</span> <span class="o">=</span> <span class="n">structures_df</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">&quot;records&quot;</span><span class="p">)</span>
+    <span class="n">structures_list</span> <span class="o">=</span> <span class="n">structures_df</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">"records"</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">structures_list</span></div>
 
@@ -1083,7 +1083,7 @@
 <div class="viewcode-block" id="read_tiff">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.utils.read_tiff.html#brainglobe_atlasapi.utils.read_tiff">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">read_tiff</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Read a tiff file.</span>
+<span class="w">    </span><span class="sd">"""Read a tiff file.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -1094,7 +1094,7 @@
 <span class="sd">    np.array</span>
 <span class="sd">        Numpy stack read from the tiff.</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">return</span> <span class="n">tifffile</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">))</span></div>
 
 </pre></div>

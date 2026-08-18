@@ -859,7 +859,7 @@ numpy to load <code class="docutils literal notranslate"><span class="pre">.npy<
 loading and saving image data (<a class="reference internal" href="../../../brainglobe-utils/image_io.html"><span class="doc std std-doc">image_io</span></a>). You can use <code class="docutils literal notranslate"><span class="pre">image_io</span></code> to load many types of
 data (e.g. <code class="docutils literal notranslate"><span class="pre">.tiff</span></code>, <code class="docutils literal notranslate"><span class="pre">.nifti</span></code> etc), e.g.:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_utils.image_io</span><span class="w"> </span><span class="kn">import</span> <span class="n">load</span>
-<span class="n">load</span><span class="o">.</span><span class="n">load_any</span><span class="p">(</span><span class="s1">&#39;mydata.tif&#39;</span><span class="p">)</span>
+<span class="n">load</span><span class="o">.</span><span class="n">load_any</span><span class="p">(</span><span class="s1">'mydata.tif'</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="tip docutils">
@@ -867,8 +867,8 @@ data (e.g. <code class="docutils literal notranslate"><span class="pre">.tiff</s
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">brainrender.actors</span><span class="w"> </span><span class="kn">import</span> <span class="n">Volume</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="n">vol</span> <span class="o">=</span> <span class="n">Volume</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;data.npy&#39;</span><span class="p">))</span> <span class="c1">#  this will work</span>
-<span class="n">vol</span> <span class="o">=</span> <span class="n">Volume</span><span class="p">(</span><span class="s1">&#39;data.npy&#39;</span><span class="p">)</span>  <span class="c1"># this will work too :)</span>
+<span class="n">vol</span> <span class="o">=</span> <span class="n">Volume</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">'data.npy'</span><span class="p">))</span> <span class="c1">#  this will work</span>
+<span class="n">vol</span> <span class="o">=</span> <span class="n">Volume</span><span class="p">(</span><span class="s1">'data.npy'</span><span class="p">)</span>  <span class="c1"># this will work too :)</span>
 </pre></div>
 </div>
 </section>
@@ -893,7 +893,7 @@ If that’s the case, <code class="docutils literal notranslate"><span class="pr
 <p>Brainrender’s Volume actor class has access to all methods of Vedo’s Volume class, so this would work too:</p>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">brainrender.actors</span><span class="w"> </span><span class="kn">import</span> <span class="n">Volume</span>
-<span class="n">mesh</span> <span class="o">=</span> <span class="n">Volume</span><span class="p">(</span><span class="s1">&#39;data.npy&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">isosurface</span><span class="p">()</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">Volume</span><span class="p">(</span><span class="s1">'data.npy'</span><span class="p">)</span><span class="o">.</span><span class="n">isosurface</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>You can also render your data directly as a brainrender <code class="docutils literal notranslate"><span class="pre">Volume</span></code> class:</p>

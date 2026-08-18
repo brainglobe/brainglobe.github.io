@@ -860,7 +860,7 @@ In <code class="docutils literal notranslate"><span class="pre">examples/plan.py
         <span class="mi">5000</span><span class="p">,</span>
         <span class="mi">5000</span><span class="p">,</span>
     <span class="p">),</span>
-    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;frontal&quot;</span><span class="p">,</span>  <span class="c1"># orientation, or &#39;sagittal&#39;, or &#39;horizontal&#39; or a tuple (x,y,z)</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">"frontal"</span><span class="p">,</span>  <span class="c1"># orientation, or 'sagittal', or 'horizontal' or a tuple (x,y,z)</span>
     <span class="n">thickness</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span>  <span class="c1"># thickness of the slices used for rendering (in microns)</span>
 <span class="p">)</span>
 </pre></div>
@@ -870,10 +870,10 @@ In <code class="docutils literal notranslate"><span class="pre">examples/plan.py
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">bgh</span><span class="o">.</span><span class="n">Heatmap</span><span class="p">(</span>
     <span class="n">values</span><span class="p">,</span>
     <span class="n">position</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
-    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;sagittal&quot;</span><span class="p">,</span>  <span class="c1"># &#39;frontal&#39; or &#39;sagittal&#39;, or &#39;horizontal&#39; or a tuple (x,y,z)</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">"sagittal"</span><span class="p">,</span>  <span class="c1"># 'frontal' or 'sagittal', or 'horizontal' or a tuple (x,y,z)</span>
     <span class="n">thickness</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
-    <span class="n">atlas_name</span><span class="o">=</span><span class="s2">&quot;allen_cord_20um&quot;</span><span class="p">,</span>
-    <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;2D&#39;</span><span class="p">,</span>
+    <span class="n">atlas_name</span><span class="o">=</span><span class="s2">"allen_cord_20um"</span><span class="p">,</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s1">'2D'</span><span class="p">,</span>
 <span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 </pre></div>
@@ -882,12 +882,12 @@ In <code class="docutils literal notranslate"><span class="pre">examples/plan.py
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">bgh</span><span class="o">.</span><span class="n">Heatmap</span><span class="p">(</span>
     <span class="n">values</span><span class="p">,</span>
     <span class="n">position</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;sagittal&quot;</span><span class="p">,</span>  <span class="c1"># &#39;frontal&#39; or &#39;sagittal&#39;, or &#39;horizontal&#39; or a tuple (x,y,z)</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">"sagittal"</span><span class="p">,</span>  <span class="c1"># 'frontal' or 'sagittal', or 'horizontal' or a tuple (x,y,z)</span>
     <span class="n">thickness</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
-    <span class="n">atlas_name</span><span class="o">=</span><span class="s2">&quot;mpin_zfish_1um&quot;</span><span class="p">,</span>
-    <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;2D&#39;</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;zebra fish heatmap&#39;</span>
-<span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;AP (μm)&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;DV (μm)&#39;</span><span class="p">)</span>
+    <span class="n">atlas_name</span><span class="o">=</span><span class="s2">"mpin_zfish_1um"</span><span class="p">,</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s1">'2D'</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">'zebra fish heatmap'</span>
+<span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">'AP (μm)'</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">'DV (μm)'</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -901,14 +901,14 @@ In <code class="docutils literal notranslate"><span class="pre">examples/plan.py
         <span class="mi">5000</span><span class="p">,</span>
         <span class="mi">5000</span><span class="p">,</span>
     <span class="p">),</span>
-    <span class="c1"># &#39;frontal&#39; or &#39;sagittal&#39;, or &#39;horizontal&#39; or a tuple (x,y,z)</span>
-    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;frontal&quot;</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;frontal view&quot;</span><span class="p">,</span>
+    <span class="c1"># 'frontal' or 'sagittal', or 'horizontal' or a tuple (x,y,z)</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">"frontal"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"frontal view"</span><span class="p">,</span>
     <span class="n">vmin</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span>
     <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s1">'Reds'</span><span class="p">,</span>
     <span class="n">annotate_regions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;2D&quot;</span><span class="p">,</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s2">"2D"</span><span class="p">,</span>
 <span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -926,11 +926,11 @@ In <code class="docutils literal notranslate"><span class="pre">examples/plan.py
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bgh</span><span class="o">.</span><span class="n">Heatmap</span><span class="p">(</span>
     <span class="n">values</span><span class="p">,</span>
     <span class="n">position</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span>
-    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;frontal&quot;</span><span class="p">,</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">"frontal"</span><span class="p">,</span>
     <span class="n">vmin</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span>
     <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
     <span class="n">label_regions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;2D&quot;</span><span class="p">,</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s2">"2D"</span><span class="p">,</span>
 <span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -938,11 +938,11 @@ In <code class="docutils literal notranslate"><span class="pre">examples/plan.py
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bgh</span><span class="o">.</span><span class="n">Heatmap</span><span class="p">(</span>
     <span class="n">values</span><span class="p">,</span>
     <span class="n">position</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span>
-    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;frontal&quot;</span><span class="p">,</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">"frontal"</span><span class="p">,</span>
     <span class="n">vmin</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span>
     <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-    <span class="n">label_regions</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;TH&quot;</span><span class="p">,</span> <span class="s2">&quot;VIS&quot;</span><span class="p">,</span> <span class="s2">&quot;HIP&quot;</span><span class="p">],</span>
-    <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;2D&quot;</span><span class="p">,</span>
+    <span class="n">label_regions</span><span class="o">=</span><span class="p">[</span><span class="s2">"TH"</span><span class="p">,</span> <span class="s2">"VIS"</span><span class="p">,</span> <span class="s2">"HIP"</span><span class="p">],</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s2">"2D"</span><span class="p">,</span>
 <span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -950,11 +950,11 @@ In <code class="docutils literal notranslate"><span class="pre">examples/plan.py
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bgh</span><span class="o">.</span><span class="n">Heatmap</span><span class="p">(</span>
     <span class="n">values</span><span class="p">,</span>
     <span class="n">position</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span>
-    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;frontal&quot;</span><span class="p">,</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">"frontal"</span><span class="p">,</span>
     <span class="n">vmin</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span>
     <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-    <span class="n">label_regions</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;TH&quot;</span><span class="p">:</span> <span class="s2">&quot;Thalamus&quot;</span><span class="p">,</span> <span class="s2">&quot;VIS&quot;</span><span class="p">:</span> <span class="s2">&quot;Visual Cortex&quot;</span><span class="p">},</span>
-    <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;2D&quot;</span><span class="p">,</span>
+    <span class="n">label_regions</span><span class="o">=</span><span class="p">{</span><span class="s2">"TH"</span><span class="p">:</span> <span class="s2">"Thalamus"</span><span class="p">,</span> <span class="s2">"VIS"</span><span class="p">:</span> <span class="s2">"Visual Cortex"</span><span class="p">},</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s2">"2D"</span><span class="p">,</span>
 <span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -964,7 +964,7 @@ In <code class="docutils literal notranslate"><span class="pre">examples/plan.py
 <section id="regions-coordinates">
 <h3>Regions coordinates<a class="headerlink" href="#regions-coordinates" title="Link to this heading">#</a></h3>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> to get the coordinates of the 2D ‘slices’ (in the 2D plane’s coordinates system):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">regions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;TH&#39;</span><span class="p">,</span> <span class="s1">&#39;RSP&#39;</span><span class="p">,</span> <span class="s1">&#39;AI&#39;</span><span class="p">,</span> <span class="s1">&#39;SS&#39;</span><span class="p">,</span> <span class="s1">&#39;MO&#39;</span><span class="p">,</span> <span class="s1">&#39;PVZ&#39;</span><span class="p">,</span> <span class="s1">&#39;LZ&#39;</span><span class="p">,</span> <span class="s1">&#39;VIS&#39;</span><span class="p">,</span> <span class="s1">&#39;AUD&#39;</span><span class="p">,</span> <span class="s1">&#39;RHP&#39;</span><span class="p">,</span> <span class="s1">&#39;STR&#39;</span><span class="p">,</span> <span class="s1">&#39;CB&#39;</span><span class="p">,</span> <span class="s1">&#39;FRP&#39;</span><span class="p">,</span> <span class="s1">&#39;HIP&#39;</span><span class="p">,</span> <span class="s1">&#39;PA&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">regions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'TH'</span><span class="p">,</span> <span class="s1">'RSP'</span><span class="p">,</span> <span class="s1">'AI'</span><span class="p">,</span> <span class="s1">'SS'</span><span class="p">,</span> <span class="s1">'MO'</span><span class="p">,</span> <span class="s1">'PVZ'</span><span class="p">,</span> <span class="s1">'LZ'</span><span class="p">,</span> <span class="s1">'VIS'</span><span class="p">,</span> <span class="s1">'AUD'</span><span class="p">,</span> <span class="s1">'RHP'</span><span class="p">,</span> <span class="s1">'STR'</span><span class="p">,</span> <span class="s1">'CB'</span><span class="p">,</span> <span class="s1">'FRP'</span><span class="p">,</span> <span class="s1">'HIP'</span><span class="p">,</span> <span class="s1">'PA'</span><span class="p">]</span>
 
 <span class="n">coordinates</span> <span class="o">=</span> <span class="n">bgh</span><span class="o">.</span><span class="n">get_structures_slice_coords</span><span class="p">(</span>
     <span class="n">regions</span><span class="p">,</span>
@@ -973,7 +973,7 @@ In <code class="docutils literal notranslate"><span class="pre">examples/plan.py
         <span class="mi">5000</span><span class="p">,</span>
         <span class="mi">5000</span><span class="p">,</span>
     <span class="p">),</span>
-    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;frontal&quot;</span><span class="p">,</span>  <span class="c1"># &#39;frontal&#39; or &#39;sagittal&#39;, or &#39;horizontal&#39; or a tuple (x,y,z)</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">"frontal"</span><span class="p">,</span>  <span class="c1"># 'frontal' or 'sagittal', or 'horizontal' or a tuple (x,y,z)</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -995,7 +995,7 @@ For more information see the API’s <a class="reference internal" href="../brai
 </pre></div>
 </div>
 <p>If you use <code class="docutils literal notranslate"><span class="pre">brainrender</span></code> via <code class="docutils literal notranslate"><span class="pre">brainglobe-heatmap</span></code> (i.e. for 3D visualisation), please also cite it:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Claudi</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="p">,</span> <span class="n">Tyson</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span> <span class="n">L</span><span class="o">.</span><span class="p">,</span> <span class="n">Petrucco</span><span class="p">,</span> <span class="n">L</span><span class="o">.</span><span class="p">,</span> <span class="n">Margrie</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">W</span><span class="o">.</span><span class="p">,</span> <span class="n">Portugues</span><span class="p">,</span> <span class="n">R</span><span class="o">.</span><span class="p">,</span>  <span class="n">Branco</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span> <span class="p">(</span><span class="mi">2021</span><span class="p">)</span> <span class="s2">&quot;Visualizing anatomically registered data with Brainrender&amp;quot; &lt;i&gt;eLife&lt;/i&gt; 2021;10:e65751 [doi.org/10.7554/eLife.65751](https://doi.org/10.7554/eLife.65751)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Claudi</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="p">,</span> <span class="n">Tyson</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span> <span class="n">L</span><span class="o">.</span><span class="p">,</span> <span class="n">Petrucco</span><span class="p">,</span> <span class="n">L</span><span class="o">.</span><span class="p">,</span> <span class="n">Margrie</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">W</span><span class="o">.</span><span class="p">,</span> <span class="n">Portugues</span><span class="p">,</span> <span class="n">R</span><span class="o">.</span><span class="p">,</span>  <span class="n">Branco</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span> <span class="p">(</span><span class="mi">2021</span><span class="p">)</span> <span class="s2">"Visualizing anatomically registered data with Brainrender&amp;quot; &lt;i&gt;eLife&lt;/i&gt; 2021;10:e65751 [doi.org/10.7554/eLife.65751](https://doi.org/10.7554/eLife.65751)</span>
 </pre></div>
 </div>
 <p>BibTeX:</p>

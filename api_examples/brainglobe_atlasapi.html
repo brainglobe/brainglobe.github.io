@@ -619,7 +619,7 @@ to download the full example code.</p>
 │  ccfv3augmented_mouse_25um                                           3.0     │
 │  columbia_cuttlefish_50um                                            3.0     │
 │  csl_cat_500um                                                       3.0     │
-│  danionella_cerebrum_mixed_2.5um                                     3.0     │
+│  danionella_cerebrum_mixed_2.5um                                     3.1     │
 │  demba_allen_seg_dev_mouse_p10_2…                                    3.0     │
 │  demba_allen_seg_dev_mouse_p10_2…                                    3.0     │
 │  demba_allen_seg_dev_mouse_p11_2…                                    3.0     │
@@ -728,6 +728,15 @@ to download the full example code.</p>
 │  demba_allen_seg_dev_mouse_p9_25…                                    3.0     │
 │  dorr_mouse_mri_32um                                                 3.0     │
 │  drosophila_wingdisc_instar3_2um                                     3.0     │
+│  duke_dev_rat_p00_25um                                               3.0     │
+│  duke_dev_rat_p02_25um                                               3.0     │
+│  duke_dev_rat_p04_25um                                               3.0     │
+│  duke_dev_rat_p08_25um                                               3.0     │
+│  duke_dev_rat_p12_25um                                               3.0     │
+│  duke_dev_rat_p18_25um                                               3.0     │
+│  duke_dev_rat_p24_25um                                               3.0     │
+│  duke_dev_rat_p40_25um                                               3.0     │
+│  duke_dev_rat_p80_25um                                               3.0     │
 │  duke_mouse_100um                                                    3.0     │
 │  duke_mouse_150um                                                    3.0     │
 │  duke_mouse_15um                                                     3.0     │
@@ -812,9 +821,9 @@ to download the full example code.</p>
 <section id="creating-a-brainglobeatlas-object">
 <h2>Creating a <cite>BrainGlobeAtlas</cite> object<a class="headerlink" href="#creating-a-brainglobeatlas-object" title="Link to this heading">#</a></h2>
 <p>To instantiate a <cite>BrainGlobeAtlas</cite> object, we call it with the atlas name. The first time we use it, the
-latest version of the atlas files will be downloaded from the <a class="reference external" href="http://gin.g-node.org/brainglobe/atlases">remote GIN repository</a>
-and stored on your local machine (by default, in <cite>~/.brainglobe</cite>):</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">atlas</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s2">&quot;allen_mouse_100um&quot;</span><span class="p">,</span> <span class="n">check_latest</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+latest version of the atlas files will be downloaded from the <a class="reference external" href="https://open.quiltdata.com/b/brainglobe/tree/atlas/">remote S3 bucket</a>
+and stored on your local machine (by default, in <cite>~/.brainglobe/brainglobe-atlasapi</cite>):</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">atlas</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s2">"allen_mouse_100um"</span><span class="p">,</span> <span class="n">check_latest</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="note admonition">
@@ -843,38 +852,38 @@ atlas, as it is relatively small, but high quality.</p>
 <span class="n">pprint</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;additional_references&#39;: [],
- &#39;annotation_set&#39;: {&#39;location&#39;: &#39;/annotation-sets/allen_mouse-annotation/3_0&#39;,
-                    &#39;name&#39;: &#39;allen_mouse-annotation&#39;,
-                    &#39;template&#39;: {&#39;location&#39;: &#39;/templates/allen-adult-mouse-stpt-template/2015&#39;,
-                                 &#39;name&#39;: &#39;allen-adult-mouse-stpt-template&#39;,
-                                 &#39;version&#39;: &#39;2015&#39;},
-                    &#39;terminology&#39;: {&#39;location&#39;: &#39;/terminologies/allen_mouse-terminology/3_0&#39;,
-                                    &#39;name&#39;: &#39;allen_mouse-terminology&#39;,
-                                    &#39;version&#39;: &#39;3.0&#39;},
-                    &#39;version&#39;: &#39;3.0&#39;},
- &#39;atlas_link&#39;: &#39;http://www.brain-map.org&#39;,
- &#39;citation&#39;: &#39;Wang et al 2020, https://doi.org/10.1016/j.cell.2020.04.007&#39;,
- &#39;coordinate_space&#39;: {&#39;location&#39;: &#39;/coordinate-spaces/allen-adult-mouse-ccf-space/2015&#39;,
-                      &#39;name&#39;: &#39;allen-adult-mouse-ccf-space&#39;,
-                      &#39;template&#39;: {&#39;location&#39;: &#39;/templates/allen-adult-mouse-stpt-template/2015&#39;,
-                                   &#39;name&#39;: &#39;allen-adult-mouse-stpt-template&#39;,
-                                   &#39;version&#39;: &#39;2015&#39;},
-                      &#39;version&#39;: &#39;2015&#39;},
- &#39;location&#39;: &#39;/atlases/allen_mouse_100um/3_0&#39;,
- &#39;name&#39;: &#39;allen_mouse&#39;,
- &#39;orientation&#39;: &#39;asr&#39;,
- &#39;resolution&#39;: [100.0, 100.0, 100.0],
- &#39;shape&#39;: [132, 80, 114],
- &#39;species&#39;: &#39;Mus musculus&#39;,
- &#39;symmetric&#39;: True,
- &#39;template&#39;: {&#39;location&#39;: &#39;/templates/allen-adult-mouse-stpt-template/2015&#39;,
-              &#39;name&#39;: &#39;allen-adult-mouse-stpt-template&#39;,
-              &#39;version&#39;: &#39;2015&#39;},
- &#39;terminology&#39;: {&#39;location&#39;: &#39;/terminologies/allen_mouse-terminology/3_0&#39;,
-                 &#39;name&#39;: &#39;allen_mouse-terminology&#39;,
-                 &#39;version&#39;: &#39;3.0&#39;},
- &#39;version&#39;: &#39;3.0&#39;}
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>{'additional_references': [],
+ 'annotation_set': {'location': '/annotation-sets/allen_mouse-annotation/3_0',
+                    'name': 'allen_mouse-annotation',
+                    'template': {'location': '/templates/allen-adult-mouse-stpt-template/2015',
+                                 'name': 'allen-adult-mouse-stpt-template',
+                                 'version': '2015'},
+                    'terminology': {'location': '/terminologies/allen_mouse-terminology/3_0',
+                                    'name': 'allen_mouse-terminology',
+                                    'version': '3.0'},
+                    'version': '3.0'},
+ 'atlas_link': 'http://www.brain-map.org',
+ 'citation': 'Wang et al 2020, https://doi.org/10.1016/j.cell.2020.04.007',
+ 'coordinate_space': {'location': '/coordinate-spaces/allen-adult-mouse-ccf-space/2015',
+                      'name': 'allen-adult-mouse-ccf-space',
+                      'template': {'location': '/templates/allen-adult-mouse-stpt-template/2015',
+                                   'name': 'allen-adult-mouse-stpt-template',
+                                   'version': '2015'},
+                      'version': '2015'},
+ 'location': '/atlases/allen_mouse_100um/3_0',
+ 'name': 'allen_mouse',
+ 'orientation': 'asr',
+ 'resolution': [100.0, 100.0, 100.0],
+ 'shape': [132, 80, 114],
+ 'species': 'Mus musculus',
+ 'symmetric': True,
+ 'template': {'location': '/templates/allen-adult-mouse-stpt-template/2015',
+              'name': 'allen-adult-mouse-stpt-template',
+              'version': '2015'},
+ 'terminology': {'location': '/terminologies/allen_mouse-terminology/3_0',
+                 'name': 'allen_mouse-terminology',
+                 'version': '3.0'},
+ 'version': '3.0'}
 </pre></div>
 </div>
 </section>
@@ -886,12 +895,12 @@ atlas, as it is relatively small, but high quality.</p>
 <span class="c1"># Get the middle section and plot</span>
 <span class="n">middle_section</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reference</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reference</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">)</span>
 </pre></div>
 </div>
 <img src="../_images/sphx_glr_brainglobe_atlasapi_001.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_001.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Warning: atlas.reference is a deprecated alias for atlas.template, and will be removed in future versions.
 
-&lt;matplotlib.image.AxesImage object at 0x7f6ff51e4260&gt;
+&lt;matplotlib.image.AxesImage object at 0x7f15791744d0&gt;
 </pre></div>
 </div>
 <p>Annotations stack</p>
@@ -899,14 +908,14 @@ atlas, as it is relatively small, but high quality.</p>
 
 <span class="c1"># Create a cyclic colormap due to the high values in the Allen atlas</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">512</span>
-<span class="n">colors</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;tab20&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">resampled</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">'tab20'</span><span class="p">)</span><span class="o">.</span><span class="n">resampled</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
 <span class="n">lut</span> <span class="o">=</span> <span class="n">colors</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
 
 <span class="c1"># Map label image to lookup table and plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lut</span><span class="p">[</span><span class="n">annotation</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:]</span> <span class="o">%</span> <span class="n">N</span><span class="p">])</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_002.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_002.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f703c6ea5d0&gt;
+<img src="../_images/sphx_glr_brainglobe_atlasapi_002.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_002.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f15791b1a60&gt;
 </pre></div>
 </div>
 <p>Hemisheres stack:</p>
@@ -914,7 +923,7 @@ atlas, as it is relatively small, but high quality.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">hemispheres</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:])</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_003.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_003.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f703cbc4aa0&gt;
+<img src="../_images/sphx_glr_brainglobe_atlasapi_003.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_003.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f15bd765f10&gt;
 </pre></div>
 </div>
 </section>
@@ -1767,38 +1776,38 @@ atlas, as it is relatively small, but high quality.</p>
 </pre></div>
 </div>
 <p>The structures attribute is a custom dictionary that can be queried by region number or acronym, and contains all the information for a given structure:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">structures</span><span class="p">[</span><span class="s2">&quot;root&quot;</span><span class="p">])</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">structures</span><span class="p">[</span><span class="s2">"root"</span><span class="p">])</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;acronym&#39;: &#39;root&#39;,
- &#39;annotation_value&#39;: 997,
- &#39;id&#39;: 997,
- &#39;mesh&#39;: None,
- &#39;mesh_filename&#39;: PosixPath(&#39;/home/runner/.brainglobe/brainglobe-atlasapi/annotation-sets/allen_mouse-annotation/3_0/annotations.precomputed/mesh/997&#39;),
- &#39;name&#39;: &#39;root&#39;,
- &#39;parent_structure_id&#39;: None,
- &#39;rgb_triplet&#39;: [255, 255, 255],
- &#39;structure_id_path&#39;: [997]}
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>{'acronym': 'root',
+ 'annotation_value': 997,
+ 'id': 997,
+ 'mesh': None,
+ 'mesh_filename': PosixPath('/home/runner/.brainglobe/brainglobe-atlasapi/annotation-sets/allen_mouse-annotation/3_0/annotations.precomputed/mesh/997'),
+ 'name': 'root',
+ 'parent_structure_id': None,
+ 'rgb_triplet': [255, 255, 255],
+ 'structure_id_path': [997]}
 </pre></div>
 </div>
 <p>In particular, the <cite>structure_id_path</cite> key contains a list description of the path in the hierarchy up to a particular region, and can be used for queries on the hierarchy.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">structures</span><span class="p">[</span><span class="s2">&quot;CH&quot;</span><span class="p">][</span><span class="s2">&quot;structure_id_path&quot;</span><span class="p">])</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">structures</span><span class="p">[</span><span class="s2">"CH"</span><span class="p">][</span><span class="s2">"structure_id_path"</span><span class="p">])</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[997, 8, 567]
 </pre></div>
 </div>
 <p>We can use the <cite>atlas.get_structure_descendants</cite> and <cite>atlas.get_structure_ancestors</cite> methods to explore the hierarchy:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">atlas</span><span class="o">.</span><span class="n">get_structure_descendants</span><span class="p">(</span><span class="s2">&quot;VISC&quot;</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">atlas</span><span class="o">.</span><span class="n">get_structure_descendants</span><span class="p">(</span><span class="s2">"VISC"</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;VISC1&#39;, &#39;VISC2/3&#39;, &#39;VISC4&#39;, &#39;VISC5&#39;, &#39;VISC6a&#39;, &#39;VISC6b&#39;]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>['VISC1', 'VISC2/3', 'VISC4', 'VISC5', 'VISC6a', 'VISC6b']
 </pre></div>
 </div>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">atlas</span><span class="o">.</span><span class="n">get_structure_ancestors</span><span class="p">(</span><span class="s2">&quot;VISC6a&quot;</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">atlas</span><span class="o">.</span><span class="n">get_structure_ancestors</span><span class="p">(</span><span class="s2">"VISC6a"</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;root&#39;, &#39;grey&#39;, &#39;CH&#39;, &#39;CTX&#39;, &#39;CTXpl&#39;, &#39;Isocortex&#39;, &#39;VISC&#39;]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>['root', 'grey', 'CH', 'CTX', 'CTXpl', 'Isocortex', 'VISC']
 </pre></div>
 </div>
 </section>
@@ -1809,17 +1818,17 @@ have the number of some lower level parcellation in the hierarchy (concretely, i
 midbrain, and forebrain, <cite>annotation == root_id</cite> will be all False).</p>
 <p>To get the mask for a region, use</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">get_structure_mask</span><span class="p">(</span><span class="mi">997</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mask</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mask</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_004.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_004.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f703c7c0770&gt;
+<img src="../_images/sphx_glr_brainglobe_atlasapi_004.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_004.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f15bce304d0&gt;
 </pre></div>
 </div>
 </section>
 <section id="region-meshes">
 <h2>Region meshes<a class="headerlink" href="#region-meshes" title="Link to this heading">#</a></h2>
 <p>To access the 3D structure mesh for visualisation, this can be queried using the region ID or abbreviation. A <cite>meshio.Mesh</cite> object is returned.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">mesh_from_structure</span><span class="p">(</span><span class="s2">&quot;CH&quot;</span><span class="p">))</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">mesh_from_structure</span><span class="p">(</span><span class="s2">"CH"</span><span class="p">))</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;meshio mesh object&gt;
@@ -1829,7 +1838,7 @@ midbrain, and forebrain, <cite>annotation == root_id</cite> will be all False).<
 </pre></div>
 </div>
 <p>A list of regions can also be queried:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">mesh_from_structure</span><span class="p">([</span><span class="s2">&quot;CH&quot;</span><span class="p">,</span> <span class="s2">&quot;VISp&quot;</span><span class="p">]))</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">mesh_from_structure</span><span class="p">([</span><span class="s2">"CH"</span><span class="p">,</span> <span class="s2">"VISp"</span><span class="p">]))</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;meshio mesh object&gt;
@@ -1843,7 +1852,7 @@ midbrain, and forebrain, <cite>annotation == root_id</cite> will be all False).<
 </pre></div>
 </div>
 <p>The path can also be queried directly, if it’s needed to be used within another library</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">meshfile_from_structure</span><span class="p">(</span><span class="s2">&quot;CH&quot;</span><span class="p">))</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">meshfile_from_structure</span><span class="p">(</span><span class="s2">"CH"</span><span class="p">))</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/runner/.brainglobe/brainglobe-atlasapi/annotation-sets/allen_mouse-annotation/3_0/annotations.precomputed/mesh/567
@@ -1901,7 +1910,7 @@ hemispheres, but we can ask for the hemisphere name instead of the number:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>right
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.613 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.220 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-api-examples-brainglobe-atlasapi-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/2e0fdc7133fc99c7b6e3378f40c7675f/brainglobe_atlasapi.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">brainglobe_atlasapi.ipynb</span></code></a></p>

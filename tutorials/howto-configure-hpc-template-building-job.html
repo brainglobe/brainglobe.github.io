@@ -616,28 +616,28 @@
 <span class="nb">export</span><span class="w"> </span><span class="nv">QBATCH_PPJ</span><span class="o">=</span><span class="m">1</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">QBATCH_CHUNKSIZE</span><span class="o">=</span><span class="m">1</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">QBATCH_CORES</span><span class="o">=</span><span class="m">24</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">QBATCH_SYSTEM</span><span class="o">=</span><span class="s2">&quot;slurm&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">QBATCH_QUEUE</span><span class="o">=</span><span class="s2">&quot;cpu&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">QBATCH_MEM</span><span class="o">=</span><span class="s2">&quot;128G&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">QBATCH_OPTIONS</span><span class="o">=</span><span class="s2">&quot;--mail-type=ALL --mail-user=&lt;user@email.com&gt; --mem 128G&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">QBATCH_SYSTEM</span><span class="o">=</span><span class="s2">"slurm"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">QBATCH_QUEUE</span><span class="o">=</span><span class="s2">"cpu"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">QBATCH_MEM</span><span class="o">=</span><span class="s2">"128G"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">QBATCH_OPTIONS</span><span class="o">=</span><span class="s2">"--mail-type=ALL --mail-user=&lt;user@email.com&gt; --mem 128G"</span>
 
 <span class="c1">###########################################################################################################</span>
 <span class="c1"># Main configuration.</span>
 <span class="c1">###########################################################################################################</span>
 
 <span class="c1"># Path to the template folder, which should contain the text files with paths to images and masks.</span>
-<span class="nv">TEMPLATE_DIR</span><span class="o">=</span><span class="s2">&quot;&lt;template_folder&gt;&quot;</span>
+<span class="nv">TEMPLATE_DIR</span><span class="o">=</span><span class="s2">"&lt;template_folder&gt;"</span>
 
 <span class="c1"># Path to the bash script that builds the template</span>
 <span class="c1"># This can be obtained from github.com/brainglobe/brainglobe-template-builder/blob/main/scripts/build_template_with_slurm.sh</span>
-<span class="nv">BUILD_SCRIPT</span><span class="o">=</span><span class="s2">&quot;&lt;/path/to/build_template_with_slurm.sh&gt;&quot;</span>
+<span class="nv">BUILD_SCRIPT</span><span class="o">=</span><span class="s2">"&lt;/path/to/build_template_with_slurm.sh&gt;"</span>
 
 <span class="c1"># (optional) update the INITIAL_TARGET to point to your favoured initial target path. </span>
 <span class="c1"># You can leave as is, and by default, it will use the first path in the text file.</span>
-<span class="nv">INITIAL_TARGET</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="w"> </span>
+<span class="nv">INITIAL_TARGET</span><span class="o">=</span><span class="s2">"first"</span><span class="w"> </span>
 
 <span class="c1"># By default, we use trimean for averaging. This has worked best for us.</span>
-<span class="nv">AVE_TYPE</span><span class="o">=</span><span class="s2">&quot;efficient_trimean&quot;</span>
+<span class="nv">AVE_TYPE</span><span class="o">=</span><span class="s2">"efficient_trimean"</span>
 
 <span class="c1"># Trickiest part: ANTs and optimisedANTs have to be available in your HPC environment.</span>
 <span class="c1"># Follow our guide at https://github.com/brainglobe/brainglobe-template-builder?tab=readme-ov-file#installation</span>
@@ -648,21 +648,21 @@ module<span class="w"> </span>load<span class="w"> </span>template-builder
 <span class="c1"># Validation code running some basic checks on your inputs. No editing needed.</span>
 <span class="c1">###########################################################################################################</span>
 
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">TEMPLATE_DIR</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">TEMPLATE_DIR</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">  </span>mkdir<span class="w"> </span><span class="nv">$TEMPLATE_DIR</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Created new template directory </span><span class="si">${</span><span class="nv">TEMPLATE_DIR</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Created new template directory </span><span class="si">${</span><span class="nv">TEMPLATE_DIR</span><span class="si">}</span><span class="s2">"</span>
 <span class="k">else</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Continuing work on existing template in </span><span class="si">${</span><span class="nv">TEMPLATE_DIR</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Continuing work on existing template in </span><span class="si">${</span><span class="nv">TEMPLATE_DIR</span><span class="si">}</span><span class="s2">"</span>
 <span class="k">fi</span>
 
 
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">INITIAL_TARGET</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Error: Initial target not found&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">INITIAL_TARGET</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Error: Initial target not found"</span>
 <span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="k">fi</span>
 
 <span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span><span class="nv">$BUILD_SCRIPT</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Error: </span><span class="si">${</span><span class="nv">BUILD_SCRIPT</span><span class="si">}</span><span class="s2"> does not exist.&quot;</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Error: </span><span class="si">${</span><span class="nv">BUILD_SCRIPT</span><span class="si">}</span><span class="s2"> does not exist."</span>
 <span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="k">fi</span>
 
@@ -671,10 +671,10 @@ module<span class="w"> </span>load<span class="w"> </span>template-builder
 <span class="c1">###########################################################################################################</span>
 bash<span class="w"> </span><span class="nv">$BUILD_SCRIPT</span><span class="w"> </span>--template-dir<span class="w"> </span><span class="nv">$TEMPLATE_DIR</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--average-type<span class="w"> </span><span class="nv">$AVE_TYPE</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--toggle-dry-run<span class="w"> </span><span class="s2">&quot;--no-dry-run&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--walltime-short<span class="w"> </span><span class="s2">&quot;10:00:00&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--walltime-linear<span class="w"> </span><span class="s2">&quot;20:00:00&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--walltime-nonlinear<span class="w"> </span><span class="s2">&quot;240:00:00&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--toggle-dry-run<span class="w"> </span><span class="s2">"--no-dry-run"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--walltime-short<span class="w"> </span><span class="s2">"10:00:00"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--walltime-linear<span class="w"> </span><span class="s2">"20:00:00"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--walltime-nonlinear<span class="w"> </span><span class="s2">"240:00:00"</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--initial_target<span class="w"> </span><span class="nv">$INITIAL_TARGET</span>
 </pre></div>
 </div>

@@ -518,7 +518,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                    <h1>Source code for brainglobe_atlasapi.atlas_generation.atlas_packaging_data</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;Dataclass for holding all atlas packaging data.&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""Dataclass for holding all atlas packaging data."""</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
@@ -546,10 +546,10 @@
 <div class="viewcode-block" id="check_requested_component">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.atlas_packaging_data.check_requested_component.html#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.check_requested_component">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">check_requested_component</span><span class="p">(</span>
-    <span class="n">component_info</span><span class="p">:</span> <span class="s2">&quot;ComponentInfo&quot;</span><span class="p">,</span>
+    <span class="n">component_info</span><span class="p">:</span> <span class="s2">"ComponentInfo"</span><span class="p">,</span>
     <span class="n">working_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Check if a requested component already exists remotely and fetch it.</span>
 
 <span class="sd">    If the component is set to use_existing, will check if it exists remotely</span>
@@ -572,12 +572,12 @@
 <span class="sd">        If update_existing is True but existing_version is not provided.</span>
 <span class="sd">    FileNotFoundError</span>
 <span class="sd">        If the requested component or existing version is not found remotely.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">if</span> <span class="n">component_info</span><span class="o">.</span><span class="n">update_existing</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">component_info</span><span class="o">.</span><span class="n">existing_version</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="s2">&quot;To update an existing component, &#39;existing_version&#39; &quot;</span>
-                <span class="s2">&quot;must be specified in component_info.&quot;</span>
+                <span class="s2">"To update an existing component, 'existing_version' "</span>
+                <span class="s2">"must be specified in component_info."</span>
             <span class="p">)</span>
         <span class="n">stub</span> <span class="o">=</span> <span class="n">component_info</span><span class="o">.</span><span class="n">existing_stub</span>
     <span class="k">elif</span> <span class="n">component_info</span><span class="o">.</span><span class="n">use_existing</span><span class="p">:</span>
@@ -587,26 +587,26 @@
 
     <span class="n">fs</span> <span class="o">=</span> <span class="n">s3fs</span><span class="o">.</span><span class="n">S3FileSystem</span><span class="p">(</span><span class="n">anon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    <span class="n">component_stub</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">stub</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">component_stub</span> <span class="o">=</span> <span class="s2">"/"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">stub</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
     <span class="n">remote_path</span> <span class="o">=</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">remote_url_s3</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">component_stub</span><span class="p">)</span>
     <span class="n">local_path</span> <span class="o">=</span> <span class="n">working_dir</span> <span class="o">/</span> <span class="n">component_stub</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">fs</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">remote_path</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;Requested component </span><span class="si">{</span><span class="n">component_info</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> &quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;not found at </span><span class="si">{</span><span class="n">remote_path</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">"Requested component </span><span class="si">{</span><span class="n">component_info</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> "</span>
+            <span class="sa">f</span><span class="s2">"not found at </span><span class="si">{</span><span class="n">remote_path</span><span class="si">}</span><span class="s2">"</span>
         <span class="p">)</span>
 
     <span class="n">local_path</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">component_info</span><span class="o">.</span><span class="n">use_existing</span><span class="p">:</span>
         <span class="c1"># Add wildcard to fetch all OME-Zarr metadata files</span>
-        <span class="k">if</span> <span class="n">component_info</span><span class="o">.</span><span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.ome.zarr&quot;</span><span class="p">):</span>
-            <span class="n">remote_path</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="n">component_info</span><span class="o">.</span><span class="n">file_name</span><span class="si">}</span><span class="s2">/**/*.json&quot;</span>
+        <span class="k">if</span> <span class="n">component_info</span><span class="o">.</span><span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".ome.zarr"</span><span class="p">):</span>
+            <span class="n">remote_path</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"/</span><span class="si">{</span><span class="n">component_info</span><span class="o">.</span><span class="n">file_name</span><span class="si">}</span><span class="s2">/**/*.json"</span>
             <span class="n">local_path</span> <span class="o">=</span> <span class="n">local_path</span> <span class="o">/</span> <span class="n">component_info</span><span class="o">.</span><span class="n">file_name</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">remote_path</span> <span class="o">+=</span> <span class="s2">&quot;/**/*&quot;</span>
+            <span class="n">remote_path</span> <span class="o">+=</span> <span class="s2">"/**/*"</span>
 
         <span class="n">fs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
             <span class="n">remote_path</span><span class="p">,</span>
@@ -619,7 +619,7 @@
             <span class="n">local_path</span><span class="p">,</span>
             <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
             <span class="n">callback</span><span class="o">=</span><span class="n">TqdmCallback</span><span class="p">(</span>
-                <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Fetching existing component </span><span class="si">{</span><span class="n">component_info</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Fetching existing component </span><span class="si">{</span><span class="n">component_info</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span>
             <span class="p">),</span>
         <span class="p">)</span></div>
 
@@ -629,22 +629,22 @@
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.html#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo">[docs]</a>
 <span class="nd">@dataclass</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">ComponentInfo</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Container for information about a component of a BrainGlobe atlas</span>
 <span class="sd">    (e.g., template, annotation).</span>
 
 <span class="sd">    This dataclass holds information about a specific component of a</span>
 <span class="sd">    BrainGlobe atlas, such as a template or annotation. It includes</span>
-<span class="sd">    fields for the component&#39;s name, version, and metadata, as well as</span>
+<span class="sd">    fields for the component's name, version, and metadata, as well as</span>
 <span class="sd">    flags for whether to use an existing component or update an existing</span>
 <span class="sd">    component.</span>
 
 <span class="sd">    Attributes</span>
 <span class="sd">    ----------</span>
 <span class="sd">    name : str</span>
-<span class="sd">        The name of the component (e.g., &quot;allen-adult-mouse-stpt-template&quot;).</span>
+<span class="sd">        The name of the component (e.g., "allen-adult-mouse-stpt-template").</span>
 <span class="sd">    version : str</span>
-<span class="sd">        The version of the component (e.g., &quot;0.1.0&quot;).</span>
+<span class="sd">        The version of the component (e.g., "0.1.0").</span>
 <span class="sd">    use_existing : bool, optional</span>
 <span class="sd">        Whether to use the existing component from with the same name and</span>
 <span class="sd">        version from the remote (default is False).</span>
@@ -655,9 +655,9 @@
 <span class="sd">        The version of the existing component to update</span>
 <span class="sd">        (required if update_existing is True).</span>
 <span class="sd">    root_dir : str, optional</span>
-<span class="sd">        The root directory for the component (e.g., &quot;templates&quot;).</span>
+<span class="sd">        The root directory for the component (e.g., "templates").</span>
 <span class="sd">    file_name : str, optional</span>
-<span class="sd">        The name of the component file (e.g., &quot;anatomical_template.ome.zarr&quot;).</span>
+<span class="sd">        The name of the component file (e.g., "anatomical_template.ome.zarr").</span>
 <span class="sd">    existing_stub : str, optional</span>
 <span class="sd">        The remote stub for the existing component</span>
 <span class="sd">        (automatically generated if update_existing is True).</span>
@@ -667,7 +667,7 @@
 <span class="sd">    metadata : dict, optional</span>
 <span class="sd">        A dictionary to hold the component metadata</span>
 <span class="sd">        (automatically generated in __post_init__).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">version</span><span class="p">:</span> <span class="nb">str</span>
@@ -681,16 +681,16 @@
     <span class="n">metadata</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Post-initialization processing to generate stubs and metadata.</span>
 
 <span class="sd">        This method is called automatically after the dataclass is initialized.</span>
 <span class="sd">        It generates the stubs for the component based on the provided</span>
 <span class="sd">        name, version, and root directory.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"."</span><span class="p">,</span> <span class="s2">"_"</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">existing_version</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">existing_version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">existing_version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">existing_version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">existing_version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"."</span><span class="p">,</span> <span class="s2">"_"</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_existing</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">existing_version</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">existing_stub</span> <span class="o">=</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">format_component_stub</span><span class="p">(</span>
@@ -713,21 +713,21 @@
 <div class="viewcode-block" id="ComponentInfo.generate_metadata_dict">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.html#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.generate_metadata_dict">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">generate_metadata_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Generate a dictionary containing metadata for this component.</span>
 
-<span class="sd">        The metadata dictionary includes the component&#39;s name, version, and</span>
+<span class="sd">        The metadata dictionary includes the component's name, version, and</span>
 <span class="sd">        location stub.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        Dict[str, str]</span>
 <span class="sd">            A dictionary containing the component metadata.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-            <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">),</span>
-            <span class="s2">&quot;location&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">root_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s2">"name"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="s2">"version"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"_"</span><span class="p">,</span> <span class="s2">"."</span><span class="p">),</span>
+            <span class="s2">"location"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">root_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
         <span class="p">}</span>
 
         <span class="k">return</span> <span class="n">metadata</span></div>
@@ -739,7 +739,7 @@
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TemplateInfo.html#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TemplateInfo">[docs]</a>
 <span class="nd">@dataclass</span><span class="p">(</span><span class="n">kw_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">TemplateInfo</span><span class="p">(</span><span class="n">ComponentInfo</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Container for the template component of a BrainGlobe atlas.</span>
 
 <span class="sd">    This dataclass holds information about a template component of a</span>
@@ -754,7 +754,7 @@
 <span class="sd">    file_name : str, optional</span>
 <span class="sd">        The name of the template component file</span>
 <span class="sd">        (default is descriptors.V3_TEMPLATE_NAME).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">root_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V3_TEMPLATE_ROOTDIR</span>
     <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V3_TEMPLATE_NAME</span></div>
@@ -765,7 +765,7 @@
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TerminologyInfo.html#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TerminologyInfo">[docs]</a>
 <span class="nd">@dataclass</span><span class="p">(</span><span class="n">kw_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">TerminologyInfo</span><span class="p">(</span><span class="n">ComponentInfo</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Container for the terminology component of a BrainGlobe atlas.</span>
 
 <span class="sd">    This dataclass holds information about a terminology component of a</span>
@@ -780,7 +780,7 @@
 <span class="sd">    file_name : str, optional</span>
 <span class="sd">        The name of the terminology component file</span>
 <span class="sd">        (default is descriptors.V3_TERMINOLOGY_NAME).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">root_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V3_TERMINOLOGY_ROOTDIR</span>
     <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V3_TERMINOLOGY_NAME</span></div>
@@ -791,7 +791,7 @@
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AnnotationInfo.html#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AnnotationInfo">[docs]</a>
 <span class="nd">@dataclass</span><span class="p">(</span><span class="n">kw_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">AnnotationInfo</span><span class="p">(</span><span class="n">ComponentInfo</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Container for the annotation component of a BrainGlobe atlas.</span>
 
 <span class="sd">    This dataclass holds information about an annotation component of a</span>
@@ -813,7 +813,7 @@
 <span class="sd">    file_name : str, optional</span>
 <span class="sd">        The name of the annotation component file</span>
 <span class="sd">        (default is descriptors.V3_ANNOTATION_NAME).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">template</span><span class="p">:</span> <span class="n">TemplateInfo</span>
     <span class="n">terminology</span><span class="p">:</span> <span class="n">TerminologyInfo</span>
@@ -821,15 +821,15 @@
     <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V3_ANNOTATION_NAME</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Post-initialization processing to include template and terminology</span>
 <span class="sd">        metadata in the annotation metadata.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__post_init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
             <span class="p">{</span>
-                <span class="s2">&quot;template&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
-                <span class="s2">&quot;terminology&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">terminology</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+                <span class="s2">"template"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+                <span class="s2">"terminology"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">terminology</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
             <span class="p">}</span>
         <span class="p">)</span></div>
 
@@ -839,7 +839,7 @@
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.atlas_packaging_data.CoordinateSpaceInfo.html#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.CoordinateSpaceInfo">[docs]</a>
 <span class="nd">@dataclass</span><span class="p">(</span><span class="n">kw_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">CoordinateSpaceInfo</span><span class="p">(</span><span class="n">ComponentInfo</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Container for information about a coordinate space component of a</span>
 <span class="sd">    BrainGlobe atlas.</span>
 
@@ -859,22 +859,22 @@
 <span class="sd">        (default is descriptors.V3_COORDINATE_SPACE_ROOTDIR).</span>
 <span class="sd">    file_name : str, optional</span>
 <span class="sd">        The name of the coordinate space component file</span>
-<span class="sd">        (default is &quot;manifest.json&quot;).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">        (default is "manifest.json").</span>
+<span class="sd">    """</span>
 
     <span class="n">template</span><span class="p">:</span> <span class="n">TemplateInfo</span>
     <span class="n">root_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V3_COORDINATE_SPACE_ROOTDIR</span>
-    <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;manifest.json&quot;</span>
+    <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"manifest.json"</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Post-initialization processing to include template metadata in the</span>
 <span class="sd">        coordinate space metadata.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__post_init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
             <span class="p">{</span>
-                <span class="s2">&quot;template&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+                <span class="s2">"template"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
             <span class="p">}</span>
         <span class="p">)</span></div>
 
@@ -884,7 +884,7 @@
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.html#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData">[docs]</a>
 <span class="nd">@dataclass</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">AtlasPackagingData</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Container for all data required to package a BrainGlobe atlas.</span>
+<span class="w">    </span><span class="sd">"""Container for all data required to package a BrainGlobe atlas.</span>
 
 <span class="sd">    This dataclass is an internal implementation detail of the atlas packaging</span>
 <span class="sd">    pipeline. It collects all atlas data in one place to avoid threading</span>
@@ -897,11 +897,11 @@
 <span class="sd">    atlas_minor_version : int or str</span>
 <span class="sd">        Minor version number for this particular atlas.</span>
 <span class="sd">    citation : str</span>
-<span class="sd">        Citation for the atlas, if unpublished specify &quot;unpublished&quot;.</span>
+<span class="sd">        Citation for the atlas, if unpublished specify "unpublished".</span>
 <span class="sd">    atlas_link : str</span>
 <span class="sd">        Valid URL for the atlas.</span>
 <span class="sd">    species : str</span>
-<span class="sd">        Species name formatted as &quot;CommonName (Genus species)&quot;.</span>
+<span class="sd">        Species name formatted as "CommonName (Genus species)".</span>
 <span class="sd">    resolution : Resolution | ResolutionList</span>
 <span class="sd">        Resolution on three axes, or a list of such tuples for multi-scale.</span>
 <span class="sd">    orientation : str</span>
@@ -934,7 +934,7 @@
 <span class="sd">        Additional metadata to write to metadata.json.</span>
 <span class="sd">    symmetric : bool, optional</span>
 <span class="sd">        Whether the atlas is symmetric across the midline.</span>
-<span class="sd">    &quot;&quot;&quot;</span>  <span class="c1"># noqa: E501</span>
+<span class="sd">    """</span>  <span class="c1"># noqa: E501</span>
 
     <span class="n">atlas_name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">atlas_version</span><span class="p">:</span> <span class="nb">str</span>
@@ -966,11 +966,11 @@
     <span class="n">additional_metadata</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Post-initialization processing to standardize data formats and</span>
 <span class="sd">        check consistency.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">atlas_version_underscore</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atlas_version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">atlas_version_underscore</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atlas_version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"."</span><span class="p">,</span> <span class="s2">"_"</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">resolution</span> <span class="o">=</span> <span class="n">_standardize_resolution</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resolution</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">reference_stack</span> <span class="o">=</span> <span class="n">_load_stack</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">reference_stack</span><span class="p">)</span>
@@ -1033,7 +1033,7 @@
         <span class="k">return</span> <span class="n">resolution</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-            <span class="s2">&quot;Resolution must be either a tuple or a list of tuples.&quot;</span>
+            <span class="s2">"Resolution must be either a tuple or a list of tuples."</span>
         <span class="p">)</span>
 
 
@@ -1062,8 +1062,8 @@
                 <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                    <span class="s2">&quot;Invalid stack format. Each item in the list must be a &quot;</span>
-                    <span class="s2">&quot;file path or a numpy array.&quot;</span>
+                    <span class="s2">"Invalid stack format. Each item in the list must be a "</span>
+                    <span class="s2">"file path or a numpy array."</span>
                 <span class="p">)</span>
 
         <span class="k">return</span> <span class="n">output</span>
@@ -1071,8 +1071,8 @@
         <span class="k">return</span> <span class="p">[</span><span class="n">stack</span><span class="p">]</span>
 
     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-        <span class="s2">&quot;Invalid stack format. Each item in the list must be a &quot;</span>
-        <span class="s2">&quot;file path or a numpy array.&quot;</span>
+        <span class="s2">"Invalid stack format. Each item in the list must be a "</span>
+        <span class="s2">"file path or a numpy array."</span>
     <span class="p">)</span>
 
 

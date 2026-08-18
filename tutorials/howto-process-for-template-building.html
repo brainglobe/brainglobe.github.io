@@ -640,8 +640,8 @@ It may be worth running the pipeline on lower-resolution data first (in our exam
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_template_builder.standardise</span><span class="w"> </span><span class="kn">import</span> <span class="n">standardise</span>
 
-<span class="n">input_csv</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/path/to/zebrafinch.csv&quot;</span><span class="p">)</span>
-<span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/path/to/atlas-forge/ZebraFinch&quot;</span><span class="p">)</span>
+<span class="n">input_csv</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"/path/to/zebrafinch.csv"</span><span class="p">)</span>
+<span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"/path/to/atlas-forge/ZebraFinch"</span><span class="p">)</span>
 
 <span class="n">standardise</span><span class="p">(</span>
 	<span class="n">source_csv</span><span class="o">=</span><span class="n">input_csv</span><span class="p">,</span>
@@ -698,8 +698,8 @@ After running the script, you should have these expected outputs in your output 
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_template_builder.preprocess</span><span class="w"> </span><span class="kn">import</span> <span class="n">preprocess</span>
 
-<span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/path/to/atlas-forge/ZebraFinch&quot;</span><span class="p">)</span>
-<span class="n">standardised_csv</span> <span class="o">=</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;standardised&quot;</span> <span class="o">/</span> <span class="s2">&quot;standardised_images.csv&quot;</span>
+<span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"/path/to/atlas-forge/ZebraFinch"</span><span class="p">)</span>
+<span class="n">standardised_csv</span> <span class="o">=</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="s2">"standardised"</span> <span class="o">/</span> <span class="s2">"standardised_images.csv"</span>
 <span class="n">preprocess</span><span class="p">(</span><span class="n">standardised_csv</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -730,15 +730,15 @@ You should also update the <code class="docutils literal notranslate"><span clas
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_template_builder.preprocess</span><span class="w"> </span><span class="kn">import</span> <span class="n">preprocess</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_template_builder.utils.preproc_config</span><span class="w"> </span><span class="kn">import</span> <span class="n">PreprocConfig</span><span class="p">,</span> <span class="n">MaskConfig</span><span class="p">,</span> <span class="n">ThresholdMethod</span>
 
-<span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/path/to/atlas-forge/ZebraFinch&quot;</span><span class="p">)</span>
-<span class="n">standardised_csv</span> <span class="o">=</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;standardised&quot;</span> <span class="o">/</span> <span class="s2">&quot;standardised_images.csv&quot;</span>
+<span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"/path/to/atlas-forge/ZebraFinch"</span><span class="p">)</span>
+<span class="n">standardised_csv</span> <span class="o">=</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="s2">"standardised"</span> <span class="o">/</span> <span class="s2">"standardised_images.csv"</span>
 
 <span class="c1"># pad more generously, and use non-default masking parameters</span>
 <span class="n">config</span> <span class="o">=</span> <span class="n">PreprocConfig</span><span class="p">(</span>
 	<span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
 	<span class="n">mask</span><span class="o">=</span><span class="n">MaskConfig</span><span class="p">(</span>   
 		<span class="n">gaussian_sigma</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="c1"># default 3</span>
-    	<span class="n">threshold_method</span> <span class="o">=</span> <span class="s2">&quot;otsu&quot;</span><span class="p">,</span> <span class="c1"># default &quot;triangle&quot;</span>
+    	<span class="n">threshold_method</span> <span class="o">=</span> <span class="s2">"otsu"</span><span class="p">,</span> <span class="c1"># default "triangle"</span>
     	<span class="n">closing_size</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="c1"># default 5</span>
     	<span class="n">erode_size</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="c1"># default 0</span>
 	<span class="p">),</span>

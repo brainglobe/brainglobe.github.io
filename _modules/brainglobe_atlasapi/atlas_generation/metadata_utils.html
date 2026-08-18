@@ -518,10 +518,10 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                    <h1>Source code for brainglobe_atlasapi.atlas_generation.metadata_utils</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Provides tools to create and manage the metadata dictionaries and</span>
 <span class="sd">README files associated with atlases packaged within the BrainGlobe ecosystem.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
@@ -564,7 +564,7 @@
     <span class="n">annotation_set</span><span class="p">:</span> <span class="n">AnnotationInfo</span><span class="p">,</span>
     <span class="n">template</span><span class="p">:</span> <span class="n">TemplateInfo</span><span class="p">,</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Generate a dictionary containing metadata for a BrainGlobe atlas.</span>
 
 <span class="sd">    Parameters</span>
@@ -578,13 +578,13 @@
 <span class="sd">    atlas_link : str</span>
 <span class="sd">        A URL link to the atlas source or related publication.</span>
 <span class="sd">    species : str</span>
-<span class="sd">        The species the atlas belongs to (e.g., &quot;mouse&quot;, &quot;rat&quot;).</span>
+<span class="sd">        The species the atlas belongs to (e.g., "mouse", "rat").</span>
 <span class="sd">    symmetric : bool</span>
 <span class="sd">        True if the atlas is symmetric, False otherwise.</span>
 <span class="sd">    resolution : Tuple[int, int, int] | Tuple[float, float, float]</span>
 <span class="sd">        The resolution of the atlas in micrometers per voxel.</span>
 <span class="sd">    orientation : str</span>
-<span class="sd">        The orientation of the atlas (e.g., &quot;RAS&quot;, &quot;LPS&quot;).</span>
+<span class="sd">        The orientation of the atlas (e.g., "RAS", "LPS").</span>
 <span class="sd">    version : str</span>
 <span class="sd">        The version of the atlas.</span>
 <span class="sd">    shape : Tuple[int, int, int]</span>
@@ -607,23 +607,23 @@
 <span class="sd">    -------</span>
 <span class="sd">    dict</span>
 <span class="sd">        A dictionary containing all the metadata.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="c1"># Name should be author_species</span>
-    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">))</span> <span class="o">&gt;=</span> <span class="mi">2</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"_"</span><span class="p">))</span> <span class="o">&gt;=</span> <span class="mi">2</span>
 
     <span class="c1"># Control version formatting:</span>
-    <span class="k">assert</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;[0-9]+</span><span class="se">\\</span><span class="s2">.[0-9]+&quot;</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">"[0-9]+</span><span class="se">\\</span><span class="s2">.[0-9]+"</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
 
     <span class="c1"># We ask for DOI and correct link only if atlas is published:</span>
-    <span class="k">if</span> <span class="n">citation</span> <span class="o">!=</span> <span class="s2">&quot;unpublished&quot;</span><span class="p">:</span>
-        <span class="k">assert</span> <span class="s2">&quot;doi&quot;</span> <span class="ow">in</span> <span class="n">citation</span>
+    <span class="k">if</span> <span class="n">citation</span> <span class="o">!=</span> <span class="s2">"unpublished"</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="s2">"doi"</span> <span class="ow">in</span> <span class="n">citation</span>
 
         <span class="c1"># Test url:</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">atlas_link</span><span class="p">)</span>
         <span class="k">except</span> <span class="p">(</span><span class="n">MissingSchema</span><span class="p">,</span> <span class="n">InvalidURL</span><span class="p">):</span>
             <span class="k">raise</span> <span class="n">InvalidURL</span><span class="p">(</span>
-                <span class="s2">&quot;Ensure that the URL is valid and formatted correctly.&quot;</span>
+                <span class="s2">"Ensure that the URL is valid and formatted correctly."</span>
             <span class="p">)</span>
 
     <span class="c1"># Enforce correct format for symmetric, resolution and shape:</span>
@@ -664,7 +664,7 @@
 <div class="viewcode-block" id="create_readme">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.metadata_utils.create_readme.html#brainglobe_atlasapi.atlas_generation.metadata_utils.create_readme">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">create_readme</span><span class="p">(</span><span class="n">uncompr_atlas_path</span><span class="p">,</span> <span class="n">metadata_dict</span><span class="p">,</span> <span class="n">structures</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Create a README.txt file for the atlas in the specified path.</span>
 
 <span class="sd">    This function generates a comprehensive README file containing atlas</span>
@@ -676,38 +676,38 @@
 <span class="sd">        The path to the uncompressed atlas directory where the README will</span>
 <span class="sd">        be saved.</span>
 <span class="sd">    metadata_dict : dict</span>
-<span class="sd">        A dictionary containing the atlas&#39;s metadata (e.g., name, citation,</span>
+<span class="sd">        A dictionary containing the atlas's metadata (e.g., name, citation,</span>
 <span class="sd">        species).</span>
 <span class="sd">    structures : list of dict</span>
 <span class="sd">        A list of dictionaries, where each dictionary represents a structure</span>
 <span class="sd">        with its ID, name, and other relevant properties.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">readmepath</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uncompr_atlas_path</span> <span class="o">/</span> <span class="s2">&quot;README.txt&quot;</span><span class="p">)</span>
+<span class="sd">    """</span>
+    <span class="n">readmepath</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uncompr_atlas_path</span> <span class="o">/</span> <span class="s2">"README.txt"</span><span class="p">)</span>
 
     <span class="c1"># First write the structure tree</span>
     <span class="n">structuresTree</span> <span class="o">=</span> <span class="n">get_structures_tree</span><span class="p">(</span><span class="n">structures</span><span class="p">)</span>
     <span class="n">structuresTree</span><span class="o">.</span><span class="n">save2file</span><span class="p">(</span><span class="n">readmepath</span><span class="p">)</span>
 
     <span class="c1"># The prepend the header and info</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">readmepath</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">original</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">readmepath</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">original</span><span class="p">:</span>
         <span class="n">tree</span> <span class="o">=</span> <span class="n">original</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">readmepath</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">out</span><span class="p">:</span>
-        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;-- BRAINGLOBE ATLAS --</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">readmepath</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">out</span><span class="p">:</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"-- BRAINGLOBE ATLAS --</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 
         <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Generated on: &quot;</span> <span class="o">+</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">/%m/%Y&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Generated on: "</span> <span class="o">+</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2">/%m/%Y"</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span><span class="p">)</span>
 
-        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;------------------------------</span><span class="se">\n\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"------------------------------</span><span class="se">\n\n\n</span><span class="s2">"</span><span class="p">)</span>
 
         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">metadata_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">:   </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"    </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">:   </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 
-        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;------------------------------</span><span class="se">\n\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"</span><span class="se">\n\n\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"------------------------------</span><span class="se">\n\n\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"</span><span class="se">\n\n\n</span><span class="s2">"</span><span class="p">)</span>
 
-        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;-- BRAIN STRUCTURES TREE --</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"-- BRAIN STRUCTURES TREE --</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 
         <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span></div>
 
@@ -716,7 +716,7 @@
 <div class="viewcode-block" id="create_structures_csv">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.metadata_utils.create_structures_csv.html#brainglobe_atlasapi.atlas_generation.metadata_utils.create_structures_csv">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">create_structures_csv</span><span class="p">(</span><span class="n">uncompr_atlas_path</span><span class="p">,</span> <span class="n">root</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Convert an atlas structure json dictionary to csv. For cellfinder</span>
 <span class="sd">    compatibility and ease of browsing.</span>
 
@@ -724,9 +724,9 @@
 <span class="sd">    ----------</span>
 <span class="sd">    uncompr_atlas_path : str or Path object</span>
 <span class="sd">        path to uncompressed atlas folder</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">convert_structure_json_to_csv</span><span class="p">(</span>
-        <span class="n">uncompr_atlas_path</span> <span class="o">/</span> <span class="s2">&quot;structures.json&quot;</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="n">root</span>
+        <span class="n">uncompr_atlas_path</span> <span class="o">/</span> <span class="s2">"structures.json"</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="n">root</span>
     <span class="p">)</span></div>
 
 
@@ -736,7 +736,7 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">create_metadata_files</span><span class="p">(</span>
     <span class="n">dest_dir</span><span class="p">,</span> <span class="n">metadata_dict</span><span class="p">,</span> <span class="n">structures</span><span class="p">,</span> <span class="n">root_id</span><span class="p">,</span> <span class="n">additional_metadata</span><span class="o">=</span><span class="p">{}</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Automatic creation of `structures.csv` and `README.txt`</span>
 <span class="sd">    from an atlas files. All Files are saved in the uncompressed atlas folder</span>
 <span class="sd">    awaiting compression and upload to GIN.</span>
@@ -745,12 +745,12 @@
 <span class="sd">    :param metadata_dict: dict with atlas metadata</span>
 <span class="sd">    :param structures: list of dictionaries with structures hierarchical info</span>
 <span class="sd">    :param additional_metadata: Dict to add to atlas metadata</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="c1"># write metadata dict:</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
-        <span class="n">dest_dir</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">METADATA_FILENAME</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span>
+        <span class="n">dest_dir</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">METADATA_FILENAME</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span>
     <span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="c1"># only save additional metadata to json, don&#39;t include in readme</span>
+        <span class="c1"># only save additional metadata to json, don't include in readme</span>
         <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">({</span><span class="o">**</span><span class="n">metadata_dict</span><span class="p">,</span> <span class="o">**</span><span class="n">additional_metadata</span><span class="p">},</span> <span class="n">f</span><span class="p">)</span>
 
     <span class="n">create_structures_csv</span><span class="p">(</span><span class="n">dest_dir</span><span class="p">,</span> <span class="n">root_id</span><span class="p">)</span>

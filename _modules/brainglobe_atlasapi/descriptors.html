@@ -518,7 +518,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                    <h1>Source code for brainglobe_atlasapi.descriptors</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;Module containing property descriptors for brainglobe-atlasapi.&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""Module containing property descriptors for brainglobe-atlasapi."""</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">TypeAlias</span>
@@ -527,65 +527,65 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy.typing</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">npt</span>
 
 <span class="c1"># Base url of the gin repository:</span>
-<span class="n">remote_url_base</span> <span class="o">=</span> <span class="s2">&quot;https://gin.g-node.org/brainglobe/atlases/raw/master/</span><span class="si">{}</span><span class="s2">&quot;</span>
-<span class="n">remote_url_s3</span> <span class="o">=</span> <span class="s2">&quot;s3://brainglobe/atlas/</span><span class="si">{}</span><span class="s2">&quot;</span>
-<span class="n">remote_url_s3_http</span> <span class="o">=</span> <span class="s2">&quot;https://brainglobe.s3.us-west-2.amazonaws.com/atlas/</span><span class="si">{}</span><span class="s2">&quot;</span>
+<span class="n">remote_url_base</span> <span class="o">=</span> <span class="s2">"https://gin.g-node.org/brainglobe/atlases/raw/master/</span><span class="si">{}</span><span class="s2">"</span>
+<span class="n">remote_url_s3</span> <span class="o">=</span> <span class="s2">"s3://brainglobe/atlas/</span><span class="si">{}</span><span class="s2">"</span>
+<span class="n">remote_url_s3_http</span> <span class="o">=</span> <span class="s2">"https://brainglobe.s3.us-west-2.amazonaws.com/atlas/</span><span class="si">{}</span><span class="s2">"</span>
 
 <span class="c1"># Major version of atlases used by current brainglobe-atlasapi release:</span>
 <span class="n">ATLAS_MAJOR_V</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="c1"># Supported resolutions:</span>
-<span class="n">RESOLUTION</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;nm&quot;</span><span class="p">,</span> <span class="s2">&quot;um&quot;</span><span class="p">,</span> <span class="s2">&quot;mm&quot;</span><span class="p">]</span>
+<span class="n">RESOLUTION</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"nm"</span><span class="p">,</span> <span class="s2">"um"</span><span class="p">,</span> <span class="s2">"mm"</span><span class="p">]</span>
 
 <span class="c1"># Entries and types from this template will be used to check atlas info</span>
 <span class="c1"># consistency. Please keep updated both this and the function when changing</span>
 <span class="c1"># the structure.</span>
-<span class="c1"># If the atlas is unpublished, specify &quot;unpublished&quot; in the citation.</span>
+<span class="c1"># If the atlas is unpublished, specify "unpublished" in the citation.</span>
 <span class="n">METADATA_TEMPLATE</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;source_species_additional-info&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;citation&quot;</span><span class="p">:</span> <span class="s2">&quot;Someone et al 2020, https://doi.org/somedoi&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;atlas_link&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.example.com&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;species&quot;</span><span class="p">:</span> <span class="s2">&quot;Gen species&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;symmetric&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="s2">&quot;resolution&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span>
-    <span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="s2">&quot;asr&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
-    <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;additional_references&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"source_species_additional-info"</span><span class="p">,</span>
+    <span class="s2">"citation"</span><span class="p">:</span> <span class="s2">"Someone et al 2020, https://doi.org/somedoi"</span><span class="p">,</span>
+    <span class="s2">"atlas_link"</span><span class="p">:</span> <span class="s2">"http://www.example.com"</span><span class="p">,</span>
+    <span class="s2">"species"</span><span class="p">:</span> <span class="s2">"Gen species"</span><span class="p">,</span>
+    <span class="s2">"symmetric"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">"resolution"</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span>
+    <span class="s2">"orientation"</span><span class="p">:</span> <span class="s2">"asr"</span><span class="p">,</span>
+    <span class="s2">"shape"</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+    <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
+    <span class="s2">"additional_references"</span><span class="p">:</span> <span class="p">[],</span>
 <span class="p">}</span>
 
 
 <span class="c1"># Template for a structure dictionary:</span>
 <span class="n">STRUCTURE_TEMPLATE</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;acronym&quot;</span><span class="p">:</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">997</span><span class="p">,</span>
-    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;structure_id_path&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">997</span><span class="p">],</span>
-    <span class="s2">&quot;rgb_triplet&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span>
+    <span class="s2">"acronym"</span><span class="p">:</span> <span class="s2">"root"</span><span class="p">,</span>
+    <span class="s2">"id"</span><span class="p">:</span> <span class="mi">997</span><span class="p">,</span>
+    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"root"</span><span class="p">,</span>
+    <span class="s2">"structure_id_path"</span><span class="p">:</span> <span class="p">[</span><span class="mi">997</span><span class="p">],</span>
+    <span class="s2">"rgb_triplet"</span><span class="p">:</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span>
 <span class="p">}</span>
 
 
 <span class="c1"># File and directory names for the atlas package:</span>
-<span class="n">METADATA_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;metadata.json&quot;</span>
-<span class="n">STRUCTURES_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;structures.json&quot;</span>
-<span class="n">REFERENCE_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;reference.tiff&quot;</span>
-<span class="n">ANNOTATION_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;annotation.tiff&quot;</span>
-<span class="n">HEMISPHERES_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;hemispheres.tiff&quot;</span>
-<span class="n">MESHES_DIRNAME</span> <span class="o">=</span> <span class="s2">&quot;meshes&quot;</span>
+<span class="n">METADATA_FILENAME</span> <span class="o">=</span> <span class="s2">"metadata.json"</span>
+<span class="n">STRUCTURES_FILENAME</span> <span class="o">=</span> <span class="s2">"structures.json"</span>
+<span class="n">REFERENCE_FILENAME</span> <span class="o">=</span> <span class="s2">"reference.tiff"</span>
+<span class="n">ANNOTATION_FILENAME</span> <span class="o">=</span> <span class="s2">"annotation.tiff"</span>
+<span class="n">HEMISPHERES_FILENAME</span> <span class="o">=</span> <span class="s2">"hemispheres.tiff"</span>
+<span class="n">MESHES_DIRNAME</span> <span class="o">=</span> <span class="s2">"meshes"</span>
 
 <span class="c1"># V3 file names</span>
-<span class="n">V3_ATLAS_ROOTDIR</span> <span class="o">=</span> <span class="s2">&quot;atlases&quot;</span>
-<span class="n">V3_ANNOTATION_ROOTDIR</span> <span class="o">=</span> <span class="s2">&quot;annotation-sets&quot;</span>
-<span class="n">V3_COORDINATE_SPACE_ROOTDIR</span> <span class="o">=</span> <span class="s2">&quot;coordinate-spaces&quot;</span>
-<span class="n">V3_TEMPLATE_ROOTDIR</span> <span class="o">=</span> <span class="s2">&quot;templates&quot;</span>
-<span class="n">V3_TERMINOLOGY_ROOTDIR</span> <span class="o">=</span> <span class="s2">&quot;terminologies&quot;</span>
-<span class="n">V3_TERMINOLOGY_NAME</span> <span class="o">=</span> <span class="s2">&quot;terminology.csv&quot;</span>
-<span class="n">V3_MESHES_DIRECTORY</span> <span class="o">=</span> <span class="s2">&quot;annotations.precomputed/mesh&quot;</span>
-<span class="n">V3_TEMPLATE_NAME</span> <span class="o">=</span> <span class="s2">&quot;template.ome.zarr&quot;</span>
-<span class="n">V3_ANNOTATION_NAME</span> <span class="o">=</span> <span class="s2">&quot;annotations_compressed.ome.zarr&quot;</span>
-<span class="n">V3_ANNOTATION_MASKS_NAME</span> <span class="o">=</span> <span class="s2">&quot;annotations.ome.zarr&quot;</span>
-<span class="n">V3_ANNOTATION_MAP_NAME</span> <span class="o">=</span> <span class="s2">&quot;annotation_values&quot;</span>
-<span class="n">V3_HEMISPHERES_NAME</span> <span class="o">=</span> <span class="s2">&quot;hemispheres.ome.zarr&quot;</span>
+<span class="n">V3_ATLAS_ROOTDIR</span> <span class="o">=</span> <span class="s2">"atlases"</span>
+<span class="n">V3_ANNOTATION_ROOTDIR</span> <span class="o">=</span> <span class="s2">"annotation-sets"</span>
+<span class="n">V3_COORDINATE_SPACE_ROOTDIR</span> <span class="o">=</span> <span class="s2">"coordinate-spaces"</span>
+<span class="n">V3_TEMPLATE_ROOTDIR</span> <span class="o">=</span> <span class="s2">"templates"</span>
+<span class="n">V3_TERMINOLOGY_ROOTDIR</span> <span class="o">=</span> <span class="s2">"terminologies"</span>
+<span class="n">V3_TERMINOLOGY_NAME</span> <span class="o">=</span> <span class="s2">"terminology.csv"</span>
+<span class="n">V3_MESHES_DIRECTORY</span> <span class="o">=</span> <span class="s2">"annotations.precomputed/mesh"</span>
+<span class="n">V3_TEMPLATE_NAME</span> <span class="o">=</span> <span class="s2">"template.ome.zarr"</span>
+<span class="n">V3_ANNOTATION_NAME</span> <span class="o">=</span> <span class="s2">"annotations_compressed.ome.zarr"</span>
+<span class="n">V3_ANNOTATION_MASKS_NAME</span> <span class="o">=</span> <span class="s2">"annotations.ome.zarr"</span>
+<span class="n">V3_ANNOTATION_MAP_NAME</span> <span class="o">=</span> <span class="s2">"annotation_values"</span>
+<span class="n">V3_HEMISPHERES_NAME</span> <span class="o">=</span> <span class="s2">"hemispheres.ome.zarr"</span>
 
 <span class="c1"># Types for the atlas stacks:</span>
 <span class="n">REFERENCE_DTYPE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint16</span>
@@ -595,7 +595,7 @@
 
 <span class="c1"># Standard orientation origin: Anterior, Superior, Right</span>
 <span class="c1"># (using brainglobe-space definition)</span>
-<span class="n">ATLAS_ORIENTATION</span> <span class="o">=</span> <span class="s2">&quot;asr&quot;</span>
+<span class="n">ATLAS_ORIENTATION</span> <span class="o">=</span> <span class="s2">"asr"</span>
 
 <span class="c1"># Type aliases</span>
 <span class="n">ValidComponentData</span><span class="p">:</span> <span class="n">TypeAlias</span> <span class="o">=</span> <span class="p">(</span>
@@ -613,7 +613,7 @@
     <span class="n">component_root_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">component_file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Format the component stub for a given component name, version,</span>
 <span class="sd">    root directory and file name.</span>
 
@@ -632,11 +632,11 @@
 <span class="sd">    -------</span>
 <span class="sd">    str</span>
 <span class="sd">        The formatted component stub.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">component_version</span> <span class="o">=</span> <span class="n">component_version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+<span class="sd">    """</span>
+    <span class="n">component_version</span> <span class="o">=</span> <span class="n">component_version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"."</span><span class="p">,</span> <span class="s2">"_"</span><span class="p">)</span>
     <span class="n">stub</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">component_root_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">component_name</span><span class="si">}</span><span class="s2">/&quot;</span>
-        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">component_version</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">component_file_name</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">component_root_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">component_name</span><span class="si">}</span><span class="s2">/"</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">component_version</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">component_file_name</span><span class="si">}</span><span class="s2">"</span>
     <span class="p">)</span>
     <span class="k">return</span> <span class="n">stub</span></div>
 
@@ -645,7 +645,7 @@
 <div class="viewcode-block" id="format_template_stub">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.descriptors.format_template_stub.html#brainglobe_atlasapi.descriptors.format_template_stub">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">format_template_stub</span><span class="p">(</span><span class="n">template_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">version</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Format the template stub for a given template name and version.</span>
 
 <span class="sd">    Parameters</span>
@@ -659,7 +659,7 @@
 <span class="sd">    -------</span>
 <span class="sd">    str</span>
 <span class="sd">        The formatted template stub.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">return</span> <span class="n">format_component_stub</span><span class="p">(</span>
         <span class="n">template_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">V3_TEMPLATE_ROOTDIR</span><span class="p">,</span> <span class="n">V3_TEMPLATE_NAME</span>
     <span class="p">)</span></div>
@@ -669,7 +669,7 @@
 <div class="viewcode-block" id="format_annotation_stub">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.descriptors.format_annotation_stub.html#brainglobe_atlasapi.descriptors.format_annotation_stub">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">format_annotation_stub</span><span class="p">(</span><span class="n">annotation_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">version</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Format the annotation stub for a given annotation name and version.</span>
 
 <span class="sd">    Parameters</span>
@@ -683,7 +683,7 @@
 <span class="sd">    -------</span>
 <span class="sd">    str</span>
 <span class="sd">        The formatted annotation stub.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">return</span> <span class="n">format_component_stub</span><span class="p">(</span>
         <span class="n">annotation_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">V3_ANNOTATION_ROOTDIR</span><span class="p">,</span> <span class="n">V3_ANNOTATION_NAME</span>
     <span class="p">)</span></div>
@@ -693,7 +693,7 @@
 <div class="viewcode-block" id="format_hemispheres_stub">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.descriptors.format_hemispheres_stub.html#brainglobe_atlasapi.descriptors.format_hemispheres_stub">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">format_hemispheres_stub</span><span class="p">(</span><span class="n">annotation_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">version</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Format the hemispheres stub for a given hemispheres name and version.</span>
 
 <span class="sd">    Parameters</span>
@@ -707,7 +707,7 @@
 <span class="sd">    -------</span>
 <span class="sd">    str</span>
 <span class="sd">        The formatted hemispheres stub.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">return</span> <span class="n">format_component_stub</span><span class="p">(</span>
         <span class="n">annotation_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">V3_ANNOTATION_ROOTDIR</span><span class="p">,</span> <span class="n">V3_HEMISPHERES_NAME</span>
     <span class="p">)</span></div>
@@ -717,7 +717,7 @@
 <div class="viewcode-block" id="format_terminology_stub">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.descriptors.format_terminology_stub.html#brainglobe_atlasapi.descriptors.format_terminology_stub">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">format_terminology_stub</span><span class="p">(</span><span class="n">terminology_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">version</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Format the terminology stub for a given terminology name and version.</span>
 
 <span class="sd">    Parameters</span>
@@ -731,7 +731,7 @@
 <span class="sd">    -------</span>
 <span class="sd">    str</span>
 <span class="sd">        The formatted terminology stub.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">return</span> <span class="n">format_component_stub</span><span class="p">(</span>
         <span class="n">terminology_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">V3_TERMINOLOGY_ROOTDIR</span><span class="p">,</span> <span class="n">V3_TERMINOLOGY_NAME</span>
     <span class="p">)</span></div>
@@ -741,7 +741,7 @@
 <div class="viewcode-block" id="format_meshes_stub">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.descriptors.format_meshes_stub.html#brainglobe_atlasapi.descriptors.format_meshes_stub">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">format_meshes_stub</span><span class="p">(</span><span class="n">annotation_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">version</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Format the meshes stub for a given annotation name and version.</span>
 
 <span class="sd">    Parameters</span>
@@ -755,7 +755,7 @@
 <span class="sd">    -------</span>
 <span class="sd">    str</span>
 <span class="sd">        The formatted meshes stub.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">return</span> <span class="n">format_component_stub</span><span class="p">(</span>
         <span class="n">annotation_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">V3_ANNOTATION_ROOTDIR</span><span class="p">,</span> <span class="n">V3_MESHES_DIRECTORY</span>
     <span class="p">)</span></div>

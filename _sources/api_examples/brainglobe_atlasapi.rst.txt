@@ -100,7 +100,7 @@ To know what atlases are available through BrainGlobe, we can use the `show_atla
     │  ccfv3augmented_mouse_25um                                           3.0     │
     │  columbia_cuttlefish_50um                                            3.0     │
     │  csl_cat_500um                                                       3.0     │
-    │  danionella_cerebrum_mixed_2.5um                                     3.0     │
+    │  danionella_cerebrum_mixed_2.5um                                     3.1     │
     │  demba_allen_seg_dev_mouse_p10_2…                                    3.0     │
     │  demba_allen_seg_dev_mouse_p10_2…                                    3.0     │
     │  demba_allen_seg_dev_mouse_p11_2…                                    3.0     │
@@ -209,6 +209,15 @@ To know what atlases are available through BrainGlobe, we can use the `show_atla
     │  demba_allen_seg_dev_mouse_p9_25…                                    3.0     │
     │  dorr_mouse_mri_32um                                                 3.0     │
     │  drosophila_wingdisc_instar3_2um                                     3.0     │
+    │  duke_dev_rat_p00_25um                                               3.0     │
+    │  duke_dev_rat_p02_25um                                               3.0     │
+    │  duke_dev_rat_p04_25um                                               3.0     │
+    │  duke_dev_rat_p08_25um                                               3.0     │
+    │  duke_dev_rat_p12_25um                                               3.0     │
+    │  duke_dev_rat_p18_25um                                               3.0     │
+    │  duke_dev_rat_p24_25um                                               3.0     │
+    │  duke_dev_rat_p40_25um                                               3.0     │
+    │  duke_dev_rat_p80_25um                                               3.0     │
     │  duke_mouse_100um                                                    3.0     │
     │  duke_mouse_150um                                                    3.0     │
     │  duke_mouse_15um                                                     3.0     │
@@ -296,8 +305,8 @@ To know what atlases are available through BrainGlobe, we can use the `show_atla
 Creating a `BrainGlobeAtlas` object
 -----------------------------------
 To instantiate a `BrainGlobeAtlas` object, we call it with the atlas name. The first time we use it, the
-latest version of the atlas files will be downloaded from the `remote GIN repository <http://gin.g-node.org/brainglobe/atlases>`_
-and stored on your local machine (by default, in `~/.brainglobe`):
+latest version of the atlas files will be downloaded from the `remote S3 bucket <https://open.quiltdata.com/b/brainglobe/tree/atlas/>`_
+and stored on your local machine (by default, in `~/.brainglobe/brainglobe-atlasapi`):
 
 .. GENERATED FROM PYTHON SOURCE LINES 34-37
 
@@ -429,7 +438,7 @@ Anatomical reference (or template) image:
 
     Warning: atlas.reference is a deprecated alias for atlas.template, and will be removed in future versions.
 
-    <matplotlib.image.AxesImage object at 0x7f6ff51e4260>
+    <matplotlib.image.AxesImage object at 0x7f15791744d0>
 
 
 
@@ -466,7 +475,7 @@ Annotations stack
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f703c6ea5d0>
+    <matplotlib.image.AxesImage object at 0x7f15791b1a60>
 
 
 
@@ -496,7 +505,7 @@ Hemisheres stack:
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f703cbc4aa0>
+    <matplotlib.image.AxesImage object at 0x7f15bd765f10>
 
 
 
@@ -1502,7 +1511,7 @@ To get the mask for a region, use
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f703c7c0770>
+    <matplotlib.image.AxesImage object at 0x7f15bce304d0>
 
 
 
@@ -1750,7 +1759,7 @@ Now print hemisphere string
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.613 seconds)
+   **Total running time of the script:** (0 minutes 1.220 seconds)
 
 
 .. _sphx_glr_download_api_examples_brainglobe_atlasapi.py:

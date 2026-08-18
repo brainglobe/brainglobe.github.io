@@ -576,19 +576,19 @@ brainmapper automatically exports a file in a brainrender compatible format, whi
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainrender.actors</span><span class="w"> </span><span class="kn">import</span> <span class="n">Points</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainrender</span><span class="w"> </span><span class="kn">import</span> <span class="n">settings</span>
 
-<span class="n">settings</span><span class="o">.</span><span class="n">SHADER_STYLE</span> <span class="o">=</span> <span class="s2">&quot;plastic&quot;</span>
-<span class="n">cells_path</span> <span class="o">=</span> <span class="s2">&quot;test_brain/output/points/points.npy&quot;</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">SHADER_STYLE</span> <span class="o">=</span> <span class="s2">"plastic"</span>
+<span class="n">cells_path</span> <span class="o">=</span> <span class="s2">"test_brain/output/points/points.npy"</span>
 
 <span class="c1"># Initialise brainrender scene</span>
 <span class="n">scene</span> <span class="o">=</span> <span class="n">Scene</span><span class="p">()</span>
 
 <span class="c1"># Create points actor</span>
-<span class="n">cells</span> <span class="o">=</span> <span class="n">Points</span><span class="p">(</span><span class="n">cells_path</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;palegoldenrod&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">cells</span> <span class="o">=</span> <span class="n">Points</span><span class="p">(</span><span class="n">cells_path</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">"palegoldenrod"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
 
 <span class="c1"># Visualise injection site (retrosplenial cortex)</span>
-<span class="n">scene</span><span class="o">.</span><span class="n">add_brain_region</span><span class="p">(</span><span class="s2">&quot;RSPd&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;mediumseagreen&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
-<span class="n">scene</span><span class="o">.</span><span class="n">add_brain_region</span><span class="p">(</span><span class="s2">&quot;RSPv&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
-<span class="n">scene</span><span class="o">.</span><span class="n">add_brain_region</span><span class="p">(</span><span class="s2">&quot;RSPagl&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;mediumseagreen&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add_brain_region</span><span class="p">(</span><span class="s2">"RSPd"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"mediumseagreen"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add_brain_region</span><span class="p">(</span><span class="s2">"RSPv"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"purple"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add_brain_region</span><span class="p">(</span><span class="s2">"RSPagl"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"mediumseagreen"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
 
 <span class="c1"># Add cells</span>
 <span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cells</span><span class="p">)</span>

@@ -831,15 +831,15 @@ If you get a “no such file or directory” or “no program found” message b
 You don’t need to use the exact tool name either, though <code class="docutils literal notranslate"><span class="pre">cite-brainglobe</span></code> is not perfect so it helps if you can be as close to the name as possible!
 Case-sensitivity is ignored, but you will have to use quotation marks if you refer to a tool that has a space in its name.</p>
 <p>For example, if you want to cite BrainGlobe’s AtlasAPI tool;</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cite-brainglobe<span class="w"> </span><span class="s2">&quot;brainglobe atlasapi&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cite-brainglobe<span class="w"> </span><span class="s2">"brainglobe atlasapi"</span>
 @article<span class="o">{</span>bg-atlasapi,
-<span class="w">    </span><span class="nv">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Federico Claudi and Luigi Petrucco and Adam Tyson and Tiago Branco and Troy Margrie and Ruben Portugues&quot;</span>,
-<span class="w">    </span><span class="nv">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;BrainGlobe Atlas API: a common interface for neuroanatomical atlases&quot;</span>,
-<span class="w">    </span><span class="nv">journal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Journal of Open Source Software&quot;</span>,
-<span class="w">    </span><span class="nv">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;2020&quot;</span>,
-<span class="w">    </span><span class="nv">volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;5&quot;</span>,
-<span class="w">    </span><span class="nv">month</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;10&quot;</span>,
-<span class="w">    </span><span class="nv">doi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;10.21105/joss.02668&quot;</span>,
+<span class="w">    </span><span class="nv">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Federico Claudi and Luigi Petrucco and Adam Tyson and Tiago Branco and Troy Margrie and Ruben Portugues"</span>,
+<span class="w">    </span><span class="nv">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"BrainGlobe Atlas API: a common interface for neuroanatomical atlases"</span>,
+<span class="w">    </span><span class="nv">journal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Journal of Open Source Software"</span>,
+<span class="w">    </span><span class="nv">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"2020"</span>,
+<span class="w">    </span><span class="nv">volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"5"</span>,
+<span class="w">    </span><span class="nv">month</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"10"</span>,
+<span class="w">    </span><span class="nv">doi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"10.21105/joss.02668"</span>,
 <span class="o">}</span>
 </pre></div>
 </div>
@@ -848,22 +848,22 @@ Asking for a citation for “brainglobe” will give you a citation that points 
 The following command for example, asks for a citation for <code class="docutils literal notranslate"><span class="pre">atlasapi</span></code> (which is interpreted as “BrainGlobe AtlasAPI”), and for <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> - the BrainGlobe tool suite:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cite-brainglobe<span class="w"> </span>atlasapi<span class="w"> </span>brainglobe
 @article<span class="o">{</span>bg-atlasapi,
-<span class="w">    </span><span class="nv">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Federico Claudi and Luigi Petrucco and Adam Tyson and Tiago Branco and Troy Margrie and Ruben Portugues&quot;</span>,
-<span class="w">    </span><span class="nv">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;BrainGlobe Atlas API: a common interface for neuroanatomical atlases&quot;</span>,
-<span class="w">    </span><span class="nv">journal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Journal of Open Source Software&quot;</span>,
-<span class="w">    </span><span class="nv">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;2020&quot;</span>,
-<span class="w">    </span><span class="nv">volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;5&quot;</span>,
-<span class="w">    </span><span class="nv">month</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;10&quot;</span>,
-<span class="w">    </span><span class="nv">doi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;10.21105/joss.02668&quot;</span>,
+<span class="w">    </span><span class="nv">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Federico Claudi and Luigi Petrucco and Adam Tyson and Tiago Branco and Troy Margrie and Ruben Portugues"</span>,
+<span class="w">    </span><span class="nv">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"BrainGlobe Atlas API: a common interface for neuroanatomical atlases"</span>,
+<span class="w">    </span><span class="nv">journal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Journal of Open Source Software"</span>,
+<span class="w">    </span><span class="nv">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"2020"</span>,
+<span class="w">    </span><span class="nv">volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"5"</span>,
+<span class="w">    </span><span class="nv">month</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"10"</span>,
+<span class="w">    </span><span class="nv">doi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"10.21105/joss.02668"</span>,
 <span class="o">}</span>
 
 @software<span class="o">{</span>brainglobe-meta,
-<span class="w">    </span><span class="nv">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;BrainGlobe Developers and Wiliam Michael Graham&quot;</span>,
-<span class="w">    </span><span class="nv">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;BrainGlobe&quot;</span>,
-<span class="w">    </span><span class="nv">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://brainglobe.info/&quot;</span>,
-<span class="w">    </span><span class="nv">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;2024&quot;</span>,
-<span class="w">    </span><span class="nv">abstract</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;The BrainGlobe Initiative exists to facilitate the development of interoperable Python-based tools for computational neuroanatomy.&quot;</span>,
-<span class="w">    </span><span class="nv">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;BSD-3-Clause&quot;</span>,
+<span class="w">    </span><span class="nv">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"BrainGlobe Developers and Wiliam Michael Graham"</span>,
+<span class="w">    </span><span class="nv">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"BrainGlobe"</span>,
+<span class="w">    </span><span class="nv">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://brainglobe.info/"</span>,
+<span class="w">    </span><span class="nv">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"2024"</span>,
+<span class="w">    </span><span class="nv">abstract</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"The BrainGlobe Initiative exists to facilitate the development of interoperable Python-based tools for computational neuroanatomy."</span>,
+<span class="w">    </span><span class="nv">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"BSD-3-Clause"</span>,
 <span class="o">}</span>
 </pre></div>
 </div>

@@ -1006,12 +1006,12 @@ in anatomical order (breadth-first traversal).</p></li>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s2">&quot;allen_mouse_25um&quot;</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s2">"allen_mouse_25um"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get all level-3 structures under cortex</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ids</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">get_structures_at_hierarchy_level</span><span class="p">(</span><span class="s2">&quot;CTX&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ids</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">get_structures_at_hierarchy_level</span><span class="p">(</span><span class="s2">"CTX"</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get as acronyms instead</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">acronyms</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">get_structures_at_hierarchy_level</span><span class="p">(</span>
-<span class="gp">... </span>    <span class="s2">&quot;CTX&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">as_acronym</span><span class="o">=</span><span class="kc">True</span>
+<span class="gp">... </span>    <span class="s2">"CTX"</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">as_acronym</span><span class="o">=</span><span class="kc">True</span>
 <span class="gp">... </span><span class="p">)</span>
 </pre></div>
 </div>

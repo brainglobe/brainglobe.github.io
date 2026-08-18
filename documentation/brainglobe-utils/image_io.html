@@ -828,26 +828,26 @@ It will also be fetched by most of our tools if you decide to install them as st
 <p>All options to load images are provided under <code class="docutils literal notranslate"><span class="pre">brainglobe_utils.IO.image.load</span></code>.
 For example, the general purpose <code class="docutils literal notranslate"><span class="pre">load_any</span></code> function which can load many common file formats:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_utils.IO.image</span><span class="w"> </span><span class="kn">import</span> <span class="n">load</span>
-<span class="n">load</span><span class="o">.</span><span class="n">load_any</span><span class="p">(</span><span class="s1">&#39;mydata.tif&#39;</span><span class="p">)</span>
+<span class="n">load</span><span class="o">.</span><span class="n">load_any</span><span class="p">(</span><span class="s1">'mydata.tif'</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>There are also functions specific to particular file formats:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_utils.IO.image</span><span class="w"> </span><span class="kn">import</span> <span class="n">load</span>
 
 <span class="c1"># tiff</span>
-<span class="n">load</span><span class="o">.</span><span class="n">load_img_stack</span><span class="p">(</span><span class="s1">&#39;mydata.tif&#39;</span><span class="p">,</span> <span class="n">x_scaling_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y_scaling_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">z_scaling_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">load</span><span class="o">.</span><span class="n">load_img_stack</span><span class="p">(</span><span class="s1">'mydata.tif'</span><span class="p">,</span> <span class="n">x_scaling_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y_scaling_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">z_scaling_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># directory containing a sequence of 2D tiffs</span>
-<span class="n">load</span><span class="o">.</span><span class="n">load_from_folder</span><span class="p">(</span><span class="s1">&#39;/path/to/dir&#39;</span><span class="p">)</span>
+<span class="n">load</span><span class="o">.</span><span class="n">load_from_folder</span><span class="p">(</span><span class="s1">'/path/to/dir'</span><span class="p">)</span>
 
 <span class="c1"># nifti</span>
-<span class="n">load</span><span class="o">.</span><span class="n">load_nii</span><span class="p">(</span><span class="s1">&#39;mydata.nii&#39;</span><span class="p">)</span>
+<span class="n">load</span><span class="o">.</span><span class="n">load_nii</span><span class="p">(</span><span class="s1">'mydata.nii'</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Or to load a directory containing a series of 2D tiffs as a dask array:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_utils.IO.image.load</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_with_dask</span>
 
-<span class="n">signal_array</span> <span class="o">=</span> <span class="n">read_with_dask</span><span class="p">(</span><span class="s2">&quot;/path/to/image_directory&quot;</span><span class="p">)</span>
+<span class="n">signal_array</span> <span class="o">=</span> <span class="n">read_with_dask</span><span class="p">(</span><span class="s2">"/path/to/image_directory"</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -856,20 +856,20 @@ For example, the general purpose <code class="docutils literal notranslate"><spa
 <p>All options to save images are provided under <code class="docutils literal notranslate"><span class="pre">brainglobe_utils.IO.image.save</span></code>.
 For example, the general purpose <code class="docutils literal notranslate"><span class="pre">save_any</span></code> function which can save a numpy array to many common file formats:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_utils.IO.image</span><span class="w"> </span><span class="kn">import</span> <span class="n">save</span>
-<span class="n">save</span><span class="o">.</span><span class="n">save_any</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="s1">&#39;mydata.tif&#39;</span><span class="p">)</span>
+<span class="n">save</span><span class="o">.</span><span class="n">save_any</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="s1">'mydata.tif'</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>There are also functions specific to particular file formats:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_utils.IO.image</span><span class="w"> </span><span class="kn">import</span> <span class="n">save</span>
 
 <span class="c1"># tiff</span>
-<span class="n">save</span><span class="o">.</span><span class="n">to_tiff</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="s1">&#39;mydata.tif&#39;</span><span class="p">)</span>
+<span class="n">save</span><span class="o">.</span><span class="n">to_tiff</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="s1">'mydata.tif'</span><span class="p">)</span>
 
 <span class="c1"># directory containing a sequence of 2D tiffs</span>
-<span class="n">save</span><span class="o">.</span><span class="n">to_tiffs</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="s1">&#39;/path/to/dir/prefix&#39;</span><span class="p">)</span>
+<span class="n">save</span><span class="o">.</span><span class="n">to_tiffs</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="s1">'/path/to/dir/prefix'</span><span class="p">)</span>
 
 <span class="c1"># nifti</span>
-<span class="n">save</span><span class="o">.</span><span class="n">to_nii</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="s1">&#39;mydata.nii&#39;</span><span class="p">)</span>
+<span class="n">save</span><span class="o">.</span><span class="n">to_nii</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="s1">'mydata.nii'</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>

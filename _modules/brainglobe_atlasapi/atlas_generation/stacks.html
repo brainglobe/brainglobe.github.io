@@ -518,9 +518,9 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                    <h1>Source code for brainglobe_atlasapi.atlas_generation.stacks</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;Functions for handling and processing image stacks related to</span>
+<span></span><span class="sd">"""Functions for handling and processing image stacks related to</span>
 <span class="sd">atlas generation.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
@@ -535,41 +535,41 @@
 
 <span class="n">BG_OME_ZARR_AXES</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span>
-        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;space&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;millimeter&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;anatomical&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;anterior-to-posterior&quot;</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"z"</span><span class="p">,</span>
+        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"space"</span><span class="p">,</span>
+        <span class="s2">"unit"</span><span class="p">:</span> <span class="s2">"millimeter"</span><span class="p">,</span>
+        <span class="s2">"orientation"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"anatomical"</span><span class="p">,</span>
+            <span class="s2">"value"</span><span class="p">:</span> <span class="s2">"anterior-to-posterior"</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">},</span>
     <span class="p">{</span>
-        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;space&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;millimeter&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;anatomical&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;superior-to-inferior&quot;</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"y"</span><span class="p">,</span>
+        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"space"</span><span class="p">,</span>
+        <span class="s2">"unit"</span><span class="p">:</span> <span class="s2">"millimeter"</span><span class="p">,</span>
+        <span class="s2">"orientation"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"anatomical"</span><span class="p">,</span>
+            <span class="s2">"value"</span><span class="p">:</span> <span class="s2">"superior-to-inferior"</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">},</span>
     <span class="p">{</span>
-        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;space&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;millimeter&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;anatomical&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;right-to-left&quot;</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"x"</span><span class="p">,</span>
+        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"space"</span><span class="p">,</span>
+        <span class="s2">"unit"</span><span class="p">:</span> <span class="s2">"millimeter"</span><span class="p">,</span>
+        <span class="s2">"orientation"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"anatomical"</span><span class="p">,</span>
+            <span class="s2">"value"</span><span class="p">:</span> <span class="s2">"right-to-left"</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">},</span>
 <span class="p">]</span>
 
-<span class="n">BG_OME_ZARR_4D_AXES</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;channel&quot;</span><span class="p">},</span> <span class="o">*</span><span class="n">BG_OME_ZARR_AXES</span><span class="p">]</span>
+<span class="n">BG_OME_ZARR_4D_AXES</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"c"</span><span class="p">,</span> <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"channel"</span><span class="p">},</span> <span class="o">*</span><span class="n">BG_OME_ZARR_AXES</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="write_stack">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.stacks.write_stack.html#brainglobe_atlasapi.atlas_generation.stacks.write_stack">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">write_stack</span><span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write an image stack to a TIFF file.</span>
+<span class="w">    </span><span class="sd">"""Write an image stack to a TIFF file.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -577,7 +577,7 @@
 <span class="sd">        The image stack to be saved.</span>
 <span class="sd">    filename : str or Path</span>
 <span class="sd">        The path and filename where the stack will be saved.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">tifffile</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="n">stack</span><span class="p">)</span></div>
 
 
@@ -590,7 +590,7 @@
     <span class="n">transformations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]],</span>
     <span class="n">axes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">],</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write a multiscale image pyramid to an OME-Zarr file.</span>
+<span class="w">    </span><span class="sd">"""Write a multiscale image pyramid to an OME-Zarr file.</span>
 
 
 <span class="sd">    Parameters</span>
@@ -604,8 +604,8 @@
 <span class="sd">    axes : list of dicts, optional</span>
 <span class="sd">        A list of axis descriptors to be included in the OME-Zarr metadata.</span>
 <span class="sd">        If not provided, defaults to BG_OME_ZARR_AXES.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">zarr_loc</span> <span class="o">=</span> <span class="n">parse_url</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="sd">    """</span>
+    <span class="n">zarr_loc</span> <span class="o">=</span> <span class="n">parse_url</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"w"</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">zarr_loc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
     <span class="n">store</span> <span class="o">=</span> <span class="n">zarr_loc</span><span class="o">.</span><span class="n">store</span>
     <span class="n">root</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="n">store</span><span class="o">=</span><span class="n">store</span><span class="p">)</span>
@@ -616,7 +616,7 @@
         <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">,</span>
         <span class="n">coordinate_transformations</span><span class="o">=</span><span class="n">transformations</span><span class="p">,</span>
         <span class="n">storage_options</span><span class="o">=</span><span class="p">{</span>
-            <span class="s2">&quot;chunks&quot;</span><span class="p">:</span> <span class="p">(</span>
+            <span class="s2">"chunks"</span><span class="p">:</span> <span class="p">(</span>
                 <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span> <span class="k">if</span> <span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">4</span> <span class="k">else</span> <span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span>
             <span class="p">)</span>
         <span class="p">},</span>
@@ -629,7 +629,7 @@
 <div class="viewcode-block" id="save_reference">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.stacks.save_reference.html#brainglobe_atlasapi.atlas_generation.stacks.save_reference">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">save_reference</span><span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save the reference image stack.</span>
+<span class="w">    </span><span class="sd">"""Save the reference image stack.</span>
 
 <span class="sd">    Ensures the stack is of the correct data type before saving.</span>
 
@@ -639,7 +639,7 @@
 <span class="sd">        The reference image stack.</span>
 <span class="sd">    output_dir : Path</span>
 <span class="sd">        The directory where the reference image will be saved.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">if</span> <span class="n">stack</span><span class="o">.</span><span class="n">dtype</span> <span class="o">!=</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">REFERENCE_DTYPE</span><span class="p">:</span>
         <span class="n">stack</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">descriptors</span><span class="o">.</span><span class="n">REFERENCE_DTYPE</span><span class="p">)</span>
     <span class="n">write_stack</span><span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">REFERENCE_FILENAME</span><span class="p">)</span></div>
@@ -657,7 +657,7 @@
 
     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">transformations</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span>
         <span class="n">stack</span>
-    <span class="p">),</span> <span class="s2">&quot;Number of transformation sets must match number of scales in stack.&quot;</span>
+    <span class="p">),</span> <span class="s2">"Number of transformation sets must match number of scales in stack."</span>
     <span class="n">write_multiscale_ome_zarr</span><span class="p">(</span>
         <span class="n">images</span><span class="o">=</span><span class="n">stack</span><span class="p">,</span>
         <span class="n">output_path</span><span class="o">=</span><span class="n">output_path</span><span class="p">,</span>
@@ -673,7 +673,7 @@
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">transformations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]],</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save the template image stack along with its transformations.</span>
+<span class="w">    </span><span class="sd">"""Save the template image stack along with its transformations.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -683,7 +683,7 @@
 <span class="sd">        The directory where the template image will be saved.</span>
 <span class="sd">    transformations : List[List[Dict]]</span>
 <span class="sd">        A list of transformations to be saved alongside the template.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">_save_as_ome_zarr</span><span class="p">(</span>
         <span class="n">stack</span><span class="p">,</span>
         <span class="n">descriptors</span><span class="o">.</span><span class="n">REFERENCE_DTYPE</span><span class="p">,</span>
@@ -700,7 +700,7 @@
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">transformations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]],</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save the annotation image stack.</span>
+<span class="w">    </span><span class="sd">"""Save the annotation image stack.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -710,7 +710,7 @@
 <span class="sd">        The directory where the annotation image will be saved.</span>
 <span class="sd">    transformations : List[List[Dict]]</span>
 <span class="sd">        A list of transformations to be saved alongside the annotation.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">_save_as_ome_zarr</span><span class="p">(</span>
         <span class="n">stack</span><span class="p">,</span>
         <span class="n">descriptors</span><span class="o">.</span><span class="n">ANNOTATION_DTYPE</span><span class="p">,</span>
@@ -727,7 +727,7 @@
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">transformations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]],</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save the hemispheres image stack.</span>
+<span class="w">    </span><span class="sd">"""Save the hemispheres image stack.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -737,7 +737,7 @@
 <span class="sd">        The directory where the hemispheres image will be saved.</span>
 <span class="sd">    transformations : List[List[Dict]]</span>
 <span class="sd">        A list of transformations to be saved alongside the hemispheres.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">_save_as_ome_zarr</span><span class="p">(</span>
         <span class="n">stack</span><span class="p">,</span>
         <span class="n">descriptors</span><span class="o">.</span><span class="n">HEMISPHERES_DTYPE</span><span class="p">,</span>
@@ -754,7 +754,7 @@
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">transformations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]],</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save the 4D annotation masks array.</span>
+<span class="w">    </span><span class="sd">"""Save the 4D annotation masks array.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -765,7 +765,7 @@
 <span class="sd">    transformations : List[List[Dict]]</span>
 <span class="sd">        OME-Zarr coordinate transformations, one list per scale level.</span>
 <span class="sd">        Each scale must be 4-element: [1, z_mm, y_mm, x_mm].</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">_save_as_ome_zarr</span><span class="p">(</span>
         <span class="n">stack</span><span class="p">,</span>
         <span class="n">descriptors</span><span class="o">.</span><span class="n">ANNOTATION_MASKS_DTYPE</span><span class="p">,</span>

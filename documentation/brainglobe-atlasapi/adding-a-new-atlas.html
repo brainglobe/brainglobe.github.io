@@ -859,11 +859,11 @@ annotation and the region hierarchy information (more on that later).</p></li>
 dictionaries where each dictionary describes a region with the following keys:</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">STRUCTURE_TEMPLATE</span> <span class="o">=</span> <span class="p">{</span>
-   <span class="s2">&quot;acronym&quot;</span><span class="p">:</span> <span class="s2">&quot;VIS&quot;</span><span class="p">,</span>  <span class="c1"># shortened name of the region</span>
-   <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>  <span class="c1"># region id</span>
-   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;visual cortex&quot;</span><span class="p">,</span>  <span class="c1"># full region name</span>
-   <span class="s2">&quot;structure_id_path&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>  <span class="c1"># path to the structure in the structures hierarchy, up to current id</span>
-   <span class="s2">&quot;rgb_triplet&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span>  <span class="c1"># default color for visualizing the region, feel free to leave white or randomize it</span>
+   <span class="s2">"acronym"</span><span class="p">:</span> <span class="s2">"VIS"</span><span class="p">,</span>  <span class="c1"># shortened name of the region</span>
+   <span class="s2">"id"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>  <span class="c1"># region id</span>
+   <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"visual cortex"</span><span class="p">,</span>  <span class="c1"># full region name</span>
+   <span class="s2">"structure_id_path"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>  <span class="c1"># path to the structure in the structures hierarchy, up to current id</span>
+   <span class="s2">"rgb_triplet"</span><span class="p">:</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span>  <span class="c1"># default color for visualizing the region, feel free to leave white or randomize it</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -950,18 +950,18 @@ You know the orientation is correct if you are looking at upright (dorsal top, v
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">BrainGlobeAtlas</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">napari</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">viewer</span> <span class="o">=</span> <span class="n">napari</span><span class="o">.</span><span class="n">Viewer</span><span class="p">()</span>
     <span class="n">viewer</span><span class="o">.</span><span class="n">dims</span><span class="o">.</span><span class="n">ndisplay</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="c1"># replace &quot;mpin_zfish_1um&quot; with atlas of interest below</span>
-    <span class="n">napari_atlas</span> <span class="o">=</span> <span class="n">NapariAtlasRepresentation</span><span class="p">(</span><span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s2">&quot;mpin_zfish_1um&quot;</span><span class="p">,</span> <span class="n">brainglobe_dir</span><span class="o">=</span><span class="s2">&quot;/path/to/brainglobe_workingdir&quot;</span><span class="p">),</span> <span class="n">viewer</span><span class="p">)</span>
+    <span class="c1"># replace "mpin_zfish_1um" with atlas of interest below</span>
+    <span class="n">napari_atlas</span> <span class="o">=</span> <span class="n">NapariAtlasRepresentation</span><span class="p">(</span><span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s2">"mpin_zfish_1um"</span><span class="p">,</span> <span class="n">brainglobe_dir</span><span class="o">=</span><span class="s2">"/path/to/brainglobe_workingdir"</span><span class="p">),</span> <span class="n">viewer</span><span class="p">)</span>
     <span class="n">napari_atlas</span><span class="o">.</span><span class="n">add_to_viewer</span><span class="p">()</span>
     
-    <span class="c1"># replace &quot;GADb1&quot; with name of additional reference for your atlas (if it has any)</span>
-    <span class="n">napari_atlas</span><span class="o">.</span><span class="n">add_additional_reference</span><span class="p">(</span><span class="s2">&quot;mpin_zfish-GAD1b-template&quot;</span><span class="p">)</span>
+    <span class="c1"># replace "GADb1" with name of additional reference for your atlas (if it has any)</span>
+    <span class="n">napari_atlas</span><span class="o">.</span><span class="n">add_additional_reference</span><span class="p">(</span><span class="s2">"mpin_zfish-GAD1b-template"</span><span class="p">)</span>
     
-    <span class="c1"># replace &quot;root&quot; with acronym of structure of interest below</span>
-    <span class="n">napari_atlas</span><span class="o">.</span><span class="n">add_structure_to_viewer</span><span class="p">(</span><span class="s2">&quot;&lt;structure_id&gt;&quot;</span><span class="p">)</span>
+    <span class="c1"># replace "root" with acronym of structure of interest below</span>
+    <span class="n">napari_atlas</span><span class="o">.</span><span class="n">add_structure_to_viewer</span><span class="p">(</span><span class="s2">"&lt;structure_id&gt;"</span><span class="p">)</span>
     <span class="n">napari</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>

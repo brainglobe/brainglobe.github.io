@@ -634,7 +634,7 @@ Finally, in your class you’ll need to overwrite the <code class="docutils lite
 The class itself just holds any information we need and some useful actions on that information, such as providing the URL for the GitHub repo, storing the alternative names for the tool that is held there, etc.
 The static instances of this class are instantiated in this module too - by convention, the variable name should match the repository’s name on GitHub.
 Each instance is created using the syntax:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">brainglobe_tool</span> <span class="o">=</span> <span class="n">Repository</span><span class="p">(</span><span class="s2">&quot;brainglobe-tool&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;list&quot;</span><span class="p">,</span> <span class="s2">&quot;of&quot;</span><span class="p">,</span> <span class="s2">&quot;alternative&quot;</span><span class="p">,</span> <span class="s2">&quot;or&quot;</span><span class="p">,</span> <span class="s2">&quot;informal&quot;</span><span class="p">,</span> <span class="s2">&quot;names&quot;</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">brainglobe_tool</span> <span class="o">=</span> <span class="n">Repository</span><span class="p">(</span><span class="s2">"brainglobe-tool"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"list"</span><span class="p">,</span> <span class="s2">"of"</span><span class="p">,</span> <span class="s2">"alternative"</span><span class="p">,</span> <span class="s2">"or"</span><span class="p">,</span> <span class="s2">"informal"</span><span class="p">,</span> <span class="s2">"names"</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>This defines a repository that <code class="docutils literal notranslate"><span class="pre">cite-brainglobe</span></code> expects to be called <code class="docutils literal notranslate"><span class="pre">bg-tool</span></code>, under the <code class="docutils literal notranslate"><span class="pre">brainglobe</span></code> organisation on GitHub.
@@ -646,9 +646,9 @@ The second argument defines the (case-insensitive) names (in addition to the rep
 </ul>
 <p>To illustrate,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">brainglobe_utils</span> <span class="o">=</span> <span class="n">Repository</span><span class="p">(</span>
-    <span class="s2">&quot;brainglobe_utils&quot;</span><span class="p">,</span>
+    <span class="s2">"brainglobe_utils"</span><span class="p">,</span>
     <span class="p">[</span>
-        <span class="s2">&quot;utilities&quot;</span><span class="p">,</span>
+        <span class="s2">"utilities"</span><span class="p">,</span>
     <span class="p">],</span>
 <span class="p">)</span>
 </pre></div>
