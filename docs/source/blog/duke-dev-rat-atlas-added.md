@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: July 20, 2026
+date: August 18, 2026
 author: Jung Woo Kim
 location: London, England
 category: brainglobe
@@ -9,13 +9,13 @@ language: English
 
 # The Duke Developmental Rat Brain Atlases have been added to BrainGlobe
 
-The brain continues to develop well after an organism is born. To provide a comprehensive view of the growth of various brain regions in rats, [Calabrese et al. (2013)](https://doi.org/10.1016/j.neuroimage.2013.01.017) of Duke University created a high resolution averaged T2 MRI atlas of postnatal rat brain development using five specimens each at nine different timepoints (P0, P2, P4, P8, P12, P18, P24, P40, P80). The authors annotated the nine time points with the same 26 developmentally distinct regions, allowing them to plot growth curves for the rat brain by measuring their volumes over time. We have packaged the nine atlases which comprise the Duke developmental rat brain atlas to be used within BrainGlobe. 
+The brain continues to develop well after an organism is born. To provide a comprehensive view of the growth of various brain regions in rats, [Calabrese et al. (2013)](https://doi.org/10.1016/j.neuroimage.2013.01.017) of Duke University created a high resolution averaged T2 MRI atlas of postnatal rat brain development using five specimens each at nine different timepoints (P0, P2, P4, P8, P12, P18, P24, P40, P80). The authors annotated the nine time points with the same 26 developmentally distinct regions, allowing them to plot growth curves for the rat brain by measuring their volumes over time. We have packaged the nine atlases which comprise the Duke Developmental Rat Brain Atlas to be used within BrainGlobe. 
 
 ![duke dev rat brain atlas annotations](./images/duke_dev_rat_brain_atlas.png)
 
 **Figure 1. The nine timepoints of the Duke Developmental Rat Brain Atlas, with right annotations overlaid on references (not to scale).**
 
-The BrainGlobe team re-packaged the data generated and made public by the authors, making it now possible to use the Duke developmental rat brain atlases within the BrainGlobe ecosystem. The atlas names are:
+The BrainGlobe team re-packaged the data generated and made public by the authors, making it now possible to use the Duke Developmental Rat Brain Atlas within the BrainGlobe ecosystem. The atlas names are:
 
 * `duke_dev_rat_p00_25um`
 * `duke_dev_rat_p02_25um`
@@ -29,7 +29,7 @@ The BrainGlobe team re-packaged the data generated and made public by the author
 
 ## How do I use the new atlases?
 
-You can use the Duke developmental rat brain atlases for visualisation like other BrainGlobe atlases, as written below:
+You can use the Duke Developmental Rat Brain Atlas for visualisation like other BrainGlobe atlases, as written below:
 
 * Install BrainGlobe ([instructions](/documentation/index))
 * Open napari and follow the steps in our [download tutorial](/tutorials/manage-atlases-in-GUI.md) for the Duke Developmental Rat Brain Atlases
