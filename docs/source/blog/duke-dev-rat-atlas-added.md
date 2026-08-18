@@ -39,7 +39,7 @@ The end result will look something like Figure 2.
 
 ![duke dev p24 rat brain atlas visualised in napari](./images/duke_dev_p24_rat_brain_napari.png)
 
-**Figure 2: The Duke Developmental P24 Rat Brain atlas visualised with `brainrender-napari`: with mesh overlays for the brain (grey) and the septum (green).**
+**Figure 2: The Duke Developmental P24 Rat Brain Atlas visualised with `brainrender-napari`: with mesh overlays for the brain (grey) and the septum (green).**
 
 ## Why are we adding new atlases?
 
