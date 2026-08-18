@@ -9,7 +9,7 @@ software that leverages the BrainGlobe ecosystem in some way:
 ## QUINT
 QUINT is a registration pipeline which consists of QuickNII, VisuAlign, and Nutil for quantification. The QUINT 
 developers have created a BrainGlobe Atlas Installer. 
-- [BrainGlobe Atlas Installer](https://github.com/Tevemadar/BrainGlobe-support)
+- [GitHub repository](https://github.com/Tevemadar/BrainGlobe-support)
 - [Documentation](https://quint-workflow.readthedocs.io/en/latest/QUINTintro.html)
 - [Paper](https://doi.org/10.3389/fninf.2019.00075)
 
@@ -137,6 +137,12 @@ PixelMap is a browser-based GUI to generate Neuropixels channelmaps.
 ## 3D Brain Animations
 3D Brain Animations is a Claude Code skill that renders glowing, rotating 3D brain animations and stills from natural language descriptions, using BlenderBrain and BrainGlobe atlases.
 - [GitHub repository](https://github.com/SamedVossberg/3d-brain-animations)
+
+## Pinpoint
+Pinpoint is a browser-based tool to plan electrophysiology experiments.
+- [GitHub repository](https://github.com/AllenNeuralDynamics/pinpoint)
+- [Online GUI](https://pinpoint.allenneuraldynamics.org)
+- [Paper](https://doi.org/10.7554/eLife.91662.1)
 
 :::{hint}
 If you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. Typically we include tools which:

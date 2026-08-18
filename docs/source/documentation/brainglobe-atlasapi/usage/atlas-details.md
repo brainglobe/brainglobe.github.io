@@ -30,10 +30,13 @@ limited annotations in some regions (alternatives such as the Enhanced and Unifi
 if the Allen Adult Mouse Brain Atlas is not annotated sufficiently).
 
 Available versions:
-* `allen_mouse_10um` - 10μm resolution
+* `allen_mouse_10um` - 10μm resolution 
 * `allen_mouse_25um` - 25μm resolution
 * `allen_mouse_50um` - 50μm resolution
 * `allen_mouse_100um` - 100μm resolution
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/allen_mouse.json)
+
 
 ### [Enhanced and Unified Mouse Brain Atlas](https://kimlab.io/brain-map/atlas/) 
 This atlas from [Chon et al. (2019)](https://doi.org/10.1038/s41467-019-13057-w) is very similar to the Allen Adult 
@@ -46,6 +49,9 @@ Available versions:
 * `kim_mouse_25um` - 25μm resolution
 * `kim_mouse_50um` - 50μm resolution
 * `kim_mouse_100um` - 100μm resolution
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/kim_mouse.json)
+
 
 ### [Enhanced and Unified Mouse Brain Atlas v2](https://figshare.com/articles/dataset/Unified_mouse_brain_atlas_v2/25750983) 
 The updated version of the Unified Mouse Brain Atlas builds upon 
@@ -62,6 +68,9 @@ Version 2 (2024) contains several key improvements:
 This atlas is only available at 20μm resolution:
 * `kim_mouse_isotropic_20um`
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/kim_mouse_isotropic.json)
+
+
 ### [Gubra's LSFM mouse brain atlas](https://doi.org/10.1007/s12021-020-09490-8)
 This atlas from [Perens et al. (2020)](https://doi.org/10.1007/s12021-020-09490-8) provides a version of the Allen
 Adult Mouse Brain Atlas, based on solvent-cleared brains imaged with LSFM. This atlas may be a 
@@ -72,6 +81,9 @@ mouse brain atlas v2](https://brainglobe.info/documentation/brainglobe-atlasapi/
 This atlas is only available at 20μm resolution:
 * `perens_lsfm_mouse_20um`
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/perens_lsfm_mouse.json)
+
+
 ### [Gubra's MRI mouse brain atlas](https://doi.org/10.1007/s12021-023-09623-9)
 This atlas is an addition to its LSFM version and provides a version of the Allen
 Adult Mouse Brain Atlas, based on T2-weighted MRI. This atlas may be a 
@@ -81,6 +93,9 @@ plan stereotaxic surgeries.
 
 This atlas is only available at 25μm resolution:
 * `perens_stereotaxic_mri_mouse_25um`
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/perens_stereotaxic_mri_mouse.json)
+
 
 ### [Gubra's LSFM mouse brain atlas v2](https://doi.org/10.1007/s12021-023-09623-9)
 This atlas is an addition to its MRI version and provides a version of the Allen Adult Mouse Brain Atlas, based on LSFM. 
@@ -93,6 +108,9 @@ space to the original Allen atlas (CCFv3) and to Perens 2020.
 This atlas is only available at 25μm resolution:
 * `perens_multimodal_lsfm_25um`
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/perens_multimodal_lsfm.json)
+
+
 ### [Princeton Mouse Brain Atlas](https://brainmaps.princeton.edu/2020/09/princeton-mouse-brain-atlas-links)
 This atlas from [Pisano et al. (2021)](https://doi.org/10.1016/j.celrep.2021.109721) is a version of the Allen
 Adult Mouse Brain Atlas with two main differences. Unlike the Allen Adult Mouse Brain Atlas it includes a full 
@@ -100,6 +118,9 @@ cerebellum, and the reference image is based on LSFM rather than STP.
 
 This atlas is only available at 20μm resolution:
 * `princeton_mouse_20um`
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/princeton_mouse.json)
+
 
 ### [3D Edge-Aware Refined Atlases Derived from the Allen Developing Mouse Brain Atlases](https://doi.org/10.7554/eLife.61408)
 These atlases from [Young et al. (2021)](https://doi.org/10.7554/eLife.61408) are 3D reconstructions of the eight 
@@ -111,60 +132,60 @@ These atlases vary slightly, as the E11.5, E13.5 and E15.5 atlases contain the c
 (E18.5, P4, P14, P28 and P56) only contain the brain. 
 
 Available versions:
-* `admba_3d_e11_5_mouse_16um` - E11.5 at 16μm resolution
-* `admba_3d_e13_5_mouse_16um` - E13.5 at 16μm resolution
-* `admba_3d_e15_5_mouse_16um` - E15.5 at 16μm resolution
-* `admba_3d_e18_5_mouse_16um` - E18.5 at 16μm resolution
-* `admba_3d_p4_mouse_16.752um` - P4 at 16.752μm resolution
-* `admba_3d_p14_mouse_16.752um` - P14 at 16.752μm resolution
-* `admba_3d_p28_mouse_16.752um` - P28 at 16.752μm resolution
-* `admba_3d_p56_mouse_25um` - P56 at 25μm resolution
+* `admba_3d_e11_5_mouse_16um` - E11.5 at 16μm resolution [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/admba_3d_e11_5_mouse.json)
+* `admba_3d_e13_5_mouse_16um` - E13.5 at 16μm resolution [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/admba_3d_e13_5_mouse.json)
+* `admba_3d_e15_5_mouse_16um` - E15.5 at 16μm resolution [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/admba_3d_e15_5_mouse.json)
+* `admba_3d_e18_5_mouse_16um` - E18.5 at 16μm resolution [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/admba_3d_e18_5_mouse.json)
+* `admba_3d_p4_mouse_16.752um` - P4 at 16.752μm resolution [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/admba_3d_p4_mouse.json)
+* `admba_3d_p14_mouse_16.752um` - P14 at 16.752μm resolution [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/admba_3d_p14_mouse.json)
+* `admba_3d_p28_mouse_16.752um` - P28 at 16.752μm resolution [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/admba_3d_p28_mouse.json)
+* `admba_3d_p56_mouse_25um` - P56 at 25μm resolution [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/admba_3d_p56_mouse.json)
 
 ### [Kim Lab Developmental CCF v1.0](https://doi.org/10.6084/m9.figshare.26377171.v1) 
 A multi-modal atlas of the developing mouse brain. Reference images from LSFM and MRI (adc, dwi, fa, T2) are available at all developmental stages of the atlas (E11.5, E13.5, E15.5, E18.5, P4, P14, P56). Developmental stages E15.5, P04 and P14 additionally also have versions with a MTR MRI reference image.
 
 
 Available versions:
-* at E11.5
+* at E11.5 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/kim_dev_mouse_e11-5.json)
   *  `kim_dev_mouse_e11-5_lsfm_20um` - LSFM template at 20 μm resolution
   *  `kim_dev_mouse_e11-5_mri-adc_31.5um` - MRI adc template at 31.5 μm resolution
   *  `kim_dev_mouse_e11-5_mri-dwi_31.5um` - MRI dwi template at 31.5 μm resolution 
   *  `kim_dev_mouse_e11-5_mri-fa_31.5um` - MRI fa template at 31.5 μm resolution
   *  `kim_dev_mouse_e11-5_mri-T2_31.5um` - MRI T2 template at 31.5 μm resolution
-* at E13.5
+* at E13.5 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/kim_dev_mouse_e13-5.json)
   *  `kim_dev_mouse_e13-5_lsfm_20um` - LSFM template at 20 μm resolution
   *  `kim_dev_mouse_e13-5_mri-adc_34um` - MRI adc template at 34 μm resolution
   *  `kim_dev_mouse_e13-5_mri-dwi_34um` - MRI dwi template at 34 μm resolution 
   *  `kim_dev_mouse_e13-5_mri-fa_34um` - MRI fa template at 34 μm resolution
   *  `kim_dev_mouse_e13-5_mri-t2_34um` - MRI T2 template at 34 μm resolution 
-* at E15.5
+* at E15.5 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/kim_dev_mouse_e15-5.json)
   *  `kim_dev_mouse_e15-5_lsfm_20um` - LSFM template at 20 μm resolution
   *  `kim_dev_mouse_e15-5_mri-adc_37.5um` - MRI adc template at 37.5 μm resolution
   *  `kim_dev_mouse_e15-5_mri-dwi_37.5um` - MRI dwi template at 37.5 μm resolution 
   *  `kim_dev_mouse_e15-5_mri-fa_37.5um` - MRI fa template at 37.5 μm resolution
   *  `kim_dev_mouse_e15-5_mri-t2_37.5um` - MRI T2 template at 37.5 μm resolution 
   *  `kim_dev_mouse_e15-5_mri-mtr_37.5um` - MRI MTR template at 37.5 μm resolution 
-* at E18.5
+* at E18.5 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/kim_dev_mouse_e18-5.json)
   *  `kim_dev_mouse_e18-5_lsfm_20um` - LSFM template at 20 μm resolution
   *  `kim_dev_mouse_e18-5_mri-adc_40um` - MRI adc template at 40 μm resolution
   *  `kim_dev_mouse_e18-5_mri-dwi_40um` - MRI dwi template at 40 μm resolution 
   *  `kim_dev_mouse_e18-5_mri-fa_40um` - MRI fa template at 40 μm resolution
   *  `kim_dev_mouse_e18-5_mri-t2_40um` - MRI T2 template at 40 μm resolution 
-* at P04
+* at P04 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/kim_dev_mouse_p04.json)
   *  `kim_dev_mouse_p04_lsfm_20um` - LSFM template at 20 μm resolution
   *  `kim_dev_mouse_p04_mri-adc_50um` - MRI adc template at 50 μm resolution
   *  `kim_dev_mouse_p04_mri-dwi_50um` - MRI dwi template at 50 μm resolution 
   *  `kim_dev_mouse_p04_mri-fa_50um` - MRI fa template at 50 μm resolution
   *  `kim_dev_mouse_p04_mri-t2_50um` - MRI T2 template at 50 μm resolution 
   *  `kim_dev_mouse_p04_mri-mtr_50um` - MRI MTR template at 50 μm resolution 
-* at P14
+* at P14 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/kim_dev_mouse_p14.json)
   *  `kim_dev_mouse_p14_lsfm_20um` - LSFM template at 20 μm resolution
   *  `kim_dev_mouse_p14_mri-adc_50um` - MRI adc template at 50 μm resolution
   *  `kim_dev_mouse_p14_mri-dwi_50um` - MRI dwi template at 50 μm resolution 
   *  `kim_dev_mouse_p14_mri-fa_50um` - MRI fa template at 50 μm resolution
   *  `kim_dev_mouse_p14_mri-t2_50um` - MRI T2 template at 50 μm resolution 
   *  `kim_dev_mouse_p14_mri-mtr_50um` - MRI MTR template at 50 μm resolution 
-* at P56
+* at P56 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/kim_dev_mouse_p56.json)
   *  `kim_dev_mouse_p56_lsfm_20um` - LSFM template at 20 μm resolution
   *  `kim_dev_mouse_p56_mri-adc_50um` - MRI adc template at 50 μm resolution
   *  `kim_dev_mouse_p56_mri-dwi_50um` - MRI dwi template at 50 μm resolution 
@@ -187,6 +208,9 @@ Available versions:
 * `kim_dev_mouse_mri_mtr_10um` - MRI MTR (magnetic transfer ratio) template at 10μm resolution
 * `kim_dev_mouse_mri_t2_10um` - MRI T2 template at 10μm resolution
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/kim_dev_mouse.json)
+
+
 ### [BlueBrain Barrel Cortex Atlas](https://doi.org/10.1162/imag_a_00209)
 This atlas from [Bolaños-Puchet et al. (2024)](https://doi.org/10.1162/imag_a_00209) 
 is a version of the Allen Adult Mouse Brain Atlas with the addition of annotations of 33 barrels and barrel columns. 
@@ -196,12 +220,18 @@ Available versions:
 * `allen_mouse_bluebrain_barrels_10um` - 10μm resolution
 * `allen_mouse_bluebrain_barrels_25um` - 25μm resolution
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/allen_mouse_bluebrain_barrels.json)
+
+
 ### [3D version of the Allen mouse spinal cord atlas](https://doi.org/10.1101/2021.05.06.443008)
 This atlas from [Fiederling et al. (2021)](https://doi.org/10.1101/2021.05.06.443008) is a 3D reconstruction of the 
 [Allen Spinal Cord Atlas](https://mousespinal.brain-map.org/).
 
 This atlas is only available at a single (20 x 10 x 10μm) resolution:
 * `allen_cord_20um`
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/allen_cord.json)
+
 
 ### [Smoothed version of the Kim et al. mouse reference atlas](https://doi.org/10.1016/j.celrep.2014.12.014)
 This atlas is part of the API to support some existing projects. We do not recommend it for any new projects
@@ -212,6 +242,9 @@ Available versions:
 * `osten_mouse_25um` - 25μm resolution
 * `osten_mouse_50um` - 50μm resolution
 * `osten_mouse_100um` - 100μm resolution
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/osten_mouse.json)
+
 ### [Australian Mouse Brain Atlas](https://imaging.org.au/AMBMC/)
 This atlas has a very high resolution (15μm) MRI template. It covers the Hippocampus, Cerebellum, Cortex, 
 Basal Ganglia, and Diencephalon. It is quite consistent with the parcellation scheme of the Paxinos and Franklin
@@ -219,6 +252,9 @@ mouse brain atlas. At present a drawback of this atlas is that the
 segmentations do not cover the entire brain and is limited to the regions previously mentioned. 
 This atlas is only available at 15μm resolution:
 * `australian_mouse_15um`
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/australian_mouse.json)
+
 ### [CCFv3 augmented mouse atlas](https://doi.org/10.1162/imag_a_00565)
 This atlas is an extended version of the CCFv3, designed to cover the rostral and caudal tips of the mouse brain. 
 This atlas is particularly useful for users who require the whole brain to be represented including the posterior 
@@ -230,167 +266,170 @@ The CCFv3 Augmented also includes new delineations of the granular layer of the 
 Available versions:
 * `ccfv3augmented_mouse_10um` - 10μm resolution
 * `ccfv3augmented_mouse_25um` - 25μm resolution
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/ccfv3augmented_mouse.json)
+
 ### [DeMBA Developmental Mouse Brain Atlas](https://doi.org/10.1038/s41467-025-63177-9)
 This atlas contains 53 days of development including every day from postnatal day 4 to postnatal day 56. Each time point has two atlases, a 20um version with the STPT, and Allen STPT template and a 25um version with the STPT, the Allen STPT, an MRI, and an LSFM template. The Allen STPT template is a transformed version of the default template provided with the Allen CCFv3, it is useful for comparison with the adult CCFv3.  
 
 Available versions:
-* at P4
+* at P4 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p4.json)
   * `demba_allen_seg_dev_mouse_p4_20um` 
   * `demba_allen_seg_dev_mouse_p4_25um` 
-* at P5
+* at P5 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p5.json)
   * `demba_allen_seg_dev_mouse_p5_20um` 
   * `demba_allen_seg_dev_mouse_p5_25um` 
-* at P6
+* at P6 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p6.json)
   * `demba_allen_seg_dev_mouse_p6_20um` 
   * `demba_allen_seg_dev_mouse_p6_25um` 
-* at P7
+* at P7 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p7.json)
   * `demba_allen_seg_dev_mouse_p7_20um` 
   * `demba_allen_seg_dev_mouse_p7_25um` 
-* at P8
+* at P8 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p8.json)
   * `demba_allen_seg_dev_mouse_p8_20um` 
   * `demba_allen_seg_dev_mouse_p8_25um` 
-* at P9
+* at P9 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p9.json)
   * `demba_allen_seg_dev_mouse_p9_20um` 
   * `demba_allen_seg_dev_mouse_p9_25um` 
-* at P10
+* at P10 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p10.json)
   * `demba_allen_seg_dev_mouse_p10_20um`
   * `demba_allen_seg_dev_mouse_p10_25um`
-* at P11
+* at P11 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p11.json)
   * `demba_allen_seg_dev_mouse_p11_20um`
   * `demba_allen_seg_dev_mouse_p11_25um`
-* at P12
+* at P12 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p12.json)
   * `demba_allen_seg_dev_mouse_p12_20um`
   * `demba_allen_seg_dev_mouse_p12_25um`
-* at P13
+* at P13 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p13.json)
   * `demba_allen_seg_dev_mouse_p13_20um`
   * `demba_allen_seg_dev_mouse_p13_25um`
-* at P14
+* at P14 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p14.json)
   * `demba_allen_seg_dev_mouse_p14_20um`
   * `demba_allen_seg_dev_mouse_p14_25um`
-* at P15
+* at P15 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p15.json)
   * `demba_allen_seg_dev_mouse_p15_20um`
   * `demba_allen_seg_dev_mouse_p15_25um`
-* at P16
+* at P16 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p16.json)
   * `demba_allen_seg_dev_mouse_p16_20um`
   * `demba_allen_seg_dev_mouse_p16_25um`
-* at P17
+* at P17 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p17.json)
   * `demba_allen_seg_dev_mouse_p17_20um`
   * `demba_allen_seg_dev_mouse_p17_25um`
-* at P18
+* at P18 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p18.json)
   * `demba_allen_seg_dev_mouse_p18_20um`
   * `demba_allen_seg_dev_mouse_p18_25um`
-* at P19
+* at P19 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p19.json)
   * `demba_allen_seg_dev_mouse_p19_20um`
   * `demba_allen_seg_dev_mouse_p19_25um`
-* at P20
+* at P20 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p20.json)
   * `demba_allen_seg_dev_mouse_p20_20um`
   * `demba_allen_seg_dev_mouse_p20_25um`
-* at P21
+* at P21 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p21.json)
   * `demba_allen_seg_dev_mouse_p21_20um`
   * `demba_allen_seg_dev_mouse_p21_25um`
-* at P22
+* at P22 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p22.json)
   * `demba_allen_seg_dev_mouse_p22_20um`
   * `demba_allen_seg_dev_mouse_p22_25um`
-* at P23
+* at P23 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p23.json)
   * `demba_allen_seg_dev_mouse_p23_20um`
   * `demba_allen_seg_dev_mouse_p23_25um`
-* at P24
+* at P24 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p24.json)
   * `demba_allen_seg_dev_mouse_p24_20um`
   * `demba_allen_seg_dev_mouse_p24_25um`
-* at P25
+* at P25 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p25.json)
   * `demba_allen_seg_dev_mouse_p25_20um`
   * `demba_allen_seg_dev_mouse_p25_25um`
-* at P26
+* at P26 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p26.json)
   * `demba_allen_seg_dev_mouse_p26_20um`
   * `demba_allen_seg_dev_mouse_p26_25um`
-* at P27
+* at P27 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p27.json)
   * `demba_allen_seg_dev_mouse_p27_20um`
   * `demba_allen_seg_dev_mouse_p27_25um`
-* at P28
+* at P28 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p28.json)
   * `demba_allen_seg_dev_mouse_p28_20um`
   * `demba_allen_seg_dev_mouse_p28_25um`
-* at P29
+* at P29 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p29.json)
   * `demba_allen_seg_dev_mouse_p29_20um`
   * `demba_allen_seg_dev_mouse_p29_25um`
-* at P30
+* at P30 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p30.json)
   * `demba_allen_seg_dev_mouse_p30_20um`
   * `demba_allen_seg_dev_mouse_p30_25um`
-* at P31
+* at P31 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p31.json)
   * `demba_allen_seg_dev_mouse_p31_20um`
   * `demba_allen_seg_dev_mouse_p31_25um`
-* at P32
+* at P32 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p32.json)
   * `demba_allen_seg_dev_mouse_p32_20um`
   * `demba_allen_seg_dev_mouse_p32_25um`
-* at P33
+* at P33 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p33.json)
   * `demba_allen_seg_dev_mouse_p33_20um`
   * `demba_allen_seg_dev_mouse_p33_25um`
-* at P34
+* at P34 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p34.json)
   * `demba_allen_seg_dev_mouse_p34_20um`
   * `demba_allen_seg_dev_mouse_p34_25um`
-* at P35
+* at P35 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p35.json)
   * `demba_allen_seg_dev_mouse_p35_20um`
   * `demba_allen_seg_dev_mouse_p35_25um`
-* at P36
+* at P36 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p36.json)
   * `demba_allen_seg_dev_mouse_p36_20um`
   * `demba_allen_seg_dev_mouse_p36_25um`
-* at P37
+* at P37 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p37.json)
   * `demba_allen_seg_dev_mouse_p37_20um`
   * `demba_allen_seg_dev_mouse_p37_25um`
-* at P38
+* at P38 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p38.json)
   * `demba_allen_seg_dev_mouse_p38_20um`
   * `demba_allen_seg_dev_mouse_p38_25um`
-* at P39
+* at P39 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p39.json)
   * `demba_allen_seg_dev_mouse_p39_20um`
   * `demba_allen_seg_dev_mouse_p39_25um`
-* at P40
+* at P40 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p40.json)
   * `demba_allen_seg_dev_mouse_p40_20um`
   * `demba_allen_seg_dev_mouse_p40_25um`
-* at P41
+* at P41 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p41.json)
   * `demba_allen_seg_dev_mouse_p41_20um`
   * `demba_allen_seg_dev_mouse_p41_25um`
-* at P42
+* at P42 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p42.json)
   * `demba_allen_seg_dev_mouse_p42_20um`
   * `demba_allen_seg_dev_mouse_p42_25um`
-* at P43
+* at P43 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p43.json)
   * `demba_allen_seg_dev_mouse_p43_20um`
   * `demba_allen_seg_dev_mouse_p43_25um`
-* at P44
+* at P44 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p44.json)
   * `demba_allen_seg_dev_mouse_p44_20um`
   * `demba_allen_seg_dev_mouse_p44_25um`
-* at P45
+* at P45 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p45.json)
   * `demba_allen_seg_dev_mouse_p45_20um`
   * `demba_allen_seg_dev_mouse_p45_25um`
-* at P46
+* at P46 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p46.json)
   * `demba_allen_seg_dev_mouse_p46_20um`
   * `demba_allen_seg_dev_mouse_p46_25um`
-* at P47
+* at P47 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p47.json)
   * `demba_allen_seg_dev_mouse_p47_20um`
   * `demba_allen_seg_dev_mouse_p47_25um`
-* at P48
+* at P48 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p48.json)
   * `demba_allen_seg_dev_mouse_p48_20um`
   * `demba_allen_seg_dev_mouse_p48_25um`
-* at P49
+* at P49 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p49.json)
   * `demba_allen_seg_dev_mouse_p49_20um`
   * `demba_allen_seg_dev_mouse_p49_25um`
-* at P50
+* at P50 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p50.json)
   * `demba_allen_seg_dev_mouse_p50_20um`
   * `demba_allen_seg_dev_mouse_p50_25um`
-* at P51
+* at P51 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p51.json)
   * `demba_allen_seg_dev_mouse_p51_20um`
   * `demba_allen_seg_dev_mouse_p51_25um`
-* at P52
+* at P52 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p52.json)
   * `demba_allen_seg_dev_mouse_p52_20um`
   * `demba_allen_seg_dev_mouse_p52_25um`
-* at P53
+* at P53 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p53.json)
   * `demba_allen_seg_dev_mouse_p53_20um`
   * `demba_allen_seg_dev_mouse_p53_25um`
-* at P54
+* at P54 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p54.json)
   * `demba_allen_seg_dev_mouse_p54_20um`
   * `demba_allen_seg_dev_mouse_p54_25um`
-* at P55
+* at P55 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p55.json)
   * `demba_allen_seg_dev_mouse_p55_20um`
   * `demba_allen_seg_dev_mouse_p55_25um`
-* at P56
+* at P56 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/demba_allen_seg_dev_mouse_p56.json)
   * `demba_allen_seg_dev_mouse_p56_20um`
   * `demba_allen_seg_dev_mouse_p56_25um`
 ### [Dorr MRI Mouse Atlas](https://doi.org/10.1016/j.neuroimage.2008.03.037)
@@ -402,6 +441,23 @@ manually delineated.
 
 Available versions:
 * `dorr_mouse_mri_32um`
+  
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/dorr_mouse_mri.json)
+### [Duke Mouse Brain Atlas](https://doi.org/10.1126/sciadv.adq8089)
+This atlas from [Mansour et al. (2025)](https://doi.org/10.1126/sciadv.adq8089) is a 15 μm isotropic MRH-based stereotaxic atlas of the adult C57BL/6J mouse brain. The source atlas was built from five 90 ± 2 day male mice scanned in skull, limiting tissue deformation from cranial dissection and conventional histology. Micro-CT images of the skull provide bregma and lambda landmarks in the same stereotaxic space.
+
+BrainGlobe includes the mean diffusivity template as the main reference image, the source annotation image, generated meshes, and 11 additional registered reference images. RCCFv3 is the Duke team's reduced version of the Allen CCFv3 label set, in which related structures smaller than 0.1 mm<sup>3</sup> are grouped into larger regions to reduce registration noise from small structures.
+
+Available versions:
+* `duke_mouse_15um` - 15μm resolution
+* `duke_mouse_25um` - 25μm resolution
+* `duke_mouse_50um` - 50μm resolution
+* `duke_mouse_75um` - 75μm resolution
+* `duke_mouse_100um` - 100μm resolution
+* `duke_mouse_150um` - 150μm resolution
+  
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_mouse.json)
+
 
 ### [CArea Mouse Atlas](https://doi.org/10.64898/2026.01.20.700446)
 This atlas has regions which are automatically clustered based on three dimensional maps of gene expression. Voxels 
@@ -413,6 +469,9 @@ with some improvements. This atlas was constructed from reregistered ISH data fr
 Available versions:
 * `carea_mouse_25um`
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/carea_mouse.json)
+
+
 ### [Allen CCFv2 Mouse Brain Atlas](https://doi.org/10.1038/nature13186)
 This is a mouse brain atlas using version 2 of the commonly used Allen Common Coordinate Framework, which is included 
 here for historical reasons. The template is based on 528 Nissl-stained coronal slices from the mouse specimen used in 
@@ -422,6 +481,8 @@ reference is an average template based on serial two-photon tomography, and is m
 
 Available versions:
 * `ccfv2_mouse_25um`
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/ccfv2_mouse.json)
 
 ### [Allen CCFv2 Mouse Fiber Tracts Atlas](https://doi.org/10.1038/nature13186)
 This is a mouse brain fiber tract atlas using version 2 of the commonly used Allen Common Coordinate Framework. Where
@@ -434,6 +495,8 @@ the original Nissl template.
 Available versions:
 * `ccfv2_fiber_mouse_25um`
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/ccfv2_fiber_mouse.json)
+
 ### [Allen CCFv2 Developmental Mouse Brain Atlas](https://doi.org/10.1038/nature13186)
 This is a developmental mouse brain atlas using version 2 of the commonly used Allen Common Coordinate Framework. 
 The template is based on 528 Nissl-stained coronal slices from the mouse specimen used in the Allen Reference Atlas. 
@@ -444,6 +507,8 @@ misaligned with the original Nissl template.
 Available versions:
 * `ccfv2_dev_mouse_25um`
   
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/ccfv2_dev_mouse.json)
+
 ## Rat
 ### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
 The Waxholm Space rat brain atlas features annotations of 222 structures, alongside a 39μm MRI template. It provides detailed delineations 
@@ -451,6 +516,9 @@ of the cerebral cortex, hippocampus, striatopallidal areas, midbrain, thalamus, 
 It is comprehensive, covering the entire rat brain. 
 This atlas is only available at 39μm resolution:
 * `whs_sd_rat_39um`
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/whs_sd_rat.json)
+
 
 ### [SWC Female Rat Brain Atlas](https://brainglobe.info/blog/swc-female-rat-atlas.html#native-female-rat-atlas)
 This atlas is a population-based anatomical template generated from female Lister Hooded rats (5–8 weeks old) using automated serial two-photon tomography. 
@@ -460,6 +528,9 @@ The atlas is particularly well suited for users who want to work in a native, mi
 This atlas is only available at 50μm resolution:
 * `swc_female_rat_50um`
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/swc_female_rat.json)
+
+
 ### [Waxholm-aligned SWC Female Rat Atlas](https://brainglobe.info/blog/swc-female-rat-atlas.html#waxholm-space-registered-female-rat-atlas)
 To support interoperability with existing rat resources, this atlas provides a version of the SWC female rat template registered to Waxholm Space. 
 The template is resampled from 50μm to 39μm during registration to Waxholm Space, enabling direct comparison and integration with datasets and tools that already rely on Waxholm Space, while retaining the fine anatomical detail of the SWC template. The annotations are from the Waxholm Space rat brain atlas.
@@ -467,21 +538,23 @@ The template is resampled from 50μm to 39μm during registration to Waxholm Spa
 This atlas is only available at 39μm resolution (resampled from 50 µm during registration to Waxholm Space):
 * `whs_sd_swc_female_rat_39um`
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/whs_sd_swc_female_rat.json)
+
 ### [Duke Developmental Rat Brain Atlas](https://doi.org/10.1016/j.neuroimage.2013.01.017)
 These atlases from [Calabrese et al. (2013)](https://doi.org/10.1016/j.neuroimage.2013.01.017) were obtained from 5 specimens each from 9 different time
 points using a 7T MRI. The earliest 5 timepoints were registered to the Ashwell and Paxions neonatal rat atlas and the last 4 timepoints were registered
 to the Paxinos and Watson adult rat atlas to give a consistent view of the structural changes that occur over development. 
 
 These atlases are only available at 25μm resolution:
-* `duke_dev_rat_p00_25um` - P0
-* `duke_dev_rat_p02_25um` - P2
-* `duke_dev_rat_p04_25um` - P4
-* `duke_dev_rat_p08_25um` - P8
-* `duke_dev_rat_p12_25um` - P12
-* `duke_dev_rat_p18_25um` - P18
-* `duke_dev_rat_p24_25um` - P24
-* `duke_dev_rat_p40_25um` - P40
-* `duke_dev_rat_p80_25um` - P80
+* `duke_dev_rat_p00_25um` - P0 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p00.json)
+* `duke_dev_rat_p02_25um` - P2 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p02.json)
+* `duke_dev_rat_p04_25um` - P4 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p04.json)
+* `duke_dev_rat_p08_25um` - P8 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p08.json)
+* `duke_dev_rat_p12_25um` - P12 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p12.json)
+* `duke_dev_rat_p18_25um` - P18 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p18.json)
+* `duke_dev_rat_p24_25um` - P24 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p24.json)
+* `duke_dev_rat_p40_25um` - P40 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p40.json)
+* `duke_dev_rat_p80_25um` - P80 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p80.json)
 
 ## Other rodent
 ### [Prairie vole brain atlas](https://doi.org/10.7554/eLife.87029.3.sa0)
@@ -490,14 +563,23 @@ This is a brain atlas of the Prairie vole (Microtus ochrogaster) from
 This atlas is only available at 25μm resolution:
 * `prairie_vole_25um`
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/prairie_vole.json)
+
+
 ## Fish
 ### [Max Planck zebrafish brain atlas](http://fishatlas.neuro.mpg.de)
 This atlas is only available at 1μm resolution:
 * `mpin_zfish_1um`
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/mpin_zfish.json)
+
+
 ### [AZBA: A 3D Adult zebrafish brain atlas](https://doi.org/10.1101/2021.05.04.442625)
 This atlas is only available at 4μm resolution:
 * `azba_zfish_4um`
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/azba_zfish.json)
+
 
 ### [Blind Mexican cavefish brain atlas](https://elifesciences.org/articles/80777)
 This is a brain atlas of the blind Mexican cavefish (Astyanax mexicanus) from 
@@ -505,6 +587,19 @@ This is a brain atlas of the blind Mexican cavefish (Astyanax mexicanus) from
 see [the blogpost](/blog/cavefish-atlas-added).
 This atlas is only available at 2μm resolution:
 * `sju_cavefish_2um`
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/sju_cavefish.json)
+
+## Lizard
+### [Hoops Tawny Dragon Brain Atlas](https://doi.org/10.1007/s00429-021-02282-z)
+This is a symmetric atlas of the tawny dragon lizard (Ctenophorus decresii) brain from 
+[Hoops et al. (2021)](https://doi.org/10.1007/s00429-021-02282-z) with 224 segmentations, 
+made from averaged MRI images of 13 male tawny dragon lizards. 
+This atlas is only available at 50μm resolution:
+* `hoops_tawny_dragon_50um`
+  
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/hoops_tawny_dragon.json)
+
+
 
 ## Amphibian
 ### [UNAM Axolotl Brain Atlas](https://doi.org/10.1038/s41598-021-89357-3)
@@ -515,14 +610,20 @@ see [the blogpost](/blog/axolotl-atlas-added).
 This atlas is only available at 40μm resolution:
 * `unam_axolotl_40um`
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/unam_axolotl.json)
+
+
 ## Human and non-human primate
 ### [Allen Human Brain Atlas](https://www.brain-map.org)
 This atlas is included mostly for visualisation and comparison to the other atlases. 
-Note that it is also only a single hemisphere. There are many better atlases
-(and indeed software tools) for the analysis of human neuroimaging data.
+There are many better atlases (and indeed software tools) for the analysis of human 
+neuroimaging data.
 
 This atlas is only available at 500μm resolution:
 * `allen_human_500um`
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/allen_human.json)
+
 
 ### [MRI mouse lemur brain atlas](https://doi.org/10.1016/j.dib.2018.10.067) 
 This is an MRI atlas of the grey mouse lemur (Microcebus murinus) from 
@@ -531,6 +632,9 @@ This is an MRI atlas of the grey mouse lemur (Microcebus murinus) from
 This atlas is only available at 91um resolution
 * `nadkarni_mri_mouselemur_91um`
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/nadkarni_mri_mouselemur.json)
+
+
 ## Other mammal
 ### [Cat brain atlas](https://doi.org/10.1002/cne.24271)
 
@@ -538,6 +642,9 @@ This is an MRI atlas of a cat (Felis catus) from [Stolzberg et al. (2017)](https
 
 This atlas is only available at 500um resolution:
 * `csl_cat_500um`
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/csl_cat.json)
+
 
 ## Bird
 ### [Eurasian blackcap atlas](https://doi.org/10.1101/2025.03.04.641293)
@@ -548,6 +655,9 @@ For more details please see [the project page](/projects/blackcap/index).
 This atlas is only available at 25μm resolution:
 * `eurasian_blackcap_25um`
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/eurasian_blackcap.json)
+
+
 ## Invertebrate
 
 ### [Columbia cuttlefish atlas](https://doi.org/10.1016/j.cub.2023.06.007)
@@ -556,16 +666,25 @@ This is an MRI atlas of the dwarf cuttlefish (Sepia bandensis) from [Montague et
 This atlas is only available at 50μm resolution:
 * `columbia_cuttlefish_50um`
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/columbia_cuttlefish.json)
+
+
 ### [Kocher Bumblebee Brain Atlas](https://doi.org/10.1016/j.cub.2022.04.066)
 This is a confocal microscopy [atlas of the adult bumblebee](https://doi.org/10.1016/j.cub.2022.04.066), made by the Kocher lab.
 
 This atlas has anisotropic resolution (2.542μm in axial direction - along antero-posterior axis - and 1.2407μm in-plane) resolution
 * `kocher_bumblebee_2.542um`
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/kocher_bumblebee.json)
+
+
 ### Drosophila wing disc instar3 atlas.
 This is a confocal microscopy atlas of the fruit fly larva's imaginal wing disc, at the 3rd instar developmental stage. It was built by Kaixiang Shuai as part of his MSc thesis, supervised by [Giulia Paci (Mao Lab at UCL)](https://www.tissuemechanicslab.com/gulia) and Alessandro Felder (BrainGlobe team).
 This atlas has 2um isotropic resolution. 
 * `drosophila_wingdisc_instar3_2um`
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/drosophila_wingdisc_instar3.json)
+
 
 
 
