@@ -29,7 +29,7 @@ The BrainGlobe team re-packaged the data generated and made public by the author
 
 ## How do I use the new atlases?
 
-You can use the Duke Developmental Rat Brain Atlas for visualisation like other BrainGlobe atlases, as written below:
+You can use the Duke Developmental Rat Brain Atlas for visualisation like other BrainGlobe atlases. You can either open it in Neuroglancer for viewing in the browser [here](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p00.json) or you can view it locally as written below:
 
 * Install BrainGlobe ([instructions](/documentation/index))
 * Open napari and follow the steps in our [download tutorial](/tutorials/manage-atlases-in-GUI.md) for the Duke Developmental Rat Brain Atlases
