@@ -569,6 +569,18 @@ This atlas is only available at 2μm resolution:
 * `sju_cavefish_2um`
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/sju_cavefish.json)
 
+
+### [Danionella cerebrum Brain Atlas](https://doi.org/10.64898/2026.03.09.710483)
+This is a multimodal, mixed-sex reference atlas of the adult _Danionella cerebrum_
+brain from [Kadobianskyi et al. (2026)](https://doi.org/10.64898/2026.03.09.710483).
+It contains the authors' mutually exclusive, collectively exhaustive whole-brain
+annotation, meshes for its 276 hierarchy nodes, and a same-space confocal reflectance
+reference image highlighting larger myelinated fibre tracts. For more details, see the
+[blog post](/blog/danionella-atlas-added).
+
+This atlas is only available at 2.5μm resolution:
+* `danionella_cerebrum_mixed_2.5um`
+
 ## Lizard
 ### [Hoops Tawny Dragon Brain Atlas](https://doi.org/10.1007/s00429-021-02282-z)
 This is a symmetric atlas of the tawny dragon lizard (Ctenophorus decresii) brain from 
@@ -664,7 +676,5 @@ This atlas has 2um isotropic resolution.
 * `drosophila_wingdisc_instar3_2um`
 
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/drosophila_wingdisc_instar3.json)
-
-
 
 
