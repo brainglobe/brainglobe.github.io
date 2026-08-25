@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: August 19, 2026
+date: August 25, 2026
 author: Jung Woo Kim
 location: London, England
 category: brainglobe
@@ -29,7 +29,18 @@ The BrainGlobe team re-packaged the data generated and made public by the author
 
 ## How do I use the new atlases?
 
-You can use the Duke Developmental Rat Brain Atlas for visualisation like other BrainGlobe atlases. You can either open it in Neuroglancer for viewing in the browser [here](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p00.json) or you can view it locally as written below:
+You can use the Duke Developmental Rat Brain Atlas for visualisation like other BrainGlobe atlases. You can either open it in Neuroglancer for viewing in the browser at:
+* [`P0`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p00.json) 
+* [`P2`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p02.json) 
+* [`P4`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p04.json) 
+* [`P8`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p08.json) 
+* [`P12`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p12.json) 
+* [`P18`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p18.json) 
+* [`P24`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p24.json) 
+* [`P40`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p40.json) 
+* [`P80`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p80.json) 
+
+or you can view it locally as written below:
 
 * Install BrainGlobe ([instructions](/documentation/index))
 * Open napari and follow the steps in our [download tutorial](/tutorials/manage-atlases-in-GUI.md) for the Duke Developmental Rat Brain Atlases
