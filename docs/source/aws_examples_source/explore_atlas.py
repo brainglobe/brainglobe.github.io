@@ -64,7 +64,7 @@ rsp_ids = terminologies_filtered["annotation_value"].tolist()
 # Equipped with this information, we can now access the annotations file for the atlas.
 # Annotation files are stored in an OME-zarr file in the cloud.
 
-annotations = nz.from_ngff_zarr(annotation_uri, storage_options={"anon": True})
+annotations = nz.from_ngff_zarr(annotation_uri, storage_options={"anon": True, "region_name": "us-west-2"})
 
 print(annotations.metadata)
 

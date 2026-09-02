@@ -17,6 +17,7 @@ pyyaml
 brainglobe-atlasapi
 dask
 matplotlib
-ngff-zarr[remote]
+ngff-zarr
 numpy
+obstore
 s3fs
