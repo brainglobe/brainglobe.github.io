@@ -13,7 +13,7 @@ directly.
 # in the Allen Mouse Brain Atlas, programmatically - but without using BrainGlobe. To do this, we 
 # need some preliminary knowledge about how BrainGlobe atlases such as this are structured under the hood:
 #
-# - the annotation image is stored as an OME-Zarr <https://ngff.openmicroscopy.org/#next-generation-file-formats-ngff-ome-zarr>.
+# - the annotation image is stored as an OME-Zarr <https://ngff.openmicroscopy.org>.
 # - the region metadata (e.g. each region's id, name, acronym and parent) are stored in a comma separated (csv) file
 # - these files (and other atlas files, like the template) are stored on AWS
 #
