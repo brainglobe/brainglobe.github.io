@@ -19,4 +19,5 @@ dask
 matplotlib
 ngff-zarr
 numpy
+obstore
 s3fs

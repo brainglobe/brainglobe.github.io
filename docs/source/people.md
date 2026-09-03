@@ -699,7 +699,7 @@ In no particular order:
 
 :::{grid-item-card} Nishanth B
 :img-top: https://avatars.githubusercontent.com/u/150372232?v=4
-:link: https://github.com/nishanthcr7777
+:link: https://github.com/n1shanthb
 :::
 
 :::{grid-item-card} Ardavan Shahrabi
