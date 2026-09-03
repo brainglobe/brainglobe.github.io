@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=3215791a" />
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../_static/documentation_options.js?v=d45e8c67"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
@@ -576,7 +576,7 @@ directly.</p>
 in the Allen Mouse Brain Atlas, programmatically - but without using BrainGlobe. To do this, we
 need some preliminary knowledge about how BrainGlobe atlases such as this are structured under the hood:</p>
 <ul class="simple">
-<li><p>the annotation image is stored as an OME-Zarr &lt;<a class="reference external" href="https://ngff.openmicroscopy.org/#next-generation-file-formats-ngff-ome-zarr">https://ngff.openmicroscopy.org/#next-generation-file-formats-ngff-ome-zarr</a>&gt;.</p></li>
+<li><p>the annotation image is stored as an OME-Zarr &lt;<a class="reference external" href="https://ngff.openmicroscopy.org">https://ngff.openmicroscopy.org</a>&gt;.</p></li>
 <li><p>the region metadata (e.g. each region’s id, name, acronym and parent) are stored in a comma separated (csv) file</p></li>
 <li><p>these files (and other atlas files, like the template) are stored on AWS</p></li>
 </ul>
@@ -703,7 +703,7 @@ and store them in a list called <cite>rsp_ids</cite>.</p>
 </div>
 <p>Equipped with this information, we can now access the annotations file for the atlas.
 Annotation files are stored in an OME-zarr file in the cloud.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">annotations</span> <span class="o">=</span> <span class="n">nz</span><span class="o">.</span><span class="n">from_ngff_zarr</span><span class="p">(</span><span class="n">annotation_uri</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="p">{</span><span class="s2">"anon"</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">annotations</span> <span class="o">=</span> <span class="n">nz</span><span class="o">.</span><span class="n">from_ngff_zarr</span><span class="p">(</span><span class="n">annotation_uri</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="p">{</span><span class="s2">"anon"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"region_name"</span><span class="p">:</span> <span class="s2">"us-west-2"</span><span class="p">})</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">annotations</span><span class="o">.</span><span class="n">metadata</span><span class="p">)</span>
 </pre></div>
@@ -719,7 +719,7 @@ For this tutorial, we will use the highest resolution level (level 0).</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">annotation_image</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>NgffImage(data=dask.array&lt;from-zarr, shape=(1320, 800, 1140), dtype=uint32, chunksize=(83, 100, 143), chunktype=numpy.ndarray&gt;, dims=('z', 'y', 'x'), scale={'z': 0.01, 'y': 0.01, 'x': 0.01}, translation={'z': 0.0, 'y': 0.0, 'x': 0.0}, name='/', axes_units={'z': 'millimeter', 'y': 'millimeter', 'x': 'millimeter'}, axes_orientations=None, axes_types=None, channel_names=None, channel_colors=None, computed_callbacks=[])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>NgffImage(data=dask.array&lt;array, shape=(1320, 800, 1140), dtype=uint32, chunksize=(83, 100, 143), chunktype=numpy.ndarray&gt;, dims=('z', 'y', 'x'), scale={'z': 0.01, 'y': 0.01, 'x': 0.01}, translation={'z': 0.0, 'y': 0.0, 'x': 0.0}, name='/', axes_units={'z': 'millimeter', 'y': 'millimeter', 'x': 'millimeter'}, axes_orientations=None, axes_types=None, channel_names=None, channel_colors=None, computed_callbacks=[])
 </pre></div>
 </div>
 <p>By plotting a slice of the array contents, we can see the various regions encoded by integer values:</p>
@@ -735,7 +735,7 @@ For this tutorial, we will use the highest resolution level (level 0).</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lut</span><span class="p">[</span><span class="n">annotation_image</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:]</span> <span class="o">%</span> <span class="n">N</span><span class="p">])</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_explore_atlas_001.png" srcset="../_images/sphx_glr_explore_atlas_001.png" alt="explore atlas" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f88e74eec90&gt;
+<img src="../_images/sphx_glr_explore_atlas_001.png" srcset="../_images/sphx_glr_explore_atlas_001.png" alt="explore atlas" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7fe04c701a30&gt;
 </pre></div>
 </div>
 <p>Combining the annotation data with our RSP IDs allows us to calculate the volume of the RSP,
@@ -758,7 +758,7 @@ RSP has volume of around 11.0 cubic millimeters
 <p>In conclusion, this tutorial shows how to programmatically access and process atlas data for
 the specific purpose of calculating a region volume. More generally, it also constitutes an example for
 BrainGlobe atlas data being used independently of the BrainGlobe software tools.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 44.170 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 24.139 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-aws-examples-explore-atlas-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/fc12a6a5a016d084e9466efdf58f2d6e/explore_atlas.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">explore_atlas.ipynb</span></code></a></p>
@@ -822,8 +822,8 @@ BrainGlobe atlas data being used independently of the BrainGlobe software tools.
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -837,7 +837,7 @@ Created using <a href="https://sphinx-doc.org/">Sphinx</a> 8.2.3.
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.20.0.
+0.21.0.
 </p></div>
       
     </div>
