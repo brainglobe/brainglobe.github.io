@@ -144,6 +144,11 @@ Pinpoint is a browser-based tool to plan electrophysiology experiments.
 - [Online GUI](https://pinpoint.allenneuraldynamics.org)
 - [Paper](https://doi.org/10.7554/eLife.91662.1)
 
+## eSDIva
+The eSDIva framework provides efficient sparse delta integration for vectorized acoustics. BrainGlobe atlases are used to map acoustic pressure fields onto anatomical brain structures.
+- [GitHub repository](https://github.com/EstebanRivera08/eSDIva)
+- [Documentation](https://estebanrivera08.github.io/eSDIva/)
+
 :::{hint}
 If you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. Typically we include tools which:
 
