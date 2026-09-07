@@ -48,3 +48,11 @@ usage/index
 If you find brainrender useful and use it in your research, please let us know and also cite the paper:
 
 >Claudi, F., Tyson, A. L., Petrucco, L., Margrie, T.W., Portugues, R.,  Branco, T. (2021) "Visualizing anatomically registered data with Brainrender&quot; <i>eLife</i> 2021;10:e65751 [doi.org/10.7554/eLife.65751](https://doi.org/10.7554/eLife.65751)
+
+
+## API Reference
+
+```{toctree}
+:maxdepth: 1
+api
+```
