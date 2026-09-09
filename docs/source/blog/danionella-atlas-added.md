@@ -19,8 +19,9 @@ _Danionella cerebrum_ is a small teleost fish whose brain remains optically acce
 
 
 ## How do I use the new atlas?
+You can use the Danionella Cerebrum atlas for visualisation like other BrainGlobe atlases. You can either open it in Neuroglancer for viewing in the browser [here](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/danionella_cerebrum_mixed.json). 
 
-You can use the atlas like all other BrainGlobe atlases. To visualise it, you could follow the steps below:
+or you can view it locally as written below:
 
 * Install BrainGlobe ([instructions](/documentation/index)).
 * Open napari and follow the steps in our [download tutorial](/tutorials/manage-atlases-in-GUI.md) for the `danionella_cerebrum_mixed_2.5um` atlas.
