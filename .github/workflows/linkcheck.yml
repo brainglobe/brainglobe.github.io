@@ -1,10 +1,6 @@
 name: Check documentation links
 
 on:
-  # TEMPORARY: remove after testing on PR #560, before merging.
-  push:
-    branches:
-      - link-check-cron
   schedule:
     # Every Wednesday at 06:30 UTC.
     - cron: '30 6 * * 3'
@@ -39,19 +35,13 @@ jobs:
         if: failure() && steps.linkcheck.outcome == 'failure'
         run: |
           echo 'The documentation check failed. Review the Check links and build documentation logs and download the linkcheck-report artifact (if available) to verify broken links manually.' >> "$GITHUB_STEP_SUMMARY"
-      # TEMPORARY: remove this step after testing, before merging.
-      - name: Force failure to test Slack
-        if: github.event_name == 'push'
-        run: exit 1
-      - name: Notify Slack on scheduled or test failure
-        # TEMPORARY: restore the schedule-only condition after testing.
-        if: failure() && (github.event_name == 'schedule' || github.event_name == 'push')
+      - name: Notify Slack on scheduled failure
+        if: failure() && github.event_name == 'schedule'
         uses: ravsamhq/notify-slack-action@v2
         with:
           status: ${{ job.status }}
           notify_when: 'failure'
-          # TEMPORARY: restore the normal notification title after testing.
-          notification_title: 'TEST: documentation link-check alert'
+          notification_title: 'Scheduled documentation link check failed'
           message_format: '{emoji} *{workflow}* {status_message} in <{repo_url}|{repo}>. Review the logs and the linkcheck-report artifact (if available) for details.'
           footer: '<{run_url}|View run and download linkcheck report>'
         env:
