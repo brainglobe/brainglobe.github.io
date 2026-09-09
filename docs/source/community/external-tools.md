@@ -138,6 +138,17 @@ PixelMap is a browser-based GUI to generate Neuropixels channelmaps.
 3D Brain Animations is a Claude Code skill that renders glowing, rotating 3D brain animations and stills from natural language descriptions, using BlenderBrain and BrainGlobe atlases.
 - [GitHub repository](https://github.com/SamedVossberg/3d-brain-animations)
 
+## Pinpoint
+Pinpoint is a browser-based tool to plan electrophysiology experiments.
+- [GitHub repository](https://github.com/AllenNeuralDynamics/pinpoint)
+- [Online GUI](https://pinpoint.allenneuraldynamics.org)
+- [Paper](https://doi.org/10.7554/eLife.91662.1)
+
+## eSDIva
+The eSDIva framework provides efficient sparse delta integration for vectorized acoustics. BrainGlobe atlases are used to map acoustic pressure fields onto anatomical brain structures.
+- [GitHub repository](https://github.com/EstebanRivera08/eSDIva)
+- [Documentation](https://estebanrivera08.github.io/eSDIva/)
+
 :::{hint}
 If you have developed any software using BrainGlobe tools, please [let us know](../contact) and we can advertise it here. Typically we include tools which:
 
