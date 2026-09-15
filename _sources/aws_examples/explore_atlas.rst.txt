@@ -266,7 +266,7 @@ For this tutorial, we will use the highest resolution level (level 0).
 
  .. code-block:: none
 
-    NgffImage(data=dask.array<array, shape=(1320, 800, 1140), dtype=uint32, chunksize=(83, 100, 143), chunktype=numpy.ndarray>, dims=('z', 'y', 'x'), scale={'z': 0.01, 'y': 0.01, 'x': 0.01}, translation={'z': 0.0, 'y': 0.0, 'x': 0.0}, name='/', axes_units={'z': 'millimeter', 'y': 'millimeter', 'x': 'millimeter'}, axes_orientations=None, axes_types=None, channel_names=None, channel_colors=None, computed_callbacks=[])
+    NgffImage(data=dask.array<array, shape=(1320, 800, 1140), dtype=uint32, chunksize=(83, 100, 143), chunktype=numpy.ndarray>, dims=('z', 'y', 'x'), scale={'z': 0.01, 'y': 0.01, 'x': 0.01}, translation={'z': 0.0, 'y': 0.0, 'x': 0.0}, name='/', axes_units={'z': 'millimeter', 'y': 'millimeter', 'x': 'millimeter'}, axes_orientations={'z': AnatomicalOrientation(value=<AnatomicalOrientationValues.anterior_to_posterior: 'anterior-to-posterior'>, type='anatomical'), 'y': AnatomicalOrientation(value=<AnatomicalOrientationValues.superior_to_inferior: 'superior-to-inferior'>, type='anatomical'), 'x': AnatomicalOrientation(value=<AnatomicalOrientationValues.right_to_left: 'right-to-left'>, type='anatomical')}, axes_types=None, channel_names=None, channel_colors=None, computed_callbacks=[])
 
 
 
@@ -305,7 +305,7 @@ By plotting a slice of the array contents, we can see the various regions encode
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f7d951596d0>
+    <matplotlib.image.AxesImage object at 0x7f574c748ef0>
 
 
 
@@ -351,7 +351,7 @@ BrainGlobe atlas data being used independently of the BrainGlobe software tools.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 15.068 seconds)
+   **Total running time of the script:** (0 minutes 38.309 seconds)
 
 
 .. _sphx_glr_download_aws_examples_explore_atlas.py:

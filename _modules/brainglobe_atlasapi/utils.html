@@ -731,33 +731,6 @@
 
 
 
-<div class="viewcode-block" id="check_gin_status">
-<a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.utils.check_gin_status.html#brainglobe_atlasapi.utils.check_gin_status">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">check_gin_status</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">raise_error</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Check that the GIN server is up.</span>
-
-<span class="sd">    timeout : int</span>
-<span class="sd">        timeout to wait for [in seconds] (Default value = 5).</span>
-<span class="sd">    raise_error : bool</span>
-<span class="sd">        if false, warning but no error.</span>
-<span class="sd">    """</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://gin.g-node.org/"</span>
-
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">_</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="kc">True</span>
-    <span class="k">except</span> <span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">Timeout</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="n">error_message</span> <span class="o">=</span> <span class="s2">"GIN server is down."</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">raise_error</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">error_message</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="n">error_message</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
-
-    <span class="k">return</span> <span class="kc">False</span></div>
-
-
-
 <div class="viewcode-block" id="retrieve_over_http">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.utils.retrieve_over_http.html#brainglobe_atlasapi.utils.retrieve_over_http">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">retrieve_over_http</span><span class="p">(</span>

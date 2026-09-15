@@ -719,7 +719,7 @@ For this tutorial, we will use the highest resolution level (level 0).</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">annotation_image</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>NgffImage(data=dask.array&lt;array, shape=(1320, 800, 1140), dtype=uint32, chunksize=(83, 100, 143), chunktype=numpy.ndarray&gt;, dims=('z', 'y', 'x'), scale={'z': 0.01, 'y': 0.01, 'x': 0.01}, translation={'z': 0.0, 'y': 0.0, 'x': 0.0}, name='/', axes_units={'z': 'millimeter', 'y': 'millimeter', 'x': 'millimeter'}, axes_orientations=None, axes_types=None, channel_names=None, channel_colors=None, computed_callbacks=[])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>NgffImage(data=dask.array&lt;array, shape=(1320, 800, 1140), dtype=uint32, chunksize=(83, 100, 143), chunktype=numpy.ndarray&gt;, dims=('z', 'y', 'x'), scale={'z': 0.01, 'y': 0.01, 'x': 0.01}, translation={'z': 0.0, 'y': 0.0, 'x': 0.0}, name='/', axes_units={'z': 'millimeter', 'y': 'millimeter', 'x': 'millimeter'}, axes_orientations={'z': AnatomicalOrientation(value=&lt;AnatomicalOrientationValues.anterior_to_posterior: 'anterior-to-posterior'&gt;, type='anatomical'), 'y': AnatomicalOrientation(value=&lt;AnatomicalOrientationValues.superior_to_inferior: 'superior-to-inferior'&gt;, type='anatomical'), 'x': AnatomicalOrientation(value=&lt;AnatomicalOrientationValues.right_to_left: 'right-to-left'&gt;, type='anatomical')}, axes_types=None, channel_names=None, channel_colors=None, computed_callbacks=[])
 </pre></div>
 </div>
 <p>By plotting a slice of the array contents, we can see the various regions encoded by integer values:</p>
@@ -735,7 +735,7 @@ For this tutorial, we will use the highest resolution level (level 0).</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lut</span><span class="p">[</span><span class="n">annotation_image</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:]</span> <span class="o">%</span> <span class="n">N</span><span class="p">])</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_explore_atlas_001.png" srcset="../_images/sphx_glr_explore_atlas_001.png" alt="explore atlas" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f7d951596d0&gt;
+<img src="../_images/sphx_glr_explore_atlas_001.png" srcset="../_images/sphx_glr_explore_atlas_001.png" alt="explore atlas" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f574c748ef0&gt;
 </pre></div>
 </div>
 <p>Combining the annotation data with our RSP IDs allows us to calculate the volume of the RSP,
@@ -758,7 +758,7 @@ RSP has volume of around 11.0 cubic millimeters
 <p>In conclusion, this tutorial shows how to programmatically access and process atlas data for
 the specific purpose of calculating a region volume. More generally, it also constitutes an example for
 BrainGlobe atlas data being used independently of the BrainGlobe software tools.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 15.068 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 38.309 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-aws-examples-explore-atlas-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/fc12a6a5a016d084e9466efdf58f2d6e/explore_atlas.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">explore_atlas.ipynb</span></code></a></p>

@@ -708,7 +708,7 @@
 <span class="w">        </span><span class="sd">"""Reads remote version from s3 bucket.</span>
 
 <span class="sd">        Largest numerical version assumed to be latest.</span>
-<span class="sd">        If we are offline, return None.</span>
+<span class="sd">        If we are offline or using a custom atlas, return None.</span>
 <span class="sd">        """</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_remote_version</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_remote_version</span>
@@ -719,6 +719,8 @@
         <span class="n">bucket_path</span> <span class="o">=</span> <span class="n">remote_url_s3</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="sa">f</span><span class="s2">"atlases/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">bucket_path</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">local_full_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">None</span>
             <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
                 <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2"> is not a valid atlas name!"</span>
             <span class="p">)</span>

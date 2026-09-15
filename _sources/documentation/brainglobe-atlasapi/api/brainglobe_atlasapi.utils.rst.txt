@@ -20,8 +20,6 @@
     
     atlas_repr_from_name
     
-    check_gin_status
-    
     check_internet_connection
     
     check_s3_status
