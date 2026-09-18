@@ -742,6 +742,11 @@ In no particular order:
 :link: https://github.com/git-gigi
 :::
 
+:::{grid-item-card} SaraPugliese6
+:img-top: https://avatars.githubusercontent.com/u/189845118?v=4
+:link: https://github.com/SaraPugliese6
+:::
+
 ::::
 
 

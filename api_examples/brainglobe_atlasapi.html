@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=fd6457a4" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
@@ -576,19 +576,17 @@ to download the full example code.</p>
 <section id="import-the-atlas-api-and-find-an-atlas">
 <h2>Import the Atlas API and find an atlas<a class="headerlink" href="#import-the-atlas-api-and-find-an-atlas" title="Link to this heading">#</a></h2>
 <p>Import the API and some other tools</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">BrainGlobeAtlas</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span> <span class="c1"># to format printed data nicely</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">colormaps</span> <span class="k">as</span> <span class="n">cm</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi</span><span class="w"> </span><span class="kn">import</span> <a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-class reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas" title="brainglobe_atlasapi.BrainGlobeAtlas"><span class="n">BrainGlobeAtlas</span></a><span class="w">
+</span><span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span> <span class="c1"># to format printed data nicely</span><span class="w">
+</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span><span class="w">
+</span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span><span class="w">
+</span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">colormaps</span> <span class="k">as</span> <span class="n">cm</span><span class="w">
+</span></pre></div></div>
 <p>To know what atlases are available through BrainGlobe, we can use the <cite>show_atlases</cite> function
 (requires an internet connection):</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">show_atlases</span>
-<span class="n">show_atlases</span><span class="p">()</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">show_atlases</span><span class="w">
+</span><span class="n">show_atlases</span><span class="p">(</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>╭───────────────────────────── Brainglobe Atlases ─────────────────────────────╮
 │                                                          Local     Latest    │
 │  Name                              Download…  Updated   version    version   │
@@ -827,9 +825,8 @@ to download the full example code.</p>
 <p>To instantiate a <cite>BrainGlobeAtlas</cite> object, we call it with the atlas name. The first time we use it, the
 latest version of the atlas files will be downloaded from the <a class="reference external" href="https://open.quiltdata.com/b/brainglobe/tree/atlas/">remote S3 bucket</a>
 and stored on your local machine (by default, in <cite>~/.brainglobe/brainglobe-atlasapi</cite>):</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">atlas</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s2">"allen_mouse_100um"</span><span class="p">,</span> <span class="n">check_latest</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas" title="brainglobe_atlasapi.BrainGlobeAtlas"><span class="n">atlas</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-class reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas" title="brainglobe_atlasapi.BrainGlobeAtlas"><span class="n">BrainGlobeAtlas</span></a><span class="p">(</span><span class="s2">&quot;</span><span class="s2">allen_mouse_100um</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">check_latest</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="note admonition">
 <p class="admonition-title">Atlas quality</p>
 <p>Usually BrainGlobe only packages existing atlases. The quality of the underlying images and atlas ontology
@@ -852,10 +849,9 @@ atlas, as it is relatively small, but high quality.</p>
 <section id="metadata">
 <h2>Metadata<a class="headerlink" href="#metadata" title="Link to this heading">#</a></h2>
 <p>All atlases have a standard set of metatata describing their source, species, resolution, etc:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">metadata</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">metadata</span>
-<span class="n">pprint</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="n">metadata</span> <span class="o">=</span> <a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas" title="brainglobe_atlasapi.BrainGlobeAtlas"><span class="n">atlas</span></a><span class="o">.</span><span class="n">metadata</span><span class="w">
+</span><span class="n">pprint</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>{'additional_references': [],
  'annotation_set': {'location': '/annotation-sets/allen_mouse-annotation/3_0',
                     'name': 'allen_mouse-annotation',
@@ -894,49 +890,45 @@ atlas, as it is relatively small, but high quality.</p>
 <section id="anatomical-annotation-and-hemispheres-stacks">
 <h2>Anatomical, annotation and hemispheres stacks<a class="headerlink" href="#anatomical-annotation-and-hemispheres-stacks" title="Link to this heading">#</a></h2>
 <p>Anatomical reference (or template) image:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">reference</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">reference</span>
-
-<span class="c1"># Get the middle section and plot</span>
-<span class="n">middle_section</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reference</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">)</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="n">reference</span> <span class="o">=</span> <a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-property reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.reference" title="brainglobe_atlasapi.BrainGlobeAtlas.reference"><span class="n">atlas</span><span class="o">.</span><span class="n">reference</span></a><span class="w">
+</span><span class="w">
+</span><span class="c1"># Get the middle section and plot</span><span class="w">
+</span><span class="n">middle_section</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span><span class="o">/</span> <span class="mi">2</span><span class="w">
+</span><span class="w">
+</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reference</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,</span><span class="p">:</span><span class="p">,</span><span class="p">:</span><span class="p">]</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'</span><span class="s1">gray</span><span class="s1">'</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <img src="../_images/sphx_glr_brainglobe_atlasapi_001.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_001.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Warning: atlas.reference is a deprecated alias for atlas.template, and will be removed in future versions.
 
-&lt;matplotlib.image.AxesImage object at 0x7f5719ca2ff0&gt;
+&lt;matplotlib.image.AxesImage object at 0x7f7d94ad5940&gt;
 </pre></div>
 </div>
 <p>Annotations stack</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">annotation</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">annotation</span>
-
-<span class="c1"># Create a cyclic colormap due to the high values in the Allen atlas</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">512</span>
-<span class="n">colors</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">'tab20'</span><span class="p">)</span><span class="o">.</span><span class="n">resampled</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
-<span class="n">lut</span> <span class="o">=</span> <span class="n">colors</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
-
-<span class="c1"># Map label image to lookup table and plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lut</span><span class="p">[</span><span class="n">annotation</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:]</span> <span class="o">%</span> <span class="n">N</span><span class="p">])</span>
-</pre></div>
-</div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_002.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_002.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f57196a24b0&gt;
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="n">annotation</span> <span class="o">=</span> <a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-property reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.annotation" title="brainglobe_atlasapi.BrainGlobeAtlas.annotation"><span class="n">atlas</span><span class="o">.</span><span class="n">annotation</span></a><span class="w">
+</span><span class="w">
+</span><span class="c1"># Create a cyclic colormap due to the high values in the Allen atlas</span><span class="w">
+</span><span class="n">N</span> <span class="o">=</span> <span class="mi">512</span><span class="w">
+</span><span class="n">colors</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">'</span><span class="s1">tab20</span><span class="s1">'</span><span class="p">)</span><span class="o">.</span><span class="n">resampled</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="w">
+</span><span class="n">lut</span> <span class="o">=</span> <span class="n">colors</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="c1"># Map label image to lookup table and plot</span><span class="w">
+</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lut</span><span class="p">[</span><span class="n">annotation</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,</span><span class="p">:</span><span class="p">,</span><span class="p">:</span><span class="p">]</span> <span class="o">%</span> <span class="n">N</span><span class="p">]</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
+<img src="../_images/sphx_glr_brainglobe_atlasapi_002.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_002.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f7d7846a4b0&gt;
 </pre></div>
 </div>
 <p>Hemisheres stack:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">hemispheres</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">hemispheres</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">hemispheres</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:])</span>
-</pre></div>
-</div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_003.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_003.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f57196f3ce0&gt;
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="n">hemispheres</span> <span class="o">=</span> <a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-property reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.hemispheres" title="brainglobe_atlasapi.BrainGlobeAtlas.hemispheres"><span class="n">atlas</span><span class="o">.</span><span class="n">hemispheres</span></a><span class="w">
+</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">hemispheres</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,</span><span class="p">:</span><span class="p">,</span><span class="p">:</span><span class="p">]</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
+<img src="../_images/sphx_glr_brainglobe_atlasapi_003.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_003.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f7d7846baa0&gt;
 </pre></div>
 </div>
 </section>
 <section id="regions-hierarchy">
 <h2>Regions hierarchy<a class="headerlink" href="#regions-hierarchy" title="Link to this heading">#</a></h2>
 <p>The atlas comes with the description of a hierarchy of brain structures. To see an overview:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">structures</span><span class="p">)</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="nb">print</span><span class="p">(</span><a class="sphx-glr-backref-module-brainglobe_atlasapi-structure_class sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.structure_class.StructuresDict.html#brainglobe_atlasapi.structure_class.StructuresDict" title="brainglobe_atlasapi.structure_class.StructuresDict"><span class="n">atlas</span><span class="o">.</span><span class="n">structures</span></a><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>root (997)
 ├── VS (73)
 │   ├── AQ (140)
@@ -1780,9 +1772,8 @@ atlas, as it is relatively small, but high quality.</p>
 </pre></div>
 </div>
 <p>The structures attribute is a custom dictionary that can be queried by region number or acronym, and contains all the information for a given structure:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">structures</span><span class="p">[</span><span class="s2">"root"</span><span class="p">])</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="n">pprint</span><span class="p">(</span><a class="sphx-glr-backref-module-brainglobe_atlasapi-structure_class sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.structure_class.StructuresDict.html#brainglobe_atlasapi.structure_class.StructuresDict" title="brainglobe_atlasapi.structure_class.StructuresDict"><span class="n">atlas</span><span class="o">.</span><span class="n">structures</span></a><span class="p">[</span><span class="s2">&quot;</span><span class="s2">root</span><span class="s2">&quot;</span><span class="p">]</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>{'acronym': 'root',
  'annotation_value': 997,
  'id': 997,
@@ -1795,22 +1786,19 @@ atlas, as it is relatively small, but high quality.</p>
 </pre></div>
 </div>
 <p>In particular, the <cite>structure_id_path</cite> key contains a list description of the path in the hierarchy up to a particular region, and can be used for queries on the hierarchy.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">structures</span><span class="p">[</span><span class="s2">"CH"</span><span class="p">][</span><span class="s2">"structure_id_path"</span><span class="p">])</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="nb">print</span><span class="p">(</span><a class="sphx-glr-backref-module-brainglobe_atlasapi-structure_class sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.structure_class.StructuresDict.html#brainglobe_atlasapi.structure_class.StructuresDict" title="brainglobe_atlasapi.structure_class.StructuresDict"><span class="n">atlas</span><span class="o">.</span><span class="n">structures</span></a><span class="p">[</span><span class="s2">&quot;</span><span class="s2">CH</span><span class="s2">&quot;</span><span class="p">]</span><span class="p">[</span><span class="s2">&quot;</span><span class="s2">structure_id_path</span><span class="s2">&quot;</span><span class="p">]</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[997, 8, 567]
 </pre></div>
 </div>
 <p>We can use the <cite>atlas.get_structure_descendants</cite> and <cite>atlas.get_structure_ancestors</cite> methods to explore the hierarchy:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">atlas</span><span class="o">.</span><span class="n">get_structure_descendants</span><span class="p">(</span><span class="s2">"VISC"</span><span class="p">)</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-method reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.get_structure_descendants" title="brainglobe_atlasapi.BrainGlobeAtlas.get_structure_descendants"><span class="n">atlas</span><span class="o">.</span><span class="n">get_structure_descendants</span></a><span class="p">(</span><span class="s2">&quot;</span><span class="s2">VISC</span><span class="s2">&quot;</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>['VISC1', 'VISC2/3', 'VISC4', 'VISC5', 'VISC6a', 'VISC6b']
 </pre></div>
 </div>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">atlas</span><span class="o">.</span><span class="n">get_structure_ancestors</span><span class="p">(</span><span class="s2">"VISC6a"</span><span class="p">)</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-method reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.get_structure_ancestors" title="brainglobe_atlasapi.BrainGlobeAtlas.get_structure_ancestors"><span class="n">atlas</span><span class="o">.</span><span class="n">get_structure_ancestors</span></a><span class="p">(</span><span class="s2">&quot;</span><span class="s2">VISC6a</span><span class="s2">&quot;</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>['root', 'grey', 'CH', 'CTX', 'CTXpl', 'Isocortex', 'VISC']
 </pre></div>
 </div>
@@ -1821,20 +1809,18 @@ atlas, as it is relatively small, but high quality.</p>
 have the number of some lower level parcellation in the hierarchy (concretely, if the brain is divided in hindbrain,
 midbrain, and forebrain, <cite>annotation == root_id</cite> will be all False).</p>
 <p>To get the mask for a region, use</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">get_structure_mask</span><span class="p">(</span><span class="mi">997</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mask</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,:,:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
-</pre></div>
-</div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_004.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_004.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f57196b24b0&gt;
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="n">mask</span> <span class="o">=</span> <a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-method reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.get_structure_mask" title="brainglobe_atlasapi.BrainGlobeAtlas.get_structure_mask"><span class="n">atlas</span><span class="o">.</span><span class="n">get_structure_mask</span></a><span class="p">(</span><span class="mi">997</span><span class="p">)</span><span class="w">
+</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mask</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,</span><span class="p">:</span><span class="p">,</span><span class="p">:</span><span class="p">]</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;</span><span class="s2">gray</span><span class="s2">&quot;</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
+<img src="../_images/sphx_glr_brainglobe_atlasapi_004.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_004.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f7d93bff530&gt;
 </pre></div>
 </div>
 </section>
 <section id="region-meshes">
 <h2>Region meshes<a class="headerlink" href="#region-meshes" title="Link to this heading">#</a></h2>
 <p>To access the 3D structure mesh for visualisation, this can be queried using the region ID or abbreviation. A <cite>meshio.Mesh</cite> object is returned.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">mesh_from_structure</span><span class="p">(</span><span class="s2">"CH"</span><span class="p">))</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="nb">print</span><span class="p">(</span><a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-method reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.mesh_from_structure" title="brainglobe_atlasapi.BrainGlobeAtlas.mesh_from_structure"><span class="n">atlas</span><span class="o">.</span><span class="n">mesh_from_structure</span></a><span class="p">(</span><span class="s2">&quot;</span><span class="s2">CH</span><span class="s2">&quot;</span><span class="p">)</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;meshio mesh object&gt;
   Number of points: 56709
   Number of cells:
@@ -1842,9 +1828,8 @@ midbrain, and forebrain, <cite>annotation == root_id</cite> will be all False).<
 </pre></div>
 </div>
 <p>A list of regions can also be queried:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">mesh_from_structure</span><span class="p">([</span><span class="s2">"CH"</span><span class="p">,</span> <span class="s2">"VISp"</span><span class="p">]))</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="n">pprint</span><span class="p">(</span><a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-method reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.mesh_from_structure" title="brainglobe_atlasapi.BrainGlobeAtlas.mesh_from_structure"><span class="n">atlas</span><span class="o">.</span><span class="n">mesh_from_structure</span></a><span class="p">(</span><span class="p">[</span><span class="s2">&quot;</span><span class="s2">CH</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s2">VISp</span><span class="s2">&quot;</span><span class="p">]</span><span class="p">)</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;meshio mesh object&gt;
   Number of points: 56709
   Number of cells:
@@ -1856,9 +1841,8 @@ midbrain, and forebrain, <cite>annotation == root_id</cite> will be all False).<
 </pre></div>
 </div>
 <p>The path can also be queried directly, if it’s needed to be used within another library</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">meshfile_from_structure</span><span class="p">(</span><span class="s2">"CH"</span><span class="p">))</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="nb">print</span><span class="p">(</span><a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-method reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.meshfile_from_structure" title="brainglobe_atlasapi.BrainGlobeAtlas.meshfile_from_structure"><span class="n">atlas</span><span class="o">.</span><span class="n">meshfile_from_structure</span></a><span class="p">(</span><span class="s2">&quot;</span><span class="s2">CH</span><span class="s2">&quot;</span><span class="p">)</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/runner/.brainglobe/brainglobe-atlasapi/annotation-sets/allen_mouse-annotation/3_0/annotations.precomputed/mesh/567
 </pre></div>
 </div>
@@ -1868,23 +1852,20 @@ midbrain, and forebrain, <cite>annotation == root_id</cite> will be all False).<
 <p>A convenient feature of the <cite>BrainGlobeAtlas</cite> is being able to querying the identity of the
 structure at a given location, either from stack indexes or atlas coordinates.</p>
 <p>Ask for identity of some indexes in the stack:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">structure_from_coords</span><span class="p">((</span><span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">30</span><span class="p">)))</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="nb">print</span><span class="p">(</span><a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-method reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.structure_from_coords" title="brainglobe_atlasapi.BrainGlobeAtlas.structure_from_coords"><span class="n">atlas</span><span class="o">.</span><span class="n">structure_from_coords</span></a><span class="p">(</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span><span class="p">)</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>672
 </pre></div>
 </div>
 <p>Now with coordinates in microns (and also returning the region acryonym):</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">structure_from_coords</span><span class="p">((</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">),</span> <span class="n">microns</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">as_acronym</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="nb">print</span><span class="p">(</span><a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-method reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.structure_from_coords" title="brainglobe_atlasapi.BrainGlobeAtlas.structure_from_coords"><span class="n">atlas</span><span class="o">.</span><span class="n">structure_from_coords</span></a><span class="p">(</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">)</span><span class="p">,</span> <span class="n">microns</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">as_acronym</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>CP
 </pre></div>
 </div>
 <p>Query at a specific level of the hierarchy:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">structure_from_coords</span><span class="p">((</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">),</span> <span class="n">microns</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="n">hierarchy_lev</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">as_acronym</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="nb">print</span><span class="p">(</span><a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-method reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.structure_from_coords" title="brainglobe_atlasapi.BrainGlobeAtlas.structure_from_coords"><span class="n">atlas</span><span class="o">.</span><span class="n">structure_from_coords</span></a><span class="p">(</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">)</span><span class="p">,</span> <span class="n">microns</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="n">hierarchy_lev</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">as_acronym</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>CH
 </pre></div>
 </div>
@@ -1894,27 +1875,24 @@ structure at a given location, either from stack indexes or atlas coordinates.</
 <p>A very similar method can be used for hemispheres. 0 correspond to outside the brain, and 1 and 2 to left and right
 hemispheres, but we can ask for the hemisphere name instead of the number:</p>
 <p>Ask for the hemisphere of some indexes in the stack:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">hemisphere_from_coords</span><span class="p">((</span><span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">30</span><span class="p">)))</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="nb">print</span><span class="p">(</span><a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-method reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.hemisphere_from_coords" title="brainglobe_atlasapi.BrainGlobeAtlas.hemisphere_from_coords"><span class="n">atlas</span><span class="o">.</span><span class="n">hemisphere_from_coords</span></a><span class="p">(</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span><span class="p">)</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 <p>Now give coordinates in microns</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">hemisphere_from_coords</span><span class="p">((</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">),</span> <span class="n">microns</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="nb">print</span><span class="p">(</span><a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-method reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.hemisphere_from_coords" title="brainglobe_atlasapi.BrainGlobeAtlas.hemisphere_from_coords"><span class="n">atlas</span><span class="o">.</span><span class="n">hemisphere_from_coords</span></a><span class="p">(</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">)</span><span class="p">,</span> <span class="n">microns</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 <p>Now print hemisphere string</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">hemisphere_from_coords</span><span class="p">((</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">),</span> <span class="n">microns</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">as_string</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="nb">print</span><span class="p">(</span><a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-method reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.hemisphere_from_coords" title="brainglobe_atlasapi.BrainGlobeAtlas.hemisphere_from_coords"><span class="n">atlas</span><span class="o">.</span><span class="n">hemisphere_from_coords</span></a><span class="p">(</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">)</span><span class="p">,</span> <span class="n">microns</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">as_string</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>right
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.395 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.046 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-api-examples-brainglobe-atlasapi-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/2e0fdc7133fc99c7b6e3378f40c7675f/brainglobe_atlasapi.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">brainglobe_atlasapi.ipynb</span></code></a></p>
