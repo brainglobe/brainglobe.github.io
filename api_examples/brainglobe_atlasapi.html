@@ -899,7 +899,7 @@ atlas, as it is relatively small, but high quality.</p>
 </span></pre></div></div>
 <img src="../_images/sphx_glr_brainglobe_atlasapi_001.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_001.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Warning: atlas.reference is a deprecated alias for atlas.template, and will be removed in future versions.
 
-&lt;matplotlib.image.AxesImage object at 0x7fbd030b5b50&gt;
+&lt;matplotlib.image.AxesImage object at 0x7fb20feaa9f0&gt;
 </pre></div>
 </div>
 <p>Annotations stack</p>
@@ -913,14 +913,14 @@ atlas, as it is relatively small, but high quality.</p>
 </span><span class="c1"># Map label image to lookup table and plot</span><span class="w">
 </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lut</span><span class="p">[</span><span class="n">annotation</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,</span><span class="p">:</span><span class="p">,</span><span class="p">:</span><span class="p">]</span> <span class="o">%</span> <span class="n">N</span><span class="p">]</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_002.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_002.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7fbd015c6750&gt;
+<img src="../_images/sphx_glr_brainglobe_atlasapi_002.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_002.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7fb20fb4b860&gt;
 </pre></div>
 </div>
 <p>Hemisheres stack:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span class="n">hemispheres</span> <span class="o">=</span> <a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-property reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.hemispheres" title="brainglobe_atlasapi.BrainGlobeAtlas.hemispheres"><span class="n">atlas</span><span class="o">.</span><span class="n">hemispheres</span></a><span class="w">
 </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">hemispheres</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,</span><span class="p">:</span><span class="p">,</span><span class="p">:</span><span class="p">]</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_003.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_003.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7fbd47011610&gt;
+<img src="../_images/sphx_glr_brainglobe_atlasapi_003.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_003.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7fb25561c080&gt;
 </pre></div>
 </div>
 </section>
@@ -1812,7 +1812,7 @@ midbrain, and forebrain, <cite>annotation == root_id</cite> will be all False).<
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span class="n">mask</span> <span class="o">=</span> <a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-method reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.get_structure_mask" title="brainglobe_atlasapi.BrainGlobeAtlas.get_structure_mask"><span class="n">atlas</span><span class="o">.</span><span class="n">get_structure_mask</span></a><span class="p">(</span><span class="mi">997</span><span class="p">)</span><span class="w">
 </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mask</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,</span><span class="p">:</span><span class="p">,</span><span class="p">:</span><span class="p">]</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;</span><span class="s2">gray</span><span class="s2">&quot;</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_004.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_004.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7fbd470223f0&gt;
+<img src="../_images/sphx_glr_brainglobe_atlasapi_004.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_004.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7fb25564b8c0&gt;
 </pre></div>
 </div>
 </section>
@@ -1892,7 +1892,7 @@ hemispheres, but we can ask for the hemisphere name instead of the number:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>right
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.225 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.142 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-api-examples-brainglobe-atlasapi-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/2e0fdc7133fc99c7b6e3378f40c7675f/brainglobe_atlasapi.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">brainglobe_atlasapi.ipynb</span></code></a></p>

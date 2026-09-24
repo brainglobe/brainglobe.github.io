@@ -542,7 +542,7 @@ This atlas is only available at 39μm resolution (resampled from 50 µm during r
 
 ### [Duke Developmental Rat Brain Atlas](https://doi.org/10.1016/j.neuroimage.2013.01.017)
 These atlases from [Calabrese et al. (2013)](https://doi.org/10.1016/j.neuroimage.2013.01.017) were obtained from 5 specimens each from 9 different time
-points using a 7T MRI. The earliest 5 timepoints were registered to the Ashwell and Paxions neonatal rat atlas and the last 4 timepoints were registered
+points using a 7T MRI. The earliest 5 timepoints were registered to the Ashwell and Paxinos neonatal rat atlas and the last 4 timepoints were registered
 to the Paxinos and Watson adult rat atlas to give a consistent view of the structural changes that occur over development. 
 
 These atlases are only available at 25μm resolution:
@@ -593,10 +593,9 @@ This atlas is only available at 2μm resolution:
 ### [Danionella cerebrum Brain Atlas](https://doi.org/10.64898/2026.03.09.710483)
 This is a multimodal, mixed-sex reference atlas of the adult _Danionella cerebrum_
 brain from [Kadobianskyi et al. (2026)](https://doi.org/10.64898/2026.03.09.710483).
-It contains the authors' mutually exclusive, collectively exhaustive whole-brain
-annotation, meshes for its 276 hierarchy nodes, and a same-space confocal reflectance
-reference image highlighting larger myelinated fibre tracts. For more details, see the
-[blog post](/blog/danionella-atlas-added).
+It contains a whole-brain annotation for 276 regions, a two-photon fluoresence reference 
+image and an additional confocal reflectance reference image highlighting larger myelinated 
+fibre tracts. For more details, see the [blog post](/blog/danionella-atlas-added).
 
 This atlas is only available at 2.5μm resolution:
 * `danionella_cerebrum_mixed_2.5um`
