@@ -747,6 +747,16 @@ In no particular order:
 :link: https://github.com/SaraPugliese6
 :::
 
+:::{grid-item-card} BhoomikaC15
+:img-top: https://avatars.githubusercontent.com/u/218296874?v=4
+:link: https://github.com/BhoomikaC15
+:::
+
+:::{grid-item-card} ShivamRajSri
+:img-top: https://avatars.githubusercontent.com/u/179807831?v=4
+:link: https://github.com/ShivamRajSri
+:::
+
 ::::
 
 
