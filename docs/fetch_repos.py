@@ -17,6 +17,7 @@ print("Starting to fetch repositories...")
 # Use empty string for no optional dependencies.
 REPOS = [
     ("https://github.com/brainglobe/brainglobe-atlasapi.git", "downloads/brainglobe-atlasapi", "main", "[atlasgen]"),
+    ("https://github.com/brainglobe/brainrender.git", "downloads/brainrender", "main", ""),
     # Add more (url, path, branch, optional) pairs as needed
 ]
 
