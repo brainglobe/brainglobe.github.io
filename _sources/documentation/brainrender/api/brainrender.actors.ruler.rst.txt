@@ -1,0 +1,6 @@
+﻿ruler
+=====
+
+.. currentmodule:: brainrender.actors
+
+.. autofunction:: ruler

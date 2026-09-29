@@ -1,0 +1,6 @@
+check\_camera\_param
+====================
+
+.. currentmodule:: brainrender.camera
+
+.. autofunction:: check_camera_param

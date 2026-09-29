@@ -1,0 +1,6 @@
+experiments\_source\_search
+===========================
+
+.. currentmodule:: brainrender.atlas_specific.allen_brain_atlas.streamlines
+
+.. autofunction:: experiments_source_search

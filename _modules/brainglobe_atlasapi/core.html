@@ -895,7 +895,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hemispheres</span>
 
 <div class="viewcode-block" id="Atlas.hemisphere_from_coords">
-<a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.core.Atlas.html#brainglobe_atlasapi.core.Atlas.hemisphere_from_coords">[docs]</a>
+<a class="viewcode-back" href="../../documentation/brainrender/api/brainrender.atlas.Atlas.html#brainglobe_atlasapi.core.Atlas.hemisphere_from_coords">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">hemisphere_from_coords</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">coords</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Tuple</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span>
@@ -928,7 +928,7 @@
 
 
 <div class="viewcode-block" id="Atlas.structure_from_coords">
-<a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.core.Atlas.html#brainglobe_atlasapi.core.Atlas.structure_from_coords">[docs]</a>
+<a class="viewcode-back" href="../../documentation/brainrender/api/brainrender.atlas.Atlas.html#brainglobe_atlasapi.core.Atlas.structure_from_coords">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">structure_from_coords</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">coords</span><span class="p">,</span>
@@ -997,7 +997,7 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">structures</span><span class="p">[</span><span class="n">structure</span><span class="p">][</span><span class="n">key</span><span class="p">]</span>
 
 <div class="viewcode-block" id="Atlas.mesh_from_structure">
-<a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.core.Atlas.html#brainglobe_atlasapi.core.Atlas.mesh_from_structure">[docs]</a>
+<a class="viewcode-back" href="../../documentation/brainrender/api/brainrender.atlas.Atlas.html#brainglobe_atlasapi.core.Atlas.mesh_from_structure">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">mesh_from_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">structure</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Retrieve the mesh associated with a given structure.</span>
@@ -1019,7 +1019,7 @@
 
 
 <div class="viewcode-block" id="Atlas.meshfile_from_structure">
-<a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.core.Atlas.html#brainglobe_atlasapi.core.Atlas.meshfile_from_structure">[docs]</a>
+<a class="viewcode-back" href="../../documentation/brainrender/api/brainrender.atlas.Atlas.html#brainglobe_atlasapi.core.Atlas.meshfile_from_structure">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">meshfile_from_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">structure</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Retrieve the path to the mesh file associated with a given structure.</span>
@@ -1040,7 +1040,7 @@
 
 
 <div class="viewcode-block" id="Atlas.root_mesh">
-<a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.core.Atlas.html#brainglobe_atlasapi.core.Atlas.root_mesh">[docs]</a>
+<a class="viewcode-back" href="../../documentation/brainrender/api/brainrender.atlas.Atlas.html#brainglobe_atlasapi.core.Atlas.root_mesh">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">root_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Retrieve the mesh for the root structure.</span>
@@ -1053,7 +1053,7 @@
 
 
 <div class="viewcode-block" id="Atlas.root_meshfile">
-<a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.core.Atlas.html#brainglobe_atlasapi.core.Atlas.root_meshfile">[docs]</a>
+<a class="viewcode-back" href="../../documentation/brainrender/api/brainrender.atlas.Atlas.html#brainglobe_atlasapi.core.Atlas.root_meshfile">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">root_meshfile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Retrieve the path to the mesh file for the root structure.</span>
@@ -1073,7 +1073,7 @@
         <span class="k">return</span> <span class="nb">tuple</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">])</span>
 
 <div class="viewcode-block" id="Atlas.get_structure_ancestors">
-<a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.core.Atlas.html#brainglobe_atlasapi.core.Atlas.get_structure_ancestors">[docs]</a>
+<a class="viewcode-back" href="../../documentation/brainrender/api/brainrender.atlas.Atlas.html#brainglobe_atlasapi.core.Atlas.get_structure_ancestors">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_structure_ancestors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">structure</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">"""Return a list of acronyms for all ancestors of a given structure.</span>
 
@@ -1096,7 +1096,7 @@
 
 
 <div class="viewcode-block" id="Atlas.get_structure_descendants">
-<a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.core.Atlas.html#brainglobe_atlasapi.core.Atlas.get_structure_descendants">[docs]</a>
+<a class="viewcode-back" href="../../documentation/brainrender/api/brainrender.atlas.Atlas.html#brainglobe_atlasapi.core.Atlas.get_structure_descendants">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_structure_descendants</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">structure</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
@@ -1125,7 +1125,7 @@
 
 
 <div class="viewcode-block" id="Atlas.get_structures_at_hierarchy_level">
-<a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.core.Atlas.html#brainglobe_atlasapi.core.Atlas.get_structures_at_hierarchy_level">[docs]</a>
+<a class="viewcode-back" href="../../documentation/brainrender/api/brainrender.atlas.Atlas.html#brainglobe_atlasapi.core.Atlas.get_structures_at_hierarchy_level">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_structures_at_hierarchy_level</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">structure</span><span class="p">,</span> <span class="n">hierarchy_level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">as_acronym</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">):</span>
@@ -1242,7 +1242,7 @@
 
 
 <div class="viewcode-block" id="Atlas.get_structure_mask">
-<a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.core.Atlas.html#brainglobe_atlasapi.core.Atlas.get_structure_mask">[docs]</a>
+<a class="viewcode-back" href="../../documentation/brainrender/api/brainrender.atlas.Atlas.html#brainglobe_atlasapi.core.Atlas.get_structure_mask">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_structure_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">structure</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">"""Return binary uint8 mask for the given structure.</span>
 

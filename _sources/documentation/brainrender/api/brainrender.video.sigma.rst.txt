@@ -1,0 +1,6 @@
+sigma
+=====
+
+.. currentmodule:: brainrender.video
+
+.. autofunction:: sigma

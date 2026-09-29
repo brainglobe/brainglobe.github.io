@@ -1,0 +1,21 @@
+﻿brainrender.actors.cylinder
+===========================
+
+.. rubric:: Description
+
+.. automodule:: brainrender.actors.cylinder
+
+.. currentmodule:: brainrender.actors.cylinder
+
+
+.. rubric:: Classes
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    Cylinder
+    
+
+
+

@@ -1,0 +1,83 @@
+Actor
+=====
+
+.. currentmodule:: brainrender.actor
+
+.. autoclass:: Actor
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~Actor.make_actor
+   
+   
+      ~Actor.make_label
+   
+   
+      ~Actor.make_silhouette
+   
+   
+      ~Actor.mirror
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~Actor.center
+   
+   
+      ~Actor.labels
+   
+   
+      ~Actor.silhouette
+   
+   
+   

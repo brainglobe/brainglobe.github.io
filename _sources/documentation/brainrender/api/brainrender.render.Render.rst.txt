@@ -1,0 +1,101 @@
+Render
+======
+
+.. currentmodule:: brainrender.render
+
+.. autoclass:: Render
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~Render.close
+   
+   
+      ~Render.export
+   
+   
+      ~Render.keypress
+   
+   
+      ~Render.render
+   
+   
+      ~Render.screenshot
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~Render.axes_indices
+   
+   
+      ~Render.axes_lookup
+   
+   
+      ~Render.axes_names
+   
+   
+      ~Render.is_rendered
+   
+   
+      ~Render.plotter
+   
+   
+   

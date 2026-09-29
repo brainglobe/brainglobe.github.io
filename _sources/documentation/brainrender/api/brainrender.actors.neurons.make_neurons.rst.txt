@@ -1,0 +1,6 @@
+make\_neurons
+=============
+
+.. currentmodule:: brainrender.actors.neurons
+
+.. autofunction:: make_neurons

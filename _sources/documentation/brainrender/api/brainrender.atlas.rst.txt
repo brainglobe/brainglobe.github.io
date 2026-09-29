@@ -1,0 +1,21 @@
+﻿brainrender.atlas
+=================
+
+.. rubric:: Description
+
+.. automodule:: brainrender.atlas
+
+.. currentmodule:: brainrender.atlas
+
+
+.. rubric:: Classes
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    Atlas
+    
+
+
+

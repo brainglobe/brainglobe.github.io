@@ -589,7 +589,7 @@ to download the full example code.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>╭───────────────────────────── Brainglobe Atlases ─────────────────────────────╮
 │                                                          Local     Latest    │
 │  Name                              Download…  Updated   version    version   │
-│  allen_mouse_100um                     ✔         ✔        3.0        3.0     │
+│  allen_mouse_100um                     ✔         ✔        3.1        3.1     │
 │  admba_3d_e11_5_mouse_16um                                           3.0     │
 │  admba_3d_e13_5_mouse_16um                                           3.0     │
 │  admba_3d_e15_5_mouse_16um                                           3.0     │
@@ -601,9 +601,9 @@ to download the full example code.</p>
 │  african_molerat_20um                                                3.0     │
 │  allen_cord_20um                                                     3.0     │
 │  allen_human_500um                                                   3.1     │
-│  allen_mouse_10um                                                    3.0     │
-│  allen_mouse_25um                                                    3.0     │
-│  allen_mouse_50um                                                    3.0     │
+│  allen_mouse_10um                                                    3.1     │
+│  allen_mouse_25um                                                    3.1     │
+│  allen_mouse_50um                                                    3.1     │
 │  allen_mouse_bluebrain_barrels_1…                                    3.0     │
 │  allen_mouse_bluebrain_barrels_2…                                    3.0     │
 │  australian_mouse_15um                                               3.0     │
@@ -852,37 +852,38 @@ atlas, as it is relatively small, but high quality.</p>
 </span><span class="n">pprint</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>{'additional_references': [],
- 'annotation_set': {'location': '/annotation-sets/allen_mouse-annotation/3_0',
+ 'annotation_set': {'location': '/annotation-sets/allen_mouse-annotation/3_1',
                     'name': 'allen_mouse-annotation',
-                    'template': {'location': '/templates/allen-adult-mouse-stpt-template/2015',
-                                 'name': 'allen-adult-mouse-stpt-template',
-                                 'version': '2015'},
-                    'terminology': {'location': '/terminologies/allen_mouse-terminology/3_0',
+                    'template': {'location': '/templates/allen_mouse-template/3_1',
+                                 'name': 'allen_mouse-template',
+                                 'version': '3.1'},
+                    'terminology': {'location': '/terminologies/allen_mouse-terminology/3_1',
                                     'name': 'allen_mouse-terminology',
-                                    'version': '3.0'},
-                    'version': '3.0'},
+                                    'version': '3.1'},
+                    'version': '3.1'},
  'atlas_link': 'http://www.brain-map.org',
+ 'atlas_packager': None,
  'citation': 'Wang et al 2020, https://doi.org/10.1016/j.cell.2020.04.007',
- 'coordinate_space': {'location': '/coordinate-spaces/allen-adult-mouse-ccf-space/2015',
-                      'name': 'allen-adult-mouse-ccf-space',
-                      'template': {'location': '/templates/allen-adult-mouse-stpt-template/2015',
-                                   'name': 'allen-adult-mouse-stpt-template',
-                                   'version': '2015'},
-                      'version': '2015'},
- 'location': '/atlases/allen_mouse_100um/3_0',
+ 'coordinate_space': {'location': '/coordinate-spaces/allen_mouse-space/3_1',
+                      'name': 'allen_mouse-space',
+                      'template': {'location': '/templates/allen_mouse-template/3_1',
+                                   'name': 'allen_mouse-template',
+                                   'version': '3.1'},
+                      'version': '3.1'},
+ 'location': '/atlases/allen_mouse_100um/3_1',
  'name': 'allen_mouse',
  'orientation': 'asr',
  'resolution': [100.0, 100.0, 100.0],
  'shape': [132, 80, 114],
  'species': 'Mus musculus',
  'symmetric': True,
- 'template': {'location': '/templates/allen-adult-mouse-stpt-template/2015',
-              'name': 'allen-adult-mouse-stpt-template',
-              'version': '2015'},
- 'terminology': {'location': '/terminologies/allen_mouse-terminology/3_0',
+ 'template': {'location': '/templates/allen_mouse-template/3_1',
+              'name': 'allen_mouse-template',
+              'version': '3.1'},
+ 'terminology': {'location': '/terminologies/allen_mouse-terminology/3_1',
                  'name': 'allen_mouse-terminology',
-                 'version': '3.0'},
- 'version': '3.0'}
+                 'version': '3.1'},
+ 'version': '3.1'}
 </pre></div>
 </div>
 </section>
@@ -898,7 +899,7 @@ atlas, as it is relatively small, but high quality.</p>
 </span></pre></div></div>
 <img src="../_images/sphx_glr_brainglobe_atlasapi_001.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_001.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Warning: atlas.reference is a deprecated alias for atlas.template, and will be removed in future versions.
 
-&lt;matplotlib.image.AxesImage object at 0x7f3fe1f4ee70&gt;
+&lt;matplotlib.image.AxesImage object at 0x7f64eb14cef0&gt;
 </pre></div>
 </div>
 <p>Annotations stack</p>
@@ -912,14 +913,14 @@ atlas, as it is relatively small, but high quality.</p>
 </span><span class="c1"># Map label image to lookup table and plot</span><span class="w">
 </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lut</span><span class="p">[</span><span class="n">annotation</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,</span><span class="p">:</span><span class="p">,</span><span class="p">:</span><span class="p">]</span> <span class="o">%</span> <span class="n">N</span><span class="p">]</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_002.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_002.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f402597b680&gt;
+<img src="../_images/sphx_glr_brainglobe_atlasapi_002.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_002.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f64eb3363f0&gt;
 </pre></div>
 </div>
 <p>Hemisheres stack:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span class="n">hemispheres</span> <span class="o">=</span> <a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-property reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.hemispheres" title="brainglobe_atlasapi.BrainGlobeAtlas.hemispheres"><span class="n">atlas</span><span class="o">.</span><span class="n">hemispheres</span></a><span class="w">
 </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">hemispheres</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,</span><span class="p">:</span><span class="p">,</span><span class="p">:</span><span class="p">]</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_003.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_003.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f40254f6c00&gt;
+<img src="../_images/sphx_glr_brainglobe_atlasapi_003.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_003.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f64eab52450&gt;
 </pre></div>
 </div>
 </section>
@@ -1307,7 +1308,6 @@ atlas, as it is relatively small, but high quality.</p>
     │       │   │   ├── ICc (811)
     │       │   │   ├── ICd (820)
     │       │   │   └── ICe (828)
-    │       │   ├── MEV (460)
     │       │   ├── NB (580)
     │       │   ├── PBG (874)
     │       │   ├── SAG (271)
@@ -1407,8 +1407,21 @@ atlas, as it is relatively small, but high quality.</p>
             │   │   ├── HIP (1080)
             │   │   │   ├── CA (375)
             │   │   │   │   ├── CA1 (382)
+            │   │   │   │   │   ├── CA1slm (391)
+            │   │   │   │   │   ├── CA1so (399)
+            │   │   │   │   │   ├── CA1sp (407)
+            │   │   │   │   │   └── CA1sr (415)
             │   │   │   │   ├── CA2 (423)
+            │   │   │   │   │   ├── CA2slm (431)
+            │   │   │   │   │   ├── CA2so (438)
+            │   │   │   │   │   ├── CA2sp (446)
+            │   │   │   │   │   └── CA2sr (454)
             │   │   │   │   └── CA3 (463)
+            │   │   │   │       ├── CA3slm (471)
+            │   │   │   │       ├── CA3slu (479)
+            │   │   │   │       ├── CA3so (486)
+            │   │   │   │       ├── CA3sp (495)
+            │   │   │   │       └── CA3sr (504)
             │   │   │   ├── DG (726)
             │   │   │   │   ├── DG-mo (10703)
             │   │   │   │   ├── DG-po (10704)
@@ -1744,6 +1757,10 @@ atlas, as it is relatively small, but high quality.</p>
             │       │       └── COApm (663)
             │       ├── DP (814)
             │       ├── MOB (507)
+            │       │   ├── MOBgr (220)
+            │       │   ├── MOBipl (228)
+            │       │   ├── MOBmi (236)
+            │       │   └── MOBopl (244)
             │       ├── NLOT (619)
             │       │   ├── NLOT1 (260)
             │       │   ├── NLOT2 (268)
@@ -1777,7 +1794,7 @@ atlas, as it is relatively small, but high quality.</p>
  'annotation_value': 997,
  'id': 997,
  'mesh': None,
- 'mesh_filename': PosixPath('/home/runner/.brainglobe/brainglobe-atlasapi/annotation-sets/allen_mouse-annotation/3_0/annotations.precomputed/mesh/997'),
+ 'mesh_filename': PosixPath('/home/runner/.brainglobe/brainglobe-atlasapi/annotation-sets/allen_mouse-annotation/3_1/annotations.precomputed/mesh/997'),
  'name': 'root',
  'parent_structure_id': None,
  'rgb_triplet': [255, 255, 255],
@@ -1811,7 +1828,7 @@ midbrain, and forebrain, <cite>annotation == root_id</cite> will be all False).<
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span class="n">mask</span> <span class="o">=</span> <a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-method reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.get_structure_mask" title="brainglobe_atlasapi.BrainGlobeAtlas.get_structure_mask"><span class="n">atlas</span><span class="o">.</span><span class="n">get_structure_mask</span></a><span class="p">(</span><span class="mi">997</span><span class="p">)</span><span class="w">
 </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mask</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,</span><span class="p">:</span><span class="p">,</span><span class="p">:</span><span class="p">]</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;</span><span class="s2">gray</span><span class="s2">&quot;</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_004.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_004.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f4025542f00&gt;
+<img src="../_images/sphx_glr_brainglobe_atlasapi_004.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_004.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f64eb0cac90&gt;
 </pre></div>
 </div>
 </section>
@@ -1821,18 +1838,18 @@ midbrain, and forebrain, <cite>annotation == root_id</cite> will be all False).<
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span class="nb">print</span><span class="p">(</span><a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-method reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.mesh_from_structure" title="brainglobe_atlasapi.BrainGlobeAtlas.mesh_from_structure"><span class="n">atlas</span><span class="o">.</span><span class="n">mesh_from_structure</span></a><span class="p">(</span><span class="s2">&quot;</span><span class="s2">CH</span><span class="s2">&quot;</span><span class="p">)</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;meshio mesh object&gt;
-  Number of points: 56709
+  Number of points: 1431673
   Number of cells:
-    triangle: 112948
+    triangle: 2862386
 </pre></div>
 </div>
 <p>A list of regions can also be queried:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span class="n">pprint</span><span class="p">(</span><a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-method reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.mesh_from_structure" title="brainglobe_atlasapi.BrainGlobeAtlas.mesh_from_structure"><span class="n">atlas</span><span class="o">.</span><span class="n">mesh_from_structure</span></a><span class="p">(</span><span class="p">[</span><span class="s2">&quot;</span><span class="s2">CH</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s2">VISp</span><span class="s2">&quot;</span><span class="p">]</span><span class="p">)</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;meshio mesh object&gt;
-  Number of points: 56709
+  Number of points: 1431673
   Number of cells:
-    triangle: 112948,
+    triangle: 2862386,
  &lt;meshio mesh object&gt;
   Number of points: 3532
   Number of cells:
@@ -1842,7 +1859,7 @@ midbrain, and forebrain, <cite>annotation == root_id</cite> will be all False).<
 <p>The path can also be queried directly, if it’s needed to be used within another library</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span class="nb">print</span><span class="p">(</span><a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-method reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.meshfile_from_structure" title="brainglobe_atlasapi.BrainGlobeAtlas.meshfile_from_structure"><span class="n">atlas</span><span class="o">.</span><span class="n">meshfile_from_structure</span></a><span class="p">(</span><span class="s2">&quot;</span><span class="s2">CH</span><span class="s2">&quot;</span><span class="p">)</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/runner/.brainglobe/brainglobe-atlasapi/annotation-sets/allen_mouse-annotation/3_0/annotations.precomputed/mesh/567
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/runner/.brainglobe/brainglobe-atlasapi/annotation-sets/allen_mouse-annotation/3_1/annotations.precomputed/mesh/567
 </pre></div>
 </div>
 </section>
@@ -1891,7 +1908,7 @@ hemispheres, but we can ask for the hemisphere name instead of the number:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>right
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.002 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.364 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-api-examples-brainglobe-atlasapi-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/2e0fdc7133fc99c7b6e3378f40c7675f/brainglobe_atlasapi.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">brainglobe_atlasapi.ipynb</span></code></a></p>

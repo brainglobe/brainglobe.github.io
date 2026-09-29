@@ -542,6 +542,7 @@
     <span class="n">V3_TEMPLATE_NAME</span><span class="p">,</span>
     <span class="n">remote_url_s3</span><span class="p">,</span>
 <span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.list_atlases</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_all_atlases_lastversions</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">_rich_atlas_metadata</span><span class="p">,</span>
     <span class="n">check_internet_connection</span><span class="p">,</span>
@@ -706,7 +707,8 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">remote_version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]]:</span>
 <span class="w">        </span><span class="sd">"""Reads remote version from s3 bucket.</span>
 
-<span class="sd">        Largest numerical version assumed to be latest.</span>
+<span class="sd">        Unless a version was requested, the latest version is the one listed</span>
+<span class="sd">        in the remote last_versions.conf.</span>
 <span class="sd">        If we are offline or using a custom atlas, return None.</span>
 <span class="sd">        """</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_remote_version</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -725,13 +727,16 @@
             <span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_requested_version</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">versions_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="n">bucket_path</span><span class="p">)</span>
-            <span class="n">available_versions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="n">path_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">path_str</span> <span class="ow">in</span> <span class="n">versions_path</span>
-            <span class="p">]</span>
-            <span class="n">latest_version</span> <span class="o">=</span> <span class="n">get_latest_version</span><span class="p">(</span><span class="n">available_versions</span><span class="p">)</span>
+            <span class="n">last_versions</span> <span class="o">=</span> <span class="n">get_all_atlases_lastversions</span><span class="p">()</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">last_versions</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">local_full_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="kc">None</span>
+                <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2"> has no released version available. "</span>
+                    <span class="s2">"Specify a version explicitly to download it."</span>
+                <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_remote_version</span> <span class="o">=</span> <span class="n">_version_tuple_from_str</span><span class="p">(</span>
-                <span class="n">latest_version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"_"</span><span class="p">,</span> <span class="s2">"."</span><span class="p">)</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">last_versions</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas_name</span><span class="p">])</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"_"</span><span class="p">,</span> <span class="s2">"."</span><span class="p">)</span>
             <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">requested_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">bucket_path</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_requested_version</span><span class="si">}</span><span class="s2">"</span>

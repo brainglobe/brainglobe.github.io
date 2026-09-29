@@ -1,0 +1,21 @@
+﻿brainrender.actors.volume
+=========================
+
+.. rubric:: Description
+
+.. automodule:: brainrender.actors.volume
+
+.. currentmodule:: brainrender.actors.volume
+
+
+.. rubric:: Classes
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    Volume
+    
+
+
+

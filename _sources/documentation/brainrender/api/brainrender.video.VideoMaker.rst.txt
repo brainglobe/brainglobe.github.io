@@ -1,0 +1,52 @@
+VideoMaker
+==========
+
+.. currentmodule:: brainrender.video
+
+.. autoclass:: VideoMaker
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~VideoMaker.compress
+   
+   
+      ~VideoMaker.generate_frames
+   
+   
+      ~VideoMaker.make_video
+   
+   
+   
+
+   
+   
+
+   
+
+   
+   

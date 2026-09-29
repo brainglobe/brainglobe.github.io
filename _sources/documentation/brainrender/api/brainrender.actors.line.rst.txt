@@ -1,0 +1,21 @@
+﻿brainrender.actors.line
+=======================
+
+.. rubric:: Description
+
+.. automodule:: brainrender.actors.line
+
+.. currentmodule:: brainrender.actors.line
+
+
+.. rubric:: Classes
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    Line
+    
+
+
+

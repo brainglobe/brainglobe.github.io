@@ -1,0 +1,25 @@
+﻿brainrender.atlas\_specific.allen\_brain\_atlas.gene\_expression.ge\_utils
+==========================================================================
+
+.. rubric:: Description
+
+.. automodule:: brainrender.atlas_specific.allen_brain_atlas.gene_expression.ge_utils
+
+.. currentmodule:: brainrender.atlas_specific.allen_brain_atlas.gene_expression.ge_utils
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    check_gene_cached
+    
+    download_and_cache
+    
+    load_cached_gene
+    
+

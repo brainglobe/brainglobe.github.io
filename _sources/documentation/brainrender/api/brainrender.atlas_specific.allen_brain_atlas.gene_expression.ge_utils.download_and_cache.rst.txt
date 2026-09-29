@@ -1,0 +1,6 @@
+download\_and\_cache
+====================
+
+.. currentmodule:: brainrender.atlas_specific.allen_brain_atlas.gene_expression.ge_utils
+
+.. autofunction:: download_and_cache

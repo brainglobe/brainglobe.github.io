@@ -1,0 +1,6 @@
+make\_actor\_label
+==================
+
+.. currentmodule:: brainrender.actor
+
+.. autofunction:: make_actor_label

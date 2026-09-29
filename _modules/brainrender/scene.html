@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brainrender.scene &#8212; BrainGlobe</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=3215791a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=c83e6b79" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/sg-tags.js?v=d80f6fa4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/brainrender/scene';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://brainglobe.info/_modules/brainrender/scene.html" />
+    <link rel="icon" href="../../_static/brainglobe.png"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+     
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/brainglobe.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/brainglobe.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BrainGlobe</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../blog/index.html">
+    Blog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../projects/index.html">
+    Projects
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://mastodon.online/@brainglobe" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i><span class="visually-hidden">Mastodon</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/brainglobe.info" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i><span class="visually-hidden">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://brainglobe.zulipchat.com" title="Zulip (Developer chat)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i><span class="visually-hidden">Zulip (Developer chat)</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://forum.image.sc/tag/brainglobe" title="image.sc (Help forum)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-question fa-lg" aria-hidden="true"></i><span class="visually-hidden">image.sc (Help forum)</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../blog/index.html">
+    Blog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../projects/index.html">
+    Projects
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://mastodon.online/@brainglobe" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i><span class="visually-hidden">Mastodon</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/brainglobe.info" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i><span class="visually-hidden">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://brainglobe.zulipchat.com" title="Zulip (Developer chat)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i><span class="visually-hidden">Zulip (Developer chat)</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://forum.image.sc/tag/brainglobe" title="image.sc (Help forum)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-question fa-lg" aria-hidden="true"></i><span class="visually-hidden">image.sc (Help forum)</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainrender.scene</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                   <h1>Source code for brainrender.scene</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""Scene class for adding, removing, and slicing actors and brain regions in brainrender."""</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyinspect</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">loguru</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">myterial</span><span class="w"> </span><span class="kn">import</span> <span class="n">amber</span><span class="p">,</span> <span class="n">orange</span><span class="p">,</span> <span class="n">orange_darker</span><span class="p">,</span> <span class="n">salmon</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rich</span><span class="w"> </span><span class="kn">import</span> <span class="nb">print</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">vedo</span><span class="w"> </span><span class="kn">import</span> <span class="n">Assembly</span><span class="p">,</span> <span class="n">Mesh</span><span class="p">,</span> <span class="n">Plane</span><span class="p">,</span> <span class="n">Plotter</span><span class="p">,</span> <span class="n">Text2D</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainrender</span><span class="w"> </span><span class="kn">import</span> <span class="n">settings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainrender._io</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_mesh_from_file</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainrender._jupyter</span><span class="w"> </span><span class="kn">import</span> <span class="n">JupyterMixIn</span><span class="p">,</span> <span class="n">not_on_jupyter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainrender._utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">listify</span><span class="p">,</span> <span class="n">return_list_smart</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainrender.actor</span><span class="w"> </span><span class="kn">import</span> <span class="n">Actor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainrender.actors</span><span class="w"> </span><span class="kn">import</span> <span class="n">Volume</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainrender.atlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainrender.render</span><span class="w"> </span><span class="kn">import</span> <span class="n">Render</span>
+
+
+<div class="viewcode-block" id="Scene">
+<a class="viewcode-back" href="../../documentation/brainrender/api/brainrender.scene.Scene.html#brainrender.scene.Scene">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Scene</span><span class="p">(</span><span class="n">JupyterMixIn</span><span class="p">,</span> <span class="n">Render</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Main scene in brainrender.</span>
+
+<span class="sd">    Coordinates the actors and the overall appearance.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">root</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">atlas_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">check_latest</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">inset</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">screenshots_folder</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">plotter</span><span class="p">:</span> <span class="n">Plotter</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">title_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"k"</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        root</span>
+<span class="sd">            If true the brain root mesh is added.</span>
+<span class="sd">        atlas_name</span>
+<span class="sd">            Name of the brainglobe atlas to be used.</span>
+<span class="sd">        check_latest</span>
+<span class="sd">            If True checks that the atlas is the latest version.</span>
+<span class="sd">        inset</span>
+<span class="sd">            If true an inset is shown with the brain's outline.</span>
+<span class="sd">        title</span>
+<span class="sd">            If given, a title is added to the top of the window.</span>
+<span class="sd">        screenshots_folder</span>
+<span class="sd">            Where the screenshots will be saved. Defaults to cwd.</span>
+<span class="sd">        plotter</span>
+<span class="sd">            Existing vedo Plotter to use. A new one is created if None.</span>
+<span class="sd">        title_color</span>
+<span class="sd">            Colour of the title text.</span>
+<span class="sd">        """</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"Creating scene with parameters: root: </span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">, atlas_name: '</span><span class="si">{</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">'', inset: </span><span class="si">{</span><span class="n">inset</span><span class="si">}</span><span class="s2">, screenshots_folder: </span><span class="si">{</span><span class="n">screenshots_folder</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+        <span class="n">JupyterMixIn</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">actors</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># stores all actors in the scene</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># stores all `labels` actors in scene</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">atlas</span> <span class="o">=</span> <span class="n">Atlas</span><span class="p">(</span><span class="n">atlas_name</span><span class="o">=</span><span class="n">atlas_name</span><span class="p">,</span> <span class="n">check_latest</span><span class="o">=</span><span class="n">check_latest</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">screenshots_folder</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">Path</span><span class="p">(</span><span class="n">screenshots_folder</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">screenshots_folder</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="k">else</span> <span class="n">Path</span><span class="p">()</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">screenshots_folder</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># Initialise render class</span>
+        <span class="n">Render</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plotter</span><span class="p">)</span>
+
+        <span class="n">root_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atlas</span><span class="o">.</span><span class="n">structures</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">atlas</span><span class="o">.</span><span class="n">hierarchy</span><span class="o">.</span><span class="n">root</span><span class="p">][</span><span class="s2">"acronym"</span><span class="p">]</span>
+
+        <span class="c1"># Get root mesh</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_brain_region</span><span class="p">(</span>
+            <span class="n">root_name</span><span class="p">,</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">ROOT_ALPHA</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">ROOT_COLOR</span><span class="p">,</span>
+            <span class="n">silhouette</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">root</span> <span class="ow">and</span> <span class="n">settings</span><span class="o">.</span><span class="n">SHADER_STYLE</span> <span class="o">==</span> <span class="s2">"cartoon"</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">atlas</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>  <span class="c1"># give atlas access to root</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_root_mesh</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
+
+        <span class="c1"># keep track if we need to make an inset</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inset</span> <span class="o">=</span> <span class="n">inset</span>
+
+        <span class="c1"># add title</span>
+        <span class="k">if</span> <span class="n">title</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+                <span class="n">Text2D</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="s2">"top-center"</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">title_color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                <span class="n">names</span><span class="o">=</span><span class="s2">"title"</span><span class="p">,</span>
+                <span class="n">classes</span><span class="o">=</span><span class="s2">"title"</span><span class="p">,</span>
+            <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"A `brainrender.scene.Scene` with </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">actors</span><span class="p">)</span><span class="si">}</span><span class="s2"> actors."</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"A `brainrender.scene.Scene` with </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">actors</span><span class="p">)</span><span class="si">}</span><span class="s2"> actors."</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__repr_html__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"A `brainrender.scene.Scene` with </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">actors</span><span class="p">)</span><span class="si">}</span><span class="s2"> actors."</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="nd">@not_on_jupyter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_inset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Create a small inset showing the brain's orientation.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">OFFSCREEN</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="n">inset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_root_mesh</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+        <span class="n">inset</span><span class="o">.</span><span class="n">alpha</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># scale(0.5)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">add_inset</span><span class="p">(</span><span class="n">inset</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span> <span class="n">draggable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">SHADER_STYLE</span> <span class="o">==</span> <span class="s2">"cartoon"</span><span class="p">:</span>
+            <span class="n">inset</span><span class="o">.</span><span class="n">lighting</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Scene.add">
+<a class="viewcode-back" href="../../documentation/brainrender/api/brainrender.scene.Scene.html#brainrender.scene.Scene.add">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">items</span><span class="p">:</span> <span class="n">Mesh</span> <span class="o">|</span> <span class="n">Assembly</span> <span class="o">|</span> <span class="n">Text2D</span> <span class="o">|</span> <span class="n">Actor</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
+        <span class="n">names</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">classes</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">transform</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Actor</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="n">Actor</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        General method to add Actors to the scene.</span>
+
+<span class="sd">        Whatever the input, it's turned into an instance of Actor before</span>
+<span class="sd">        being added to the scene.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        *items</span>
+<span class="sd">            vedo.Mesh, Actor, or (str, Path). If str/path it should be a</span>
+<span class="sd">            path to a .obj or .stl file.</span>
+<span class="sd">        names</span>
+<span class="sd">            Names to be assigned to the Actors.</span>
+<span class="sd">        classes</span>
+<span class="sd">            br_classes to be assigned to the Actors.</span>
+<span class="sd">        transform</span>
+<span class="sd">            If True, apply the axes-orientation transform to new actors.</span>
+<span class="sd">        **kwargs</span>
+<span class="sd">            Parameters to be passed to the individual loading functions</span>
+<span class="sd">            (e.g. to load from file and specify the color).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Actor or list of Actor</span>
+<span class="sd">            The actor(s) added to the scene.</span>
+<span class="sd">        """</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="n">names</span> <span class="ow">or</span> <span class="p">[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">items</span><span class="p">]</span>
+        <span class="n">classes</span> <span class="o">=</span> <span class="n">classes</span> <span class="ow">or</span> <span class="p">[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">items</span><span class="p">]</span>
+
+        <span class="c1"># turn items into Actors</span>
+        <span class="n">actors</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">item</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">_class</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">listify</span><span class="p">(</span><span class="n">names</span><span class="p">),</span> <span class="n">listify</span><span class="p">(</span><span class="n">classes</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">item</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="p">(</span><span class="n">Mesh</span><span class="p">,</span> <span class="n">Assembly</span><span class="p">)):</span>
+                <span class="n">actors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Actor</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">br_class</span><span class="o">=</span><span class="n">_class</span><span class="p">))</span>
+
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">Text2D</span><span class="p">):</span>
+                <span class="c1"># Mark text actors differently because they don't behave like</span>
+                <span class="c1"># other 3d actors</span>
+                <span class="n">actors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="n">Actor</span><span class="p">(</span>
+                        <span class="n">item</span><span class="p">,</span>
+                        <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                        <span class="n">br_class</span><span class="o">=</span><span class="n">_class</span><span class="p">,</span>
+                        <span class="n">is_text</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">pi</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">_class_name</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"Volume"</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span>
+                <span class="n">item</span><span class="p">,</span> <span class="n">Volume</span>
+            <span class="p">):</span>
+                <span class="n">actors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="n">Volume</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">br_class</span><span class="o">=</span><span class="n">_class</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">Actor</span><span class="p">):</span>
+                <span class="n">actors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">)):</span>
+                <span class="n">mesh</span> <span class="o">=</span> <span class="n">load_mesh_from_file</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="ow">or</span> <span class="n">Path</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+                <span class="n">_class</span> <span class="o">=</span> <span class="n">_class</span> <span class="ow">or</span> <span class="s2">"from file"</span>
+                <span class="n">actors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Actor</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">br_class</span><span class="o">=</span><span class="n">_class</span><span class="p">))</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"Unrecognized argument: </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2"> [</span><span class="si">{</span><span class="n">pi</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">_class_name</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="si">}</span><span class="s2">]"</span>
+                <span class="p">)</span>
+
+        <span class="c1"># transform actors</span>
+        <span class="k">if</span> <span class="n">transform</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">actor</span> <span class="ow">in</span> <span class="n">actors</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_actor</span><span class="p">(</span><span class="n">actor</span><span class="p">)</span>
+
+        <span class="c1"># add actors to plotter</span>
+        <span class="k">for</span> <span class="n">actor</span> <span class="ow">in</span> <span class="n">actors</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">actor</span><span class="o">.</span><span class="n">_mesh</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>  <span class="c1"># e.g. for titles</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">actor</span><span class="o">.</span><span class="n">mesh</span><span class="p">)</span>
+
+        <span class="c1"># Add to the lists actors</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">actors</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">actors</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">return_list_smart</span><span class="p">(</span><span class="n">actors</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Scene.remove">
+<a class="viewcode-back" href="../../documentation/brainrender/api/brainrender.scene.Scene.html#brainrender.scene.Scene.remove">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">actors</span><span class="p">:</span> <span class="n">Actor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Remove actors from the scene.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        *actors</span>
+<span class="sd">            Actors to remove.</span>
+<span class="sd">        """</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Removing </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">actors</span><span class="p">)</span><span class="si">}</span><span class="s2"> actors from scene"</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">act</span> <span class="ow">in</span> <span class="n">actors</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">actors</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">actors</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">act</span><span class="p">))</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"Could not remove (</span><span class="si">{</span><span class="n">act</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">pi</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">_class_name</span><span class="p">(</span><span class="n">act</span><span class="p">)</span><span class="si">}</span><span class="s2">) from actors"</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># remove from plotter</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">act</span><span class="o">.</span><span class="n">_mesh</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+                    <span class="k">pass</span>
+
+                <span class="k">if</span> <span class="n">act</span><span class="o">.</span><span class="n">silhouette</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">act</span><span class="o">.</span><span class="n">silhouette</span><span class="o">.</span><span class="n">mesh</span><span class="p">)</span>
+
+                <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">act</span><span class="o">.</span><span class="n">labels</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">label</span><span class="o">.</span><span class="n">mesh</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Scene.get_actors">
+<a class="viewcode-back" href="../../documentation/brainrender/api/brainrender.scene.Scene.html#brainrender.scene.Scene.get_actors">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_actors</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">br_class</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Actor</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Return the scene's actors that match some search criteria.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        name</span>
+<span class="sd">            Actor name(s) to match.</span>
+<span class="sd">        br_class</span>
+<span class="sd">            Actor br_class(es) to match.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        list of Actor</span>
+<span class="sd">            The actors in the scene that match the specified search criteria.</span>
+<span class="sd">        """</span>
+        <span class="n">matches</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">actors</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">listify</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">matches</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">matches</span> <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">name</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">br_class</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">br_class</span> <span class="o">=</span> <span class="n">listify</span><span class="p">(</span><span class="n">br_class</span><span class="p">)</span>
+            <span class="n">matches</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">matches</span> <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">br_class</span> <span class="ow">in</span> <span class="n">br_class</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">matches</span></div>
+
+
+<div class="viewcode-block" id="Scene.add_brain_region">
+<a class="viewcode-back" href="../../documentation/brainrender/api/brainrender.scene.Scene.html#brainrender.scene.Scene.add_brain_region">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_brain_region</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">regions</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">silhouette</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">hemisphere</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"both"</span><span class="p">,</span>
+        <span class="n">force</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Actor</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="n">Actor</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Dedicated method to add brain regions to render.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        *regions</span>
+<span class="sd">            Region names or IDs.</span>
+<span class="sd">        alpha</span>
+<span class="sd">            How opaque the regions are rendered.</span>
+<span class="sd">        color</span>
+<span class="sd">            Uses the atlas default colour if None.</span>
+<span class="sd">        silhouette</span>
+<span class="sd">            If true, region Actors will have a silhouette.</span>
+<span class="sd">        hemisphere</span>
+<span class="sd">            ``"both"`` returns the complete mesh; ``"left"``/``"right"``</span>
+<span class="sd">            return only the corresponding half of the mesh.</span>
+<span class="sd">        force</span>
+<span class="sd">            If true, force adding of region even if already rendered.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Actor or list of Actor or None</span>
+<span class="sd">            The actors added to the scene. None if no actors added.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="n">silhouette</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">silhouette</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">silhouette</span> <span class="ow">or</span> <span class="kc">True</span>
+                <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">SHADER_STYLE</span> <span class="o">==</span> <span class="s2">"cartoon"</span>
+                <span class="k">else</span> <span class="kc">False</span>
+            <span class="p">)</span>
+
+        <span class="c1"># avoid adding regions already rendered</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">force</span><span class="p">:</span>
+            <span class="n">already_in</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">r</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_actors</span><span class="p">(</span><span class="n">br_class</span><span class="o">=</span><span class="s2">"brain region"</span><span class="p">)</span>
+            <span class="p">]</span>
+            <span class="n">regions</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">regions</span> <span class="k">if</span> <span class="n">r</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">already_in</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">regions</span><span class="p">:</span>  <span class="c1"># they were all already rendered</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                <span class="s2">"Not adding any region because they are all already in the scene"</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"SCENE: Adding </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">regions</span><span class="p">)</span><span class="si">}</span><span class="s2"> brain regions to scene: </span><span class="si">{</span><span class="n">regions</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+
+        <span class="c1"># get regions actors from atlas</span>
+        <span class="n">regions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atlas</span><span class="o">.</span><span class="n">get_region</span><span class="p">(</span><span class="o">*</span><span class="n">regions</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+        <span class="n">regions</span> <span class="o">=</span> <span class="n">listify</span><span class="p">(</span><span class="n">regions</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[]</span>
+
+        <span class="c1"># add actors</span>
+        <span class="n">actors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="o">*</span><span class="n">regions</span><span class="p">)</span>
+
+        <span class="c1"># slice to keep only one hemisphere</span>
+        <span class="k">if</span> <span class="n">hemisphere</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"left"</span><span class="p">,</span> <span class="s2">"right"</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">atlas</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"symmetric"</span><span class="p">]:</span>
+                <span class="n">mesh_center</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">_mesh</span><span class="o">.</span><span class="n">bounds</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">mesh_center</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">_mesh</span><span class="o">.</span><span class="n">center_of_mass</span><span class="p">()</span>
+
+            <span class="n">normal</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">hemisphere</span> <span class="o">==</span> <span class="s2">"right"</span> <span class="k">else</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">plane</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atlas</span><span class="o">.</span><span class="n">get_plane</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">mesh_center</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">normal</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">actors</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="n">actors</span><span class="o">.</span><span class="n">_mesh</span><span class="o">.</span><span class="n">cut_with_plane</span><span class="p">(</span>
+                    <span class="n">origin</span><span class="o">=</span><span class="n">plane</span><span class="o">.</span><span class="n">center</span><span class="p">,</span>
+                    <span class="n">normal</span><span class="o">=</span><span class="n">plane</span><span class="o">.</span><span class="n">normal</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">actors</span><span class="o">.</span><span class="n">cap</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">actor</span> <span class="ow">in</span> <span class="n">actors</span><span class="p">:</span>
+                    <span class="n">actor</span><span class="o">.</span><span class="n">_mesh</span><span class="o">.</span><span class="n">cut_with_plane</span><span class="p">(</span>
+                        <span class="n">origin</span><span class="o">=</span><span class="n">plane</span><span class="o">.</span><span class="n">center</span><span class="p">,</span>
+                        <span class="n">normal</span><span class="o">=</span><span class="n">plane</span><span class="o">.</span><span class="n">normal</span><span class="p">,</span>
+                    <span class="p">)</span>
+                    <span class="n">actor</span><span class="o">.</span><span class="n">cap</span><span class="p">()</span>
+
+        <span class="c1"># make silhouettes</span>
+        <span class="k">if</span> <span class="n">silhouette</span> <span class="ow">and</span> <span class="n">regions</span> <span class="ow">and</span> <span class="n">alpha</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_silhouette</span><span class="p">(</span><span class="o">*</span><span class="n">regions</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">actors</span></div>
+
+
+    <span class="nd">@not_on_jupyter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_silhouette</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">actors</span><span class="p">:</span> <span class="n">Actor</span><span class="p">,</span> <span class="n">lw</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"k"</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Dedicated method to add silhouette to actors.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        *actors</span>
+<span class="sd">            Actors to silhouette.</span>
+<span class="sd">        lw</span>
+<span class="sd">            Line weight.</span>
+<span class="sd">        color</span>
+<span class="sd">            Silhouette colour.</span>
+<span class="sd">        """</span>
+        <span class="k">for</span> <span class="n">actor</span> <span class="ow">in</span> <span class="n">actors</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">actor</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">actor</span><span class="o">.</span><span class="n">_needs_silhouette</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">actor</span><span class="o">.</span><span class="n">_silhouette_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+                <span class="n">lw</span><span class="o">=</span><span class="n">lw</span> <span class="ow">or</span> <span class="n">settings</span><span class="o">.</span><span class="n">LW</span><span class="p">,</span>
+                <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+            <span class="p">)</span>
+
+    <span class="nd">@not_on_jupyter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_label</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">actor</span><span class="p">:</span> <span class="n">Actor</span><span class="p">,</span> <span class="n">label</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Dedicated method to add labels to actors.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        actor</span>
+<span class="sd">            Actor to label.</span>
+<span class="sd">        label</span>
+<span class="sd">            Text of the label.</span>
+<span class="sd">        **kwargs</span>
+<span class="sd">            See ``brainrender._actor.make_actor_label`` for kwargs.</span>
+<span class="sd">        """</span>
+        <span class="n">actor</span><span class="o">.</span><span class="n">_needs_label</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">actor</span><span class="o">.</span><span class="n">_label_str</span> <span class="o">=</span> <span class="n">label</span>
+        <span class="n">actor</span><span class="o">.</span><span class="n">_label_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
+
+<div class="viewcode-block" id="Scene.slice">
+<a class="viewcode-back" href="../../documentation/brainrender/api/brainrender.scene.Scene.html#brainrender.scene.Scene.slice">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">slice</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">plane</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Plane</span><span class="p">,</span>
+        <span class="n">actors</span><span class="p">:</span> <span class="n">Actor</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="n">Actor</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">close_actors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">invert</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Slice actors with a plane.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        plane</span>
+<span class="sd">            If a string it needs to be a supported plane from brainglobe's</span>
+<span class="sd">            atlas api (e.g. ``"frontal"``), otherwise a vedo.Plane mesh.</span>
+<span class="sd">        actors</span>
+<span class="sd">            Actors to be sliced. If None, all actors will be sliced.</span>
+<span class="sd">        close_actors</span>
+<span class="sd">            If true, the openings in the actors' meshes caused by the cut</span>
+<span class="sd">            will be closed.</span>
+<span class="sd">        invert</span>
+<span class="sd">            Invert the slice direction.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">plane</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">invert</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+                <span class="n">norm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atlas</span><span class="o">.</span><span class="n">space</span><span class="o">.</span><span class="n">plane_normals</span><span class="p">[</span><span class="n">plane</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">invert</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="n">norm</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
+                    <span class="n">x</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">atlas</span><span class="o">.</span><span class="n">space</span><span class="o">.</span><span class="n">plane_normals</span><span class="p">[</span><span class="n">plane</span><span class="p">]</span>
+                <span class="p">)</span>
+            <span class="n">plane</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atlas</span><span class="o">.</span><span class="n">get_plane</span><span class="p">(</span><span class="n">plane</span><span class="o">=</span><span class="n">plane</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">actors</span> <span class="ow">or</span> <span class="n">actors</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">actors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clean_actors</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">actor</span> <span class="ow">in</span> <span class="n">listify</span><span class="p">(</span><span class="n">actors</span><span class="p">):</span>
+            <span class="n">actor</span><span class="o">.</span><span class="n">_mesh</span> <span class="o">=</span> <span class="n">actor</span><span class="o">.</span><span class="n">_mesh</span><span class="o">.</span><span class="n">cut_with_plane</span><span class="p">(</span>
+                <span class="n">origin</span><span class="o">=</span><span class="n">plane</span><span class="o">.</span><span class="n">center</span><span class="p">,</span>
+                <span class="n">normal</span><span class="o">=</span><span class="n">plane</span><span class="o">.</span><span class="n">normal</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">close_actors</span><span class="p">:</span>
+                <span class="n">actor</span><span class="o">.</span><span class="n">cap</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">actor</span><span class="o">.</span><span class="n">silhouette</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">actor</span><span class="o">.</span><span class="n">silhouette</span><span class="o">.</span><span class="n">mesh</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">actor</span><span class="o">.</span><span class="n">make_silhouette</span><span class="p">()</span><span class="o">.</span><span class="n">mesh</span><span class="p">)</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">content</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Print an overview of the Actors in the scene.</span>
+<span class="sd">        """</span>
+
+        <span class="n">actors</span> <span class="o">=</span> <span class="n">pi</span><span class="o">.</span><span class="n">Report</span><span class="p">(</span>
+            <span class="s2">"Scene actors"</span><span class="p">,</span> <span class="n">accent</span><span class="o">=</span><span class="n">salmon</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">orange</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">orange</span>
+        <span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">act</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">actors</span><span class="p">:</span>
+            <span class="n">actors</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"[bold][</span><span class="si">{</span><span class="n">amber</span><span class="si">}</span><span class="s2">]- </span><span class="si">{</span><span class="n">act</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">[/bold][</span><span class="si">{</span><span class="n">orange_darker</span><span class="si">}</span><span class="s2">] (type: [</span><span class="si">{</span><span class="n">orange</span><span class="si">}</span><span class="s2">]</span><span class="si">{</span><span class="n">act</span><span class="o">.</span><span class="n">br_class</span><span class="si">}</span><span class="s2">[/</span><span class="si">{</span><span class="n">orange</span><span class="si">}</span><span class="s2">])"</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">!=</span> <span class="s2">"win32"</span><span class="p">:</span>
+            <span class="n">actors</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">stringify</span><span class="p">(</span><span class="n">actors</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">renderables</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Mesh</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Return the meshes for all actors.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">backend</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">mesh</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">actors</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">mesh</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">actors</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">a</span><span class="o">.</span><span class="n">is_text</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clean_actors</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Actor</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Return only actors that are not Text objects and similar.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">actors</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">a</span><span class="o">.</span><span class="n">is_text</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clean_renderables</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Mesh</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Return meshes only for 'clean actors' (i.e. not text).</span>
+
+<span class="sd">        ``_mesh`` is returned to account for internal rotations.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">_mesh</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">actors</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">a</span><span class="o">.</span><span class="n">is_text</span><span class="p">]</span></div>
+
+</pre></div>
+<div class="section ablog__blog_comments">
+   
+</div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p class="sphinx-version">
+Created using <a href="https://sphinx-doc.org/">Sphinx</a> 8.2.3.
+<br/>
+</p>
+<p class="theme-version">
+Built with the
+<a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
+0.22.0.
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><div class="things-in-a-row">
+</div></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

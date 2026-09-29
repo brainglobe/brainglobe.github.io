@@ -1,0 +1,83 @@
+Neuron
+======
+
+.. currentmodule:: brainrender.actors.neurons
+
+.. autoclass:: Neuron
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~Neuron.make_actor
+   
+   
+      ~Neuron.make_label
+   
+   
+      ~Neuron.make_silhouette
+   
+   
+      ~Neuron.mirror
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~Neuron.center
+   
+   
+      ~Neuron.labels
+   
+   
+      ~Neuron.silhouette
+   
+   
+   

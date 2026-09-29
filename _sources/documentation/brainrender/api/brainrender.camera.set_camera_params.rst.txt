@@ -1,0 +1,6 @@
+set\_camera\_params
+===================
+
+.. currentmodule:: brainrender.camera
+
+.. autofunction:: set_camera_params

@@ -1,0 +1,35 @@
+..
+    This file is auto-generated.
+
+.. _target_api_brainrender:
+
+API reference
+=============
+
+Information on specific functions, classes, and methods.
+
+.. rubric:: Modules
+
+.. autosummary::
+    :toctree: api
+    :recursive:
+    :nosignatures:
+
+    brainrender.render
+    brainrender.actor
+    brainrender.camera
+    brainrender.video
+    brainrender.atlas
+    brainrender.cameras
+    brainrender.settings
+    brainrender.scene
+    brainrender.actors.volume
+    brainrender.actors.ruler
+    brainrender.actors.streamlines
+    brainrender.actors.neurons
+    brainrender.actors.line
+    brainrender.actors.points
+    brainrender.actors.cylinder
+    brainrender.atlas_specific.allen_brain_atlas.streamlines
+    brainrender.atlas_specific.allen_brain_atlas.gene_expression.ge_utils
+    brainrender.atlas_specific.allen_brain_atlas.gene_expression.api

@@ -1,0 +1,6 @@
+make\_streamlines
+=================
+
+.. currentmodule:: brainrender.actors.streamlines
+
+.. autofunction:: make_streamlines

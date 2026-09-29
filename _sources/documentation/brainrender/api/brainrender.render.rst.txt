@@ -1,0 +1,21 @@
+﻿brainrender.render
+==================
+
+.. rubric:: Description
+
+.. automodule:: brainrender.render
+
+.. currentmodule:: brainrender.render
+
+
+.. rubric:: Classes
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    Render
+    
+
+
+

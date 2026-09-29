@@ -1,0 +1,31 @@
+﻿brainrender.actors.neurons
+==========================
+
+.. rubric:: Description
+
+.. automodule:: brainrender.actors.neurons
+
+.. currentmodule:: brainrender.actors.neurons
+
+
+.. rubric:: Classes
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    Neuron
+    
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    make_neurons
+    
+

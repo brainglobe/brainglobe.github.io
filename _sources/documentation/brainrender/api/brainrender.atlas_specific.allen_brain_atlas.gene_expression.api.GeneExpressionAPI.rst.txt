@@ -1,0 +1,125 @@
+GeneExpressionAPI
+=================
+
+.. currentmodule:: brainrender.atlas_specific.allen_brain_atlas.gene_expression.api
+
+.. autoclass:: GeneExpressionAPI
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~GeneExpressionAPI.download_gene_data
+   
+   
+      ~GeneExpressionAPI.get_all_genes
+   
+   
+      ~GeneExpressionAPI.get_gene_data
+   
+   
+      ~GeneExpressionAPI.get_gene_experiments
+   
+   
+      ~GeneExpressionAPI.get_gene_id_by_name
+   
+   
+      ~GeneExpressionAPI.get_gene_symbol_by_id
+   
+   
+      ~GeneExpressionAPI.griddata_to_volume
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~GeneExpressionAPI.all_genes_url
+   
+   
+      ~GeneExpressionAPI.download_url
+   
+   
+      ~GeneExpressionAPI.gene_experiments_url
+   
+   
+      ~GeneExpressionAPI.gene_expression_cache
+   
+   
+      ~GeneExpressionAPI.gene_name
+   
+   
+      ~GeneExpressionAPI.grid_size
+   
+   
+      ~GeneExpressionAPI.voxel_size
+   
+   
+   

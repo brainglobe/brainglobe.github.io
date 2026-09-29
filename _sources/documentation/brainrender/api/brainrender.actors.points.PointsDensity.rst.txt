@@ -1,0 +1,83 @@
+PointsDensity
+=============
+
+.. currentmodule:: brainrender.actors.points
+
+.. autoclass:: PointsDensity
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~PointsDensity.make_actor
+   
+   
+      ~PointsDensity.make_label
+   
+   
+      ~PointsDensity.make_silhouette
+   
+   
+      ~PointsDensity.mirror
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~PointsDensity.center
+   
+   
+      ~PointsDensity.labels
+   
+   
+      ~PointsDensity.silhouette
+   
+   
+   

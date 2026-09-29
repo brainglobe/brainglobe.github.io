@@ -1,0 +1,6 @@
+check\_gene\_cached
+===================
+
+.. currentmodule:: brainrender.atlas_specific.allen_brain_atlas.gene_expression.ge_utils
+
+.. autofunction:: check_gene_cached

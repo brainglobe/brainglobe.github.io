@@ -1,0 +1,25 @@
+﻿brainrender.atlas\_specific.allen\_brain\_atlas.streamlines
+===========================================================
+
+.. rubric:: Description
+
+.. automodule:: brainrender.atlas_specific.allen_brain_atlas.streamlines
+
+.. currentmodule:: brainrender.atlas_specific.allen_brain_atlas.streamlines
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    experiments_source_search
+    
+    get_streamlines_data
+    
+    get_streamlines_for_region
+    
+

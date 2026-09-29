@@ -1,0 +1,83 @@
+Streamlines
+===========
+
+.. currentmodule:: brainrender.actors.streamlines
+
+.. autoclass:: Streamlines
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~Streamlines.make_actor
+   
+   
+      ~Streamlines.make_label
+   
+   
+      ~Streamlines.make_silhouette
+   
+   
+      ~Streamlines.mirror
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~Streamlines.center
+   
+   
+      ~Streamlines.labels
+   
+   
+      ~Streamlines.silhouette
+   
+   
+   

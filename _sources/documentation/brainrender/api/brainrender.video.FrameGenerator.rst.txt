@@ -1,0 +1,28 @@
+FrameGenerator
+==============
+
+.. currentmodule:: brainrender.video
+
+.. autoclass:: FrameGenerator
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+
+   
+   
+
+   
+   
+
+   
+
+   
+   

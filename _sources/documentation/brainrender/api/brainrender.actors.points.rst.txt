@@ -1,0 +1,27 @@
+﻿brainrender.actors.points
+=========================
+
+.. rubric:: Description
+
+.. automodule:: brainrender.actors.points
+
+.. currentmodule:: brainrender.actors.points
+
+
+.. rubric:: Classes
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    Point
+    
+    Points
+    
+    PointsBase
+    
+    PointsDensity
+    
+
+
+

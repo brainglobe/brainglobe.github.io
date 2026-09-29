@@ -1,0 +1,83 @@
+Points
+======
+
+.. currentmodule:: brainrender.actors.points
+
+.. autoclass:: Points
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~Points.make_actor
+   
+   
+      ~Points.make_label
+   
+   
+      ~Points.make_silhouette
+   
+   
+      ~Points.mirror
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~Points.center
+   
+   
+      ~Points.labels
+   
+   
+      ~Points.silhouette
+   
+   
+   

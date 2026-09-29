@@ -1,0 +1,37 @@
+﻿brainrender.video
+=================
+
+.. rubric:: Description
+
+.. automodule:: brainrender.video
+
+.. currentmodule:: brainrender.video
+
+
+.. rubric:: Classes
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    Animation
+    
+    FrameGenerator
+    
+    KeyframeCallback
+    
+    VideoMaker
+    
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    sigma
+    
+

@@ -1,0 +1,167 @@
+Scene
+=====
+
+.. currentmodule:: brainrender.scene
+
+.. autoclass:: Scene
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~Scene.add
+   
+   
+      ~Scene.add_brain_region
+   
+   
+      ~Scene.add_label
+   
+   
+      ~Scene.add_silhouette
+   
+   
+      ~Scene.close
+   
+   
+      ~Scene.export
+   
+   
+      ~Scene.get_actors
+   
+   
+      ~Scene.keypress
+   
+   
+      ~Scene.remove
+   
+   
+      ~Scene.render
+   
+   
+      ~Scene.screenshot
+   
+   
+      ~Scene.slice
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~Scene.axes_indices
+   
+   
+      ~Scene.axes_lookup
+   
+   
+      ~Scene.axes_names
+   
+   
+      ~Scene.clean_actors
+   
+   
+      ~Scene.clean_renderables
+   
+   
+      ~Scene.content
+   
+   
+      ~Scene.is_rendered
+   
+   
+      ~Scene.plotter
+   
+   
+      ~Scene.renderables
+   
+   
+   

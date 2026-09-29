@@ -1,0 +1,83 @@
+Cylinder
+========
+
+.. currentmodule:: brainrender.actors.cylinder
+
+.. autoclass:: Cylinder
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~Cylinder.make_actor
+   
+   
+      ~Cylinder.make_label
+   
+   
+      ~Cylinder.make_silhouette
+   
+   
+      ~Cylinder.mirror
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~Cylinder.center
+   
+   
+      ~Cylinder.labels
+   
+   
+      ~Cylinder.silhouette
+   
+   
+   

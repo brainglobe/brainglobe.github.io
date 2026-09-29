@@ -1,0 +1,21 @@
+﻿brainrender.atlas\_specific.allen\_brain\_atlas.gene\_expression.api
+====================================================================
+
+.. rubric:: Description
+
+.. automodule:: brainrender.atlas_specific.allen_brain_atlas.gene_expression.api
+
+.. currentmodule:: brainrender.atlas_specific.allen_brain_atlas.gene_expression.api
+
+
+.. rubric:: Classes
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    GeneExpressionAPI
+    
+
+
+

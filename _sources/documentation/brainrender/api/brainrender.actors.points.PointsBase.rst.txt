@@ -1,0 +1,28 @@
+PointsBase
+==========
+
+.. currentmodule:: brainrender.actors.points
+
+.. autoclass:: PointsBase
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+
+   
+   
+
+   
+   
+
+   
+
+   
+   

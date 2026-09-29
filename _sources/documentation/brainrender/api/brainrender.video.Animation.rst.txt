@@ -1,0 +1,70 @@
+Animation
+=========
+
+.. currentmodule:: brainrender.video
+
+.. autoclass:: Animation
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~Animation.add_keyframe
+   
+   
+      ~Animation.compress
+   
+   
+      ~Animation.generate_frames
+   
+   
+      ~Animation.get_frame_params
+   
+   
+      ~Animation.get_keyframe_framenumber
+   
+   
+      ~Animation.make_video
+   
+   
+   
+
+   
+   
+
+   
+
+   
+   

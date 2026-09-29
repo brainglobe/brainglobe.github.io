@@ -1,0 +1,11 @@
+﻿brainrender.settings
+====================
+
+.. rubric:: Description
+
+.. automodule:: brainrender.settings
+
+.. currentmodule:: brainrender.settings
+
+
+

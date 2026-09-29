@@ -1,0 +1,83 @@
+Volume
+======
+
+.. currentmodule:: brainrender.actors.volume
+
+.. autoclass:: Volume
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~Volume.make_actor
+   
+   
+      ~Volume.make_label
+   
+   
+      ~Volume.make_silhouette
+   
+   
+      ~Volume.mirror
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~Volume.center
+   
+   
+      ~Volume.labels
+   
+   
+      ~Volume.silhouette
+   
+   
+   

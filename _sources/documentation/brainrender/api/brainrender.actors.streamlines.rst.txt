@@ -1,0 +1,31 @@
+﻿brainrender.actors.streamlines
+==============================
+
+.. rubric:: Description
+
+.. automodule:: brainrender.actors.streamlines
+
+.. currentmodule:: brainrender.actors.streamlines
+
+
+.. rubric:: Classes
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    Streamlines
+    
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    make_streamlines
+    
+

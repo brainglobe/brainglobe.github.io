@@ -1,0 +1,83 @@
+Line
+====
+
+.. currentmodule:: brainrender.actors.line
+
+.. autoclass:: Line
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~Line.make_actor
+   
+   
+      ~Line.make_label
+   
+   
+      ~Line.make_silhouette
+   
+   
+      ~Line.mirror
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~Line.center
+   
+   
+      ~Line.labels
+   
+   
+      ~Line.silhouette
+   
+   
+   

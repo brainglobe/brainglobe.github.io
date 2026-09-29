@@ -1,0 +1,6 @@
+get\_streamlines\_for\_region
+=============================
+
+.. currentmodule:: brainrender.atlas_specific.allen_brain_atlas.streamlines
+
+.. autofunction:: get_streamlines_for_region

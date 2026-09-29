@@ -1,0 +1,6 @@
+get\_camera
+===========
+
+.. currentmodule:: brainrender.camera
+
+.. autofunction:: get_camera
