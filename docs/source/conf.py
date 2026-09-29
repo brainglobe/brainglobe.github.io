@@ -44,6 +44,7 @@ extensions = [
     "myst_parser",
     "notfound.extension",
     "sphinx_copybutton",
+    "sphinx_autodoc_typehints",
     "sphinx_gallery.gen_gallery",
 ]
 

@@ -2,6 +2,7 @@ sphinx<9
 pydata-sphinx-theme
 myst-parser
 numpydoc
+sphinx-autodoc-typehints
 nbsphinx
 linkify-it-py
 sphinx-design
