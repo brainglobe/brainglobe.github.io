@@ -446,10 +446,15 @@ Available versions:
 ### [Duke Mouse Brain Atlas](https://doi.org/10.1126/sciadv.adq8089)
 This atlas from [Mansour et al. (2025)](https://doi.org/10.1126/sciadv.adq8089) is a 15 μm isotropic MRH-based stereotaxic atlas of the adult C57BL/6J mouse brain. The source atlas was built from five 90 ± 2 day male mice scanned in skull, limiting tissue deformation from cranial dissection and conventional histology. Micro-CT images of the skull provide bregma and lambda landmarks in the same stereotaxic space.
 
-BrainGlobe includes the mean diffusivity template as the main reference image, the source annotation image, generated meshes, and 11 additional registered reference images. RCCFv3 is the Duke team's reduced version of the Allen CCFv3 label set, in which related structures smaller than 0.1 mm3 are grouped into larger regions to reduce registration noise from small structures.
+BrainGlobe includes the mean diffusivity template as the main reference image, the source annotation image, generated meshes, and 11 additional registered reference images. RCCFv3 is the Duke team's reduced version of the Allen CCFv3 label set, in which related structures smaller than 0.1 mm<sup>3</sup> are grouped into larger regions to reduce registration noise from small structures.
 
 Available versions:
-* `duke_mouse_15um`
+* `duke_mouse_15um` - 15μm resolution
+* `duke_mouse_25um` - 25μm resolution
+* `duke_mouse_50um` - 50μm resolution
+* `duke_mouse_75um` - 75μm resolution
+* `duke_mouse_100um` - 100μm resolution
+* `duke_mouse_150um` - 150μm resolution
   
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_mouse.json)
 
@@ -477,6 +482,8 @@ reference is an average template based on serial two-photon tomography, and is m
 Available versions:
 * `ccfv2_mouse_25um`
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/ccfv2_mouse.json)
+
 ### [Allen CCFv2 Mouse Fiber Tracts Atlas](https://doi.org/10.1038/nature13186)
 This is a mouse brain fiber tract atlas using version 2 of the commonly used Allen Common Coordinate Framework. Where
 the CCFv2 Mouse Brain atlas only provides information on the grey matter and ventricular systems of the mouse brain, 
@@ -488,6 +495,8 @@ the original Nissl template.
 Available versions:
 * `ccfv2_fiber_mouse_25um`
 
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/ccfv2_fiber_mouse.json)
+
 ### [Allen CCFv2 Developmental Mouse Brain Atlas](https://doi.org/10.1038/nature13186)
 This is a developmental mouse brain atlas using version 2 of the commonly used Allen Common Coordinate Framework. 
 The template is based on 528 Nissl-stained coronal slices from the mouse specimen used in the Allen Reference Atlas. 
@@ -498,6 +507,8 @@ misaligned with the original Nissl template.
 Available versions:
 * `ccfv2_dev_mouse_25um`
   
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/ccfv2_dev_mouse.json)
+
 ## Rat
 ### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
 The Waxholm Space rat brain atlas features annotations of 222 structures, alongside a 39μm MRI template. It provides detailed delineations 
@@ -529,6 +540,21 @@ This atlas is only available at 39μm resolution (resampled from 50 µm during r
 
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/whs_sd_swc_female_rat.json)
 
+### [Duke Developmental Rat Brain Atlas](https://doi.org/10.1016/j.neuroimage.2013.01.017)
+These atlases from [Calabrese et al. (2013)](https://doi.org/10.1016/j.neuroimage.2013.01.017) were obtained from 5 specimens each from 9 different time
+points using a 7T MRI. The earliest 5 timepoints were registered to the Ashwell and Paxinos neonatal rat atlas and the last 4 timepoints were registered
+to the Paxinos and Watson adult rat atlas to give a consistent view of the structural changes that occur over development. 
+
+These atlases are only available at 25μm resolution:
+* `duke_dev_rat_p00_25um` - P0 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p00.json)
+* `duke_dev_rat_p02_25um` - P2 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p02.json)
+* `duke_dev_rat_p04_25um` - P4 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p04.json)
+* `duke_dev_rat_p08_25um` - P8 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p08.json)
+* `duke_dev_rat_p12_25um` - P12 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p12.json)
+* `duke_dev_rat_p18_25um` - P18 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p18.json)
+* `duke_dev_rat_p24_25um` - P24 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p24.json)
+* `duke_dev_rat_p40_25um` - P40 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p40.json)
+* `duke_dev_rat_p80_25um` - P80 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/duke_dev_rat_p80.json)
 
 ## Other rodent
 ### [Prairie vole brain atlas](https://doi.org/10.7554/eLife.87029.3.sa0)
@@ -563,13 +589,24 @@ This atlas is only available at 2μm resolution:
 * `sju_cavefish_2um`
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/sju_cavefish.json)
 
+
+### [Danionella cerebrum Brain Atlas](https://doi.org/10.64898/2026.03.09.710483)
+This is a multimodal, mixed-sex reference atlas of the adult _Danionella cerebrum_
+brain from [Kadobianskyi et al. (2026)](https://doi.org/10.64898/2026.03.09.710483).
+It contains a whole-brain annotation for 276 regions, a two-photon fluoresence reference 
+image and an additional confocal reflectance reference image highlighting larger myelinated 
+fibre tracts. For more details, see the [blog post](/blog/danionella-atlas-added).
+
+This atlas is only available at 2.5μm resolution:
+* `danionella_cerebrum_mixed_2.5um`
+
 ## Lizard
 ### [Hoops Tawny Dragon Brain Atlas](https://doi.org/10.1007/s00429-021-02282-z)
 This is a symmetric atlas of the tawny dragon lizard (Ctenophorus decresii) brain from 
 [Hoops et al. (2021)](https://doi.org/10.1007/s00429-021-02282-z) with 224 segmentations, 
 made from averaged MRI images of 13 male tawny dragon lizards. 
-This atlas is only available at 50μm resolution:
-* `hoops_tawny_dragon_50um`
+This atlas is only available at 20μm resolution:
+* `hoops_tawny_dragon_20um`
   
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/hoops_tawny_dragon.json)
 
@@ -590,8 +627,8 @@ This atlas is only available at 40μm resolution:
 ## Human and non-human primate
 ### [Allen Human Brain Atlas](https://www.brain-map.org)
 This atlas is included mostly for visualisation and comparison to the other atlases. 
-Note that it is also only a single hemisphere. There are many better atlases
-(and indeed software tools) for the analysis of human neuroimaging data.
+There are many better atlases (and indeed software tools) for the analysis of human 
+neuroimaging data.
 
 This atlas is only available at 500μm resolution:
 * `allen_human_500um`
@@ -658,7 +695,5 @@ This atlas has 2um isotropic resolution.
 * `drosophila_wingdisc_instar3_2um`
 
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/drosophila_wingdisc_instar3.json)
-
-
 
 

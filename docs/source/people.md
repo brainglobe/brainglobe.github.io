@@ -699,7 +699,7 @@ In no particular order:
 
 :::{grid-item-card} Nishanth B
 :img-top: https://avatars.githubusercontent.com/u/150372232?v=4
-:link: https://github.com/nishanthcr7777
+:link: https://github.com/n1shanthb
 :::
 
 :::{grid-item-card} Ardavan Shahrabi
@@ -740,6 +740,31 @@ In no particular order:
 :::{grid-item-card} Luigi Meola
 :img-top: https://avatars.githubusercontent.com/u/66880228?v=4
 :link: https://github.com/git-gigi
+:::
+
+:::{grid-item-card} SaraPugliese6
+:img-top: https://avatars.githubusercontent.com/u/189845118?v=4
+:link: https://github.com/SaraPugliese6
+:::
+
+:::{grid-item-card} Bhoomika Choudhury
+:img-top: https://avatars.githubusercontent.com/u/218296874?v=4
+:link: https://github.com/BhoomikaC15
+:::
+
+:::{grid-item-card} Shivam Raj Srivastav
+:img-top: https://avatars.githubusercontent.com/u/179807831?v=4
+:link: https://github.com/ShivamRajSri
+:::
+
+:::{grid-item-card} Krishna VP
+:img-top: https://avatars.githubusercontent.com/u/213911778?v=4
+:link: https://github.com/VPK570
+:::
+
+:::{grid-item-card} Haris Shakeel
+:img-top: https://avatars.githubusercontent.com/u/186503112?v=4
+:link: https://github.com/Haris-bin-shakeel
 :::
 
 ::::

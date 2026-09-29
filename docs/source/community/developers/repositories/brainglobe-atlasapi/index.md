@@ -26,7 +26,6 @@ if this is of interest. Ideally this should be a follow up to an earlier message
 add the atlas.
 8. Advertise the atlas by linking to the blog post. Where we advertise varies depending on the atlas, but will usually
 include:
-   * [Twitter/X](https://x.com/brain_globe)
    * [Mastodon](https://mastodon.online/@brainglobe)
    * [Bluesky](https://bsky.app/profile/brainglobe.bsky.social)
    * [BrainGlobe Zulip](https://brainglobe.zulipchat.com/)

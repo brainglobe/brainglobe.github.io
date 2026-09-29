@@ -13,7 +13,7 @@ directly.
 # in the Allen Mouse Brain Atlas, programmatically - but without using BrainGlobe. To do this, we 
 # need some preliminary knowledge about how BrainGlobe atlases such as this are structured under the hood:
 #
-# - the annotation image is stored as an OME-Zarr <https://ngff.openmicroscopy.org/#next-generation-file-formats-ngff-ome-zarr>.
+# - the annotation image is stored as an OME-Zarr <https://ngff.openmicroscopy.org>.
 # - the region metadata (e.g. each region's id, name, acronym and parent) are stored in a comma separated (csv) file
 # - these files (and other atlas files, like the template) are stored on AWS
 #
@@ -64,7 +64,7 @@ rsp_ids = terminologies_filtered["annotation_value"].tolist()
 # Equipped with this information, we can now access the annotations file for the atlas.
 # Annotation files are stored in an OME-zarr file in the cloud.
 
-annotations = nz.from_ngff_zarr(annotation_uri, storage_options={"anon": True})
+annotations = nz.from_ngff_zarr(annotation_uri, storage_options={"anon": True, "region_name": "us-west-2"})
 
 print(annotations.metadata)
 
