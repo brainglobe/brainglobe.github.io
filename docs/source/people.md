@@ -767,6 +767,11 @@ In no particular order:
 :link: https://github.com/Haris-bin-shakeel
 :::
 
+:::{grid-item-card} Ilias Mahboub
+:img-top: https://avatars.githubusercontent.com/u/227131238?v=4
+:link: https://github.com/iliasmahboub
+:::
+
 ::::
 
 
