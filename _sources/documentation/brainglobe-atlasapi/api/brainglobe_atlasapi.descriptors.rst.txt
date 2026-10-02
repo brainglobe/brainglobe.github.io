@@ -16,16 +16,10 @@
     :toctree: .
     :nosignatures:
     
-    format_annotation_stub
-    
     format_component_stub
     
     format_hemispheres_stub
     
     format_meshes_stub
-    
-    format_template_stub
-    
-    format_terminology_stub
     
 

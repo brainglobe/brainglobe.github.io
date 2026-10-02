@@ -556,12 +556,9 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.descriptors.html">brainglobe_atlasapi.descriptors</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.descriptors.format_annotation_stub.html">format_annotation_stub</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.descriptors.format_component_stub.html">format_component_stub</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.descriptors.format_hemispheres_stub.html">format_hemispheres_stub</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.descriptors.format_meshes_stub.html">format_meshes_stub</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.descriptors.format_template_stub.html">format_template_stub</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.descriptors.format_terminology_stub.html">format_terminology_stub</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.html">brainglobe_atlasapi.atlas_generation.atlas_packaging_data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -906,12 +903,20 @@
 <h1>Atlas<a class="headerlink" href="#atlas" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="brainglobe_atlasapi.core.Atlas">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">brainglobe_atlasapi.core.</span></span><span class="sig-name descname"><span class="pre">Atlas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/brainglobe_atlasapi/core.html#Atlas"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainglobe_atlasapi.core.Atlas" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">brainglobe_atlasapi.core.</span></span><span class="sig-name descname"><span class="pre">Atlas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/brainglobe_atlasapi/core.html#Atlas"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainglobe_atlasapi.core.Atlas" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">brainglobe_atlasapi.core.</span></span><span class="sig-name descname"><span class="pre">Atlas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">brainglobe_atlasapi.core.</span></span><span class="sig-name descname"><span class="pre">Atlas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">AtlasArray</span></code>]</p>
 <p>Base class to handle atlases in BrainGlobe.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>path</strong> (<em>str</em><em> or </em><em>Path object</em>) – Path to folder containing data info.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em><em> or </em><em>Path object</em>) – Path to folder containing data info.</p></li>
+<li><p><strong>dask</strong> (<em>bool</em>) – If True, atlas array properties return dask arrays instead of loading
+them into memory as numpy arrays.</p></li>
+</ul>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
@@ -994,7 +999,7 @@
 </div>
 <dl class="py property">
 <dt class="sig sig-object py" id="brainglobe_atlasapi.core.Atlas.annotation">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">annotation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">uint32</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#brainglobe_atlasapi.core.Atlas.annotation" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">annotation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">AtlasArray</span></em><a class="headerlink" href="#brainglobe_atlasapi.core.Atlas.annotation" title="Link to this definition">#</a></dt>
 <dd><p>Return the annotation image data. Loads it if not already loaded.</p>
 </dd></dl>
 
@@ -1123,7 +1128,7 @@ microns=True</p></li>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="brainglobe_atlasapi.core.Atlas.hemispheres">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hemispheres</span></span><a class="headerlink" href="#brainglobe_atlasapi.core.Atlas.hemispheres" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hemispheres</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">AtlasArray</span></em><a class="headerlink" href="#brainglobe_atlasapi.core.Atlas.hemispheres" title="Link to this definition">#</a></dt>
 <dd><p>Returns a stack with the hemisphere information. 1 - left, 2 - right.</p>
 <p>If a symmetric reference is used, the hemisphere information is
 generated by splitting the reference in half along the frontal axis.
@@ -1262,7 +1267,7 @@ return “Outside atlas”</p></li>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="brainglobe_atlasapi.core.Atlas.template">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">template</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">uint16</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#brainglobe_atlasapi.core.Atlas.template" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">template</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">AtlasArray</span></em><a class="headerlink" href="#brainglobe_atlasapi.core.Atlas.template" title="Link to this definition">#</a></dt>
 <dd><p>Return the template image data. Loads it if not already loaded.</p>
 </dd></dl>
 

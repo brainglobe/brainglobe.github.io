@@ -519,16 +519,24 @@
                    <h1>Source code for brainglobe_atlasapi.core</h1><div class="highlight"><pre>
 <span></span><span class="sd">"""Module containing the core Atlas class."""</span>
 
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
 <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">UserDict</span><span class="p">,</span> <span class="n">deque</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">Dict</span><span class="p">,</span>
+    <span class="n">Generic</span><span class="p">,</span>
     <span class="n">List</span><span class="p">,</span>
+    <span class="n">Literal</span><span class="p">,</span>
     <span class="n">Tuple</span><span class="p">,</span>
+    <span class="n">TypeVar</span><span class="p">,</span>
     <span class="n">Union</span><span class="p">,</span>
+    <span class="n">cast</span><span class="p">,</span>
+    <span class="n">overload</span><span class="p">,</span>
 <span class="p">)</span>
 
+<span class="kn">import</span><span class="w"> </span><span class="nn">dask.array</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">da</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">ngff_zarr</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nz</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy.typing</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">npt</span>
@@ -539,9 +547,8 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">fsspec.callbacks</span><span class="w"> </span><span class="kn">import</span> <span class="n">TqdmCallback</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.descriptors</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
-    <span class="n">ANNOTATION_DTYPE</span><span class="p">,</span>
     <span class="n">ATLAS_ORIENTATION</span><span class="p">,</span>
-    <span class="n">REFERENCE_DTYPE</span><span class="p">,</span>
+    <span class="n">HEMISPHERES_DTYPE</span><span class="p">,</span>
     <span class="n">V3_ANNOTATION_MAP_NAME</span><span class="p">,</span>
     <span class="n">V3_ANNOTATION_MASKS_NAME</span><span class="p">,</span>
     <span class="n">V3_ANNOTATION_NAME</span><span class="p">,</span>
@@ -555,6 +562,10 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">load_structures_from_csv</span><span class="p">,</span>
     <span class="n">read_json</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">AtlasArray</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span>
+    <span class="s2">"AtlasArray"</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="n">Union</span><span class="p">[</span><span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">],</span> <span class="n">da</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span>
 <span class="p">)</span>
 
 
@@ -603,19 +614,44 @@
 
 <div class="viewcode-block" id="Atlas">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.core.Atlas.html#brainglobe_atlasapi.core.Atlas">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">Atlas</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Atlas</span><span class="p">(</span><span class="n">Generic</span><span class="p">[</span><span class="n">AtlasArray</span><span class="p">]):</span>
 <span class="w">    </span><span class="sd">"""Base class to handle atlases in BrainGlobe.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    path : str or Path object</span>
 <span class="sd">        Path to folder containing data info.</span>
+<span class="sd">    dask : bool</span>
+<span class="sd">        If True, atlas array properties return dask arrays instead of loading</span>
+<span class="sd">        them into memory as numpy arrays.</span>
 <span class="sd">    """</span>
 
     <span class="n">left_hemisphere_value</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">right_hemisphere_value</span> <span class="o">=</span> <span class="mi">2</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+    <span class="nd">@overload</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">:</span> <span class="n">Atlas</span><span class="p">[</span><span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">]],</span>
+        <span class="n">path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>
+        <span class="n">dask</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+
+    <span class="nd">@overload</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">:</span> <span class="n">Atlas</span><span class="p">[</span><span class="n">da</span><span class="o">.</span><span class="n">Array</span><span class="p">],</span>
+        <span class="n">path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>
+        <span class="n">dask</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="kc">True</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+
+    <span class="nd">@overload</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">:</span> <span class="n">Atlas</span><span class="p">[</span><span class="n">AtlasArray</span><span class="p">],</span>
+        <span class="n">path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>
+        <span class="n">dask</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">dask</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dask</span> <span class="o">=</span> <span class="n">dask</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_template_pyramid_level</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_annotation_pyramid_level</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fs</span> <span class="o">=</span> <span class="n">s3fs</span><span class="o">.</span><span class="n">S3FileSystem</span><span class="p">(</span><span class="n">anon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -750,10 +786,10 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lookup</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">template</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">REFERENCE_DTYPE</span><span class="p">]:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">template</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AtlasArray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">"""Return the template image data. Loads it if not already loaded."""</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span>
+            <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="n">AtlasArray</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span><span class="p">)</span>
 
         <span class="n">template_location</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"annotation_set"</span><span class="p">][</span><span class="s2">"template"</span><span class="p">][</span>
             <span class="s2">"location"</span>
@@ -779,11 +815,10 @@
                 <span class="n">callback</span><span class="o">=</span><span class="n">TqdmCallback</span><span class="p">(),</span>
             <span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_template</span> <span class="o">=</span> <span class="n">multiscale</span><span class="o">.</span><span class="n">images</span><span class="p">[</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_template_pyramid_level</span>
-        <span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">multiscale</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_template_pyramid_level</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_template</span> <span class="o">=</span> <span class="n">data</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dask</span> <span class="k">else</span> <span class="n">data</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span>
+        <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="n">AtlasArray</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">reference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -799,10 +834,10 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">template</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">annotation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">ANNOTATION_DTYPE</span><span class="p">]:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">annotation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AtlasArray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">"""Return the annotation image data. Loads it if not already loaded."""</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_annotation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_annotation</span>
+            <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="n">AtlasArray</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_annotation</span><span class="p">)</span>
 
         <span class="n">annotation_location</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"annotation_set"</span><span class="p">][</span><span class="s2">"location"</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
         <span class="n">annotation_path</span> <span class="o">=</span> <span class="p">(</span>
@@ -827,14 +862,13 @@
                 <span class="n">callback</span><span class="o">=</span><span class="n">TqdmCallback</span><span class="p">(),</span>
             <span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_annotation</span> <span class="o">=</span> <span class="n">multiscale</span><span class="o">.</span><span class="n">images</span><span class="p">[</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_annotation_pyramid_level</span>
-        <span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">multiscale</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_annotation_pyramid_level</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_annotation</span> <span class="o">=</span> <span class="n">data</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dask</span> <span class="k">else</span> <span class="n">data</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_annotation</span>
+        <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="n">AtlasArray</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_annotation</span><span class="p">)</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">hemispheres</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">hemispheres</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AtlasArray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Returns a stack with the hemisphere information. 1 - left, 2 - right.</span>
 
@@ -844,24 +878,43 @@
 <span class="sd">        the middle plane is assigned to the left hemisphere.</span>
 <span class="sd">        """</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hemispheres</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hemispheres</span>
+            <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="n">AtlasArray</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hemispheres</span><span class="p">)</span>
 
         <span class="c1"># If reference is symmetric generate hemispheres block:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"symmetric"</span><span class="p">]:</span>
-            <span class="c1"># initialize empty stack:</span>
-            <span class="n">stack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"shape"</span><span class="p">],</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-
-            <span class="c1"># Use bgspace description to fill out with hemisphere values:</span>
+            <span class="n">shape</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"shape"</span><span class="p">])</span>
             <span class="n">front_ax_idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">space</span><span class="o">.</span><span class="n">axes_order</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">"frontal"</span><span class="p">)</span>
+            <span class="n">split</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="n">front_ax_idx</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
 
-            <span class="c1"># Fill out with 2s the right hemisphere:</span>
-            <span class="n">slices</span> <span class="o">=</span> <span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
-            <span class="n">slices</span><span class="p">[</span><span class="n">front_ax_idx</span><span class="p">]</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span>
-                <span class="nb">round</span><span class="p">(</span><span class="n">stack</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">front_ax_idx</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="kc">None</span>
-            <span class="p">)</span>
-            <span class="n">stack</span><span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">slices</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dask</span><span class="p">:</span>
+                <span class="n">right_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+                <span class="n">right_shape</span><span class="p">[</span><span class="n">front_ax_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">split</span>
+                <span class="n">left_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+                <span class="n">left_shape</span><span class="p">[</span><span class="n">front_ax_idx</span><span class="p">]</span> <span class="o">-=</span> <span class="n">split</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_hemispheres</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+                    <span class="p">[</span>
+                        <span class="n">da</span><span class="o">.</span><span class="n">full</span><span class="p">(</span>
+                            <span class="n">right_shape</span><span class="p">,</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">right_hemisphere_value</span><span class="p">,</span>
+                            <span class="n">dtype</span><span class="o">=</span><span class="n">HEMISPHERES_DTYPE</span><span class="p">,</span>
+                        <span class="p">),</span>
+                        <span class="n">da</span><span class="o">.</span><span class="n">full</span><span class="p">(</span>
+                            <span class="n">left_shape</span><span class="p">,</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">left_hemisphere_value</span><span class="p">,</span>
+                            <span class="n">dtype</span><span class="o">=</span><span class="n">HEMISPHERES_DTYPE</span><span class="p">,</span>
+                        <span class="p">),</span>
+                    <span class="p">],</span>
+                    <span class="n">axis</span><span class="o">=</span><span class="n">front_ax_idx</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">stack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span>
+                    <span class="n">shape</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">right_hemisphere_value</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">HEMISPHERES_DTYPE</span>
+                <span class="p">)</span>
+                <span class="n">slices</span> <span class="o">=</span> <span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+                <span class="n">slices</span><span class="p">[</span><span class="n">front_ax_idx</span><span class="p">]</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">split</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+                <span class="n">stack</span><span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">slices</span><span class="p">)]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">left_hemisphere_value</span>
 
-            <span class="bp">self</span><span class="o">.</span><span class="n">_hemispheres</span> <span class="o">=</span> <span class="n">stack</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_hemispheres</span> <span class="o">=</span> <span class="n">stack</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">annotation_location</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"annotation_set"</span><span class="p">][</span><span class="s2">"location"</span><span class="p">][</span>
                 <span class="mi">1</span><span class="p">:</span>
@@ -888,11 +941,10 @@
                     <span class="n">callback</span><span class="o">=</span><span class="n">TqdmCallback</span><span class="p">(),</span>
                 <span class="p">)</span>
 
-            <span class="bp">self</span><span class="o">.</span><span class="n">_hemispheres</span> <span class="o">=</span> <span class="n">multiscale</span><span class="o">.</span><span class="n">images</span><span class="p">[</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_annotation_pyramid_level</span>
-            <span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">multiscale</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_annotation_pyramid_level</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_hemispheres</span> <span class="o">=</span> <span class="n">data</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dask</span> <span class="k">else</span> <span class="n">data</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hemispheres</span>
+        <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="n">AtlasArray</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hemispheres</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Atlas.hemisphere_from_coords">
 <a class="viewcode-back" href="../../documentation/brainrender/api/brainrender.atlas.Atlas.html#brainglobe_atlasapi.core.Atlas.hemisphere_from_coords">[docs]</a>
@@ -922,6 +974,8 @@
 
 <span class="sd">        """</span>
         <span class="n">hem</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hemispheres</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_idx_from_coords</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">microns</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dask</span><span class="p">:</span>
+            <span class="n">hem</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">hem</span><span class="o">.</span><span class="n">compute</span><span class="p">())</span>
         <span class="k">if</span> <span class="n">as_string</span><span class="p">:</span>
             <span class="n">hem</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"left"</span><span class="p">,</span> <span class="s2">"right"</span><span class="p">][</span><span class="n">hem</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">hem</span></div>
@@ -958,6 +1012,8 @@
 <span class="sd">            Structure containing the coordinates.</span>
 <span class="sd">        """</span>
         <span class="n">rid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">annotation</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_idx_from_coords</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">microns</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dask</span><span class="p">:</span>
+            <span class="n">rid</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rid</span><span class="o">.</span><span class="n">compute</span><span class="p">())</span>
 
         <span class="c1"># If we want to cut the result at some high level of the hierarchy:</span>
         <span class="k">if</span> <span class="n">hierarchy_lev</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -1243,7 +1299,7 @@
 
 <div class="viewcode-block" id="Atlas.get_structure_mask">
 <a class="viewcode-back" href="../../documentation/brainrender/api/brainrender.atlas.Atlas.html#brainglobe_atlasapi.core.Atlas.get_structure_mask">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">get_structure_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">structure</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">]:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_structure_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">structure</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AtlasArray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">"""Return binary uint8 mask for the given structure.</span>
 
 <span class="sd">        Reads directly from the pre-built 4D annotation masks array.</span>
@@ -1308,11 +1364,10 @@
                     <span class="sa">f</span><span class="s2">"not found at </span><span class="si">{</span><span class="n">remote_path</span><span class="si">}</span><span class="s2">"</span>
                 <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
 
-        <span class="k">return</span> <span class="p">(</span>
-            <span class="n">multiscale</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_annotation_masks_pyramid_level</span><span class="p">]</span>
-            <span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
-            <span class="o">.</span><span class="n">compute</span><span class="p">()</span>
-        <span class="p">)</span></div>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">multiscale</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_annotation_masks_pyramid_level</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span>
+            <span class="n">index</span>
+        <span class="p">]</span>
+        <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="n">AtlasArray</span><span class="p">,</span> <span class="n">data</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dask</span> <span class="k">else</span> <span class="n">data</span><span class="o">.</span><span class="n">compute</span><span class="p">())</span></div>
 </div>
 
 

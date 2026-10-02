@@ -1026,7 +1026,7 @@
 <span class="sd">    """</span>
     <span class="n">structures_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
         <span class="n">structures_path</span><span class="p">,</span>
-        <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"parent_identifier"</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">UInt16Dtype</span><span class="p">()},</span>
+        <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"parent_identifier"</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">UInt32Dtype</span><span class="p">()},</span>
         <span class="n">converters</span><span class="o">=</span><span class="p">{</span>
             <span class="s2">"root_identifier_path"</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span>
                 <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"[]"</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s2">","</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span>

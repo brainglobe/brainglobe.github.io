@@ -640,54 +640,6 @@
 
 
 
-<div class="viewcode-block" id="format_template_stub">
-<a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.descriptors.format_template_stub.html#brainglobe_atlasapi.descriptors.format_template_stub">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">format_template_stub</span><span class="p">(</span><span class="n">template_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">version</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Format the template stub for a given template name and version.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    template_name : str</span>
-<span class="sd">        The name of the template (e.g., allen-adult-mouse-stpt-template).</span>
-<span class="sd">    version : str</span>
-<span class="sd">        The version of the template.</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    str</span>
-<span class="sd">        The formatted template stub.</span>
-<span class="sd">    """</span>
-    <span class="k">return</span> <span class="n">format_component_stub</span><span class="p">(</span>
-        <span class="n">template_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">V3_TEMPLATE_ROOTDIR</span><span class="p">,</span> <span class="n">V3_TEMPLATE_NAME</span>
-    <span class="p">)</span></div>
-
-
-
-<div class="viewcode-block" id="format_annotation_stub">
-<a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.descriptors.format_annotation_stub.html#brainglobe_atlasapi.descriptors.format_annotation_stub">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">format_annotation_stub</span><span class="p">(</span><span class="n">annotation_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">version</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Format the annotation stub for a given annotation name and version.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    annotation_name : str</span>
-<span class="sd">        The name of the annotation (e.g., allen-adult-mouse-annotation).</span>
-<span class="sd">    version : str</span>
-<span class="sd">        The version of the annotation.</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    str</span>
-<span class="sd">        The formatted annotation stub.</span>
-<span class="sd">    """</span>
-    <span class="k">return</span> <span class="n">format_component_stub</span><span class="p">(</span>
-        <span class="n">annotation_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">V3_ANNOTATION_ROOTDIR</span><span class="p">,</span> <span class="n">V3_ANNOTATION_NAME</span>
-    <span class="p">)</span></div>
-
-
-
 <div class="viewcode-block" id="format_hemispheres_stub">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.descriptors.format_hemispheres_stub.html#brainglobe_atlasapi.descriptors.format_hemispheres_stub">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">format_hemispheres_stub</span><span class="p">(</span><span class="n">annotation_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">version</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -708,30 +660,6 @@
 <span class="sd">    """</span>
     <span class="k">return</span> <span class="n">format_component_stub</span><span class="p">(</span>
         <span class="n">annotation_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">V3_ANNOTATION_ROOTDIR</span><span class="p">,</span> <span class="n">V3_HEMISPHERES_NAME</span>
-    <span class="p">)</span></div>
-
-
-
-<div class="viewcode-block" id="format_terminology_stub">
-<a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.descriptors.format_terminology_stub.html#brainglobe_atlasapi.descriptors.format_terminology_stub">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">format_terminology_stub</span><span class="p">(</span><span class="n">terminology_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">version</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Format the terminology stub for a given terminology name and version.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    terminology_name : str</span>
-<span class="sd">        The name of the terminology (e.g., allen-adult-mouse-terminology).</span>
-<span class="sd">    version : str</span>
-<span class="sd">        The version of the terminology.</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    str</span>
-<span class="sd">        The formatted terminology stub.</span>
-<span class="sd">    """</span>
-    <span class="k">return</span> <span class="n">format_component_stub</span><span class="p">(</span>
-        <span class="n">terminology_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">V3_TERMINOLOGY_ROOTDIR</span><span class="p">,</span> <span class="n">V3_TERMINOLOGY_NAME</span>
     <span class="p">)</span></div>
 
 
