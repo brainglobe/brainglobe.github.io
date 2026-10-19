@@ -188,8 +188,9 @@ In no particular order:
 :link: https://github.com/kailynkfields
 :::
 
-:::{grid-item-card} ramroomh
+:::{grid-item-card} Rami Hamati
 :img-top: https://avatars.githubusercontent.com/u/39342954?v=4?
+:link: https://github.com/rami-hamati
 :::
 
 :::{grid-item-card} Samuel Diebolt
@@ -770,6 +771,31 @@ In no particular order:
 :::{grid-item-card} Ilias Mahboub
 :img-top: https://avatars.githubusercontent.com/u/227131238?v=4
 :link: https://github.com/iliasmahboub
+:::
+
+:::{grid-item-card} Soumya Snigdha Kundu
+:img-top: https://avatars.githubusercontent.com/u/54958228?v=4
+:link: https://github.com/aymuos15
+:::
+
+:::{grid-item-card} Amirreza Bahramani
+:img-top: https://avatars.githubusercontent.com/u/83073509?v=4
+:link: https://github.com/bahramani
+:::
+
+:::{grid-item-card} Wolf
+:img-top: https://avatars.githubusercontent.com/u/22243650?v=4
+:link: https://github.com/Wolfffff
+:::
+
+:::{grid-item-card} Vishhh
+:img-top: https://avatars.githubusercontent.com/u/91872471?v=4
+:link: https://github.com/vishaalinimanikandan
+:::
+
+:::{grid-item-card} temp-noob
+:img-top: https://avatars.githubusercontent.com/u/45798519?v=4
+:link: https://github.com/temp-noob
 :::
 
 ::::
