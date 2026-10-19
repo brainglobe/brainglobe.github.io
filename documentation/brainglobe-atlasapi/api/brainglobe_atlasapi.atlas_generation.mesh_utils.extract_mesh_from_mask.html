@@ -26,8 +26,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=3215791a" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
@@ -40,10 +40,10 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
 
     <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
@@ -67,6 +67,7 @@
     <link rel="next" title="write_mesh" href="brainglobe_atlasapi.atlas_generation.mesh_utils.write_mesh.html" />
     <link rel="prev" title="create_region_mesh" href="brainglobe_atlasapi.atlas_generation.mesh_utils.create_region_mesh.html" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
   
@@ -903,7 +904,7 @@
 <h1>extract_mesh_from_mask<a class="headerlink" href="#extract-mesh-from-mask" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.mesh_utils.extract_mesh_from_mask">
-<span class="sig-prename descclassname"><span class="pre">brainglobe_atlasapi.atlas_generation.mesh_utils.</span></span><span class="sig-name descname"><span class="pre">extract_mesh_from_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">volume</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_filepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mcubes_smooth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">closing_n_iters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decimate_fraction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_marching_cubes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extract_largest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/brainglobe_atlasapi/atlas_generation/mesh_utils.html#extract_mesh_from_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.mesh_utils.extract_mesh_from_mask" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">brainglobe_atlasapi.atlas_generation.mesh_utils.</span></span><span class="sig-name descname"><span class="pre">extract_mesh_from_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">volume</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_filepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mcubes_smooth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">closing_n_iters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decimate_fraction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_marching_cubes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extract_largest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/brainglobe_atlasapi/atlas_generation/mesh_utils.html#extract_mesh_from_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.mesh_utils.extract_mesh_from_mask" title="Link to this definition">#</a></dt>
 <dd><p>Return a vedo mesh actor with just the outer surface of a
 binary mask volume. It’s faster though less accurate than
 extract_mesh_from_mask.</p>
@@ -912,11 +913,16 @@ extract_mesh_from_mask.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj_filepath</strong> (<em>str</em><em> or </em><em>Path object</em>) – path to where the .obj mesh file will be saved</p></li>
 <li><p><strong>volume</strong> (<em>3d np.ndarray</em>)</p></li>
-<li><p><strong>threshold</strong> (<em>float</em>) – min value to threshold the volume for isosurface extraction</p></li>
+<li><p><strong>threshold</strong> (<em>float</em>) – min value to threshold the volume for isosurface extraction.
+Ignored when <cite>mcubes_smooth</cite> is True.</p></li>
 <li><p><strong>smooth</strong> (<em>bool</em>) – if True the surface mesh is smoothed</p></li>
-<li><p><strong>use_marching_cubes</strong> (<em>bool:</em>) – if true PyMCubes is used to extract the volume’s surface
-it’s slower and less accurate than vedo though.</p></li>
-<li><p><strong>mcubes_smooth</strong> (<em>bool</em><em>,</em>) – if True mcubes.smooth is used before applying marching cubes</p></li>
+<li><p><strong>use_marching_cubes</strong> (<em>bool:</em>) – if True scikit-image’s marching cubes is used to extract the
+volume’s surface instead of vedo. The mesh is not capped where the
+mask touches the volume border.</p></li>
+<li><p><strong>mcubes_smooth</strong> (<em>bool</em><em>,</em>) – if True the mask’s surface is smoothed before applying marching
+cubes, with constrained smoothing (Lempitsky, 2010), or a Gaussian
+filter for volumes larger than 500**3 voxels. Only used when
+<cite>use_marching_cubes</cite> is True.</p></li>
 <li><p><strong>closing_n_iters</strong> (<em>int</em>) – number of iterations of closing morphological operation.
 set to None to avoid applying morphological operations</p></li>
 <li><p><strong>decimate_fraction</strong> (<em>float  in range</em><em> [</em><em>0</em><em>, </em><em>1</em><em>]</em><em>.</em>) – What fraction of the original number of vertices is to be kept.
@@ -924,6 +930,9 @@ EG .5 means that 50% of the vertices are kept,
 the others are removed.</p></li>
 <li><p><strong>extract_largest</strong> (<em>bool</em>) – If True only the largest region are extracted. It can cause issues for
 bilateral regions as only one will remain</p></li>
+<li><p><strong>origin</strong> (<em>sequence</em><em> of </em><em>int</em><em> or </em><em>None</em>) – Voxel index of <cite>volume[0, 0, 0]</cite> within a larger volume, so a cropped
+mask yields the same vertex coordinates as the uncropped one.
+Ignored when <cite>use_marching_cubes</cite> is True.</p></li>
 </ul>
 </dd>
 </dl>
@@ -998,8 +1007,8 @@ bilateral regions as only one will remain</p></li>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1013,7 +1022,7 @@ Created using <a href="https://sphinx-doc.org/">Sphinx</a> 8.2.3.
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.22.0.
+0.23.0.
 </p></div>
       
     </div>

@@ -90,7 +90,7 @@ To know what atlases are available through BrainGlobe, we can use the `show_atla
     │  allen_mouse_50um                                                    3.1     │
     │  allen_mouse_bluebrain_barrels_1…                                    3.0     │
     │  allen_mouse_bluebrain_barrels_2…                                    3.0     │
-    │  australian_mouse_15um                                               3.0     │
+    │  australian_mouse_15um                                               3.1     │
     │  azba_zfish_4um                                                      3.0     │
     │  carea_mouse_25um                                                    3.0     │
     │  ccfv2_dev_mouse_25um                                                3.1     │
@@ -443,7 +443,7 @@ Anatomical reference (or template) image:
 
     Warning: atlas.reference is a deprecated alias for atlas.template, and will be removed in future versions.
 
-    <matplotlib.image.AxesImage object at 0x7f77b4e373b0>
+    <matplotlib.image.AxesImage object at 0x7f61e8c1c980>
 
 
 
@@ -480,7 +480,7 @@ Annotations stack
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f77b4d67440>
+    <matplotlib.image.AxesImage object at 0x7f61e8b10530>
 
 
 
@@ -510,7 +510,7 @@ Hemisheres stack:
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f77b49810a0>
+    <matplotlib.image.AxesImage object at 0x7f61e8e94d10>
 
 
 
@@ -1532,7 +1532,7 @@ To get the mask for a region, use
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f77b4980b00>
+    <matplotlib.image.AxesImage object at 0x7f61e8f41b20>
 
 
 
@@ -1780,7 +1780,7 @@ Now print hemisphere string
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.419 seconds)
+   **Total running time of the script:** (0 minutes 1.353 seconds)
 
 
 .. _sphx_glr_download_api_examples_brainglobe_atlasapi.py:

@@ -27,9 +27,6 @@ Render
    
    
    
-   
-   
-   
 
    
    .. rubric:: Methods
@@ -42,9 +39,6 @@ Render
    
    
       ~Render.export
-   
-   
-      ~Render.keypress
    
    
       ~Render.render

@@ -25,8 +25,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=3215791a" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
@@ -39,10 +39,10 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
 
     <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
@@ -64,6 +64,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
   
@@ -530,7 +531,15 @@
     <span class="n">MultiLevelPrecomputedMeshManifest</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">rich.progress</span><span class="w"> </span><span class="kn">import</span> <span class="n">track</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.ndimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">binary_closing</span><span class="p">,</span> <span class="n">binary_fill_holes</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">sparse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.ndimage</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">binary_closing</span><span class="p">,</span>
+    <span class="n">binary_fill_holes</span><span class="p">,</span>
+    <span class="n">distance_transform_edt</span><span class="p">,</span>
+    <span class="n">find_objects</span><span class="p">,</span>
+    <span class="n">gaussian_filter</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">skimage.measure</span><span class="w"> </span><span class="kn">import</span> <span class="n">marching_cubes</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.structure_tree_util</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">get_structures_tree</span><span class="p">,</span>
@@ -543,14 +552,6 @@
     <span class="k">raise</span> <span class="ne">ModuleNotFoundError</span><span class="p">(</span>
         <span class="s2">"Mesh generation with these utils requires vedo</span><span class="se">\n</span><span class="s2">"</span>
         <span class="o">+</span> <span class="s1">'   please install with "pip install vedo -U"'</span>
-    <span class="p">)</span>
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">mcubes</span>
-<span class="k">except</span> <span class="ne">ModuleNotFoundError</span><span class="p">:</span>
-    <span class="k">raise</span> <span class="ne">ModuleNotFoundError</span><span class="p">(</span>
-        <span class="s2">"Mesh generation with these utils requires PyMCubes</span><span class="se">\n</span><span class="s2">"</span>
-        <span class="o">+</span> <span class="s1">'   please install with "pip install PyMCubes -U"'</span>
     <span class="p">)</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">multiprocessing</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mp</span>
@@ -570,6 +571,76 @@
 <span class="c1"># ----------------- #</span>
 
 
+<span class="k">def</span><span class="w"> </span><span class="nf">_smooth_constrained</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">band_radius</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">max_iters</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Smooth the 0.5 level-set of a 3D binary mask.</span>
+
+<span class="sd">    Implements "Surface Extraction from Binary Volumes with Higher-Order</span>
+<span class="sd">    Smoothness", Victor Lempitsky, CVPR 2010. Adapted from PyMCubes'</span>
+<span class="sd">    `smooth_constrained` (BSD-3-Clause, Copyright (c) 2012-2015 P. M.</span>
+<span class="sd">    Neila), with the matrix assembly vectorised.</span>
+
+<span class="sd">    Returns a float array whose 0 level-set is the smoothed surface. The</span>
+<span class="sd">    surface is constrained to stay within half a voxel of the mask boundary.</span>
+<span class="sd">    """</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+        <span class="n">mask</span><span class="p">,</span>
+        <span class="n">distance_transform_edt</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="mf">0.5</span> <span class="o">-</span> <span class="n">distance_transform_edt</span><span class="p">(</span><span class="o">~</span><span class="n">mask</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">band</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">band_radius</span>
+
+    <span class="c1"># Second differences along each axis over band voxels; neighbours outside</span>
+    <span class="c1"># the band are treated as equal to the voxel itself.</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">band</span><span class="p">)</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">band</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">constant_values</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">idx</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">band</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">band</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">vals</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">axis</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">diag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">neighbour_coords</span> <span class="o">=</span> <span class="n">coords</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="n">neighbour_coords</span><span class="p">[:,</span> <span class="n">axis</span><span class="p">]</span> <span class="o">+=</span> <span class="n">step</span>
+            <span class="n">neighbour</span> <span class="o">=</span> <span class="n">idx</span><span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">neighbour_coords</span><span class="o">.</span><span class="n">T</span><span class="p">)]</span>
+            <span class="n">inside</span> <span class="o">=</span> <span class="n">neighbour</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="n">inside</span><span class="p">])</span>
+            <span class="n">cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbour</span><span class="p">[</span><span class="n">inside</span><span class="p">])</span>
+            <span class="n">vals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">inside</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span>
+            <span class="n">diag</span> <span class="o">+=</span> <span class="o">~</span><span class="n">inside</span>
+        <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+        <span class="n">cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+        <span class="n">vals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">diag</span><span class="p">)</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">vals</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">rows</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">cols</span><span class="p">))),</span>
+        <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">q</span><span class="p">)</span><span class="o">.</span><span class="n">tocsr</span><span class="p">()</span>
+
+    <span class="c1"># Weighted Jacobi iterations, clipped so voxels keep their inside/outside</span>
+    <span class="c1"># sign, stopping when energy improves by less than rel_tol per iteration</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">dist</span><span class="p">[</span><span class="n">band</span><span class="p">]</span>
+    <span class="n">upper</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+    <span class="n">lower</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+    <span class="n">upper</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">upper</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">lower</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">lower</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">inv_diag</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">q</span><span class="o">.</span><span class="n">diagonal</span><span class="p">()</span>
+    <span class="n">off_diag</span> <span class="o">=</span> <span class="n">q</span> <span class="o">-</span> <span class="n">sparse</span><span class="o">.</span><span class="n">diags</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">diagonal</span><span class="p">())</span>
+    <span class="n">tol</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rel_tol</span><span class="p">)</span> <span class="o">**</span> <span class="mi">10</span>
+    <span class="n">energy</span> <span class="o">=</span> <span class="n">x</span> <span class="o">@</span> <span class="p">(</span><span class="n">q</span> <span class="o">@</span> <span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iters</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="n">inv_diag</span> <span class="o">*</span> <span class="p">(</span><span class="n">off_diag</span> <span class="o">@</span> <span class="n">x</span><span class="p">))</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">x</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">energy</span><span class="p">,</span> <span class="n">previous_energy</span> <span class="o">=</span> <span class="n">x</span> <span class="o">@</span> <span class="p">(</span><span class="n">q</span> <span class="o">@</span> <span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">energy</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">previous_energy</span> <span class="o">-</span> <span class="n">energy</span><span class="p">)</span> <span class="o">/</span> <span class="n">previous_energy</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span>
+                <span class="k">break</span>
+
+    <span class="n">dist</span><span class="p">[</span><span class="n">band</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">dist</span>
+
+
 <div class="viewcode-block" id="extract_mesh_from_mask">
 <a class="viewcode-back" href="../../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.atlas_generation.mesh_utils.extract_mesh_from_mask.html#brainglobe_atlasapi.atlas_generation.mesh_utils.extract_mesh_from_mask">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">extract_mesh_from_mask</span><span class="p">(</span>
@@ -582,6 +653,7 @@
     <span class="n">decimate_fraction</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">,</span>  <span class="c1"># keep 60% of original fertices</span>
     <span class="n">use_marching_cubes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">extract_largest</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">origin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Return a vedo mesh actor with just the outer surface of a</span>
@@ -594,14 +666,19 @@
 <span class="sd">        path to where the .obj mesh file will be saved</span>
 <span class="sd">    volume: 3d np.ndarray</span>
 <span class="sd">    threshold: float</span>
-<span class="sd">        min value to threshold the volume for isosurface extraction</span>
+<span class="sd">        min value to threshold the volume for isosurface extraction.</span>
+<span class="sd">        Ignored when `mcubes_smooth` is True.</span>
 <span class="sd">    smooth: bool</span>
 <span class="sd">        if True the surface mesh is smoothed</span>
 <span class="sd">    use_marching_cubes: bool:</span>
-<span class="sd">        if true PyMCubes is used to extract the volume's surface</span>
-<span class="sd">        it's slower and less accurate than vedo though.</span>
+<span class="sd">        if True scikit-image's marching cubes is used to extract the</span>
+<span class="sd">        volume's surface instead of vedo. The mesh is not capped where the</span>
+<span class="sd">        mask touches the volume border.</span>
 <span class="sd">    mcubes_smooth: bool,</span>
-<span class="sd">        if True mcubes.smooth is used before applying marching cubes</span>
+<span class="sd">        if True the mask's surface is smoothed before applying marching</span>
+<span class="sd">        cubes, with constrained smoothing (Lempitsky, 2010), or a Gaussian</span>
+<span class="sd">        filter for volumes larger than 500**3 voxels. Only used when</span>
+<span class="sd">        `use_marching_cubes` is True.</span>
 <span class="sd">    closing_n_iters: int</span>
 <span class="sd">        number of iterations of closing morphological operation.</span>
 <span class="sd">        set to None to avoid applying morphological operations</span>
@@ -612,6 +689,10 @@
 <span class="sd">    extract_largest: bool</span>
 <span class="sd">        If True only the largest region are extracted. It can cause issues for</span>
 <span class="sd">        bilateral regions as only one will remain</span>
+<span class="sd">    origin: sequence of int or None</span>
+<span class="sd">        Voxel index of `volume[0, 0, 0]` within a larger volume, so a cropped</span>
+<span class="sd">        mask yields the same vertex coordinates as the uncropped one.</span>
+<span class="sd">        Ignored when `use_marching_cubes` is True.</span>
 
 <span class="sd">    """</span>
     <span class="c1"># check savepath argument</span>
@@ -644,22 +725,31 @@
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">use_marching_cubes</span><span class="p">:</span>
         <span class="c1"># Use faster algorithm</span>
-        <span class="n">volume</span> <span class="o">=</span> <span class="n">Volume</span><span class="p">(</span><span class="n">volume</span><span class="p">)</span>
+        <span class="n">volume</span> <span class="o">=</span> <span class="n">Volume</span><span class="p">(</span><span class="n">volume</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">origin</span><span class="p">)</span>
         <span class="n">mesh</span> <span class="o">=</span> <span class="n">volume</span><span class="o">.</span><span class="n">isosurface</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">threshold</span><span class="p">)</span><span class="o">.</span><span class="n">cap</span><span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span>
-            <span class="s2">"The marching cubes algorithm might be rotated "</span>
-            <span class="s2">"compared to your volume data"</span>
-        <span class="p">)</span>
-        <span class="c1"># Apply marching cubes and save to .obj</span>
+        <span class="c1"># Smoothed volumes have their surface at the 0 level-set,</span>
+        <span class="c1"># matching PyMCubes' `smooth`</span>
         <span class="k">if</span> <span class="n">mcubes_smooth</span><span class="p">:</span>
-            <span class="n">smooth_array</span> <span class="o">=</span> <span class="n">mcubes</span><span class="o">.</span><span class="n">smooth</span><span class="p">(</span><span class="n">volume</span><span class="p">)</span>
-            <span class="n">vertices</span><span class="p">,</span> <span class="n">triangles</span> <span class="o">=</span> <span class="n">mcubes</span><span class="o">.</span><span class="n">marching_cubes</span><span class="p">(</span><span class="n">smooth_array</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">vertices</span><span class="p">,</span> <span class="n">triangles</span> <span class="o">=</span> <span class="n">mcubes</span><span class="o">.</span><span class="n">marching_cubes</span><span class="p">(</span><span class="n">volume</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+            <span class="n">threshold</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="n">volume</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="o">**</span><span class="mi">3</span><span class="p">:</span>
+                <span class="n">volume</span> <span class="o">=</span> <span class="n">gaussian_filter</span><span class="p">(</span><span class="n">volume</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">volume</span> <span class="o">=</span> <span class="n">_smooth_constrained</span><span class="p">(</span><span class="n">volume</span><span class="p">)</span>
 
-        <span class="c1">#  create mesh</span>
-        <span class="n">mesh</span> <span class="o">=</span> <span class="n">Mesh</span><span class="p">((</span><span class="n">vertices</span><span class="p">,</span> <span class="n">triangles</span><span class="p">))</span>
+        <span class="c1"># Avoid creating meshes from empty, or full volumes</span>
+        <span class="k">if</span> <span class="n">volume</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">threshold</span> <span class="o">&lt;</span> <span class="n">volume</span><span class="o">.</span><span class="n">max</span><span class="p">():</span>
+            <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">marching_cubes</span><span class="p">(</span>
+                <span class="n">volume</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"lorensen"</span>
+            <span class="p">)</span>
+            <span class="c1"># skimage winds inward; flip to outward</span>
+            <span class="n">faces</span> <span class="o">=</span> <span class="n">faces</span><span class="p">[:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Return empty mesh if the volume is empty or full</span>
+            <span class="n">vertices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+            <span class="n">faces</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+
+        <span class="n">mesh</span> <span class="o">=</span> <span class="n">Mesh</span><span class="p">((</span><span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span><span class="p">))</span>
 
     <span class="c1"># Cleanup and save</span>
     <span class="k">if</span> <span class="n">extract_largest</span><span class="p">:</span>
@@ -689,6 +779,7 @@
     <span class="n">decimate_fraction</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
     <span class="n">smooth</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
     <span class="n">verbosity</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">bbox</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">slice</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Create and save an `.obj` mesh for a region and its descendants.</span>
@@ -730,6 +821,10 @@
 <span class="sd">        Whether to smooth the extracted mesh.</span>
 <span class="sd">    verbosity : int, optional</span>
 <span class="sd">        Verbosity level used for debug output.</span>
+<span class="sd">    bbox : tuple of slice, optional</span>
+<span class="sd">        Region of `annotated_volume` containing the region's labels, padded</span>
+<span class="sd">        so morphological closing can't reach its edge. Only this crop is read</span>
+<span class="sd">        and meshed; the output is the same as meshing the full volume.</span>
 
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
@@ -776,6 +871,10 @@
         <span class="k">return</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># Create mask and extract mesh</span>
+        <span class="n">origin</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">bbox</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">annotated_volume</span> <span class="o">=</span> <span class="n">annotated_volume</span><span class="p">[</span><span class="n">bbox</span><span class="p">]</span>
+            <span class="n">origin</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">start</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">bbox</span><span class="p">]</span>
         <span class="n">mask</span> <span class="o">=</span> <span class="n">create_masked_array</span><span class="p">(</span><span class="n">annotated_volume</span><span class="p">,</span> <span class="n">ids</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -787,6 +886,7 @@
                     <span class="n">obj_filepath</span><span class="o">=</span><span class="n">savepath</span><span class="p">,</span>
                     <span class="n">smooth</span><span class="o">=</span><span class="n">smooth</span><span class="p">,</span>
                     <span class="n">decimate_fraction</span><span class="o">=</span><span class="n">decimate_fraction</span><span class="p">,</span>
+                    <span class="n">origin</span><span class="o">=</span><span class="n">origin</span><span class="p">,</span>
                 <span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">extract_mesh_from_mask</span><span class="p">(</span>
@@ -795,7 +895,38 @@
                     <span class="n">smooth</span><span class="o">=</span><span class="n">smooth</span><span class="p">,</span>
                     <span class="n">closing_n_iters</span><span class="o">=</span><span class="n">closing_n_iters</span><span class="p">,</span>
                     <span class="n">decimate_fraction</span><span class="o">=</span><span class="n">decimate_fraction</span><span class="p">,</span>
+                    <span class="n">origin</span><span class="o">=</span><span class="n">origin</span><span class="p">,</span>
                 <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_label_bounding_boxes</span><span class="p">(</span><span class="n">volume</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">slab_depth</span><span class="o">=</span><span class="mi">64</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Return per-label inclusive (lo, hi) voxel bounds, each (len(labels), ndim).</span>
+
+<span class="sd">    `labels` must be sorted. Labels absent from `volume` keep lo &gt; hi, and</span>
+<span class="sd">    voxel values not in `labels` are ignored. The volume is scanned in slabs</span>
+<span class="sd">    along axis 0 to avoid a full-size index array.</span>
+<span class="sd">    """</span>
+    <span class="n">lo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">),</span> <span class="n">volume</span><span class="o">.</span><span class="n">ndim</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
+    <span class="n">hi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">),</span> <span class="n">volume</span><span class="o">.</span><span class="n">ndim</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">z0</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">volume</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">slab_depth</span><span class="p">):</span>
+        <span class="n">slab</span> <span class="o">=</span> <span class="n">volume</span><span class="p">[</span><span class="n">z0</span> <span class="p">:</span> <span class="n">z0</span> <span class="o">+</span> <span class="n">slab_depth</span><span class="p">]</span>
+        <span class="c1"># 1-based label index per voxel, 0 for values not in labels</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">slab</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">==</span> <span class="n">slab</span>
+        <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">idx</span><span class="p">[</span><span class="o">~</span><span class="n">found</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">objects</span> <span class="o">=</span> <span class="n">find_objects</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">max_label</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">sl</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">objects</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">sl</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">start</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sl</span><span class="p">]</span>
+            <span class="n">stop</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">stop</span> <span class="o">-</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sl</span><span class="p">]</span>
+            <span class="n">start</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">z0</span>
+            <span class="n">stop</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">z0</span>
+            <span class="n">lo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">lo</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">start</span><span class="p">)</span>
+            <span class="n">hi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">hi</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">stop</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span>
 
 
 <div class="viewcode-block" id="create_region_mesh">
@@ -874,13 +1005,40 @@
     <span class="n">meshes_dir_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="n">tree</span> <span class="o">=</span> <span class="n">get_structures_tree</span><span class="p">(</span><span class="n">structures_list</span><span class="p">)</span>
-    <span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">volume</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">volume</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span>
 
     <span class="c1"># Only used for parallel processing</span>
     <span class="n">ann_path</span> <span class="o">=</span> <span class="n">save_path</span> <span class="o">/</span> <span class="s2">"temp_annotations.zarr"</span>
 
     <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="n">node</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">Region</span><span class="p">(</span><span class="n">key</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">)</span>
+
+    <span class="c1"># Mesh each region from its padded bounding box instead of the full</span>
+    <span class="c1"># volume. Padding by closing_n_iters + 1 keeps hole filling and closing</span>
+    <span class="c1"># identical to running them on the full volume.</span>
+    <span class="n">label_lo</span><span class="p">,</span> <span class="n">label_hi</span> <span class="o">=</span> <span class="n">_label_bounding_boxes</span><span class="p">(</span><span class="n">volume</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+    <span class="n">label_index</span> <span class="o">=</span> <span class="p">{</span><span class="nb">int</span><span class="p">(</span><span class="n">label</span><span class="p">):</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">labels</span><span class="p">)}</span>
+    <span class="n">pad</span> <span class="o">=</span> <span class="p">(</span><span class="n">closing_n_iters</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">volume_shape</span> <span class="o">=</span> <span class="n">volume</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">region_bbox</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+        <span class="c1"># Root is closed with extract_mesh_from_mask's default iterations,</span>
+        <span class="c1"># not closing_n_iters, and spans almost the whole volume anyway.</span>
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">identifier</span> <span class="o">==</span> <span class="n">tree</span><span class="o">.</span><span class="n">root</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">label_index</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">subtree</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">identifier</span><span class="p">)</span><span class="o">.</span><span class="n">nodes</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">label_index</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">idx</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">lo</span> <span class="o">=</span> <span class="n">label_lo</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="n">pad</span>
+        <span class="n">hi</span> <span class="o">=</span> <span class="n">label_hi</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">pad</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span>
+            <span class="nb">slice</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="n">size</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">size</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">volume_shape</span><span class="p">)</span>
+        <span class="p">)</span>
 
     <span class="n">volume_size</span> <span class="o">=</span> <span class="n">volume</span><span class="o">.</span><span class="n">size</span>
     <span class="k">if</span> <span class="n">parallel</span><span class="p">:</span>
@@ -925,6 +1083,7 @@
             <span class="n">decimate_fraction</span><span class="p">,</span>
             <span class="n">smooth</span><span class="p">,</span>
             <span class="n">verbosity</span><span class="p">,</span>
+            <span class="n">region_bbox</span><span class="p">(</span><span class="n">node</span><span class="p">),</span>
         <span class="p">)</span>
         <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">preorder_depth_first_search</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">identifier</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">skip_structure_ids</span>
@@ -1123,8 +1282,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1138,7 +1297,7 @@ Created using <a href="https://sphinx-doc.org/">Sphinx</a> 8.2.3.
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.22.0.
+0.23.0.
 </p></div>
       
     </div>

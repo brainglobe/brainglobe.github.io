@@ -26,8 +26,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=3215791a" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
@@ -40,10 +40,10 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
 
     <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
@@ -67,6 +67,7 @@
     <link rel="next" title="brainrender.actors.volume" href="brainrender.actors.volume.html" />
     <link rel="prev" title="brainrender.scene" href="brainrender.scene.html" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
   
@@ -931,19 +932,16 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#brainrender.scene.Scene.get_actors" title="brainrender.scene.Scene.get_actors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_actors</span></code></a>([name, br_class])</p></td>
 <td><p>Return the scene's actors that match some search criteria.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#brainrender.scene.Scene.keypress" title="brainrender.scene.Scene.keypress"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keypress</span></code></a>(key)</p></td>
-<td><p>Handle key presses during interactive rendering.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#brainrender.scene.Scene.remove" title="brainrender.scene.Scene.remove"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove</span></code></a>(*actors)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainrender.scene.Scene.remove" title="brainrender.scene.Scene.remove"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove</span></code></a>(*actors)</p></td>
 <td><p>Remove actors from the scene.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#brainrender.scene.Scene.render" title="brainrender.scene.Scene.render"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render</span></code></a>([interactive, camera, zoom, resetcam])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainrender.scene.Scene.render" title="brainrender.scene.Scene.render"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render</span></code></a>([interactive, camera, zoom, resetcam])</p></td>
 <td><p>Render the scene.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#brainrender.scene.Scene.screenshot" title="brainrender.scene.Scene.screenshot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">screenshot</span></code></a>([name, scale])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainrender.scene.Scene.screenshot" title="brainrender.scene.Scene.screenshot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">screenshot</span></code></a>([name, scale])</p></td>
 <td><p>Take a screenshot of the current view and save it to file.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#brainrender.scene.Scene.slice" title="brainrender.scene.Scene.slice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice</span></code></a>(plane[, actors, close_actors, invert])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainrender.scene.Scene.slice" title="brainrender.scene.Scene.slice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice</span></code></a>(plane[, actors, close_actors, invert])</p></td>
 <td><p>Slice actors with a plane.</p></td>
 </tr>
 </tbody>
@@ -1108,25 +1106,6 @@ return only the corresponding half of the mesh.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="brainrender.scene.Scene.keypress">
-<span class="sig-name descname"><span class="pre">keypress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brainrender.scene.Scene.keypress" title="Link to this definition">#</a></dt>
-<dd><p>Handle key presses during interactive rendering.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">s</span></code>: take a screenshot</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">q</span></code> / <code class="docutils literal notranslate"><span class="pre">Esc</span></code>: close the window</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code>: print current camera parameters</p></li>
-</ul>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>key</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Key identifier string from vedo.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="brainrender.scene.Scene.remove">
 <span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">actors</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/brainrender/scene.html#Scene.remove"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainrender.scene.Scene.remove" title="Link to this definition">#</a></dt>
 <dd><p>Remove actors from the scene.</p>
@@ -1276,7 +1255,6 @@ will be closed.</p></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainrender.scene.Scene.content"><code class="docutils literal notranslate"><span class="pre">Scene.content</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainrender.scene.Scene.export"><code class="docutils literal notranslate"><span class="pre">Scene.export()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainrender.scene.Scene.get_actors"><code class="docutils literal notranslate"><span class="pre">Scene.get_actors()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainrender.scene.Scene.keypress"><code class="docutils literal notranslate"><span class="pre">Scene.keypress()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainrender.scene.Scene.remove"><code class="docutils literal notranslate"><span class="pre">Scene.remove()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainrender.scene.Scene.render"><code class="docutils literal notranslate"><span class="pre">Scene.render()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainrender.scene.Scene.renderables"><code class="docutils literal notranslate"><span class="pre">Scene.renderables</span></code></a></li>
@@ -1300,8 +1278,8 @@ will be closed.</p></li>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1315,7 +1293,7 @@ Created using <a href="https://sphinx-doc.org/">Sphinx</a> 8.2.3.
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.22.0.
+0.23.0.
 </p></div>
       
     </div>

@@ -48,9 +48,6 @@ Scene
    
    
    
-   
-   
-   
 
    
    .. rubric:: Methods
@@ -78,9 +75,6 @@ Scene
    
    
       ~Scene.get_actors
-   
-   
-      ~Scene.keypress
    
    
       ~Scene.remove

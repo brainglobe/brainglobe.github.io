@@ -26,8 +26,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=3215791a" />
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
@@ -40,10 +40,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
 
     <script src="../_static/documentation_options.js?v=d45e8c67"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
@@ -67,6 +67,7 @@
     <link rel="next" title="Interacting with cloud atlas data through Python" href="../aws_examples/explore_atlas.html" />
     <link rel="prev" title="Configuring a template-building run on the HPC" href="../tutorials/howto-configure-hpc-template-building-job.html" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
   
@@ -606,7 +607,7 @@ to download the full example code.</p>
 │  allen_mouse_50um                                                    3.1     │
 │  allen_mouse_bluebrain_barrels_1…                                    3.0     │
 │  allen_mouse_bluebrain_barrels_2…                                    3.0     │
-│  australian_mouse_15um                                               3.0     │
+│  australian_mouse_15um                                               3.1     │
 │  azba_zfish_4um                                                      3.0     │
 │  carea_mouse_25um                                                    3.0     │
 │  ccfv2_dev_mouse_25um                                                3.1     │
@@ -899,7 +900,7 @@ atlas, as it is relatively small, but high quality.</p>
 </span></pre></div></div>
 <img src="../_images/sphx_glr_brainglobe_atlasapi_001.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_001.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Warning: atlas.reference is a deprecated alias for atlas.template, and will be removed in future versions.
 
-&lt;matplotlib.image.AxesImage object at 0x7f77b4e373b0&gt;
+&lt;matplotlib.image.AxesImage object at 0x7f61e8c1c980&gt;
 </pre></div>
 </div>
 <p>Annotations stack</p>
@@ -913,14 +914,14 @@ atlas, as it is relatively small, but high quality.</p>
 </span><span class="c1"># Map label image to lookup table and plot</span><span class="w">
 </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lut</span><span class="p">[</span><span class="n">annotation</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,</span><span class="p">:</span><span class="p">,</span><span class="p">:</span><span class="p">]</span> <span class="o">%</span> <span class="n">N</span><span class="p">]</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_002.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_002.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f77b4d67440&gt;
+<img src="../_images/sphx_glr_brainglobe_atlasapi_002.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_002.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f61e8b10530&gt;
 </pre></div>
 </div>
 <p>Hemisheres stack:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span class="n">hemispheres</span> <span class="o">=</span> <a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-property reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.hemispheres" title="brainglobe_atlasapi.BrainGlobeAtlas.hemispheres"><span class="n">atlas</span><span class="o">.</span><span class="n">hemispheres</span></a><span class="w">
 </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">hemispheres</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,</span><span class="p">:</span><span class="p">,</span><span class="p">:</span><span class="p">]</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_003.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_003.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f77b49810a0&gt;
+<img src="../_images/sphx_glr_brainglobe_atlasapi_003.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_003.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f61e8e94d10&gt;
 </pre></div>
 </div>
 </section>
@@ -1828,7 +1829,7 @@ midbrain, and forebrain, <cite>annotation == root_id</cite> will be all False).<
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span class="n">mask</span> <span class="o">=</span> <a class="sphx-glr-backref-module-brainglobe_atlasapi sphx-glr-backref-type-py-method reference internal" href="../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.html#brainglobe_atlasapi.bg_atlas.BrainGlobeAtlas.get_structure_mask" title="brainglobe_atlasapi.BrainGlobeAtlas.get_structure_mask"><span class="n">atlas</span><span class="o">.</span><span class="n">get_structure_mask</span></a><span class="p">(</span><span class="mi">997</span><span class="p">)</span><span class="w">
 </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mask</span><span class="p">[</span><span class="n">middle_section</span><span class="p">,</span><span class="p">:</span><span class="p">,</span><span class="p">:</span><span class="p">]</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;</span><span class="s2">gray</span><span class="s2">&quot;</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<img src="../_images/sphx_glr_brainglobe_atlasapi_004.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_004.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f77b4980b00&gt;
+<img src="../_images/sphx_glr_brainglobe_atlasapi_004.png" srcset="../_images/sphx_glr_brainglobe_atlasapi_004.png" alt="brainglobe atlasapi" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f61e8f41b20&gt;
 </pre></div>
 </div>
 </section>
@@ -1908,7 +1909,7 @@ hemispheres, but we can ask for the hemisphere name instead of the number:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>right
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.419 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.353 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-api-examples-brainglobe-atlasapi-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/2e0fdc7133fc99c7b6e3378f40c7675f/brainglobe_atlasapi.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">brainglobe_atlasapi.ipynb</span></code></a></p>
@@ -2000,8 +2001,8 @@ hemispheres, but we can ask for the hemisphere name instead of the number:</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -2015,7 +2016,7 @@ Created using <a href="https://sphinx-doc.org/">Sphinx</a> 8.2.3.
 <p class="theme-version">
 Built with the
 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
-0.22.0.
+0.23.0.
 </p></div>
       
     </div>
