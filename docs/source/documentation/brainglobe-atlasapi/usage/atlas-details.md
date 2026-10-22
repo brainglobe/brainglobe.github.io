@@ -18,6 +18,11 @@ different modality (such as serial section two-photon, STP) may produce inferior
 In most software you can choose the atlas from a list, but if using a command line tool, or the API directly, the 
 unique key (e.g. `example_mouse_100um` must be used).
 
+Some atlases share the same coordinate space and looking up a coordinate in a brain registered to one atlas is as
+simple as looking up the same coordinate in the other atlas. Other atlases don't share the same space and
+[brainglobe-ccf-translator](https://github.com/brainglobe/brainglobe-ccf-translator) can be used to map coordinates
+from one atlas' space to another.
+
 # Available atlases
 
 ## Mouse
@@ -263,6 +268,10 @@ one which is a population average from hundreds of mice and one based on three a
 in the CCFv3 is slightly misaligned, here the Nissl template has been more precisely registered into the CCFv3 space.
 The CCFv3 Augmented also includes new delineations of the granular layer of the cerebellum.
 
+This atlas shares the same coordinate space as the [Allen Adult Mouse Brain Atlas](https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html#allen-adult-mouse-brain-atlas)
+with the exception that its first axis (`z`) is longer by `950um` than the Allen atlas. This atlas' first `z` plane is at `-350um`
+relative to the Allen atlas and has an additional `600um` of planes after the end of the Allen atlas.
+
 Available versions:
 * `ccfv3augmented_mouse_10um` - 10μm resolution
 * `ccfv3augmented_mouse_25um` - 25μm resolution
@@ -465,6 +474,10 @@ with similar patterns of gene expression are assigned the same region ID. The te
 volume, based on the CCFv3BBP atlas (also in 
 [BrainGlobe](https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html#ccfv3-augmented-mouse-atlas)) 
 with some improvements. This atlas was constructed from reregistered ISH data from the Allen Institute for Brain Science. 
+
+This atlas shares the same coordinate space as the [Allen Adult Mouse Brain Atlas](https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html#allen-adult-mouse-brain-atlas)
+with the exception that its first axis (`z`) is longer by `950um` than the Allen atlas. This atlas' first `z` plane is at `-350um`
+relative to the Allen atlas and has an additional `600um` of planes after the end of the Allen atlas.
 
 Available versions:
 * `carea_mouse_25um`
