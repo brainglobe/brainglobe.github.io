@@ -30,7 +30,16 @@ We have packaged the following atlases:
 
 ## How do I use the new atlases?
 
-You can use the LAMBADA developmental mouse brain atlases for visualisation like other BrainGlobe atlases, as written below:
+You can use the LAMBADA developmental mouse brain atlases for analysis and visualisation like other BrainGlobe atlases. To visualise the atlases, you can either open them in Neuroglancer for viewing in the browser at:
+* [`P3`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p3.json)
+* [`P5`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p5.json)
+* [`P7`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p7.json)
+* [`P9`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p9.json)
+* [`P12`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p12.json)
+* [`P14`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p14.json)
+* [`P21`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p21.json)
+
+or you can view them locally:
 
 * Install BrainGlobe ([instructions](/documentation/index))
 * Open napari and follow the steps in our [download tutorial](/tutorials/manage-atlases-in-GUI.md) for the LAMBADA developmental mouse brain atlas
