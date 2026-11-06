@@ -21,7 +21,7 @@ The atlas has been packaged under the name `ccfv1_mouse_25um`.
 
 ## How do I use the new atlases?
 
-You can use the CCFv1 atlases for visualisation like other BrainGlobe atlases, as written below:
+You can use the CCFv1 atlas for analysis and visualisation like other BrainGlobe atlases. To visualise the atlases, you can either open them in Neuroglancer for viewing in the browser [here](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/ccfv1_mouse.json), or you can view them locally:
 
 * Install BrainGlobe ([instructions](/documentation/index))
 * Open napari and follow the steps in our [download tutorial](/tutorials/manage-atlases-in-GUI.md) for the CCFv1 atlas
