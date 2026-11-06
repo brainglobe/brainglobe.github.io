@@ -798,6 +798,21 @@ In no particular order:
 :link: https://github.com/temp-noob
 :::
 
+:::{grid-item-card} Aman Tebriwal
+:img-top: https://avatars.githubusercontent.com/u/173245642?v=4
+:link: https://github.com/amantebriwal4321
+:::
+
+:::{grid-item-card} Antonio Falasconi
+:img-top: https://avatars.githubusercontent.com/u/87311272?v=4
+:link: https://github.com/Antorhythms
+:::
+
+:::{grid-item-card} Krrish Malhan
+:img-top: https://avatars.githubusercontent.com/u/230967049?v=4
+:link: https://github.com/Krrish-malhan-22
+:::
+
 ::::
 
 

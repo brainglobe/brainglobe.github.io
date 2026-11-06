@@ -509,6 +509,25 @@ Available versions:
   
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/ccfv2_dev_mouse.json)
 
+### [LAMBADA Developmental Mouse Brain Atlas](https://doi.org/10.1016/j.cell.2026.03.013)
+This atlas tracks brain development in the mouse at 7 timepoints (P3, P5, P7, P9, P12, P14, P21). Each template is averaged from 20 to 30 LSFM images of iDISCO+ cleared brains of either sex, which were then aligned to an averaged in-vivo MRI scan of three mice per timepoint to correct for any ex-vivo deformation. This is useful for researchers seeking to study the in-vivo volumetric changes of the brain during development. Annotations are based on the CCFv3 Allen annotations. 
+
+Available versions:
+* at P3 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p3.json)
+  * `lambada_dev_mouse_p3_25um` 
+* at P5 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p5.json)
+  * `lambada_dev_mouse_p5_25um`
+* at P7 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p7.json)
+  * `lambada_dev_mouse_p7_25um`
+* at P9 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p9.json)
+  * `lambada_dev_mouse_p9_25um`  
+* at P12 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p12.json)
+  * `lambada_dev_mouse_p12_25um` 
+* at P14 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p14.json)
+  * `lambada_dev_mouse_p14_25um` 
+* at P21 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p21.json)
+  * `lambada_dev_mouse_p21_25um` 
+
 ## Rat
 ### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
 The Waxholm Space rat brain atlas features annotations of 222 structures, alongside a 39μm MRI template. It provides detailed delineations 
