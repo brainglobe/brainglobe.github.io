@@ -11,9 +11,12 @@ language: English
 
 TODO: Write the blogpost!
 
-The mouse brain atlases provided by the Allen Institute for Brain Science (AIBS) are widely used in the neuroscience community, and as of the writing of this blog post, the most updated version of their atlas is version 3 of the Common Coordinate Framework (CCF). However, there are many benefits from adding older versions of atlases, namely in terms of keeping a record of the history of atlas versions, as well as reproducing historical results which used older atlases. Therefore, we have packaged the CCFv2 mouse brain atlases provided by the Allen Institute. These include an adult mouse brain atlas with all grey matter regions without fiber tracts, an adult mouse brain atlas with only the fiber tracts, and a developmental adult mouse brain atlas containing information on the developmental taxonomy of various regions. The CCFv2 is a symmetric atlas constructed from the same 528 Nissl stained 25um coronal slices as in CCFv1, but reprocessed for symmetry and to introduce more annotations based on the Allen Reference Atlas. 
+There are few brain atlases as foundational to the field as the first Allen Mouse Brain Atlas, released in 2006. The first edition of the atlas, Common Coordinate Framework version 1 (CCFv1), was created as part of the inaugural project of the Allen Institute for Brain Sciences, which was to create a whole-brain map of gene expression. This framework allowed researchers to align in situ hybridisation (ISH) data to the atlas, which was a valuable tool for neuroscientists. 
 
-We have packaged the following three atlases: 
+The team at BrainGlobe have packaged the CCFv1 mouse brain atlas using data provided by the Allen Institute to preserve this atlas and make it accessible through our ecosystem, and to allow for the reproduction of historical results which used this atlas. The CCFv1 atlas template was created using 528 Nissl-stained OCT-embedded coronal mouse brain sections taken from male C57Bl/6J mice sectioned at 25μm thickness. These were then annotated using the Allen Reference Atlas, which in itself was made of 132 coronal 100μm sections and 21 sagittal 200μm sections, and contained only the left hemisphere. Thus, the CCFv1 atlas is an atlas with 25μm resolution, and with only the left hemisphere annotated. 
+
+
+
 ## 1. CCFv2 Mouse Brain Atlas
 ```{image} ./images/ccfv2_mouse_brain.png
 :alt: ccfv2 mouse brain atlas annotations
