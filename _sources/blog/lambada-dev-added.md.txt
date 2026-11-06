@@ -9,9 +9,9 @@ language: English
 
 # The LAMBADA developmental mouse brain atlases have been added to BrainGlobe
 
-The structure of cerebral vasculature continues to develop after birth, but its spatiotemporal dynamics have always been unclear. To address this, [de Launoit et al. (2026)](https://doi.org/10.1016/j.cell.2026.03.013) created the light-sheet-aligned mouse brain annotated developmental atlas (LAMBADA) to align spatial transcriptomics data on key genes governing vascular development. Using seven different timepoints in development (P3, P5, P7, P9, P12, P14 and P21), the authors provide high resolution light-sheet fluorescence microscopy (LSFM) templates which are volume-corrected to in-vivo MRI benchmarks, ensuring that this developmental atlas reflects the natural brain growth trajectories as seen in development. We have packaged this atlas into BrainGlobe to make this resource usable throughout the BrainGlobe ecosystem. This also presents an exciting opportunity for future tools to be developed around spatial transcriptomic data in our upcoming data API. 
+The structure of cerebral vasculature continues to develop after birth, but its spatiotemporal dynamics have always been unclear. To address this, [de Launoit et al. (2026)](https://doi.org/10.1016/j.cell.2026.03.013) created the light-sheet-aligned mouse brain annotated developmental atlas (LAMBADA) to align spatial transcriptomics data on key genes governing vascular development. Using seven different timepoints in development (P3, P5, P7, P9, P12, P14 and P21), the authors provide high resolution light-sheet fluorescence microscopy (LSFM) templates which are volume-corrected to in-vivo MRI benchmarks, ensuring that this developmental atlas reflects the natural brain growth trajectories as seen in development. We have packaged this atlas into BrainGlobe to make this resource usable throughout the BrainGlobe ecosystem.
 
-The templates at each of the seven timepoints were made by averaging the autofluorescence of 20 ~ 30 iDISCO+ cleared C57bl6 mice of either sex, symmetrising them, then downsampling to 25µm resolution. They were then registered onto a separate in-vivo MRI template of three age-matched mouse brain samples per timepoint to create MRI transformation vectors to correct for morphological deformations. This allows for this developmental atlas to better represent the actual brain growth patterns of mice during development. 
+The templates at each of the seven timepoints were made by averaging the autofluorescence of 20-30 iDISCO+ cleared C57bl6 mice of either sex, symmetrising them, then downsampling to 25µm resolution. They were then registered onto a separate in-vivo MRI template of three age-matched mouse brain samples per timepoint to create MRI transformation vectors to correct for morphological deformations. This allows for this developmental atlas to better represent the actual brain growth patterns of mice during development. 
 
 We have packaged the following atlases: 
 * `lambada_dev_mouse_p3_25um`
@@ -30,7 +30,16 @@ We have packaged the following atlases:
 
 ## How do I use the new atlases?
 
-You can use the LAMBADA developmental mouse brain atlases for visualisation like other BrainGlobe atlases, as written below:
+You can use the LAMBADA developmental mouse brain atlases for analysis and visualisation like other BrainGlobe atlases. To visualise the atlases, you can either open them in Neuroglancer for viewing in the browser at:
+* [`P3`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p3.json)
+* [`P5`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p5.json)
+* [`P7`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p7.json)
+* [`P9`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p9.json)
+* [`P12`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p12.json)
+* [`P14`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p14.json)
+* [`P21`](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p21.json)
+
+or you can view them locally:
 
 * Install BrainGlobe ([instructions](/documentation/index))
 * Open napari and follow the steps in our [download tutorial](/tutorials/manage-atlases-in-GUI.md) for the LAMBADA developmental mouse brain atlas
