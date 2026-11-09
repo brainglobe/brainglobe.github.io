@@ -526,7 +526,18 @@ Available versions:
 * at P14 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p14.json)
   * `lambada_dev_mouse_p14_25um` 
 * at P21 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/lambada_dev_mouse_p21.json)
-  * `lambada_dev_mouse_p21_25um` 
+  * `lambada_dev_mouse_p21_25um`
+ 
+### [Allen CCFv1 Mouse Brain Atlas](https://doi.org/10.1038/nature05453)
+This is the first edition of the mouse brain atlas in the commonly used Allen Common Coordinate Framework, which is included 
+here for historical reasons. The template is based on the 528 Nissl-stained coronal slices from a male P56 mouse brain frozen
+in OCT, which was annotated only on the left hemisphere based on the Allen Reference Atlas. This atlas provides a common 
+coordinate framework for many other useful mouse atlases and data based on CCFv1. 
+
+Available versions:
+* `ccfv1_mouse_25um`
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/ccfv1_mouse.json)
 
 ## Rat
 ### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
