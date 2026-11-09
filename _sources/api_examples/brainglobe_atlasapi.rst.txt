@@ -94,6 +94,7 @@ To know what atlases are available through BrainGlobe, we can use the `show_atla
     │  australian_mouse_15um                                               3.1     │
     │  azba_zfish_4um                                                      3.0     │
     │  carea_mouse_25um                                                    3.0     │
+    │  ccfv1_mouse_25um                                                    3.0     │
     │  ccfv2_dev_mouse_25um                                                3.1     │
     │  ccfv2_fiber_mouse_25um                                              3.1     │
     │  ccfv2_mouse_25um                                                    3.1     │
@@ -219,12 +220,12 @@ To know what atlases are available through BrainGlobe, we can use the `show_atla
     │  duke_dev_rat_p24_25um                                               3.0     │
     │  duke_dev_rat_p40_25um                                               3.0     │
     │  duke_dev_rat_p80_25um                                               3.0     │
-    │  duke_mouse_100um                                                    3.0     │
-    │  duke_mouse_150um                                                    3.0     │
-    │  duke_mouse_15um                                                     3.0     │
-    │  duke_mouse_25um                                                     3.0     │
-    │  duke_mouse_50um                                                     3.0     │
-    │  duke_mouse_75um                                                     3.0     │
+    │  duke_mouse_100um                                                    3.1     │
+    │  duke_mouse_150um                                                    3.1     │
+    │  duke_mouse_15um                                                     3.1     │
+    │  duke_mouse_25um                                                     3.1     │
+    │  duke_mouse_50um                                                     3.1     │
+    │  duke_mouse_75um                                                     3.1     │
     │  eurasian_blackcap_25um                                              3.0     │
     │  example_mouse_100um                                                 3.0     │
     │  hoops_tawny_dragon_20um                                             3.2     │
@@ -451,7 +452,7 @@ Anatomical reference (or template) image:
 
     Warning: atlas.reference is a deprecated alias for atlas.template, and will be removed in future versions.
 
-    <matplotlib.image.AxesImage object at 0x7fa58d037950>
+    <matplotlib.image.AxesImage object at 0x7fae6cebac30>
 
 
 
@@ -488,7 +489,7 @@ Annotations stack
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7fa58c695f40>
+    <matplotlib.image.AxesImage object at 0x7fae6c9d31d0>
 
 
 
@@ -518,7 +519,7 @@ Hemisheres stack:
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7fa58cd0b650>
+    <matplotlib.image.AxesImage object at 0x7fae6c9a1730>
 
 
 
@@ -1540,7 +1541,7 @@ To get the mask for a region, use
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7fa58cb4c4a0>
+    <matplotlib.image.AxesImage object at 0x7fae6cb03dd0>
 
 
 
@@ -1788,7 +1789,7 @@ Now print hemisphere string
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.692 seconds)
+   **Total running time of the script:** (0 minutes 1.658 seconds)
 
 
 .. _sphx_glr_download_api_examples_brainglobe_atlasapi.py:
