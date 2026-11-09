@@ -27,7 +27,7 @@ neuropils AL, CA, IPS, and LOP (left), and VNC domains WTct, HTct, and mVAC
 
 ## JRC2018Unisex brain neuropils atlas
 
-The brain atlas packages the [JRC2018Unisex adult fly brain template and
+This atlas includes the [JRC2018Unisex adult fly brain template and
 VFB-painted neuropil regions](https://www.virtualflybrain.org/blog/2022/01/01/jrc-2018-templates-rois-jrc2018/).
 It includes the reference and annotation images, region metadata, and VFB's
 original meshes, reoriented into BrainGlobe space.
