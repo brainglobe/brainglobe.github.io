@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: July 12, 2026
+date: November 9, 2026
 author: Amirreza Bahramani
 location: London, UK
 category: brainglobe
