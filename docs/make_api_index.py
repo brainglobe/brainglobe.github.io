@@ -40,6 +40,8 @@ def generate_api_index():
                     continue
                 if any(part in excluded_folders for part in py_file.parts):
                     continue
+                if any(part.startswith("_") for part in py_file.relative_to(package_dir).parts):
+                    continue
                 # Convert the file path to a module name and add it to the list
                 module_names.append(path_to_module_name(py_file, package_dir, package_name))
             # Join the module names into a single string

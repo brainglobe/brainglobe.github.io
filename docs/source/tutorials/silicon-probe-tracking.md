@@ -39,7 +39,7 @@ order to avoid tissue damage.
 :::
 
 The brain is then thoroughly washed with 100mM PBS and imaged (e.g. by 
-[Serial 2-Photon Tomography](https://swcmicroscopy.com/ss_acquisition/); **Fig. 1**, 
+[Serial 2-Photon Tomography](https://swcmicroscopy.com/brainsaw/); **Fig. 1**, 
 right). We imaged 2 channels (one where DiI signal is detected and one with background fluorescence only) at a 
 resolution of x = 5μm, y = 5μm, z = 20μm.
 
@@ -104,4 +104,4 @@ This will provide a 3D interactive display of the probe tracks:
 The code to run this example can be found at [probe_tracks.py](https://github.com/brainglobe/brainrender/blob/main/examples/probe_tracks.py).
 :::
 
-**Tutorial adapted from instructions by** [**Mateo Vélez-Fort**](https://www.sainsburywellcome.org/web/people/mateo-velez-fort) and [**Jingjie Li**](https://www.sainsburywellcome.org/web/people/jingjie-li)
+**Tutorial adapted from instructions by** [**Mateo Vélez-Fort**](https://www.sainsburywellcome.org/web/people/mateo-velez-fort) and [**Jingjie Li**](https://github.com/jingjie-li)

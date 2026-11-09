@@ -44,6 +44,7 @@ extensions = [
     "myst_parser",
     "notfound.extension",
     "sphinx_copybutton",
+    "sphinx_autodoc_typehints",
     "sphinx_gallery.gen_gallery",
 ]
 
@@ -112,7 +113,7 @@ sitemap_url_scheme = "{link}"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
-html_extra_path = ["_redirects"]
+html_extra_path = ["_redirects", "robots.txt"]
 
 html_css_files = [
     ("css/custom.css", {"priority": 100}),
@@ -217,6 +218,7 @@ linkcheck_ignore = [
     r".*/*_examples/.*\.html",
     "https://neuromorpho.org/",
     "https://brainglobe.zulipchat.com/#narrow/stream/414089-developer-meeting",
+    "https://brainglobe.zulipchat.com/#narrow/channel/483906-Atlas-API",
     "https://easyengine.io",
     "https://www.scientifica.uk.com",
     "https://brainglobe.info",
@@ -232,10 +234,13 @@ linkcheck_ignore = [
     "https://gin.g-node.org", # often down, or throttling many requests
     "https://openalex.org", # 403 Client Error: Forbidden
     "https://data.mendeley.com/", # 403 Client Error: Forbidden
+    "https://www.mcgill.ca/neuro/article/neuro-irv-and-helga-cooper-foundation-open-science-prizes-meet-winners-exceptional-edition", # 403 Client Error: Forbidden
     ]
 
 linkcheck_anchors_ignore_for_url = [
-    "https://github.com/brainglobe/brainrender"
+    "https://github.com/brainglobe/brainrender",
+    # GitHub renders blob pages client-side, so heading anchors are never in the fetched HTML
+    r"https://github\.com/.*/blob/.*",
 ]
 
 linkcheck_request_headers = {

@@ -188,8 +188,9 @@ In no particular order:
 :link: https://github.com/kailynkfields
 :::
 
-:::{grid-item-card} ramroomh
+:::{grid-item-card} Rami Hamati
 :img-top: https://avatars.githubusercontent.com/u/39342954?v=4?
+:link: https://github.com/rami-hamati
 :::
 
 :::{grid-item-card} Samuel Diebolt
@@ -699,7 +700,7 @@ In no particular order:
 
 :::{grid-item-card} Nishanth B
 :img-top: https://avatars.githubusercontent.com/u/150372232?v=4
-:link: https://github.com/nishanthcr7777
+:link: https://github.com/n1shanthb
 :::
 
 :::{grid-item-card} Ardavan Shahrabi
@@ -740,6 +741,76 @@ In no particular order:
 :::{grid-item-card} Luigi Meola
 :img-top: https://avatars.githubusercontent.com/u/66880228?v=4
 :link: https://github.com/git-gigi
+:::
+
+:::{grid-item-card} SaraPugliese6
+:img-top: https://avatars.githubusercontent.com/u/189845118?v=4
+:link: https://github.com/SaraPugliese6
+:::
+
+:::{grid-item-card} Bhoomika Choudhury
+:img-top: https://avatars.githubusercontent.com/u/218296874?v=4
+:link: https://github.com/BhoomikaC15
+:::
+
+:::{grid-item-card} Shivam Raj Srivastav
+:img-top: https://avatars.githubusercontent.com/u/179807831?v=4
+:link: https://github.com/ShivamRajSri
+:::
+
+:::{grid-item-card} Krishna VP
+:img-top: https://avatars.githubusercontent.com/u/213911778?v=4
+:link: https://github.com/VPK570
+:::
+
+:::{grid-item-card} Haris Shakeel
+:img-top: https://avatars.githubusercontent.com/u/186503112?v=4
+:link: https://github.com/Haris-bin-shakeel
+:::
+
+:::{grid-item-card} Ilias Mahboub
+:img-top: https://avatars.githubusercontent.com/u/227131238?v=4
+:link: https://github.com/iliasmahboub
+:::
+
+:::{grid-item-card} Soumya Snigdha Kundu
+:img-top: https://avatars.githubusercontent.com/u/54958228?v=4
+:link: https://github.com/aymuos15
+:::
+
+:::{grid-item-card} Amirreza Bahramani
+:img-top: https://avatars.githubusercontent.com/u/83073509?v=4
+:link: https://github.com/bahramani
+:::
+
+:::{grid-item-card} Wolf
+:img-top: https://avatars.githubusercontent.com/u/22243650?v=4
+:link: https://github.com/Wolfffff
+:::
+
+:::{grid-item-card} Vishhh
+:img-top: https://avatars.githubusercontent.com/u/91872471?v=4
+:link: https://github.com/vishaalinimanikandan
+:::
+
+:::{grid-item-card} temp-noob
+:img-top: https://avatars.githubusercontent.com/u/45798519?v=4
+:link: https://github.com/temp-noob
+:::
+
+:::{grid-item-card} Aman Tebriwal
+:img-top: https://avatars.githubusercontent.com/u/173245642?v=4
+:link: https://github.com/amantebriwal4321
+:::
+
+:::{grid-item-card} Antonio Falasconi
+:img-top: https://avatars.githubusercontent.com/u/87311272?v=4
+:link: https://github.com/Antorhythms
+:::
+
+:::{grid-item-card} Krrish Malhan
+:img-top: https://avatars.githubusercontent.com/u/230967049?v=4
+:link: https://github.com/Krrish-malhan-22
 :::
 
 ::::
