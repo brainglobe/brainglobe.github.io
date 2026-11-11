@@ -32,13 +32,15 @@ VFB-painted neuropil regions](https://www.virtualflybrain.org/blog/2022/01/01/jr
 It includes the reference and annotation images, region metadata, and VFB's
 original meshes, reoriented into BrainGlobe space.
 
-* **Atlas name:** `vfb_jrc2018u_neuropils_fly`
+* **Atlas name:** `vfb_jrc2018u_neuropils_fly_0.519um`
 * **Resolution:** 0.5189161 × 1.0 × 0.5189161 µm
 * **Template space:** JRC2018Unisex (`VFB_00101567`)
 * **Coverage:** adult brain neuropils
 * **Species:** _Drosophila melanogaster_
 * **Annotations:** 46 neuropil regions plus the root structure, arranged as a
   flat atlas
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/vfb_jrc2018u_neuropils_fly.json)
 
 The JRC2018U neuropils atlas has anisotropic voxel spacing, so in current
 `brainrender-napari` views its proportions may appear distorted, with one axis
@@ -54,13 +56,15 @@ available through [VFB](https://www.virtualflybrain.org/term/adult-vnc-neuropils
 As in the brain atlas, the package includes VFB's source meshes alongside the
 reference image, annotation image, and structure metadata.
 
-* **Atlas name:** `vfb_jrc2018u_vnc_fly`
+* **Atlas name:** `vfb_jrc2018u_vnc_fly_0.4um`
 * **Resolution:** 0.4 µm isotropic
 * **Template space:** JRC2018UnisexVNC (`VFB_00200000`)
 * **Coverage:** adult ventral nerve cord neuropils and domains
 * **Species:** _Drosophila melanogaster_
 * **Annotations:** 20 visible non-root regions derived from 21 source ROI
   domains, arranged as a flat atlas
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/vfb_jrc2018u_vnc_fly.json)
 
 ![Animated sections through the JRC2018Unisex brain neuropils and VNC atlases](./images/vfb-jrc2018u-fly-atlases-sections.gif)
 
