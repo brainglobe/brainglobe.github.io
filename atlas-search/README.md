@@ -10,8 +10,8 @@ A static website, served at <https://brainglobe.info/atlases/>, for finding
 - **One page per atlas** (e.g. `allen_mouse`), with resolution, version and (for collections such
   as the ADMBA stages) atlas pickers.
 - **View** each atlas in neuroglancer via the state file BrainGlobe publishes for it.
-- **Download** the template, annotation and hemisphere map as OME-Zarr (as published, optionally
-  with every pyramid level) or converted to TIFF, NIfTI or NRRD, and the ontology as CSV (as
+- **Download** the template, annotation and hemisphere map as OME-Zarr (as published, every
+  pyramid level by default) or converted to TIFF, NIfTI or NRRD, and the ontology as CSV (as
   published), `structures.json`, an ITK-SNAP label file or a 3D Slicer colour table.
 
 There is no backend: volumes are read chunk by chunk from the public BrainGlobe bucket

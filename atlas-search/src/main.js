@@ -513,7 +513,7 @@ function componentStore(atlas, comp) {
 
 const levelText = (lv) => `${lv.shape.join(" × ")} · ${lv.dtype} · ${formatBytes(rawSize(lv.shape, lv.dtype))}`;
 
-let allLevels = false; // "include all resolution levels" in OME-Zarr downloads, kept across pages
+let allLevels = true; // "include all resolution levels" in OME-Zarr downloads (default on), kept across pages
 
 /**
  * One page per atlas name. `selected` is the atlas entry (resolution) that the
