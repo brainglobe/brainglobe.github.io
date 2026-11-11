@@ -1,0 +1,22 @@
+{
+  "name": "brainglobe-search",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Search, view and download BrainGlobe atlases in the browser",
+  "type": "module",
+  "license": "BSD-3-Clause",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "index": "python scripts/build_index.py",
+    "test": "node tests/write_fixtures.mjs .test-out/fixtures && python tests/verify_fixtures.py .test-out/fixtures",
+    "test:e2e": "node tests/e2e_export.mjs .test-out/e2e && python tests/e2e_verify.py .test-out/e2e"
+  },
+  "dependencies": {
+    "zarrita": "^0.7.5"
+  },
+  "devDependencies": {
+    "vite": "^8.3.6"
+  }
+}

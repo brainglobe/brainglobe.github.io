@@ -8,9 +8,10 @@ the new atlas pull request has been merged:
 1. Run the atlas script to generate the new atlas, and double-check it passes our validation.
 2. Upload the `tar.gz` archive to the [GIN atlas repository](https://gin.g-node.org/BrainGlobe/atlases).
 3. Update the [`latest_versions.conf`](https://gin.g-node.org/BrainGlobe/atlases/src/master/last_versions.conf) file.
-4. Add the atlas to the [atlas details](/documentation/brainglobe-atlasapi/usage/atlas-details) page of the website.
+4. Add the atlas to the [atlas search](https://brainglobe.info/atlases/) by adding its name to
+   `atlas-search/collections.toml` in this repository: either to an existing collection, or as a new collection with a title, category, link and
+   description.
 5. Add the atlas to the tables in:
-   * The [BrainGlobe Atlas API documentation](/documentation/brainglobe-atlasapi/index)
    * The [BrainGlobe Atlas GitHub README](https://github.com/brainglobe/brainglobe-atlasapi/blob/main/README.md)
    * The [GIN atlas repository README](https://gin.g-node.org/BrainGlobe/atlases/src/master/README.md)
 6. Write a [blog post](/blog/index) describing the new atlas. Make sure to highlight the original developers of the 

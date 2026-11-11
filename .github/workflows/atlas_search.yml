@@ -1,0 +1,128 @@
+name: Build atlas search
+
+# Builds the atlas search site (atlas-search/) that is served at
+# brainglobe.info/atlases/. On main, the built site is pushed to the
+# `atlas-search-dist` branch, which the docs build copies into the website,
+# and the docs workflow is started to deploy it.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "atlas-search/**"
+      - ".github/workflows/atlas_search.yml"
+  pull_request:
+    paths:
+      - "atlas-search/**"
+      - ".github/workflows/atlas_search.yml"
+  schedule:
+    - cron: "17 3 * * *" # nightly: pick up new atlases and versions in the bucket
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: atlas-search-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DIST_BRANCH: atlas-search-dist
+
+jobs:
+  build:
+    # scheduled workflows should not run on forks
+    if: github.event_name != 'schedule' || github.repository_owner == 'brainglobe'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: atlas-search
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: atlas-search/package-lock.json
+      - name: Install dependencies
+        run: |
+          pip install numpy zstandard tifffile nibabel pynrrd "zarr>=3" fsspec aiohttp
+          npm ci
+      # Coronal previews are named after the store versions, so the previews of
+      # the last published build stay valid; only new or updated atlases are read.
+      - name: Reuse coronal previews from the last published build
+        run: |
+          if git fetch --depth 1 origin "$DIST_BRANCH"; then
+            mkdir -p public
+            git archive FETCH_HEAD data/previews | tar -x -C public || true
+          fi
+      - name: Build atlas index from the BrainGlobe bucket
+        run: python scripts/build_index.py
+      - name: Unit tests (format writers)
+        run: |
+          node tests/write_fixtures.mjs "$RUNNER_TEMP/fixtures"
+          python tests/verify_fixtures.py "$RUNNER_TEMP/fixtures"
+      - name: End-to-end export test against S3
+        run: |
+          node tests/e2e_export.mjs "$RUNNER_TEMP/e2e"
+          python tests/e2e_verify.py "$RUNNER_TEMP/e2e"
+      - name: Build site
+        run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: atlas-search
+          path: atlas-search/dist
+          retention-days: 14
+
+  publish:
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # push the dist branch
+      actions: write # start the docs workflow
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Check out the dist branch
+        run: |
+          if git fetch --depth 1 origin "$DIST_BRANCH"; then
+            git worktree add dist FETCH_HEAD
+            git -C dist checkout -B "$DIST_BRANCH"
+          else
+            git worktree add --orphan -b "$DIST_BRANCH" dist
+          fi
+          find dist -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+      - uses: actions/download-artifact@v4
+        with:
+          name: atlas-search
+          path: dist
+      - name: Commit if anything other than the build date changed
+        id: commit
+        working-directory: dist
+        run: |
+          git add -A
+          strip() { jq -cS 'del(.generated)'; }
+          if git rev-parse -q --verify HEAD >/dev/null \
+            && git diff --cached --quiet -- . ':(exclude)data/index.json' \
+            && [ "$(git show HEAD:data/index.json | strip)" = "$(strip < data/index.json)" ]; then
+            echo "No changes to publish."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Atlas search build from ${GITHUB_SHA::7}"
+          git push origin "$DIST_BRANCH"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      # Pushes made with GITHUB_TOKEN do not trigger workflows, so start the
+      # docs build and deployment explicitly.
+      - name: Deploy the website
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run docs_build_and_deploy.yml --ref main

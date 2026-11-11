@@ -88,8 +88,8 @@ exclude_patterns = [
     # to ensure that include files (partial pages) aren't built, exclude them
     # https://github.com/sphinx-doc/sphinx/issues/1965#issuecomment-124732907
     "**/includes/**",
-    # exclude partial table file (included via {include} directive)
-    "documentation/brainglobe-atlasapi/_atlas_table.md",
+    # built atlas search site, copied as-is via html_extra_path
+    "_atlas_search",
     # To ignore warnings, as these files aren't used directly
     "**_examples_source",
 ]
@@ -113,7 +113,9 @@ sitemap_url_scheme = "{link}"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
-html_extra_path = ["_redirects", "robots.txt"]
+# _atlas_search/atlases is the built atlas search site (fetched by
+# `make fetch_atlas_search`), served at /atlases/
+html_extra_path = ["_redirects", "robots.txt", "_atlas_search"]
 
 html_css_files = [
     ("css/custom.css", {"priority": 100}),
@@ -173,7 +175,9 @@ html_theme_options = {
     },
     "footer_start": ["footer_start"],
     "footer_end": ["footer_end"],
-    "external_links": [],
+    "external_links": [
+        {"name": "Atlas search", "url": "https://brainglobe.info/atlases/"},
+    ],
 }
 
 # Show ABlog's "postcard" (date, author, category, etc.) in the sidebar of blog

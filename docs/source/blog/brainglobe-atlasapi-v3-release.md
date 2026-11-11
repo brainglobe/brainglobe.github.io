@@ -78,7 +78,7 @@ Leave it out and you get the latest release, as before. Provide it and you get t
 
 ### Looking at an atlas without installing anything
 
-Because the image data are OME-Zarr and the meshes are in the precomputed format, both are directly readable by [neuroglancer](https://github.com/google/neuroglancer). Atlases on the [atlas details page](../documentation/brainglobe-atlasapi/usage/atlas-details.md) now carry a "View in neuroglancer" badge, for example the [Allen adult mouse atlas](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/allen_mouse.json) or the [Columbia cuttlefish atlas](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/columbia_cuttlefish.json).
+Because the image data are OME-Zarr and the meshes are in the precomputed format, both are directly readable by [neuroglancer](https://github.com/google/neuroglancer). Atlases on the [atlas details page](https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html) now carry a "View in neuroglancer" badge, for example the [Allen adult mouse atlas](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/allen_mouse.json) or the [Columbia cuttlefish atlas](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/columbia_cuttlefish.json).
 
 Being able to preview an atlas this quickly makes it much easier to decide whether it suits your data before you build an analysis pipeline around it, and to share a specific view with a collaborator or a reviewer.
 
