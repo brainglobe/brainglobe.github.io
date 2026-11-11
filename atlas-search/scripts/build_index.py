@@ -18,9 +18,8 @@ descriptions in ``collections.toml`` at the repository root. The output is
 written to ``public/data`` and consumed by the static website.
 
 Only the standard library is required. If ``numpy`` and ``zstandard`` are
-installed, a display intensity range is also computed for every template,
-and a small coronal-section preview (template + annotation labels) is written
-for every atlas to ``public/data/previews`` so the site never has to read
+installed, a small coronal-section preview (template + annotation labels) is
+also written for every atlas to ``public/data/previews`` so the site never has to read
 the volumes just to show a slice. Previews are named after the store versions
 and are reused when they already exist.
 
@@ -57,9 +56,8 @@ GROUPS = [
     "Human and non-human primate", "Other mammal", "Bird", "Invertebrate",
 ]
 USER_AGENT = "brainglobe-search-index-builder"
-VOXEL_BUDGET = 8e6  # max voxels decoded per template for the display range
 
-try:  # optional, for template intensity ranges
+try:  # optional, for coronal previews
     import numpy as np
     import zstandard
 except ImportError:  # pragma: no cover
@@ -109,7 +107,6 @@ def inspect_omezarr(url: str) -> dict | None:
     attrs = group.get("attributes", {})
     ome = attrs.get("ome", attrs)
     ms = ome["multiscales"][0]
-    axes = ms["axes"]
     levels = []
     for ds in ms["datasets"]:
         arr = fetch_json(f"{url}/{ds['path']}/zarr.json")
@@ -143,60 +140,7 @@ def inspect_omezarr(url: str) -> dict | None:
                 "fill_value": arr.get("fill_value", 0),
             }
         )
-    return {
-        "axes": [
-            {
-                "name": a["name"],
-                "unit": a.get("unit"),
-                "orientation": (a.get("orientation") or {}).get("value"),
-            }
-            for a in axes
-        ],
-        "levels": levels,
-    }
-
-
-def intensity_range(url: str, level: dict) -> list[float] | None:
-    """Compute a robust display range from the coarsest pyramid level."""
-    if np is None or level["codecs"] not in (["bytes", "zstd"], ["bytes"]):
-        return None
-    shape, chunks = level["shape"], level["chunks"]
-    dtype = np.dtype(
-        {
-            "uint8": "u1", "uint16": "<u2", "uint32": "<u4", "int8": "i1",
-            "int16": "<i2", "int32": "<i4", "float32": "<f4", "float64": "<f8",
-        }[level["dtype"]]
-    )
-    sep = level["separator"]
-    n = [-(-s // c) for s, c in zip(shape, chunks)]
-    chunk_voxels = int(np.prod(chunks))
-    # Sample chunks nearest the volume centre, within a voxel budget, so
-    # single-level templates with huge chunks stay cheap.
-    centre = [(x - 1) / 2 for x in n]
-    coords = sorted(
-        ((i, j, k) for i in range(n[0]) for j in range(n[1]) for k in range(n[2])),
-        key=lambda c: sum((a - b) ** 2 for a, b in zip(c, centre)),
-    )
-    budget = max(1, int(VOXEL_BUDGET // chunk_voxels))
-    values = []
-    dctx = zstandard.ZstdDecompressor()
-    for c in coords[:budget]:
-        key = sep.join(["c", *map(str, c)])
-        raw = fetch(f"{url}/{level['path']}/{key}")
-        if raw is None:
-            continue
-        if "zstd" in level["codecs"]:
-            # streaming API: also handles frames without a content size
-            raw = dctx.decompressobj().decompress(raw)
-        values.append(np.frombuffer(raw, dtype=dtype)[::7])
-    if not values:
-        return None
-    v = np.concatenate(values).astype(np.float64)
-    v = v[v > 0]
-    if v.size == 0:
-        return None
-    lo, hi = np.percentile(v, [0.5, 99.8])
-    return [float(round(lo, 4)), float(round(hi, 4))]
+    return {"levels": levels}
 
 
 # --------------------------------------------------------------------------
@@ -391,8 +335,8 @@ def list_bucket(prefix: str) -> dict[str, str]:
 # --------------------------------------------------------------------------
 # Collections (titles, categories and descriptions)
 # --------------------------------------------------------------------------
-def load_collections(path: Path, atlas_keys: set[str]) -> dict[str, dict]:
-    """Map atlas key -> {title, group, description, link} from collections.toml."""
+def load_collections(path: Path) -> dict[str, dict]:
+    """Map atlas name -> {title, group, description, link} from collections.toml."""
     with path.open("rb") as f:
         data = tomllib.load(f)
     out: dict[str, dict] = {}
@@ -408,16 +352,20 @@ def load_collections(path: Path, atlas_keys: set[str]) -> dict[str, dict]:
             "description": (c.get("description") or "").strip(),
             "link": c.get("link"),
         }
-        for key in c["atlases"]:
-            if key in out:
-                raise SystemExit(f"{path}: {key} is listed in both {out[key]['title']!r} and {c['title']!r}")
-            if key not in atlas_keys:
-                print(f"warning: {path.name}: {key} ({c['title']}) is not in the bucket", file=sys.stderr)
-            out[key] = info
-    for key in sorted(atlas_keys - set(out)):
-        print(f"warning: {key} is not listed in {path.name}", file=sys.stderr)
-    print(f"{len(out)} atlases described in {path.name}", file=sys.stderr)
+        for name in c["atlases"]:
+            if name in out:
+                raise SystemExit(f"{path}: {name} is listed in both {out[name]['title']!r} and {c['title']!r}")
+            out[name] = info
     return out
+
+
+def check_collections(docs: dict[str, dict], names: set[str], path: Path) -> None:
+    """Warn about atlas names missing from, or unknown to, collections.toml."""
+    for name in sorted(set(docs) - names):
+        print(f"warning: {path.name}: {name} ({docs[name]['title']}) is not in the bucket", file=sys.stderr)
+    for name in sorted(names - set(docs)):
+        print(f"warning: {name} is not listed in {path.name}", file=sys.stderr)
+    print(f"{len(names & set(docs))} of {len(names)} atlases described in {path.name}", file=sys.stderr)
 
 
 # --------------------------------------------------------------------------
@@ -431,7 +379,7 @@ def build(out_dir: Path, collections_path: Path, workers: int = 16) -> None:
     conf = configparser.ConfigParser()
     conf.read_string(fetch(f"{ROOT}/atlases/last_versions.conf").decode())
     latest = dict(conf["atlases"])
-    docs = load_collections(collections_path, set(latest))
+    docs = load_collections(collections_path)
     print(f"{len(latest)} atlases in last_versions.conf", file=sys.stderr)
 
     # Every published version of those atlases, with its upload time.
@@ -454,6 +402,9 @@ def build(out_dir: Path, collections_path: Path, workers: int = 16) -> None:
     with ThreadPoolExecutor(workers) as ex:
         manifests = {k: m for k, m in ex.map(get_manifest, sorted(uploaded)) if m}
     print(f"{len(manifests)} atlas versions", file=sys.stderr)
+    check_collections(
+        docs, {m.get("name") for (k, v), m in manifests.items() if latest.get(k) == v}, collections_path
+    )
 
 
     template_locs = {m["template"]["location"] for m in manifests.values()}
@@ -468,12 +419,6 @@ def build(out_dir: Path, collections_path: Path, workers: int = 16) -> None:
     def get_template(loc):
         url = f"{loc_url(loc)}/template.ome.zarr"
         info = inspect_omezarr(url)
-        if info and info["levels"]:
-            try:
-                info["range"] = intensity_range(url, info["levels"][-1])
-            except Exception as e:  # noqa: BLE001
-                print(f"  ! range failed for {loc}: {e}", file=sys.stderr)
-                info["range"] = None
         print(f"  template {loc}", file=sys.stderr, flush=True)
         return loc, info
 
@@ -486,9 +431,7 @@ def build(out_dir: Path, collections_path: Path, workers: int = 16) -> None:
         return loc, {
             "annotation": ann,
             "hemispheres": hemi,
-            "precomputed": bool(pre),
             "meshes": bool(pre and pre.get("mesh")),
-            "segment_properties": bool(pre and pre.get("segment_properties")),
         }
 
     def get_terminology(loc):
@@ -610,7 +553,7 @@ def build(out_dir: Path, collections_path: Path, workers: int = 16) -> None:
             },
             "terminology": m["terminology"],
             "preview": previews.get((t_loc, a_loc)),
-            **({"docs": docs[key]} if key in docs else {}),
+            **({"docs": docs[name]} if name in docs else {}),
         }
         atlases.append(entry)
 

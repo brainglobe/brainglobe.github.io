@@ -39,7 +39,7 @@ function h(html) {
   return t.content.firstElementChild;
 }
 
-export function formatBytes(n) {
+function formatBytes(n) {
   if (!Number.isFinite(n)) return "?";
   const u = ["B", "KB", "MB", "GB", "TB"];
   let i = 0;
@@ -62,6 +62,14 @@ function highlight(text, terms) {
     out = out.replace(re, "<mark>$1</mark>");
   }
   return out;
+}
+
+function debounce(fn, ms = 120) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), ms);
+  };
 }
 
 let toastTimer;
@@ -104,32 +112,10 @@ const pageHref = (name) => `#/atlas/${encodeURIComponent(name)}`;
 /** Link to one resolution, pinned to its version or following the latest. */
 const versionHref = (a, pinned) => (pinned ? `${pageHref(a.key)}/v${encodeURIComponent(a.version)}` : pageHref(a.key));
 
-function storageGet(k) {
-  try {
-    return localStorage.getItem(k);
-  } catch {
-    return null;
-  }
-}
-function storageSet(k, v) {
-  try {
-    if (v == null) localStorage.removeItem(k);
-    else localStorage.setItem(k, v);
-  } catch {
-    /* ignore */
-  }
-}
-
-
 async function loadTerminology(atlas) {
   const t = INDEX.terminologies[atlas.terminology.location];
   if (!t) return null;
-  if (!TERM_CACHE.has(t.file)) {
-    TERM_CACHE.set(
-      t.file,
-      fetch(`data/${t.file}`).then((r) => (r.ok ? r.json() : null)),
-    );
-  }
+  if (!TERM_CACHE.has(t.file)) TERM_CACHE.set(t.file, fetch(`data/${t.file}`).then((r) => (r.ok ? r.json() : null)));
   return TERM_CACHE.get(t.file);
 }
 
@@ -146,10 +132,17 @@ function setupThemeToggle() {
     btn.title = `Theme: ${mode} (click to change)`;
     btn.setAttribute("aria-label", btn.title);
   };
-  apply(storageGet("theme") || "system");
+  let saved = null;
+  try {
+    saved = localStorage.getItem("theme");
+  } catch {}
+  apply(saved || "system");
   btn.addEventListener("click", () => {
     const next = order[(order.indexOf(btn.dataset.mode) + 1) % order.length];
-    storageSet("theme", next === "system" ? null : next);
+    try {
+      if (next === "system") localStorage.removeItem("theme");
+      else localStorage.setItem("theme", next);
+    } catch {}
     apply(next);
   });
 }
@@ -244,15 +237,14 @@ function renderSearch() {
     setupFacets();
     const input = searchView.querySelector("#q");
     input.value = state.q;
-    let timer;
-    input.addEventListener("input", () => {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
+    input.addEventListener(
+      "input",
+      debounce(() => {
         state.q = input.value;
         syncUrl();
         updateResults();
-      }, 120);
-    });
+      }),
+    );
   }
   app.replaceChildren(searchView);
   updateResults();
@@ -417,21 +409,14 @@ function createResSlider(onChange) {
     el.querySelector(".hi-val").textContent = fmtRes(RES_VALUES[b]);
     bars.forEach((s, i) => s.classList.toggle("in", i >= a && i <= b));
   };
-  const commit = () => {
-    const a = +lo.value;
-    const b = +hi.value;
-    onChange(a === 0 ? null : RES_VALUES[a], b === n - 1 ? null : RES_VALUES[b]);
+  // handles can't cross; null means "no limit" at either end
+  const onInput = (moved, other) => () => {
+    if (moved === lo ? +lo.value > +hi.value : +hi.value < +lo.value) moved.value = other.value;
+    sync();
+    onChange(+lo.value === 0 ? null : RES_VALUES[+lo.value], +hi.value === n - 1 ? null : RES_VALUES[+hi.value]);
   };
-  lo.addEventListener("input", () => {
-    if (+lo.value > +hi.value) lo.value = hi.value;
-    sync();
-    commit();
-  });
-  hi.addEventListener("input", () => {
-    if (+hi.value < +lo.value) hi.value = lo.value;
-    sync();
-    commit();
-  });
+  lo.addEventListener("input", onInput(lo, hi));
+  hi.addEventListener("input", onInput(hi, lo));
   sync();
   return {
     el,
@@ -514,33 +499,21 @@ const COMPONENTS = [
   { id: "hemispheres", label: "Hemisphere map", help: "left/right label volume" },
 ];
 
-/** Multiscale store of one component for one atlas entry, or null. */
+/** Multiscale store of one component for one atlas entry: {url, levels, level} or null. */
 function componentStore(atlas, comp) {
-  const urls = componentUrls(INDEX, atlas);
+  const url = componentUrls(INDEX, atlas)[comp.id];
   if (comp.id === "template") {
     const t = INDEX.templates[atlas.template.location];
-    return t && { id: atlas.template.location, url: urls.template, levels: t.levels, version: atlas.template.version, level: atlas.template.level, atlas };
+    return t && { url, levels: t.levels, level: atlas.template.level };
   }
-  const a = INDEX.annotation_sets[atlas.annotation_set.location];
-  const g = a?.[comp.id === "annotation" ? "annotation" : "hemispheres"];
-  if (!g) return null;
-  return {
-    id: atlas.annotation_set.location,
-    url: urls[comp.id],
-    levels: g.levels,
-    version: atlas.annotation_set.version,
-    level: comp.id === "annotation" ? atlas.annotation_set.level : atlas.annotation_set.hemispheres_level,
-    atlas,
-  };
+  const g = INDEX.annotation_sets[atlas.annotation_set.location]?.[comp.id];
+  const { level, hemispheres_level } = atlas.annotation_set;
+  return g && { url, levels: g.levels, level: comp.id === "annotation" ? level : hemispheres_level };
 }
 
-function levelLabel(lv) {
-  const um = lv.scale.slice(-3).map((s) => +(s * 1000).toPrecision(6));
-  const res = um.every((x) => x === um[0]) ? `${um[0]} µm` : `${um.join(" × ")} µm`;
-  return { res, um, text: `${lv.shape.join(" × ")} · ${lv.dtype} · ${formatBytes(rawSize(lv.shape, lv.dtype))}` };
-}
+const levelText = (lv) => `${lv.shape.join(" × ")} · ${lv.dtype} · ${formatBytes(rawSize(lv.shape, lv.dtype))}`;
 
-const detailOptions = { allLevels: false };
+let allLevels = false; // "include all resolution levels" in OME-Zarr downloads, kept across pages
 
 /**
  * One page per atlas name. `selected` is the atlas entry (resolution) that the
@@ -569,7 +542,7 @@ function renderDetail(page, selected = null, pinned = false) {
     ["regions", "Brain regions"],
     ["code", "Use from code"],
     ["metadata", "Metadata"],
-  ].filter(Boolean);
+  ];
   const row = (k, v) => `<tr><th scope="row">${k}</th><td>${v}</td></tr>`;
 
   const view = h(`
@@ -628,7 +601,7 @@ function renderDetail(page, selected = null, pinned = false) {
             <thead><tr><th>Component</th><th>Size at ${esc(formatResolution(atlas))}</th><th>Format</th></tr></thead>
             <tbody id="dl-body"></tbody>
           </table>
-          <label class="option"><input type="checkbox" id="opt-all-levels" ${detailOptions.allLevels ? "checked" : ""}/> Include all resolution levels in OME-Zarr downloads</label>
+          <label class="option"><input type="checkbox" id="opt-all-levels" ${allLevels ? "checked" : ""}/> Include all resolution levels in OME-Zarr downloads</label>
           <p class="note" id="itk-note" hidden></p>
           <p class="note">BrainGlobe stores volumes as OME-Zarr and ontologies as CSV; these downloads contain the data as published.
             The other formats are converted in your browser: volumes are read chunk by chunk from the public OME-Zarr stores and rewritten.
@@ -727,7 +700,7 @@ function renderDetail(page, selected = null, pinned = false) {
     const v = e.target.value;
     select(v ? versions.find((a) => a.version === v) : newest, Boolean(v), "#version");
   });
-  view.querySelector("#opt-all-levels").addEventListener("change", (e) => (detailOptions.allLevels = e.target.checked));
+  view.querySelector("#opt-all-levels").addEventListener("change", (e) => (allLevels = e.target.checked));
   app.replaceChildren(view);
 
   renderDownloads(view, page, atlas);
@@ -841,45 +814,42 @@ function fmtGroups(buttons) {
 
 function renderDownloads(view, page, atlas) {
   const body = view.querySelector("#dl-body");
-  const allLevels = view.querySelector("#opt-all-levels");
+  const formatButtons = fmtGroups(Object.entries(FORMATS).map(([k, f]) => ({ native: f.native, attr: `data-fmt="${k}"`, title: f.note, label: f.label })));
   for (const comp of COMPONENTS) {
+    const what = `<td class="what">${comp.label}<small>${comp.help}</small></td>`;
     const store = componentStore(atlas, comp);
     const level = store?.levels.find((l) => l.path === store.level);
     if (!level) {
-      body.append(h(`<tr><td class="what">${comp.label}<small>${comp.help}</small></td><td colspan="2" class="muted">Not available for this atlas</td></tr>`));
+      body.append(h(`<tr>${what}<td colspan="2" class="muted">Not available for this atlas</td></tr>`));
       continue;
     }
     const row = h(`
       <tr>
-        <td class="what">${comp.label}<small>${comp.help}</small></td>
-        <td class="size">${esc(levelLabel(level).text)}</td>
-        <td>${fmtGroups(Object.entries(FORMATS).map(([k, f]) => ({ native: f.native, attr: `data-fmt="${k}"`, title: f.note, label: f.label })))}</td>
+        ${what}
+        <td class="size">${esc(levelText(level))}</td>
+        <td>${formatButtons}</td>
       </tr>`);
-    row.querySelectorAll("[data-fmt]").forEach((btn) =>
-      btn.addEventListener("click", () => {
-        const fmt = btn.dataset.fmt;
-        const all = fmt === "ome-zarr" && allLevels.checked;
-        const filename = `${all ? `${page.name}_multiscale` : atlas.key}_v${atlas.version}_${comp.id}${FORMATS[fmt].ext}`;
-        // open the save dialog synchronously within the click gesture
-        const sinkPromise = openSink(filename, { gzip: sinkGzip(fmt) });
-        startJob(filename, (onProgress, signal) =>
-          exportVolume({
-            zarrUrl: store.url,
-            level,
-            levels: store.levels,
-            allLevels: all,
-            format: fmt,
-            orientation: atlas.orientation,
-            filename,
-            description: `BrainGlobe ${atlas.key} v${atlas.version} ${comp.id}`,
-            onProgress,
-            signal,
-            sinkPromise,
-          }),
+    row.addEventListener("click", (e) => {
+      const fmt = e.target.closest("[data-fmt]")?.dataset.fmt;
+      if (!fmt) return;
+      const all = fmt === "ome-zarr" && allLevels;
+      const filename = `${all ? `${page.name}_multiscale` : atlas.key}_v${atlas.version}_${comp.id}${FORMATS[fmt].ext}`;
+      startJob(filename, { gzip: sinkGzip(fmt) }, (onProgress, signal, sinkPromise) =>
+        exportVolume({
+          zarrUrl: store.url,
+          level,
+          levels: store.levels,
+          allLevels: all,
+          format: fmt,
+          orientation: atlas.orientation,
+          filename,
+          description: `BrainGlobe ${atlas.key} v${atlas.version} ${comp.id}`,
+          onProgress,
+          signal,
           sinkPromise,
-        );
-      }),
-    );
+        }),
+      );
+    });
     body.append(row);
   }
   body.append(h(`<tr id="ontology-row"><td class="what">Ontology<small>region terminology</small></td><td class="muted">${esc(atlas.terminology.name)}</td><td class="muted">Loading…</td></tr>`));
@@ -908,13 +878,12 @@ function renderOntologyRow(view, atlas, rows, urls) {
     itk: [`${base}_itksnap.txt`, "text/plain", () => toItkSnap(rows)],
     ctbl: [`${base}.ctbl`, "text/plain", () => toSlicerCtbl(rows)],
   };
-  cell.querySelectorAll("[data-o]").forEach((b) =>
-    b.addEventListener("click", () => {
-      const [name, mime, make] = outputs[b.dataset.o];
-      const sinkPromise = openSink(name, { mimeType: mime });
-      startJob(name, async () => saveText(name, await make(), mime, sinkPromise), sinkPromise);
-    }),
-  );
+  cell.addEventListener("click", (e) => {
+    const o = e.target.closest("[data-o]")?.dataset.o;
+    if (!o) return;
+    const [name, mimeType, make] = outputs[o];
+    startJob(name, { mimeType }, async (onProgress, signal, sinkPromise) => saveText(name, await make(), mimeType, sinkPromise));
+  });
 }
 
 function renderTree(view, rows) {
@@ -936,10 +905,10 @@ function renderTree(view, rows) {
     `${swatch(n.color)}${mark(n.name, q)}<span class="acr">${mark(n.acronym, q)}</span><span class="val">${esc(n.value)}</span>`;
 
   // whole subtree; only the top level open unless `open` says otherwise
-  const renderNode = (n, depth, q = "") =>
+  const renderNode = (n, depth) =>
     n.children.length
-      ? `<li><details ${depth < 1 ? "open" : ""}><summary>${label(n, q)}</summary><ul>${n.children.map((c) => renderNode(c, depth + 1)).join("")}</ul></details></li>`
-      : `<li class="leaf">${label(n, q)}</li>`;
+      ? `<li><details ${depth < 1 ? "open" : ""}><summary>${label(n)}</summary><ul>${n.children.map((c) => renderNode(c, depth + 1)).join("")}</ul></details></li>`
+      : `<li class="leaf">${label(n)}</li>`;
   const full = `<ul>${roots.map((r) => renderNode(r, 0)).join("")}</ul>`;
   box.innerHTML = full;
   status.textContent = "";
@@ -977,21 +946,15 @@ function renderTree(view, rows) {
     return { html: html ? `<ul>${html}</ul>` : "", count };
   };
 
-  let timer;
-  input.addEventListener("input", () => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
+  input.addEventListener(
+    "input",
+    debounce(() => {
       const q = input.value.trim().toLowerCase();
-      if (!q) {
-        box.innerHTML = full;
-        status.textContent = "";
-        return;
-      }
-      const { html, count } = renderFiltered(q);
+      const { html, count } = q ? renderFiltered(q) : { html: full, count: 0 };
       box.innerHTML = html || `<p class="muted">No matching regions.</p>`;
       status.textContent = count ? `${count} matching region${count === 1 ? "" : "s"}` : "";
-    }, 120);
-  });
+    }),
+  );
 }
 
 // ---------------------------------------------------------------------------
@@ -999,7 +962,13 @@ function renderTree(view, rows) {
 // ---------------------------------------------------------------------------
 let jobCount = 0;
 
-function startJob(name, run, sinkPromise) {
+/**
+ * Run a download with a progress entry in the downloads panel. The save
+ * dialog is opened here, synchronously within the click that started it;
+ * `run(onProgress, signal, sinkPromise)` writes the file.
+ */
+function startJob(name, sinkOptions, run) {
+  const sinkPromise = openSink(name, sinkOptions);
   const id = ++jobCount;
   const ctrl = new AbortController();
   jobsEl.hidden = false;
@@ -1034,7 +1003,7 @@ function startJob(name, run, sinkPromise) {
     try {
       await sinkPromise; // wait for the save dialog
       msg.textContent = "Starting…";
-      await run(onProgress, ctrl.signal);
+      await run(onProgress, ctrl.signal, sinkPromise);
       el.classList.add("done");
       bar.value = bar.max;
       msg.textContent = `Done in ${Math.round((performance.now() - t0) / 100) / 10} s`;
