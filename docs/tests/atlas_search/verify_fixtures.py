@@ -1,4 +1,4 @@
-"""Verify files from tests/write_fixtures.mjs with standard Python readers."""
+"""Verify files from write_fixtures.mjs with standard Python readers."""
 import sys
 import zipfile
 from pathlib import Path

@@ -1,5 +1,9 @@
 #!/usr/bin/env python
-"""Crawl the public BrainGlobe atlas bucket and build a static search index.
+"""Build the data for the atlas search page (``source/atlases/index.md``).
+
+Run by ``make html`` (target ``atlas_index``). It crawls the public BrainGlobe
+atlas bucket and writes a static index that the page's JavaScript
+(``source/_static/atlas-search/``) reads.
 
 The BrainGlobe atlas API (v3) stores every atlas as a set of components on
 S3 (https://brainglobe.s3.us-west-2.amazonaws.com/atlas/):
@@ -14,18 +18,22 @@ S3 (https://brainglobe.s3.us-west-2.amazonaws.com/atlas/):
 This script reads ``last_versions.conf`` and every manifest, inspects the
 OME-Zarr metadata of each component, converts each terminology to JSON, and
 enriches the atlases with the hand-maintained titles, categories and
-descriptions in ``collections.toml`` at the repository root. The output is
-written to ``public/data`` and consumed by the static website.
+descriptions in ``source/atlases/collections.toml``. The output is written to
+``source/_atlas_data/atlases/data``, which Sphinx copies to ``atlases/data`` in
+the built website (``html_extra_path`` in ``conf.py``).
 
 Only the standard library is required. If ``numpy`` and ``zstandard`` are
 installed, a small coronal-section preview (template + annotation labels) is
-also written for every atlas to ``public/data/previews`` so the site never has to read
-the volumes just to show a slice. Previews are named after the store versions
-and are reused when they already exist.
+also written for every atlas to ``previews/``, so the page never has to read the
+volumes just to show a slice. Previews are named after the store versions and
+are reused when they already exist.
+
+If the bucket cannot be reached, a warning is printed and the documentation
+still builds (without atlas data), except on CI, where the build fails.
 
 Usage::
 
-    python scripts/build_index.py [--out public/data] [--collections collections.toml]
+    python make_atlas_index.py [--out DIR] [--collections FILE]
 """
 
 from __future__ import annotations
@@ -38,6 +46,7 @@ import datetime as dt
 import io
 import json
 import re
+import os
 import sys
 import tomllib
 import urllib.error
@@ -584,16 +593,23 @@ def build(out_dir: Path, collections_path: Path, workers: int = 16) -> None:
 
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    p.add_argument("--out", type=Path, default=Path(__file__).parents[1] / "public" / "data")
+    source = Path(__file__).parent / "source"
+    p.add_argument("--out", type=Path, default=source / "_atlas_data" / "atlases" / "data")
     p.add_argument(
         "--collections",
         type=Path,
-        default=Path(__file__).parents[1] / "collections.toml",
-        help="atlas titles, categories and descriptions (default: collections.toml)",
+        default=source / "atlases" / "collections.toml",
+        help="atlas titles, categories and descriptions",
     )
     p.add_argument("--workers", type=int, default=16)
     args = p.parse_args(argv)
-    build(args.out, args.collections, args.workers)
+    try:
+        build(args.out, args.collections, args.workers)
+    except Exception as e:  # noqa: BLE001
+        if os.environ.get("CI"):
+            raise
+        print(f"WARNING: could not build the atlas search index ({e!r}); "
+              "the atlas search page will have no data", file=sys.stderr)
 
 
 if __name__ == "__main__":

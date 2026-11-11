@@ -6,8 +6,11 @@ import { componentUrls, stateFileUrl, viewerUrl } from "./neuroglancer.js";
 import { loadPreview } from "./slice.js";
 import { buildSearchIndex, commonName, compareAtlases, facetCounts, formatResolution, minResolution, search } from "./search.js";
 
+// Rendered into the atlas search page of the docs (docs/source/atlases/index.md).
 const app = document.getElementById("app");
 const jobsEl = document.getElementById("jobs");
+// The page's own heading ("Atlas search") titles the search view; atlas pages have their own.
+const pageTitle = app.closest("section")?.querySelector("h1");
 
 let INDEX = null;
 let DOCS = null;
@@ -77,7 +80,7 @@ function toast(msg) {
   let el = document.querySelector(".toast");
   if (!el) {
     el = h('<div class="toast" role="status"></div>');
-    document.body.append(el);
+    app.parentElement.append(el); // inside the page's scoped styles
   }
   el.textContent = msg;
   el.classList.add("show");
@@ -117,34 +120,6 @@ async function loadTerminology(atlas) {
   if (!t) return null;
   if (!TERM_CACHE.has(t.file)) TERM_CACHE.set(t.file, fetch(`data/${t.file}`).then((r) => (r.ok ? r.json() : null)));
   return TERM_CACHE.get(t.file);
-}
-
-// ---------------------------------------------------------------------------
-// theme (system / light / dark), as on brainglobe.info
-// ---------------------------------------------------------------------------
-function setupThemeToggle() {
-  const btn = document.getElementById("theme-toggle");
-  const order = ["system", "light", "dark"];
-  const apply = (mode) => {
-    if (mode === "system") delete document.documentElement.dataset.theme;
-    else document.documentElement.dataset.theme = mode;
-    btn.dataset.mode = mode;
-    btn.title = `Theme: ${mode} (click to change)`;
-    btn.setAttribute("aria-label", btn.title);
-  };
-  let saved = null;
-  try {
-    saved = localStorage.getItem("theme");
-  } catch {}
-  apply(saved || "system");
-  btn.addEventListener("click", () => {
-    const next = order[(order.indexOf(btn.dataset.mode) + 1) % order.length];
-    try {
-      if (next === "system") localStorage.removeItem("theme");
-      else localStorage.setItem("theme", next);
-    } catch {}
-    apply(next);
-  });
 }
 
 // ---------------------------------------------------------------------------
@@ -212,12 +187,12 @@ let searchView = null;
 
 function renderSearch() {
   document.title = "Atlas search · BrainGlobe";
+  if (pageTitle) pageTitle.hidden = false;
   if (!searchView) {
     searchView = h(`
       <div class="with-sidebar">
-        <aside class="sidebar" id="facets" aria-label="Filters"></aside>
+        <aside class="facet-sidebar" id="facets" aria-label="Filters"></aside>
         <div class="content">
-          <h1>Atlas search</h1>
           <p>Search the ${BY_NAME.size} atlases, in ${new Set([...BY_NAME.values()].map((p) => p.family)).size} collections, available through the
             <a href="../documentation/brainglobe-atlasapi/index.html">BrainGlobe Atlas API</a>
             by name, species, resolution, publication or brain region. Each atlas can be viewed in neuroglancer,
@@ -252,10 +227,11 @@ function renderSearch() {
   if (document.activeElement === document.body) input.focus({ preventScroll: true });
 }
 
+// The query is kept in ?search= (Sphinx's own search script reacts to ?q= on every page).
 function syncUrl() {
   const u = new URL(location.href);
-  if (state.q) u.searchParams.set("q", state.q);
-  else u.searchParams.delete("q");
+  if (state.q) u.searchParams.set("search", state.q);
+  else u.searchParams.delete("search");
   history.replaceState(null, "", u);
 }
 
@@ -534,6 +510,7 @@ function renderDetail(page, selected = null, pinned = false) {
   const urls = componentUrls(INDEX, atlas);
   const stateUrl = stateFileUrl(INDEX, atlas.name, pinned ? atlas.version : null);
   document.title = `${atlas.key}${atlas.latest ? "" : ` v${atlas.version}`} · BrainGlobe atlas search`;
+  if (pageTitle) pageTitle.hidden = true;
   const common = commonName(atlas.species);
   const variants = [...BY_NAME.values()].filter((p) => p.family === page.family).sort((a, b) => byNameNumeric(a.name, b.name));
   const sections = [
@@ -1032,14 +1009,13 @@ window.addEventListener("beforeunload", (e) => {
 // boot
 // ---------------------------------------------------------------------------
 async function boot() {
-  setupThemeToggle();
   try {
     const r = await fetch("data/index.json");
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
     INDEX = await r.json();
   } catch (e) {
     app.innerHTML = `<p class="muted">Could not load the atlas index (data/index.json): ${esc(e.message)}.<br>
-      Run <code>python scripts/build_index.py</code> to generate it.</p>`;
+      It is built by <code>make html</code> (<code>docs/make_atlas_index.py</code>).</p>`;
     return;
   }
   // Search and the resolution list cover the latest version of every atlas;
@@ -1065,7 +1041,7 @@ async function boot() {
   DOCS = buildSearchIndex(INDEX);
   buildResolutionStops();
   const params = new URL(location.href).searchParams;
-  state.q = params.get("q") || "";
+  state.q = params.get("search") || "";
   const dateEl = document.getElementById("index-date");
   if (INDEX.generated) dateEl.textContent = `Index built ${INDEX.generated.slice(0, 10)}.`;
   route();

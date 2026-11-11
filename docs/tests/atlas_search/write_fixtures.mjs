@@ -1,9 +1,9 @@
 // Writes small test volumes in every export format to the directory given
-// as argv[2]; tests/verify_fixtures.py checks them with tifffile/nibabel/pynrrd.
+// as argv[2]; verify_fixtures.py checks them with tifffile/nibabel/pynrrd.
 import { writeFileSync, mkdirSync } from "node:fs";
 import { gzipSync } from "node:zlib";
-import { niftiHeader, nrrdHeader, tiffHeader } from "../src/export/formats.js";
-import { ZipWriter } from "../src/export/zip.js";
+import { niftiHeader, nrrdHeader, tiffHeader } from "../../source/_static/atlas-search/export/formats.js";
+import { ZipWriter } from "../../source/_static/atlas-search/export/zip.js";
 
 const out = process.argv[2];
 mkdirSync(out, { recursive: true });

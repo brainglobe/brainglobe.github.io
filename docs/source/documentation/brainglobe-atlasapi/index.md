@@ -11,7 +11,7 @@ The brainglobe atlas API deals with this problem by providing a common interface
 ## Atlases available
 
 All atlases available through the API, with their descriptions, resolutions and brain regions, are listed in the
-[BrainGlobe atlas search](https://brainglobe.info/atlases/). From there, each atlas can be viewed in neuroglancer, and its template,
+{ref}`BrainGlobe atlas search <target-atlas-search>`. From there, each atlas can be viewed in neuroglancer, and its template,
 annotation, hemisphere map and ontology downloaded in a range of formats.
 
 ## Installation

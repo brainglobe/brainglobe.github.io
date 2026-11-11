@@ -1,4 +1,4 @@
-"""Compare files from tests/e2e_export.mjs with arrays read by zarr-python."""
+"""Compare files from e2e_export.mjs with arrays read by zarr-python."""
 import sys
 import zipfile
 from pathlib import Path

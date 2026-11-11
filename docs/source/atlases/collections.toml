@@ -1,11 +1,11 @@
-# Atlas collections shown on the search site.
+# Atlas collections shown on the atlas search page (index.md).
 #
 # This file is the source of the human-written titles, categories and
 # descriptions of every atlas. It is maintained by hand: when a new atlas is
 # added to the BrainGlobe bucket, add its name to an existing collection or add
-# a new [[collection]] entry below, then rebuild the index
-# (`python scripts/build_index.py`). The index build warns about atlases in
-# the bucket that are not listed here.
+# a new [[collection]] entry below. The docs build (`make html`, which runs
+# `docs/make_atlas_index.py`) warns about atlases in the bucket that are not
+# listed here; they still appear on the page, without a description.
 #
 # Fields:
 #   title        display name of the collection (required)

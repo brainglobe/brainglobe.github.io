@@ -43,8 +43,7 @@ jobs:
     needs: build_sphinx_docs
     permissions:
       contents: write
-    # workflow_dispatch: started by the atlas search workflow after it publishes a new build
-    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref_name == 'main'
+    if: github.event_name == 'push' && github.ref_name == 'main'
     runs-on: ubuntu-latest
     steps:
       - uses: neuroinformatics-unit/actions/deploy_sphinx_docs@v2

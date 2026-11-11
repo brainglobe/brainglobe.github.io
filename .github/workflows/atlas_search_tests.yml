@@ -1,0 +1,48 @@
+name: Atlas search tests
+
+# Checks the file writers of the atlas search page (TIFF, NIfTI, NRRD, ZIP)
+# against standard Python readers, and exports a real atlas from S3 with the
+# page's code to compare with zarr-python.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/source/_static/atlas-search/**"
+      - "docs/tests/atlas_search/**"
+      - "docs/package*.json"
+      - ".github/workflows/atlas_search_tests.yml"
+  pull_request:
+    paths:
+      - "docs/source/_static/atlas-search/**"
+      - "docs/tests/atlas_search/**"
+      - "docs/package*.json"
+      - ".github/workflows/atlas_search_tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: docs
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: docs/package-lock.json
+      - name: Install dependencies
+        run: |
+          pip install numpy tifffile nibabel pynrrd "zarr>=3" fsspec aiohttp
+          npm ci
+      - name: File writers
+        run: npm test
+      - name: End-to-end export from S3
+        run: npm run test:e2e

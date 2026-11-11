@@ -1,10 +1,10 @@
 // End-to-end: export a real (small) atlas from S3 with the same code the
-// website uses, writing to argv[2]. Verified by tests/e2e_verify.py.
+// website uses, writing to argv[2]. Verified by e2e_verify.py.
 import { createWriteStream, mkdirSync } from "node:fs";
 import { createGzip } from "node:zlib";
 import { writeFileSync } from "node:fs";
-import { exportVolume, sinkGzip } from "../src/export/export.js";
-import { toItkSnap } from "../src/export/ontology.js";
+import { exportVolume, sinkGzip } from "../../source/_static/atlas-search/export/export.js";
+import { toItkSnap } from "../../source/_static/atlas-search/export/ontology.js";
 
 const out = process.argv[2];
 mkdirSync(out, { recursive: true });

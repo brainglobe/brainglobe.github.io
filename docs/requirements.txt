@@ -20,5 +20,6 @@ dask
 matplotlib
 ngff-zarr
 numpy
+zstandard
 obstore
 s3fs

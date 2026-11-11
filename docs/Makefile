@@ -15,7 +15,7 @@ TIMEOUT       = 2
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile fetch_atlas_search
+.PHONY: help Makefile atlas_index
 
 # Remove all auto-generated files
 clean:
@@ -33,9 +33,9 @@ clean:
 		rm -rf "$(SOURCEDIR)/api"; \
 		sleep $(TIMEOUT); \
 	fi
-	@if [ -d "$(SOURCEDIR)/_atlas_search" ]; then \
-		echo "Removing $(SOURCEDIR)/_atlas_search directory..."; \
-		rm -rf "$(SOURCEDIR)/_atlas_search"; \
+	@if [ -d "$(SOURCEDIR)/_atlas_data" ]; then \
+		echo "Removing $(SOURCEDIR)/_atlas_data directory..."; \
+		rm -rf "$(SOURCEDIR)/_atlas_data"; \
 	fi
 	@if [ -d "downloads" ]; then \
 		echo "Removing downloads directory..."; \
@@ -61,13 +61,13 @@ generate_api_toctrees:
 	@python generate_api_toctrees.py
 	@sleep $(TIMEOUT)
 
-# Download the built atlas search site (published to brainglobe.info/atlases/)
-fetch_atlas_search:
-	@echo "Fetching atlas search..."
-	@python fetch_atlas_search.py
+# Build the data for the atlas search page from the BrainGlobe atlas bucket
+atlas_index:
+	@echo "Building atlas search index..."
+	@python make_atlas_index.py
 
 # Default target to build the documentation
-html: fetch_repos make_api_index generate_api_toctrees fetch_atlas_search
+html: fetch_repos make_api_index generate_api_toctrees atlas_index
 	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 # Run linkcheck after generating the same API docs that html depends on.
