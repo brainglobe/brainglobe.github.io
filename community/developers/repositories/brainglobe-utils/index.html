@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=6a604523" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../../../../_static/scripts/fontawesome.js?digest=75c7c72ae941e8b558d8"></script>
@@ -55,7 +55,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../../_static/togglebutton.js?v=b8b12719"></script>
-    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../../../../_static/design-tabs.js?v=fcb327ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'community/developers/repositories/brainglobe-utils/index';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
@@ -628,7 +628,7 @@ Finally, in your class you’ll need to overwrite the <code class="docutils lite
 <p>Then, head to the <code class="docutils literal notranslate"><span class="pre">citation.cite</span></code> module and add your new format as an option to the command-line interface (<code class="docutils literal notranslate"><span class="pre">citation.cite.cli</span></code>) and backend function (<code class="docutils literal notranslate"><span class="pre">citation.cite.cite</span></code>).</p>
 </section>
 <section id="citation-repositories">
-<h3><code class="docutils literal notranslate"><span class="pre">citation.repositories</span></code><a class="headerlink" href="#citation-repositories" title="Link to this heading">#</a></h3>
+<span id="citationrepositories"></span><h3><code class="docutils literal notranslate"><span class="pre">citation.repositories</span></code><a class="headerlink" href="#citation-repositories" title="Link to this heading">#</a></h3>
 <p>This module contains the <code class="docutils literal notranslate"><span class="pre">Repository</span></code> class, a function to find the repositories that are referred to in a list of tool names, and the static instances of all the BrainGlobe repositories that we provide a reference for via <code class="docutils literal notranslate"><span class="pre">cite-brainglobe</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Repository</span></code> class is just a convenient container for all the information pertaining to one particular BrainGlobe tool or repository.
 The class itself just holds any information we need and some useful actions on that information, such as providing the URL for the GitHub repo, storing the alternative names for the tool that is held there, etc.
@@ -658,13 +658,13 @@ The second argument defines the (case-insensitive) names (in addition to the rep
 <p>The <code class="docutils literal notranslate"><span class="pre">unique_repositories_from_tools</span></code> function takes in a list of tool names or aliases (in particular, the list provided by the user on the command-line) and returns the unique repositories that need to be cited given this list.</p>
 </section>
 <section id="citation-fetch">
-<h3><code class="docutils literal notranslate"><span class="pre">citation.fetch</span></code><a class="headerlink" href="#citation-fetch" title="Link to this heading">#</a></h3>
+<span id="citationfetch"></span><h3><code class="docutils literal notranslate"><span class="pre">citation.fetch</span></code><a class="headerlink" href="#citation-fetch" title="Link to this heading">#</a></h3>
 <p>This submodule contains two helper functions.
 The simplest is the <code class="docutils literal notranslate"><span class="pre">yaml_str_to_dict</span></code> function which takes a string containing the yaml-formatted content of a file and parses it into a Python <code class="docutils literal notranslate"><span class="pre">dict</span></code> — this is for use when retrieving files from the internet as opposed to loading them from disk.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">fetch_from_github</span></code> function provides a streamlined function for fetching the content of files from GitHub repositories, and validates that the request was successful.</p>
 </section>
 <section id="citation-format-and-the-citation-fmt-submodules">
-<h3><code class="docutils literal notranslate"><span class="pre">citation.format</span></code> and the <code class="docutils literal notranslate"><span class="pre">citation.*_fmt</span></code> submodules<a class="headerlink" href="#citation-format-and-the-citation-fmt-submodules" title="Link to this heading">#</a></h3>
+<span id="citationformat-and-the-citation_fmt-submodules"></span><h3><code class="docutils literal notranslate"><span class="pre">citation.format</span></code> and the <code class="docutils literal notranslate"><span class="pre">citation.*_fmt</span></code> submodules<a class="headerlink" href="#citation-format-and-the-citation-fmt-submodules" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">Format</span></code> class resides in this submodule.
 This class is the intended base class for any citations that we want to generate, and provides this abstract functionality.
 The various <code class="docutils literal notranslate"><span class="pre">*_fmt</span></code> submodules then provide the derived classes for each of the citation formats that we want to support - <code class="docutils literal notranslate"><span class="pre">bibtex_fmt</span></code> provides the <code class="docutils literal notranslate"><span class="pre">BibTexEntry</span></code> class, and <code class="docutils literal notranslate"><span class="pre">text_fmt</span></code> supports writing citations as human-readable strings.</p>

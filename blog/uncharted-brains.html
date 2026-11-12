@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=75c7c72ae941e8b558d8"></script>
@@ -55,7 +55,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=b8b12719"></script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../_static/design-tabs.js?v=fcb327ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'blog/uncharted-brains';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
@@ -698,8 +698,8 @@ The average image becomes progressively sharper as more accurate registrations a
 <span class="sd-summary-text">Overcoming technical challenges</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Although SyGN is implemented in the <a class="reference external" href="http://stnava.github.io/ANTs/">ANTs software</a>, we faced several challenges in applying it to our microscopy images:</p>
 <ul class="simple">
-<li><p class="sd-card-text"><strong><em>Different formats and resolutions:</em></strong> SyGN was designed for MRI images, which come in a different file format and typically have lower resolution and smaller file sizes.</p></li>
-<li><p class="sd-card-text"><strong><em>Limited sample size:</em></strong> we only had 10 brains due to the difficulty of obtaining blackcap samples (they do not breed in captivity). Two of these had partial damage from sample preparation (see <a class="reference internal" href="#fig-input-brains"><span class="std std-ref">Figure 2</span></a>).</p></li>
+<li><p><strong><em>Different formats and resolutions:</em></strong> SyGN was designed for MRI images, which come in a different file format and typically have lower resolution and smaller file sizes.</p></li>
+<li><p><strong><em>Limited sample size:</em></strong> we only had 10 brains due to the difficulty of obtaining blackcap samples (they do not breed in captivity). Two of these had partial damage from sample preparation (see <a class="reference internal" href="#fig-input-brains"><span class="std std-ref">Figure 2</span></a>).</p></li>
 </ul>
 <p class="sd-card-text">To address these challenges, we developed a <strong><em>pre-processing pipeline</em></strong> to prepare the data for SyGN. Among other tasks, this pipeline: downsamples the images; rotates them to a standard orientation; converts them to an appropriate file format; masks out the background; removes damaged regions; splits the brains down the midline; and mirrors the two halves to produce symmetric images that guarantee the symmetry of the final template.
 We implemented this workflow in a Python package, <a class="reference external" href="https://github.com/brainglobe/brainglobe-template-builder">brainglobe-template-builder</a>, which we are working to generalise for broader use.</p>
