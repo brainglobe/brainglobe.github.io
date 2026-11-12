@@ -216,6 +216,10 @@ notfound_context = {
 notfound_urls_prefix = None
 
 
+# The atlas pages are generated from the atlas manifests (_ext/atlas_search), whose links
+# (citations, atlas homepages) cannot be fixed here.
+linkcheck_exclude_documents = [r"atlases/.*"]
+
 linkcheck_ignore = [
     # Sphinx-gallery output files only exist after a full HTML build, not during linkcheck
     r".*/*_examples/.*\.html",

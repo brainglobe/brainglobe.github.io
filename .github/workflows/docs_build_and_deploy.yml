@@ -30,8 +30,17 @@ jobs:
     needs: linting
     name: Build Sphinx Docs
     runs-on: ubuntu-latest
+    env:
+      # coronal previews of the atlas search pages (docs/source/_ext/atlas_search),
+      # kept between runs: they are only rendered again when an atlas changes
+      BRAINGLOBE_ATLAS_PREVIEWS: ~/.cache/brainglobe-atlas-previews
 
     steps:
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/brainglobe-atlas-previews
+          key: atlas-previews-${{ github.run_id }}
+          restore-keys: atlas-previews-
       - uses: neuroinformatics-unit/actions/build_sphinx_docs@main
         with:
           python-version: 3.12

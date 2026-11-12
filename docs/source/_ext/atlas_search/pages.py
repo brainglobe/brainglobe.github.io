@@ -226,7 +226,7 @@ def atlas_page(site: Site, name: str, preview: tuple[str, dict] | None) -> str:
                    + (" Right: annotation in the atlas colours over the template." if info["annotation"] else "")
                    + f" Shown at {info['shown_um']:g} µm, viewed from the front, with the {info['left']} "
                    "hemisphere on the left of the image.")
-        out += ["```{figure} " + png, ":class: atlas-preview", f":alt: Coronal section of {a['key']}", "",
+        out += ["```{figure} " + png, ":class: atlas-preview dark-light", f":alt: Coronal section of {a['key']}", "",
                 caption, "```", ""]
     if c["description"]:
         out += [c["description"], ""]
@@ -274,7 +274,7 @@ def atlas_page(site: Site, name: str, preview: tuple[str, dict] | None) -> str:
                    for (label, fmt, url), ks in stores.items()]), ""]
 
     # Brain regions
-    out += [f"## Brain regions", ""]
+    out += ["## Brain regions", ""]
     if rows:
         out += [f"{len(rows)} regions in `{a['terminology']['name']}` version {a['terminology']['version']}, "
                 "with their acronym and annotation value.", "",
@@ -317,14 +317,22 @@ def atlas_page(site: Site, name: str, preview: tuple[str, dict] | None) -> str:
     return "\n".join(out)
 
 
-def write_pages(site: Site, outdir: Path, previews_dir: Path, logger) -> list[str]:
-    """Write one page per atlas name (and coronal previews); return the page names."""
+def write_pages(site: Site, outdir: Path, cache: Path, logger) -> list[str]:
+    """Write one page per atlas name, with its coronal preview; return the page names.
+
+    Previews are rendered into ``cache`` and copied to ``outdir/_previews``.
+    """
+    import shutil
     from concurrent.futures import ThreadPoolExecutor
+
+    cache.mkdir(parents=True, exist_ok=True)
+    previews_dir = outdir / "_previews"
+    previews_dir.mkdir(exist_ok=True)
 
     def preview(name):
         a = site.names[name][0]
         stem = f"{a['template']['location']}__{a['annotation_set']['location']}".strip("/").replace("/", "_")
-        png, meta = previews_dir / f"{stem}.png", previews_dir / f"{stem}.json"
+        png, meta = cache / f"{stem}.png", cache / f"{stem}.json"
         if not meta.exists():  # previews are named after the store versions, so never go stale
             try:
                 info = coronal_preview(a, site.terminologies.get(a["terminology"]["location"]), png)
@@ -333,7 +341,11 @@ def write_pages(site: Site, outdir: Path, previews_dir: Path, logger) -> list[st
                 return name, None
             meta.write_text(json.dumps(info))
         info = json.loads(meta.read_text())
-        return name, (f"/{png.relative_to(outdir.parent).as_posix()}", info) if info else None
+        if not info:
+            return name, None
+        if cache != previews_dir:
+            shutil.copyfile(png, previews_dir / png.name)
+        return name, (f"/{outdir.name}/_previews/{png.name}", info)
 
     try:
         import numpy  # noqa: F401
@@ -345,7 +357,7 @@ def write_pages(site: Site, outdir: Path, previews_dir: Path, logger) -> list[st
         logger.warning(f"atlas search: no coronal previews ({e})")
         previews = {}
     used = {Path(p[0]).stem for p in previews.values() if p}
-    for f in previews_dir.glob("*.*"):
+    for f in [*previews_dir.glob("*.*"), *cache.glob("*.*")]:
         if f.stem not in used and f.suffix in (".png", ".json"):
             f.unlink()  # an atlas store replaced by a newer version
 

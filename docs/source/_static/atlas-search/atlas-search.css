@@ -48,9 +48,10 @@
 .atlas-variants p { line-height: 2; margin: 0.5rem 0 0; }
 .atlas-variants a { text-decoration: none; margin-right: 0.35rem; }
 .atlas-variants a[aria-current] code { border-color: var(--pst-color-primary); }
-figure.atlas-preview img { image-rendering: pixelated; max-height: 26rem; width: auto; max-width: 100%; }
-figure.atlas-preview figcaption { text-align: left; }
-figure.atlas-preview figcaption p { font-size: 0.9rem; }
+/* "dark-light" keeps the theme from putting the preview on white in dark mode */
+img.atlas-preview { image-rendering: pixelated; max-height: 26rem; width: auto; max-width: 100%; }
+figure:has(> img.atlas-preview) figcaption { text-align: left; }
+figure:has(> img.atlas-preview) figcaption p { font-size: 0.9rem; }
 .region-filter { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; margin-bottom: 0.75rem; font-size: 0.9rem; }
 .region-filter input { flex: 1 1 16rem; max-width: 32rem; }
 .region-tree { max-height: 32rem; overflow: auto; border: 1px solid var(--pst-color-border); border-radius: 0.25rem;

@@ -6,7 +6,9 @@ At the start of every build this extension reads the BrainGlobe atlas bucket
 
 * ``atlases/<name>.md``: one page per atlas name (all its resolutions), with a
   coronal preview, versions, download locations, brain regions and metadata;
-* ``atlases/_previews/``: the preview images, reused while the stores are unchanged.
+* ``atlases/_previews/``: the preview images. Rendering them reads the volumes,
+  so they are kept in a cache (``$BRAINGLOBE_ATLAS_PREVIEWS``, by default
+  ``atlases/_previews`` itself) and reused while the atlas stores are unchanged.
 
 Both are generated, not committed. Two directives use the same data:
 
@@ -51,7 +53,8 @@ def generate(app):
         logger.warning(f"atlas search: {name} is listed in collections.toml but is not in the atlas bucket")
     for name in site.unlisted:
         logger.warning(f"atlas search: {name} is in the atlas bucket but not in collections.toml")
-    names = pages.write_pages(site, outdir, outdir / "_previews", logger)
+    cache = Path(os.path.expanduser(os.environ.get("BRAINGLOBE_ATLAS_PREVIEWS", outdir / "_previews")))
+    names = pages.write_pages(site, outdir, cache, logger)
     logger.info(f"atlas search: {len(names)} atlas pages")
     app.atlas_site = site
 
