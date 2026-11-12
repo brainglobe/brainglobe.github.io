@@ -151,7 +151,7 @@ Available versions:
   *  `kim_dev_mouse_e11-5_mri-adc_31.5um` - MRI adc template at 31.5 μm resolution
   *  `kim_dev_mouse_e11-5_mri-dwi_31.5um` - MRI dwi template at 31.5 μm resolution 
   *  `kim_dev_mouse_e11-5_mri-fa_31.5um` - MRI fa template at 31.5 μm resolution
-  *  `kim_dev_mouse_e11-5_mri-T2_31.5um` - MRI T2 template at 31.5 μm resolution
+  *  `kim_dev_mouse_e11-5_mri-t2_31.5um` - MRI T2 template at 31.5 μm resolution
 * at E13.5 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/kim_dev_mouse_e13-5.json)
   *  `kim_dev_mouse_e13-5_lsfm_20um` - LSFM template at 20 μm resolution
   *  `kim_dev_mouse_e13-5_mri-adc_34um` - MRI adc template at 34 μm resolution
