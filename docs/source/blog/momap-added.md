@@ -11,7 +11,7 @@ language: English
 
 Current atlases typically only divide the mouse motor cortex (MO) into broad primary and secondary fields, without fine-scale subdivisions supported by quantitative evidence. In their [new study](https://doi.org/10.1016/j.cell.2026.08.046), Falasconi, Kanodia et al. (2026) show that the subcortical projections of mouse MO define 16 different modules. Their modular map of the mouse MO is now available in BrainGlobe, built on top of the standard Allen Mouse Brain Atlas (CCFv3) template.
 
-<img src="./images/momap_modules.png" alt="MOmap modules, their two organisation axes, and the MOp and MOs domains on a flattened view of the mouse isocortex" width="85%" align="center">
+<img src="./images/momap_modules.png" alt="MOmap modules, their two organisation axes, and the MOp and MOs domains on a flattened view of the mouse isocortex" width="100%" align="center">
 
 **Figure 1. Left: the 16 motor cortex modules defined by subcortical projection patterns, shown on a flattened top-down view of the isocortex. Middle: the two organisation axes, parallel and perpendicular to the MO-SS boundary. Right: the modules grouped into the primary (MOp; MO1-10) and secondary (MOs; MO11-16) motor cortex.**
 
