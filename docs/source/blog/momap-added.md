@@ -33,6 +33,8 @@ You can use MOmap for analysis and visualisation in the same ways as other Brain
 * Open napari and follow the steps in our [download tutorial](/tutorials/manage-atlases-in-GUI.md) to download the `allen_mouse_momap_10um` atlas
 * Visualise the different parts of the atlas as described in our [visualisation tutorial](/tutorials/visualise-atlas-napari)
 
+You can use view the atlas in the browser using this link: [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/allen_mouse_momap.json)
+
 ## Why are we adding new atlases?
 
 A fundamental aim of the BrainGlobe project is to make brain atlases easily accessible to users across the globe. MOmap lets users work with a finer division of the mouse motor cortex alongside the standard Allen CCFv3 atlas. If you would like to get involved with a similar project, please [get in touch](/contact).
