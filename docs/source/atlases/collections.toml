@@ -1,0 +1,611 @@
+# Atlas collections shown on the atlas search page (index.md).
+#
+# This file is the source of the human-written titles, categories and
+# descriptions of every atlas. It is maintained by hand: when a new atlas is
+# added to the BrainGlobe bucket, add its name to an existing collection or add
+# a new [[collection]] entry below. The docs build (`make html`, which runs
+# `docs/make_atlas_index.py`) warns about atlases in the bucket that are not
+# listed here; they still appear on the page, without a description.
+#
+# Fields:
+#   title        display name of the collection (required)
+#   group        category, one of: Mouse, Rat, Other rodent, Fish, Lizard,
+#                Amphibian, Human and non-human primate, Other mammal, Bird,
+#                Invertebrate (required; sets the order of search results)
+#   link         homepage or paper for the atlas (optional)
+#   atlases      atlas names, without the resolution: "allen_mouse" covers
+#                allen_mouse_10um, allen_mouse_25um, ... (required)
+#   description  plain text; separate paragraphs with a blank line. URLs are
+#                turned into links on the site. (optional)
+
+[[collection]]
+title = "Allen Adult Mouse Brain Atlas"
+group = "Mouse"
+link = "https://doi.org/10.1016/j.cell.2020.04.007"
+atlases = ["allen_mouse"]
+description = '''
+For many researchers working with mice, this is the "default" atlas for a variety of tasks. It is also the basis for the most commonly used common coordinate space (CCFv3). It is usually the best mouse atlas to start with, but it has some disadvantages. It has a reference image based on STP, which may not produce the best results for other imaging modalities, and you may want to try atlases based on other modalities (see below). It also has limited annotations in some regions (alternatives such as the Enhanced and Unified Mouse Brain Atlas may be better if the Allen Adult Mouse Brain Atlas is not annotated sufficiently).
+'''
+
+[[collection]]
+title = "Enhanced and Unified Mouse Brain Atlas"
+group = "Mouse"
+link = "https://kimlab.io/brain-map/atlas/"
+atlases = ["kim_mouse"]
+description = '''
+This atlas from Chon et al. (2019) is very similar to the Allen Adult Mouse Brain Atlas (it has the same reference image), but it includes additional annotations (e.g. from the Franklin-Paxinos atlas). This atlas may be a good choice for those brain regions not annotated sufficiently in the Allen Adult Mouse Brain Atlas.
+'''
+
+[[collection]]
+title = "Enhanced and Unified Mouse Brain Atlas v2"
+group = "Mouse"
+link = "https://figshare.com/articles/dataset/Unified_mouse_brain_atlas_v2/25750983"
+atlases = ["kim_mouse_isotropic"]
+description = '''
+The updated version of the Unified Mouse Brain Atlas builds upon the work of Chon et al. (2019), which introduced a more finely segmented adult mouse brain atlas with unified anatomical labeling based on the Allen Common Coordinate Framework (CCF). The original atlas integrated the Franklin-Paxinos (FP) labels into the CCF space, providing consistent and detailed segmentation across brain regions.
+
+Version 2 (2024) contains several key improvements: * Corrected anatomical labels and updated ontology file to resolve inconsistencies in the original release. * 20 µm isotropic label volume generated via shape interpolation for high-resolution anatomical accuracy. * Maintains full compatibility with the original atlas (coordinate space and ontology).
+'''
+
+[[collection]]
+title = "Gubra's LSFM mouse brain atlas"
+group = "Mouse"
+link = "https://doi.org/10.1007/s12021-020-09490-8"
+atlases = ["perens_lsfm_mouse"]
+description = '''
+This atlas from Perens et al. (2020) provides a version of the Allen Adult Mouse Brain Atlas, based on solvent-cleared brains imaged with LSFM. This atlas may be a good choice for registering other similar images. However, please note that this atlas is in a different coordinate space to the original Allen atlas (CCFv3). We recommend instead using the second version of this atlas, Gubra's LSFM mouse brain atlas v2.
+'''
+
+[[collection]]
+title = "Gubra's MRI mouse brain atlas"
+group = "Mouse"
+link = "https://doi.org/10.1007/s12021-023-09623-9"
+atlases = ["perens_stereotaxic_mri_mouse"]
+description = '''
+This atlas is an addition to its LSFM version and provides a version of the Allen Adult Mouse Brain Atlas, based on T2-weighted MRI. This atlas may be a good choice for registering other similar images. However, please note that this atlas is in a different coordinate space to the original Allen atlas (CCFv3). In addition this atlas is in flat skull position and so it can be used to plan stereotaxic surgeries.
+'''
+
+[[collection]]
+title = "Gubra's LSFM mouse brain atlas v2"
+group = "Mouse"
+link = "https://doi.org/10.1007/s12021-023-09623-9"
+atlases = ["perens_multimodal_lsfm"]
+description = '''
+This atlas is an addition to its MRI version and provides a version of the Allen Adult Mouse Brain Atlas, based on LSFM. This atlas may be a good choice for registering other similar images. This atlas is the second version of perens et al. (2020) and was published in perens et al. (2023). Please note that this atlas is in a different coordinate space to the original Allen atlas (CCFv3) and to Perens 2020.
+'''
+
+[[collection]]
+title = "Princeton Mouse Brain Atlas"
+group = "Mouse"
+link = "https://brainmaps.princeton.edu/2020/09/princeton-mouse-brain-atlas-links"
+atlases = ["princeton_mouse"]
+description = '''
+This atlas from Pisano et al. (2021) is a version of the Allen Adult Mouse Brain Atlas with two main differences. Unlike the Allen Adult Mouse Brain Atlas it includes a full cerebellum, and the reference image is based on LSFM rather than STP.
+'''
+
+[[collection]]
+title = "3D Edge-Aware Refined Atlases Derived from the Allen Developing Mouse Brain Atlases"
+group = "Mouse"
+link = "https://doi.org/10.7554/eLife.61408"
+atlases = [
+  "admba_3d_e11_5_mouse",
+  "admba_3d_e13_5_mouse",
+  "admba_3d_e15_5_mouse",
+  "admba_3d_e18_5_mouse",
+  "admba_3d_p4_mouse",
+  "admba_3d_p14_mouse",
+  "admba_3d_p28_mouse",
+  "admba_3d_p56_mouse",
+]
+description = '''
+These atlases from Young et al. (2021) are 3D reconstructions of the eight developmental stages from the Allen Developing Mouse Brain Atlas. This allows them to be used in automated 3D registration pipelines.
+
+These atlases vary slightly, as the E11.5, E13.5 and E15.5 atlases contain the complete embryo. The other atlases (E18.5, P4, P14, P28 and P56) only contain the brain.
+'''
+
+[[collection]]
+title = "Kim Lab Developmental CCF v1.0"
+group = "Mouse"
+link = "https://doi.org/10.6084/m9.figshare.26377171.v1"
+atlases = [
+  "kim_dev_mouse_e11-5_lsfm",
+  "kim_dev_mouse_e11-5_mri-adc",
+  "kim_dev_mouse_e11-5_mri-dwi",
+  "kim_dev_mouse_e11-5_mri-fa",
+  "kim_dev_mouse_e11-5_mri-t2",
+  "kim_dev_mouse_e13-5_lsfm",
+  "kim_dev_mouse_e13-5_mri-adc",
+  "kim_dev_mouse_e13-5_mri-dwi",
+  "kim_dev_mouse_e13-5_mri-fa",
+  "kim_dev_mouse_e13-5_mri-t2",
+  "kim_dev_mouse_e15-5_lsfm",
+  "kim_dev_mouse_e15-5_mri-adc",
+  "kim_dev_mouse_e15-5_mri-dwi",
+  "kim_dev_mouse_e15-5_mri-fa",
+  "kim_dev_mouse_e15-5_mri-mtr",
+  "kim_dev_mouse_e15-5_mri-t2",
+  "kim_dev_mouse_e18-5_lsfm",
+  "kim_dev_mouse_e18-5_mri-adc",
+  "kim_dev_mouse_e18-5_mri-dwi",
+  "kim_dev_mouse_e18-5_mri-fa",
+  "kim_dev_mouse_e18-5_mri-t2",
+  "kim_dev_mouse_p04_lsfm",
+  "kim_dev_mouse_p04_mri-adc",
+  "kim_dev_mouse_p04_mri-dwi",
+  "kim_dev_mouse_p04_mri-fa",
+  "kim_dev_mouse_p04_mri-mtr",
+  "kim_dev_mouse_p04_mri-t2",
+  "kim_dev_mouse_p14_lsfm",
+  "kim_dev_mouse_p14_mri-adc",
+  "kim_dev_mouse_p14_mri-dwi",
+  "kim_dev_mouse_p14_mri-fa",
+  "kim_dev_mouse_p14_mri-mtr",
+  "kim_dev_mouse_p14_mri-t2",
+  "kim_dev_mouse_p56_lsfm",
+  "kim_dev_mouse_p56_mri-adc",
+  "kim_dev_mouse_p56_mri-dwi",
+  "kim_dev_mouse_p56_mri-fa",
+  "kim_dev_mouse_p56_mri-t2",
+]
+description = '''
+A multi-modal atlas of the developing mouse brain. Reference images from LSFM and MRI (adc, dwi, fa, T2) are available at all developmental stages of the atlas (E11.5, E13.5, E15.5, E18.5, P4, P14, P56). Developmental stages E15.5, P04 and P14 additionally also have versions with a MTR MRI reference image.
+'''
+
+[[collection]]
+title = "Kim Lab Developmental CCF v001 (P56)"
+group = "Mouse"
+link = "https://data.mendeley.com/datasets/2svx788ddf/1"
+atlases = [
+  "kim_dev_mouse_idisco",
+  "kim_dev_mouse_mri_a0",
+  "kim_dev_mouse_mri_adc",
+  "kim_dev_mouse_mri_dwi",
+  "kim_dev_mouse_mri_fa",
+  "kim_dev_mouse_mri_mtr",
+  "kim_dev_mouse_mri_t2",
+  "kim_dev_mouse_stp",
+]
+description = '''
+This atlas is part of a developmental atlas following Luis Puelles' Developmental Vertebrate Ontology. BrainGlobe hosts the original P56 version of this atlas at 10μm resolution with eight different reference images - STP, LSFM (iDISCO) and MRI (a0, adc, dwo, fa, MTR, T2). This atlas is now superseded by its 1.0.0 version but continues to be available for reproducibility and archive reasons.
+'''
+
+[[collection]]
+title = "BlueBrain Barrel Cortex Atlas"
+group = "Mouse"
+link = "https://doi.org/10.1162/imag_a_00209"
+atlases = ["allen_mouse_bluebrain_barrels"]
+description = '''
+This atlas from Bolaños-Puchet et al. (2024) is a version of the Allen Adult Mouse Brain Atlas with the addition of annotations of 33 barrels and barrel columns. For more details, please see the blogpost.
+'''
+
+[[collection]]
+title = "3D version of the Allen mouse spinal cord atlas"
+group = "Mouse"
+link = "https://doi.org/10.1101/2021.05.06.443008"
+atlases = ["allen_cord"]
+description = '''
+This atlas from Fiederling et al. (2021) is a 3D reconstruction of the Allen Spinal Cord Atlas.
+'''
+
+[[collection]]
+title = "Smoothed version of the Kim et al. mouse reference atlas"
+group = "Mouse"
+link = "https://doi.org/10.1016/j.celrep.2014.12.014"
+atlases = ["osten_mouse"]
+description = '''
+This atlas is part of the API to support some existing projects. We do not recommend it for any new projects (use the Allen Adult Mouse Brain Atlas instead).
+'''
+
+[[collection]]
+title = "Australian Mouse Brain Atlas"
+group = "Mouse"
+link = "https://imaging.org.au/AMBMC/"
+atlases = ["australian_mouse"]
+description = '''
+This atlas has a very high resolution (15μm) MRI template. It covers the Hippocampus, Cerebellum, Cortex, Basal Ganglia, and Diencephalon. It is quite consistent with the parcellation scheme of the Paxinos and Franklin mouse brain atlas. At present a drawback of this atlas is that the segmentations do not cover the entire brain and is limited to the regions previously mentioned.
+'''
+
+[[collection]]
+title = "CCFv3 augmented mouse atlas"
+group = "Mouse"
+link = "https://doi.org/10.1162/imag_a_00565"
+atlases = ["ccfv3augmented_mouse"]
+description = '''
+This atlas is an extended version of the CCFv3, designed to cover the rostral and caudal tips of the mouse brain. This atlas is particularly useful for users who require the whole brain to be represented including the posterior third of the cerebellum, the brainstem, and the anterior olfactory bulb. It includes two Nissl reference templates, one which is a population average from hundreds of mice and one based on three animals. The Nissl template included in the CCFv3 is slightly misaligned, here the Nissl template has been more precisely registered into the CCFv3 space. The CCFv3 Augmented also includes new delineations of the granular layer of the cerebellum.
+'''
+
+[[collection]]
+title = "DeMBA Developmental Mouse Brain Atlas"
+group = "Mouse"
+link = "https://doi.org/10.1038/s41467-025-63177-9"
+atlases = [
+  "demba_allen_seg_dev_mouse_p4",
+  "demba_allen_seg_dev_mouse_p5",
+  "demba_allen_seg_dev_mouse_p6",
+  "demba_allen_seg_dev_mouse_p7",
+  "demba_allen_seg_dev_mouse_p8",
+  "demba_allen_seg_dev_mouse_p9",
+  "demba_allen_seg_dev_mouse_p10",
+  "demba_allen_seg_dev_mouse_p11",
+  "demba_allen_seg_dev_mouse_p12",
+  "demba_allen_seg_dev_mouse_p13",
+  "demba_allen_seg_dev_mouse_p14",
+  "demba_allen_seg_dev_mouse_p15",
+  "demba_allen_seg_dev_mouse_p16",
+  "demba_allen_seg_dev_mouse_p17",
+  "demba_allen_seg_dev_mouse_p18",
+  "demba_allen_seg_dev_mouse_p19",
+  "demba_allen_seg_dev_mouse_p20",
+  "demba_allen_seg_dev_mouse_p21",
+  "demba_allen_seg_dev_mouse_p22",
+  "demba_allen_seg_dev_mouse_p23",
+  "demba_allen_seg_dev_mouse_p24",
+  "demba_allen_seg_dev_mouse_p25",
+  "demba_allen_seg_dev_mouse_p26",
+  "demba_allen_seg_dev_mouse_p27",
+  "demba_allen_seg_dev_mouse_p28",
+  "demba_allen_seg_dev_mouse_p29",
+  "demba_allen_seg_dev_mouse_p30",
+  "demba_allen_seg_dev_mouse_p31",
+  "demba_allen_seg_dev_mouse_p32",
+  "demba_allen_seg_dev_mouse_p33",
+  "demba_allen_seg_dev_mouse_p34",
+  "demba_allen_seg_dev_mouse_p35",
+  "demba_allen_seg_dev_mouse_p36",
+  "demba_allen_seg_dev_mouse_p37",
+  "demba_allen_seg_dev_mouse_p38",
+  "demba_allen_seg_dev_mouse_p39",
+  "demba_allen_seg_dev_mouse_p40",
+  "demba_allen_seg_dev_mouse_p41",
+  "demba_allen_seg_dev_mouse_p42",
+  "demba_allen_seg_dev_mouse_p43",
+  "demba_allen_seg_dev_mouse_p44",
+  "demba_allen_seg_dev_mouse_p45",
+  "demba_allen_seg_dev_mouse_p46",
+  "demba_allen_seg_dev_mouse_p47",
+  "demba_allen_seg_dev_mouse_p48",
+  "demba_allen_seg_dev_mouse_p49",
+  "demba_allen_seg_dev_mouse_p50",
+  "demba_allen_seg_dev_mouse_p51",
+  "demba_allen_seg_dev_mouse_p52",
+  "demba_allen_seg_dev_mouse_p53",
+  "demba_allen_seg_dev_mouse_p54",
+  "demba_allen_seg_dev_mouse_p55",
+  "demba_allen_seg_dev_mouse_p56",
+]
+description = '''
+This atlas contains 53 days of development including every day from postnatal day 4 to postnatal day 56. Each time point has two atlases, a 20um version with the STPT, and Allen STPT template and a 25um version with the STPT, the Allen STPT, an MRI, and an LSFM template. The Allen STPT template is a transformed version of the default template provided with the Allen CCFv3, it is useful for comparison with the adult CCFv3.
+'''
+
+[[collection]]
+title = "Dorr MRI Mouse Atlas"
+group = "Mouse"
+link = "https://doi.org/10.1016/j.neuroimage.2008.03.037"
+atlases = ["dorr_mouse_mri"]
+description = '''
+This atlas is a high-resolution, three-dimensional MRI-based atlas of the adult C57Bl/6J mouse brain, providing comprehensive anatomical coverage of the cerebrum, cerebellum, and brainstem. The atlas was constructed from within-skull, T2-weighted MR images acquired at 32 μm isotropic resolution from forty 12-week-old mice scanned on a 7 T scanner. Following normalisation, registration, and averaging of individual scans, 62 distinct brain structures were manually delineated.
+'''
+
+[[collection]]
+title = "Duke Mouse Brain Atlas"
+group = "Mouse"
+link = "https://doi.org/10.1126/sciadv.adq8089"
+atlases = ["duke_mouse"]
+description = '''
+This atlas from Mansour et al. (2025) is a 15 μm isotropic MRH-based stereotaxic atlas of the adult C57BL/6J mouse brain. The source atlas was built from five 90 ± 2 day male mice scanned in skull, limiting tissue deformation from cranial dissection and conventional histology. Micro-CT images of the skull provide bregma and lambda landmarks in the same stereotaxic space.
+
+BrainGlobe includes the mean diffusivity template as the main reference image, the source annotation image, generated meshes, and 11 additional registered reference images. RCCFv3 is the Duke team's reduced version of the Allen CCFv3 label set, in which related structures smaller than 0.1 mm<sup>3</sup> are grouped into larger regions to reduce registration noise from small structures.
+'''
+
+[[collection]]
+title = "CArea Mouse Atlas"
+group = "Mouse"
+link = "https://doi.org/10.64898/2026.01.20.700446"
+atlases = ["carea_mouse"]
+description = '''
+This atlas has regions which are automatically clustered based on three dimensional maps of gene expression. Voxels with similar patterns of gene expression are assigned the same region ID. The template is a population average Nissl volume, based on the CCFv3BBP atlas (also in BrainGlobe) with some improvements. This atlas was constructed from reregistered ISH data from the Allen Institute for Brain Science.
+'''
+
+[[collection]]
+title = "Allen CCFv2 Mouse Brain Atlas"
+group = "Mouse"
+link = "https://doi.org/10.1038/nature13186"
+atlases = ["ccfv2_mouse"]
+description = '''
+This is a mouse brain atlas using version 2 of the commonly used Allen Common Coordinate Framework, which is included here for historical reasons. The template is based on 528 Nissl-stained coronal slices from the mouse specimen used in the Allen Reference Atlas. This atlas annotates the grey matter and ventricular systems of the mouse brain. This atlas provides a common coordinate framework for many other useful mouse atlases based on CCFv2. Note that the additional reference is an average template based on serial two-photon tomography, and is misaligned with the original Nissl template.
+'''
+
+[[collection]]
+title = "Allen CCFv2 Mouse Fiber Tracts Atlas"
+group = "Mouse"
+link = "https://doi.org/10.1038/nature13186"
+atlases = ["ccfv2_fiber_mouse"]
+description = '''
+This is a mouse brain fiber tract atlas using version 2 of the commonly used Allen Common Coordinate Framework. Where the CCFv2 Mouse Brain atlas only provides information on the grey matter and ventricular systems of the mouse brain, this atlas contains fiber tract structural annotation information. as delineated in the Allen Reference Atlas. The template is based on 528 Nissl-stained coronal slices from the mouse specimen used in the Allen Reference Atlas. Note that the additional reference is an average template based on serial two-photon tomography, and is misaligned with the original Nissl template.
+'''
+
+[[collection]]
+title = "Allen CCFv2 Developmental Mouse Brain Atlas"
+group = "Mouse"
+link = "https://doi.org/10.1038/nature13186"
+atlases = ["ccfv2_dev_mouse"]
+description = '''
+This is a developmental mouse brain atlas using version 2 of the commonly used Allen Common Coordinate Framework. The template is based on 528 Nissl-stained coronal slices from the mouse specimen used in the Allen Reference Atlas. The annotations contain the developmental taxonomy of mouse brain structures as given in the Allen Developing Mouse Brain atlas. Note that the additional reference is an average template based on serial two-photon tomography, and is misaligned with the original Nissl template.
+'''
+
+[[collection]]
+title = "LAMBADA Developmental Mouse Brain Atlas"
+group = "Mouse"
+link = "https://doi.org/10.1016/j.cell.2026.03.013"
+atlases = [
+  "lambada_dev_mouse_p3",
+  "lambada_dev_mouse_p5",
+  "lambada_dev_mouse_p7",
+  "lambada_dev_mouse_p9",
+  "lambada_dev_mouse_p12",
+  "lambada_dev_mouse_p14",
+  "lambada_dev_mouse_p21",
+]
+description = '''
+This atlas tracks brain development in the mouse at 7 timepoints (P3, P5, P7, P9, P12, P14, P21). Each template is averaged from 20 to 30 LSFM images of iDISCO+ cleared brains of either sex, which were then aligned to an averaged in-vivo MRI scan of three mice per timepoint to correct for any ex-vivo deformation. This is useful for researchers seeking to study the in-vivo volumetric changes of the brain during development. Annotations are based on the CCFv3 Allen annotations.
+'''
+
+[[collection]]
+title = "Allen CCFv1 Mouse Brain Atlas"
+group = "Mouse"
+link = "https://doi.org/10.1038/nature05453"
+atlases = ["ccfv1_mouse"]
+description = '''
+This is the first edition of the mouse brain atlas in the commonly used Allen Common Coordinate Framework, which is included here for historical reasons. The template is based on the 528 Nissl-stained coronal slices from a male P56 mouse brain frozen in OCT, which was annotated only on the left hemisphere based on the Allen Reference Atlas. This atlas provides a common coordinate framework for many other useful mouse atlases and data based on CCFv1.
+'''
+
+[[collection]]
+title = "Waxholm Space atlas of the Sprague Dawley rat brain"
+group = "Rat"
+link = "https://doi.org/10.1038/s41592-023-02034-3"
+atlases = ["whs_sd_rat"]
+description = '''
+The Waxholm Space rat brain atlas features annotations of 222 structures, alongside a 39μm MRI template. It provides detailed delineations of the cerebral cortex, hippocampus, striatopallidal areas, midbrain, thalamus, auditory system and fiber tracts. It is comprehensive, covering the entire rat brain.
+'''
+
+[[collection]]
+title = "SWC Female Rat Brain Atlas"
+group = "Rat"
+link = "https://brainglobe.info/blog/swc-female-rat-atlas.html#native-female-rat-atlas"
+atlases = ["swc_female_rat"]
+description = '''
+This atlas is a population-based anatomical template generated from female Lister Hooded rats (5–8 weeks old) using automated serial two-photon tomography. It provides a three-dimensional template derived from juvenile female animals, addressing gaps in both resolution and biological diversity in existing rat atlases. The atlas is particularly well suited for users who want to work in a native, microscopy-derived female rat brain space. The annotations are curated and adapted from the Waxholm Space rat brain atlas.
+'''
+
+[[collection]]
+title = "Waxholm-aligned SWC Female Rat Atlas"
+group = "Rat"
+link = "https://brainglobe.info/blog/swc-female-rat-atlas.html#waxholm-space-registered-female-rat-atlas"
+atlases = ["whs_sd_swc_female_rat"]
+description = '''
+To support interoperability with existing rat resources, this atlas provides a version of the SWC female rat template registered to Waxholm Space. The template is resampled from 50μm to 39μm during registration to Waxholm Space, enabling direct comparison and integration with datasets and tools that already rely on Waxholm Space, while retaining the fine anatomical detail of the SWC template. The annotations are from the Waxholm Space rat brain atlas.
+'''
+
+[[collection]]
+title = "Duke Developmental Rat Brain Atlas"
+group = "Rat"
+link = "https://doi.org/10.1016/j.neuroimage.2013.01.017"
+atlases = [
+  "duke_dev_rat_p00",
+  "duke_dev_rat_p02",
+  "duke_dev_rat_p04",
+  "duke_dev_rat_p08",
+  "duke_dev_rat_p12",
+  "duke_dev_rat_p18",
+  "duke_dev_rat_p24",
+  "duke_dev_rat_p40",
+  "duke_dev_rat_p80",
+]
+description = '''
+These atlases from Calabrese et al. (2013) were obtained from 5 specimens each from 9 different time points using a 7T MRI. The earliest 5 timepoints were registered to the Ashwell and Paxinos neonatal rat atlas and the last 4 timepoints were registered to the Paxinos and Watson adult rat atlas to give a consistent view of the structural changes that occur over development.
+
+These atlases are only available at 25μm resolution:
+'''
+
+[[collection]]
+title = "Prairie vole brain atlas"
+group = "Other rodent"
+link = "https://doi.org/10.7554/eLife.87029.3.sa0"
+atlases = ["prairie_vole"]
+description = '''
+This is a brain atlas of the Prairie vole (Microtus ochrogaster) from Gustison et al. (2024).
+'''
+
+[[collection]]
+title = "Max Planck zebrafish brain atlas"
+group = "Fish"
+link = "http://fishatlas.neuro.mpg.de"
+atlases = ["mpin_zfish"]
+description = '''
+This atlas is only available at 1μm resolution:
+'''
+
+[[collection]]
+title = "AZBA: A 3D Adult zebrafish brain atlas"
+group = "Fish"
+link = "https://doi.org/10.1101/2021.05.04.442625"
+atlases = ["azba_zfish"]
+description = '''
+This atlas is only available at 4μm resolution:
+'''
+
+[[collection]]
+title = "Blind Mexican cavefish brain atlas"
+group = "Fish"
+link = "https://elifesciences.org/articles/80777"
+atlases = ["sju_cavefish"]
+description = '''
+This is a brain atlas of the blind Mexican cavefish (Astyanax mexicanus) from Kozol et al. (2023). For more details please see the blogpost.
+'''
+
+[[collection]]
+title = "Danionella cerebrum Brain Atlas"
+group = "Fish"
+link = "https://doi.org/10.64898/2026.03.09.710483"
+atlases = ["danionella_cerebrum_mixed"]
+description = '''
+This is a multimodal, mixed-sex reference atlas of the adult _Danionella cerebrum_ brain from Kadobianskyi et al. (2026). It contains a whole-brain annotation for 276 regions, a two-photon fluoresence reference image and an additional confocal reflectance reference image highlighting larger myelinated fibre tracts. For more details, see the blog post.
+'''
+
+[[collection]]
+title = "Hoops Tawny Dragon Brain Atlas"
+group = "Lizard"
+link = "https://doi.org/10.1007/s00429-021-02282-z"
+atlases = ["hoops_tawny_dragon"]
+description = '''
+This is a symmetric atlas of the tawny dragon lizard (Ctenophorus decresii) brain from Hoops et al. (2021) with 224 segmentations, made from averaged MRI images of 13 male tawny dragon lizards.
+'''
+
+[[collection]]
+title = "UNAM Axolotl Brain Atlas"
+group = "Amphibian"
+link = "https://doi.org/10.1038/s41598-021-89357-3"
+atlases = ["unam_axolotl"]
+description = '''
+This is a magnetic resonance imaging based atlas of the Axolotl (Ambystoma mexicanum) from Lazcano et al. (2021). For more details please see the blogpost.
+'''
+
+[[collection]]
+title = "Allen Human Brain Atlas"
+group = "Human and non-human primate"
+link = "https://www.brain-map.org"
+atlases = ["allen_human"]
+description = '''
+This atlas is included mostly for visualisation and comparison to the other atlases. There are many better atlases (and indeed software tools) for the analysis of human neuroimaging data.
+'''
+
+[[collection]]
+title = "MRI mouse lemur brain atlas"
+group = "Human and non-human primate"
+link = "https://doi.org/10.1016/j.dib.2018.10.067"
+atlases = ["nadkarni_mri_mouselemur"]
+description = '''
+This is an MRI atlas of the grey mouse lemur (Microcebus murinus) from Nadkarni et al. (2018).
+'''
+
+[[collection]]
+title = "Cat brain atlas"
+group = "Other mammal"
+link = "https://doi.org/10.1002/cne.24271"
+atlases = ["csl_cat"]
+description = '''
+This is an MRI atlas of a cat (Felis catus) from Stolzberg et al. (2017)
+'''
+
+[[collection]]
+title = "Eurasian blackcap atlas"
+group = "Bird"
+link = "https://doi.org/10.1101/2025.03.04.641293"
+atlases = ["eurasian_blackcap"]
+description = '''
+This is a serial section two-photon atlas of the Eurasian blackcap (Sylvia atricapilla) built by the BrainGlobe team (Sirmpilatze et al. (2025)). For more details please see the project page.
+'''
+
+[[collection]]
+title = "Columbia cuttlefish atlas"
+group = "Invertebrate"
+link = "https://doi.org/10.1016/j.cub.2023.06.007"
+atlases = ["columbia_cuttlefish"]
+description = '''
+This is an MRI atlas of the dwarf cuttlefish (Sepia bandensis) from Montague et al. (2023)
+'''
+
+[[collection]]
+title = "Kocher Bumblebee Brain Atlas"
+group = "Invertebrate"
+link = "https://doi.org/10.1016/j.cub.2022.04.066"
+atlases = ["kocher_bumblebee"]
+description = '''
+This is a confocal microscopy atlas of the adult bumblebee, made by the Kocher lab.
+
+This atlas has anisotropic resolution (2.542μm in axial direction - along antero-posterior axis - and 1.2407μm in-plane) resolution
+'''
+
+[[collection]]
+title = "Drosophila wing disc instar3 atlas"
+group = "Invertebrate"
+atlases = ["drosophila_wingdisc_instar3"]
+description = '''
+This is a confocal microscopy atlas of the fruit fly larva's imaginal wing disc, at the 3rd instar developmental stage. It was built by Kaixiang Shuai as part of his MSc thesis, supervised by Giulia Paci (Mao Lab at UCL) and Alessandro Felder (BrainGlobe team). This atlas has 2um isotropic resolution.
+'''
+
+[[collection]]
+title = "Virtual Fly Brain JRC2018Unisex neuropils atlas"
+group = "Invertebrate"
+link = "https://www.virtualflybrain.org/blog/2022/01/01/jrc-2018-templates-rois-jrc2018/"
+atlases = ["vfb_jrc2018u_neuropils_fly"]
+description = '''
+This atlas packages the JRC2018Unisex adult _Drosophila melanogaster_ brain template with 46 VFB-painted neuropil ROI annotations. The annotations form a flat structure list and include source meshes provided by Virtual Fly Brain.
+
+This atlas has anisotropic 0.5189161 × 1.0 × 0.5189161 µm resolution:
+'''
+
+[[collection]]
+title = "Virtual Fly Brain JRC2018Unisex VNC atlas"
+group = "Invertebrate"
+link = "https://www.virtualflybrain.org/term/adult-vnc-neuropils-court2020-court2020/"
+atlases = ["vfb_jrc2018u_vnc_fly"]
+description = '''
+This atlas packages the JRC2018UnisexVNC adult _Drosophila melanogaster_ template with VFB neuropil and domain annotations based on Court et al. (2020). It has 20 visible non-root regions in a flat structure list and includes source meshes provided by Virtual Fly Brain.
+
+This atlas has 0.4 µm isotropic resolution:
+'''
+
+[[collection]]
+# TODO: add a title, link and description
+title = "african_molerat"
+group = "Other rodent"
+atlases = ["african_molerat"]
+
+[[collection]]
+# TODO: add a title, link and description
+title = "allen_mouse_momap"
+group = "Mouse"
+atlases = ["allen_mouse_momap"]
+
+[[collection]]
+# TODO: add a title, link and description
+title = "example_mouse"
+group = "Mouse"
+atlases = ["example_mouse"]
+
+[[collection]]
+# TODO: add a title, link and description
+title = "nmt_arm_asym_macaque"
+group = "Human and non-human primate"
+atlases = ["nmt_arm_asym_macaque"]
+
+[[collection]]
+# TODO: add a title, link and description
+title = "nmt_arm_sym_macaque"
+group = "Human and non-human primate"
+atlases = ["nmt_arm_sym_macaque"]
+
+[[collection]]
+# TODO: add a title, link and description
+title = "nmt_charm_asym_macaque"
+group = "Human and non-human primate"
+atlases = ["nmt_charm_asym_macaque"]
+
+[[collection]]
+# TODO: add a title, link and description
+title = "nmt_sarm_asym_macaque"
+group = "Human and non-human primate"
+atlases = ["nmt_sarm_asym_macaque"]
+
+[[collection]]
+# TODO: add a title, link and description
+title = "sigma_exvivo_rat"
+group = "Rat"
+atlases = ["sigma_exvivo_rat"]
+
+[[collection]]
+# TODO: add a title, link and description
+title = "sigma_invivo_rat"
+group = "Rat"
+atlases = ["sigma_invivo_rat"]

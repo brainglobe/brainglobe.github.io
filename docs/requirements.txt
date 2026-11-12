@@ -22,3 +22,4 @@ ngff-zarr
 numpy
 obstore
 s3fs
+zstandard
