@@ -734,7 +734,9 @@ template with 46 VFB-painted neuropil ROI annotations. The annotations form a
 flat structure list and include source meshes provided by Virtual Fly Brain.
 
 This atlas has anisotropic 0.5189161 × 1.0 × 0.5189161 µm resolution:
-* `vfb_jrc2018u_neuropils_fly`
+* `vfb_jrc2018u_neuropils_fly_0.519um`
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/vfb_jrc2018u_neuropils_fly.json)
 
 ### [Virtual Fly Brain JRC2018Unisex VNC atlas](https://www.virtualflybrain.org/term/adult-vnc-neuropils-court2020-court2020/)
 
@@ -745,6 +747,8 @@ visible non-root regions in a flat structure list and includes source meshes
 provided by Virtual Fly Brain.
 
 This atlas has 0.4 µm isotropic resolution:
-* `vfb_jrc2018u_vnc_fly`
+* `vfb_jrc2018u_vnc_fly_0.4um`
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/vfb_jrc2018u_vnc_fly.json)
 
 
