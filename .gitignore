@@ -58,9 +58,6 @@ instance/
 
 # Sphinx documentation
 docs/build/
-# atlas search data, built by `make atlas_index`
-docs/source/_atlas_data/
-docs/node_modules/
 docs/source/documentation/**/api
 docs/source/documentation/**/api.rst
 
@@ -90,4 +87,3 @@ venv/
 docs/source/api_examples/
 docs/source/aws_examples/
 docs/source/sg_execution_times.rst
-.test-out/

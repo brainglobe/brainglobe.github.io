@@ -10,10 +10,22 @@ The brainglobe atlas API deals with this problem by providing a common interface
 
 ## Atlases available
 
-All atlases available through the API, with their descriptions, resolutions and brain regions, are listed in the
-{ref}`BrainGlobe atlas search <target-atlas-search>`. From there, each atlas can be viewed in neuroglancer, and its template,
-annotation, hemisphere map and ontology downloaded in a range of formats.
 
+A number of atlases are in development, but those available currently are:
+
+```{include} _atlas_table.md
+```
+
+
+**Acronyms:**
+- **dpf**: Days Post Fertilisation
+- **E**: Embryonic day
+- **FISH**: Fluorescent In Situ Hybridisation
+- **IHC**: Immunohistochemistry
+- **LSFM**: Light Sheet Fluorescent Microscopy
+- **MRI**: Magnetic Resonance Imaging
+- **P**: Post natal day
+- **STPT**: Serial Two Photon Tomography
 ## Installation
 
 BrainGlobe AtlasAPI works with Python >=3.10, and can be installed from PyPI with:
@@ -29,6 +41,7 @@ For a tutorial on how to use the basic features of the API, please see the [Brai
 
 ```{toctree}
 :maxdepth: 2
+usage/atlas-details
 usage/command-line-interface
 
 ```

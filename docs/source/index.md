@@ -55,7 +55,6 @@ Questions, feedback, or want to get involved?
 about
 tutorials/index
 documentation/index
-atlases/index
 community/index
 blog/index
 projects/index
