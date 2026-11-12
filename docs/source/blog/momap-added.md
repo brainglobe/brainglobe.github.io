@@ -12,16 +12,14 @@ language: English
 Current atlases typically only divide the mouse motor cortex (MO) into broad primary and secondary fields, without fine-scale subdivisions supported by quantitative evidence. In their [new study](https://doi.org/10.1016/j.cell.2026.08.046), Falasconi, Kanodia et al. (2026) show that the subcortical projections of mouse MO define 16 different modules. Their modular map of the mouse MO is now available in BrainGlobe, built on top of the standard Allen Mouse Brain Atlas (CCFv3) template.
 
 <img src="./images/momap_modules.png" alt="MOmap modules, their two organisation axes, and the MOp and MOs domains on a flattened view of the mouse isocortex" width="100%" align="center">
-
-**Figure 1. Left: the 16 motor cortex modules defined by subcortical projection patterns, shown on a flattened top-down view of the isocortex. Middle: the two organisation axes, parallel and perpendicular to the MO-SS boundary. Right: the modules grouped into the primary (MOp; MO1-10) and secondary (MOs; MO11-16) motor cortex.**
+<p style="font-size: 0.85em">Figure 1. Left: the 16 motor cortex modules defined by subcortical projection patterns, shown on a flattened top-down view of the isocortex. Middle: the two organisation axes, parallel and perpendicular to the MO-SS boundary. Right: the modules grouped into the primary (MOp; MO1-10) and secondary (MOs; MO11-16) motor cortex.</p>
 
 The authors combined 547 tracer injections registered to the Allen Common Coordinate Framework (CCFv3) and clustered MO voxels by their projections to the striatum, thalamus, superior colliculus and medulla. The resulting 16 modules are arranged in three rows parallel to the boundary with somatosensory cortex (SS), defining two spatial MO axes: one running along the MO-SS boundary, and one perpendicular to it, towards the frontal cortex. Modules are characterised by specific patterns of cortical connections and cell-type composition that vary along these two spatial dimensions, togteher defining the primary (MOp; MO1-10) and secondary (MOs; MO11-16) motor cortices. Note that MOmap moves the MOp/MOs boundary more rostrally than in the standard CCFv3 annotation.
 
 The atlas uses the CCFv3 template and annotations at 10 μm resolution, with the motor cortex replaced by the 16 MOmap modules, so it stays compatible with the CCFv3 template volume.
 
 ![coronal sections of the momap mouse motor cortex atlas from rostral to caudal](./images/momap_coronal.gif)
-
-**Figure 2. Coronal sections through the MOmap atlas annotation from rostral to caudal. Left: the 16 motor cortex modules (MO1-16). Right: the modules grouped into the primary (MOp, magenta) and secondary (MOs, teal) motor cortex.**
+<p style="font-size: 0.85em">Figure 2. Coronal sections through the MOmap atlas annotation from rostral to caudal. Left: the 16 motor cortex modules (MO1-16). Right: the modules grouped into the primary (MOp, magenta) and secondary (MOs, teal) motor cortex.</p>
 
 We have packaged the following atlas:
 
