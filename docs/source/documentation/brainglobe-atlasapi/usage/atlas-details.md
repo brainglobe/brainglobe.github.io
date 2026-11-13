@@ -629,7 +629,9 @@ fibre tracts. For more details, see the [blog post](/blog/danionella-atlas-added
 
 This atlas is only available at 2.5μm resolution:
 * `danionella_cerebrum_mixed_2.5um`
+* [![View in neuroglancer](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/danionella_cerebrum_mixed.json)
 
+  
 ## Lizard
 ### [Hoops Tawny Dragon Brain Atlas](https://doi.org/10.1007/s00429-021-02282-z)
 This is a symmetric atlas of the tawny dragon lizard (Ctenophorus decresii) brain from 
