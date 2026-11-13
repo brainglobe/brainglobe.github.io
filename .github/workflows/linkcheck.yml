@@ -1,0 +1,48 @@
+name: Check documentation links
+
+on:
+  schedule:
+    # Every Wednesday at 06:30 UTC.
+    - cron: '30 6 * * 3'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  linkcheck:
+    # Allow manual runs on forks, but only schedule checks upstream.
+    if: github.event_name != 'schedule' || github.repository == 'brainglobe/brainglobe.github.io'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check links and build documentation
+        id: linkcheck
+        uses: neuroinformatics-unit/actions/build_sphinx_docs@main
+        with:
+          python-version: 3.12
+          use-make: true
+          check-links: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload linkcheck report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linkcheck-report
+          path: docs/build/linkcheck/
+          retention-days: 30
+      - name: Summarize failure
+        if: failure() && steps.linkcheck.outcome == 'failure'
+        run: |
+          echo 'The documentation check failed. Review the Check links and build documentation logs and download the linkcheck-report artifact (if available) to verify broken links manually.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Notify Slack on scheduled failure
+        if: failure() && github.event_name == 'schedule'
+        uses: ravsamhq/notify-slack-action@v2
+        with:
+          status: ${{ job.status }}
+          notify_when: 'failure'
+          notification_title: 'Scheduled documentation link check failed'
+          message_format: '{emoji} *{workflow}* {status_message} in <{repo_url}|{repo}>. Review the logs and the linkcheck-report artifact (if available) for details.'
+          footer: '<{run_url}|View run and download linkcheck report>'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_NOTIFYBOT_WEBHOOK_URL }}
