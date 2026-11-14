@@ -17,9 +17,9 @@ We have packaged the following atlases:
 * `febls_tmbta_mouse_60um`
 
 
-![coronal sections of the febls female mouse brain atlases](./images/febls_coronal.png)
+![coronal sections of the febls female mouse brain atlases](./images/febls_coronal.PNG)
 
-**Figure 1. Coronal sections of the templates and annotations available as part of these atlases.**
+**Figure 1. Coronal sections of the templates and annotations available as part of these atlases. Top: FeBls template brain. Left and bottom left: Allen template brain and annotations. Middle and bottom middle: TMBTA template brain and annotations. Right and bottom right: DSURQE template brain and annotations. All templates and annotations are warped to FeBls space.**
 
 
 ## How do I use the new atlases?
@@ -38,7 +38,7 @@ or you can view them locally:
 The end result will look something like Figure 2.
 
 
-![febls female mouse brain atlas with allen annotations visualised in napari](./images/febls_napari.png)
+![febls female mouse brain atlas with allen annotations visualised in napari](./images/febls_allen_napari.png)
 
 **Figure 2: The FeBls atlas with Allen annotations visualised with `brainrender-napari`: with mesh overlays for the brain (grey) and the hippocampal formation (green).**
 
