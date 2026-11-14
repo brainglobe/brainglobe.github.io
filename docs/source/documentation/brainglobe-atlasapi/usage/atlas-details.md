@@ -539,6 +539,17 @@ Available versions:
 
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/ccfv1_mouse.json)
 
+### [FeBls Female Mouse Brain Atlases](https://world-wide.org/fens-24/novel-vivo-template-female-c40lw2ab)
+This is a novel in-vivo template of the female mouse brain with three commonly used annotations registered onto the template. The template is averaged from 80 MRI images of female C57BL/6N mice, which were then spatially aligned using tissue probability maps provided by the Turone Mouse Brain Template and Atlas (TMBTA), and is available at 60μm resolution. This is useful for researchers interested in the female-specific neuroanatomy of mice. 
+
+Available with three annotations:
+* FeBls with Allen annotations [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/febls_allen_mouse.json)
+  * `febls_allen_mouse_60um` 
+* FeBls with DSURQE annotations [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/febls_dsurqe_mouse.json)
+  * `febls_dsurqe_mouse_60um`
+* FeBls with TMBTA annotations [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/febls_tmbta_mouse.json)
+  * `febls_tmbta_mouse_60um` 
+
 ## Rat
 ### [Waxholm Space atlas of the Sprague Dawley rat brain](https://doi.org/10.1038/s41592-023-02034-3)
 The Waxholm Space rat brain atlas features annotations of 222 structures, alongside a 39μm MRI template. It provides detailed delineations 
