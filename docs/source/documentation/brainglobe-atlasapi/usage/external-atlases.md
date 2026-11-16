@@ -1,11 +1,11 @@
 # External atlases
 
-In addition to the atlases packaged by BrainGlobe (see [Atlas details](atlas-details.md)), 
+In addition to the atlases packaged by BrainGlobe (see [Atlas details](atlas-details.md)), the Atlas API
 can load atlases that are packaged and hosted by other organisations. These atlases are not maintained by BrainGlobe.
 
 # Allen Institute atlases
 
-BrainGlobe AtlasAPI also reads atlases directly from the Allen Institute's
+The BrainGlobe Atlas API can also read atlases directly from the Allen Institute's
 [atlas assets](https://atlas-assets.readthedocs.io) bucket, `s3://allen-atlas-assets`. This bucket is a
 built-in remote, so the atlases below can be loaded by name like any other BrainGlobe atlas.
 
