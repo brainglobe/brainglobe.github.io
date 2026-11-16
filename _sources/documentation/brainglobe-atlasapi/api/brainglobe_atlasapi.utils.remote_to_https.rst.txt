@@ -1,0 +1,6 @@
+remote\_to\_https
+=================
+
+.. currentmodule:: brainglobe_atlasapi.utils
+
+.. autofunction:: remote_to_https

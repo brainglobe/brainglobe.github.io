@@ -1,0 +1,23 @@
+﻿brainglobe\_atlasapi.manifest
+=============================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.manifest
+
+.. currentmodule:: brainglobe_atlasapi.manifest
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    get_annotation_set
+    
+    normalize_manifest
+    
+

@@ -487,6 +487,8 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">BrainGlobe Atlas API (brainglobe-atlasapi)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../usage/atlas-details.html">Atlas details</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="../usage/external-atlases.html">External atlases</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="../usage/command-line-interface.html">Command line interface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../adding-a-new-atlas.html">Adding a new atlas</a></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../api.html">API reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -503,7 +505,9 @@
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.utils.load_structures_from_csv.html">load_structures_from_csv</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.utils.read_json.html">read_json</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.utils.read_tiff.html">read_tiff</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.utils.remote_to_https.html">remote_to_https</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.utils.retrieve_over_http.html">retrieve_over_http</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.utils.version_tuple_from_str.html">version_tuple_from_str</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.list_atlases.html">brainglobe_atlasapi.list_atlases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -529,6 +533,7 @@
 <li class="toctree-l3 current active has-children"><a aria-current="page" class="current reference internal" href="#">brainglobe_atlasapi.config</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.config.cli_modify_config.html">cli_modify_config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.config.get_brainglobe_dir.html">get_brainglobe_dir</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.config.get_remotes.html">get_remotes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.config.read_config.html">read_config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.config.write_config_value.html">write_config_value</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.config.write_default_config.html">write_default_config</a></li>
@@ -539,7 +544,20 @@
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.structure_class.StructuresDict.html">StructuresDict</a></li>
 </ul>
 </details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.manifest.html">brainglobe_atlasapi.manifest</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.manifest.get_annotation_set.html">get_annotation_set</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.manifest.normalize_manifest.html">normalize_manifest</a></li>
+</ul>
+</details></li>
 <li class="toctree-l3"><a class="reference internal" href="brainglobe_atlasapi.cli.html">brainglobe_atlasapi.cli</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.remotes.html">brainglobe_atlasapi.remotes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.remotes.cache_key.html">cache_key</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.remotes.check_remote.html">check_remote</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.remotes.known_remotes.html">known_remotes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.remotes.record_remote.html">record_remote</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.remotes.resolve_remote.html">resolve_remote</a></li>
+</ul>
+</details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.descriptors.html">brainglobe_atlasapi.descriptors</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.descriptors.format_component_stub.html">format_component_stub</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.descriptors.format_hemispheres_stub.html">format_hemispheres_stub</a></li>
@@ -624,6 +642,10 @@
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.stacks.save_template.html">save_template</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.stacks.write_multiscale_ome_zarr.html">write_multiscale_ome_zarr</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.stacks.write_stack.html">write_stack</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.wrapup.html">brainglobe_atlasapi.atlas_generation.wrapup</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.wrapup.wrapup_atlas_from_data.html">wrapup_atlas_from_data</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.structures.html">brainglobe_atlasapi.atlas_generation.structures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -906,13 +928,16 @@ BRAINGLOBE_CONFIG_DIR.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="brainglobe_atlasapi.config.get_brainglobe_dir.html#brainglobe_atlasapi.config.get_brainglobe_dir" title="brainglobe_atlasapi.config.get_brainglobe_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_brainglobe_dir</span></code></a></p></td>
 <td><p>Return brainglobe default directory.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="brainglobe_atlasapi.config.read_config.html#brainglobe_atlasapi.config.read_config" title="brainglobe_atlasapi.config.read_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_config</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="brainglobe_atlasapi.config.get_remotes.html#brainglobe_atlasapi.config.get_remotes" title="brainglobe_atlasapi.config.get_remotes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_remotes</span></code></a></p></td>
+<td><p>Return the configured remotes, in resolution order.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="brainglobe_atlasapi.config.read_config.html#brainglobe_atlasapi.config.read_config" title="brainglobe_atlasapi.config.read_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_config</span></code></a></p></td>
 <td><p>Read BrainGlobe config.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="brainglobe_atlasapi.config.write_config_value.html#brainglobe_atlasapi.config.write_config_value" title="brainglobe_atlasapi.config.write_config_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_config_value</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="brainglobe_atlasapi.config.write_config_value.html#brainglobe_atlasapi.config.write_config_value" title="brainglobe_atlasapi.config.write_config_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_config_value</span></code></a></p></td>
 <td><p>Write a new value in the config file.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="brainglobe_atlasapi.config.write_default_config.html#brainglobe_atlasapi.config.write_default_config" title="brainglobe_atlasapi.config.write_default_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_default_config</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="brainglobe_atlasapi.config.write_default_config.html#brainglobe_atlasapi.config.write_default_config" title="brainglobe_atlasapi.config.write_default_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_default_config</span></code></a></p></td>
 <td><p>Write configuration file at first repo usage.</p></td>
 </tr>
 </tbody>

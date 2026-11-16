@@ -38,6 +38,10 @@
     
     read_tiff
     
+    remote_to_https
+    
     retrieve_over_http
+    
+    version_tuple_from_str
     
 

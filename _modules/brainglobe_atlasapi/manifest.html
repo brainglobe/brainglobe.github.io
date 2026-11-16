@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brainglobe_atlasapi.manifest &#8212; BrainGlobe</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=3215791a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=c83e6b79" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=6a604523" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=75c7c72ae941e8b558d8"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8" />
+
+    <script src="../../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/sg-tags.js?v=d80f6fa4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../../_static/design-tabs.js?v=fcb327ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/brainglobe_atlasapi/manifest';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://brainglobe.info/_modules/brainglobe_atlasapi/manifest.html" />
+    <link rel="icon" href="../../_static/brainglobe.png"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+     
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation" aria-expanded="false" aria-controls="pst-primary-sidebar-modal">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/brainglobe.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/brainglobe.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BrainGlobe</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../blog/index.html">
+    Blog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../projects/index.html">
+    Projects
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://mastodon.online/@brainglobe" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i><span class="visually-hidden">Mastodon</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/brainglobe.info" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i><span class="visually-hidden">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://brainglobe.zulipchat.com" title="Zulip (Developer chat)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i><span class="visually-hidden">Zulip (Developer chat)</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://forum.image.sc/tag/brainglobe" title="image.sc (Help forum)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-question fa-lg" aria-hidden="true"></i><span class="visually-hidden">image.sc (Help forum)</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal" tabindex="-1"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../blog/index.html">
+    Blog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../projects/index.html">
+    Projects
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/brainglobe" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://mastodon.online/@brainglobe" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i><span class="visually-hidden">Mastodon</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/brainglobe.info" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i><span class="visually-hidden">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://brainglobe.zulipchat.com" title="Zulip (Developer chat)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i><span class="visually-hidden">Zulip (Developer chat)</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://forum.image.sc/tag/brainglobe" title="image.sc (Help forum)" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-question fa-lg" aria-hidden="true"></i><span class="visually-hidden">image.sc (Help forum)</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainglobe_atlasapi.manifest</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                   <h1>Source code for brainglobe_atlasapi.manifest</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""Convert atlas manifests into the metadata shape ``core.Atlas`` consumes.</span>
+
+<span class="sd">BrainGlobe manifests already have that shape. atlas-assets manifests are</span>
+<span class="sd">reshaped, with missing fields derived from zarr metadata and the asset name.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">zarr</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.descriptors</span><span class="w"> </span><span class="kn">import</span> <span class="n">V3_ANNOTATION_NAME</span>
+
+<span class="n">SPECIES_BY_NAME_SEGMENT</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"mouse"</span><span class="p">:</span> <span class="s2">"Mus musculus"</span><span class="p">,</span>
+    <span class="s2">"human"</span><span class="p">:</span> <span class="s2">"Homo sapiens"</span><span class="p">,</span>
+    <span class="s2">"marmoset"</span><span class="p">:</span> <span class="s2">"Callithrix jacchus"</span><span class="p">,</span>
+    <span class="s2">"rhesusmacaque"</span><span class="p">:</span> <span class="s2">"Macaca mulatta"</span><span class="p">,</span>
+    <span class="s2">"cynomolgusmacaque"</span><span class="p">:</span> <span class="s2">"Macaca fascicularis"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># brainglobe-space origin letters, keyed by OME anatomical axis direction.</span>
+<span class="n">_ORIGIN_BY_AXIS_DIRECTION</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"anterior-to-posterior"</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span>
+    <span class="s2">"posterior-to-anterior"</span><span class="p">:</span> <span class="s2">"p"</span><span class="p">,</span>
+    <span class="s2">"superior-to-inferior"</span><span class="p">:</span> <span class="s2">"s"</span><span class="p">,</span>
+    <span class="s2">"inferior-to-superior"</span><span class="p">:</span> <span class="s2">"i"</span><span class="p">,</span>
+    <span class="s2">"dorsal-to-ventral"</span><span class="p">:</span> <span class="s2">"s"</span><span class="p">,</span>
+    <span class="s2">"ventral-to-dorsal"</span><span class="p">:</span> <span class="s2">"i"</span><span class="p">,</span>
+    <span class="s2">"left-to-right"</span><span class="p">:</span> <span class="s2">"l"</span><span class="p">,</span>
+    <span class="s2">"right-to-left"</span><span class="p">:</span> <span class="s2">"r"</span><span class="p">,</span>
+    <span class="s2">"caudal-to-rostral"</span><span class="p">:</span> <span class="s2">"p"</span><span class="p">,</span>
+    <span class="s2">"rostral-to-caudal"</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_species_from_name</span><span class="p">(</span><span class="n">atlas_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Derive a binomial species name from an asset name.</span>
+
+<span class="sd">    The specification's name grammar is explicitly non-normative and is</span>
+<span class="sd">    not unambiguously parseable by position, so every segment is matched</span>
+<span class="sd">    against a fixed vocabulary instead.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atlas_name : str</span>
+<span class="sd">        Asset name, e.g. ``"allen-adult-mouse-ccf-atlas"``.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str or None</span>
+<span class="sd">        Binomial name, or None when no segment matches the vocabulary.</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">segment</span> <span class="ow">in</span> <span class="n">atlas_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"-"</span><span class="p">):</span>
+        <span class="n">species</span> <span class="o">=</span> <span class="n">SPECIES_BY_NAME_SEGMENT</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">segment</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">species</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">species</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_intrinsic_axes</span><span class="p">(</span><span class="n">multiscale</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Return the axes of the space the array indices live in.</span>
+
+<span class="sd">    OME-Zarr 0.5 (the BrainGlobe bucket) declares one set of axes on the</span>
+<span class="sd">    multiscale. 0.6 (atlas-assets) declares several coordinate systems</span>
+<span class="sd">    and names, on each dataset, the one its indices map into; that</span>
+<span class="sd">    intrinsic system is the one describing storage order, as opposed to</span>
+<span class="sd">    any anatomical space derived from it.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    multiscale : dict</span>
+<span class="sd">        One entry of the ``multiscales`` list.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list</span>
+<span class="sd">        The axis dictionaries, in storage order.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    KeyError</span>
+<span class="sd">        If neither shape declares axes.</span>
+<span class="sd">    """</span>
+    <span class="n">axes</span> <span class="o">=</span> <span class="n">multiscale</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"axes"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">axes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">axes</span>
+
+    <span class="n">outputs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">transform</span><span class="p">[</span><span class="s2">"output"</span><span class="p">][</span><span class="s2">"name"</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">transform</span> <span class="ow">in</span> <span class="n">multiscale</span><span class="p">[</span><span class="s2">"datasets"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"coordinateTransformations"</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s2">"name"</span> <span class="ow">in</span> <span class="n">transform</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"output"</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="n">system</span> <span class="ow">in</span> <span class="n">multiscale</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"coordinateSystems"</span><span class="p">,</span> <span class="p">[]):</span>
+        <span class="k">if</span> <span class="n">system</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span> <span class="ow">in</span> <span class="n">outputs</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">system</span><span class="p">[</span><span class="s2">"axes"</span><span class="p">]</span>
+
+    <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+        <span class="s2">"Multiscale declares no axes and no coordinate system matching "</span>
+        <span class="sa">f</span><span class="s2">"the output(s) </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">outputs</span><span class="p">)</span><span class="si">}</span><span class="s2"> of its datasets."</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_orientation_from_axes</span><span class="p">(</span><span class="n">ome_attrs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Derive a brainglobe-space origin from OME axis metadata.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ome_attrs : dict</span>
+<span class="sd">        The ``attributes.ome`` block of a zarr group.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str</span>
+<span class="sd">        Three-letter origin, e.g. ``"asl"``.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    KeyError</span>
+<span class="sd">        If an axis carries no recognised anatomical orientation.</span>
+<span class="sd">    """</span>
+    <span class="n">axes</span> <span class="o">=</span> <span class="n">_intrinsic_axes</span><span class="p">(</span><span class="n">ome_attrs</span><span class="p">[</span><span class="s2">"multiscales"</span><span class="p">][</span><span class="mi">0</span><span class="p">])[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>
+    <span class="n">letters</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="n">axes</span><span class="p">:</span>
+        <span class="n">direction</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"orientation"</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"value"</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">letters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_ORIGIN_BY_AXIS_DIRECTION</span><span class="p">[</span><span class="n">direction</span><span class="p">])</span>
+        <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"Axis </span><span class="si">{</span><span class="n">axis</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'name'</span><span class="p">)</span><span class="si">!r}</span><span class="s2"> has unrecognised anatomical "</span>
+                <span class="sa">f</span><span class="s2">"orientation </span><span class="si">{</span><span class="n">direction</span><span class="si">!r}</span><span class="s2">."</span>
+            <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+    <span class="k">return</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_voxel_sizes</span><span class="p">(</span><span class="n">ome_attrs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Return the voxel size of each pyramid level, in micrometres.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ome_attrs : dict</span>
+<span class="sd">        The ``attributes.ome`` block of a zarr group.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list of list of float</span>
+<span class="sd">        One ``[z, y, x]`` entry per level, in storage order.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">scale</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">scale</span> <span class="ow">in</span> <span class="n">_scale_from_transforms</span><span class="p">(</span>
+                <span class="n">dataset</span><span class="p">[</span><span class="s2">"coordinateTransformations"</span><span class="p">]</span>
+            <span class="p">)[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>
+        <span class="p">]</span>
+        <span class="k">for</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">ome_attrs</span><span class="p">[</span><span class="s2">"multiscales"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"datasets"</span><span class="p">]</span>
+    <span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_pyramid_level_from_attrs</span><span class="p">(</span>
+    <span class="n">ome_attrs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">resolution</span><span class="p">:</span> <span class="nb">float</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Find the pyramid level matching a resolution in micrometres.</span>
+
+<span class="sd">    As on BrainGlobe atlases, a level's resolution is its first axis: a</span>
+<span class="sd">    16 x 16 x 20 um level is the 16 um one.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ome_attrs : dict</span>
+<span class="sd">        The ``attributes.ome`` block of a zarr group.</span>
+<span class="sd">    resolution : float</span>
+<span class="sd">        Requested resolution, in micrometres.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple</span>
+<span class="sd">        The ``(index, dataset_path)`` of the matching level.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If no level matches the requested resolution.</span>
+<span class="sd">    """</span>
+    <span class="n">datasets</span> <span class="o">=</span> <span class="n">ome_attrs</span><span class="p">[</span><span class="s2">"multiscales"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"datasets"</span><span class="p">]</span>
+    <span class="n">first_axes</span> <span class="o">=</span> <span class="p">[</span><span class="n">voxel_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">voxel_size</span> <span class="ow">in</span> <span class="n">_voxel_sizes</span><span class="p">(</span><span class="n">ome_attrs</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">first_axis</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">first_axes</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">resolution</span><span class="p">,</span> <span class="n">first_axis</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">index</span><span class="p">,</span> <span class="n">datasets</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="s2">"path"</span><span class="p">]</span>
+
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"Requested resolution </span><span class="si">{</span><span class="n">resolution</span><span class="si">}</span><span class="s2"> um is invalid for this atlas. "</span>
+        <span class="sa">f</span><span class="s2">"Available resolutions: </span><span class="si">{</span><span class="n">first_axes</span><span class="si">}</span><span class="s2">."</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_scale_from_transforms</span><span class="p">(</span><span class="n">transforms</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return the scale factors from a coordinate transformation list.</span>
+
+<span class="sd">    OME-Zarr 0.5 stores a flat ``[{scale}, {translation}]`` list, while 0.6</span>
+<span class="sd">    wraps them as ``[{"type": "sequence", "transformations": [...]}]``. Both</span>
+<span class="sd">    shapes are accepted, as raw dictionaries read from ``zarr.json``.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    transforms : sequence</span>
+<span class="sd">        Coordinate transformations for one multiscale dataset.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    sequence of float</span>
+<span class="sd">        The scale factors, one per axis.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If no scale transformation is present.</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">transform</span> <span class="ow">in</span> <span class="n">transforms</span><span class="p">:</span>
+        <span class="n">scale</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"scale"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">scale</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">scale</span>
+        <span class="k">for</span> <span class="n">inner</span> <span class="ow">in</span> <span class="n">transform</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"transformations"</span><span class="p">,</span> <span class="p">()):</span>
+            <span class="n">scale</span> <span class="o">=</span> <span class="n">inner</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"scale"</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">scale</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">scale</span>
+
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+        <span class="s2">"No scale transformation found in coordinateTransformations."</span>
+    <span class="p">)</span>
+
+
+<div class="viewcode-block" id="normalize_manifest">
+<a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.manifest.normalize_manifest.html#brainglobe_atlasapi.manifest.normalize_manifest">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">normalize_manifest</span><span class="p">(</span><span class="n">raw</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">resolution</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Return manifest metadata in the shape ``core.Atlas`` consumes.</span>
+
+<span class="sd">    BrainGlobe manifests are returned unchanged. atlas-assets manifests</span>
+<span class="sd">    are reshaped by ``_normalize_atlas_assets``.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    raw : dict</span>
+<span class="sd">        Parsed atlas ``manifest.json``.</span>
+<span class="sd">    resolution : float or None</span>
+<span class="sd">        Requested resolution, in micrometres: the first axis of a</span>
+<span class="sd">        non-isotropic atlas, e.g. 16 for 16 x 16 x 20 um. Defaults to the</span>
+<span class="sd">        finest available, with a printed note when there is more</span>
+<span class="sd">        than one to choose from; if the manifest has a single fixed</span>
+<span class="sd">        resolution instead (a BrainGlobe manifest), a mismatching value</span>
+<span class="sd">        raises.</span>
+<span class="sd">    root_dir : Path</span>
+<span class="sd">        Local cache namespace directory holding the downloaded assets.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        Metadata in BrainGlobe's shape.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If ``resolution`` matches no available pyramid level.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"templates"</span><span class="p">),</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">_normalize_atlas_assets</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">resolution</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">resolution</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span>
+        <span class="n">resolution</span><span class="p">,</span> <span class="n">raw</span><span class="p">[</span><span class="s2">"resolution"</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"Atlas </span><span class="si">{</span><span class="n">raw</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2"> has a fixed resolution of "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">raw</span><span class="p">[</span><span class="s1">'resolution'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> um; </span><span class="si">{</span><span class="n">resolution</span><span class="si">}</span><span class="s2"> um was "</span>
+            <span class="sa">f</span><span class="s2">"requested."</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">raw</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_normalize_atlas_assets</span><span class="p">(</span><span class="n">raw</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">resolution</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Reshape an atlas-assets manifest into BrainGlobe's metadata shape.</span>
+
+<span class="sd">    The first template and annotation set are promoted to singular keys,</span>
+<span class="sd">    terminology is hoisted to the top level, and the fields the</span>
+<span class="sd">    specification does not carry are derived from the zarr metadata and</span>
+<span class="sd">    the asset name, or set to None. The result is tagged</span>
+<span class="sd">    ``"format": "atlas-assets"`` so its meshes are dequantized.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    raw : dict</span>
+<span class="sd">        Parsed atlas ``manifest.json``.</span>
+<span class="sd">    resolution : float or None</span>
+<span class="sd">        Requested resolution, in micrometres, or None for the finest</span>
+<span class="sd">        available. Compared against the first axis of each pyramid level.</span>
+<span class="sd">    root_dir : Path</span>
+<span class="sd">        Local cache namespace directory holding the downloaded assets.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        Metadata in BrainGlobe's shape.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If ``resolution`` matches no available pyramid level.</span>
+<span class="sd">    """</span>
+    <span class="n">annotation_set</span> <span class="o">=</span> <span class="n">raw</span><span class="p">[</span><span class="s2">"annotation_sets"</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">annotation_location</span> <span class="o">=</span> <span class="n">annotation_set</span><span class="p">[</span><span class="s2">"location"</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+    <span class="n">annotation_path</span> <span class="o">=</span> <span class="n">root_dir</span> <span class="o">/</span> <span class="n">annotation_location</span> <span class="o">/</span> <span class="n">V3_ANNOTATION_NAME</span>
+    <span class="n">annotation_group</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">open_group</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">annotation_path</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"r"</span><span class="p">)</span>
+    <span class="n">ome_attrs</span> <span class="o">=</span> <span class="n">annotation_group</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">"ome"</span><span class="p">]</span>
+    <span class="n">voxel_sizes</span> <span class="o">=</span> <span class="n">_voxel_sizes</span><span class="p">(</span><span class="n">ome_attrs</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">resolution</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">first_axes</span> <span class="o">=</span> <span class="p">[</span><span class="n">voxel_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">voxel_size</span> <span class="ow">in</span> <span class="n">voxel_sizes</span><span class="p">]</span>
+        <span class="n">resolution</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">first_axes</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">first_axes</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"Atlas </span><span class="si">{</span><span class="n">raw</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2"> provides resolutions </span><span class="si">{</span><span class="n">first_axes</span><span class="si">}</span><span class="s2"> um "</span>
+                <span class="sa">f</span><span class="s2">"and none was requested, so using the finest, "</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">resolution</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> um. Pass resolution= to choose another."</span>
+            <span class="p">)</span>
+
+    <span class="n">level</span><span class="p">,</span> <span class="n">dataset_path</span> <span class="o">=</span> <span class="n">_pyramid_level_from_attrs</span><span class="p">(</span><span class="n">ome_attrs</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="n">annotation_group</span><span class="p">[</span><span class="n">dataset_path</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">"format"</span><span class="p">:</span> <span class="s2">"atlas-assets"</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="p">:</span> <span class="n">raw</span><span class="p">[</span><span class="s2">"name"</span><span class="p">],</span>
+        <span class="s2">"version"</span><span class="p">:</span> <span class="n">raw</span><span class="p">[</span><span class="s2">"version"</span><span class="p">],</span>
+        <span class="s2">"location"</span><span class="p">:</span> <span class="n">raw</span><span class="p">[</span><span class="s2">"location"</span><span class="p">],</span>
+        <span class="s2">"citation"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"atlas_link"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"species"</span><span class="p">:</span> <span class="n">_species_from_name</span><span class="p">(</span><span class="n">raw</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]),</span>
+        <span class="s2">"symmetric"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">"resolution"</span><span class="p">:</span> <span class="n">voxel_sizes</span><span class="p">[</span><span class="n">level</span><span class="p">],</span>
+        <span class="s2">"orientation"</span><span class="p">:</span> <span class="n">_orientation_from_axes</span><span class="p">(</span><span class="n">ome_attrs</span><span class="p">),</span>
+        <span class="s2">"shape"</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]),</span>
+        <span class="s2">"additional_references"</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">"coordinate_space"</span><span class="p">:</span> <span class="n">raw</span><span class="p">[</span><span class="s2">"coordinate_space"</span><span class="p">],</span>
+        <span class="s2">"terminology"</span><span class="p">:</span> <span class="n">annotation_set</span><span class="p">[</span><span class="s2">"terminology"</span><span class="p">],</span>
+        <span class="s2">"annotation_set"</span><span class="p">:</span> <span class="n">annotation_set</span><span class="p">,</span>
+        <span class="s2">"template"</span><span class="p">:</span> <span class="n">raw</span><span class="p">[</span><span class="s2">"templates"</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">}</span>
+
+
+<div class="viewcode-block" id="get_annotation_set">
+<a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.manifest.get_annotation_set.html#brainglobe_atlasapi.manifest.get_annotation_set">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_annotation_set</span><span class="p">(</span><span class="n">manifest</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Return the annotation set entry from either manifest shape.</span>
+
+<span class="sd">    Both shapes nest the annotation set's ``terminology`` and ``template``</span>
+<span class="sd">    inside it, which is where ``core.Atlas`` reads them from.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    manifest : dict</span>
+<span class="sd">        Parsed atlas manifest, in either shape.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        The annotation set entry.</span>
+<span class="sd">    """</span>
+    <span class="n">annotation_sets</span> <span class="o">=</span> <span class="n">manifest</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"annotation_sets"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">annotation_sets</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">annotation_sets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">manifest</span><span class="p">[</span><span class="s2">"annotation_set"</span><span class="p">]</span></div>
+
+</pre></div>
+<div class="section ablog__blog_comments">
+   
+</div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p class="sphinx-version">
+Created using <a href="https://sphinx-doc.org/">Sphinx</a> 8.2.3.
+<br/>
+</p>
+<p class="theme-version">
+Built with the
+<a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a>
+0.24.0.
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><div class="things-in-a-row">
+</div></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

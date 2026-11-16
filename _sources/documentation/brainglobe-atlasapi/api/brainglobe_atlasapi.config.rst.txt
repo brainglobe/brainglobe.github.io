@@ -20,6 +20,8 @@
     
     get_brainglobe_dir
     
+    get_remotes
+    
     read_config
     
     write_config_value

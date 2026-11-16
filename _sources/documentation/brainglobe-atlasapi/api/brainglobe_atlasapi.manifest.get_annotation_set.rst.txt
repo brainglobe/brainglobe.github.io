@@ -1,0 +1,6 @@
+get\_annotation\_set
+====================
+
+.. currentmodule:: brainglobe_atlasapi.manifest
+
+.. autofunction:: get_annotation_set

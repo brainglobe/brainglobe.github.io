@@ -526,8 +526,21 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy.typing</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">npt</span>
 
-<span class="c1"># Base URL for the BrainGlobe atlas S3 bucket:</span>
-<span class="n">remote_url_s3</span> <span class="o">=</span> <span class="s2">"s3://brainglobe/atlas/</span><span class="si">{}</span><span class="s2">"</span>
+<span class="c1"># Default remote: an "s3://bucket/prefix" with no trailing slash.</span>
+<span class="n">DEFAULT_REMOTE</span> <span class="o">=</span> <span class="s2">"s3://brainglobe/atlas"</span>
+<span class="c1"># Cache directory reserved for DEFAULT_REMOTE. Every other remote is</span>
+<span class="c1"># cached under the last segment of its URL.</span>
+<span class="n">DEFAULT_REMOTE_KEY</span> <span class="o">=</span> <span class="s2">"brainglobe-atlasapi"</span>
+<span class="n">ATLAS_ASSETS_REMOTE</span> <span class="o">=</span> <span class="s2">"s3://allen-atlas-assets"</span>
+<span class="c1"># Config label for ATLAS_ASSETS_REMOTE.</span>
+<span class="n">ATLAS_ASSETS_REMOTE_KEY</span> <span class="o">=</span> <span class="s2">"allen-atlas-assets"</span>
+<span class="c1"># Written at the top of each cache directory, holding the full remote</span>
+<span class="c1"># it mirrors.</span>
+<span class="n">REMOTE_FILENAME</span> <span class="o">=</span> <span class="s2">"remote.txt"</span>
+
+<span class="c1"># Path templates on the BrainGlobe bucket only, for callers that never use</span>
+<span class="c1"># another remote (atlas generation, last_versions.conf):</span>
+<span class="n">remote_url_s3</span> <span class="o">=</span> <span class="n">DEFAULT_REMOTE</span> <span class="o">+</span> <span class="s2">"/</span><span class="si">{}</span><span class="s2">"</span>
 <span class="n">remote_url_s3_http</span> <span class="o">=</span> <span class="s2">"https://brainglobe.s3.us-west-2.amazonaws.com/atlas/</span><span class="si">{}</span><span class="s2">"</span>
 
 <span class="c1"># Major version of atlases used by current brainglobe-atlasapi release:</span>

@@ -1,0 +1,6 @@
+resolve\_remote
+===============
+
+.. currentmodule:: brainglobe_atlasapi.remotes
+
+.. autofunction:: resolve_remote

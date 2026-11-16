@@ -1,0 +1,6 @@
+cache\_key
+==========
+
+.. currentmodule:: brainglobe_atlasapi.remotes
+
+.. autofunction:: cache_key

@@ -1,0 +1,6 @@
+known\_remotes
+==============
+
+.. currentmodule:: brainglobe_atlasapi.remotes
+
+.. autofunction:: known_remotes

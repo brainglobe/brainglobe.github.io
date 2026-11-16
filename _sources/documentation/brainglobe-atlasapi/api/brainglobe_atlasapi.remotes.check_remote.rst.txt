@@ -1,0 +1,6 @@
+check\_remote
+=============
+
+.. currentmodule:: brainglobe_atlasapi.remotes
+
+.. autofunction:: check_remote

@@ -1,0 +1,6 @@
+record\_remote
+==============
+
+.. currentmodule:: brainglobe_atlasapi.remotes
+
+.. autofunction:: record_remote

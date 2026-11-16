@@ -1,0 +1,29 @@
+﻿brainglobe\_atlasapi.remotes
+============================
+
+.. rubric:: Description
+
+.. automodule:: brainglobe_atlasapi.remotes
+
+.. currentmodule:: brainglobe_atlasapi.remotes
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+    :toctree: .
+    :nosignatures:
+    
+    cache_key
+    
+    check_remote
+    
+    known_remotes
+    
+    record_remote
+    
+    resolve_remote
+    
+

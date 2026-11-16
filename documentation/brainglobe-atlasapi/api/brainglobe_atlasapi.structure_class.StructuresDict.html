@@ -64,7 +64,7 @@
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="brainglobe_atlasapi.cli" href="brainglobe_atlasapi.cli.html" />
+    <link rel="next" title="brainglobe_atlasapi.manifest" href="brainglobe_atlasapi.manifest.html" />
     <link rel="prev" title="Structure" href="brainglobe_atlasapi.structure_class.Structure.html" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="color-scheme" content="light dark"/>
@@ -491,6 +491,8 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">BrainGlobe Atlas API (brainglobe-atlasapi)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../usage/atlas-details.html">Atlas details</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="../usage/external-atlases.html">External atlases</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="../usage/command-line-interface.html">Command line interface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../adding-a-new-atlas.html">Adding a new atlas</a></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../api.html">API reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -507,7 +509,9 @@
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.utils.load_structures_from_csv.html">load_structures_from_csv</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.utils.read_json.html">read_json</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.utils.read_tiff.html">read_tiff</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.utils.remote_to_https.html">remote_to_https</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.utils.retrieve_over_http.html">retrieve_over_http</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.utils.version_tuple_from_str.html">version_tuple_from_str</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.list_atlases.html">brainglobe_atlasapi.list_atlases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -533,6 +537,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.config.html">brainglobe_atlasapi.config</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.config.cli_modify_config.html">cli_modify_config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.config.get_brainglobe_dir.html">get_brainglobe_dir</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.config.get_remotes.html">get_remotes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.config.read_config.html">read_config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.config.write_config_value.html">write_config_value</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.config.write_default_config.html">write_default_config</a></li>
@@ -543,7 +548,20 @@
 <li class="toctree-l4 current active"><a aria-current="page" class="current reference internal" href="#">StructuresDict</a></li>
 </ul>
 </details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.manifest.html">brainglobe_atlasapi.manifest</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.manifest.get_annotation_set.html">get_annotation_set</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.manifest.normalize_manifest.html">normalize_manifest</a></li>
+</ul>
+</details></li>
 <li class="toctree-l3"><a class="reference internal" href="brainglobe_atlasapi.cli.html">brainglobe_atlasapi.cli</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.remotes.html">brainglobe_atlasapi.remotes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.remotes.cache_key.html">cache_key</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.remotes.check_remote.html">check_remote</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.remotes.known_remotes.html">known_remotes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.remotes.record_remote.html">record_remote</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.remotes.resolve_remote.html">resolve_remote</a></li>
+</ul>
+</details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.descriptors.html">brainglobe_atlasapi.descriptors</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.descriptors.format_component_stub.html">format_component_stub</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.descriptors.format_hemispheres_stub.html">format_hemispheres_stub</a></li>
@@ -628,6 +646,10 @@
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.stacks.save_template.html">save_template</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.stacks.write_multiscale_ome_zarr.html">write_multiscale_ome_zarr</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.stacks.write_stack.html">write_stack</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.wrapup.html">brainglobe_atlasapi.atlas_generation.wrapup</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.wrapup.wrapup_atlas_from_data.html">wrapup_atlas_from_data</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.structures.html">brainglobe_atlasapi.atlas_generation.structures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -900,12 +922,18 @@
 <h1>StructuresDict<a class="headerlink" href="#structuresdict" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="brainglobe_atlasapi.structure_class.StructuresDict">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">brainglobe_atlasapi.structure_class.</span></span><span class="sig-name descname"><span class="pre">StructuresDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structures_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/brainglobe_atlasapi/structure_class.html#StructuresDict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainglobe_atlasapi.structure_class.StructuresDict" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">brainglobe_atlasapi.structure_class.</span></span><span class="sig-name descname"><span class="pre">StructuresDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structures_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remote</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'s3://brainglobe/atlas'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dequantize_meshes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/brainglobe_atlasapi/structure_class.html#StructuresDict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainglobe_atlasapi.structure_class.StructuresDict" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">UserDict</span></code></p>
 <p>Class to handle dual indexing by either acronym or id.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>mesh_path</strong> (<em>str</em><em> or </em><em>Path object</em>) – path to folder containing all meshes .obj files</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mesh_path</strong> (<em>str</em><em> or </em><em>Path object</em>) – path to folder containing all meshes .obj files</p></li>
+<li><p><strong>remote</strong> (<em>str</em>) – Remote the meshes are fetched from; defaults to the
+BrainGlobe bucket.</p></li>
+<li><p><strong>dequantize_meshes</strong> (<em>bool</em>) – Whether the remote meshes are in the atlas-assets form and must be
+dequantized on download, rather than fetched as-is.</p></li>
+</ul>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
@@ -1024,11 +1052,11 @@ In either case, this is followed by: for k, v in F.items(): D[k] = v</p>
       </div>
     </a>
     <a class="right-next"
-       href="brainglobe_atlasapi.cli.html"
+       href="brainglobe_atlasapi.manifest.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">brainglobe_atlasapi.cli</p>
+        <p class="prev-next-title">brainglobe_atlasapi.manifest</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

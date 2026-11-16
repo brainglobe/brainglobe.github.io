@@ -523,6 +523,7 @@
 <span class="sd">such as brain regions in an atlas.</span>
 <span class="sd">"""</span>
 
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">UserDict</span>
@@ -530,11 +531,152 @@
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">DracoPy</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">meshio</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">s3fs</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">fsspec.callbacks</span><span class="w"> </span><span class="kn">import</span> <span class="n">TqdmCallback</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.descriptors</span><span class="w"> </span><span class="kn">import</span> <span class="n">remote_url_s3</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.descriptors</span><span class="w"> </span><span class="kn">import</span> <span class="n">DEFAULT_REMOTE</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.structure_tree_util</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_structures_tree</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_read_multilod_draco</span><span class="p">(</span><span class="n">fs</span><span class="p">,</span> <span class="n">mesh_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Read a `neuroglancer_multilod_draco` object into real coordinates.</span>
+
+<span class="sd">    Large structures are split into several Draco fragments at lod 0,</span>
+<span class="sd">    each quantized into its own chunk. Each fragment is decoded and</span>
+<span class="sd">    placed with its own chunk position from `&lt;id&gt;.index`</span>
+<span class="sd">    (see the multi-resolution mesh manifest format:</span>
+<span class="sd">    https://github.com/google/neuroglancer/blob/master/src/neuroglancer/datasource/precomputed/meshes.md),</span>
+<span class="sd">    then all fragments are concatenated into one mesh; `info` supplies</span>
+<span class="sd">    the affine that takes the result to the units of the source bucket.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    fs : s3fs.S3FileSystem</span>
+<span class="sd">        Filesystem exposing a single-path ``cat(path) -&gt; bytes``.</span>
+<span class="sd">    mesh_path : str</span>
+<span class="sd">        Full remote path of the `&lt;id&gt;` object.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple of numpy.ndarray</span>
+<span class="sd">        `(points, faces)`; float32 (N, 3) vertices in the units and axis</span>
+<span class="sd">        order of the source bucket, and uint32 (M, 3) triangle indices.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    NotImplementedError</span>
+<span class="sd">        If the object declares more than one level of detail.</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If every fragment is empty.</span>
+<span class="sd">    """</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">mesh_path</span><span class="si">}</span><span class="s2">.index"</span><span class="p">)</span>
+    <span class="n">chunk_shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">grid_origin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">num_lods</span><span class="p">,)</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">num_lods</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">mesh_path</span><span class="si">}</span><span class="s2"> declares </span><span class="si">{</span><span class="n">num_lods</span><span class="si">}</span><span class="s2"> level(s) of detail; only a "</span>
+            <span class="s2">"single level of detail is supported."</span>
+        <span class="p">)</span>
+
+    <span class="c1"># lod_scales, then vertex_offsets, then the per-lod fragment counts.</span>
+    <span class="n">offset</span> <span class="o">=</span> <span class="mi">28</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">num_lods</span>
+    <span class="n">vertex_offset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">)</span>
+    <span class="n">offset</span> <span class="o">+=</span> <span class="mi">12</span> <span class="o">*</span> <span class="n">num_lods</span>
+    <span class="p">(</span><span class="n">num_fragments</span><span class="p">,)</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span>
+        <span class="n">header</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="n">num_lods</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span>
+    <span class="p">)</span>
+    <span class="n">offset</span> <span class="o">+=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">num_lods</span>
+
+    <span class="c1"># Fragment grid positions: stored as all-x, then all-y, then all-z.</span>
+    <span class="n">fragment_positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span>
+        <span class="n">header</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">3</span> <span class="o">*</span> <span class="n">num_fragments</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">num_fragments</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">order</span><span class="o">=</span><span class="s2">"F"</span><span class="p">)</span>
+    <span class="n">offset</span> <span class="o">+=</span> <span class="mi">12</span> <span class="o">*</span> <span class="n">num_fragments</span>
+
+    <span class="c1"># Byte size of each fragment, in the mesh data file, in the same order.</span>
+    <span class="n">fragment_sizes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span>
+        <span class="n">header</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="n">num_fragments</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span>
+    <span class="p">)</span>
+
+    <span class="n">info</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">fs</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">mesh_path</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">/info"</span><span class="p">))</span>
+    <span class="n">quantization</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="n">info</span><span class="p">[</span><span class="s2">"vertex_quantization_bits"</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">"transform"</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">mesh_path</span><span class="p">)</span>
+    <span class="n">fragment_points</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">fragment_faces</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">vertex_count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">byte_offset</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">position</span><span class="p">,</span> <span class="n">size</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fragment_positions</span><span class="p">,</span> <span class="n">fragment_sizes</span><span class="p">):</span>
+        <span class="n">fragment_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">byte_offset</span> <span class="p">:</span> <span class="n">byte_offset</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">size</span><span class="p">)]</span>
+        <span class="n">byte_offset</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">fragment_data</span><span class="p">:</span>
+            <span class="c1"># A child fragment can exist with no corresponding parent</span>
+            <span class="c1"># fragment (e.g. from independent per-lod simplification).</span>
+            <span class="k">continue</span>
+
+        <span class="n">fragment</span> <span class="o">=</span> <span class="n">DracoPy</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">fragment_data</span><span class="p">)</span>
+        <span class="n">quantized</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">fragment</span><span class="o">.</span><span class="n">points</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+        <span class="n">fragment_points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">grid_origin</span>
+            <span class="o">+</span> <span class="n">vertex_offset</span>
+            <span class="o">+</span> <span class="n">chunk_shape</span> <span class="o">*</span> <span class="p">(</span><span class="n">position</span> <span class="o">+</span> <span class="n">quantized</span> <span class="o">/</span> <span class="n">quantization</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">fragment_faces</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">fragment</span><span class="o">.</span><span class="n">faces</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span> <span class="o">+</span> <span class="n">vertex_count</span>
+        <span class="p">)</span>
+        <span class="n">vertex_count</span> <span class="o">+=</span> <span class="n">quantized</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">fragment_points</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">mesh_path</span><span class="si">}</span><span class="s2"> holds no mesh data: every fragment is empty."</span>
+        <span class="p">)</span>
+
+    <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">fragment_points</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">faces</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">fragment_faces</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">@</span> <span class="n">transform</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">T</span> <span class="o">+</span> <span class="n">transform</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">points</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span> <span class="n">faces</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_encode_draco</span><span class="p">(</span><span class="n">points</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">faces</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Encode a mesh as a single Draco fragment.</span>
+
+<span class="sd">    Mirrors `atlas_generation.mesh_utils.write_mesh`: 16-bit quantization</span>
+<span class="sd">    against the bounding *cube*, because Draco quantizes every axis</span>
+<span class="sd">    against one uniform range and a per-axis range would distort.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    points : numpy.ndarray</span>
+<span class="sd">        (N, 3) vertices.</span>
+<span class="sd">    faces : numpy.ndarray</span>
+<span class="sd">        (M, 3) triangle indices.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bytes</span>
+<span class="sd">        The Draco-encoded fragment, byte-for-byte what a BrainGlobe atlas</span>
+<span class="sd">        stores at `&lt;id&gt;`.</span>
+<span class="sd">    """</span>
+    <span class="n">vertices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">triangles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">faces</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span>
+
+    <span class="n">bbox_min</span> <span class="o">=</span> <span class="n">vertices</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="c1"># `or 1.0`: degenerate mesh (single point / planar in all axes)</span>
+    <span class="n">qrange</span> <span class="o">=</span> <span class="nb">float</span><span class="p">((</span><span class="n">vertices</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="n">bbox_min</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="ow">or</span> <span class="mf">1.0</span>
+
+    <span class="k">return</span> <span class="n">DracoPy</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">vertices</span><span class="p">,</span>
+        <span class="n">triangles</span><span class="p">,</span>
+        <span class="n">quantization_bits</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+        <span class="n">compression_level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">quantization_range</span><span class="o">=</span><span class="n">qrange</span><span class="p">,</span>
+        <span class="n">quantization_origin</span><span class="o">=</span><span class="n">bbox_min</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+    <span class="p">)</span>
 
 
 <div class="viewcode-block" id="Structure">
@@ -542,7 +684,29 @@
 <span class="k">class</span><span class="w"> </span><span class="nc">Structure</span><span class="p">(</span><span class="n">UserDict</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Class implementing the lazy loading of a mesh if the dictionary is</span>
 <span class="sd">    queried for it.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    *args, **kwargs</span>
+<span class="sd">        The structure's fields, as for `dict`.</span>
+<span class="sd">    remote : str</span>
+<span class="sd">        Remote the mesh is fetched from; defaults to the BrainGlobe</span>
+<span class="sd">        bucket.</span>
+<span class="sd">    dequantize_mesh : bool</span>
+<span class="sd">        Whether the remote mesh is in the atlas-assets form and must be</span>
+<span class="sd">        dequantized on download.</span>
 <span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="n">remote</span><span class="o">=</span><span class="n">DEFAULT_REMOTE</span><span class="p">,</span>
+        <span class="n">dequantize_mesh</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">remote</span> <span class="o">=</span> <span class="n">remote</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dequantize_mesh</span> <span class="o">=</span> <span class="n">dequantize_mesh</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""</span>
@@ -599,9 +763,19 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">_download_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">"""Download the mesh from the remote S3 bucket if it is not cached."""</span>
+<span class="w">        </span><span class="sd">"""Download the mesh from the remote S3 bucket if it is not cached.</span>
+
+<span class="sd">        Both formats store `neuroglancer_multilod_draco`, but they quantize</span>
+<span class="sd">        differently: atlas-assets follows the specification and keeps the</span>
+<span class="sd">        chunk in `&lt;id&gt;.index`, while BrainGlobe bakes absolute quantization</span>
+<span class="sd">        into the Draco header so `&lt;id&gt;` decodes to coordinates on its own.</span>
+<span class="sd">        The former is dequantized on the way in, so the local cache holds a</span>
+<span class="sd">        single self-contained Draco fragment either way and `_read_mesh`</span>
+<span class="sd">        stays uniform. Vertex units and axis order are not converted: they</span>
+<span class="sd">        are whatever the bucket's `info` transform produces.</span>
+<span class="sd">        """</span>
         <span class="n">root_path</span> <span class="o">=</span> <span class="s2">"/"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)[</span><span class="o">-</span><span class="mi">6</span><span class="p">:])</span>
-        <span class="n">remote_mesh_path</span> <span class="o">=</span> <span class="n">remote_url_s3</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">root_path</span><span class="p">)</span>
+        <span class="n">remote_mesh_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">remote</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">root_path</span><span class="si">}</span><span class="s2">"</span>
         <span class="n">fs</span> <span class="o">=</span> <span class="n">s3fs</span><span class="o">.</span><span class="n">S3FileSystem</span><span class="p">(</span><span class="n">anon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">fs</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">remote_mesh_path</span><span class="p">):</span>
@@ -610,7 +784,12 @@
             <span class="p">)</span>
 
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">fs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_mesh_path</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">TqdmCallback</span><span class="p">())</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">dequantize_mesh</span><span class="p">:</span>
+                <span class="n">fs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remote_mesh_path</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">TqdmCallback</span><span class="p">())</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">points</span><span class="p">,</span> <span class="n">faces</span> <span class="o">=</span> <span class="n">_read_multilod_draco</span><span class="p">(</span><span class="n">fs</span><span class="p">,</span> <span class="n">remote_mesh_path</span><span class="p">)</span>
+                <span class="n">file_name</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">file_name</span><span class="o">.</span><span class="n">write_bytes</span><span class="p">(</span><span class="n">_encode_draco</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">faces</span><span class="p">))</span>
         <span class="k">except</span> <span class="ne">BaseException</span><span class="p">:</span>
             <span class="n">file_name</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">missing_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Removes corrupt file</span>
             <span class="k">raise</span>
@@ -650,9 +829,20 @@
 <span class="sd">    ----------</span>
 <span class="sd">    mesh_path : str or Path object</span>
 <span class="sd">        path to folder containing all meshes .obj files</span>
+<span class="sd">    remote : str</span>
+<span class="sd">        Remote the meshes are fetched from; defaults to the</span>
+<span class="sd">        BrainGlobe bucket.</span>
+<span class="sd">    dequantize_meshes : bool</span>
+<span class="sd">        Whether the remote meshes are in the atlas-assets form and must be</span>
+<span class="sd">        dequantized on download, rather than fetched as-is.</span>
 <span class="sd">    """</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">structures_list</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">structures_list</span><span class="p">,</span>
+        <span class="n">remote</span><span class="o">=</span><span class="n">DEFAULT_REMOTE</span><span class="p">,</span>
+        <span class="n">dequantize_meshes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
         <span class="c1"># Acronym to id map:</span>
@@ -662,7 +852,12 @@
 
         <span class="k">for</span> <span class="n">struct</span> <span class="ow">in</span> <span class="n">structures_list</span><span class="p">:</span>
             <span class="n">sid</span> <span class="o">=</span> <span class="n">struct</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">sid</span><span class="p">]</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span><span class="o">**</span><span class="n">struct</span><span class="p">,</span> <span class="n">mesh</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">sid</span><span class="p">]</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span>
+                <span class="o">**</span><span class="n">struct</span><span class="p">,</span>
+                <span class="n">mesh</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                <span class="n">remote</span><span class="o">=</span><span class="n">remote</span><span class="p">,</span>
+                <span class="n">dequantize_mesh</span><span class="o">=</span><span class="n">dequantize_meshes</span><span class="p">,</span>
+            <span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">tree</span> <span class="o">=</span> <span class="n">get_structures_tree</span><span class="p">(</span><span class="n">structures_list</span><span class="p">)</span>
 

@@ -1,0 +1,6 @@
+get\_remotes
+============
+
+.. currentmodule:: brainglobe_atlasapi.config
+
+.. autofunction:: get_remotes

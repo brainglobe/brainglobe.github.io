@@ -1,0 +1,6 @@
+normalize\_manifest
+===================
+
+.. currentmodule:: brainglobe_atlasapi.manifest
+
+.. autofunction:: normalize_manifest

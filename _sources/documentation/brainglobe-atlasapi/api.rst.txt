@@ -22,7 +22,9 @@ Information on specific functions, classes, and methods.
     brainglobe_atlasapi.core
     brainglobe_atlasapi.config
     brainglobe_atlasapi.structure_class
+    brainglobe_atlasapi.manifest
     brainglobe_atlasapi.cli
+    brainglobe_atlasapi.remotes
     brainglobe_atlasapi.descriptors
     brainglobe_atlasapi.structure_tree_util
     brainglobe_atlasapi.bg_atlas

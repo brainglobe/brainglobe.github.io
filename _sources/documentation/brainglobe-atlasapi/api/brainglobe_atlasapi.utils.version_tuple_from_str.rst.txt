@@ -1,0 +1,6 @@
+version\_tuple\_from\_str
+=========================
+
+.. currentmodule:: brainglobe_atlasapi.utils
+
+.. autofunction:: version_tuple_from_str

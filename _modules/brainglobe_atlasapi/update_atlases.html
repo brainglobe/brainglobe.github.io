@@ -524,16 +524,16 @@
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">rich</span><span class="w"> </span><span class="kn">import</span> <span class="nb">print</span> <span class="k">as</span> <span class="n">rprint</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.bg_atlas</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
-    <span class="n">BrainGlobeAtlas</span><span class="p">,</span>
-    <span class="n">_version_str_from_tuple</span><span class="p">,</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.bg_atlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">BrainGlobeAtlas</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.list_atlases</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">folder_version_to_dotted</span><span class="p">,</span>
+    <span class="n">get_downloaded_atlases</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.list_atlases</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_downloaded_atlases</span>
 
 
 <div class="viewcode-block" id="update_atlas">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.update_atlases.update_atlas.html#brainglobe_atlasapi.update_atlases.update_atlas">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">update_atlas</span><span class="p">(</span><span class="n">atlas_name</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fn_update</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">update_atlas</span><span class="p">(</span><span class="n">atlas_name</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fn_update</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">remote</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Update a brainglobe_atlasapi atlas from the latest</span>
 <span class="sd">    available version online.</span>
 
@@ -546,9 +546,15 @@
 <span class="sd">        and doesn't update if that's the case.</span>
 <span class="sd">    fn_update : Callable, Optional</span>
 <span class="sd">        A callback function to update progress during download.</span>
+<span class="sd">    remote : str, Optional</span>
+<span class="sd">        An ``s3://bucket/prefix`` to fetch the atlas from instead of</span>
+<span class="sd">        searching the configured remotes.</span>
 <span class="sd">    """</span>
     <span class="n">atlas</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span>
-        <span class="n">atlas_name</span><span class="o">=</span><span class="n">atlas_name</span><span class="p">,</span> <span class="n">check_latest</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fn_update</span><span class="o">=</span><span class="n">fn_update</span>
+        <span class="n">atlas_name</span><span class="o">=</span><span class="n">atlas_name</span><span class="p">,</span>
+        <span class="n">check_latest</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">fn_update</span><span class="o">=</span><span class="n">fn_update</span><span class="p">,</span>
+        <span class="n">remote</span><span class="o">=</span><span class="n">remote</span><span class="p">,</span>
     <span class="p">)</span>
 
     <span class="n">is_latest_version</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">check_latest_version</span><span class="p">(</span><span class="n">print_warning</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -567,7 +573,7 @@
         <span class="n">rprint</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">"[b][magenta2]brainglobe_atlasapi: </span><span class="si">{</span><span class="n">atlas</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2"> "</span>
             <span class="s2">"is already updated "</span>
-            <span class="sa">f</span><span class="s2">"(version: </span><span class="si">{</span><span class="n">_version_str_from_tuple</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">local_version</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span>
+            <span class="sa">f</span><span class="s2">"(version: </span><span class="si">{</span><span class="n">folder_version_to_dotted</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">_local_version_str</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span>
             <span class="s2">"[/b]"</span>
         <span class="p">)</span>
 
@@ -585,14 +591,14 @@
     <span class="n">rprint</span><span class="p">(</span>
         <span class="s2">"[b][magenta2]brainglobe_atlasapi: "</span>
         <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">atlas</span><span class="o">.</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2"> updated to version: "</span>
-        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">_version_str_from_tuple</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">remote_version</span><span class="p">)</span><span class="si">}</span><span class="s2">[/magenta2][/b]"</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">folder_version_to_dotted</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">_remote_version_str</span><span class="p">)</span><span class="si">}</span><span class="s2">[/magenta2][/b]"</span>
     <span class="p">)</span></div>
 
 
 
 <div class="viewcode-block" id="install_atlas">
 <a class="viewcode-back" href="../../documentation/brainglobe-atlasapi/api/brainglobe_atlasapi.update_atlases.install_atlas.html#brainglobe_atlasapi.update_atlases.install_atlas">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">install_atlas</span><span class="p">(</span><span class="n">atlas_name</span><span class="p">,</span> <span class="n">fn_update</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">install_atlas</span><span class="p">(</span><span class="n">atlas_name</span><span class="p">,</span> <span class="n">fn_update</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">remote</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Installs a BrainGlobe atlas from the latest</span>
 <span class="sd">    available version online.</span>
 
@@ -602,6 +608,9 @@
 <span class="sd">        Name of the atlas to update.</span>
 <span class="sd">    fn_update : Callable, Optional</span>
 <span class="sd">        A callback function to update progress during download.</span>
+<span class="sd">    remote : str, Optional</span>
+<span class="sd">        An ``s3://bucket/prefix`` to fetch the atlas from instead of</span>
+<span class="sd">        searching the configured remotes.</span>
 <span class="sd">    """</span>
     <span class="c1"># Check input:</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">atlas_name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
@@ -610,9 +619,10 @@
             <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">atlas_name</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">."</span>
         <span class="p">)</span>
 
-    <span class="c1"># Check if already downloaded:</span>
-    <span class="n">available_atlases</span> <span class="o">=</span> <span class="n">get_downloaded_atlases</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">atlas_name</span> <span class="ow">in</span> <span class="n">available_atlases</span><span class="p">:</span>
+    <span class="c1"># Check if already downloaded. get_downloaded_atlases only sees the</span>
+    <span class="c1"># default cache; with an explicit remote, BrainGlobeAtlas checks that</span>
+    <span class="c1"># remote's cache itself.</span>
+    <span class="k">if</span> <span class="n">remote</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">atlas_name</span> <span class="ow">in</span> <span class="n">get_downloaded_atlases</span><span class="p">():</span>
         <span class="n">rprint</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">"[b][magenta2]brainglobe_atlasapi: installing </span><span class="si">{</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">: "</span>
             <span class="s2">"atlas already installed![/magenta2][/b]"</span>
@@ -620,7 +630,11 @@
         <span class="k">return</span>
 
     <span class="c1"># Istantiate to download:</span>
-    <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="n">atlas_name</span><span class="p">,</span> <span class="n">fn_update</span><span class="o">=</span><span class="n">fn_update</span><span class="p">)</span></div>
+    <span class="n">BrainGlobeAtlas</span><span class="p">(</span>
+        <span class="n">atlas_name</span><span class="p">,</span>
+        <span class="n">fn_update</span><span class="o">=</span><span class="n">fn_update</span><span class="p">,</span>
+        <span class="n">remote</span><span class="o">=</span><span class="n">remote</span><span class="p">,</span>
+    <span class="p">)</span></div>
 
 </pre></div>
 <div class="section ablog__blog_comments">
