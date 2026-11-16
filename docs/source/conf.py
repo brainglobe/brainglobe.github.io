@@ -235,6 +235,7 @@ linkcheck_ignore = [
     "https://openalex.org", # 403 Client Error: Forbidden
     "https://data.mendeley.com/", # 403 Client Error: Forbidden
     "https://www.mcgill.ca/neuro/article/neuro-irv-and-helga-cooper-foundation-open-science-prizes-meet-winners-exceptional-edition", # 403 Client Error: Forbidden
+    "https://www.rms.org.uk/resource/dr-adam-tyson-receives-rms-award-for-life-sciences.html", # 404 currently
     ]
 
 linkcheck_anchors_ignore_for_url = [

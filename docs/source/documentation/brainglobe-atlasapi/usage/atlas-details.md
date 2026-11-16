@@ -18,6 +18,9 @@ different modality (such as serial section two-photon, STP) may produce inferior
 In most software you can choose the atlas from a list, but if using a command line tool, or the API directly, the 
 unique key (e.g. `example_mouse_100um` must be used).
 
+Atlases packaged and hosted by other organisations, such as the Allen Institute, are listed separately on the
+[External atlases](external-atlases.md) page.
+
 # Available atlases
 
 ## Mouse
@@ -752,5 +755,3 @@ This atlas has 0.4 µm isotropic resolution:
 * `vfb_jrc2018u_vnc_fly_0.4um`
 
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/vfb_jrc2018u_vnc_fly.json)
-
-

@@ -50,7 +50,7 @@ If we go from left to right in the image (axis 2), we go (again approximately) f
 
  **The mask is a Labels layer that should distinguish brain from non-brain as best possible. Err on the side of the mask being larger than the brain; a bit of margin is absolutely fine. You can play with the parameters in this step to improve the mask. Delete and recreate the mask layer to do so.**
 
-6. Manually remove any regions that should not be included in the brain from the mask. This could be damaged areas or non-brain tissues that are visible in the image. You can do this by selecting the mask layer from the layer list (it will be highlighted in blue) and then using the eraser and paint brush icons from the layer controls in the top left. See [this introductory tutorial](https://healthbioscienceideas.github.io/microscopy-novice/instructor/quality-control-and-manual-segmentation.html#manual-segmentation-in-napari) for more details around how to erase and paint in a Labels layers.
+6. Manually remove any regions that should not be included in the brain from the mask. This could be damaged areas or non-brain tissues that are visible in the image. You can do this by selecting the mask layer from the layer list (it will be highlighted in blue) and then using the eraser and paint brush icons from the layer controls in the top left. See [this introductory tutorial](https://carpentries-incubator.github.io/napari-microscopy/quality-control-and-manual-segmentation.html#manual-segmentation-in-napari) for more details around how to erase and paint in a Labels layers.
 
 :::{note}
 The `n edit dim` parameter allows you to switch between editing the mask in 2 and 3 dimensions.
