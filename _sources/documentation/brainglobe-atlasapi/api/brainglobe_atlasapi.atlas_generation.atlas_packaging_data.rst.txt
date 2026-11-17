@@ -20,7 +20,11 @@
     
     ComponentInfo
     
+    ComponentInfoDict
+    
     CoordinateSpaceInfo
+    
+    SanitisedVolumes
     
     TemplateInfo
     
@@ -37,5 +41,7 @@
     :nosignatures:
     
     check_requested_component
+    
+    sanitise_volumetric_data
     
 

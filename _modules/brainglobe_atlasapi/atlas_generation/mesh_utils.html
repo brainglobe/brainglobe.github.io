@@ -522,7 +522,6 @@
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">DracoPy</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">meshio</span>
@@ -1095,7 +1094,7 @@
     <span class="n">meshes_dict</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">structures_with_mesh</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">structures_list</span><span class="p">:</span>
-        <span class="n">mesh_path</span> <span class="o">=</span> <span class="n">meshes_dir_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span><span class="si">}</span><span class="s1">.obj'</span>
+        <span class="n">mesh_path</span> <span class="o">=</span> <span class="n">meshes_dir_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span><span class="si">}</span><span class="s2">.obj"</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">mesh_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"No mesh file exists for: </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">, ignoring it"</span><span class="p">)</span>
             <span class="k">continue</span>
@@ -1119,7 +1118,7 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">write_mesh_info</span><span class="p">(</span>
     <span class="n">mesh_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">vertex_quantization_bits</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
-    <span class="n">transform</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">transform</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">lod_scale_multiplier</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">"""</span>

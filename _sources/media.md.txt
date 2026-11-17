@@ -1,6 +1,10 @@
 # Media
 BrainGlobe reported in press/online
 
+## [Allen Institute brain atlases released in a standardised format through BrainGlobe](https://www.sainsburywellcome.org/blog/allen-institute-brain-atlases-released-standardised-format-through-brainglobe)
+
+_Sainsbury Wellcome Centre, November 2026_
+
 ## [Dr Adam Tyson receives RMS Award for Life Sciences](https://www.rms.org.uk/resource/dr-adam-tyson-receives-rms-award-for-life-sciences.html)
 
 _Royal Microscopical Society, May 2026_

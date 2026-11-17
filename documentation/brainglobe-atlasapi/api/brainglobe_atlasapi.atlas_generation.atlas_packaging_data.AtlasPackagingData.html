@@ -624,10 +624,13 @@
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AnnotationInfo.html">AnnotationInfo</a></li>
 <li class="toctree-l4 current active"><a aria-current="page" class="current reference internal" href="#">AtlasPackagingData</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.html">ComponentInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfoDict.html">ComponentInfoDict</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.CoordinateSpaceInfo.html">CoordinateSpaceInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.SanitisedVolumes.html">SanitisedVolumes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TemplateInfo.html">TemplateInfo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TerminologyInfo.html">TerminologyInfo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.check_requested_component.html">check_requested_component</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.sanitise_volumetric_data.html">sanitise_volumetric_data</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.annotation_utils.html">brainglobe_atlasapi.atlas_generation.annotation_utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -922,7 +925,7 @@
 <h1>AtlasPackagingData<a class="headerlink" href="#atlaspackagingdata" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">brainglobe_atlasapi.atlas_generation.atlas_packaging_data.</span></span><span class="sig-name descname"><span class="pre">AtlasPackagingData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atlas_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atlas_version</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">citation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atlas_link</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">species</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">working_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_stack</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annotation_stack</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">structures_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meshes_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annotation_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terminology_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinate_space_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orientation='asr'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space_convention=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atlas_version_underscore=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atlas_packager=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hemispheres_stack=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_references=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_metadata=&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/brainglobe_atlasapi/atlas_generation/atlas_packaging_data.html#AtlasPackagingData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">brainglobe_atlasapi.atlas_generation.atlas_packaging_data.</span></span><span class="sig-name descname"><span class="pre">AtlasPackagingData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atlas_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atlas_version</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">citation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atlas_link</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">species</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">working_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volumes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">structures_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meshes_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annotation_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terminology_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinate_space_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atlas_packager=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orientation='asr'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_metadata=&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/brainglobe_atlasapi/atlas_generation/atlas_packaging_data.html#AtlasPackagingData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Container for all data required to package a BrainGlobe atlas.</p>
 <p>This dataclass is an internal implementation detail of the atlas packaging
@@ -940,12 +943,13 @@ individual arguments through many function signatures.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_minor_version">
-<span class="sig-name descname"><span class="pre">atlas_minor_version</span></span><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_minor_version" title="Link to this definition">#</a></dt>
-<dd><p>Minor version number for this particular atlas.</p>
+<dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_version">
+<span class="sig-name descname"><span class="pre">atlas_version</span></span><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_version" title="Link to this definition">#</a></dt>
+<dd><p>Full version of the atlas, in the form
+“&lt;ATLAS_VERSION&gt;.&lt;atlas_minor_version&gt;”.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int or str</p>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
@@ -984,29 +988,6 @@ individual arguments through many function signatures.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.resolution">
-<span class="sig-name descname"><span class="pre">resolution</span></span><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.resolution" title="Link to this definition">#</a></dt>
-<dd><p>Resolution on three axes, or a list of such tuples for multi-scale.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Resolution | ResolutionList</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.orientation">
-<span class="sig-name descname"><span class="pre">orientation</span></span><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.orientation" title="Link to this definition">#</a></dt>
-<dd><p>Orientation of the original atlas (tuple describing origin for
-BGSpace).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.root_id">
 <span class="sig-name descname"><span class="pre">root_id</span></span><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.root_id" title="Link to this definition">#</a></dt>
 <dd><p>Id of the root element of the atlas.</p>
@@ -1018,27 +999,24 @@ BGSpace).</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.reference_stack">
-<span class="sig-name descname"><span class="pre">reference_stack</span></span><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.reference_stack" title="Link to this definition">#</a></dt>
-<dd><p>Reference stack for the atlas. If str or Path, will be read with
-tifffile. If list, should be ordered from highest to lowest
-resolution.</p>
+<dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.working_dir">
+<span class="sig-name descname"><span class="pre">working_dir</span></span><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.working_dir" title="Link to this definition">#</a></dt>
+<dd><p>Directory in which the atlas is generated.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>ValidComponentData</p>
+<dd class="field-odd"><p>Path</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.annotation_stack">
-<span class="sig-name descname"><span class="pre">annotation_stack</span></span><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.annotation_stack" title="Link to this definition">#</a></dt>
-<dd><p>Annotation stack for the atlas. If str or Path, will be read with
-tifffile. If list, should be ordered from highest to lowest
-resolution.</p>
+<dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.volumes">
+<span class="sig-name descname"><span class="pre">volumes</span></span><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.volumes" title="Link to this definition">#</a></dt>
+<dd><p>Volumetric data (stacks, resolution and space convention), already
+normalised by <cite>sanitise_volumetric_data</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>ValidComponentData</p>
+<dd class="field-odd"><p><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.SanitisedVolumes.html#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.SanitisedVolumes" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.SanitisedVolumes">SanitisedVolumes</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1049,7 +1027,7 @@ resolution.</p>
 <dd><p>List of valid dictionaries for structures.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>List[Dict]</p>
+<dd class="field-odd"><p>list[dict]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1061,7 +1039,51 @@ resolution.</p>
 {struct_id: meshpath}.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Dict[int | str, str | Path]</p>
+<dd class="field-odd"><p>Mapping[int | str, str | Path]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.template_info">
+<span class="sig-name descname"><span class="pre">template_info</span></span><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.template_info" title="Link to this definition">#</a></dt>
+<dd><p>Template component information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TemplateInfo.html#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TemplateInfo" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TemplateInfo">TemplateInfo</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.annotation_info">
+<span class="sig-name descname"><span class="pre">annotation_info</span></span><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.annotation_info" title="Link to this definition">#</a></dt>
+<dd><p>Annotation component information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AnnotationInfo.html#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AnnotationInfo" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AnnotationInfo">AnnotationInfo</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.terminology_info">
+<span class="sig-name descname"><span class="pre">terminology_info</span></span><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.terminology_info" title="Link to this definition">#</a></dt>
+<dd><p>Terminology component information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TerminologyInfo.html#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TerminologyInfo" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TerminologyInfo">TerminologyInfo</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.coordinate_space_info">
+<span class="sig-name descname"><span class="pre">coordinate_space_info</span></span><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.coordinate_space_info" title="Link to this definition">#</a></dt>
+<dd><p>Coordinate space component information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.CoordinateSpaceInfo.html#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.CoordinateSpaceInfo" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.CoordinateSpaceInfo">CoordinateSpaceInfo</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1073,30 +1095,19 @@ resolution.</p>
 BrainGlobe format.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str | None, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.orientation">
+<span class="sig-name descname"><span class="pre">orientation</span></span><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.orientation" title="Link to this definition">#</a></dt>
+<dd><p>Orientation of the original atlas (tuple describing origin for
+BGSpace).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str, optional</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.hemispheres_stack">
-<span class="sig-name descname"><span class="pre">hemispheres_stack</span></span><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.hemispheres_stack" title="Link to this definition">#</a></dt>
-<dd><p>Hemisphere stack for the atlas. If None, atlas is assumed symmetric.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>ValidComponentData, optional</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.additional_references">
-<span class="sig-name descname"><span class="pre">additional_references</span></span><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.additional_references" title="Link to this definition">#</a></dt>
-<dd><p>List of tuples containing metadata and arrays for secondary
-templates.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>List[Tuple[<a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TemplateInfo.html#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TemplateInfo" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TemplateInfo">TemplateInfo</a>, ValidComponentData]], optional</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1107,18 +1118,7 @@ templates.</p>
 <dd><p>Additional metadata to write to metadata.json.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Dict, optional</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.symmetric">
-<span class="sig-name descname"><span class="pre">symmetric</span></span><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.symmetric" title="Link to this definition">#</a></dt>
-<dd><p>Whether the atlas is symmetric across the midline.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool, optional</p>
+<dd class="field-odd"><p>dict, optional</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1129,70 +1129,55 @@ templates.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_packager" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_packager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atlas_packager</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">atlas_version_underscore</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.hemispheres_stack" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.hemispheres_stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hemispheres_stack</span></code></a></p></td>
-<td><p></p></td>
-</tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.orientation" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.orientation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">orientation</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">space_convention</span></code></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_name" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atlas_name</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_name" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atlas_name</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_version" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atlas_version</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">atlas_version</span></code></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.citation" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.citation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">citation</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.citation" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.citation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">citation</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_link" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_link"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atlas_link</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_link" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_link"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atlas_link</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.species" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.species"><code class="xref py py-obj docutils literal notranslate"><span class="pre">species</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.resolution" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.resolution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolution</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.species" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.species"><code class="xref py py-obj docutils literal notranslate"><span class="pre">species</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.root_id" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.root_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">root_id</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">working_dir</span></code></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.working_dir" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.working_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">working_dir</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.reference_stack" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.reference_stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reference_stack</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.volumes" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.volumes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">volumes</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.annotation_stack" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.annotation_stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">annotation_stack</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.structures_list" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.structures_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">structures_list</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.structures_list" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.structures_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">structures_list</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.meshes_dict" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.meshes_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meshes_dict</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.meshes_dict" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.meshes_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meshes_dict</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.template_info" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.template_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">template_info</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">template_info</span></code></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.annotation_info" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.annotation_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">annotation_info</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">annotation_info</span></code></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.terminology_info" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.terminology_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">terminology_info</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">terminology_info</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">coordinate_space_info</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.additional_references" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.additional_references"><code class="xref py py-obj docutils literal notranslate"><span class="pre">additional_references</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.coordinate_space_info" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.coordinate_space_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coordinate_space_info</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.additional_metadata" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.additional_metadata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">additional_metadata</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">atlas_version_underscore</span></code></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -1254,22 +1239,22 @@ templates.</p>
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_name"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.atlas_name</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_minor_version"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.atlas_minor_version</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_version"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.atlas_version</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.citation"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.citation</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_link"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.atlas_link</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.species"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.species</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.resolution"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.resolution</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.orientation"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.orientation</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.root_id"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.root_id</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.reference_stack"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.reference_stack</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.annotation_stack"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.annotation_stack</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.working_dir"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.working_dir</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.volumes"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.volumes</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.structures_list"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.structures_list</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.meshes_dict"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.meshes_dict</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.template_info"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.template_info</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.annotation_info"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.annotation_info</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.terminology_info"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.terminology_info</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.coordinate_space_info"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.coordinate_space_info</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.atlas_packager"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.atlas_packager</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.hemispheres_stack"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.hemispheres_stack</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.additional_references"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.additional_references</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.orientation"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.orientation</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.additional_metadata"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.additional_metadata</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.symmetric"><code class="docutils literal notranslate"><span class="pre">AtlasPackagingData.symmetric</span></code></a></li>
 </ul>
 </li>
 </ul>

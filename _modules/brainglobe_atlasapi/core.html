@@ -741,7 +741,7 @@
 
         <span class="c1"># Add entry for file paths:</span>
         <span class="k">for</span> <span class="n">struct</span> <span class="ow">in</span> <span class="n">structures_list</span><span class="p">:</span>
-            <span class="n">struct</span><span class="p">[</span><span class="s2">"mesh_filename"</span><span class="p">]</span> <span class="o">=</span> <span class="n">meshes_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">struct</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span><span class="si">}</span><span class="s1">'</span>
+            <span class="n">struct</span><span class="p">[</span><span class="s2">"mesh_filename"</span><span class="p">]</span> <span class="o">=</span> <span class="n">meshes_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">struct</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">structures</span> <span class="o">=</span> <span class="n">StructuresDict</span><span class="p">(</span>
             <span class="n">structures_list</span><span class="p">,</span>
@@ -943,8 +943,7 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"symmetric"</span><span class="p">]</span> <span class="ow">or</span> <span class="ow">not</span> <span class="p">(</span>
             <span class="n">hemispheres_path</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
             <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_remote</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">annotation_location</span><span class="si">}</span><span class="s2">"</span>
-                <span class="sa">f</span><span class="s2">"/</span><span class="si">{</span><span class="n">V3_HEMISPHERES_NAME</span><span class="si">}</span><span class="s2">"</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_remote</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">annotation_location</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">V3_HEMISPHERES_NAME</span><span class="si">}</span><span class="s2">"</span>
             <span class="p">)</span>
         <span class="p">):</span>
             <span class="n">shape</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"shape"</span><span class="p">])</span>
@@ -1070,7 +1069,7 @@
 <span class="sd">            If outside atlas (structure gives key error),</span>
 <span class="sd">            return "Outside atlas"</span>
 <span class="sd">        hierarchy_lev : int or None</span>
-<span class="sd">            If specified, return parent node at thi hierarchy level.</span>
+<span class="sd">            If specified, return parent node at this hierarchy level.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1354,7 +1353,7 @@
                 <span class="p">)</span>
             <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                    <span class="sa">f</span><span class="s1">'Structure </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">structures</span><span class="p">[</span><span class="n">structure</span><span class="p">][</span><span class="s2">"acronym"</span><span class="p">]</span><span class="si">}</span><span class="s1"> '</span>
+                    <span class="sa">f</span><span class="s2">"Structure </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">structures</span><span class="p">[</span><span class="n">structure</span><span class="p">][</span><span class="s1">'acronym'</span><span class="p">]</span><span class="si">}</span><span class="s2"> "</span>
                     <span class="sa">f</span><span class="s2">"has no descendants at hierarchy level </span><span class="si">{</span><span class="n">hierarchy_level</span><span class="si">}</span><span class="s2">"</span>
                 <span class="p">)</span>
 

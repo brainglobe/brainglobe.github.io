@@ -80,12 +80,6 @@ ComponentInfo
       ~ComponentInfo.existing_version
    
    
-      ~ComponentInfo.file_name
-   
-   
-      ~ComponentInfo.root_dir
-   
-   
       ~ComponentInfo.stub
    
    
@@ -99,6 +93,12 @@ ComponentInfo
    
    
       ~ComponentInfo.version
+   
+   
+      ~ComponentInfo.root_dir
+   
+   
+      ~ComponentInfo.file_name
    
    
       ~ComponentInfo.metadata

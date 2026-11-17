@@ -64,7 +64,7 @@
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="CoordinateSpaceInfo" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.CoordinateSpaceInfo.html" />
+    <link rel="next" title="ComponentInfoDict" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfoDict.html" />
     <link rel="prev" title="AtlasPackagingData" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.html" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="color-scheme" content="light dark"/>
@@ -624,10 +624,13 @@
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AnnotationInfo.html">AnnotationInfo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.html">AtlasPackagingData</a></li>
 <li class="toctree-l4 current active"><a aria-current="page" class="current reference internal" href="#">ComponentInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfoDict.html">ComponentInfoDict</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.CoordinateSpaceInfo.html">CoordinateSpaceInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.SanitisedVolumes.html">SanitisedVolumes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TemplateInfo.html">TemplateInfo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TerminologyInfo.html">TerminologyInfo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.check_requested_component.html">check_requested_component</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.sanitise_volumetric_data.html">sanitise_volumetric_data</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.annotation_utils.html">brainglobe_atlasapi.atlas_generation.annotation_utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -922,7 +925,7 @@
 <h1>ComponentInfo<a class="headerlink" href="#componentinfo" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">brainglobe_atlasapi.atlas_generation.atlas_packaging_data.</span></span><span class="sig-name descname"><span class="pre">ComponentInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_existing=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_existing=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">existing_version=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">existing_stub=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stub=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata=&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/brainglobe_atlasapi/atlas_generation/atlas_packaging_data.html#ComponentInfo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">brainglobe_atlasapi.atlas_generation.atlas_packaging_data.</span></span><span class="sig-name descname"><span class="pre">ComponentInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_existing=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_existing=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">existing_version=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">existing_stub=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stub=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata=&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/brainglobe_atlasapi/atlas_generation/atlas_packaging_data.html#ComponentInfo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Container for information about a component of a BrainGlobe atlas
 (e.g., template, annotation).</p>
@@ -1065,12 +1068,6 @@ version from the remote (default is False).</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.existing_version" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.existing_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">existing_version</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.file_name" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.file_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file_name</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.root_dir" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.root_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">root_dir</span></code></a></p></td>
-<td><p></p></td>
-</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.stub" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.stub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stub</span></code></a></p></td>
 <td><p></p></td>
 </tr>
@@ -1084,6 +1081,12 @@ version from the remote (default is False).</p>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.version" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">version</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.root_dir" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.root_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">root_dir</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.file_name" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.file_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file_name</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.metadata" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.metadata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metadata</span></code></a></p></td>
@@ -1135,11 +1138,11 @@ location stub.</p>
       </div>
     </a>
     <a class="right-next"
-       href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.CoordinateSpaceInfo.html"
+       href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfoDict.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">CoordinateSpaceInfo</p>
+        <p class="prev-next-title">ComponentInfoDict</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

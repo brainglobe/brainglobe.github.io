@@ -558,7 +558,7 @@
     <span class="n">version</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">shape</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
     <span class="n">additional_references</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">TemplateInfo</span><span class="p">],</span>
-    <span class="n">atlas_packager</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">atlas_packager</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">coordinate_space</span><span class="p">:</span> <span class="n">CoordinateSpaceInfo</span><span class="p">,</span>
     <span class="n">terminology</span><span class="p">:</span> <span class="n">TerminologyInfo</span><span class="p">,</span>
     <span class="n">annotation_set</span><span class="p">:</span> <span class="n">AnnotationInfo</span><span class="p">,</span>
@@ -591,7 +591,7 @@
 <span class="sd">        The shape (dimensions) of the atlas volume (e.g., (z, y, x)).</span>
 <span class="sd">    additional_references : List[TemplateInfo]</span>
 <span class="sd">        A list of additional reference links or citations.</span>
-<span class="sd">    atlas_packager : str</span>
+<span class="sd">    atlas_packager : str or None</span>
 <span class="sd">        The name of the person or entity packaging the atlas.</span>
 <span class="sd">    coordinate_space : CoordinateSpaceInfo</span>
 <span class="sd">        Metadata for the coordinate space.</span>
@@ -638,8 +638,12 @@
     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">resolution</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
 
-    <span class="n">resolution</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">resolution</span><span class="p">])</span>
-    <span class="n">shape</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">shape</span><span class="p">)</span>
+    <span class="n">resolution</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="nb">float</span><span class="p">(</span><span class="n">resolution</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+        <span class="nb">float</span><span class="p">(</span><span class="n">resolution</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+        <span class="nb">float</span><span class="p">(</span><span class="n">resolution</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span>
+    <span class="p">)</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
 
     <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">additional_references</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
 

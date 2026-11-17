@@ -624,10 +624,13 @@
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AnnotationInfo.html">AnnotationInfo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.html">AtlasPackagingData</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.html">ComponentInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfoDict.html">ComponentInfoDict</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.CoordinateSpaceInfo.html">CoordinateSpaceInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.SanitisedVolumes.html">SanitisedVolumes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TemplateInfo.html">TemplateInfo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TerminologyInfo.html">TerminologyInfo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.check_requested_component.html">check_requested_component</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.sanitise_volumetric_data.html">sanitise_volumetric_data</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.annotation_utils.html">brainglobe_atlasapi.atlas_generation.annotation_utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -938,7 +941,7 @@
 <li><p><strong>version</strong> (<em>str</em>) – The version of the atlas.</p></li>
 <li><p><strong>shape</strong> (<em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>, </em><em>int</em><em>]</em>) – The shape (dimensions) of the atlas volume (e.g., (z, y, x)).</p></li>
 <li><p><strong>additional_references</strong> (<em>List</em><em>[</em><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TemplateInfo.html#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TemplateInfo" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TemplateInfo"><em>TemplateInfo</em></a><em>]</em>) – A list of additional reference links or citations.</p></li>
-<li><p><strong>atlas_packager</strong> (<em>str</em>) – The name of the person or entity packaging the atlas.</p></li>
+<li><p><strong>atlas_packager</strong> (<em>str</em><em> or </em><em>None</em>) – The name of the person or entity packaging the atlas.</p></li>
 <li><p><strong>coordinate_space</strong> (<a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.CoordinateSpaceInfo.html#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.CoordinateSpaceInfo" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.CoordinateSpaceInfo"><em>CoordinateSpaceInfo</em></a>) – Metadata for the coordinate space.</p></li>
 <li><p><strong>terminology</strong> (<a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TerminologyInfo.html#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TerminologyInfo" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TerminologyInfo"><em>TerminologyInfo</em></a>) – Metadata for the terminology.</p></li>
 <li><p><strong>annotation_set</strong> (<a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AnnotationInfo.html#brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AnnotationInfo" title="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AnnotationInfo"><em>AnnotationInfo</em></a>) – Metadata for the annotation set.</p></li>

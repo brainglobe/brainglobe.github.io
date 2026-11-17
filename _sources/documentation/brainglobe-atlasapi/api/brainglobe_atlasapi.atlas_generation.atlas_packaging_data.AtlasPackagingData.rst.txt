@@ -79,21 +79,6 @@ AtlasPackagingData
    
    
    
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
 
    
    .. rubric:: Attributes
@@ -104,16 +89,7 @@ AtlasPackagingData
       ~AtlasPackagingData.atlas_packager
    
    
-      ~AtlasPackagingData.atlas_version_underscore
-   
-   
-      ~AtlasPackagingData.hemispheres_stack
-   
-   
       ~AtlasPackagingData.orientation
-   
-   
-      ~AtlasPackagingData.space_convention
    
    
       ~AtlasPackagingData.atlas_name
@@ -131,19 +107,13 @@ AtlasPackagingData
       ~AtlasPackagingData.species
    
    
-      ~AtlasPackagingData.resolution
-   
-   
       ~AtlasPackagingData.root_id
    
    
       ~AtlasPackagingData.working_dir
    
    
-      ~AtlasPackagingData.reference_stack
-   
-   
-      ~AtlasPackagingData.annotation_stack
+      ~AtlasPackagingData.volumes
    
    
       ~AtlasPackagingData.structures_list
@@ -164,10 +134,10 @@ AtlasPackagingData
       ~AtlasPackagingData.coordinate_space_info
    
    
-      ~AtlasPackagingData.additional_references
-   
-   
       ~AtlasPackagingData.additional_metadata
+   
+   
+      ~AtlasPackagingData.atlas_version_underscore
    
    
    

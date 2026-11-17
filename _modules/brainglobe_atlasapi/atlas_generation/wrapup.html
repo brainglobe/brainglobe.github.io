@@ -523,7 +523,16 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Tuple</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Any</span><span class="p">,</span>
+    <span class="n">Callable</span><span class="p">,</span>
+    <span class="n">Dict</span><span class="p">,</span>
+    <span class="n">List</span><span class="p">,</span>
+    <span class="n">Mapping</span><span class="p">,</span>
+    <span class="n">Optional</span><span class="p">,</span>
+    <span class="n">Sequence</span><span class="p">,</span>
+    <span class="n">Tuple</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">brainglobe_space</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">bgs</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">dask.array</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">da</span>
@@ -543,9 +552,11 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.atlas_generation.atlas_packaging_data</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">AnnotationInfo</span><span class="p">,</span>
     <span class="n">AtlasPackagingData</span><span class="p">,</span>
+    <span class="n">ComponentInfoDict</span><span class="p">,</span>
     <span class="n">CoordinateSpaceInfo</span><span class="p">,</span>
     <span class="n">TemplateInfo</span><span class="p">,</span>
     <span class="n">TerminologyInfo</span><span class="p">,</span>
+    <span class="n">sanitise_volumetric_data</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">brainglobe_atlasapi.atlas_generation.mesh_utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">_label_bounding_boxes</span><span class="p">,</span>
@@ -587,6 +598,13 @@
 <span class="c1"># This should be changed every time we make changes in the atlas</span>
 <span class="c1"># structure:</span>
 <span class="n">ATLAS_VERSION</span> <span class="o">=</span> <span class="n">atlas_generation</span><span class="o">.</span><span class="n">__version__</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_stub_path</span><span class="p">(</span><span class="n">working_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">stub</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Return the local path of a component stub inside working_dir."""</span>
+    <span class="k">if</span> <span class="n">stub</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Component stub has not been set."</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">working_dir</span> <span class="o">/</span> <span class="n">stub</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_save_if_not_exists</span><span class="p">(</span>
@@ -744,9 +762,9 @@
     <span class="n">_save_meshes</span><span class="p">(</span>
         <span class="n">packaging_data</span><span class="o">.</span><span class="n">meshes_dict</span><span class="p">,</span>
         <span class="n">mesh_dest_dir</span><span class="p">,</span>
-        <span class="n">packaging_data</span><span class="o">.</span><span class="n">space_convention</span><span class="p">,</span>
+        <span class="n">packaging_data</span><span class="o">.</span><span class="n">volumes</span><span class="o">.</span><span class="n">space_convention</span><span class="p">,</span>
         <span class="n">scale_meshes</span><span class="p">,</span>
-        <span class="n">packaging_data</span><span class="o">.</span><span class="n">resolution</span><span class="p">,</span>
+        <span class="n">packaging_data</span><span class="o">.</span><span class="n">volumes</span><span class="o">.</span><span class="n">resolution</span><span class="p">,</span>
         <span class="n">resolution_mapping</span><span class="p">,</span>
     <span class="p">)</span>
 
@@ -760,8 +778,8 @@
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
 <span class="p">):</span>
     <span class="n">cloudpath</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"file://</span><span class="si">{</span><span class="n">output_dir</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span>
-    <span class="n">annotations</span> <span class="o">=</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">annotation_stack</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">resolution_nm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">resolution</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="mi">1000</span>
+    <span class="n">annotations</span> <span class="o">=</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">volumes</span><span class="o">.</span><span class="n">annotation_stack</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">resolution_nm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">volumes</span><span class="o">.</span><span class="n">resolution</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="mi">1000</span>
 
     <span class="c1"># All values in XYZ</span>
     <span class="n">resolution_nm</span> <span class="o">=</span> <span class="n">resolution_nm</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
@@ -794,8 +812,8 @@
     <span class="n">prop_out</span> <span class="o">=</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="s2">"segment_properties"</span>
     <span class="n">prop_out</span><span class="o">.</span><span class="n">mkdir</span><span class="p">()</span>
 
-    <span class="n">terminology_path</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span> <span class="o">/</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">terminology_info</span><span class="o">.</span><span class="n">stub</span>
+    <span class="n">terminology_path</span> <span class="o">=</span> <span class="n">_stub_path</span><span class="p">(</span>
+        <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span><span class="p">,</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">terminology_info</span><span class="o">.</span><span class="n">stub</span>
     <span class="p">)</span>
     <span class="n">ontology</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">terminology_path</span><span class="p">)</span>
 
@@ -826,7 +844,7 @@
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_save_meshes</span><span class="p">(</span>
-    <span class="n">meshes_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">],</span>
+    <span class="n">meshes_dict</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">]</span> <span class="o">|</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">],</span>
     <span class="n">mesh_dest_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">space_convention</span><span class="p">:</span> <span class="n">bgs</span><span class="o">.</span><span class="n">AnatomicalSpace</span><span class="p">,</span>
     <span class="n">scale_meshes</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
@@ -867,7 +885,7 @@
         <span class="n">mesh</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
 
         <span class="c1"># TODO: parallelise and copy if not scaling or reorienting</span>
-        <span class="n">write_mesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">mesh_dest_dir</span><span class="p">,</span> <span class="n">mesh_id</span><span class="p">)</span>
+        <span class="n">write_mesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">mesh_dest_dir</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">mesh_id</span><span class="p">))</span>
 
     <span class="n">write_mesh_info</span><span class="p">(</span><span class="n">mesh_dest_dir</span><span class="p">)</span>
 
@@ -882,31 +900,33 @@
             <span class="s2">"location"</span>
         <span class="p">]</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
         <span class="n">_save_if_not_exists</span><span class="p">(</span>
-            <span class="n">packaging_data</span><span class="o">.</span><span class="n">reference_stack</span><span class="p">,</span>
+            <span class="n">packaging_data</span><span class="o">.</span><span class="n">volumes</span><span class="o">.</span><span class="n">reference_stack</span><span class="p">,</span>
             <span class="n">dest_dir</span><span class="p">,</span>
             <span class="n">template_info</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"name"</span><span class="p">],</span>
             <span class="n">transformations</span><span class="p">,</span>
             <span class="n">save_template</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">template_multiscale</span> <span class="o">=</span> <span class="n">nz</span><span class="o">.</span><span class="n">from_ngff_zarr</span><span class="p">(</span>
-            <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span> <span class="o">/</span> <span class="n">template_info</span><span class="o">.</span><span class="n">stub</span>
+            <span class="n">_stub_path</span><span class="p">(</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span><span class="p">,</span> <span class="n">template_info</span><span class="o">.</span><span class="n">stub</span><span class="p">)</span>
         <span class="p">)</span>
     <span class="k">elif</span> <span class="n">template_info</span><span class="o">.</span><span class="n">update_existing</span><span class="p">:</span>
-        <span class="n">local_existing_path</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span> <span class="o">/</span> <span class="n">template_info</span><span class="o">.</span><span class="n">existing_stub</span>
+        <span class="n">local_existing_path</span> <span class="o">=</span> <span class="n">_stub_path</span><span class="p">(</span>
+            <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span><span class="p">,</span> <span class="n">template_info</span><span class="o">.</span><span class="n">existing_stub</span>
         <span class="p">)</span>
         <span class="n">multiscale</span> <span class="o">=</span> <span class="n">nz</span><span class="o">.</span><span class="n">from_ngff_zarr</span><span class="p">(</span><span class="n">local_existing_path</span><span class="p">)</span>
-        <span class="n">local_target_path</span> <span class="o">=</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span> <span class="o">/</span> <span class="n">template_info</span><span class="o">.</span><span class="n">stub</span>
+        <span class="n">local_target_path</span> <span class="o">=</span> <span class="n">_stub_path</span><span class="p">(</span>
+            <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span><span class="p">,</span> <span class="n">template_info</span><span class="o">.</span><span class="n">stub</span>
+        <span class="p">)</span>
         <span class="n">_insert_into_multiscale</span><span class="p">(</span>
             <span class="n">multiscale</span><span class="p">,</span>
             <span class="n">transformations</span><span class="o">=</span><span class="n">transformations</span><span class="p">,</span>
-            <span class="n">new_data</span><span class="o">=</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">reference_stack</span><span class="p">,</span>
+            <span class="n">new_data</span><span class="o">=</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">volumes</span><span class="o">.</span><span class="n">reference_stack</span><span class="p">,</span>
             <span class="n">working_dir</span><span class="o">=</span><span class="n">local_target_path</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">template_multiscale</span> <span class="o">=</span> <span class="n">nz</span><span class="o">.</span><span class="n">from_ngff_zarr</span><span class="p">(</span><span class="n">local_target_path</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">template_multiscale</span> <span class="o">=</span> <span class="n">nz</span><span class="o">.</span><span class="n">from_ngff_zarr</span><span class="p">(</span>
-            <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span> <span class="o">/</span> <span class="n">template_info</span><span class="o">.</span><span class="n">stub</span>
+            <span class="n">_stub_path</span><span class="p">(</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span><span class="p">,</span> <span class="n">template_info</span><span class="o">.</span><span class="n">stub</span><span class="p">)</span>
         <span class="p">)</span>
 
     <span class="k">return</span> <span class="n">template_multiscale</span>
@@ -926,7 +946,7 @@
         <span class="p">]</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
 
         <span class="n">_save_if_not_exists</span><span class="p">(</span>
-            <span class="n">packaging_data</span><span class="o">.</span><span class="n">annotation_stack</span><span class="p">,</span>
+            <span class="n">packaging_data</span><span class="o">.</span><span class="n">volumes</span><span class="o">.</span><span class="n">annotation_stack</span><span class="p">,</span>
             <span class="n">dest_dir</span><span class="p">,</span>
             <span class="n">annotation_info</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"name"</span><span class="p">],</span>
             <span class="n">transformations</span><span class="p">,</span>
@@ -940,7 +960,7 @@
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">dest_dir_hemi</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
             <span class="n">save_hemispheres</span><span class="p">(</span>
-                <span class="n">packaging_data</span><span class="o">.</span><span class="n">hemispheres_stack</span><span class="p">,</span>
+                <span class="n">packaging_data</span><span class="o">.</span><span class="n">volumes</span><span class="o">.</span><span class="n">hemispheres_stack</span><span class="p">,</span>
                 <span class="n">dest_dir</span><span class="p">,</span>
                 <span class="n">transformations</span><span class="p">,</span>
             <span class="p">)</span>
@@ -950,19 +970,22 @@
                 <span class="sa">f</span><span class="s2">" skipping: </span><span class="si">{</span><span class="n">dest_dir_hemi</span><span class="si">}</span><span class="s2">"</span>
             <span class="p">)</span>
         <span class="n">annotation_multiscale</span> <span class="o">=</span> <span class="n">nz</span><span class="o">.</span><span class="n">from_ngff_zarr</span><span class="p">(</span>
-            <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span> <span class="o">/</span> <span class="n">annotation_info</span><span class="o">.</span><span class="n">stub</span>
+            <span class="n">_stub_path</span><span class="p">(</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span><span class="p">,</span> <span class="n">annotation_info</span><span class="o">.</span><span class="n">stub</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">hemispheres_multiscale</span> <span class="o">=</span> <span class="n">nz</span><span class="o">.</span><span class="n">from_ngff_zarr</span><span class="p">(</span><span class="n">dest_dir_hemi</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">annotation_info</span><span class="o">.</span><span class="n">update_existing</span><span class="p">:</span>
-        <span class="n">local_existing_path</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span> <span class="o">/</span> <span class="n">annotation_info</span><span class="o">.</span><span class="n">existing_stub</span>
+        <span class="k">assert</span> <span class="n">annotation_info</span><span class="o">.</span><span class="n">existing_version</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="n">local_existing_path</span> <span class="o">=</span> <span class="n">_stub_path</span><span class="p">(</span>
+            <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span><span class="p">,</span> <span class="n">annotation_info</span><span class="o">.</span><span class="n">existing_stub</span>
         <span class="p">)</span>
         <span class="n">annotation_multiscale</span> <span class="o">=</span> <span class="n">nz</span><span class="o">.</span><span class="n">from_ngff_zarr</span><span class="p">(</span><span class="n">local_existing_path</span><span class="p">)</span>
-        <span class="n">local_target_path</span> <span class="o">=</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span> <span class="o">/</span> <span class="n">annotation_info</span><span class="o">.</span><span class="n">stub</span>
+        <span class="n">local_target_path</span> <span class="o">=</span> <span class="n">_stub_path</span><span class="p">(</span>
+            <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span><span class="p">,</span> <span class="n">annotation_info</span><span class="o">.</span><span class="n">stub</span>
+        <span class="p">)</span>
         <span class="n">_insert_into_multiscale</span><span class="p">(</span>
             <span class="n">annotation_multiscale</span><span class="p">,</span>
             <span class="n">transformations</span><span class="o">=</span><span class="n">transformations</span><span class="p">,</span>
-            <span class="n">new_data</span><span class="o">=</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">annotation_stack</span><span class="p">,</span>
+            <span class="n">new_data</span><span class="o">=</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">volumes</span><span class="o">.</span><span class="n">annotation_stack</span><span class="p">,</span>
             <span class="n">working_dir</span><span class="o">=</span><span class="n">local_target_path</span><span class="p">,</span>
         <span class="p">)</span>
 
@@ -983,7 +1006,7 @@
         <span class="n">_insert_into_multiscale</span><span class="p">(</span>
             <span class="n">hemispheres_multiscale</span><span class="p">,</span>
             <span class="n">transformations</span><span class="o">=</span><span class="n">transformations</span><span class="p">,</span>
-            <span class="n">new_data</span><span class="o">=</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">hemispheres_stack</span><span class="p">,</span>
+            <span class="n">new_data</span><span class="o">=</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">volumes</span><span class="o">.</span><span class="n">hemispheres_stack</span><span class="p">,</span>
             <span class="n">working_dir</span><span class="o">=</span><span class="n">local_target_hemispheres</span><span class="p">,</span>
         <span class="p">)</span>
 
@@ -994,7 +1017,7 @@
             <span class="n">annotation_info</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">annotation_info</span><span class="o">.</span><span class="n">version</span>
         <span class="p">)</span>
         <span class="n">annotation_multiscale</span> <span class="o">=</span> <span class="n">nz</span><span class="o">.</span><span class="n">from_ngff_zarr</span><span class="p">(</span>
-            <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span> <span class="o">/</span> <span class="n">annotation_info</span><span class="o">.</span><span class="n">stub</span>
+            <span class="n">_stub_path</span><span class="p">(</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span><span class="p">,</span> <span class="n">annotation_info</span><span class="o">.</span><span class="n">stub</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">hemispheres_multiscale</span> <span class="o">=</span> <span class="n">nz</span><span class="o">.</span><span class="n">from_ngff_zarr</span><span class="p">(</span>
             <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span> <span class="o">/</span> <span class="n">hemispheres_stub</span>
@@ -1133,7 +1156,9 @@
                 <span class="n">mapping</span><span class="p">,</span>
                 <span class="n">scratch_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"scale_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.zarr"</span><span class="p">,</span>
             <span class="p">)</span>
-            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ann_scale</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">packaging_data</span><span class="o">.</span><span class="n">annotation_stack</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ann_scale</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+                <span class="n">packaging_data</span><span class="o">.</span><span class="n">volumes</span><span class="o">.</span><span class="n">annotation_stack</span>
+            <span class="p">)</span>
         <span class="p">]</span>
         <span class="n">save_annotation_masks</span><span class="p">(</span><span class="n">masks_per_scale</span><span class="p">,</span> <span class="n">dest_dir</span><span class="p">,</span> <span class="n">transformations_4d</span><span class="p">)</span>
 
@@ -1161,11 +1186,14 @@
 <span class="sd">    """</span>
     <span class="n">annotation_info</span> <span class="o">=</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">annotation_info</span>
     <span class="n">existing_masks_path</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span>
-        <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="n">annotation_info</span><span class="o">.</span><span class="n">existing_stub</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
+        <span class="n">_stub_path</span><span class="p">(</span>
+            <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span><span class="p">,</span> <span class="n">annotation_info</span><span class="o">.</span><span class="n">existing_stub</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">parent</span>
         <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V3_ANNOTATION_MASKS_NAME</span>
     <span class="p">)</span>
-    <span class="n">target_dir</span> <span class="o">=</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="n">annotation_info</span><span class="o">.</span><span class="n">stub</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
+    <span class="n">target_dir</span> <span class="o">=</span> <span class="n">_stub_path</span><span class="p">(</span>
+        <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span><span class="p">,</span> <span class="n">annotation_info</span><span class="o">.</span><span class="n">stub</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">parent</span>
     <span class="n">target_masks_path</span> <span class="o">=</span> <span class="n">target_dir</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V3_ANNOTATION_MASKS_NAME</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">existing_masks_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
@@ -1204,7 +1232,7 @@
     <span class="n">scratch_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">annotation_scale</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
-            <span class="nb">zip</span><span class="p">(</span><span class="n">new_resolutions</span><span class="p">,</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">annotation_stack</span><span class="p">)</span>
+            <span class="nb">zip</span><span class="p">(</span><span class="n">new_resolutions</span><span class="p">,</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">volumes</span><span class="o">.</span><span class="n">annotation_stack</span><span class="p">)</span>
         <span class="p">):</span>
             <span class="n">resolution_to_data</span><span class="p">[</span><span class="n">res</span><span class="p">]</span> <span class="o">=</span> <span class="n">_compute_4d_masks_for_scale</span><span class="p">(</span>
                 <span class="n">annotation_scale</span><span class="p">,</span>
@@ -1244,7 +1272,7 @@
     <span class="n">packaging_data</span><span class="p">:</span> <span class="n">AtlasPackagingData</span><span class="p">,</span>
     <span class="n">transformations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]],</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">ref_tuple</span> <span class="ow">in</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">additional_references</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">ref_tuple</span> <span class="ow">in</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">volumes</span><span class="o">.</span><span class="n">additional_references</span><span class="p">:</span>
         <span class="n">ref_info</span><span class="p">,</span> <span class="n">additional_template</span> <span class="o">=</span> <span class="n">ref_tuple</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">ref_info</span><span class="o">.</span><span class="n">use_existing</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">ref_info</span><span class="o">.</span><span class="n">update_existing</span><span class="p">:</span>
@@ -1259,11 +1287,13 @@
                 <span class="n">save_template</span><span class="p">,</span>
             <span class="p">)</span>
         <span class="k">elif</span> <span class="n">ref_info</span><span class="o">.</span><span class="n">update_existing</span><span class="p">:</span>
-            <span class="n">local_existing_path</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span> <span class="o">/</span> <span class="n">ref_info</span><span class="o">.</span><span class="n">existing_stub</span>
+            <span class="n">local_existing_path</span> <span class="o">=</span> <span class="n">_stub_path</span><span class="p">(</span>
+                <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span><span class="p">,</span> <span class="n">ref_info</span><span class="o">.</span><span class="n">existing_stub</span>
             <span class="p">)</span>
             <span class="n">multiscale</span> <span class="o">=</span> <span class="n">nz</span><span class="o">.</span><span class="n">from_ngff_zarr</span><span class="p">(</span><span class="n">local_existing_path</span><span class="p">)</span>
-            <span class="n">local_target_path</span> <span class="o">=</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span> <span class="o">/</span> <span class="n">ref_info</span><span class="o">.</span><span class="n">stub</span>
+            <span class="n">local_target_path</span> <span class="o">=</span> <span class="n">_stub_path</span><span class="p">(</span>
+                <span class="n">packaging_data</span><span class="o">.</span><span class="n">working_dir</span><span class="p">,</span> <span class="n">ref_info</span><span class="o">.</span><span class="n">stub</span>
+            <span class="p">)</span>
             <span class="n">_insert_into_multiscale</span><span class="p">(</span>
                 <span class="n">multiscale</span><span class="p">,</span>
                 <span class="n">transformations</span><span class="o">=</span><span class="n">transformations</span><span class="p">,</span>
@@ -1280,7 +1310,7 @@
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
     <span class="n">atlas_version</span> <span class="o">=</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">atlas_version</span>
     <span class="n">atlas_version_underscore</span> <span class="o">=</span> <span class="n">atlas_version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"."</span><span class="p">,</span> <span class="s2">"_"</span><span class="p">)</span>
-    <span class="n">symmetric</span> <span class="o">=</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">symmetric</span>
+    <span class="n">symmetric</span> <span class="o">=</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">volumes</span><span class="o">.</span><span class="n">symmetric</span>
     <span class="n">atlas_name</span> <span class="o">=</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">atlas_name</span>
 
     <span class="n">atlas_name_with_res</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">resolution</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">um"</span>
@@ -1305,7 +1335,8 @@
     <span class="n">atlas_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="n">additional_references</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">ref_info</span> <span class="k">for</span> <span class="n">ref_info</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">additional_references</span>
+        <span class="n">ref_info</span>
+        <span class="k">for</span> <span class="n">ref_info</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">volumes</span><span class="o">.</span><span class="n">additional_references</span>
     <span class="p">]</span>
 
     <span class="n">metadata_dict</span> <span class="o">=</span> <span class="n">generate_metadata_dict</span><span class="p">(</span>
@@ -1372,24 +1403,26 @@
     <span class="n">reference_stack</span><span class="p">:</span> <span class="n">ValidComponentData</span><span class="p">,</span>
     <span class="n">annotation_stack</span><span class="p">:</span> <span class="n">ValidComponentData</span><span class="p">,</span>
     <span class="n">structures_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">],</span>
-    <span class="n">meshes_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">],</span>
+    <span class="n">meshes_dict</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">]</span> <span class="o">|</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">],</span>
     <span class="n">working_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
-    <span class="n">atlas_packager</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">hemispheres_stack</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">template_info</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="n">annotation_info</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="n">terminology_info</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="n">coordinate_space_info</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">atlas_packager</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">hemispheres_stack</span><span class="p">:</span> <span class="n">ValidComponentData</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">template_info</span><span class="p">:</span> <span class="n">ComponentInfoDict</span> <span class="o">|</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">annotation_info</span><span class="p">:</span> <span class="n">ComponentInfoDict</span> <span class="o">|</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">terminology_info</span><span class="p">:</span> <span class="n">ComponentInfoDict</span> <span class="o">|</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">coordinate_space_info</span><span class="p">:</span> <span class="p">(</span>
+        <span class="n">ComponentInfoDict</span> <span class="o">|</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">scale_meshes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">resolution_mapping</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">additional_references</span><span class="p">:</span> <span class="p">(</span>
-        <span class="n">List</span><span class="p">[</span>
-            <span class="n">Tuple</span><span class="p">[</span>
-                <span class="n">Dict</span> <span class="o">|</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">Sequence</span><span class="p">[</span>
+            <span class="nb">tuple</span><span class="p">[</span>
+                <span class="n">ComponentInfoDict</span> <span class="o">|</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="nb">str</span><span class="p">,</span>
                 <span class="n">ValidComponentData</span><span class="p">,</span>
             <span class="p">]</span>
         <span class="p">]</span>
-        <span class="o">|</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ValidComponentData</span><span class="p">]</span>
+        <span class="o">|</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ValidComponentData</span><span class="p">]</span>
         <span class="o">|</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">additional_metadata</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1432,7 +1465,7 @@
 <span class="sd">        to lowest resolution.</span>
 <span class="sd">    structures_list : List[Dict]</span>
 <span class="sd">        List of valid dictionaries for structures.</span>
-<span class="sd">    meshes_dict : Dict[int | str, str | Path]</span>
+<span class="sd">    meshes_dict : Mapping[int | str, str | Path]</span>
 <span class="sd">        dict of meshio-compatible mesh file paths in the form</span>
 <span class="sd">        {struct_id: meshpath}</span>
 <span class="sd">    working_dir : str | Path</span>
@@ -1546,32 +1579,34 @@
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">ref_metadata</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">"-template"</span><span class="p">):</span>
                     <span class="n">ref_metadata</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">atlas_name</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">ref_metadata</span><span class="si">}</span><span class="s2">-template"</span>
 
-                <span class="n">ref_dict</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="n">ref_dict</span><span class="p">:</span> <span class="n">ComponentInfoDict</span> <span class="o">|</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
                     <span class="s2">"name"</span><span class="p">:</span> <span class="n">ref_metadata</span><span class="p">,</span>
                     <span class="s2">"version"</span><span class="p">:</span> <span class="n">atlas_version</span><span class="p">,</span>
                 <span class="p">}</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">ref_dict</span> <span class="o">=</span> <span class="n">ref_metadata</span>
 
-            <span class="n">component_info</span> <span class="o">=</span> <span class="n">TemplateInfo</span><span class="p">(</span><span class="o">**</span><span class="n">ref_dict</span><span class="p">)</span>
-            <span class="n">additional_template_list</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">component_info</span><span class="p">,</span> <span class="n">ref_tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+            <span class="n">ref_info</span> <span class="o">=</span> <span class="n">TemplateInfo</span><span class="p">(</span><span class="o">**</span><span class="n">ref_dict</span><span class="p">)</span>
+            <span class="n">additional_template_list</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">ref_info</span><span class="p">,</span> <span class="n">ref_tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 
-    <span class="n">template_info</span> <span class="o">=</span> <span class="n">TemplateInfo</span><span class="p">(</span><span class="o">**</span><span class="n">template_info</span><span class="p">)</span>
-    <span class="n">terminology_info</span> <span class="o">=</span> <span class="n">TerminologyInfo</span><span class="p">(</span><span class="o">**</span><span class="n">terminology_info</span><span class="p">)</span>
-    <span class="n">annotation_info</span> <span class="o">=</span> <span class="n">AnnotationInfo</span><span class="p">(</span>
-        <span class="n">template</span><span class="o">=</span><span class="n">template_info</span><span class="p">,</span> <span class="n">terminology</span><span class="o">=</span><span class="n">terminology_info</span><span class="p">,</span> <span class="o">**</span><span class="n">annotation_info</span>
+    <span class="n">template_component</span> <span class="o">=</span> <span class="n">TemplateInfo</span><span class="p">(</span><span class="o">**</span><span class="n">template_info</span><span class="p">)</span>
+    <span class="n">terminology_component</span> <span class="o">=</span> <span class="n">TerminologyInfo</span><span class="p">(</span><span class="o">**</span><span class="n">terminology_info</span><span class="p">)</span>
+    <span class="n">annotation_component</span> <span class="o">=</span> <span class="n">AnnotationInfo</span><span class="p">(</span>
+        <span class="n">template</span><span class="o">=</span><span class="n">template_component</span><span class="p">,</span>
+        <span class="n">terminology</span><span class="o">=</span><span class="n">terminology_component</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">annotation_info</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="n">coordinate_space_info</span> <span class="o">=</span> <span class="n">CoordinateSpaceInfo</span><span class="p">(</span>
-        <span class="n">template</span><span class="o">=</span><span class="n">template_info</span><span class="p">,</span> <span class="o">**</span><span class="n">coordinate_space_info</span>
+    <span class="n">coordinate_space_component</span> <span class="o">=</span> <span class="n">CoordinateSpaceInfo</span><span class="p">(</span>
+        <span class="n">template</span><span class="o">=</span><span class="n">template_component</span><span class="p">,</span> <span class="o">**</span><span class="n">coordinate_space_info</span>
     <span class="p">)</span>
 
     <span class="n">additional_metadata</span> <span class="o">=</span> <span class="n">additional_metadata</span> <span class="ow">or</span> <span class="p">{}</span>
 
     <span class="k">for</span> <span class="n">component_info</span> <span class="ow">in</span> <span class="p">[</span>
-        <span class="n">template_info</span><span class="p">,</span>
-        <span class="n">annotation_info</span><span class="p">,</span>
-        <span class="n">terminology_info</span><span class="p">,</span>
-        <span class="n">coordinate_space_info</span><span class="p">,</span>
+        <span class="n">template_component</span><span class="p">,</span>
+        <span class="n">annotation_component</span><span class="p">,</span>
+        <span class="n">terminology_component</span><span class="p">,</span>
+        <span class="n">coordinate_space_component</span><span class="p">,</span>
         <span class="o">*</span><span class="p">[</span><span class="n">ref_info</span> <span class="k">for</span> <span class="n">ref_info</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">additional_template_list</span><span class="p">],</span>
     <span class="p">]:</span>
         <span class="n">component_dir</span> <span class="o">=</span> <span class="p">(</span>
@@ -1592,32 +1627,38 @@
                 <span class="s2">"Try setting overwrite=True"</span>
             <span class="p">)</span>
 
+    <span class="n">volumes</span> <span class="o">=</span> <span class="n">sanitise_volumetric_data</span><span class="p">(</span>
+        <span class="n">resolution</span><span class="o">=</span><span class="n">resolution</span><span class="p">,</span>
+        <span class="n">orientation</span><span class="o">=</span><span class="n">orientation</span><span class="p">,</span>
+        <span class="n">reference_stack</span><span class="o">=</span><span class="n">reference_stack</span><span class="p">,</span>
+        <span class="n">annotation_stack</span><span class="o">=</span><span class="n">annotation_stack</span><span class="p">,</span>
+        <span class="n">hemispheres_stack</span><span class="o">=</span><span class="n">hemispheres_stack</span><span class="p">,</span>
+        <span class="n">additional_references</span><span class="o">=</span><span class="n">additional_template_list</span><span class="p">,</span>
+    <span class="p">)</span>
+
     <span class="n">packaging_data</span> <span class="o">=</span> <span class="n">AtlasPackagingData</span><span class="p">(</span>
         <span class="n">atlas_name</span><span class="o">=</span><span class="n">atlas_name</span><span class="p">,</span>
         <span class="n">atlas_version</span><span class="o">=</span><span class="n">atlas_version</span><span class="p">,</span>
         <span class="n">citation</span><span class="o">=</span><span class="n">citation</span><span class="p">,</span>
         <span class="n">atlas_link</span><span class="o">=</span><span class="n">atlas_link</span><span class="p">,</span>
         <span class="n">species</span><span class="o">=</span><span class="n">species</span><span class="p">,</span>
-        <span class="n">resolution</span><span class="o">=</span><span class="n">resolution</span><span class="p">,</span>
         <span class="n">orientation</span><span class="o">=</span><span class="n">orientation</span><span class="p">,</span>
         <span class="n">root_id</span><span class="o">=</span><span class="n">root_id</span><span class="p">,</span>
-        <span class="n">reference_stack</span><span class="o">=</span><span class="n">reference_stack</span><span class="p">,</span>
-        <span class="n">annotation_stack</span><span class="o">=</span><span class="n">annotation_stack</span><span class="p">,</span>
         <span class="n">working_dir</span><span class="o">=</span><span class="n">working_dir</span><span class="p">,</span>
-        <span class="n">template_info</span><span class="o">=</span><span class="n">template_info</span><span class="p">,</span>
-        <span class="n">annotation_info</span><span class="o">=</span><span class="n">annotation_info</span><span class="p">,</span>
-        <span class="n">terminology_info</span><span class="o">=</span><span class="n">terminology_info</span><span class="p">,</span>
-        <span class="n">coordinate_space_info</span><span class="o">=</span><span class="n">coordinate_space_info</span><span class="p">,</span>
+        <span class="n">volumes</span><span class="o">=</span><span class="n">volumes</span><span class="p">,</span>
+        <span class="n">template_info</span><span class="o">=</span><span class="n">template_component</span><span class="p">,</span>
+        <span class="n">annotation_info</span><span class="o">=</span><span class="n">annotation_component</span><span class="p">,</span>
+        <span class="n">terminology_info</span><span class="o">=</span><span class="n">terminology_component</span><span class="p">,</span>
+        <span class="n">coordinate_space_info</span><span class="o">=</span><span class="n">coordinate_space_component</span><span class="p">,</span>
         <span class="n">structures_list</span><span class="o">=</span><span class="n">structures_list</span><span class="p">,</span>
         <span class="n">meshes_dict</span><span class="o">=</span><span class="n">meshes_dict</span><span class="p">,</span>
         <span class="n">atlas_packager</span><span class="o">=</span><span class="n">atlas_packager</span><span class="p">,</span>
-        <span class="n">hemispheres_stack</span><span class="o">=</span><span class="n">hemispheres_stack</span><span class="p">,</span>
-        <span class="n">additional_references</span><span class="o">=</span><span class="n">additional_template_list</span><span class="p">,</span>
         <span class="n">additional_metadata</span><span class="o">=</span><span class="n">additional_metadata</span><span class="p">,</span>
     <span class="p">)</span>
 
+    <span class="n">resolutions</span> <span class="o">=</span> <span class="n">volumes</span><span class="o">.</span><span class="n">resolution</span>
     <span class="n">transformations</span> <span class="o">=</span> <span class="n">_transformations_from_scales</span><span class="p">(</span>
-        <span class="p">[[</span><span class="n">res</span> <span class="o">/</span> <span class="mi">1000</span> <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">t</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">resolution</span><span class="p">]</span>
+        <span class="p">[[</span><span class="n">res</span> <span class="o">/</span> <span class="mi">1000</span> <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">t</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">resolutions</span><span class="p">]</span>
     <span class="p">)</span>
 
     <span class="n">template_multiscale</span> <span class="o">=</span> <span class="n">_save_template_data</span><span class="p">(</span>
@@ -1627,29 +1668,31 @@
 
     <span class="n">shapes</span> <span class="o">=</span> <span class="p">{}</span>
 
-    <span class="k">for</span> <span class="n">resolution</span> <span class="ow">in</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">resolution</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">scale_resolution</span> <span class="ow">in</span> <span class="n">resolutions</span><span class="p">:</span>
         <span class="c1"># Find the closest matching resolution in the template multiscale</span>
         <span class="n">template_resolutions</span> <span class="o">=</span> <span class="p">[</span>
             <span class="nb">tuple</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">scale</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="k">for</span> <span class="n">im</span> <span class="ow">in</span> <span class="n">template_multiscale</span><span class="o">.</span><span class="n">images</span>
         <span class="p">]</span>
         <span class="n">closest_template_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span>
             <span class="p">[</span>
-                <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">resolution</span><span class="p">))</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">scale_resolution</span><span class="p">)</span>
+                <span class="p">)</span>
                 <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">template_resolutions</span>
             <span class="p">]</span>
         <span class="p">)</span>
         <span class="n">closest_template_shape</span> <span class="o">=</span> <span class="n">template_multiscale</span><span class="o">.</span><span class="n">images</span><span class="p">[</span>
             <span class="n">closest_template_idx</span>
         <span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span>
-        <span class="n">shapes</span><span class="p">[</span><span class="n">resolution</span><span class="p">]</span> <span class="o">=</span> <span class="n">closest_template_shape</span>
+        <span class="n">shapes</span><span class="p">[</span><span class="n">scale_resolution</span><span class="p">]</span> <span class="o">=</span> <span class="n">closest_template_shape</span>
 
     <span class="n">_save_additional_references</span><span class="p">(</span>
         <span class="n">packaging_data</span><span class="p">,</span>
         <span class="n">transformations</span><span class="p">,</span>
     <span class="p">)</span>
 
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">terminology_info</span><span class="o">.</span><span class="n">use_existing</span><span class="p">:</span>
-        <span class="n">terminology_dir</span> <span class="o">=</span> <span class="n">working_dir</span> <span class="o">/</span> <span class="n">terminology_info</span><span class="o">.</span><span class="n">stub</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">terminology_component</span><span class="o">.</span><span class="n">use_existing</span><span class="p">:</span>
+        <span class="n">terminology_dir</span> <span class="o">=</span> <span class="n">_stub_path</span><span class="p">(</span><span class="n">working_dir</span><span class="p">,</span> <span class="n">terminology_component</span><span class="o">.</span><span class="n">stub</span><span class="p">)</span>
 
         <span class="n">terminology_dir</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="n">_save_terminology_csv</span><span class="p">(</span>
@@ -1657,12 +1700,14 @@
             <span class="n">terminology_dir</span><span class="p">,</span>
         <span class="p">)</span>
 
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">coordinate_space_info</span><span class="o">.</span><span class="n">use_existing</span><span class="p">:</span>
-        <span class="n">coordinate_space_path</span> <span class="o">=</span> <span class="n">working_dir</span> <span class="o">/</span> <span class="n">coordinate_space_info</span><span class="o">.</span><span class="n">stub</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">coordinate_space_component</span><span class="o">.</span><span class="n">use_existing</span><span class="p">:</span>
+        <span class="n">coordinate_space_path</span> <span class="o">=</span> <span class="n">_stub_path</span><span class="p">(</span>
+            <span class="n">working_dir</span><span class="p">,</span> <span class="n">coordinate_space_component</span><span class="o">.</span><span class="n">stub</span>
+        <span class="p">)</span>
 
         <span class="n">coordinate_space_path</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="n">_save_coordinate_space_manifest</span><span class="p">(</span>
-            <span class="n">coordinate_space_info</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span> <span class="n">coordinate_space_path</span>
+            <span class="n">coordinate_space_component</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span> <span class="n">coordinate_space_path</span>
         <span class="p">)</span>
 
     <span class="n">_save_annotation_data</span><span class="p">(</span>
@@ -1677,10 +1722,10 @@
         <span class="n">transformations</span><span class="p">,</span>
     <span class="p">)</span>
 
-    <span class="k">for</span> <span class="n">resolution</span> <span class="ow">in</span> <span class="n">packaging_data</span><span class="o">.</span><span class="n">resolution</span><span class="p">:</span>
-        <span class="n">shape</span> <span class="o">=</span> <span class="n">shapes</span><span class="p">[</span><span class="n">resolution</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">scale_resolution</span> <span class="ow">in</span> <span class="n">resolutions</span><span class="p">:</span>
+        <span class="n">shape</span> <span class="o">=</span> <span class="n">shapes</span><span class="p">[</span><span class="n">scale_resolution</span><span class="p">]</span>
         <span class="n">_finalize_atlas_at_resolution</span><span class="p">(</span>
-            <span class="n">resolution</span><span class="o">=</span><span class="n">resolution</span><span class="p">,</span>
+            <span class="n">resolution</span><span class="o">=</span><span class="n">scale_resolution</span><span class="p">,</span>
             <span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span>
             <span class="n">packaging_data</span><span class="o">=</span><span class="n">packaging_data</span><span class="p">,</span>
             <span class="n">overwrite</span><span class="o">=</span><span class="n">overwrite</span><span class="p">,</span>

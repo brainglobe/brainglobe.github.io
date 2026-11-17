@@ -558,7 +558,7 @@
         <span class="n">brainglobe_dir</span> <span class="o">/</span> <span class="s2">"brainglobe-atlasapi"</span> <span class="o">/</span> <span class="n">descriptors</span><span class="o">.</span><span class="n">V3_ATLAS_ROOTDIR</span>
     <span class="p">)</span>
 
-    <span class="n">downloaded_atlases</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">downloaded_atlases</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">atlases_dir</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
         <span class="k">return</span> <span class="n">downloaded_atlases</span>
@@ -734,16 +734,16 @@
 
     <span class="c1"># Add downloaded atlases (sorted) to the table first</span>
     <span class="k">for</span> <span class="n">atlas_name</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">downloaded_atlases</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
-        <span class="n">atlas</span> <span class="o">=</span> <span class="n">downloaded_atlases</span><span class="p">[</span><span class="n">atlas_name</span><span class="p">]</span>
+        <span class="n">atlas_info</span> <span class="o">=</span> <span class="n">downloaded_atlases</span><span class="p">[</span><span class="n">atlas_name</span><span class="p">]</span>
         <span class="n">table</span> <span class="o">=</span> <span class="n">add_atlas_to_row</span><span class="p">(</span>
-            <span class="n">atlas_name</span><span class="p">,</span> <span class="n">atlas</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">show_local_path</span><span class="o">=</span><span class="n">show_local_path</span>
+            <span class="n">atlas_name</span><span class="p">,</span> <span class="n">atlas_info</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">show_local_path</span><span class="o">=</span><span class="n">show_local_path</span>
         <span class="p">)</span>
 
     <span class="c1"># Then add non-download atlases (sorted) to the table</span>
     <span class="k">for</span> <span class="n">atlas_name</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">non_downloaded_atlases</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
-        <span class="n">atlas</span> <span class="o">=</span> <span class="n">non_downloaded_atlases</span><span class="p">[</span><span class="n">atlas_name</span><span class="p">]</span>
+        <span class="n">atlas_info</span> <span class="o">=</span> <span class="n">non_downloaded_atlases</span><span class="p">[</span><span class="n">atlas_name</span><span class="p">]</span>
         <span class="n">table</span> <span class="o">=</span> <span class="n">add_atlas_to_row</span><span class="p">(</span>
-            <span class="n">atlas_name</span><span class="p">,</span> <span class="n">atlas</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">show_local_path</span><span class="o">=</span><span class="n">show_local_path</span>
+            <span class="n">atlas_name</span><span class="p">,</span> <span class="n">atlas_info</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">show_local_path</span><span class="o">=</span><span class="n">show_local_path</span>
         <span class="p">)</span>
 
     <span class="c1"># Print the resulting table</span>

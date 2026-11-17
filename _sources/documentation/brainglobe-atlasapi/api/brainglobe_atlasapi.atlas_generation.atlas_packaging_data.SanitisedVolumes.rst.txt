@@ -1,0 +1,95 @@
+SanitisedVolumes
+================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.atlas_packaging_data
+
+.. autoclass:: SanitisedVolumes
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~SanitisedVolumes.count
+   
+   
+      ~SanitisedVolumes.index
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~SanitisedVolumes.additional_references
+   
+   
+      ~SanitisedVolumes.annotation_stack
+   
+   
+      ~SanitisedVolumes.hemispheres_stack
+   
+   
+      ~SanitisedVolumes.reference_stack
+   
+   
+      ~SanitisedVolumes.resolution
+   
+   
+      ~SanitisedVolumes.space_convention
+   
+   
+      ~SanitisedVolumes.symmetric
+   
+   
+   

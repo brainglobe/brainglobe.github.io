@@ -1,0 +1,155 @@
+ComponentInfoDict
+=================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.atlas_packaging_data
+
+.. autoclass:: ComponentInfoDict
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+      ~ComponentInfoDict.clear
+   
+   
+      ~ComponentInfoDict.copy
+   
+   
+      ~ComponentInfoDict.fromkeys
+   
+   
+      ~ComponentInfoDict.get
+   
+   
+      ~ComponentInfoDict.items
+   
+   
+      ~ComponentInfoDict.keys
+   
+   
+      ~ComponentInfoDict.pop
+   
+   
+      ~ComponentInfoDict.popitem
+   
+   
+      ~ComponentInfoDict.setdefault
+   
+   
+      ~ComponentInfoDict.update
+   
+   
+      ~ComponentInfoDict.values
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+   
+      ~ComponentInfoDict.name
+   
+   
+      ~ComponentInfoDict.version
+   
+   
+      ~ComponentInfoDict.use_existing
+   
+   
+      ~ComponentInfoDict.update_existing
+   
+   
+      ~ComponentInfoDict.existing_version
+   
+   
+      ~ComponentInfoDict.root_dir
+   
+   
+      ~ComponentInfoDict.file_name
+   
+   
+      ~ComponentInfoDict.stub
+   
+   
+   

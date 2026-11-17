@@ -1,0 +1,6 @@
+sanitise\_volumetric\_data
+==========================
+
+.. currentmodule:: brainglobe_atlasapi.atlas_generation.atlas_packaging_data
+
+.. autofunction:: sanitise_volumetric_data

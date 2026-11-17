@@ -624,10 +624,13 @@
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AnnotationInfo.html">AnnotationInfo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.AtlasPackagingData.html">AtlasPackagingData</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfo.html">ComponentInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.ComponentInfoDict.html">ComponentInfoDict</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.CoordinateSpaceInfo.html">CoordinateSpaceInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.SanitisedVolumes.html">SanitisedVolumes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TemplateInfo.html">TemplateInfo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.TerminologyInfo.html">TerminologyInfo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.check_requested_component.html">check_requested_component</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.atlas_packaging_data.sanitise_volumetric_data.html">sanitise_volumetric_data</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="brainglobe_atlasapi.atlas_generation.annotation_utils.html">brainglobe_atlasapi.atlas_generation.annotation_utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -946,7 +949,7 @@ If str or Path, will be read with tifffile.
 If list, should be list of stacks for each scale, ordered from highest
 to lowest resolution.</p></li>
 <li><p><strong>structures_list</strong> (<em>List</em><em>[</em><em>Dict</em><em>]</em>) – List of valid dictionaries for structures.</p></li>
-<li><p><strong>meshes_dict</strong> (<em>Dict</em><em>[</em><em>int</em><em> | </em><em>str</em><em>, </em><em>str</em><em> | </em><em>Path</em><em>]</em>) – dict of meshio-compatible mesh file paths in the form
+<li><p><strong>meshes_dict</strong> (<em>Mapping</em><em>[</em><em>int</em><em> | </em><em>str</em><em>, </em><em>str</em><em> | </em><em>Path</em><em>]</em>) – dict of meshio-compatible mesh file paths in the form
 {struct_id: meshpath}</p></li>
 <li><p><strong>working_dir</strong> (<em>str</em><em> | </em><em>Path</em>) – Path where the atlas will be generated.</p></li>
 <li><p><strong>atlas_packager</strong> (<em>str</em><em> or </em><em>None</em>) – Credit for those responsible for converting the atlas
