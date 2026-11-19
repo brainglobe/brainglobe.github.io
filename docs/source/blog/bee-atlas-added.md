@@ -2,7 +2,7 @@
 blogpost: true
 date: July 28, 2025
 author: Alessandro Felder, Scott Wolf
-location: London, UK; Princeton NJ, USA
+location: London, United Kingdom; Princeton NJ, USA
 category: brainglobe
 language: English
 ---

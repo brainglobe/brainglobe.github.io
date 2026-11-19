@@ -2,7 +2,7 @@
 blogpost: true
 date: March 17, 2025
 author: Niko Sirmpilatze
-location: London, England
+location: London, United Kingdom
 category: brainglobe
 language: English
 ---
