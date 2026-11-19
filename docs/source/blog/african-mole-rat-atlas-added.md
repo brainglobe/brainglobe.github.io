@@ -32,7 +32,8 @@ The vascular image was acquired with LSFM and registered to the main template's 
 
 ## How do I use the new atlas?
 
-You can use the African mole-rat atlas like other BrainGlobe atlases. To visualise it:
+You can use the African mole-rat atlas like other BrainGlobe atlases. To visualise it, you can either open it 
+[in NeuroGlancer for viewing in the browser](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/african_molerat.json) or you can view them locally:
 
 * Install BrainGlobe ([instructions](/documentation/index)).
 * Open napari and follow our [download tutorial](/tutorials/manage-atlases-in-GUI.md) to install `african_molerat_20um`.
