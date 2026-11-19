@@ -539,7 +539,7 @@ Available versions:
 
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/ccfv1_mouse.json)
 
-### [Allen MOmap Mouse Brain atlas](https://doi.org/10.1016/j.cell.2026.08.046)
+### [Allen MOmap Mouse Brain Atlas](https://doi.org/10.1016/j.cell.2026.08.046)
 This atlas builds on the Allen Adult Mouse Brain Atlas (CCFv3) template and introduces a new parcellation of the motor cortex (MO), based on its diverse subcortical projections and consistent with its cortical connectivity and cell-type composition. The MO is subdivided into 16 modules (MO1–16) of similar size, grouped into a redefined primary motor cortex (MOp; MO1–10) and secondary motor cortex (MOs; MO11–16). Note that these MOp and MOs boundaries differ from those in the standard CCFv3 annotation. The atlas is useful for mapping data onto a finer subdivision of motor cortex than the standard Allen parcellation, while staying compatible with the standard CCFv3 volume.
 
 Available versions:
