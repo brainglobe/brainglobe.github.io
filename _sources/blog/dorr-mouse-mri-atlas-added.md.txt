@@ -2,7 +2,7 @@
 blogpost: true
 date: November 6, 2025
 author: Saarah Hussain
-location: London, England
+location: London, United Kingdom
 category: brainglobe
 language: English
 ---

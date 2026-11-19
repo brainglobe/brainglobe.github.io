@@ -966,7 +966,16 @@
 
         <span class="n">savepath</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">screenshots_folder</span> <span class="o">/</span> <span class="n">name</span><span class="p">)</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Saving scene at </span><span class="si">{</span><span class="n">savepath</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">screenshot</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">savepath</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">)</span>
+        <span class="c1"># Respect both brainrender's setting and vedo's own (for users who</span>
+        <span class="c1"># set vedo directly), then restore vedo's value afterwards.</span>
+        <span class="n">previous</span> <span class="o">=</span> <span class="n">vsettings</span><span class="o">.</span><span class="n">screenshot_transparent_background</span>
+        <span class="n">vsettings</span><span class="o">.</span><span class="n">screenshot_transparent_background</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">settings</span><span class="o">.</span><span class="n">SCREENSHOT_TRANSPARENT_BACKGROUND</span> <span class="ow">or</span> <span class="n">previous</span>
+        <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">screenshot</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">savepath</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="n">vsettings</span><span class="o">.</span><span class="n">screenshot_transparent_background</span> <span class="o">=</span> <span class="n">previous</span>
         <span class="k">return</span> <span class="n">savepath</span></div>
 </div>
 

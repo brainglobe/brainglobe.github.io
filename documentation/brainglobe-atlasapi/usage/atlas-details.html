@@ -1741,6 +1741,25 @@ This atlas is only available at 25μm resolution:</p>
 </ul>
 <p><a class="reference external" href="https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/prairie_vole.json"><img alt="View in neuroglancer" src="https://img.shields.io/badge/Neuroglancer-View%20atlas-blue" /></a></p>
 </section>
+<section id="african-mole-rat-brain-atlas">
+<h3><a class="reference external" href="https://doi.org/10.64898/2026.10.04.756554">African mole-rat brain atlas</a><a class="headerlink" href="#african-mole-rat-brain-atlas" title="Link to this heading">#</a></h3>
+<p>This is a brain atlas of the African mole-rat (Fukomys anselli) from
+<a class="reference external" href="https://doi.org/10.64898/2026.10.04.756554">Zhang et al. (2026)</a>.</p>
+<p>This atlas is only available at 20μm resolution:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">african_molerat_20um</span></code></p></li>
+</ul>
+<p>Its main template was made from LSFM images of 43 hemispheres. Each hemisphere was mirrored to make a full symmetric brain before averaging.</p>
+<p>This atlas also has four additional reference images, showing the vasculature of a single individual:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">african_molerat-vascular-template</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">african_molerat-vascular_AP-smoothed-template</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">african_molerat-vascular_DV-smoothed-template</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">african_molerat-vascular_ML-smoothed-template</span></code></p></li>
+</ul>
+<p>The first additional reference images were also made with LSFM, but the sample has staining for blood vessels. It was registered to the main template’s space. The last three are smoothed versions of the first, each with a 1-D Gaussian kernel along a different axis (antero-posterior (AP), dorso-ventral (DV), mediolateral (ML)). They provide suitable registration targets for functional ultrasound imaging (fUSI) data, which is angle-dependent.</p>
+<p><a class="reference external" href="https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/african_molerat.json"><img alt="View in neuroglancer" src="https://img.shields.io/badge/Neuroglancer-View%20atlas-blue" /></a></p>
+</section>
 </section>
 <section id="fish">
 <h2>Fish<a class="headerlink" href="#fish" title="Link to this heading">#</a></h2>
@@ -2007,6 +2026,7 @@ provided by Virtual Fly Brain.</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-rodent">Other rodent</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prairie-vole-brain-atlas">Prairie vole brain atlas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#african-mole-rat-brain-atlas">African mole-rat brain atlas</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fish">Fish</a><ul class="nav section-nav flex-column">

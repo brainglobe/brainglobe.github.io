@@ -2,7 +2,7 @@
 blogpost: true
 date: June 3, 2024
 author: Igor Tatarnikov
-location: London, England
+location: London, United Kingdom
 category: brainglobe
 language: English
 ---

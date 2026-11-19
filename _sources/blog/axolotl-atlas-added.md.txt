@@ -2,7 +2,7 @@
 blogpost: true
 date: August 09, 2024
 author: Saima Abdus, Alessandro Felder, David Perez-Suarez
-location: London, England
+location: London, United Kingdom
 category: brainglobe
 language: English
 ---

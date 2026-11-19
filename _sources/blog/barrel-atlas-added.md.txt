@@ -2,7 +2,7 @@
 blogpost: true
 date: August 02, 2024
 author: Adam Tyson, Axel Bisi
-location: London, U.K.; Lausanne, Switzerland
+location: London, United Kingdom; Lausanne, Switzerland
 category: brainglobe
 language: English
 ---

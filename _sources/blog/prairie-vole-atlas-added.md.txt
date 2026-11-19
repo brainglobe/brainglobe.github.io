@@ -2,7 +2,7 @@
 blogpost: true
 date: October 30, 2024
 author: Adam Tyson
-location: London, England
+location: London, United Kingdom
 category: brainglobe
 language: English
 ---

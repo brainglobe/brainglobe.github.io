@@ -2,7 +2,7 @@
 blogpost: true
 date: January 28, 2025
 author: Alessandro Felder, Harry Carey
-location: London, England; Oslo, Norway
+location: London, United Kingdom; Oslo, Norway
 category: brainglobe
 language: English
 ---

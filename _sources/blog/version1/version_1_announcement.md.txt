@@ -2,7 +2,7 @@
 blogpost: true
 date: Oct 30, 2023
 author: Will Graham
-location: London, England
+location: London, United Kingdom
 category: BrainGlobe-v1
 language: English
 ---

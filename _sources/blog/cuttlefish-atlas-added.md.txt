@@ -2,7 +2,7 @@
 blogpost: true
 date: Mar 10, 2025
 author: Jung Woo Kim, Alessandro Felder
-location: London, England
+location: London, United Kingdom
 category: brainglobe
 language: English
 ---
