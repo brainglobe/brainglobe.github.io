@@ -601,12 +601,12 @@ This atlas is only available at 25μm resolution:
 ### [African mole-rat brain atlas](https://doi.org/10.64898/2026.10.04.756554)
 This is a brain atlas of the African mole-rat (Fukomys anselli) from
 [Zhang et al. (2026)](https://doi.org/10.64898/2026.10.04.756554).
-This atlas is only available at 20μm resolution.
 
-Its main template was made from LSFM images of 43 hemispheres.
+This atlas is only available at 20μm resolution:
+
 * `african_molerat_20um`
 
-Each hemisphere was mirrored to make a full symmetric brain before averaging.
+Its main template was made from LSFM images of 43 hemispheres. Each hemisphere was mirrored to make a full symmetric brain before averaging.
 
 This atlas also has four additional reference images, showing the vasculature of a single individual:
 
