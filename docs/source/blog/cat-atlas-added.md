@@ -2,7 +2,7 @@
 blogpost: true
 date: February 28, 2025
 author: Alessandro Felder, Henry Crosswell
-location: London, England
+location: London, United Kingdom
 category: brainglobe
 language: English
 ---

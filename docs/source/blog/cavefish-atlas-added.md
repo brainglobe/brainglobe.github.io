@@ -2,7 +2,7 @@
 blogpost: true
 date: Jun 21, 2024
 author: Alessandro Felder, Robert Kozol
-location: London, England; New York, USA
+location: London, United Kingdom; New York, USA
 category: brainglobe
 language: English
 ---

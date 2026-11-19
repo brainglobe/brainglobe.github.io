@@ -2,7 +2,7 @@
 blogpost: true
 date: Oct 7, 2025
 author: Alessandro Felder, Kaixiang Shuai, Giulia Paci
-location: London, England
+location: London, United Kingdom
 category: brainglobe
 language: English
 ---

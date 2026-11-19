@@ -2,7 +2,7 @@
 blogpost: true
 date: August 12, 2026
 author: Jung Woo Kim
-location: London, England
+location: London, United Kingdom
 category: brainglobe
 language: English
 ---
