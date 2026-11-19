@@ -615,7 +615,7 @@ This atlas also has four additional reference images, showing the vasculature of
 * `african_molerat-vascular_DV-smoothed-template`
 * `african_molerat-vascular_ML-smoothed-template`
 
-The first additional reference images was also made with LSFM, but the sample has staining for its blood vessels. It was registered to the main template's space. The last three are smoothed versions of the first, each with a 1-D Gaussian kernel along a different axis (antero-posterior (AP), dorso-ventral (DV), mediolateral (ML)). They provide suitable registration targets for functional ultrasound imaging (fUSI) data, which is angle-dependent.
+The first additional reference images were also made with LSFM, but the sample has staining for blood vessels. It was registered to the main template's space. The last three are smoothed versions of the first, each with a 1-D Gaussian kernel along a different axis (antero-posterior (AP), dorso-ventral (DV), mediolateral (ML)). They provide suitable registration targets for functional ultrasound imaging (fUSI) data, which is angle-dependent.
 
 
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/african_molerat.json)
