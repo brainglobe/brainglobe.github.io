@@ -28,7 +28,7 @@ We have packaged the following atlas:
 
 ## How do I use the new atlas?
 
-You can use MOmap for analysis and visualisation in the same ways as other BrainGlobe atlases: 
+You can use MOmap for analysis and visualisation in the same ways as other BrainGlobe atlases:
 
 * Install BrainGlobe ([instructions](/documentation/index))
 * Open napari and follow the steps in our [download tutorial](/tutorials/manage-atlases-in-GUI.md) to download the `allen_mouse_momap_10um` atlas
