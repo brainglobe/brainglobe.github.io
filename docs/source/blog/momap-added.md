@@ -7,7 +7,7 @@ category: brainglobe
 language: English
 ---
 
-# The Allen MOmap Brain atlas has been added to BrainGlobe
+# The Allen MOmap Brain Atlas has been added to BrainGlobe
 
 Current atlases typically only divide the mouse motor cortex (MO) into broad primary and secondary fields, without fine-scale subdivisions supported by quantitative evidence. In their [new study](https://doi.org/10.1016/j.cell.2026.08.046), Falasconi, Kanodia et al. (2026) show that the subcortical projections of mouse MO define 16 different modules. Their modular map of the mouse MO is now available in BrainGlobe, built on top of the standard Allen Mouse Brain Atlas (CCFv3) template.
 
