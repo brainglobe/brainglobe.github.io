@@ -598,6 +598,27 @@ This atlas is only available at 25μm resolution:
 
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/prairie_vole.json)
 
+### [African mole-rat brain atlas](https://doi.org/10.64898/2026.10.04.756554)
+This is a brain atlas of the African mole-rat (Fukomys anselli) from
+[Zhang et al. (2026)](https://doi.org/10.64898/2026.10.04.756554).
+This atlas is only available at 20μm resolution.
+
+Its main template was made from LSFM images of 43 hemispheres.
+* `african_molerat_20um`
+
+Each hemisphere was mirrored to make a full symmetric brain before averaging.
+
+This atlas also has four additional reference images, showing the vasculature of a single individual:
+
+* `african_molerat-vascular-template`
+* `african_molerat-vascular_AP-smoothed-template`
+* `african_molerat-vascular_DV-smoothed-template`
+* `african_molerat-vascular_ML-smoothed-template`
+
+The first additional reference images was also made with LSFM, but the sample has staining for its blood vessels. It was registered to the main template's space. The last three are smoothed versions of the first, each with a 1-D Gaussian kernel along a different axis (antero-posterior (AP), dorso-ventral (DV), mediolateral (ML)). They provide suitable registration targets for functional ultrasound imaging (fUSI) data, which is angle-dependent.
+
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/african_molerat.json)
 
 ## Fish
 ### [Max Planck zebrafish brain atlas](http://fishatlas.neuro.mpg.de)
