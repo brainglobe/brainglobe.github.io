@@ -8,7 +8,7 @@
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, as shown here.
+# documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
 # import sys
@@ -52,7 +52,7 @@ extensions = [
 sphinx_gallery_conf = {
     "examples_dirs": ["api_examples_source", "aws_examples_source"],
     "gallery_dirs": ["api_examples", "aws_examples"],  # output directory
-    "run_stale_examples": True,  # re-run examples on each build
+    "run_stale_examples": True,  # re-run stale examples on each build
     "filename_pattern": "/*.py",  # which files to execute before inclusion
     }
 
@@ -97,8 +97,8 @@ exclude_patterns = [
 
 # -- Options for HTML output -------------------------------------------------
 
-# The theme to use for HTML and HTML Help pages.  See the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+# The theme to use for HTML and HTML Help pages.  See the documentation for
+# a list of builtin themes.
 #
 html_theme = "pydata_sphinx_theme"
 html_title = "BrainGlobe"
@@ -111,7 +111,7 @@ sitemap_url_scheme = "{link}"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin default.css.
+# so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 html_extra_path = ["_redirects", "robots.txt"]
 
