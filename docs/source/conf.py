@@ -52,7 +52,7 @@ extensions = [
 sphinx_gallery_conf = {
     "examples_dirs": ["api_examples_source", "aws_examples_source"],
     "gallery_dirs": ["api_examples", "aws_examples"],  # output directory
-    "run_stale_examples": True,  # re-run stale examples on each build
+    "run_stale_examples": True,  # re-run examples on each build
     "filename_pattern": "/*.py",  # which files to execute before inclusion
     }
 
@@ -249,3 +249,4 @@ linkcheck_request_headers = {
         "Authorization": f"Bearer {os.environ.get('GITHUB_TOKEN', '')}",
     },
 }
+
