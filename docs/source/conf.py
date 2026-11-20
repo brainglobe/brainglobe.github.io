@@ -8,7 +8,7 @@
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
+# documentation root, use os.path.abspath to make it absolute, as shown here.
 #
 import os
 # import sys
@@ -26,6 +26,11 @@ release = "0.0.1"
 
 # -- General configuration ---------------------------------------------------
 
+# Add any Sphinx extension module names here, as strings. If extensions
+# (or modules to document with autodoc) are in another directory,
+# add these directories to sys.path here. If the directory is relative to
+# the documentation root, use os.path.abspath to make it absolute, as shown here.
+#
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
@@ -52,7 +57,7 @@ extensions = [
 sphinx_gallery_conf = {
     "examples_dirs": ["api_examples_source", "aws_examples_source"],
     "gallery_dirs": ["api_examples", "aws_examples"],  # output directory
-    "run_stale_examples": True,  # re-run examples on each build
+    "run_stale_examples": True,  # re-run stale examples on each build
     "filename_pattern": "/*.py",  # which files to execute before inclusion
     }
 
@@ -97,8 +102,8 @@ exclude_patterns = [
 
 # -- Options for HTML output -------------------------------------------------
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
+# The theme to use for the HTML and HTML Help pages.  See the documentation
+# for a list of builtin themes.
 #
 html_theme = "pydata_sphinx_theme"
 html_title = "BrainGlobe"
@@ -111,7 +116,7 @@ sitemap_url_scheme = "{link}"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
+# so a file named "default.css" will overwrite the builtin default.css.
 html_static_path = ["_static"]
 html_extra_path = ["_redirects", "robots.txt"]
 
@@ -235,6 +240,7 @@ linkcheck_ignore = [
     "https://openalex.org", # 403 Client Error: Forbidden
     "https://data.mendeley.com/", # 403 Client Error: Forbidden
     "https://www.mcgill.ca/neuro/article/neuro-irv-and-helga-cooper-foundation-open-science-prizes-meet-winners-exceptional-edition", # 403 Client Error: Forbidden
+    r"https://www\.linkedin\.com/", # LinkedIn rate-limits automated link checks
     ]
 
 linkcheck_anchors_ignore_for_url = [
@@ -248,4 +254,3 @@ linkcheck_request_headers = {
         "Authorization": f"Bearer {os.environ.get('GITHUB_TOKEN', '')}",
     },
 }
-
