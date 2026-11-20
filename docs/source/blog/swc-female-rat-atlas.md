@@ -2,7 +2,7 @@
 blogpost: true
 date: February 2, 2026
 author: Viktor Plattner
-location: London, England
+location: London, United Kingdom
 category: brainglobe
 language: English
 ---

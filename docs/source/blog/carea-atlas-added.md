@@ -2,7 +2,7 @@
 blogpost: true
 date: February 5, 2026
 author: Harry Carey
-location: London, England
+location: London, United Kingdom
 category: brainglobe
 language: English
 ---

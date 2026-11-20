@@ -18,6 +18,9 @@ different modality (such as serial section two-photon, STP) may produce inferior
 In most software you can choose the atlas from a list, but if using a command line tool, or the API directly, the 
 unique key (e.g. `example_mouse_100um` must be used).
 
+Atlases packaged and hosted by other organisations, such as the Allen Institute, are listed separately on the
+[External atlases](external-atlases.md) page.
+
 # Available atlases
 
 ## Mouse
@@ -151,7 +154,7 @@ Available versions:
   *  `kim_dev_mouse_e11-5_mri-adc_31.5um` - MRI adc template at 31.5 μm resolution
   *  `kim_dev_mouse_e11-5_mri-dwi_31.5um` - MRI dwi template at 31.5 μm resolution 
   *  `kim_dev_mouse_e11-5_mri-fa_31.5um` - MRI fa template at 31.5 μm resolution
-  *  `kim_dev_mouse_e11-5_mri-T2_31.5um` - MRI T2 template at 31.5 μm resolution
+  *  `kim_dev_mouse_e11-5_mri-t2_31.5um` - MRI T2 template at 31.5 μm resolution
 * at E13.5 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/kim_dev_mouse_e13-5.json)
   *  `kim_dev_mouse_e13-5_lsfm_20um` - LSFM template at 20 μm resolution
   *  `kim_dev_mouse_e13-5_mri-adc_34um` - MRI adc template at 34 μm resolution
@@ -603,6 +606,27 @@ This atlas is only available at 25μm resolution:
 
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/prairie_vole.json)
 
+### [African mole-rat brain atlas](https://doi.org/10.64898/2026.10.04.756554)
+This is a brain atlas of the African mole-rat (Fukomys anselli) from
+[Zhang et al. (2026)](https://doi.org/10.64898/2026.10.04.756554).
+
+This atlas is only available at 20μm resolution:
+
+* `african_molerat_20um`
+
+Its main template was made from LSFM images of 43 hemispheres. Each hemisphere was mirrored to make a full symmetric brain before averaging.
+
+This atlas also has four additional reference images, showing the vasculature of a single individual:
+
+* `african_molerat-vascular-template`
+* `african_molerat-vascular_AP-smoothed-template`
+* `african_molerat-vascular_DV-smoothed-template`
+* `african_molerat-vascular_ML-smoothed-template`
+
+The first additional reference images were also made with LSFM, but the sample has staining for blood vessels. It was registered to the main template's space. The last three are smoothed versions of the first, each with a 1-D Gaussian kernel along a different axis (antero-posterior (AP), dorso-ventral (DV), mediolateral (ML)). They provide suitable registration targets for functional ultrasound imaging (fUSI) data, which is angle-dependent.
+
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/african_molerat.json)
 
 ## Fish
 ### [Max Planck zebrafish brain atlas](http://fishatlas.neuro.mpg.de)
@@ -637,7 +661,9 @@ fibre tracts. For more details, see the [blog post](/blog/danionella-atlas-added
 
 This atlas is only available at 2.5μm resolution:
 * `danionella_cerebrum_mixed_2.5um`
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/danionella_cerebrum_mixed.json)
 
+  
 ## Lizard
 ### [Hoops Tawny Dragon Brain Atlas](https://doi.org/10.1007/s00429-021-02282-z)
 This is a symmetric atlas of the tawny dragon lizard (Ctenophorus decresii) brain from 
@@ -742,7 +768,9 @@ template with 46 VFB-painted neuropil ROI annotations. The annotations form a
 flat structure list and include source meshes provided by Virtual Fly Brain.
 
 This atlas has anisotropic 0.5189161 × 1.0 × 0.5189161 µm resolution:
-* `vfb_jrc2018u_neuropils_fly`
+* `vfb_jrc2018u_neuropils_fly_0.519um`
+
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/vfb_jrc2018u_neuropils_fly.json)
 
 ### [Virtual Fly Brain JRC2018Unisex VNC atlas](https://www.virtualflybrain.org/term/adult-vnc-neuropils-court2020-court2020/)
 
@@ -753,6 +781,6 @@ visible non-root regions in a flat structure list and includes source meshes
 provided by Virtual Fly Brain.
 
 This atlas has 0.4 µm isotropic resolution:
-* `vfb_jrc2018u_vnc_fly`
+* `vfb_jrc2018u_vnc_fly_0.4um`
 
-
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/vfb_jrc2018u_vnc_fly.json)

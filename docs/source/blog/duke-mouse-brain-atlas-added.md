@@ -2,7 +2,7 @@
 blogpost: true
 date: August 18, 2026
 author: Amirreza Bahramani
-location: London, England
+location: London, United Kingdom
 category: brainglobe
 language: English
 ---
