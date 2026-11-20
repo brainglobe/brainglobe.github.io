@@ -1,6 +1,6 @@
 ---
 blogpost: true
-date: November 19, 2026
+date: November 23, 2026
 author: Antonio Falasconi and Harsh Kanodia
 location: Basel, Switzerland
 category: brainglobe
