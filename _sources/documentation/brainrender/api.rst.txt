@@ -15,21 +15,21 @@ Information on specific functions, classes, and methods.
     :recursive:
     :nosignatures:
 
+    brainrender.settings
     brainrender.actor
-    brainrender.scene
+    brainrender.camera
     brainrender.cameras
-    brainrender.video
+    brainrender.scene
     brainrender.atlas
     brainrender.render
-    brainrender.settings
-    brainrender.camera
-    brainrender.actors.ruler
-    brainrender.actors.points
-    brainrender.actors.line
-    brainrender.actors.cylinder
-    brainrender.actors.neurons
+    brainrender.video
     brainrender.actors.streamlines
+    brainrender.actors.cylinder
     brainrender.actors.volume
+    brainrender.actors.ruler
+    brainrender.actors.neurons
+    brainrender.actors.line
+    brainrender.actors.points
     brainrender.atlas_specific.allen_brain_atlas.streamlines
     brainrender.atlas_specific.allen_brain_atlas.gene_expression.ge_utils
     brainrender.atlas_specific.allen_brain_atlas.gene_expression.api
