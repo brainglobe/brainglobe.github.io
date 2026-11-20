@@ -36,7 +36,8 @@ jobs:
         with:
           python-version: 3.12
           use-make: true
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          # Link checking runs separately in linkcheck.yml.
+          check-links: false
 
   deploy_sphinx_docs:
     name: Deploy Sphinx Docs
