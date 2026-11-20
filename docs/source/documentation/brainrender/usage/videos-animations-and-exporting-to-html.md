@@ -22,13 +22,13 @@ before it can be viewed.
 You can take a screenshot while viewing and interacting with a rendered scene by pressing the `s` key in your keyboard.
 Using `Scene.screenshot` however gives you the freedom to specify a name for the image file to be saved.
 
-By default `brainrender` is set up to ignore the background when saving the screenshots. That means that you will have
-all of your rendered objects in your image, but the background will be transparent. If you want to include the
-background in your image, include these two lines before creating the screenshot:
+By default the background is included in the screenshot. If you want a transparent background instead,
+so that only your rendered objects are saved, change the `vedo` setting before creating the screenshot:
 
 ```python
-import brainrender
-brainrender.SCREENSHOT_TRANSPARENT_BACKGROUND = False
+from vedo import settings
+
+settings.screenshot_transparent_background = True
 ```
 
 :::{hint}
