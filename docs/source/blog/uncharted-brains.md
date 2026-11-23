@@ -121,7 +121,7 @@ Figure 4. Annotated brain structures overlaid on one hemisphere of the average b
 
 :::{note}
 Find more details on how we built the blackcap brain atlas in
-[our preprint](https://doi.org/10.1101/2025.03.04.641293)[^preprint].
+[our paper](https://doi.org/10.1016/j.cub.2026.03.034)[^paper].
 :::
 
 ## More atlases to come!
@@ -147,4 +147,4 @@ If you are passionate about a species and want to contribute to mapping its brai
 
 [^SyGN]: Avants BB, Yushkevich P, Pluta J, et al. The optimal template effect in hippocampus studies of diseased populations. Neuroimage. 2010 Feb;49(3):2457-2466. DOI: 10.1016/j.neuroimage.2009.09.062. PMID: 19818860; PMCID: PMC2818274.
 
-[^preprint]: Sirmpilatze N, Felder A, Abdulazhanova D, et al. Mapping the magnetoreceptive brain: A 3D digital atlas of the migratory bird Eurasian blackcap (<i>Sylvia atricapilla</i>). bioRxiv; 2025. DOI: 10.1101/2025.03.04.641293.
+[^paper]: Sirmpilatze N, Felder A, Abdulazhanova D, et al. An open-source three-dimensional digital brain atlas of a migratory bird, the Eurasian blackcap. Current Biology. 2026;36:2063-2077.e5. DOI: 10.1016/j.cub.2026.03.034.
