@@ -722,9 +722,9 @@ This atlas is only available at 500um resolution:
 
 
 ## Bird
-### [Eurasian blackcap atlas](https://doi.org/10.1101/2025.03.04.641293)
+### [Eurasian blackcap atlas](https://doi.org/10.1016/j.cub.2026.03.034)
 This is a serial section two-photon atlas of the Eurasian blackcap (Sylvia atricapilla) 
-built by the BrainGlobe team ([Sirmpilatze et al. (2025)](https://doi.org/10.1101/2025.03.04.641293)). 
+built by the BrainGlobe team ([Sirmpilatze et al. (2026)](https://doi.org/10.1016/j.cub.2026.03.034)). 
 For more details please see [the project page](/projects/blackcap/index).
 
 This atlas is only available at 25μm resolution:

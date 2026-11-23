@@ -100,12 +100,12 @@ def generate_markdown(works):
     md = [
         "# BrainGlobe publications",
 
-        "- **Eurasian blackcap (_Sylvia atricapilla_) atlas:**"
-        "  > Sirmpilatze, N., Felder, A., Abdulazhanova, D., Schwigon, L., Haase, K., Musielak, I., Margrie, T. W., "
-        "Mouritsen, H., Heyers, D., Tyson, A. L. , Weiler, S. (2025) "
-        "\"Mapping the magnetoreceptive brain: A 3D digital atlas of the migratory bird Eurasian blackcap "
-        "(Sylvia atricapilla) *bioRxiv* 2025.03.04.641293; "
-        "[doi.org/10.1101/2025.03.04.641293](https://doi.org/10.1101/2025.03.04.641293)"
+        "- **Eurasian blackcap (_Sylvia atricapilla_) atlas:**  ",
+        "  > Sirmpilatze, N., Felder, A., Abdulazhanova, D., Schwigon, L., Tatarnikov, I., Haase, K., Musielak, I., "
+        "Kobylkov, D., Margrie, T. W., Mouritsen, H., Heyers, D., Tyson, A. L. , Weiler, S. (2026) "
+        "\"An open-source three-dimensional digital brain atlas of a migratory bird, the Eurasian blackcap\" "
+        "*Current Biology* 36 2063-2077.e5, "
+        "[doi.org/10.1016/j.cub.2026.03.034](https://doi.org/10.1016/j.cub.2026.03.034)\n",
 
         "- **Brainreg & brainglobe-segmentation (formerly brainreg-segment):**  ",
         "  > Tyson, A. L., Vélez-Fort, M., Rousseau, C. V., Cossell, L., Tsitoura, C., Lenzi, S. C., "
