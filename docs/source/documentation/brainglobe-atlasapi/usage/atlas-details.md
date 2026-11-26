@@ -709,6 +709,51 @@ This atlas is only available at 91um resolution
 
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/nadkarni_mri_mouselemur.json)
 
+### [Cortical Hierarchy Atlas of the Rhesus Macaque (CHARM)](https://doi.org/10.1016/j.neuroimage.2021.117997)
+This is a hierarchical cortical atlas of the rhesus macaque (_Macaca mulatta_) in NIMH Macaque Template (NMT) space
+from [Jung et al. (2021)](https://doi.org/10.1016/j.neuroimage.2021.117997).
+BrainGlobe packages the finest annotation level and retains the six-level hierarchy, from broad cortical subdivisions
+to finer D99-derived cortical regions. Both variants share their anatomical references and coordinate space with
+the corresponding ARM atlas, including a skull-stripped reference. For more details please see
+[the blogpost](/blog/nmt-macaque-atlases-added).
+
+This atlas is available at 250 µm isotropic resolution in symmetric and asymmetric full-head NMT v2.1 space:
+* `nmt_charm_sym_macaque_250um`
+* `nmt_charm_asym_macaque_250um`
+
+[View symmetric CHARM in Neuroglancer](https://neuroglancer-demo.appspot.com/#!https://brainglobe.info/_static/neuroglancer/nmt_charm_sym_macaque.json)
+or [view asymmetric CHARM](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/nmt_charm_asym_macaque.json).
+
+### [Subcortical Atlas of the Rhesus Macaque (SARM)](https://doi.org/10.1016/j.neuroimage.2021.117996)
+This is a hierarchical subcortical atlas of the rhesus macaque in NMT space from
+[Hartig et al. (2021)](https://doi.org/10.1016/j.neuroimage.2021.117996). It was built from high-resolution
+ex vivo structural imaging and histological data, then warped and refined in NMT v2 space. The atlas covers
+subcortical structures including the basal ganglia, thalamus, hypothalamus, brainstem, and cerebellum.
+BrainGlobe packages the finest annotation level and retains the six-level hierarchy. Both variants share their
+anatomical references and coordinate space with the corresponding ARM atlas, including a skull-stripped reference.
+For more details please see
+[the blogpost](/blog/nmt-macaque-atlases-added).
+
+This atlas is available at 250 µm isotropic resolution in symmetric and asymmetric full-head NMT v2.1 space:
+* `nmt_sarm_sym_macaque_250um`
+* `nmt_sarm_asym_macaque_250um`
+
+[View symmetric SARM in Neuroglancer](https://neuroglancer-demo.appspot.com/#!https://brainglobe.info/_static/neuroglancer/nmt_sarm_sym_macaque.json)
+or [view asymmetric SARM](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/nmt_sarm_asym_macaque.json).
+
+### [Atlas of the Rhesus Macaque (ARM)](https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/template_nmtv2.html)
+This atlas combines the cortical CHARM and subcortical SARM resources into a single whole-brain hierarchy,
+with a top-level split between cortex and subcortex. It includes a full-head MRI reference and a skull-stripped
+additional reference. The atlas is based on [Jung et al. (2021)](https://doi.org/10.1016/j.neuroimage.2021.117997)
+and [Hartig et al. (2021)](https://doi.org/10.1016/j.neuroimage.2021.117996). For more details please see
+[the blogpost](/blog/nmt-macaque-atlases-added).
+
+This atlas is available at 250 µm isotropic resolution in symmetric and asymmetric full-head NMT v2.1 space:
+* `nmt_arm_sym_macaque_250um`
+* `nmt_arm_asym_macaque_250um`
+
+[View symmetric ARM in Neuroglancer](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/nmt_arm_sym_macaque.json)
+or [view asymmetric ARM](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/nmt_arm_asym_macaque.json).
 
 ## Other mammal
 ### [Cat brain atlas](https://doi.org/10.1002/cne.24271)
