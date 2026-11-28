@@ -721,6 +721,19 @@ This atlas is only available at 500um resolution:
 [![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/csl_cat.json)
 
 
+### [RBT Rabbit Brain Atlas](https://dx.doi.org/10.24272/j.issn.2095-8137.2026.045)
+This is a brain atlas of the New Zealand white rabbit. The template image is composed of the averaged MRI scans of 10 
+healthy adult males with an average age of 8 weeks. This was then manually annotated to give rise to two atlases in 150 
+and 330 micron resolution respectively. 
+
+Available versions:
+* `rbt_rabbit_150um` - 150μm resolution
+* `rbt_rabbit_330um` - 330μm resolution
+  
+[![View in neuroglancer](https://img.shields.io/badge/Neuroglancer-View%20atlas-blue)](https://neuroglancer-demo.appspot.com/#!https://brainglobe.s3.amazonaws.com/ng_state_files/rbt_rabbit.json)
+
+
+
 ## Bird
 ### [Eurasian blackcap atlas](https://doi.org/10.1101/2025.03.04.641293)
 This is a serial section two-photon atlas of the Eurasian blackcap (Sylvia atricapilla) 
